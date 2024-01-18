@@ -21,8 +21,8 @@
 
 <script>
 import '@/components/zing-grid/zing-grid-enterprise/main.js'
-import "@/components/zing-grid/zing-grid-community/styles/ag-grid.css";
-import "@/components/zing-grid/zing-grid-community/styles/ag-theme-quartz.css";
+import "@/components/zing-grid/zing-grid-community/styles/zing-grid.css";
+import "@/components/zing-grid/zing-grid-community/styles/zing-theme-quartz.css";
 // import "@/components/zing-grid/ag-grid-enterprise.esm.js";
 import { AgGridVue } from "@/components/zing-grid/zing-grid-vue/main.js";
 window.arrayComparator = function arrayComparator(a, b) {
