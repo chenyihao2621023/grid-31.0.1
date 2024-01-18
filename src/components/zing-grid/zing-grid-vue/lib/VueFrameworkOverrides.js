@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { VanillaFrameworkOverrides } from '@/components/zing-grid/ag-grid-community/main.js';
+import { VanillaFrameworkOverrides } from '@/components/zing-grid/zing-grid-community/main.js';
 console.log('VanillaFrameworkOverrides', VanillaFrameworkOverrides)
 import { VueComponentFactory } from './VueComponentFactory';
 var VueFrameworkOverrides = /** @class */ (function (_super) {

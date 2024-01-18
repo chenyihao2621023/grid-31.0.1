@@ -21,10 +21,10 @@
 
 <script>
 import '@/components/zing-grid/ag-grid-enterprise/main.js'
-import "@/components/zing-grid/ag-grid-community/styles/ag-grid.css";
-import "@/components/zing-grid/ag-grid-community/styles/ag-theme-quartz.css";
+import "@/components/zing-grid/zing-grid-community/styles/ag-grid.css";
+import "@/components/zing-grid/zing-grid-community/styles/ag-theme-quartz.css";
 // import "@/components/zing-grid/ag-grid-enterprise.esm.js";
-import { AgGridVue } from "@/components/zing-grid/ag-grid-vue/main.js";
+import { AgGridVue } from "@/components/zing-grid/zing-grid-vue/main.js";
 window.arrayComparator = function arrayComparator(a, b) {
   if (a == null) {
     return b == null ? 0 : -1;

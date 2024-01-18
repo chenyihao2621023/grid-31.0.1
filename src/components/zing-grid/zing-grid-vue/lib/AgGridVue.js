@@ -20,7 +20,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Bean, ComponentUtil, Events, createGrid } from '@/components/zing-grid/ag-grid-community/main.js';
+import { Bean, ComponentUtil, Events, createGrid } from '@/components/zing-grid/zing-grid-community/main.js';
 import { VueFrameworkComponentWrapper } from './VueFrameworkComponentWrapper';
 import { getAgGridProperties } from './Utils';
 import { VueFrameworkOverrides } from './VueFrameworkOverrides';

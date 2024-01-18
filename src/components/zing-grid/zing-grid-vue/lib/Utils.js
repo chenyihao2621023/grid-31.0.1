@@ -1,4 +1,4 @@
-import { ComponentUtil } from '@/components/zing-grid/ag-grid-community/main.js';
+import { ComponentUtil } from '@/components/zing-grid/zing-grid-community/main.js';
 export var getAgGridProperties = function () {
     var props = {
         gridOptions: {
