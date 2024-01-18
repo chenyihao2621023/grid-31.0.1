@@ -4,12 +4,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgCheckbox, AgSlider, Autowired, Component, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingCheckbox, ZingSlider, Autowired, Component, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { ChartController } from "../../../chartController";
 import { AxisTicksPanel } from "./axisTicksPanel";
 import { FontPanel } from "../fontPanel";
 import { getMaxValue } from "../formatPanel";
-import { AgAngleSelect } from "../../../../../widgets/agAngleSelect";
+import { ZingAngleSelect } from "../../../../../widgets/zingAngleSelect";
 export class AxisPanel extends Component {
     constructor({ chartController, chartOptionsService, isExpandedOnInit = false }) {
         super();
@@ -136,7 +136,7 @@ export class AxisPanel extends Component {
             return false;
         };
         const autoRotate = getAutoRotateValue();
-        const autoRotateCheckbox = this.createBean(new AgCheckbox())
+        const autoRotateCheckbox = this.createBean(new ZingCheckbox())
             .setLabel(this.translate('autoRotate'))
             .setValue(autoRotate)
             .onValueChange(updateAutoRotate);
@@ -150,7 +150,7 @@ export class AxisPanel extends Component {
         const createRotationComp = (labelKey, axisType) => {
             const label = `${this.chartTranslationService.translate(labelKey)} ${degreesSymbol}`;
             const value = this.chartOptionsService.getLabelRotation(axisType);
-            const angleSelect = new AgAngleSelect()
+            const angleSelect = new ZingAngleSelect()
                 .setLabel(label)
                 .setLabelWidth("flex")
                 .setValue(value || 0)
@@ -168,7 +168,7 @@ export class AxisPanel extends Component {
         };
     }
     addLabelPadding(labelPanelComp) {
-        const labelPaddingSlider = this.createBean(new AgSlider());
+        const labelPaddingSlider = this.createBean(new ZingSlider());
         const currentValue = this.chartOptionsService.getAxisProperty("label.padding");
         labelPaddingSlider.setLabel(this.chartTranslationService.translate("padding"))
             .setMaxValue(getMaxValue(currentValue, 30))

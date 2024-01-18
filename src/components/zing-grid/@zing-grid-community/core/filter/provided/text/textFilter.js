@@ -1,5 +1,5 @@
 import { SimpleFilter, SimpleFilterModelFormatter, } from '../simpleFilter';
-import { AgInputTextField } from '../../../widgets/agInputTextField';
+import { ZingInputTextField } from '../../../widgets/zingInputTextField';
 import { makeNull } from '../../../utils/generic';
 import { _ } from '../../../utils';
 import { setAriaRole } from '../../../utils/aria';
@@ -106,7 +106,7 @@ export class TextFilter extends SimpleFilter {
         return eCondition;
     }
     createFromToElement(eCondition, eValues, fromTo) {
-        const eValue = this.createManagedBean(new AgInputTextField());
+        const eValue = this.createManagedBean(new ZingInputTextField());
         eValue.addCssClass(`ag-filter-${fromTo}`);
         eValue.addCssClass('ag-filter-filter');
         eValues.push(eValue);

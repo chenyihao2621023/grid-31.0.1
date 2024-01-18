@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Component } from "../../widgets/component";
 import { Autowired, PostConstruct } from "../../context/context";
-import { AgSelect, Events } from "../../main";
+import { ZingSelect, Events } from "../../main";
 import { clearElement } from "../../utils/dom";
 import { warnOnce } from "../../utils/function";
 export class PageSizeSelectorComp extends Component {
@@ -117,7 +117,7 @@ export class PageSizeSelectorComp extends Component {
             text: String(value)
         }));
         const localisedAriaLabel = localeTextFunc('ariaPageSizeSelectorLabel', 'Page Size');
-        this.selectPageSizeComp = this.createManagedBean(new AgSelect())
+        this.selectPageSizeComp = this.createManagedBean(new ZingSelect())
             .addOptions(options)
             .setValue(String(shouldAddAndSelectEmptyOption ? '' : paginationPageSizeOption))
             .setAriaLabel(localisedAriaLabel)

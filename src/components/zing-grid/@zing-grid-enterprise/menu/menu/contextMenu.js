@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgMenuItemComponent, AgMenuList, Autowired, Bean, BeanStub, Component, ModuleNames, ModuleRegistry, Optional, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingMenuItemComponent, ZingMenuList, Autowired, Bean, BeanStub, Component, ModuleNames, ModuleRegistry, Optional, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 const CSS_MENU = 'ag-menu';
 const CSS_CONTEXT_MENU_OPEN = 'ag-context-menu-open';
 let ContextMenuFactory = class ContextMenuFactory extends BeanStub {
@@ -145,7 +145,7 @@ let ContextMenuFactory = class ContextMenuFactory extends BeanStub {
         });
         // hide the popup if something gets selected
         if (addPopupRes) {
-            menu.addEventListener(AgMenuItemComponent.EVENT_MENU_ITEM_SELECTED, addPopupRes.hideFunc);
+            menu.addEventListener(ZingMenuItemComponent.EVENT_MENU_ITEM_SELECTED, addPopupRes.hideFunc);
         }
         return true;
     }
@@ -174,12 +174,12 @@ class ContextMenu extends Component {
         this.menuItems = menuItems;
     }
     addMenuItems() {
-        const menuList = this.createManagedBean(new AgMenuList());
+        const menuList = this.createManagedBean(new ZingMenuList());
         const menuItemsMapped = this.menuItemMapper.mapWithStockItems(this.menuItems, null);
         menuList.addMenuItems(menuItemsMapped);
         this.appendChild(menuList);
         this.menuList = menuList;
-        menuList.addEventListener(AgMenuItemComponent.EVENT_MENU_ITEM_SELECTED, (e) => this.dispatchEvent(e));
+        menuList.addEventListener(ZingMenuItemComponent.EVENT_MENU_ITEM_SELECTED, (e) => this.dispatchEvent(e));
     }
     afterGuiAttached(params) {
         if (params.hidePopup) {

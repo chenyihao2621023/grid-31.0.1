@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgSelect, AgSlider, AgToggleButton, Autowired, Component, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingSelect, ZingSlider, ZingToggleButton, Autowired, Component, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { ShadowPanel } from "./shadowPanel";
 import { FontPanel } from "../fontPanel";
 import { initFontPanelParams } from "./fontPanelParams";
@@ -70,7 +70,7 @@ export class SeriesPanel extends Component {
             .catch(e => console.error(`AG Grid - chart rendering failed`, e));
     }
     initSeriesSelect() {
-        const seriesSelect = this.seriesGroup.createManagedBean(new AgSelect());
+        const seriesSelect = this.seriesGroup.createManagedBean(new ZingSelect());
         seriesSelect
             .setLabel(this.translate('seriesType'))
             .setLabelAlignment("left")
@@ -86,7 +86,7 @@ export class SeriesPanel extends Component {
         this.activePanels.push(seriesSelect);
     }
     initTooltips() {
-        const seriesTooltipsToggle = this.createBean(new AgToggleButton());
+        const seriesTooltipsToggle = this.createBean(new ZingToggleButton());
         seriesTooltipsToggle
             .setLabel(this.translate("tooltips"))
             .setLabelAlignment("left")
@@ -98,7 +98,7 @@ export class SeriesPanel extends Component {
     }
     initStrokeWidth() {
         const currentValue = this.getSeriesOption("strokeWidth");
-        const seriesStrokeWidthSlider = this.createBean(new AgSlider());
+        const seriesStrokeWidthSlider = this.createBean(new ZingSlider());
         seriesStrokeWidthSlider
             .setLabel(this.translate("strokeWidth"))
             .setMaxValue(getMaxValue(currentValue, 10))
@@ -109,7 +109,7 @@ export class SeriesPanel extends Component {
     }
     initLineWidth() {
         const currentValue = this.getSeriesOption("strokeWidth");
-        const seriesLineWidthSlider = this.createBean(new AgSlider());
+        const seriesLineWidthSlider = this.createBean(new ZingSlider());
         seriesLineWidthSlider
             .setLabel(this.translate('lineWidth'))
             .setMaxValue(getMaxValue(currentValue, 10))
@@ -121,7 +121,7 @@ export class SeriesPanel extends Component {
     initLineDash() {
         const lineDash = this.getSeriesOption("lineDash");
         const currentValue = lineDash ? lineDash[0] : 0;
-        const seriesLineDashSlider = this.createBean(new AgSlider());
+        const seriesLineDashSlider = this.createBean(new ZingSlider());
         seriesLineDashSlider
             .setLabel(this.translate('lineDash'))
             .setMaxValue(getMaxValue(currentValue, 30))
@@ -132,7 +132,7 @@ export class SeriesPanel extends Component {
     }
     initLineOpacity() {
         const currentValue = this.getSeriesOption("strokeOpacity");
-        const seriesLineOpacitySlider = this.createBean(new AgSlider());
+        const seriesLineOpacitySlider = this.createBean(new ZingSlider());
         seriesLineOpacitySlider
             .setLabel(this.translate("strokeOpacity"))
             .setStep(0.05)
@@ -144,7 +144,7 @@ export class SeriesPanel extends Component {
     }
     initFillOpacity() {
         const currentValue = this.getSeriesOption("fillOpacity");
-        const seriesFillOpacitySlider = this.createBean(new AgSlider());
+        const seriesFillOpacitySlider = this.createBean(new ZingSlider());
         seriesFillOpacitySlider
             .setLabel(this.translate("fillOpacity"))
             .setStep(0.05)
@@ -188,7 +188,7 @@ export class SeriesPanel extends Component {
     getSectorLabelPositionRatio() {
         const expression = 'sectorLabel.positionRatio';
         const currentValue = this.chartOptionsService.getSeriesOption(expression, this.seriesType);
-        const sectorLabelPositionRatioSlider = this.createBean(new AgSlider());
+        const sectorLabelPositionRatioSlider = this.createBean(new ZingSlider());
         return sectorLabelPositionRatioSlider
             .setLabel(this.translate("positionRatio"))
             .setStep(0.05)
@@ -208,7 +208,7 @@ export class SeriesPanel extends Component {
     initBins() {
         var _a;
         const currentValue = ((_a = this.getSeriesOption("bins")) !== null && _a !== void 0 ? _a : this.getSeriesOption("calculatedBins")).length;
-        const seriesBinCountSlider = this.createBean(new AgSlider());
+        const seriesBinCountSlider = this.createBean(new ZingSlider());
         seriesBinCountSlider
             .setLabel(this.translate("histogramBinCount"))
             .setMinValue(0)

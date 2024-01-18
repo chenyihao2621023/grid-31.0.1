@@ -1,5 +1,5 @@
-import { AgRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-export class AddDropdownComp extends AgRichSelect {
+import { ZingRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+export class AddDropdownComp extends ZingRichSelect {
     constructor(params) {
         super(Object.assign(Object.assign({}, params), { template: /* html */ `
                 <div class="ag-picker-field" role="presentation">

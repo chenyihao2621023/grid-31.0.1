@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgInputTextField, AgPromise, Autowired, Column, Component, RefSelector, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, ZingInputTextField, AgPromise, Autowired, Column, Component, RefSelector, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { GroupFilter } from './groupFilter';
 export class GroupFloatingFilterComp extends Component {
     constructor() {
@@ -45,7 +45,7 @@ export class GroupFloatingFilterComp extends Component {
     }
     setupReadOnlyFloatingFilterElement() {
         if (!this.eFloatingFilterText) {
-            this.eFloatingFilterText = this.createManagedBean(new AgInputTextField());
+            this.eFloatingFilterText = this.createManagedBean(new ZingInputTextField());
             this.eFloatingFilterText
                 .setDisabled(true)
                 .addGuiEventListener('click', () => this.params.showParentFilter());

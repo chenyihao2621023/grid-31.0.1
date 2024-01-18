@@ -9,7 +9,7 @@ import { debounce } from '../../../utils/function';
 import { ProvidedFilter } from '../../provided/providedFilter';
 import { PostConstruct, Autowired } from '../../../context/context';
 import { SimpleFloatingFilter } from './simpleFloatingFilter';
-import { AgInputTextField } from '../../../widgets/agInputTextField';
+import { ZingInputTextField } from '../../../widgets/zingInputTextField';
 import { KeyCode } from '../../../constants/keyCode';
 import { TextFilter } from '../../provided/text/textFilter';
 import { BeanStub } from '../../../context/beanStub';
@@ -22,7 +22,7 @@ export class FloatingFilterTextInputService extends BeanStub {
     }
     setupGui(parentElement) {
         var _a;
-        this.eFloatingFilterTextInput = this.createManagedBean(new AgInputTextField((_a = this.params) === null || _a === void 0 ? void 0 : _a.config));
+        this.eFloatingFilterTextInput = this.createManagedBean(new ZingInputTextField((_a = this.params) === null || _a === void 0 ? void 0 : _a.config));
         const eInput = this.eFloatingFilterTextInput.getGui();
         parentElement.appendChild(eInput);
         this.addManagedListener(eInput, 'input', (e) => this.valueChangedListener(e));

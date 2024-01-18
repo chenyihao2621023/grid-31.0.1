@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Autowired, Component, RefSelector, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
-import { AgSparkline } from './sparkline/agSparkline';
+import { ZingSparkline } from './sparkline/zingSparkline';
 export class SparklineCellRenderer extends Component {
     constructor() {
         super(SparklineCellRenderer.TEMPLATE);
@@ -22,7 +22,7 @@ export class SparklineCellRenderer extends Component {
                         data: params.data,
                     } }, params.sparklineOptions);
                 // create new instance of sparkline
-                this.sparkline = AgSparkline.create(options, this.sparklineTooltipSingleton.getSparklineTooltip());
+                this.sparkline = ZingSparkline.create(options, this.sparklineTooltipSingleton.getSparklineTooltip());
                 // append sparkline canvas to cell renderer element
                 this.eSparkline.appendChild(this.sparkline.canvasElement);
                 firstTimeIn = false;

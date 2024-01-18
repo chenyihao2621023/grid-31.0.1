@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgDialog, Autowired, CHART_TOOL_PANEL_MENU_OPTIONS, Component, Events, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingDialog, Autowired, CHART_TOOL_PANEL_MENU_OPTIONS, Component, Events, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { ChartMenu } from "./menu/chartMenu";
 import { TitleEdit } from "./chartTitle/titleEdit";
 import { ChartController, DEFAULT_THEMES } from "./chartController";
@@ -154,7 +154,7 @@ export class GridChartComp extends Component {
     addDialog() {
         const title = this.chartTranslationService.translate(this.params.pivotChart ? 'pivotChartTitle' : 'rangeChartTitle');
         const { width, height } = this.getBestDialogSize();
-        this.chartDialog = new AgDialog({
+        this.chartDialog = new ZingDialog({
             resizable: true,
             movable: true,
             maximizable: true,
@@ -166,7 +166,7 @@ export class GridChartComp extends Component {
             closable: true
         });
         this.getContext().createBean(this.chartDialog);
-        this.chartDialog.addEventListener(AgDialog.EVENT_DESTROYED, () => this.destroy());
+        this.chartDialog.addEventListener(ZingDialog.EVENT_DESTROYED, () => this.destroy());
     }
     getBestDialogSize() {
         const popupParent = this.popupService.getPopupParent();

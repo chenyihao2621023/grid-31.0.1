@@ -8,7 +8,7 @@ import { BeanStub } from "../../../context/beanStub";
 import { Autowired } from "../../../context/context";
 import { Events } from "../../../events";
 import { setAriaHidden, setAriaRole } from "../../../utils/aria";
-import { AgCheckbox } from "../../../widgets/agCheckbox";
+import { ZingCheckbox } from "../../../widgets/zingCheckbox";
 export class SelectAllFeature extends BeanStub {
     constructor(column) {
         super();
@@ -29,7 +29,7 @@ export class SelectAllFeature extends BeanStub {
     }
     setComp(ctrl) {
         this.headerCellCtrl = ctrl;
-        this.cbSelectAll = this.createManagedBean(new AgCheckbox());
+        this.cbSelectAll = this.createManagedBean(new ZingCheckbox());
         this.cbSelectAll.addCssClass('ag-header-select-all');
         setAriaRole(this.cbSelectAll.getGui(), 'presentation');
         this.showOrHideSelectAll();

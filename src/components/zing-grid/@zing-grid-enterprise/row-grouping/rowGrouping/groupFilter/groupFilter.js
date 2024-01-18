@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgPromise, AgSelect, Autowired, Events, PostConstruct, RefSelector, TabGuardComp, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, AgPromise, ZingSelect, Autowired, Events, PostConstruct, RefSelector, TabGuardComp, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class GroupFilter extends TabGuardComp {
     constructor() {
         super(/* html */ `
@@ -85,7 +85,7 @@ export class GroupFilter extends TabGuardComp {
         return sourceColumns;
     }
     createGroupFieldSelectElement(sourceColumns) {
-        this.eGroupFieldSelect = this.createManagedBean(new AgSelect());
+        this.eGroupFieldSelect = this.createManagedBean(new ZingSelect());
         const localeTextFunc = this.localeService.getLocaleTextFunc();
         this.eGroupFieldSelect.setLabel(localeTextFunc('groupFilterSelect', 'Select field:'));
         this.eGroupFieldSelect.setLabelAlignment('top');

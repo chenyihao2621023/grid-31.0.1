@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgMenuItemComponent, AgMenuList, Autowired, Column, Component, PostConstruct, ProvidedColumnGroup, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { ZingMenuItemComponent, ZingMenuList, Autowired, Column, Component, PostConstruct, ProvidedColumnGroup, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class ToolPanelContextMenu extends Component {
     constructor(column, mouseEvent, parentEl) {
         super(/* html */ `<div class="ag-menu"></div>`);
@@ -102,12 +102,12 @@ export class ToolPanelContextMenu extends Component {
     }
     displayContextMenu(menuItemsMapped) {
         const eGui = this.getGui();
-        const menuList = this.createBean(new AgMenuList());
+        const menuList = this.createBean(new ZingMenuList());
         const localeTextFunc = this.localeService.getLocaleTextFunc();
         let hideFunc = () => { };
         eGui.appendChild(menuList.getGui());
         menuList.addMenuItems(menuItemsMapped);
-        menuList.addManagedListener(menuList, AgMenuItemComponent.EVENT_MENU_ITEM_SELECTED, () => {
+        menuList.addManagedListener(menuList, ZingMenuItemComponent.EVENT_MENU_ITEM_SELECTED, () => {
             this.parentEl.focus();
             hideFunc();
         });

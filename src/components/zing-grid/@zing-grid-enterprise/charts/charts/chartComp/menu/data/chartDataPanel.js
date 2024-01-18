@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgCheckbox, AgGroupComponent, AgRadioButton, AgSelect, AgToggleButton, AutoScrollService, Autowired, Component, DragAndDropService, DragSourceType, Events, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingCheckbox, ZingGroupComponent, ZingRadioButton, ZingSelect, ZingToggleButton, AutoScrollService, Autowired, Component, DragAndDropService, DragSourceType, Events, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { ChartController } from "../../chartController";
 const DefaultDataPanelDef = {
     groups: [
@@ -136,7 +136,7 @@ export class ChartDataPanel extends Component {
         });
     }
     createCategoriesGroup(columns) {
-        this.categoriesGroupComp = this.createBean(new AgGroupComponent({
+        this.categoriesGroupComp = this.createBean(new ZingGroupComponent({
             title: this.getCategoryGroupTitle(),
             enabled: true,
             suppressEnabledCheckbox: true,
@@ -145,7 +145,7 @@ export class ChartDataPanel extends Component {
         }));
         const inputName = `chartDimension${this.getCompId()}`;
         columns.forEach(col => {
-            const comp = this.categoriesGroupComp.createManagedBean(new AgRadioButton());
+            const comp = this.categoriesGroupComp.createManagedBean(new ZingRadioButton());
             comp.setLabel(_.escapeString(col.displayName));
             comp.setValue(col.selected);
             comp.setInputName(inputName);
@@ -156,7 +156,7 @@ export class ChartDataPanel extends Component {
         this.addComponent(this.getGui(), this.categoriesGroupComp, 'categoriesGroup');
     }
     createSeriesGroup(columns) {
-        this.seriesGroupComp = this.createManagedBean(new AgGroupComponent({
+        this.seriesGroupComp = this.createManagedBean(new ZingGroupComponent({
             title: this.getSeriesGroupTitle(),
             enabled: true,
             suppressEnabledCheckbox: true,
@@ -164,7 +164,7 @@ export class ChartDataPanel extends Component {
             cssIdentifier: 'charts-data'
         }));
         if (this.chartController.isActiveXYChart()) {
-            const pairedModeToggle = this.seriesGroupComp.createManagedBean(new AgToggleButton());
+            const pairedModeToggle = this.seriesGroupComp.createManagedBean(new ZingToggleButton());
             pairedModeToggle
                 .setLabel(this.chartTranslationService.translate('paired'))
                 .setLabelAlignment('left')
@@ -179,7 +179,7 @@ export class ChartDataPanel extends Component {
         }
         const getSeriesLabel = this.generateGetSeriesLabel();
         columns.forEach(col => {
-            const comp = this.seriesGroupComp.createManagedBean(new AgCheckbox());
+            const comp = this.seriesGroupComp.createManagedBean(new ZingCheckbox());
             comp.addCssClass('ag-data-select-checkbox');
             const label = getSeriesLabel(col);
             comp.setLabel(label);
@@ -207,7 +207,7 @@ export class ChartDataPanel extends Component {
         if (!this.chartController.isComboChart()) {
             return;
         }
-        this.seriesChartTypeGroupComp = this.createManagedBean(new AgGroupComponent({
+        this.seriesChartTypeGroupComp = this.createManagedBean(new ZingGroupComponent({
             title: this.chartTranslationService.translate('seriesChartType'),
             enabled: true,
             suppressEnabledCheckbox: true,
@@ -223,7 +223,7 @@ export class ChartDataPanel extends Component {
             if (!seriesChartType) {
                 return;
             }
-            const seriesItemGroup = this.seriesChartTypeGroupComp.createManagedBean(new AgGroupComponent({
+            const seriesItemGroup = this.seriesChartTypeGroupComp.createManagedBean(new ZingGroupComponent({
                 title: col.displayName,
                 enabled: true,
                 suppressEnabledCheckbox: true,
@@ -231,7 +231,7 @@ export class ChartDataPanel extends Component {
                 cssIdentifier: 'charts-format-sub-level'
             }));
             const secondaryAxisComp = this.seriesChartTypeGroupComp
-                .createManagedBean(new AgCheckbox())
+                .createManagedBean(new ZingCheckbox())
                 .setLabel(this.chartTranslationService.translate('secondaryAxis'))
                 .setLabelWidth("flex")
                 .setDisabled(['groupedColumn', 'stackedColumn', 'stackedArea'].includes(seriesChartType.chartType))
@@ -248,7 +248,7 @@ export class ChartDataPanel extends Component {
                 { value: 'groupedColumn', text: translate('groupedColumn', 'Grouped Column') },
                 { value: 'stackedColumn', text: translate('stackedColumn', 'Stacked Column') },
             ];
-            const chartTypeComp = seriesItemGroup.createManagedBean(new AgSelect());
+            const chartTypeComp = seriesItemGroup.createManagedBean(new ZingSelect());
             chartTypeComp
                 .setLabelAlignment('left')
                 .setLabelWidth("flex")

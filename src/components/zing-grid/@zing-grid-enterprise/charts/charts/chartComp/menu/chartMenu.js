@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgPanel, AgPromise, Autowired, CHART_TOOL_PANEL_ALLOW_LIST, CHART_TOOL_PANEL_MENU_OPTIONS, CHART_TOOLBAR_ALLOW_LIST, Component, Events, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingPanel, AgPromise, Autowired, CHART_TOOL_PANEL_ALLOW_LIST, CHART_TOOL_PANEL_MENU_OPTIONS, CHART_TOOLBAR_ALLOW_LIST, Component, Events, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { TabbedChartMenu } from "./tabbedChartMenu";
 import { ChartController } from "../chartController";
 export class ChartMenu extends Component {
@@ -186,7 +186,7 @@ export class ChartMenu extends Component {
     }
     createMenuPanel(defaultTab) {
         const width = this.environment.chartMenuPanelWidth();
-        const menuPanel = this.menuPanel = this.createBean(new AgPanel({
+        const menuPanel = this.menuPanel = this.createBean(new ZingPanel({
             minWidth: width,
             width,
             height: '100%',

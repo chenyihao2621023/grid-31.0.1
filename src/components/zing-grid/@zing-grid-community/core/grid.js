@@ -26,8 +26,8 @@ import { FocusService } from "./focusService";
 import { MouseEventService } from "./gridBodyComp/mouseEventService";
 import { CellNavigationService } from "./cellNavigationService";
 import { ValueFormatterService } from "./rendering/valueFormatterService";
-import { AgCheckbox } from "./widgets/agCheckbox";
-import { AgRadioButton } from "./widgets/agRadioButton";
+import { ZingCheckbox } from "./widgets/zingCheckbox";
+import { ZingRadioButton } from "./widgets/zingRadioButton";
 import { VanillaFrameworkOverrides } from "./vanillaFrameworkOverrides";
 import { ScrollVisibleService } from "./gridBodyComp/scrollVisibleService";
 import { StylingService } from "./styling/stylingService";
@@ -41,7 +41,7 @@ import { ChangeDetectionService } from "./valueService/changeDetectionService";
 import { AlignedGridsService } from "./alignedGridsService";
 import { UserComponentFactory } from "./components/framework/userComponentFactory";
 import { UserComponentRegistry } from "./components/framework/userComponentRegistry";
-import { AgComponentUtils } from "./components/framework/agComponentUtils";
+import { ZingComponentUtils } from "./components/framework/zingComponentUtils";
 import { ComponentMetadataProvider } from "./components/framework/componentMetadataProvider";
 import { Beans } from "./rendering/beans";
 import { Environment } from "./environment";
@@ -52,24 +52,24 @@ import { SelectableService } from "./rowNodes/selectableService";
 import { PaginationComp } from "./pagination/paginationComp";
 import { ResizeObserverService } from "./misc/resizeObserverService";
 import { OverlayWrapperComponent } from "./rendering/overlays/overlayWrapperComponent";
-import { AgGroupComponent } from "./widgets/agGroupComponent";
-import { AgDialog } from "./widgets/agDialog";
-import { AgPanel } from "./widgets/agPanel";
-import { AgInputTextField } from "./widgets/agInputTextField";
-import { AgInputTextArea } from "./widgets/agInputTextArea";
-import { AgSlider } from "./widgets/agSlider";
-import { AgInputNumberField } from "./widgets/agInputNumberField";
-import { AgInputRange } from "./widgets/agInputRange";
-import { AgSelect } from "./widgets/agSelect";
-import { AgRichSelect } from "./widgets/agRichSelect";
-import { AgToggleButton } from "./widgets/agToggleButton";
+import { ZingGroupComponent } from "./widgets/zingGroupComponent";
+import { ZingDialog } from "./widgets/zingDialog";
+import { ZingPanel } from "./widgets/zingPanel";
+import { ZingInputTextField } from "./widgets/zingInputTextField";
+import { ZingInputTextArea } from "./widgets/zingInputTextArea";
+import { ZingSlider } from "./widgets/zingSlider";
+import { ZingInputNumberField } from "./widgets/zingInputNumberField";
+import { ZingInputRange } from "./widgets/zingInputRange";
+import { ZingSelect } from "./widgets/zingSelect";
+import { ZingRichSelect } from "./widgets/zingRichSelect";
+import { ZingToggleButton } from "./widgets/zingToggleButton";
 import { RowPositionUtils } from "./entities/rowPositionUtils";
 import { CellPositionUtils } from "./entities/cellPositionUtils";
 import { PinnedRowModel } from "./pinnedRowModel/pinnedRowModel";
 import { ModuleRegistry } from "./modules/moduleRegistry";
 import { ModuleNames } from "./modules/moduleNames";
 import { UndoRedoService } from "./undoRedo/undoRedoService";
-import { AgStackComponentsRegistry } from "./components/agStackComponentsRegistry";
+import { ZingStackComponentsRegistry } from "./components/zingStackComponentsRegistry";
 import { HeaderPositionUtils } from "./headerRendering/common/headerPosition";
 import { HeaderNavigationService } from "./headerRendering/common/headerNavigationService";
 import { missing } from "./utils/generic";
@@ -89,9 +89,9 @@ import { GridOptionsService } from "./gridOptionsService";
 import { LocaleService } from "./localeService";
 import { FakeVScrollComp } from "./gridBodyComp/fakeVScrollComp";
 import { DataTypeService } from "./columns/dataTypeService";
-import { AgInputDateField } from "./widgets/agInputDateField";
+import { ZingInputDateField } from "./widgets/zingInputDateField";
 import { ValueParserService } from "./valueService/valueParserService";
-import { AgAutocomplete } from "./widgets/agAutocomplete";
+import { ZingAutocomplete } from "./widgets/zingAutocomplete";
 import { QuickFilterService } from "./filter/quickFilterService";
 import { warnOnce, errorOnce } from "./utils/function";
 import { SyncService } from "./syncService";
@@ -275,30 +275,30 @@ export class GridCoreCreator {
     }
     createAgStackComponentsList(registeredModules) {
         let components = [
-            { componentName: 'AgCheckbox', componentClass: AgCheckbox },
-            { componentName: 'AgRadioButton', componentClass: AgRadioButton },
-            { componentName: 'AgToggleButton', componentClass: AgToggleButton },
-            { componentName: 'AgInputTextField', componentClass: AgInputTextField },
-            { componentName: 'AgInputTextArea', componentClass: AgInputTextArea },
-            { componentName: 'AgInputNumberField', componentClass: AgInputNumberField },
-            { componentName: 'AgInputDateField', componentClass: AgInputDateField },
-            { componentName: 'AgInputRange', componentClass: AgInputRange },
-            { componentName: 'AgRichSelect', componentClass: AgRichSelect },
-            { componentName: 'AgSelect', componentClass: AgSelect },
-            { componentName: 'AgSlider', componentClass: AgSlider },
+            { componentName: 'AgCheckbox', componentClass: ZingCheckbox },
+            { componentName: 'AgRadioButton', componentClass: ZingRadioButton },
+            { componentName: 'AgToggleButton', componentClass: ZingToggleButton },
+            { componentName: 'AgInputTextField', componentClass: ZingInputTextField },
+            { componentName: 'AgInputTextArea', componentClass: ZingInputTextArea },
+            { componentName: 'AgInputNumberField', componentClass: ZingInputNumberField },
+            { componentName: 'AgInputDateField', componentClass: ZingInputDateField },
+            { componentName: 'AgInputRange', componentClass: ZingInputRange },
+            { componentName: 'AgRichSelect', componentClass: ZingRichSelect },
+            { componentName: 'AgSelect', componentClass: ZingSelect },
+            { componentName: 'AgSlider', componentClass: ZingSlider },
             { componentName: 'AgGridBody', componentClass: GridBodyComp },
             { componentName: 'AgHeaderRoot', componentClass: GridHeaderComp },
             { componentName: 'AgSortIndicator', componentClass: SortIndicatorComp },
             { componentName: 'AgPagination', componentClass: PaginationComp },
             { componentName: 'AgPageSizeSelector', componentClass: PageSizeSelectorComp },
             { componentName: 'AgOverlayWrapper', componentClass: OverlayWrapperComponent },
-            { componentName: 'AgGroupComponent', componentClass: AgGroupComponent },
-            { componentName: 'AgPanel', componentClass: AgPanel },
-            { componentName: 'AgDialog', componentClass: AgDialog },
+            { componentName: 'AgGroupComponent', componentClass: ZingGroupComponent },
+            { componentName: 'AgPanel', componentClass: ZingPanel },
+            { componentName: 'AgDialog', componentClass: ZingDialog },
             { componentName: 'AgRowContainer', componentClass: RowContainerComp },
             { componentName: 'AgFakeHorizontalScroll', componentClass: FakeHScrollComp },
             { componentName: 'AgFakeVerticalScroll', componentClass: FakeVScrollComp },
-            { componentName: 'AgAutocomplete', componentClass: AgAutocomplete },
+            { componentName: 'AgAutocomplete', componentClass: ZingAutocomplete },
         ];
         const moduleAgStackComps = this.extractModuleEntity(registeredModules, (module) => module.agStackComponents ? module.agStackComponents : []);
         components = components.concat(moduleAgStackComps);
@@ -324,7 +324,7 @@ export class GridCoreCreator {
         // beans should only contain SERVICES, it should NEVER contain COMPONENTS
         const beans = [
             Beans, RowPositionUtils, CellPositionUtils, HeaderPositionUtils,
-            PaginationAutoPageSizeService, GridApi, UserComponentRegistry, AgComponentUtils,
+            PaginationAutoPageSizeService, GridApi, UserComponentRegistry, ZingComponentUtils,
             ComponentMetadataProvider, ResizeObserverService, UserComponentFactory,
             RowContainerHeightService, HorizontalResizeService, LocaleService, ValidationService,
             PinnedRowModel, DragService, DisplayedGroupCreator, EventService, GridOptionsService,
@@ -335,7 +335,7 @@ export class GridCoreCreator {
             FocusService, MouseEventService, Environment, CellNavigationService, ValueFormatterService,
             StylingService, ScrollVisibleService, SortController, ColumnHoverService, ColumnAnimationService,
             SelectableService, AutoGroupColService, ChangeDetectionService, AnimationFrameService,
-            UndoRedoService, AgStackComponentsRegistry, ColumnDefFactory,
+            UndoRedoService, ZingStackComponentsRegistry, ColumnDefFactory,
             RowCssClassCalculator, RowNodeBlockLoader, RowNodeSorter, CtrlsService,
             PinnedWidthService, RowNodeEventThrottle, CtrlsFactory, DataTypeService, ValueParserService,
             QuickFilterService, SyncService, OverlayService, StateService, ExpansionService,

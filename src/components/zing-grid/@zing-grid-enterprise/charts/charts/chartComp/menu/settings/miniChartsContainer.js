@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgGroupComponent, Autowired, Component, DEFAULT_CHART_GROUPS, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingGroupComponent, Autowired, Component, DEFAULT_CHART_GROUPS, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { MiniArea, MiniAreaColumnCombo, MiniBar, MiniBubble, MiniColumn, MiniColumnLineCombo, MiniCustomCombo, MiniDoughnut, MiniHistogram, MiniLine, MiniNormalizedArea, MiniNormalizedBar, MiniNormalizedColumn, MiniPie, MiniScatter, MiniStackedArea, MiniStackedBar, MiniStackedColumn, } from "./miniCharts/index"; // please leave this as is - we want it to be explicit for build reasons
 const miniChartMapping = {
     columnGroup: {
@@ -59,7 +59,7 @@ export class MiniChartsContainer extends Component {
         const eGui = this.getGui();
         Object.keys(this.chartGroups).forEach((group) => {
             const chartGroupValues = this.chartGroups[group];
-            const groupComponent = this.createBean(new AgGroupComponent({
+            const groupComponent = this.createBean(new ZingGroupComponent({
                 title: this.chartTranslationService.translate(group),
                 suppressEnabledCheckbox: true,
                 enabled: true,

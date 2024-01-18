@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgInputDateField, AgInputNumberField, AgInputTextField, Autowired, Component, Events, KeyCode, PostConstruct, RefSelector, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { ZingInputDateField, ZingInputNumberField, ZingInputTextField, Autowired, Component, Events, KeyCode, PostConstruct, RefSelector, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class InputPillComp extends Component {
     constructor(params) {
         super(/* html */ `
@@ -75,13 +75,13 @@ export class InputPillComp extends Component {
         let comp;
         switch (type) {
             case 'text':
-                comp = new AgInputTextField();
+                comp = new ZingInputTextField();
                 break;
             case 'number':
-                comp = new AgInputNumberField();
+                comp = new ZingInputNumberField();
                 break;
             case 'date':
-                comp = new AgInputDateField();
+                comp = new ZingInputDateField();
                 break;
         }
         return this.createBean(comp);

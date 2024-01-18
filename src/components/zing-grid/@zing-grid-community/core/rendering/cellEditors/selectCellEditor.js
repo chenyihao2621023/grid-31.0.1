@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgSelect } from "../../widgets/agSelect";
+import { ZingSelect } from "../../widgets/zingSelect";
 import { Autowired } from "../../context/context";
 import { PopupComponent } from "../../widgets/popupComponent";
 import { RefSelector } from "../../widgets/componentAnnotations";
@@ -54,7 +54,7 @@ export class SelectCellEditor extends PopupComponent {
         // we don't want to add this if full row editing, otherwise selecting will stop the
         // full row editing.
         if (gridOptionsService.get('editType') !== 'fullRow') {
-            this.addManagedListener(this.eSelect, AgSelect.EVENT_ITEM_SELECTED, () => params.stopEditing());
+            this.addManagedListener(this.eSelect, ZingSelect.EVENT_ITEM_SELECTED, () => params.stopEditing());
         }
     }
     afterGuiAttached() {

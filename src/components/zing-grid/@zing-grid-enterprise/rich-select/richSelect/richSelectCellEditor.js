@@ -1,4 +1,4 @@
-import { AgRichSelect, Events, PopupComponent, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { ZingRichSelect, Events, PopupComponent, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class RichSelectCellEditor extends PopupComponent {
     constructor() {
         super(/* html */ `<div class="ag-cell-edit-wrapper"></div>`);
@@ -10,7 +10,7 @@ export class RichSelectCellEditor extends PopupComponent {
             console.warn('AG Grid: agRichSelectCellEditor requires cellEditorParams.values to be set');
         }
         const { params: richSelectParams, valuesPromise } = this.buildRichSelectParams();
-        this.richSelect = this.createManagedBean(new AgRichSelect(richSelectParams));
+        this.richSelect = this.createManagedBean(new ZingRichSelect(richSelectParams));
         this.richSelect.addCssClass('ag-cell-editor');
         this.appendChild(this.richSelect);
         if (valuesPromise) {

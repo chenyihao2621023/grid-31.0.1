@@ -1,9 +1,9 @@
 import { SimpleFilter, SimpleFilterModelFormatter } from '../simpleFilter';
 import { ScalarFilter } from '../scalarFilter';
 import { makeNull } from '../../../utils/generic';
-import { AgInputTextField } from '../../../widgets/agInputTextField';
+import { ZingInputTextField } from '../../../widgets/zingInputTextField';
 import { setAriaRole } from '../../../utils/aria';
-import { AgInputNumberField } from '../../../widgets/agInputNumberField';
+import { ZingInputNumberField } from '../../../widgets/zingInputNumberField';
 export class NumberFilterModelFormatter extends SimpleFilterModelFormatter {
     conditionToString(condition, options) {
         const { numberOfInputs } = options || {};
@@ -77,7 +77,7 @@ export class NumberFilter extends ScalarFilter {
         return eCondition;
     }
     createFromToElement(eCondition, eValues, fromTo, allowedCharPattern) {
-        const eValue = this.createManagedBean(allowedCharPattern ? new AgInputTextField({ allowedCharPattern }) : new AgInputNumberField());
+        const eValue = this.createManagedBean(allowedCharPattern ? new ZingInputTextField({ allowedCharPattern }) : new ZingInputNumberField());
         eValue.addCssClass(`ag-filter-${fromTo}`);
         eValue.addCssClass('ag-filter-filter');
         eValues.push(eValue);

@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgSlider, Autowired, Component, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { _, ZingSlider, Autowired, Component, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { FontPanel } from "../fontPanel";
 class TitlePanel extends Component {
     constructor(chartOptionsService) {
@@ -80,7 +80,7 @@ class TitlePanel extends Component {
         });
     }
     createSpacingSlicer() {
-        const spacingSlider = this.createBean(new AgSlider());
+        const spacingSlider = this.createBean(new ZingSlider());
         const currentValue = this.chartOptionsService.getChartOption('title.spacing') || 10;
         spacingSlider.setLabel(this.chartTranslationService.translate('spacing'))
             .setMaxValue(Math.max(currentValue, 100))

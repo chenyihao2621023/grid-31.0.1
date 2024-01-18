@@ -1,13 +1,13 @@
 import { OptionsFactory } from './optionsFactory';
 import { ProvidedFilter } from './providedFilter';
 import { AgPromise } from '../../utils';
-import { AgSelect } from '../../widgets/agSelect';
-import { AgRadioButton } from '../../widgets/agRadioButton';
+import { ZingSelect } from '../../widgets/zingSelect';
+import { ZingRadioButton } from '../../widgets/zingRadioButton';
 import { areEqual } from '../../utils/array';
 import { setDisplayed, setDisabled, removeFromParent } from '../../utils/dom';
 import { FILTER_LOCALE_TEXT } from '../filterLocaleText';
 import { Component } from '../../widgets/component';
-import { AgAbstractInputField } from '../../widgets/agAbstractInputField';
+import { ZingAbstractInputField } from '../../widgets/zingAbstractInputField';
 import { warnOnce, isFunction } from '../../utils/function';
 export class SimpleFilterModelFormatter {
     constructor(localeService, optionsFactory, valueFormatter) {
@@ -309,7 +309,7 @@ export class SimpleFilter extends ProvidedFilter {
         }
     }
     createOption() {
-        const eType = this.createManagedBean(new AgSelect());
+        const eType = this.createManagedBean(new ZingSelect());
         this.eTypes.push(eType);
         eType.addCssClass('ag-filter-select');
         this.eFilterBody.appendChild(eType.getGui());
@@ -339,7 +339,7 @@ export class SimpleFilter extends ProvidedFilter {
         }
     }
     createJoinOperator(eJoinOperators, eJoinOperatorPanel, andOr) {
-        const eJoinOperator = this.createManagedBean(new AgRadioButton());
+        const eJoinOperator = this.createManagedBean(new ZingRadioButton());
         eJoinOperators.push(eJoinOperator);
         eJoinOperator.addCssClass('ag-filter-condition-operator');
         eJoinOperator.addCssClass(`ag-filter-condition-operator-${andOr}`);
@@ -495,7 +495,7 @@ export class SimpleFilter extends ProvidedFilter {
                 if (!firstInput) {
                     return;
                 }
-                if (firstInput instanceof AgAbstractInputField) {
+                if (firstInput instanceof ZingAbstractInputField) {
                     firstInput.getInputElement().focus();
                 }
             }
@@ -571,7 +571,7 @@ export class SimpleFilter extends ProvidedFilter {
     resetPlaceholder() {
         const globalTranslate = this.localeService.getLocaleTextFunc();
         this.forEachInput((element, index, position, numberOfInputs) => {
-            if (!(element instanceof AgAbstractInputField)) {
+            if (!(element instanceof ZingAbstractInputField)) {
                 return;
             }
             const placeholder = index === 0 && numberOfInputs > 1 ? 'inRangeStart' :
@@ -585,7 +585,7 @@ export class SimpleFilter extends ProvidedFilter {
         });
     }
     setElementValue(element, value, fromFloatingFilter) {
-        if (element instanceof AgAbstractInputField) {
+        if (element instanceof ZingAbstractInputField) {
             element.setValue(value != null ? String(value) : null, true);
         }
     }
@@ -600,7 +600,7 @@ export class SimpleFilter extends ProvidedFilter {
         }
     }
     attachElementOnChange(element, listener) {
-        if (element instanceof AgAbstractInputField) {
+        if (element instanceof ZingAbstractInputField) {
             element.onValueChange(listener);
         }
     }

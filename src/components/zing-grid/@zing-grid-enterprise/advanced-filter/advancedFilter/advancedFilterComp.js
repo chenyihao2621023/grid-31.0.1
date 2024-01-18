@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgAutocomplete, Autowired, Component, PostConstruct, RefSelector, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { ZingAutocomplete, Autowired, Component, PostConstruct, RefSelector, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { AdvancedFilterCtrl } from './advancedFilterCtrl';
 export class AdvancedFilterComp extends Component {
     constructor() {
@@ -29,10 +29,10 @@ export class AdvancedFilterComp extends Component {
             .setInputAriaLabel(this.advancedFilterExpressionService.translate('ariaAdvancedFilterInput'))
             .setListAriaLabel(this.advancedFilterExpressionService.translate('ariaLabelAdvancedFilterAutocomplete'));
         this.refresh();
-        this.addManagedListener(this.eAutocomplete, AgAutocomplete.EVENT_VALUE_CHANGED, ({ value }) => this.onValueChanged(value));
-        this.addManagedListener(this.eAutocomplete, AgAutocomplete.EVENT_VALUE_CONFIRMED, ({ isValid }) => this.onValueConfirmed(isValid));
-        this.addManagedListener(this.eAutocomplete, AgAutocomplete.EVENT_OPTION_SELECTED, ({ position, updateEntry, autocompleteType }) => this.onOptionSelected(position, updateEntry, autocompleteType));
-        this.addManagedListener(this.eAutocomplete, AgAutocomplete.EVENT_VALID_CHANGED, ({ isValid, validationMessage }) => this.onValidChanged(isValid, validationMessage));
+        this.addManagedListener(this.eAutocomplete, ZingAutocomplete.EVENT_VALUE_CHANGED, ({ value }) => this.onValueChanged(value));
+        this.addManagedListener(this.eAutocomplete, ZingAutocomplete.EVENT_VALUE_CONFIRMED, ({ isValid }) => this.onValueConfirmed(isValid));
+        this.addManagedListener(this.eAutocomplete, ZingAutocomplete.EVENT_OPTION_SELECTED, ({ position, updateEntry, autocompleteType }) => this.onOptionSelected(position, updateEntry, autocompleteType));
+        this.addManagedListener(this.eAutocomplete, ZingAutocomplete.EVENT_VALID_CHANGED, ({ isValid, validationMessage }) => this.onValidChanged(isValid, validationMessage));
         this.setupApplyButton();
         this.setupBuilderButton();
     }

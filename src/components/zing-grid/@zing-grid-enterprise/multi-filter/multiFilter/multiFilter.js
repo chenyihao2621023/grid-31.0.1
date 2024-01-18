@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { ProvidedFilter, AgPromise, Autowired, AgGroupComponent, TabGuardComp, AgMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { ProvidedFilter, AgPromise, Autowired, ZingGroupComponent, TabGuardComp, ZingMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class MultiFilter extends TabGuardComp {
     constructor() {
         super(/* html */ `<div class="ag-multi-filter ag-menu-list-compact"></div>`);
@@ -92,7 +92,7 @@ export class MultiFilter extends TabGuardComp {
         this.guiDestroyFuncs.length = 0;
     }
     insertFilterMenu(filter, name) {
-        const menuItem = this.createBean(new AgMenuItemComponent({
+        const menuItem = this.createBean(new ZingMenuItemComponent({
             name,
             subMenu: filter,
             cssClasses: ['ag-multi-filter-menu-item'],
@@ -101,7 +101,7 @@ export class MultiFilter extends TabGuardComp {
         }));
         menuItem.setParentComponent(this);
         this.guiDestroyFuncs.push(() => this.destroyBean(menuItem));
-        this.addManagedListener(menuItem, AgMenuItemComponent.EVENT_MENU_ITEM_ACTIVATED, (event) => {
+        this.addManagedListener(menuItem, ZingMenuItemComponent.EVENT_MENU_ITEM_ACTIVATED, (event) => {
             if (this.lastActivatedMenuItem && this.lastActivatedMenuItem !== event.menuItem) {
                 this.lastActivatedMenuItem.deactivate();
             }
@@ -116,7 +116,7 @@ export class MultiFilter extends TabGuardComp {
         return menuItem;
     }
     insertFilterGroup(filter, title) {
-        const group = this.createBean(new AgGroupComponent({
+        const group = this.createBean(new ZingGroupComponent({
             title,
             cssIdentifier: 'multi-filter',
         }));
@@ -124,7 +124,7 @@ export class MultiFilter extends TabGuardComp {
         group.addItem(filter.getGui());
         group.toggleGroupExpand(false);
         if (filter.afterGuiAttached) {
-            group.addManagedListener(group, AgGroupComponent.EVENT_EXPANDED, () => filter.afterGuiAttached({
+            group.addManagedListener(group, ZingGroupComponent.EVENT_EXPANDED, () => filter.afterGuiAttached({
                 container: this.lastOpenedInContainer,
                 suppressFocus: true,
                 hidePopup: this.hidePopup

@@ -1,5 +1,5 @@
-import { AgRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-export class SelectPillComp extends AgRichSelect {
+import { ZingRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+export class SelectPillComp extends ZingRichSelect {
     constructor(params) {
         super(Object.assign(Object.assign({}, params), { template: /* html */ `
                 <div class="ag-picker-field ag-advanced-filter-builder-pill-wrapper" role="presentation">

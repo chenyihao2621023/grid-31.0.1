@@ -1,5 +1,5 @@
 export { GridChartsModule } from "./gridChartsModule";
-export * from './agGridCoreExtension';
+export * from './zingGridCoreExtension';
 import { time, AgChart } from "@/components/zing-grid/zing-charts-community/main.js";
 // import { time, AgEnterpriseCharts } from "ag-charts-enterprise";
 export const agCharts = {

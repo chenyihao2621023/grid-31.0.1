@@ -69,7 +69,7 @@ export class Component extends BeanStub {
             }
         }
     }
-    // for registered components only, eg creates AgCheckbox instance from ag-checkbox HTML tag
+    // for registered components only, eg creates ZingCheckbox instance from ag-checkbox HTML tag
     createChildComponentsFromTags(parentNode, paramsMap) {
         // we MUST take a copy of the list first, as the 'swapComponentForNode' adds comments into the DOM
         // which messes up the traversal order of the children.

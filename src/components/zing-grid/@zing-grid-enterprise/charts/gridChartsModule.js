@@ -4,8 +4,8 @@ import { ChartService } from "./charts/chartService";
 import { ChartTranslationService } from "./charts/chartComp/services/chartTranslationService";
 import { ChartCrossFilterService } from "./charts/chartComp/services/chartCrossFilterService";
 import { RangeSelectionModule } from "@/components/zing-grid/@zing-grid-enterprise/range-selection/main.js";
-import { AgColorPicker } from "./widgets/agColorPicker";
-import { AgAngleSelect } from "./widgets/agAngleSelect";
+import { ZingColorPicker } from "./widgets/zingColorPicker";
+import { ZingAngleSelect } from "./widgets/zingAngleSelect";
 import { VERSION as GRID_VERSION } from "./version";
 import { validGridChartsVersion } from "./utils/validGridChartsVersion";
 export const GridChartsModule = {
@@ -21,8 +21,8 @@ export const GridChartsModule = {
         ChartService, ChartTranslationService, ChartCrossFilterService
     ],
     agStackComponents: [
-        { componentName: 'AgColorPicker', componentClass: AgColorPicker },
-        { componentName: 'AgAngleSelect', componentClass: AgAngleSelect },
+        { componentName: 'AgColorPicker', componentClass: ZingColorPicker },
+        { componentName: 'AgAngleSelect', componentClass: ZingAngleSelect },
     ],
     dependantModules: [
         RangeSelectionModule,

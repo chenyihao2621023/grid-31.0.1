@@ -1,7 +1,7 @@
 import { getAllowedCharPattern, NumberFilter, NumberFilterModelFormatter } from './numberFilter';
 import { FloatingFilterTextInputService, TextInputFloatingFilter } from '../../floating/provided/textInputFloatingFilter';
-import { AgInputNumberField } from '../../../widgets/agInputNumberField';
-import { AgInputTextField } from '../../../widgets/agInputTextField';
+import { ZingInputNumberField } from '../../../widgets/zingInputNumberField';
+import { ZingInputTextField } from '../../../widgets/zingInputTextField';
 import { BeanStub } from '../../../context/beanStub';
 class FloatingFilterNumberInputService extends BeanStub {
     constructor() {
@@ -10,8 +10,8 @@ class FloatingFilterNumberInputService extends BeanStub {
         this.numberInputActive = true;
     }
     setupGui(parentElement) {
-        this.eFloatingFilterNumberInput = this.createManagedBean(new AgInputNumberField());
-        this.eFloatingFilterTextInput = this.createManagedBean(new AgInputTextField());
+        this.eFloatingFilterNumberInput = this.createManagedBean(new ZingInputNumberField());
+        this.eFloatingFilterTextInput = this.createManagedBean(new ZingInputTextField());
         this.eFloatingFilterTextInput.setDisabled(true);
         const eNumberInput = this.eFloatingFilterNumberInput.getGui();
         const eTextInput = this.eFloatingFilterTextInput.getGui();
