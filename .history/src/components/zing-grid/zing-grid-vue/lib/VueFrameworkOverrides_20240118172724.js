@@ -14,7 +14,6 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { VanillaFrameworkOverrides } from '@/components/zing-grid/zing-grid-community/main.js';
-
 import { VueComponentFactory } from './VueComponentFactory';
 var VueFrameworkOverrides = /** @class */ (function (_super) {
     __extends(VueFrameworkOverrides, _super);

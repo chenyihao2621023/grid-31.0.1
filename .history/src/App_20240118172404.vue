@@ -5,14 +5,14 @@
         <button v-on:click="onBtExport()" style="margin-bottom: 5px; font-weight: bold;">Export to Excel</button>
       </div>
       <div class="grid-wrapper" style="height: 1000px;">
-        <ZingGridVue
+        <ag-grid-vue
 
             style="width: 100%; height: 100%;"
             :class="themeClass"
             :columnDefs="columnDefs"
             @grid-ready="onGridReady"
             :defaultColDef="defaultColDef"
-            :rowData="rowData"></ZingGridVue>
+            :rowData="rowData"></ag-grid-vue>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ export default {
   name: "App",
 
   components: {
-    ZingGridVue,
+    'ag-grid-vue': AgGridVue,
   },
   data: function () {
     return {

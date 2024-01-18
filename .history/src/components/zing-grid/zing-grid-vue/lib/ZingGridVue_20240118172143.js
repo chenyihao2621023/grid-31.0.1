@@ -25,7 +25,7 @@ import { VueFrameworkComponentWrapper } from './VueFrameworkComponentWrapper';
 import { getAgGridProperties } from './Utils';
 import { VueFrameworkOverrides } from './VueFrameworkOverrides';
 var _a = getAgGridProperties(), props = _a[0], computed = _a[1], watch = _a[2], model = _a[3];
-var AgGridVue = /** @class */ (function (_super) {
+var ZingGridVue = /** @class */ (function (_super) {
     __extends(AgGridVue, _super);
     function AgGridVue() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -44,7 +44,7 @@ var AgGridVue = /** @class */ (function (_super) {
     AgGridVue.prototype.render = function (h) {
         return h('div');
     };
-    // It forces events defined in AgGridVue.ALWAYS_SYNC_GLOBAL_EVENTS to be fired synchronously.
+    // It forces events defined in ZingGridVue.ALWAYS_SYNC_GLOBAL_EVENTS to be fired synchronously.
     // This is required for events such as GridPreDestroyed.
     // Other events are fired can be fired asynchronously or synchronously depending on config.
     AgGridVue.prototype.globalEventListenerFactory = function (restrictToSyncOnly) {
@@ -170,4 +170,4 @@ var AgGridVue = /** @class */ (function (_super) {
     ], AgGridVue);
     return AgGridVue;
 }(Vue));
-export { AgGridVue };
+export { ZingGridVue };
