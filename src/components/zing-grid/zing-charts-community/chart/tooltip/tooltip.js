@@ -8,8 +8,8 @@ import { BBox } from '../../scene/bbox';
 import { injectStyle } from '../../util/dom';
 import { BaseProperties } from '../../util/properties';
 import { BOOLEAN, INTERACTION_RANGE, NUMBER, POSITIVE_NUMBER, STRING, TEXT_WRAP, UNION, Validate, } from '../../util/validation';
-const DEFAULT_TOOLTIP_CLASS = 'ag-chart-tooltip';
-const DEFAULT_TOOLTIP_DARK_CLASS = 'ag-chart-dark-tooltip';
+const DEFAULT_TOOLTIP_CLASS = 'zing-chart-tooltip';
+const DEFAULT_TOOLTIP_DARK_CLASS = 'zing-chart-dark-tooltip';
 const defaultTooltipCss = `
 .${DEFAULT_TOOLTIP_CLASS} {
     transition: transform 0.1s ease;
@@ -136,7 +136,7 @@ const defaultTooltipCss = `
     border-color: rgba(255, 255, 255, 0.15);
 }
 
-.ag-chart-wrapper {
+.zing-chart-wrapper {
     box-sizing: border-box;
     overflow: hidden;
 }

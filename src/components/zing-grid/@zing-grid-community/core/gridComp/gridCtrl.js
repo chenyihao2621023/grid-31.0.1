@@ -57,7 +57,7 @@ export class GridCtrl extends BeanStub {
         this.eventService.dispatchEvent(event);
     }
     addRtlSupport() {
-        const cssClass = this.gridOptionsService.get('enableRtl') ? 'ag-rtl' : 'ag-ltr';
+        const cssClass = this.gridOptionsService.get('enableRtl') ? 'zing-rtl' : 'zing-ltr';
         this.view.setRtlClass(cssClass);
     }
     destroyGridUi() {

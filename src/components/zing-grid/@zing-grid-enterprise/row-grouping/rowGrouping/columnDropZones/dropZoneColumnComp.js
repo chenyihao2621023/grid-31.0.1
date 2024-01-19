@@ -40,7 +40,7 @@ export class DropZoneColumnComp extends Component {
         const checkColumnLock = () => {
             const isLocked = this.isGroupingAndLocked();
             _.setDisplayed(this.eButton, !isLocked && !this.gridOptionsService.get('functionsReadOnly'));
-            this.eDragHandle.classList.toggle('ag-column-select-column-readonly', isLocked);
+            this.eDragHandle.classList.toggle('zing-column-select-column-readonly', isLocked);
             this.setupAria();
         };
         checkColumnLock();
@@ -135,7 +135,7 @@ export class DropZoneColumnComp extends Component {
         this.setTextValue();
         this.setupRemove();
         if (this.ghost) {
-            this.addCssClass('ag-column-drop-cell-ghost');
+            this.addCssClass('zing-column-drop-cell-ghost');
         }
         if (this.isAggregationZone() && !this.gridOptionsService.get('functionsReadOnly')) {
             this.addGuiEventListener('click', this.onShowAggFuncSelection.bind(this));
@@ -146,7 +146,7 @@ export class DropZoneColumnComp extends Component {
     }
     setupRemove() {
         _.setDisplayed(this.eButton, !this.isGroupingAndLocked() && !this.gridOptionsService.get('functionsReadOnly'));
-        const agEvent = { type: DropZoneColumnComp.EVENT_COLUMN_REMOVE };
+        const zingEvent = { type: DropZoneColumnComp.EVENT_COLUMN_REMOVE };
         this.addGuiEventListener('keydown', (e) => {
             const isEnter = e.key === KeyCode.ENTER;
             const isDelete = e.key === KeyCode.DELETE;
@@ -203,7 +203,7 @@ export class DropZoneColumnComp extends Component {
             getRowCount: function () { return rows.length; }
         });
         this.getContext().createBean(virtualList);
-        const ePopup = _.loadTemplate(/* html*/ `<div class="ag-select-agg-func-popup"></div>`);
+        const ePopup = _.loadTemplate(/* html*/ `<div class="zing-select-agg-func-popup"></div>`);
         ePopup.style.top = '0px';
         ePopup.style.left = '0px';
         ePopup.appendChild(virtualListGui);
@@ -285,7 +285,7 @@ export class DropZoneColumnComp extends Component {
     addElementClasses(el, suffix) {
         suffix = suffix ? `-${suffix}` : '';
         const direction = this.horizontal ? 'horizontal' : 'vertical';
-        el.classList.add(`ag-column-drop-cell${suffix}`, `ag-column-drop-${direction}-cell${suffix}`);
+        el.classList.add(`zing-column-drop-cell${suffix}`, `zing-column-drop-${direction}-cell${suffix}`);
     }
     isAggregationZone() {
         return this.dropZonePurpose === 'aggregation';
@@ -296,10 +296,10 @@ export class DropZoneColumnComp extends Component {
 }
 DropZoneColumnComp.EVENT_COLUMN_REMOVE = 'columnRemove';
 DropZoneColumnComp.TEMPLATE = `<span role="option">
-          <span ref="eDragHandle" class="ag-drag-handle ag-column-drop-cell-drag-handle" role="presentation"></span>
-          <span ref="eText" class="ag-column-drop-cell-text" aria-hidden="true"></span>
-          <ag-sort-indicator ref="eSortIndicator"></ag-sort-indicator>
-          <span ref="eButton" class="ag-column-drop-cell-button" role="presentation"></span>
+          <span ref="eDragHandle" class="zing-drag-handle zing-column-drop-cell-drag-handle" role="presentation"></span>
+          <span ref="eText" class="zing-column-drop-cell-text" aria-hidden="true"></span>
+          <zing-sort-indicator ref="eSortIndicator"></zing-sort-indicator>
+          <span ref="eButton" class="zing-column-drop-cell-button" role="presentation"></span>
         </span>`;
 __decorate([
     Autowired('dragAndDropService')
@@ -333,7 +333,7 @@ __decorate([
 ], DropZoneColumnComp.prototype, "init", null);
 class AggItemComp extends Component {
     constructor(itemSelected, value) {
-        super(/* html */ `<div class="ag-select-agg-func-item"/>`);
+        super(/* html */ `<div class="zing-select-agg-func-item"/>`);
         this.selectItem = itemSelected;
         this.getGui().innerText = value;
         this.addGuiEventListener('click', this.selectItem);

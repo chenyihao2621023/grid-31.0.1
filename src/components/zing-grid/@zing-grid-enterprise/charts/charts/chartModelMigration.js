@@ -27,7 +27,7 @@ export function upgradeChartModel(model) {
     model = migrateIfBefore('25.1.0', model, migrateV25_1);
     model = migrateIfBefore('26.0.0', model, migrateV26);
     model = migrateIfBefore('26.1.0', model, migrateV26_1);
-    // Switch from iChartOptions to iAgChartOptions....
+    // Switch from iChartOptions to iZingChartOptions....
     model = migrateIfBefore('26.2.0', model, migrateV26_2);
     model = migrateIfBefore('28.0.0', model, migrateV28);
     model = migrateIfBefore('28.2.0', model, migrateV28_2);
@@ -40,21 +40,21 @@ export function upgradeChartModel(model) {
     // Bump version to latest.
     model = migrateIfBefore(VERSION, model, (m) => m);
     if (DEBUG && originalVersion !== model.version) {
-        console.log('AG Grid: ChartModel migration complete', { model });
+        console.log('ZING Grid: ChartModel migration complete', { model });
     }
     return model;
 }
 function migrateV23(model) {
-    // https://github.com/ag-grid/ag-grid/commit/76c6744ff2b732d298d1ade73c122188854b5bac
+    // https://github.com/zing-grid/zing-grid/commit/76c6744ff2b732d298d1ade73c122188854b5bac
     model = jsonRename('chartOptions.legend.item.marker.type', 'shape', model);
     model = jsonRename('chartOptions.seriesDefaults.marker.type', 'shape', model);
-    // https://github.com/ag-grid/ag-grid/commit/7bdf2cfd666acda758a818733a9f9cb35ac1d7a7
+    // https://github.com/zing-grid/zing-grid/commit/7bdf2cfd666acda758a818733a9f9cb35ac1d7a7
     model = jsonRename('chartOptions.legend.padding', 'spacing', model);
     return model;
 }
 function migrateV24(model) {
     var _a;
-    // https://github.com/ag-grid/ag-grid/commit/f4e854e3dc459400fa00e6da2873cb8e9cfff6fe#
+    // https://github.com/zing-grid/zing-grid/commit/f4e854e3dc459400fa00e6da2873cb8e9cfff6fe#
     model = jsonDelete('chartOptions.seriesDefaults.marker.minSize', model);
     const _b = model, { chartType, chartPalette } = _b, // Migrate.
     _c = _b.chartOptions, // Migrate.
@@ -62,29 +62,29 @@ function migrateV24(model) {
     const axesTypes = getLegacyAxisType(chartType);
     const axes = axesTypes === null || axesTypes === void 0 ? void 0 : axesTypes.map((type, i) => (Object.assign({ type }, (i === 0 ? xAxis : yAxis))));
     // Precise legacy palette fills/strokes can be found here for future reference:
-    // https://github.com/ag-grid/ag-grid/blob/b22.1.0/grid-enterprise-modules/charts/src/charts/chart/palettes.ts
+    // https://github.com/zing-grid/zing-grid/blob/b22.1.0/grid-enterprise-modules/charts/src/charts/chart/palettes.ts
     const LEGACY_PALETTES = {
-        borneo: 'ag-default',
-        material: 'ag-material',
-        bright: 'ag-vivid',
+        borneo: 'zing-default',
+        material: 'zing-material',
+        bright: 'zing-vivid',
     };
-    return Object.assign({ chartType, chartThemeName: (_a = LEGACY_PALETTES[chartPalette]) !== null && _a !== void 0 ? _a : 'ag-default', chartOptions: Object.assign(Object.assign({}, chartOptions), { axes,
+    return Object.assign({ chartType, chartThemeName: (_a = LEGACY_PALETTES[chartPalette]) !== null && _a !== void 0 ? _a : 'zing-default', chartOptions: Object.assign(Object.assign({}, chartOptions), { axes,
             xAxis,
             yAxis }) }, chartModel);
 }
 function migrateV25_1(model) {
-    // https://github.com/ag-grid/ag-grid/commit/61943f9fecbfb5ac1b9a1fd93788f9fdd8687181
+    // https://github.com/zing-grid/zing-grid/commit/61943f9fecbfb5ac1b9a1fd93788f9fdd8687181
     model = jsonRename('chartOptions.seriesDefaults.label.minRequiredAngle', 'minAngle', model);
     return model;
 }
 function migrateV26(model) {
-    // https://github.com/ag-grid/ag-grid/commit/df2445d88e64cb4e831d6163104a0fa60ccde3b5
+    // https://github.com/zing-grid/zing-grid/commit/df2445d88e64cb4e831d6163104a0fa60ccde3b5
     const highlightOptUpdate = (_a) => {
         var { dimOpacity } = _a, opts = __rest(_a, ["dimOpacity"]);
         return (Object.assign(Object.assign({}, opts), (dimOpacity != null ? { series: { dimOpacity } } : {})));
     };
     model = jsonMutate('chartOptions.seriesDefaults.highlightStyle', model, highlightOptUpdate);
-    // https://github.com/ag-grid/ag-grid/commit/f4e854e3dc459400fa00e6da2873cb8e9cfff6fe#
+    // https://github.com/zing-grid/zing-grid/commit/f4e854e3dc459400fa00e6da2873cb8e9cfff6fe#
     model = jsonDelete('chart', model);
     model = jsonDelete('chartOptions.seriesDefaults.tooltipClass', model);
     model = jsonDelete('chartOptions.seriesDefaults.tooltipTracking', model);
@@ -94,7 +94,7 @@ function migrateV26(model) {
     return model;
 }
 function migrateV26_1(model) {
-    // https://github.com/ag-grid/ag-grid/commit/df2445d88e64cb4e831d6163104a0fa60ccde3b5
+    // https://github.com/zing-grid/zing-grid/commit/df2445d88e64cb4e831d6163104a0fa60ccde3b5
     const highlightOptUpdate = (_a) => {
         var { item, series } = _a, opts = __rest(_a, ["item", "series"]);
         return (Object.assign({ item: Object.assign(Object.assign({}, opts), item) }, (series ? { series } : {})));
@@ -104,7 +104,7 @@ function migrateV26_1(model) {
     return model;
 }
 function migrateV26_2(model) {
-    // https://github.com/ag-grid/ag-grid/commit/8b2e223cb1a687cb6c1d70b9f75f52fa29d00341
+    // https://github.com/zing-grid/zing-grid/commit/8b2e223cb1a687cb6c1d70b9f75f52fa29d00341
     model = jsonMove('chartOptions.seriesDefaults.fill.opacity', 'chartOptions.seriesDefaults.fillOpacity', model);
     model = jsonMove('chartOptions.seriesDefaults.stroke.opacity', 'chartOptions.seriesDefaults.strokeOpacity', model);
     model = jsonMove('chartOptions.seriesDefaults.stroke.width', 'chartOptions.seriesDefaults.strokeWidth', model);
@@ -172,7 +172,7 @@ function migrateV29_1(model) {
     return model;
 }
 function migrateV29_2(model) {
-    // https://github.com/ag-grid/ag-grid/commit/ce11956492e42e845932edb4e05d7b0b21db5c61
+    // https://github.com/zing-grid/zing-grid/commit/ce11956492e42e845932edb4e05d7b0b21db5c61
     const tooltipOptUpdate = (_a) => {
         var _b, _c, _d, _e;
         var { tracking } = _a, opts = __rest(_a, ["tracking"]);
@@ -205,8 +205,8 @@ function migrateV30(model) {
 }
 function migrateV31(model) {
     const V30_LEGACY_PALETTES = {
-        'ag-pastel': 'ag-sheets',
-        'ag-solar': 'ag-polychroma'
+        'zing-pastel': 'zing-sheets',
+        'zing-solar': 'zing-polychroma'
     };
     const updatedModel = jsonRename('chartOptions.column', 'bar', model);
     const chartThemeName = V30_LEGACY_PALETTES[updatedModel.chartThemeName] || updatedModel.chartThemeName;
@@ -250,20 +250,20 @@ export function heuristicVersionDetection(model) {
     const defaultVersion = '27.1.0';
     const matchingHints = Object.entries(hints).filter(([_, match]) => match);
     if (DEBUG)
-        console.log('AG Grid: ChartModel migration', { heuristicVersionCandidates: matchingHints });
+        console.log('ZING Grid: ChartModel migration', { heuristicVersionCandidates: matchingHints });
     const [heuristicVersion = defaultVersion] = matchingHints[0];
     if (DEBUG)
-        console.log('AG Grid: ChartModel migration', { heuristicVersion });
+        console.log('ZING Grid: ChartModel migration', { heuristicVersion });
     return heuristicVersion;
 }
 function migrateIfBefore(maxVersion, model, migration) {
     if (versionNumber(maxVersion) > versionNumber(model.version)) {
         if (DEBUG)
-            console.log('AG Grid: ChartModel migration', { migratingTo: maxVersion });
+            console.log('ZING Grid: ChartModel migration', { migratingTo: maxVersion });
         const result = migration(model);
         result.version = maxVersion;
         if (DEBUG)
-            console.log('AG Grid: ChartModel migration', { migratedTo: maxVersion, result });
+            console.log('ZING Grid: ChartModel migration', { migratedTo: maxVersion, result });
         return result;
     }
     return model;
@@ -271,7 +271,7 @@ function migrateIfBefore(maxVersion, model, migration) {
 function versionParts(version) {
     const split = typeof version === 'string' ? version.split('.').map((v) => Number(v)) : [];
     if (split.length !== 3 || split.some((v) => isNaN(v))) {
-        throw new Error('AG Grid - Illegal version string: ' + version);
+        throw new Error('ZING Grid - Illegal version string: ' + version);
     }
     return {
         major: split[0],

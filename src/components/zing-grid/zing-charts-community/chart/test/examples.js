@@ -130,12 +130,12 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
     mode: 'integrated',
     data: prepareIntegratedChartsData([
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '', 'Enchanted Kingdom of Celestria'],
             },
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2008', 'Enchanted Kingdom of Celestria'],
             },
             gold: 8,
@@ -143,7 +143,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 0,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2008', 'Enchanted Kingdom of Celestria'],
             },
             gold: 1,
@@ -151,7 +151,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 3,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2008', 'Enchanted Kingdom of Celestria'],
             },
             gold: 8,
@@ -159,7 +159,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 0,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2008', 'Enchanted Kingdom of Celestria'],
             },
             gold: 1,
@@ -167,12 +167,12 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 3,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '', 'Whimsical Wonderland of Dreamlandia'],
             },
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2004', 'Whimsical Wonderland of Dreamlandia'],
             },
             gold: 6,
@@ -180,7 +180,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 2,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2004', 'Whimsical Wonderland of Dreamlandia'],
             },
             gold: 6,
@@ -188,12 +188,12 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 2,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '', 'Eternal Empire of Nebulon'],
             },
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2012', 'Eternal Empire of Nebulon'],
             },
             gold: 4,
@@ -201,7 +201,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 0,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '2012', 'Eternal Empire of Nebulon'],
             },
             gold: 4,
@@ -209,11 +209,11 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             bronze: 0,
         },
         {
-            'ag-Grid-AutoColumn-country': {
+            'zing-Grid-AutoColumn-country': {
                 labels: ['', '', 'Mystical Realm of Eldoria'],
             },
         },
-    ], 'ag-Grid-AutoColumn-country'),
+    ], 'zing-Grid-AutoColumn-country'),
     axes: [
         {
             type: 'grouped-category',
@@ -229,7 +229,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             type: 'bar',
             direction: 'vertical',
             stacked: false,
-            xKey: 'ag-Grid-AutoColumn-country',
+            xKey: 'zing-Grid-AutoColumn-country',
             xName: 'Country',
             yKey: 'gold',
             yName: 'Gold',
@@ -238,7 +238,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             type: 'bar',
             direction: 'vertical',
             stacked: false,
-            xKey: 'ag-Grid-AutoColumn-country',
+            xKey: 'zing-Grid-AutoColumn-country',
             xName: 'Country',
             yKey: 'silver',
             yName: 'Silver',
@@ -247,7 +247,7 @@ export const INTEGRATED_CHARTS_GROUPED_CATEGORY_AXIS_EXAMPLE = {
             type: 'bar',
             direction: 'vertical',
             stacked: false,
-            xKey: 'ag-Grid-AutoColumn-country',
+            xKey: 'zing-Grid-AutoColumn-country',
             xName: 'Country',
             yKey: 'bronze',
             yName: 'Bronze',

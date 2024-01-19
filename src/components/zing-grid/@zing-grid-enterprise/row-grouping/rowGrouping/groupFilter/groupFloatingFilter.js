@@ -9,7 +9,7 @@ import { GroupFilter } from './groupFilter';
 export class GroupFloatingFilterComp extends Component {
     constructor() {
         super(/* html */ `
-            <div ref="eFloatingFilter" class="ag-group-floating-filter ag-floating-filter-input" role="presentation"></div>
+            <div ref="eFloatingFilter" class="zing-group-floating-filter zing-floating-filter-input" role="presentation"></div>
         `);
         this.haveAddedColumnListeners = false;
     }
@@ -69,7 +69,7 @@ export class GroupFloatingFilterComp extends Component {
                     this.addManagedListener(column, Column.EVENT_VISIBLE_CHANGED, this.onColumnVisibleChanged.bind(this));
                     this.addManagedListener(column, Column.EVENT_COL_DEF_CHANGED, this.onColDefChanged.bind(this));
                 }
-                return compDetails.newAgStackInstance().then(floatingFilter => {
+                return compDetails.newZingStackInstance().then(floatingFilter => {
                     var _a, _b;
                     this.underlyingFloatingFilter = floatingFilter;
                     (_a = this.underlyingFloatingFilter) === null || _a === void 0 ? void 0 : _a.onParentModelChanged((_b = this.parentFilterInstance.getSelectedFilter()) === null || _b === void 0 ? void 0 : _b.getModel());

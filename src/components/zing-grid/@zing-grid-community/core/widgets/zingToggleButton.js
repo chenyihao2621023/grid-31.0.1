@@ -1,11 +1,11 @@
 import { ZingCheckbox } from './zingCheckbox';
 export class ZingToggleButton extends ZingCheckbox {
     constructor(config) {
-        super(config, 'ag-toggle-button');
+        super(config, 'zing-toggle-button');
     }
     setValue(value, silent) {
         super.setValue(value, silent);
-        this.addOrRemoveCssClass('ag-selected', this.getValue());
+        this.addOrRemoveCssClass('zing-selected', this.getValue());
         return this;
     }
 }

@@ -192,10 +192,10 @@ export class AxisPanel extends Component {
     }
 }
 AxisPanel.TEMPLATE = `<div>
-            <ag-group-component ref="axisGroup">
-                <ag-color-picker ref="axisColorInput"></ag-color-picker>
-                <ag-slider ref="axisLineWidthSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="axisGroup">
+                <zing-color-picker ref="axisColorInput"></zing-color-picker>
+                <zing-slider ref="axisLineWidthSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('axisGroup')

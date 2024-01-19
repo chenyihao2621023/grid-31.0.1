@@ -4,8 +4,8 @@ import { Component } from "./component";
 export class ZingAutocompleteRow extends Component {
     constructor() {
         super(/* html */ `
-        <div class="ag-autocomplete-row" role="presentation">
-            <div class="ag-autocomplete-row-label"></div>
+        <div class="zing-autocomplete-row" role="presentation">
+            <div class="zing-autocomplete-row-label"></div>
         </div>`);
         this.hasHighlighting = false;
     }
@@ -15,7 +15,7 @@ export class ZingAutocompleteRow extends Component {
         this.updateSelected(selected);
     }
     updateSelected(selected) {
-        this.addOrRemoveCssClass('ag-autocomplete-row-selected', selected);
+        this.addOrRemoveCssClass('zing-autocomplete-row-selected', selected);
     }
     setSearchString(searchString) {
         var _a;

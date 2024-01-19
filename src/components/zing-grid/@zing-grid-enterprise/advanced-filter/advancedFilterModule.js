@@ -8,8 +8,8 @@ export const AdvancedFilterModule = {
     version: VERSION,
     moduleName: ModuleNames.AdvancedFilterModule,
     beans: [AdvancedFilterService, AdvancedFilterExpressionService],
-    agStackComponents: [
-        { componentName: 'agAdvancedFilter', componentClass: AdvancedFilterComp }
+    zingStackComponents: [
+        { componentName: 'zingAdvancedFilter'', componentClass: AdvancedFilterComp }
     ],
     dependantModules: [
         EnterpriseCoreModule

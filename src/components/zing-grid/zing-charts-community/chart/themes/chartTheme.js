@@ -7,7 +7,7 @@ import { getSeriesThemeTemplate } from '../factory/seriesTypes';
 import { BOTTOM, FONT_SIZE, FONT_WEIGHT } from './constants';
 import { DEFAULT_FILLS, DEFAULT_STROKES } from './defaultColors';
 import { DEFAULT_AXIS_GRID_COLOUR, DEFAULT_AXIS_LINE_COLOUR, DEFAULT_BACKGROUND_COLOUR, DEFAULT_CROSS_LINES_COLOUR, DEFAULT_DIVERGING_SERIES_COLOUR_RANGE, DEFAULT_FONT_FAMILY, DEFAULT_HIERARCHY_FILLS, DEFAULT_HIERARCHY_STROKES, DEFAULT_INSIDE_SERIES_LABEL_COLOUR, DEFAULT_INVERTED_LABEL_COLOUR, DEFAULT_LABEL_COLOUR, DEFAULT_MUTED_LABEL_COLOUR, DEFAULT_POLAR_SERIES_STROKE, DEFAULT_SHADOW_COLOUR, DEFAULT_WATERFALL_SERIES_CONNECTOR_LINE_STROKE, DEFAULT_WATERFALL_SERIES_NEGATIVE_COLOURS, DEFAULT_WATERFALL_SERIES_POSITIVE_COLOURS, DEFAULT_WATERFALL_SERIES_TOTAL_COLOURS, EXTENDS_AXES_DEFAULTS, EXTENDS_AXES_GRID_LINE_DEFAULTS, EXTENDS_AXES_LABEL_DEFAULTS, EXTENDS_AXES_LINE_DEFAULTS, EXTENDS_AXES_TICK_DEFAULTS, EXTENDS_CARTESIAN_MARKER_DEFAULTS, EXTENDS_CHART_DEFAULTS, EXTENDS_LEGEND_DEFAULTS, EXTENDS_LEGEND_ITEM_DEFAULTS, EXTENDS_LEGEND_ITEM_MARKER_DEFAULTS, EXTENDS_SERIES_DEFAULTS, OVERRIDE_SERIES_LABEL_DEFAULTS, } from './symbols';
-// If this changes, update plugins/ag-charts-generate-chart-thumbnail/src/executors/generate/generator/constants.ts
+// If this changes, update plugins/zing-charts-generate-chart-thumbnail/src/executors/generate/generator/constants.ts
 const DEFAULT_BACKGROUND_FILL = 'white';
 const palette = {
     fills: Array.from(Object.values(DEFAULT_FILLS)),
@@ -323,7 +323,7 @@ export class ChartTheme {
                 const key = node['__extends__'];
                 const source = extensions.get(key);
                 if (source == null) {
-                    throw new Error(`AG Charts - no template variable provided for: ${key}`);
+                    throw new Error(`ZING Charts - no template variable provided for: ${key}`);
                 }
                 Object.keys(source).forEach((key) => {
                     if (!(key in node)) {
@@ -336,7 +336,7 @@ export class ChartTheme {
                 const key = node['__overrides__'];
                 const source = extensions.get(key);
                 if (source == null) {
-                    throw new Error(`AG Charts - no template variable provided for: ${key}`);
+                    throw new Error(`ZING Charts - no template variable provided for: ${key}`);
                 }
                 Object.assign(node, source);
                 delete node['__overrides__'];

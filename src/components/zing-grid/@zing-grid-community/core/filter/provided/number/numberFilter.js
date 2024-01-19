@@ -70,7 +70,7 @@ export class NumberFilter extends ScalarFilter {
     createValueElement() {
         const allowedCharPattern = getAllowedCharPattern(this.numberFilterParams);
         const eCondition = document.createElement('div');
-        eCondition.classList.add('ag-filter-body');
+        eCondition.classList.add('zing-filter-body');
         setAriaRole(eCondition, 'presentation');
         this.createFromToElement(eCondition, this.eValuesFrom, 'from', allowedCharPattern);
         this.createFromToElement(eCondition, this.eValuesTo, 'to', allowedCharPattern);
@@ -78,8 +78,8 @@ export class NumberFilter extends ScalarFilter {
     }
     createFromToElement(eCondition, eValues, fromTo, allowedCharPattern) {
         const eValue = this.createManagedBean(allowedCharPattern ? new ZingInputTextField({ allowedCharPattern }) : new ZingInputNumberField());
-        eValue.addCssClass(`ag-filter-${fromTo}`);
-        eValue.addCssClass('ag-filter-filter');
+        eValue.addCssClass(`zing-filter-${fromTo}`);
+        eValue.addCssClass('zing-filter-filter');
         eValues.push(eValue);
         eCondition.appendChild(eValue.getGui());
     }

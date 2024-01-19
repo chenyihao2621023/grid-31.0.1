@@ -46,11 +46,11 @@ export class SetFilter extends ProvidedFilter {
     updateUiVisibility() { }
     createBodyTemplate() {
         return /* html */ `
-            <div class="ag-set-filter">
-                <div ref="eFilterLoading" class="ag-filter-loading ag-hidden">${this.translateForSetFilter('loadingOoo')}</div>
-                <ag-input-text-field class="ag-mini-filter" ref="eMiniFilter"></ag-input-text-field>
-                <div ref="eFilterNoMatches" class="ag-filter-no-matches ag-hidden">${this.translateForSetFilter('noMatches')}</div>
-                <div ref="eSetFilterList" class="ag-set-filter-list" role="presentation"></div>
+            <div class="zing-set-filter">
+                <div ref="eFilterLoading" class="zing-filter-loading zing-hidden">${this.translateForSetFilter('loadingOoo')}</div>
+                <zing-input-text-field class="zing-mini-filter" ref="eMiniFilter"></zing-input-text-field>
+                <div ref="eFilterNoMatches" class="zing-filter-no-matches zing-hidden">${this.translateForSetFilter('noMatches')}</div>
+                <div ref="eSetFilterList" class="zing-set-filter-list" role="presentation"></div>
             </div>`;
     }
     handleKeyDown(e) {
@@ -244,7 +244,7 @@ export class SetFilter extends ProvidedFilter {
         let valueFormatter = providedValueFormatter;
         if (!valueFormatter) {
             if (keyCreator && !convertValuesToStrings && !treeList) {
-                throw new Error('AG Grid: Must supply a Value Formatter in Set Filter params when using a Key Creator unless convertValuesToStrings is enabled');
+                throw new Error('ZING Grid: Must supply a Value Formatter in Set Filter params when using a Key Creator unless convertValuesToStrings is enabled');
             }
             this.noValueFormatterSupplied = true;
             // ref data is handled by ValueFormatterService
@@ -256,7 +256,7 @@ export class SetFilter extends ProvidedFilter {
     }
     generateCreateKey(keyCreator, convertValuesToStrings, treeDataOrGrouping) {
         if (treeDataOrGrouping && !keyCreator) {
-            throw new Error('AG Grid: Must supply a Key Creator in Set Filter params when `treeList = true` on a group column, and Tree Data or Row Grouping is enabled.');
+            throw new Error('ZING Grid: Must supply a Key Creator in Set Filter params when `treeList = true` on a group column, and Tree Data or Row Grouping is enabled.');
         }
         if (keyCreator) {
             return (value, node = null) => {
@@ -360,7 +360,7 @@ export class SetFilter extends ProvidedFilter {
         }));
         const eSetFilterList = this.getRefElement('eSetFilterList');
         if (isTree) {
-            eSetFilterList.classList.add('ag-set-filter-tree-list');
+            eSetFilterList.classList.add('zing-set-filter-tree-list');
         }
         if (eSetFilterList) {
             eSetFilterList.appendChild(virtualList.getGui());

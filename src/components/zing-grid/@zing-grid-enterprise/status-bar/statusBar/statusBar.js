@@ -58,7 +58,7 @@ export class StatusBar extends Component {
         statusBarComponents.forEach(componentConfig => {
             const params = {};
             const compDetails = this.userComponentFactory.getStatusPanelCompDetails(componentConfig, params);
-            const promise = compDetails.newAgStackInstance();
+            const promise = compDetails.newZingStackInstance();
             if (!promise) {
                 return;
             }
@@ -88,10 +88,10 @@ export class StatusBar extends Component {
         });
     }
 }
-StatusBar.TEMPLATE = `<div class="ag-status-bar">
-            <div ref="eStatusBarLeft" class="ag-status-bar-left" role="status"></div>
-            <div ref="eStatusBarCenter" class="ag-status-bar-center" role="status"></div>
-            <div ref="eStatusBarRight" class="ag-status-bar-right" role="status"></div>
+StatusBar.TEMPLATE = `<div class="zing-status-bar">
+            <div ref="eStatusBarLeft" class="zing-status-bar-left" role="status"></div>
+            <div ref="eStatusBarCenter" class="zing-status-bar-center" role="status"></div>
+            <div ref="eStatusBarRight" class="zing-status-bar-right" role="status"></div>
         </div>`;
 __decorate([
     Autowired('userComponentFactory')

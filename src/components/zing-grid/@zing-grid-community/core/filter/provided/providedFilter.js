@@ -62,8 +62,8 @@ export class ProvidedFilter extends Component {
             eGui.removeEventListener('submit', this.onFormSubmit);
         }
         const templateString = /* html */ `
-            <form class="ag-filter-wrapper">
-                <div class="ag-filter-body-wrapper ag-${this.getCssIdentifier()}-body-wrapper" ref="eFilterBody">
+            <form class="zing-filter-wrapper">
+                <div class="zing-filter-body-wrapper zing-${this.getCssIdentifier()}-body-wrapper" ref="eFilterBody">
                     ${this.createBodyTemplate()}
                 </div>
             </form>`;
@@ -103,7 +103,7 @@ export class ProvidedFilter extends Component {
             // Only create the buttons panel if we need to
             if (hasButtons) {
                 this.eButtonsPanel = document.createElement('div');
-                this.eButtonsPanel.classList.add('ag-filter-apply-panel');
+                this.eButtonsPanel.classList.add('zing-filter-apply-panel');
             }
         }
         else {
@@ -144,7 +144,7 @@ export class ProvidedFilter extends Component {
                     clickListener = (e) => { this.onBtCancel(e); };
                     break;
                 default:
-                    console.warn('AG Grid: Unknown button type specified');
+                    console.warn('ZING Grid: Unknown button type specified');
                     return;
             }
             const buttonType = type === 'apply' ? 'submit' : 'button';
@@ -153,7 +153,7 @@ export class ProvidedFilter extends Component {
             `<button
                     type="${buttonType}"
                     ref="${type}FilterButton"
-                    class="ag-button ag-standard-button ag-filter-apply-panel-button"
+                    class="zing-button zing-standard-button zing-filter-apply-panel-button"
                 >${text}
                 </button>`);
             this.buttonListeners.push(this.addManagedListener(button, 'click', clickListener));
@@ -333,7 +333,7 @@ export class ProvidedFilter extends Component {
     static getDebounceMs(params, debounceDefault) {
         if (ProvidedFilter.isUseApplyButton(params)) {
             if (params.debounceMs != null) {
-                console.warn('AG Grid: debounceMs is ignored when apply button is present');
+                console.warn('ZING Grid: debounceMs is ignored when apply button is present');
             }
             return 0;
         }

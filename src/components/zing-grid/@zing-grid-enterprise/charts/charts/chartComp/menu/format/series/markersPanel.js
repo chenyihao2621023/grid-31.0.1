@@ -91,12 +91,12 @@ export class MarkersPanel extends Component {
     }
 }
 MarkersPanel.TEMPLATE = `<div>
-            <ag-group-component ref="seriesMarkersGroup">
-                <ag-select ref="seriesMarkerShapeSelect"></ag-select>
-                <ag-slider ref="seriesMarkerMinSizeSlider"></ag-slider>
-                <ag-slider ref="seriesMarkerSizeSlider"></ag-slider>
-                <ag-slider ref="seriesMarkerStrokeWidthSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="seriesMarkersGroup">
+                <zing-select ref="seriesMarkerShapeSelect"></zing-select>
+                <zing-slider ref="seriesMarkerMinSizeSlider"></zing-slider>
+                <zing-slider ref="seriesMarkerSizeSlider"></zing-slider>
+                <zing-slider ref="seriesMarkerStrokeWidthSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('seriesMarkersGroup')

@@ -5,7 +5,7 @@ import { KeyCode } from "../constants/keyCode";
 import { setAriaControls } from "../utils/aria";
 export class ZingSelect extends ZingPickerField {
     constructor(config) {
-        super(Object.assign({ pickerAriaLabelKey: 'ariaLabelSelectField', pickerAriaLabelValue: 'Select Field', pickerType: 'ag-list', className: 'ag-select', pickerIcon: 'smallDown', ariaRole: 'combobox' }, config));
+        super(Object.assign({ pickerAriaLabelKey: 'ariaLabelSelectField', pickerAriaLabelValue: 'Select Field', pickerType: 'zing-list', className: 'zing-select', pickerIcon: 'smallDown', ariaRole: 'combobox' }, config));
     }
     postConstruct() {
         super.postConstruct();
@@ -16,7 +16,7 @@ export class ZingSelect extends ZingPickerField {
         this.listComponent = this.createBean(new ZingList('select'));
         this.listComponent.setParentComponent(this);
         const eListAriaEl = this.listComponent.getAriaElement();
-        const listId = `ag-select-list-${this.listComponent.getCompId()}`;
+        const listId = `zing-select-list-${this.listComponent.getCompId()}`;
         eListAriaEl.setAttribute('id', listId);
         setAriaControls(this.getAriaElement(), eListAriaEl);
         this.listComponent.addGuiEventListener('keydown', (e) => {

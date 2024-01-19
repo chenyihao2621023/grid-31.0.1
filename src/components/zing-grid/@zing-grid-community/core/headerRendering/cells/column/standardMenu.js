@@ -40,11 +40,11 @@ let StandardMenuFactory = class StandardMenuFactory extends BeanStub {
     showPopup(column, positionCallback, containerType, eventSource) {
         const filterWrapper = this.filterManager.getOrCreateFilterWrapper(column, 'COLUMN_MENU');
         if (!filterWrapper) {
-            throw new Error('AG Grid - unable to show popup filter, filter instantiation failed');
+            throw new Error('ZING Grid - unable to show popup filter, filter instantiation failed');
         }
         const eMenu = document.createElement('div');
         setAriaRole(eMenu, 'presentation');
-        eMenu.classList.add('ag-menu');
+        eMenu.classList.add('zing-menu');
         this.tabListener = this.addManagedListener(eMenu, 'keydown', (e) => this.trapFocusWithin(e, eMenu));
         filterWrapper.guiPromise.then(gui => eMenu.appendChild(gui));
         let hidePopup;

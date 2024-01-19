@@ -13,7 +13,7 @@ const BASE_THEME = {
     baseTheme: {
         baseTheme: {
             baseTheme: {
-                baseTheme: 'ag-default',
+                baseTheme: 'zing-default',
             },
             overrides: {
                 common: {
@@ -1084,7 +1084,7 @@ const CROSSFILTER_THEME = {
     baseTheme: {
         baseTheme: {
             baseTheme: {
-                baseTheme: 'ag-default-dark',
+                baseTheme: 'zing-default-dark',
             },
             overrides: {
                 common: {

@@ -13,8 +13,8 @@ import { Autowired } from '../../../context/context';
 export class ReadOnlyFloatingFilter extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-floating-filter-input" role="presentation">
-                <ag-input-text-field ref="eFloatingFilterText"></ag-input-text-field>
+            <div class="zing-floating-filter-input" role="presentation">
+                <zing-input-text-field ref="eFloatingFilterText"></zing-input-text-field>
             </div>`);
     }
     // this is a user component, and IComponent has "public destroy()" as part of the interface.

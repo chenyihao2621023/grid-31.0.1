@@ -213,7 +213,7 @@ export class ExcelSerializingSession extends BaseGridSerializingSession {
                 case 'boolean':
                     return 'b';
                 default:
-                    console.warn(`AG Grid: Unrecognized data type for excel export [${style.id}.dataType=${style.dataType}]`);
+                    console.warn(`ZING Grid: Unrecognized data type for excel export [${style.id}.dataType=${style.dataType}]`);
             }
         }
         return type;

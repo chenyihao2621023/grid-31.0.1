@@ -10,10 +10,10 @@ export const SideBarModule = {
     version: VERSION,
     moduleName: ModuleNames.SideBarModule,
     beans: [ToolPanelColDefService, SideBarService],
-    agStackComponents: [
-        { componentName: 'AgHorizontalResize', componentClass: HorizontalResizeComp },
-        { componentName: 'AgSideBar', componentClass: SideBarComp },
-        { componentName: 'AgSideBarButtons', componentClass: SideBarButtonsComp },
+    zingStackComponents: [
+        { componentName: 'ZingHorizontalResize', componentClass: HorizontalResizeComp },
+        { componentName: 'ZingSideBar', componentClass: SideBarComp },
+        { componentName: 'ZingSideBarButtons', componentClass: SideBarButtonsComp },
     ],
     dependantModules: [
         EnterpriseCoreModule

@@ -23,7 +23,7 @@
 import '@/components/zing-grid/zing-grid-enterprise/main.js'
 import "@/components/zing-grid/zing-grid-community/styles/zing-grid.css";
 import "@/components/zing-grid/zing-grid-community/styles/zing-theme-quartz.css";
-// import "@/components/zing-grid/ag-grid-enterprise.esm.js";
+
 import { ZingGridVue } from "@/components/zing-grid/zing-grid-vue/main.js";
 window.arrayComparator = function arrayComparator(a, b) {
   if (a == null) {
@@ -90,7 +90,7 @@ export default {
       ],
       gridApi: null,
       themeClass:
-          "ag-theme-quartz",
+          "zing-theme-quartz",
       defaultColDef: {
         filter: true,
         minWidth: 100,
@@ -111,7 +111,7 @@ export default {
         this.rowData = data;
       };
 
-      fetch('https://www.ag-grid.com/example-assets/small-olympic-winners.json')
+      fetch('https://www.zing-grid.com/example-assets/small-olympic-winners.json')
           .then((resp) => resp.json())
           .then((data) => updateData(data));
     },

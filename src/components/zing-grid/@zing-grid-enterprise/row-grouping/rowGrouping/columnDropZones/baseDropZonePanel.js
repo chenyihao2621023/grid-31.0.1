@@ -8,7 +8,7 @@ import { Autowired, Component, DragSourceType, Events, KeyCode, ManagedFocusFeat
 import { DropZoneColumnComp } from "./dropZoneColumnComp";
 export class BaseDropZonePanel extends Component {
     constructor(horizontal, dropZonePurpose) {
-        super(/* html */ `<div class="ag-unselectable" role="presentation"></div>`);
+        super(/* html */ `<div class="zing-unselectable" role="presentation"></div>`);
         this.horizontal = horizontal;
         this.dropZonePurpose = dropZonePurpose;
         this.state = BaseDropZonePanel.STATE_NOT_DRAGGING;
@@ -78,7 +78,7 @@ export class BaseDropZonePanel extends Component {
     addElementClasses(el, suffix) {
         suffix = suffix ? `-${suffix}` : '';
         const direction = this.horizontal ? 'horizontal' : 'vertical';
-        el.classList.add(`ag-column-drop${suffix}`, `ag-column-drop-${direction}${suffix}`);
+        el.classList.add(`zing-column-drop${suffix}`, `zing-column-drop-${direction}${suffix}`);
     }
     setupDropTarget() {
         this.dropTarget = {
@@ -293,12 +293,12 @@ export class BaseDropZonePanel extends Component {
         if (!eGui.contains(activeElement)) {
             return -1;
         }
-        const items = Array.from(eGui.querySelectorAll('.ag-column-drop-cell'));
+        const items = Array.from(eGui.querySelectorAll('.zing-column-drop-cell'));
         return items.indexOf(activeElement);
     }
     restoreFocus(index, alternateElement) {
         const eGui = this.getGui();
-        const items = Array.from(eGui.querySelectorAll('.ag-column-drop-cell'));
+        const items = Array.from(eGui.querySelectorAll('.zing-column-drop-cell'));
         if (index === -1) {
             return;
         }
@@ -362,7 +362,7 @@ export class BaseDropZonePanel extends Component {
         _.setAriaHidden(eTitleBar, true);
         this.addElementClasses(eTitleBar, 'title-bar');
         this.addElementClasses(eGroupIcon, 'icon');
-        this.addOrRemoveCssClass('ag-column-drop-empty', this.isExistingColumnsEmpty());
+        this.addOrRemoveCssClass('zing-column-drop-empty', this.isExistingColumnsEmpty());
         eTitleBar.appendChild(eGroupIcon);
         if (!this.horizontal) {
             const eTitle = document.createElement('span');

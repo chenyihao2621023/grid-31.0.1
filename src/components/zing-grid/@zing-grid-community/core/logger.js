@@ -39,7 +39,7 @@ export class Logger {
     log(message) {
         if (this.isLoggingFunc()) {
             // tslint:disable-next-line
-            console.log('AG Grid.' + this.name + ': ' + message);
+            console.log('ZING Grid.' + this.name + ': ' + message);
         }
     }
 }

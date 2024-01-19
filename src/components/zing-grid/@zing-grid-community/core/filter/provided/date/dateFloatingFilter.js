@@ -16,8 +16,8 @@ import { debounce } from '../../../utils/function';
 export class DateFloatingFilter extends SimpleFloatingFilter {
     constructor() {
         super(/* html */ `
-            <div class="ag-floating-filter-input" role="presentation">
-                <ag-input-text-field ref="eReadOnlyText"></ag-input-text-field>
+            <div class="zing-floating-filter-input" role="presentation">
+                <zing-input-text-field ref="eReadOnlyText"></zing-input-text-field>
                 <div ref="eDateWrapper" style="display: flex;"></div>
             </div>`);
     }

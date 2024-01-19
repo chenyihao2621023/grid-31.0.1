@@ -26,7 +26,7 @@ export class ZingDialog extends ZingPanel {
     postConstruct() {
         const eGui = this.getGui();
         const { movable, resizable, maximizable } = this.config;
-        this.addCssClass('ag-dialog');
+        this.addCssClass('zing-dialog');
         super.postConstruct();
         this.addManagedListener(eGui, 'focusin', (e) => {
             if (eGui.contains(e.relatedTarget)) {
@@ -131,14 +131,14 @@ export class ZingDialog extends ZingPanel {
     }
     buildMaximizeAndMinimizeElements() {
         const maximizeButtonComp = this.maximizeButtonComp =
-            this.createBean(new Component(/* html */ `<div class="ag-dialog-button"></span>`));
+            this.createBean(new Component(/* html */ `<div class="zing-dialog-button"></span>`));
         const eGui = maximizeButtonComp.getGui();
         this.maximizeIcon = createIconNoSpan('maximize', this.gridOptionsService);
         eGui.appendChild(this.maximizeIcon);
-        this.maximizeIcon.classList.add('ag-panel-title-bar-button-icon');
+        this.maximizeIcon.classList.add('zing-panel-title-bar-button-icon');
         this.minimizeIcon = createIconNoSpan('minimize', this.gridOptionsService);
         eGui.appendChild(this.minimizeIcon);
-        this.minimizeIcon.classList.add('ag-panel-title-bar-button-icon');
+        this.minimizeIcon.classList.add('zing-panel-title-bar-button-icon');
         return maximizeButtonComp;
     }
 }

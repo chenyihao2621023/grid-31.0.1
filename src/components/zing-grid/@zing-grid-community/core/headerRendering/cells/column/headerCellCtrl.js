@@ -362,21 +362,21 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
         const listener = () => {
             // this is what makes the header go dark when it is been moved (gives impression to
             // user that the column was picked up).
-            this.comp.addOrRemoveCssClass('ag-header-cell-moving', this.column.isMoving());
+            this.comp.addOrRemoveCssClass('zing-header-cell-moving', this.column.isMoving());
         };
         this.addManagedListener(this.column, Column.EVENT_MOVING_CHANGED, listener);
         listener();
     }
     setupMenuClass() {
         const listener = () => {
-            this.comp.addOrRemoveCssClass('ag-column-menu-visible', this.column.isMenuVisible());
+            this.comp.addOrRemoveCssClass('zing-column-menu-visible', this.column.isMenuVisible());
         };
         this.addManagedListener(this.column, Column.EVENT_MENU_VISIBLE_CHANGED, listener);
         listener();
     }
     setupSortableClass() {
         const updateSortableCssClass = () => {
-            this.comp.addOrRemoveCssClass('ag-header-cell-sortable', !!this.sortable);
+            this.comp.addOrRemoveCssClass('zing-header-cell-sortable', !!this.sortable);
         };
         updateSortableCssClass();
         this.addRefreshFunction(updateSortableCssClass);
@@ -385,7 +385,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
     setupFilterClass() {
         const listener = () => {
             const isFilterActive = this.column.isFilterActive();
-            this.comp.addOrRemoveCssClass('ag-header-cell-filtered', isFilterActive);
+            this.comp.addOrRemoveCssClass('zing-header-cell-filtered', isFilterActive);
             this.refreshAria();
         };
         this.addManagedListener(this.column, Column.EVENT_FILTER_ACTIVE_CHANGED, listener);
@@ -394,7 +394,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
     setupWrapTextClass() {
         const listener = () => {
             const wrapText = !!this.column.getColDef().wrapHeaderText;
-            this.comp.addOrRemoveCssClass('ag-header-cell-wrap-text', wrapText);
+            this.comp.addOrRemoveCssClass('zing-header-cell-wrap-text', wrapText);
         };
         listener();
         this.addRefreshFunction(listener);
@@ -414,21 +414,21 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
         if (!column.isSpanHeaderHeight()) {
             eGui.style.removeProperty('top');
             eGui.style.removeProperty('height');
-            comp.addOrRemoveCssClass('ag-header-span-height', false);
-            comp.addOrRemoveCssClass('ag-header-span-total', false);
+            comp.addOrRemoveCssClass('zing-header-span-height', false);
+            comp.addOrRemoveCssClass('zing-header-span-total', false);
             return;
         }
         const { numberOfParents, isSpanningTotal } = this.getColumnGroupPaddingInfo();
-        comp.addOrRemoveCssClass('ag-header-span-height', numberOfParents > 0);
+        comp.addOrRemoveCssClass('zing-header-span-height', numberOfParents > 0);
         const headerHeight = columnModel.getColumnHeaderRowHeight();
         if (numberOfParents === 0) {
             // if spanning has stopped then need to reset these values.
-            comp.addOrRemoveCssClass('ag-header-span-total', false);
+            comp.addOrRemoveCssClass('zing-header-span-total', false);
             eGui.style.setProperty('top', `0px`);
             eGui.style.setProperty('height', `${headerHeight}px`);
             return;
         }
-        comp.addOrRemoveCssClass('ag-header-span-total', isSpanningTotal);
+        comp.addOrRemoveCssClass('zing-header-span-total', isSpanningTotal);
         const pivotMode = columnModel.isPivotMode();
         const groupHeaderHeight = pivotMode
             ? columnModel.getPivotGroupHeaderHeight()
@@ -491,7 +491,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
         const startMeasuring = () => {
             isMeasuring = true;
             measureHeight(0);
-            this.comp.addOrRemoveCssClass('ag-header-cell-auto-height', true);
+            this.comp.addOrRemoveCssClass('zing-header-cell-auto-height', true);
             stopResizeObserver = this.resizeObserverService.observeResize(wrapperElement, () => measureHeight(0));
         };
         const stopMeasuring = () => {
@@ -499,7 +499,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
             if (stopResizeObserver) {
                 stopResizeObserver();
             }
-            this.comp.addOrRemoveCssClass('ag-header-cell-auto-height', false);
+            this.comp.addOrRemoveCssClass('zing-header-cell-auto-height', false);
             stopResizeObserver = undefined;
         };
         checkMeasuring();
@@ -581,7 +581,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
                 return;
             }
             const isHovered = this.columnHoverService.isHovered(this.column);
-            this.comp.addOrRemoveCssClass('ag-column-hover', isHovered);
+            this.comp.addOrRemoveCssClass('zing-column-hover', isHovered);
         };
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_HOVER_CHANGED, listener);
         listener();
@@ -595,7 +595,7 @@ export class HeaderCellCtrl extends AbstractHeaderCellCtrl {
         this.addManagedListener(this.getGui(), 'mouseleave', listener);
     }
     setActiveHeader(active) {
-        this.comp.addOrRemoveCssClass('ag-header-active', active);
+        this.comp.addOrRemoveCssClass('zing-header-active', active);
     }
     destroy() {
         super.destroy();

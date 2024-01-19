@@ -47,7 +47,7 @@ export class ColumnToolPanel extends Component {
         this.primaryColsPanel = this.createBean(new PrimaryColsPanel());
         this.childDestroyFuncs.push(() => this.destroyBean(this.primaryColsPanel));
         this.primaryColsPanel.init(true, this.params, "toolPanelUi");
-        this.primaryColsPanel.addCssClass('ag-column-panel-column-select');
+        this.primaryColsPanel.addCssClass('zing-column-panel-column-select');
         this.appendChild(this.primaryColsPanel);
         if (this.isRowGroupingModuleLoaded()) {
             if (!this.params.suppressRowGroups) {
@@ -143,17 +143,17 @@ export class ColumnToolPanel extends Component {
                 return;
             }
             const eGui = panel.getGui();
-            panel.toggleResizable(!eGui.classList.contains('ag-last-column-drop') && !eGui.classList.contains('ag-hidden'));
+            panel.toggleResizable(!eGui.classList.contains('zing-last-column-drop') && !eGui.classList.contains('zing-hidden'));
         });
     }
     setLastVisible() {
         const eGui = this.getGui();
-        const columnDrops = Array.prototype.slice.call(eGui.querySelectorAll('.ag-column-drop'));
-        columnDrops.forEach(columnDrop => columnDrop.classList.remove('ag-last-column-drop'));
-        const columnDropEls = eGui.querySelectorAll('.ag-column-drop:not(.ag-hidden)');
+        const columnDrops = Array.prototype.slice.call(eGui.querySelectorAll('.zing-column-drop'));
+        columnDrops.forEach(columnDrop => columnDrop.classList.remove('zing-last-column-drop'));
+        const columnDropEls = eGui.querySelectorAll('.zing-column-drop:not(.zing-hidden)');
         const lastVisible = _.last(columnDropEls);
         if (lastVisible) {
-            lastVisible.classList.add('ag-last-column-drop');
+            lastVisible.classList.add('zing-last-column-drop');
         }
         this.setResizers();
     }
@@ -202,7 +202,7 @@ export class ColumnToolPanel extends Component {
         super.destroy();
     }
 }
-ColumnToolPanel.TEMPLATE = `<div class="ag-column-panel"></div>`;
+ColumnToolPanel.TEMPLATE = `<div class="zing-column-panel"></div>`;
 __decorate([
     Autowired("gridApi")
 ], ColumnToolPanel.prototype, "gridApi", void 0);

@@ -4,7 +4,7 @@ import { parseDateTimeFromString, serialiseDate } from "../utils/date";
 import { isBrowserSafari } from "../utils/browser";
 export class ZingInputDateField extends ZingInputTextField {
     constructor(config) {
-        super(config, 'ag-date-field', 'date');
+        super(config, 'zing-date-field', 'date');
     }
     postConstruct() {
         super.postConstruct();

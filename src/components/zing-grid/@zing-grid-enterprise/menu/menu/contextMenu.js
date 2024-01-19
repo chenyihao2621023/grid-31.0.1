@@ -5,8 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { _, ZingMenuItemComponent, ZingMenuList, Autowired, Bean, BeanStub, Component, ModuleNames, ModuleRegistry, Optional, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-const CSS_MENU = 'ag-menu';
-const CSS_CONTEXT_MENU_OPEN = 'ag-context-menu-open';
+const CSS_MENU = 'zing-menu';
+const CSS_CONTEXT_MENU_OPEN = 'zing-context-menu-open';
 let ContextMenuFactory = class ContextMenuFactory extends BeanStub {
     hideActiveMenu() {
         this.destroyBean(this.activeMenu);

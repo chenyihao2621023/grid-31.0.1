@@ -32,7 +32,7 @@ export class HeaderFilterCellComp extends AbstractHeaderCellComp {
             return;
         }
         // because we are providing defaultFloatingFilterType, we know it will never be undefined;
-        this.compPromise = compDetails.newAgStackInstance();
+        this.compPromise = compDetails.newZingStackInstance();
         this.compPromise.then(comp => this.afterCompCreated(comp));
     }
     destroyFloatingFilterComp() {
@@ -57,10 +57,10 @@ export class HeaderFilterCellComp extends AbstractHeaderCellComp {
         }
     }
 }
-HeaderFilterCellComp.TEMPLATE = `<div class="ag-header-cell ag-floating-filter" role="gridcell" tabindex="-1">
+HeaderFilterCellComp.TEMPLATE = `<div class="zing-header-cell zing-floating-filter" role="gridcell" tabindex="-1">
             <div ref="eFloatingFilterBody" role="presentation"></div>
-            <div class="ag-floating-filter-button ag-hidden" ref="eButtonWrapper" role="presentation">
-                <button type="button" class="ag-button ag-floating-filter-button-button" ref="eButtonShowMainFilter" tabindex="-1"></button>
+            <div class="zing-floating-filter-button zing-hidden" ref="eButtonWrapper" role="presentation">
+                <button type="button" class="zing-button zing-floating-filter-button-button" ref="eButtonShowMainFilter" tabindex="-1"></button>
             </div>
         </div>`;
 __decorate([

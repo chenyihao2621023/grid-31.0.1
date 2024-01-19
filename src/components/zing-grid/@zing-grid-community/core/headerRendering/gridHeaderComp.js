@@ -31,7 +31,7 @@ export class GridHeaderComp extends Component {
         addContainer(new HeaderRowContainerComp('right'));
     }
 }
-GridHeaderComp.TEMPLATE = `<div class="ag-header" role="presentation"/>`;
+GridHeaderComp.TEMPLATE = `<div class="zing-header" role="presentation"/>`;
 __decorate([
     PostConstruct
 ], GridHeaderComp.prototype, "postConstruct", null);

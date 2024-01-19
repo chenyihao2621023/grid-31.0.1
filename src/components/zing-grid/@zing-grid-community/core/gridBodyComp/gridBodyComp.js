@@ -11,37 +11,37 @@ import { Component } from '../widgets/component';
 import { RefSelector } from '../widgets/componentAnnotations';
 import { CSS_CLASS_FORCE_VERTICAL_SCROLL, GridBodyCtrl, RowAnimationCssClasses } from "./gridBodyCtrl";
 import { RowContainerName } from "./rowContainer/rowContainerCtrl";
-const GRID_BODY_TEMPLATE = /* html */ `<div class="ag-root ag-unselectable" role="treegrid">
-        <ag-header-root ref="gridHeader"></ag-header-root>
-        <div class="ag-floating-top" ref="eTop" role="presentation">
-            <ag-row-container ref="topLeftContainer" name="${RowContainerName.TOP_LEFT}"></ag-row-container>
-            <ag-row-container ref="topCenterContainer" name="${RowContainerName.TOP_CENTER}"></ag-row-container>
-            <ag-row-container ref="topRightContainer" name="${RowContainerName.TOP_RIGHT}"></ag-row-container>
-            <ag-row-container ref="topFullWidthContainer" name="${RowContainerName.TOP_FULL_WIDTH}"></ag-row-container>
+const GRID_BODY_TEMPLATE = /* html */ `<div class="zing-root zing-unselectable" role="treegrid">
+        <zing-header-root ref="gridHeader"></zing-header-root>
+        <div class="zing-floating-top" ref="eTop" role="presentation">
+            <zing-row-container ref="topLeftContainer" name="${RowContainerName.TOP_LEFT}"></zing-row-container>
+            <zing-row-container ref="topCenterContainer" name="${RowContainerName.TOP_CENTER}"></zing-row-container>
+            <zing-row-container ref="topRightContainer" name="${RowContainerName.TOP_RIGHT}"></zing-row-container>
+            <zing-row-container ref="topFullWidthContainer" name="${RowContainerName.TOP_FULL_WIDTH}"></zing-row-container>
         </div>
-        <div class="ag-body" ref="eBody" role="presentation">
-            <div class="ag-body-viewport" ref="eBodyViewport" role="presentation">
-                <ag-row-container ref="leftContainer" name="${RowContainerName.LEFT}"></ag-row-container>
-                <ag-row-container ref="centerContainer" name="${RowContainerName.CENTER}"></ag-row-container>
-                <ag-row-container ref="rightContainer" name="${RowContainerName.RIGHT}"></ag-row-container>
-                <ag-row-container ref="fullWidthContainer" name="${RowContainerName.FULL_WIDTH}"></ag-row-container>
+        <div class="zing-body" ref="eBody" role="presentation">
+            <div class="zing-body-viewport" ref="eBodyViewport" role="presentation">
+                <zing-row-container ref="leftContainer" name="${RowContainerName.LEFT}"></zing-row-container>
+                <zing-row-container ref="centerContainer" name="${RowContainerName.CENTER}"></zing-row-container>
+                <zing-row-container ref="rightContainer" name="${RowContainerName.RIGHT}"></zing-row-container>
+                <zing-row-container ref="fullWidthContainer" name="${RowContainerName.FULL_WIDTH}"></zing-row-container>
             </div>
-            <ag-fake-vertical-scroll></ag-fake-vertical-scroll>
+            <zing-fake-vertical-scroll></zing-fake-vertical-scroll>
         </div>
-        <div class="ag-sticky-top" ref="eStickyTop" role="presentation">
-            <ag-row-container ref="stickyTopLeftContainer" name="${RowContainerName.STICKY_TOP_LEFT}"></ag-row-container>
-            <ag-row-container ref="stickyTopCenterContainer" name="${RowContainerName.STICKY_TOP_CENTER}"></ag-row-container>
-            <ag-row-container ref="stickyTopRightContainer" name="${RowContainerName.STICKY_TOP_RIGHT}"></ag-row-container>
-            <ag-row-container ref="stickyTopFullWidthContainer" name="${RowContainerName.STICKY_TOP_FULL_WIDTH}"></ag-row-container>
+        <div class="zing-sticky-top" ref="eStickyTop" role="presentation">
+            <zing-row-container ref="stickyTopLeftContainer" name="${RowContainerName.STICKY_TOP_LEFT}"></zing-row-container>
+            <zing-row-container ref="stickyTopCenterContainer" name="${RowContainerName.STICKY_TOP_CENTER}"></zing-row-container>
+            <zing-row-container ref="stickyTopRightContainer" name="${RowContainerName.STICKY_TOP_RIGHT}"></zing-row-container>
+            <zing-row-container ref="stickyTopFullWidthContainer" name="${RowContainerName.STICKY_TOP_FULL_WIDTH}"></zing-row-container>
         </div>
-        <div class="ag-floating-bottom" ref="eBottom" role="presentation">
-            <ag-row-container ref="bottomLeftContainer" name="${RowContainerName.BOTTOM_LEFT}"></ag-row-container>
-            <ag-row-container ref="bottomCenterContainer" name="${RowContainerName.BOTTOM_CENTER}"></ag-row-container>
-            <ag-row-container ref="bottomRightContainer" name="${RowContainerName.BOTTOM_RIGHT}"></ag-row-container>
-            <ag-row-container ref="bottomFullWidthContainer" name="${RowContainerName.BOTTOM_FULL_WIDTH}"></ag-row-container>
+        <div class="zing-floating-bottom" ref="eBottom" role="presentation">
+            <zing-row-container ref="bottomLeftContainer" name="${RowContainerName.BOTTOM_LEFT}"></zing-row-container>
+            <zing-row-container ref="bottomCenterContainer" name="${RowContainerName.BOTTOM_CENTER}"></zing-row-container>
+            <zing-row-container ref="bottomRightContainer" name="${RowContainerName.BOTTOM_RIGHT}"></zing-row-container>
+            <zing-row-container ref="bottomFullWidthContainer" name="${RowContainerName.BOTTOM_FULL_WIDTH}"></zing-row-container>
         </div>
-        <ag-fake-horizontal-scroll></ag-fake-horizontal-scroll>
-        <ag-overlay-wrapper></ag-overlay-wrapper>
+        <zing-fake-horizontal-scroll></zing-fake-horizontal-scroll>
+        <zing-overlay-wrapper></zing-overlay-wrapper>
     </div>`;
 export class GridBodyComp extends Component {
     constructor() {

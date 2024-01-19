@@ -202,7 +202,7 @@ export function removeAllReferences(obj, preserveKeys = [], preDestroyLink) {
     });
     const proto = Object.getPrototypeOf(obj);
     const properties = {};
-    const msgFunc = (key) => `AG Grid: Grid API function ${key}() cannot be called as the grid has been destroyed.
+    const msgFunc = (key) => `ZING Grid: Grid API function ${key}() cannot be called as the grid has been destroyed.
     It is recommended to remove local references to the grid api. Alternatively, check gridApi.isDestroyed() to avoid calling methods against a destroyed grid.
     To run logic when the grid is about to be destroyed use the gridPreDestroy event. See: ${preDestroyLink}`;
     Object.getOwnPropertyNames(proto).forEach(key => {

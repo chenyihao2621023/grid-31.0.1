@@ -88,27 +88,27 @@ let AutoWidthCalculator = class AutoWidthCalculator extends BeanStub {
         // out one per line
         const eCloneParent = document.createElement('div');
         const eCloneParentClassList = eCloneParent.classList;
-        const isHeader = ['ag-header-cell', 'ag-header-group-cell'].some(cls => eCellClone.classList.contains(cls));
+        const isHeader = ['zing-header-cell', 'zing-header-group-cell'].some(cls => eCellClone.classList.contains(cls));
         if (isHeader) {
-            eCloneParentClassList.add('ag-header', 'ag-header-row');
+            eCloneParentClassList.add('zing-header', 'zing-header-row');
             eCloneParent.style.position = 'static';
         }
         else {
-            eCloneParentClassList.add('ag-row');
+            eCloneParentClassList.add('zing-row');
         }
-        // find parent using classes (headers have ag-header-cell, rows have ag-row), and copy classes from it.
-        // if we didn't do this, things like ag-row-level-2 would be missing if present, which sets indents
+        // find parent using classes (headers have zing-header-cell, rows have zing-row), and copy classes from it.
+        // if we didn't do this, things like zing-row-level-2 would be missing if present, which sets indents
         // onto group items.
         let pointer = eCell.parentElement;
         while (pointer) {
-            const isRow = ['ag-header-row', 'ag-row'].some(cls => pointer.classList.contains(cls));
+            const isRow = ['zing-header-row', 'zing-row'].some(cls => pointer.classList.contains(cls));
             if (isRow) {
                 for (let i = 0; i < pointer.classList.length; i++) {
                     const item = pointer.classList[i];
-                    // we skip ag-row-position-absolute, as this has structural CSS applied that stops the
+                    // we skip zing-row-position-absolute, as this has structural CSS applied that stops the
                     // element from fitting into it's parent, and we need the element to stretch the parent
                     // as we are measuring the parents width
-                    if (item != 'ag-row-position-absolute') {
+                    if (item != 'zing-row-position-absolute') {
                         eCloneParentClassList.add(item);
                     }
                 }

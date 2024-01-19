@@ -35,9 +35,9 @@ export class LoadingCellRenderer extends Component {
         super.destroy();
     }
 }
-LoadingCellRenderer.TEMPLATE = `<div class="ag-loading">
-            <span class="ag-loading-icon" ref="eLoadingIcon"></span>
-            <span class="ag-loading-text" ref="eLoadingText"></span>
+LoadingCellRenderer.TEMPLATE = `<div class="zing-loading">
+            <span class="zing-loading-icon" ref="eLoadingIcon"></span>
+            <span class="zing-loading-text" ref="eLoadingText"></span>
         </div>`;
 __decorate([
     RefSelector('eLoadingIcon')

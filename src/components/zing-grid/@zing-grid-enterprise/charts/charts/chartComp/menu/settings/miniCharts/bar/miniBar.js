@@ -1,5 +1,5 @@
 import { _Scene } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { _Scene } from "ag-charts-enterprise";
+// import { _Scene } from "zing-charts-enterprise";
 import { MiniChartWithAxes } from "../miniChartWithAxes";
 export class MiniBar extends MiniChartWithAxes {
     constructor(container, fills, strokes) {

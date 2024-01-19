@@ -61,7 +61,7 @@ export class FakeHScrollComp extends AbstractFakeScrollComp {
             rightSpacing += scrollbarWidth;
         }
         setFixedWidth(this.eRightSpacer, rightSpacing);
-        this.eRightSpacer.classList.toggle('ag-scroller-corner', rightSpacing <= scrollbarWidth);
+        this.eRightSpacer.classList.toggle('zing-scroller-corner', rightSpacing <= scrollbarWidth);
         // we pad the left based on a) if cols are pinned to the left and
         // b) if v scroll is showing on the left (happens in LTR layout only)
         let leftSpacing = this.columnModel.getDisplayedColumnsLeftWidth();
@@ -70,7 +70,7 @@ export class FakeHScrollComp extends AbstractFakeScrollComp {
             leftSpacing += scrollbarWidth;
         }
         setFixedWidth(this.eLeftSpacer, leftSpacing);
-        this.eLeftSpacer.classList.toggle('ag-scroller-corner', leftSpacing <= scrollbarWidth);
+        this.eLeftSpacer.classList.toggle('zing-scroller-corner', leftSpacing <= scrollbarWidth);
     }
     setScrollVisible() {
         const hScrollShowing = this.scrollVisibleService.isHorizontalScrollShowing();
@@ -79,7 +79,7 @@ export class FakeHScrollComp extends AbstractFakeScrollComp {
         const scrollbarWidth = hScrollShowing ? (this.gridOptionsService.getScrollbarWidth() || 0) : 0;
         const adjustedScrollbarWidth = (scrollbarWidth === 0 && invisibleScrollbar) ? 16 : scrollbarWidth;
         const scrollContainerSize = !isSuppressHorizontalScroll ? adjustedScrollbarWidth : 0;
-        this.addOrRemoveCssClass('ag-scrollbar-invisible', invisibleScrollbar);
+        this.addOrRemoveCssClass('zing-scrollbar-invisible', invisibleScrollbar);
         setFixedHeight(this.getGui(), scrollContainerSize);
         setFixedHeight(this.eViewport, scrollContainerSize);
         setFixedHeight(this.eContainer, scrollContainerSize);
@@ -95,12 +95,12 @@ export class FakeHScrollComp extends AbstractFakeScrollComp {
         setScrollLeft(this.getViewport(), value, this.enableRtl);
     }
 }
-FakeHScrollComp.TEMPLATE = `<div class="ag-body-horizontal-scroll" aria-hidden="true">
-            <div class="ag-horizontal-left-spacer" ref="eLeftSpacer"></div>
-            <div class="ag-body-horizontal-scroll-viewport" ref="eViewport">
-                <div class="ag-body-horizontal-scroll-container" ref="eContainer"></div>
+FakeHScrollComp.TEMPLATE = `<div class="zing-body-horizontal-scroll" aria-hidden="true">
+            <div class="zing-horizontal-left-spacer" ref="eLeftSpacer"></div>
+            <div class="zing-body-horizontal-scroll-viewport" ref="eViewport">
+                <div class="zing-body-horizontal-scroll-container" ref="eContainer"></div>
             </div>
-            <div class="ag-horizontal-right-spacer" ref="eRightSpacer"></div>
+            <div class="zing-horizontal-right-spacer" ref="eRightSpacer"></div>
         </div>`;
 __decorate([
     RefSelector('eLeftSpacer')

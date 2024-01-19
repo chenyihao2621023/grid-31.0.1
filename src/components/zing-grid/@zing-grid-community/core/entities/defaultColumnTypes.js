@@ -1,11 +1,11 @@
 export const DefaultColumnTypes = {
     numericColumn: {
-        headerClass: 'ag-right-aligned-header',
-        cellClass: 'ag-right-aligned-cell'
+        headerClass: 'zing-right-aligned-header',
+        cellClass: 'zing-right-aligned-cell'
     },
     rightAligned: {
-        headerClass: 'ag-right-aligned-header',
-        cellClass: 'ag-right-aligned-cell'
+        headerClass: 'zing-right-aligned-header',
+        cellClass: 'zing-right-aligned-cell'
     }
 };
 //# sourceMappingURL=defaultColumnTypes.js.map

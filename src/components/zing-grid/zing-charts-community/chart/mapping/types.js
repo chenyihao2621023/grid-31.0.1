@@ -6,7 +6,7 @@ export function optionsType(input) {
     var _a, _b, _c;
     return (_c = (_b = (_a = input.series) === null || _a === void 0 ? void 0 : _a[0]) === null || _b === void 0 ? void 0 : _b.type) !== null && _c !== void 0 ? _c : 'line';
 }
-export function isAgCartesianChartOptions(input) {
+export function isZingCartesianChartOptions(input) {
     const specifiedType = optionsType(input);
     if (specifiedType == null) {
         return true;
@@ -17,7 +17,7 @@ export function isAgCartesianChartOptions(input) {
     }
     return CHART_TYPES.isCartesian(specifiedType) || isEnterpriseCartesian(specifiedType);
 }
-export function isAgHierarchyChartOptions(input) {
+export function isZingHierarchyChartOptions(input) {
     const specifiedType = optionsType(input);
     if (specifiedType == null) {
         return false;
@@ -28,7 +28,7 @@ export function isAgHierarchyChartOptions(input) {
     }
     return CHART_TYPES.isHierarchy(specifiedType) || isEnterpriseHierarchy(specifiedType);
 }
-export function isAgPolarChartOptions(input) {
+export function isZingPolarChartOptions(input) {
     const specifiedType = optionsType(input);
     if (specifiedType == null) {
         return false;

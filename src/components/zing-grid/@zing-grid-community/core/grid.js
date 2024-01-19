@@ -123,7 +123,7 @@ export function createGrid(eGridDiv, gridOptions, params) {
     // Instead we place a getter that will log an error when accessed and direct users to the docs
     // Only apply for direct usages of createGrid, not for frameworks
     if (!Object.isFrozen(gridOptions) && !(params === null || params === void 0 ? void 0 : params.frameworkOverrides)) {
-        const apiUrl = 'https://ag-grid.com/javascript-data-grid/grid-interface/#grid-api';
+        const apiUrl = 'https://zing-grid.com/javascript-data-grid/grid-interface/#grid-api';
         Object.defineProperty(gridOptions, 'api', {
             get: () => {
                 errorOnce(`gridOptions.api is no longer supported. See ${apiUrl}.`);
@@ -220,8 +220,8 @@ export class GridCoreCreator {
         });
     }
     registerStackComponents(beans, registeredModules) {
-        const agStackComponents = this.createAgStackComponentsList(registeredModules);
-        beans.agStackComponentsRegistry.setupComponents(agStackComponents);
+        const zingStackComponents = this.createZingStackComponentsList(registeredModules);
+        beans.zingStackComponentsRegistry.setupComponents(agStackComponents);
     }
     getRegisteredModules(params, gridId) {
         const passedViaConstructor = params ? params.modules : null;
@@ -273,35 +273,35 @@ export class GridCoreCreator {
         }
         return seed;
     }
-    createAgStackComponentsList(registeredModules) {
+    createZingStackComponentsList(registeredModules) {
         let components = [
-            { componentName: 'AgCheckbox', componentClass: ZingCheckbox },
-            { componentName: 'AgRadioButton', componentClass: ZingRadioButton },
-            { componentName: 'AgToggleButton', componentClass: ZingToggleButton },
-            { componentName: 'AgInputTextField', componentClass: ZingInputTextField },
-            { componentName: 'AgInputTextArea', componentClass: ZingInputTextArea },
-            { componentName: 'AgInputNumberField', componentClass: ZingInputNumberField },
-            { componentName: 'AgInputDateField', componentClass: ZingInputDateField },
-            { componentName: 'AgInputRange', componentClass: ZingInputRange },
-            { componentName: 'AgRichSelect', componentClass: ZingRichSelect },
-            { componentName: 'AgSelect', componentClass: ZingSelect },
-            { componentName: 'AgSlider', componentClass: ZingSlider },
-            { componentName: 'AgGridBody', componentClass: GridBodyComp },
-            { componentName: 'AgHeaderRoot', componentClass: GridHeaderComp },
-            { componentName: 'AgSortIndicator', componentClass: SortIndicatorComp },
-            { componentName: 'AgPagination', componentClass: PaginationComp },
-            { componentName: 'AgPageSizeSelector', componentClass: PageSizeSelectorComp },
-            { componentName: 'AgOverlayWrapper', componentClass: OverlayWrapperComponent },
-            { componentName: 'AgGroupComponent', componentClass: ZingGroupComponent },
-            { componentName: 'AgPanel', componentClass: ZingPanel },
-            { componentName: 'AgDialog', componentClass: ZingDialog },
-            { componentName: 'AgRowContainer', componentClass: RowContainerComp },
-            { componentName: 'AgFakeHorizontalScroll', componentClass: FakeHScrollComp },
-            { componentName: 'AgFakeVerticalScroll', componentClass: FakeVScrollComp },
-            { componentName: 'AgAutocomplete', componentClass: ZingAutocomplete },
+            { componentName: 'ZingCheckbox', componentClass: ZingCheckbox },
+            { componentName: 'ZingRadioButton', componentClass: ZingRadioButton },
+            { componentName: 'ZingToggleButton', componentClass: ZingToggleButton },
+            { componentName: 'ZingInputTextField', componentClass: ZingInputTextField },
+            { componentName: 'ZingInputTextArea', componentClass: ZingInputTextArea },
+            { componentName: 'ZingInputNumberField', componentClass: ZingInputNumberField },
+            { componentName: 'ZingInputDateField', componentClass: ZingInputDateField },
+            { componentName: 'ZingInputRange', componentClass: ZingInputRange },
+            { componentName: 'ZingRichSelect', componentClass: ZingRichSelect },
+            { componentName: 'ZingSelect', componentClass: ZingSelect },
+            { componentName: 'ZingSlider', componentClass: ZingSlider },
+            { componentName: 'ZingGridBody', componentClass: GridBodyComp },
+            { componentName: 'ZingHeaderRoot', componentClass: GridHeaderComp },
+            { componentName: 'ZingSortIndicator', componentClass: SortIndicatorComp },
+            { componentName: 'ZingPagination', componentClass: PaginationComp },
+            { componentName: 'ZingPageSizeSelector', componentClass: PageSizeSelectorComp },
+            { componentName: 'ZingOverlayWrapper', componentClass: OverlayWrapperComponent },
+            { componentName: 'ZingGroupComponent', componentClass: ZingGroupComponent },
+            { componentName: 'ZingPanel', componentClass: ZingPanel },
+            { componentName: 'ZingDialog', componentClass: ZingDialog },
+            { componentName: 'ZingRowContainer', componentClass: RowContainerComp },
+            { componentName: 'ZingFakeHorizontalScroll', componentClass: FakeHScrollComp },
+            { componentName: 'ZingFakeVerticalScroll', componentClass: FakeVScrollComp },
+            { componentName: 'ZingAutocomplete', componentClass: ZingAutocomplete },
         ];
-        const moduleAgStackComps = this.extractModuleEntity(registeredModules, (module) => module.agStackComponents ? module.agStackComponents : []);
-        components = components.concat(moduleAgStackComps);
+        const moduleZingStackComps = this.extractModuleEntity(registeredModules, (module) => module.zingStackComponents ? module.zingStackComponents : []);
+        components = components.concat(moduleZingStackComps);
         return components;
     }
     createBeansList(rowModelType = 'clientSide', registeredModules, gridId) {

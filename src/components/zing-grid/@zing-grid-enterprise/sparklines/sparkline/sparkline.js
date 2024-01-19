@@ -104,7 +104,7 @@ export class Sparkline {
         const root = new _Scene.Group();
         this.rootGroup = root;
         const element = document.createElement('div');
-        element.setAttribute('class', 'ag-sparkline-wrapper');
+        element.setAttribute('class', 'zing-sparkline-wrapper');
         // initialise scene
         const scene = new _Scene.Scene({ window, document });
         this.scene = scene;
@@ -261,7 +261,7 @@ export class Sparkline {
             (this.highlightedDatum && oldHighlightedDatum && this.highlightedDatum !== oldHighlightedDatum)) {
             this.highlightDatum(closestDatum);
             this.updateCrosshairs();
-            this.scene.render().catch((e) => console.error(`AG Grid - chart rendering failed`, e));
+            this.scene.render().catch((e) => console.error(`ZING Grid - chart rendering failed`, e));
         }
         const tooltipEnabled = (_c = (_b = (_a = this.processedOptions) === null || _a === void 0 ? void 0 : _a.tooltip) === null || _b === void 0 ? void 0 : _b.enabled) !== null && _c !== void 0 ? _c : true;
         if (tooltipEnabled) {
@@ -275,7 +275,7 @@ export class Sparkline {
     onMouseOut(event) {
         this.dehighlightDatum();
         this.tooltip.toggle(false);
-        this.scene.render().catch((e) => console.error(`AG Grid - chart rendering failed`, e));
+        this.scene.render().catch((e) => console.error(`ZING Grid - chart rendering failed`, e));
     }
     // Fetch required values from the data object and process them.
     processData() {
@@ -431,7 +431,7 @@ export class Sparkline {
         this.updateAxisLine();
         // produce data joins and update selection's nodes
         this.update();
-        this.scene.render().catch((e) => console.error(`AG Grid - chart rendering failed`, e));
+        this.scene.render().catch((e) => console.error(`ZING Grid - chart rendering failed`, e));
     }
     setSparklineDimensions() {
         const { width, height, padding, seriesRect, rootGroup } = this;

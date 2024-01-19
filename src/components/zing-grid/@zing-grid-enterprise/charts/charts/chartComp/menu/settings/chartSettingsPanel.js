@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { _, Autowired, Component, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { MiniChartsContainer } from "./miniChartsContainer";
-// import { AgChartThemePalette } from "ag-charts-enterprise";
+// import { AgChartThemePalette } from "zing-charts-enterprise";
 import { ChartController } from "../../chartController";
 export class ChartSettingsPanel extends Component {
     constructor(chartController) {
@@ -34,10 +34,10 @@ export class ChartSettingsPanel extends Component {
         // setTimeout to wait until the panel animation is over and is able to scroll
         setTimeout(() => {
             const isMiniChartsContainerVisible = (miniChartsContainers) => {
-                return !miniChartsContainers.getGui().classList.contains('ag-hidden');
+                return !miniChartsContainers.getGui().classList.contains('zing-hidden');
             };
             const currentMiniChartContainer = this.miniChartsContainers.find(isMiniChartsContainerVisible);
-            const currentChart = currentMiniChartContainer.getGui().querySelector('.ag-selected');
+            const currentChart = currentMiniChartContainer.getGui().querySelector('.zing-selected');
             if (currentChart) {
                 const parent = currentChart.offsetParent;
                 if (parent) {
@@ -74,11 +74,11 @@ export class ChartSettingsPanel extends Component {
             }
         });
         _.setDisplayed(this.eNavBar, this.palettes.length > 1);
-        _.radioCssClass(this.cardItems[this.activePaletteIndex], 'ag-selected', 'ag-not-selected');
+        _.radioCssClass(this.cardItems[this.activePaletteIndex], 'zing-selected', 'zing-not-selected');
     }
     addCardLink(index) {
         const link = document.createElement('div');
-        link.classList.add('ag-chart-settings-card-item');
+        link.classList.add('zing-chart-settings-card-item');
         this.addManagedListener(link, 'click', () => {
             this.setActivePalette(index, index < this.activePaletteIndex ? 'left' : 'right');
         });
@@ -103,7 +103,7 @@ export class ChartSettingsPanel extends Component {
         if (this.isAnimating || this.activePaletteIndex === index) {
             return;
         }
-        _.radioCssClass(this.cardItems[index], 'ag-selected', 'ag-not-selected');
+        _.radioCssClass(this.cardItems[index], 'zing-selected', 'zing-not-selected');
         const currentPalette = this.miniChartsContainers[this.activePaletteIndex];
         const currentGui = currentPalette.getGui();
         const futurePalette = this.miniChartsContainers[index];
@@ -114,7 +114,7 @@ export class ChartSettingsPanel extends Component {
         const final = nextGui.style.left = `${(_.getAbsoluteWidth(this.getGui()) * multiplier)}px`;
         this.activePaletteIndex = index;
         this.isAnimating = true;
-        const animatingClass = 'ag-animating';
+        const animatingClass = 'zing-animating';
         futurePalette.setDisplayed(true);
         currentPalette.addCssClass(animatingClass);
         futurePalette.addCssClass(animatingClass);
@@ -139,15 +139,15 @@ export class ChartSettingsPanel extends Component {
         super.destroy();
     }
 }
-ChartSettingsPanel.TEMPLATE = `<div class="ag-chart-settings-wrapper">
-            <div ref="eMiniChartsContainer" class="ag-chart-settings-mini-charts-container ag-scrollable-container"></div>
-            <div ref="eNavBar" class="ag-chart-settings-nav-bar">
-                <div ref="ePrevBtn" class="ag-chart-settings-prev">
-                    <button type="button" class="ag-button ag-chart-settings-prev-button"></button>
+ChartSettingsPanel.TEMPLATE = `<div class="zing-chart-settings-wrapper">
+            <div ref="eMiniChartsContainer" class="zing-chart-settings-mini-charts-container zing-scrollable-container"></div>
+            <div ref="eNavBar" class="zing-chart-settings-nav-bar">
+                <div ref="ePrevBtn" class="zing-chart-settings-prev">
+                    <button type="button" class="zing-button zing-chart-settings-prev-button"></button>
                 </div>
-                <div ref="eCardSelector" class="ag-chart-settings-card-selector"></div>
-                <div ref="eNextBtn" class="ag-chart-settings-next">
-                    <button type="button" class="ag-button ag-chart-settings-next-button"></button>
+                <div ref="eCardSelector" class="zing-chart-settings-card-selector"></div>
+                <div ref="eNextBtn" class="zing-chart-settings-next">
+                    <button type="button" class="zing-button zing-chart-settings-next-button"></button>
                 </div>
             </div>
         </div>`;

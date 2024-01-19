@@ -93,7 +93,7 @@ export class ResizeFeature extends BeanStub {
         this.toggleColumnResizing(true);
     }
     toggleColumnResizing(resizing) {
-        this.comp.addOrRemoveCssClass('ag-column-resizing', resizing);
+        this.comp.addOrRemoveCssClass('zing-column-resizing', resizing);
     }
     // optionally inverts the drag, depending on pinned and RTL
     // note - this method is duplicated in RenderedHeaderGroupCell - should refactor out?

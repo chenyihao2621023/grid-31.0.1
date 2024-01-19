@@ -111,7 +111,7 @@ export class CellComp extends Component {
         const usingWrapper = providingControls || this.forceWrapper;
         const putWrapperIn = usingWrapper && this.eCellWrapper == null;
         if (putWrapperIn) {
-            this.eCellWrapper = loadTemplate(/* html */ `<div class="ag-cell-wrapper" role="presentation"></div>`);
+            this.eCellWrapper = loadTemplate(/* html */ `<div class="zing-cell-wrapper" role="presentation"></div>`);
             this.getGui().appendChild(this.eCellWrapper);
         }
         const takeWrapperOut = !usingWrapper && this.eCellWrapper != null;
@@ -119,11 +119,11 @@ export class CellComp extends Component {
             removeFromParent(this.eCellWrapper);
             this.eCellWrapper = undefined;
         }
-        this.addOrRemoveCssClass('ag-cell-value', !usingWrapper);
+        this.addOrRemoveCssClass('zing-cell-value', !usingWrapper);
         const usingCellValue = !editing && usingWrapper;
         const putCellValueIn = usingCellValue && this.eCellValue == null;
         if (putCellValueIn) {
-            this.eCellValue = loadTemplate(/* html */ `<span class="ag-cell-value" role="presentation"></span>`);
+            this.eCellValue = loadTemplate(/* html */ `<span class="zing-cell-value" role="presentation"></span>`);
             this.eCellWrapper.appendChild(this.eCellValue);
         }
         const takeCellValueOut = !usingCellValue && this.eCellValue != null;
@@ -168,7 +168,7 @@ export class CellComp extends Component {
     }
     createCellEditorInstance(compDetails, popup, position) {
         const versionCopy = this.editorVersion;
-        const cellEditorPromise = compDetails.newAgStackInstance();
+        const cellEditorPromise = compDetails.newZingStackInstance();
         if (!cellEditorPromise) {
             return;
         } // if empty, userComponentFactory already did a console message
@@ -245,7 +245,7 @@ export class CellComp extends Component {
             }
             // this can return null in the event that the user has switched from a renderer component to nothing, for example
             // when using a cellRendererSelect to return a component or null depending on row data etc
-            const componentPromise = compDetails.newAgStackInstance();
+            const componentPromise = compDetails.newZingStackInstance();
             const callback = this.afterCellRendererCreated.bind(this, displayComponentVersionCopy, componentClass);
             if (componentPromise) {
                 componentPromise.then(callback);
@@ -304,7 +304,7 @@ export class CellComp extends Component {
             return;
         }
         if (!cellEditor.getGui) {
-            console.warn(`AG Grid: cellEditor for column ${this.column.getId()} is missing getGui() method`);
+            console.warn(`ZING Grid: cellEditor for column ${this.column.getId()} is missing getGui() method`);
             this.beans.context.destroyBean(cellEditor);
             return;
         }
@@ -324,9 +324,9 @@ export class CellComp extends Component {
     }
     refreshEditStyles(editing, isPopup) {
         var _a;
-        this.addOrRemoveCssClass('ag-cell-inline-editing', editing && !isPopup);
-        this.addOrRemoveCssClass('ag-cell-popup-editing', editing && !!isPopup);
-        this.addOrRemoveCssClass('ag-cell-not-inline-editing', !editing || !!isPopup);
+        this.addOrRemoveCssClass('zing-cell-inline-editing', editing && !isPopup);
+        this.addOrRemoveCssClass('zing-cell-popup-editing', editing && !!isPopup);
+        this.addOrRemoveCssClass('zing-cell-not-inline-editing', !editing || !!isPopup);
         (_a = this.rowCtrl) === null || _a === void 0 ? void 0 : _a.setInlineEditingCss(editing);
     }
     addInCellEditor() {
@@ -347,7 +347,7 @@ export class CellComp extends Component {
     }
     addPopupCellEditor(params, position) {
         if (this.beans.gridOptionsService.get('editType') === 'fullRow') {
-            console.warn('AG Grid: popup cellEditor does not work with fullRowEdit - you cannot use them both ' +
+            console.warn('ZING Grid: popup cellEditor does not work with fullRowEdit - you cannot use them both ' +
                 '- either turn off fullRowEdit, or stop using popup editors.');
         }
         const cellEditor = this.cellEditor;

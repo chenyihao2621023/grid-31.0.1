@@ -67,7 +67,7 @@ export class SeriesPanel extends Component {
             }
             this.seriesWidgetMappings[this.seriesType].forEach((w) => this.widgetFuncs[w]());
         })
-            .catch(e => console.error(`AG Grid - chart rendering failed`, e));
+            .catch(e => console.error(`ZING Grid - chart rendering failed`, e));
     }
     initSeriesSelect() {
         const seriesSelect = this.seriesGroup.createManagedBean(new ZingSelect());
@@ -280,8 +280,8 @@ export class SeriesPanel extends Component {
     }
 }
 SeriesPanel.TEMPLATE = `<div>
-            <ag-group-component ref="seriesGroup">
-            </ag-group-component>
+            <zing-group-component ref="seriesGroup">
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('seriesGroup')

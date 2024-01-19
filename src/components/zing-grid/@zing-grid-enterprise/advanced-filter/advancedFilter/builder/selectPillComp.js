@@ -2,12 +2,12 @@ import { ZingRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/c
 export class SelectPillComp extends ZingRichSelect {
     constructor(params) {
         super(Object.assign(Object.assign({}, params), { template: /* html */ `
-                <div class="ag-picker-field ag-advanced-filter-builder-pill-wrapper" role="presentation">
+                <div class="zing-picker-field zing-advanced-filter-builder-pill-wrapper" role="presentation">
                     <div ref="eLabel"></div>
-                    <div ref="eWrapper" class="ag-wrapper ag-advanced-filter-builder-pill ag-picker-collapsed">
-                        <div ref="eDisplayField" class="ag-picker-field-display ag-advanced-filter-builder-pill-display"></div>
-                        <ag-input-text-field ref="eInput" class="ag-rich-select-field-input"></ag-input-text-field>
-                        <div ref="eIcon" class="ag-picker-field-icon" aria-hidden="true"></div>
+                    <div ref="eWrapper" class="zing-wrapper zing-advanced-filter-builder-pill zing-picker-collapsed">
+                        <div ref="eDisplayField" class="zing-picker-field-display zing-advanced-filter-builder-pill-display"></div>
+                        <zing-input-text-field ref="eInput" class="zing-rich-select-field-input"></zing-input-text-field>
+                        <div ref="eIcon" class="zing-picker-field-icon" aria-hidden="true"></div>
                     </div>
                 </div>` }));
         this.params = params;
@@ -45,7 +45,7 @@ export class SelectPillComp extends ZingRichSelect {
         return super.createPickerComponent();
     }
     onEnterKeyDown(event) {
-        _.stopPropagationForAgGrid(event);
+        _.stopPropagationForZingGrid(event);
         if (this.isPickerDisplayed) {
             super.onEnterKeyDown(event);
         }

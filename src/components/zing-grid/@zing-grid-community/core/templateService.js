@@ -42,7 +42,7 @@ let TemplateService = class TemplateService extends BeanStub {
     }
     handleHttpResult(httpResult, url) {
         if (httpResult.status !== 200 || httpResult.response === null) {
-            console.warn(`AG Grid: Unable to get template error ${httpResult.status} - ${url}`);
+            console.warn(`ZING Grid: Unable to get template error ${httpResult.status} - ${url}`);
             return;
         }
         // response success, so process it

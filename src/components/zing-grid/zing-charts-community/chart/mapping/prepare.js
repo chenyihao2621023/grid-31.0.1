@@ -11,7 +11,7 @@ import { resolvePartialPalette } from '../themes/chartTheme';
 import { resolveModuleConflicts, swapAxes } from './defaults';
 import { processSeriesOptions } from './prepareSeries';
 import { getChartTheme } from './themes';
-import { isAgCartesianChartOptions, isAgHierarchyChartOptions, isAgPolarChartOptions, isAxisOptionType, isSeriesOptionType, optionsType, } from './types';
+import { isZingCartesianChartOptions, isZingHierarchyChartOptions, isZingPolarChartOptions, isAxisOptionType, isSeriesOptionType, optionsType, } from './types';
 function takeColours(context, colours, maxCount) {
     const result = [];
     for (let count = 0; count < maxCount; count++) {
@@ -51,7 +51,7 @@ export function prepareOptions(options) {
     const type = optionsType(options);
     const checkSeriesType = (type) => {
         if (type != null && !(isSeriesOptionType(type) || isEnterpriseSeriesType(type) || getSeriesDefaults(type))) {
-            throw new Error(`AG Charts - unknown series type: ${type}; expected one of: ${CHART_TYPES.seriesTypes}`);
+            throw new Error(`ZING Charts - unknown series type: ${type}; expected one of: ${CHART_TYPES.seriesTypes}`);
         }
     };
     for (const { type: seriesType } of (_a = options.series) !== null && _a !== void 0 ? _a : []) {
@@ -61,13 +61,13 @@ export function prepareOptions(options) {
     }
     options = validateSoloSeries(options);
     let defaultSeriesType = 'line';
-    if (isAgCartesianChartOptions(options)) {
+    if (isZingCartesianChartOptions(options)) {
         defaultSeriesType = 'line';
     }
-    else if (isAgHierarchyChartOptions(options)) {
+    else if (isZingHierarchyChartOptions(options)) {
         defaultSeriesType = 'treemap';
     }
-    else if (isAgPolarChartOptions(options)) {
+    else if (isZingPolarChartOptions(options)) {
         defaultSeriesType = 'pie';
     }
     let defaultOverrides = getSeriesDefaults(type);

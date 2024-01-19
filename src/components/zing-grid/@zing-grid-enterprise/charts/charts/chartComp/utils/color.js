@@ -1,5 +1,5 @@
 import { _Util } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { _Util } from "ag-charts-enterprise";
+// import { _Util } from "zing-charts-enterprise";
 export function hexToRGBA(hex, alpha) {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);

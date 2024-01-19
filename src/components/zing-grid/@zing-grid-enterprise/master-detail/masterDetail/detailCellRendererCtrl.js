@@ -36,8 +36,8 @@ export class DetailCellRendererCtrl extends BeanStub {
     }
     setAutoHeightClasses() {
         const autoHeight = this.gridOptionsService.get('detailRowAutoHeight');
-        const parentClass = autoHeight ? 'ag-details-row-auto-height' : 'ag-details-row-fixed-height';
-        const detailClass = autoHeight ? 'ag-details-grid-auto-height' : 'ag-details-grid-fixed-height';
+        const parentClass = autoHeight ? 'zing-details-row-auto-height' : 'zing-details-row-fixed-height';
+        const detailClass = autoHeight ? 'zing-details-grid-auto-height' : 'zing-details-grid-fixed-height';
         this.comp.addOrRemoveCssClass(parentClass, true);
         this.comp.addOrRemoveDetailGridCssClass(detailClass, true);
     }
@@ -49,7 +49,7 @@ export class DetailCellRendererCtrl extends BeanStub {
             return;
         }
         if (providedStrategy != null) {
-            console.warn("AG Grid: invalid cellRendererParams.refreshStrategy = '" + providedStrategy +
+            console.warn("ZING Grid: invalid cellRendererParams.refreshStrategy = '" + providedStrategy +
                 "' supplied, defaulting to refreshStrategy = 'rows'.");
         }
         this.refreshStrategy = 'rows';
@@ -64,7 +64,7 @@ export class DetailCellRendererCtrl extends BeanStub {
     }
     createDetailGrid() {
         if (_.missing(this.params.detailGridOptions)) {
-            console.warn('AG Grid: could not find detail grid options for master detail, ' +
+            console.warn('ZING Grid: could not find detail grid options for master detail, ' +
                 'please set gridOptions.detailCellRendererParams.detailGridOptions');
             return;
         }
@@ -108,7 +108,7 @@ export class DetailCellRendererCtrl extends BeanStub {
         const versionThisCall = this.loadRowDataVersion;
         const userFunc = this.params.getDetailRowData;
         if (!userFunc) {
-            console.warn('AG Grid: could not find getDetailRowData for master / detail, ' +
+            console.warn('ZING Grid: could not find getDetailRowData for master / detail, ' +
                 'please set gridOptions.detailCellRendererParams.getDetailRowData');
             return;
         }

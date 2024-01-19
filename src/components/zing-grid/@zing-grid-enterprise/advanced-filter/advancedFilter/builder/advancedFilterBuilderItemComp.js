@@ -17,17 +17,17 @@ import { SelectPillComp } from "./selectPillComp";
 export class AdvancedFilterBuilderItemComp extends TabGuardComp {
     constructor(item, dragFeature, focusWrapper) {
         super(/* html */ `
-            <div class="ag-advanced-filter-builder-item-wrapper" role="presentation">
-                <div ref="eItem" class="ag-advanced-filter-builder-item" role="presentation">
-                    <div ref="eTreeLines" class="ag-advanced-filter-builder-item-tree-lines" aria-hidden="true"></div>
-                    <span ref="eDragHandle" class="ag-drag-handle" aria-hidden="true"></span>
-                    <span ref="eValidation" class="ag-advanced-filter-builder-item-button ag-advanced-filter-builder-invalid" aria-hidden="true"></span>
+            <div class="zing-advanced-filter-builder-item-wrapper" role="presentation">
+                <div ref="eItem" class="zing-advanced-filter-builder-item" role="presentation">
+                    <div ref="eTreeLines" class="zing-advanced-filter-builder-item-tree-lines" aria-hidden="true"></div>
+                    <span ref="eDragHandle" class="zing-drag-handle" aria-hidden="true"></span>
+                    <span ref="eValidation" class="zing-advanced-filter-builder-item-button zing-advanced-filter-builder-invalid" aria-hidden="true"></span>
                 </div>
-                <div ref="eButtons" class="ag-advanced-filter-builder-item-buttons">
-                    <span ref="eMoveUpButton" class="ag-advanced-filter-builder-item-button" role="button"></span>
-                    <span ref="eMoveDownButton" class="ag-advanced-filter-builder-item-button" role="button"></span>
+                <div ref="eButtons" class="zing-advanced-filter-builder-item-buttons">
+                    <span ref="eMoveUpButton" class="zing-advanced-filter-builder-item-button" role="button"></span>
+                    <span ref="eMoveDownButton" class="zing-advanced-filter-builder-item-button" role="button"></span>
                     <div ref="eAddButton" role="presentation"></div>
-                    <span ref="eRemoveButton" class="ag-advanced-filter-builder-item-button" role="button"></span>
+                    <span ref="eRemoveButton" class="zing-advanced-filter-builder-item-button" role="button"></span>
                 </div>
             </div>
         `);
@@ -45,8 +45,8 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
         this.eDragHandle.insertAdjacentElement('afterend', this.ePillWrapper.getGui());
         if (level === 0) {
             const eTreeLine = document.createElement('div');
-            eTreeLine.classList.add('ag-advanced-filter-builder-item-tree-line-vertical-bottom');
-            eTreeLine.classList.add('ag-advanced-filter-builder-item-tree-line-root');
+            eTreeLine.classList.add('zing-advanced-filter-builder-item-tree-line-vertical-bottom');
+            eTreeLine.classList.add('zing-advanced-filter-builder-item-tree-line-root');
             this.eTreeLines.appendChild(eTreeLine);
             _.setDisplayed(this.eDragHandle, false);
             _.setDisplayed(this.eButtons, false);
@@ -83,8 +83,8 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
         if (showMove) {
             this.moveUpDisabled = !!disableMoveUp;
             this.moveDownDisabled = !!disableMoveDown;
-            this.eMoveUpButton.classList.toggle('ag-advanced-filter-builder-item-button-disabled', disableMoveUp);
-            this.eMoveDownButton.classList.toggle('ag-advanced-filter-builder-item-button-disabled', disableMoveDown);
+            this.eMoveUpButton.classList.toggle('zing-advanced-filter-builder-item-button-disabled', disableMoveUp);
+            this.eMoveDownButton.classList.toggle('zing-advanced-filter-builder-item-button-disabled', disableMoveDown);
             _.setAriaDisabled(this.eMoveUpButton, !!disableMoveUp);
             _.setAriaDisabled(this.eMoveDownButton, !!disableMoveDown);
             this.moveUpTooltipFeature.refreshToolTip();
@@ -109,17 +109,17 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
         for (let i = 0; i < lastTreeLineIndex; i++) {
             const eTreeLine = children.item(i);
             if (eTreeLine) {
-                eTreeLine.classList.toggle('ag-advanced-filter-builder-item-tree-line-vertical', !treeLines[i]);
+                eTreeLine.classList.toggle('zing-advanced-filter-builder-item-tree-line-vertical', !treeLines[i]);
             }
         }
         const eTreeLine = children.item(lastTreeLineIndex);
         if (eTreeLine) {
-            eTreeLine.classList.add('ag-advanced-filter-builder-item-tree-line-horizontal');
+            eTreeLine.classList.add('zing-advanced-filter-builder-item-tree-line-horizontal');
             const isLastChild = treeLines[lastTreeLineIndex];
-            eTreeLine.classList.toggle('ag-advanced-filter-builder-item-tree-line-vertical-top', isLastChild);
-            eTreeLine.classList.toggle('ag-advanced-filter-builder-item-tree-line-vertical', !isLastChild);
+            eTreeLine.classList.toggle('zing-advanced-filter-builder-item-tree-line-vertical-top', isLastChild);
+            eTreeLine.classList.toggle('zing-advanced-filter-builder-item-tree-line-vertical', !isLastChild);
         }
-        this.eDragHandle.classList.toggle('ag-advanced-filter-builder-item-tree-line-vertical-bottom', showStartTreeLine);
+        this.eDragHandle.classList.toggle('zing-advanced-filter-builder-item-tree-line-vertical-bottom', showStartTreeLine);
     }
     setupValidation() {
         this.eValidation.appendChild(_.createIconNoSpan('advancedFilterBuilderInvalid', this.gridOptionsService));
@@ -156,7 +156,7 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
             switch (event.key) {
                 case KeyCode.ENTER:
                     event.preventDefault();
-                    _.stopPropagationForAgGrid(event);
+                    _.stopPropagationForZingGrid(event);
                     this.removeItem();
                     break;
             }
@@ -178,7 +178,7 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
                 switch (event.key) {
                     case KeyCode.ENTER:
                         event.preventDefault();
-                        _.stopPropagationForAgGrid(event);
+                        _.stopPropagationForZingGrid(event);
                         this.moveItem(true);
                         break;
                 }
@@ -198,7 +198,7 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
                 switch (event.key) {
                     case KeyCode.ENTER:
                         event.preventDefault();
-                        _.stopPropagationForAgGrid(event);
+                        _.stopPropagationForZingGrid(event);
                         this.moveItem(false);
                         break;
                 }
@@ -244,7 +244,7 @@ export class AdvancedFilterBuilderItemComp extends TabGuardComp {
             const comp = this.createBean(new SelectPillComp({
                 pickerAriaLabelKey,
                 pickerAriaLabelValue,
-                pickerType: 'ag-list',
+                pickerType: 'zing-list',
                 value: {
                     key,
                     displayValue

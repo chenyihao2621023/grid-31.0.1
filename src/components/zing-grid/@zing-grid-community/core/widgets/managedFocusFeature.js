@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { PostConstruct, Autowired } from '../context/context';
 import { KeyCode } from '../constants/keyCode';
-import { isStopPropagationForAgGrid, stopPropagationForAgGrid } from '../utils/event';
+import { isStopPropagationForZingGrid, stopPropagationForZingGrid } from '../utils/event';
 import { BeanStub } from '../context/beanStub';
 export class ManagedFocusFeature extends BeanStub {
     constructor(eFocusableElement, callbacks = {}) {
@@ -37,11 +37,11 @@ export class ManagedFocusFeature extends BeanStub {
     }
     addKeyDownListeners(eGui) {
         this.addManagedListener(eGui, 'keydown', (e) => {
-            if (e.defaultPrevented || isStopPropagationForAgGrid(e)) {
+            if (e.defaultPrevented || isStopPropagationForZingGrid(e)) {
                 return;
             }
             if (this.callbacks.shouldStopEventPropagation(e)) {
-                stopPropagationForAgGrid(e);
+                stopPropagationForZingGrid(e);
                 return;
             }
             if (e.key === KeyCode.TAB) {
@@ -53,7 +53,7 @@ export class ManagedFocusFeature extends BeanStub {
         });
     }
 }
-ManagedFocusFeature.FOCUS_MANAGED_CLASS = 'ag-focus-managed';
+ManagedFocusFeature.FOCUS_MANAGED_CLASS = 'zing-focus-managed';
 __decorate([
     Autowired('focusService')
 ], ManagedFocusFeature.prototype, "focusService", void 0);

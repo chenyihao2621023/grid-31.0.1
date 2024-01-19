@@ -522,7 +522,7 @@ export class FullStore extends RowNodeBlock {
             });
             rowNode = this.allNodesMap[id];
             if (!rowNode) {
-                console.error(`AG Grid: could not find row id=${id}, data item was not found for this id`);
+                console.error(`ZING Grid: could not find row id=${id}, data item was not found for this id`);
                 return null;
             }
         }
@@ -530,7 +530,7 @@ export class FullStore extends RowNodeBlock {
             // find rowNode using object references
             rowNode = this.allRowNodes.find(currentRowNode => currentRowNode.data === data);
             if (!rowNode) {
-                console.error(`AG Grid: could not find data item as object was not found`, data);
+                console.error(`ZING Grid: could not find data item as object was not found`, data);
                 return null;
             }
         }

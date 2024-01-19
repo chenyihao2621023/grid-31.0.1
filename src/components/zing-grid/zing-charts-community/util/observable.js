@@ -4,7 +4,7 @@ export class Observable {
     }
     addEventListener(eventType, listener) {
         if (typeof listener !== 'function') {
-            throw new Error('AG Charts - listener must be a Function');
+            throw new Error('ZING Charts - listener must be a Function');
         }
         const eventTypeListeners = this.eventListeners.get(eventType);
         if (eventTypeListeners) {

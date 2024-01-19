@@ -63,7 +63,7 @@ export function isEnterpriseHierarchy(seriesType) {
 export function verifyIfModuleExpected(module) {
     var _a;
     if (module.packageType !== 'enterprise') {
-        throw new Error('AG Charts - internal configuration error, only enterprise modules need verification.');
+        throw new Error('ZING Charts - internal configuration error, only enterprise modules need verification.');
     }
     const stub = EXPECTED_ENTERPRISE_MODULES.find((s) => {
         return (s.type === module.type &&

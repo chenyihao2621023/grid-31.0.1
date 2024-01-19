@@ -1,7 +1,7 @@
 import { _ModuleSupport } from '@/components/zing-grid/zing-charts-community/main.js';
 const { injectStyle } = _ModuleSupport;
 const watermarkStyles = `
-.ag-watermark {
+.zing-watermark {
     position: absolute;
     bottom: 20px;
     right: 25px;
@@ -9,7 +9,7 @@ const watermarkStyles = `
     font-family: Impact, sans-serif;
     font-size: 19px;
     opacity: 0.7;
-    animation: 1s ease-out 3s ag-watermark-fadeout;
+    animation: 1s ease-out 3s zing-watermark-fadeout;
     color: #9B9B9B;
 
     &::before {
@@ -27,7 +27,7 @@ const watermarkStyles = `
     }
 }
 
-@keyframes ag-watermark-fadeout {
+@keyframes zing-watermark-fadeout {
     from { opacity: 0.5; }
     to { opacity: 0; }
 }
@@ -38,7 +38,7 @@ export function injectWatermark(document, parentElement, text) {
     const textElement = document.createElement('span');
     textElement.innerText = text;
     element.addEventListener('animationend', () => parentElement.removeChild(element));
-    element.classList.add('ag-watermark');
+    element.classList.add('zing-watermark');
     element.appendChild(textElement);
     parentElement.appendChild(element);
 }

@@ -9,7 +9,7 @@ import { BeanStub } from "../context/beanStub";
 import { Autowired, PostConstruct } from "../context/context";
 import { radioCssClass } from "../utils/dom";
 import { DragAndDropService } from "./dragAndDropService";
-const LIST_ITEM_HOVERED = 'ag-list-item-hovered';
+const LIST_ITEM_HOVERED = 'zing-list-item-hovered';
 export class VirtualListDragFeature extends BeanStub {
     constructor(comp, virtualList, params) {
         super();
@@ -74,7 +74,7 @@ export class VirtualListDragFeature extends BeanStub {
         this.clearHoveredItems();
         this.lastHoveredListItem = hoveredListItem;
         radioCssClass(el, LIST_ITEM_HOVERED);
-        radioCssClass(el, `ag-item-highlight-${hoveredListItem.position}`);
+        radioCssClass(el, `zing-item-highlight-${hoveredListItem.position}`);
     }
     getListDragItem(e) {
         const virtualListGui = this.virtualList.getGui();
@@ -107,8 +107,8 @@ export class VirtualListDragFeature extends BeanStub {
         virtualListGui.querySelectorAll(`.${LIST_ITEM_HOVERED}`).forEach(el => {
             [
                 LIST_ITEM_HOVERED,
-                'ag-item-highlight-top',
-                'ag-item-highlight-bottom'
+                'zing-item-highlight-top',
+                'zing-item-highlight-bottom'
             ].forEach(cls => {
                 el.classList.remove(cls);
             });

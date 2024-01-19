@@ -23,7 +23,7 @@ let RowContainerHeightService = class RowContainerHeightService extends BeanStub
         // how tall the body is
         this.uiBodyHeight = 0;
     }
-    agWire(loggerFactory) {
+    zingWire(loggerFactory) {
         this.logger = loggerFactory.create("RowContainerHeightService");
     }
     postConstruct() {
@@ -118,7 +118,7 @@ __decorate([
 ], RowContainerHeightService.prototype, "ctrlsService", void 0);
 __decorate([
     __param(0, Qualifier("loggerFactory"))
-], RowContainerHeightService.prototype, "agWire", null);
+], RowContainerHeightService.prototype, "zingWire", null);
 __decorate([
     PostConstruct
 ], RowContainerHeightService.prototype, "postConstruct", null);

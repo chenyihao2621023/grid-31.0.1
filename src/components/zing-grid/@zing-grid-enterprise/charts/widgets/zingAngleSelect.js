@@ -176,15 +176,15 @@ export class ZingAngleSelect extends ZingAbstractLabel {
         super.destroy();
     }
 }
-ZingAngleSelect.TEMPLATE = `<div class="ag-angle-select">
+ZingAngleSelect.TEMPLATE = `<div class="zing-angle-select">
             <div ref="eLabel"></div>
-            <div class="ag-wrapper ag-angle-select-wrapper">
-                <div ref="eAngleSelectField" class="ag-angle-select-field">
-                    <div ref="eParentCircle" class="ag-angle-select-parent-circle">
-                        <div ref="eChildCircle" class="ag-angle-select-child-circle"></div>
+            <div class="zing-wrapper zing-angle-select-wrapper">
+                <div ref="eAngleSelectField" class="zing-angle-select-field">
+                    <div ref="eParentCircle" class="zing-angle-select-parent-circle">
+                        <div ref="eChildCircle" class="zing-angle-select-child-circle"></div>
                     </div>
                 </div>
-                <ag-input-number-field ref="eAngleValue"></ag-input-number-field>
+                <zing-input-number-field ref="eAngleValue"></zing-input-number-field>
             </div>
         </div>`;
 __decorate([

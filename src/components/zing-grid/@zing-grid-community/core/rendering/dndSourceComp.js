@@ -9,7 +9,7 @@ import { PostConstruct } from "../context/context";
 import { createIconNoSpan } from "../utils/icon";
 export class DndSourceComp extends Component {
     constructor(rowNode, column, eCell) {
-        super(/* html */ `<div class="ag-drag-handle ag-row-drag" draggable="true"></div>`);
+        super(/* html */ `<div class="zing-drag-handle zing-row-drag" draggable="true"></div>`);
         this.rowNode = rowNode;
         this.column = column;
         this.eCell = eCell;

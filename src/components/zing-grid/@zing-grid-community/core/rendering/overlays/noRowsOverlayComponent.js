@@ -16,5 +16,5 @@ export class NoRowsOverlayComponent extends Component {
         this.setTemplate(localisedTemplate);
     }
 }
-NoRowsOverlayComponent.DEFAULT_NO_ROWS_TEMPLATE = '<span class="ag-overlay-no-rows-center">[NO_ROWS_TO_SHOW]</span>';
+NoRowsOverlayComponent.DEFAULT_NO_ROWS_TEMPLATE = '<span class="zing-overlay-no-rows-center">[NO_ROWS_TO_SHOW]</span>';
 //# sourceMappingURL=noRowsOverlayComponent.js.map

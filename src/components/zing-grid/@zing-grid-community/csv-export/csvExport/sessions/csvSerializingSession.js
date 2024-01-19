@@ -95,7 +95,7 @@ export class CsvSerializingSession extends BaseGridSerializingSession {
             stringValue = value.toString();
         }
         else {
-            console.warn('AG Grid: unknown value type during csv conversion');
+            console.warn('ZING Grid: unknown value type during csv conversion');
             stringValue = '';
         }
         // replace each " with "" (ie two sets of double quotes is how to do double quotes in csv)

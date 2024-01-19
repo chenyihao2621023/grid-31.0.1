@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Autowired, Bean, BeanStub, Optional, PreDestroy } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { VERSION as CHARTS_VERSION } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { AgChartThemeOverrides, AgChartThemePalette, VERSION as CHARTS_VERSION } from "ag-charts-enterprise";
+// import { AgChartThemeOverrides, AgChartThemePalette, VERSION as CHARTS_VERSION } from "zing-charts-enterprise";
 import { GridChartComp } from "./chartComp/gridChartComp";
 import { upgradeChartModel } from "./chartModelMigration";
 import { VERSION as GRID_VERSION } from "../version";
@@ -24,12 +24,12 @@ let ChartService = class ChartService extends BeanStub {
     }
     updateChart(params) {
         if (this.activeChartComps.size === 0) {
-            console.warn(`AG Grid - No active charts to update.`);
+            console.warn(`ZING Grid - No active charts to update.`);
             return;
         }
         const chartComp = [...this.activeChartComps].find(chartComp => chartComp.getChartId() === params.chartId);
         if (!chartComp) {
-            console.warn(`AG Grid - Unable to update chart. No active chart found with ID: ${params.chartId}.`);
+            console.warn(`ZING Grid - Unable to update chart. No active chart found with ID: ${params.chartId}.`);
             return;
         }
         chartComp.update(params);
@@ -87,7 +87,7 @@ let ChartService = class ChartService extends BeanStub {
     }
     restoreChart(model, chartContainer) {
         if (!model) {
-            console.warn("AG Grid - unable to restore chart as no chart model is provided");
+            console.warn("ZING Grid - unable to restore chart as no chart model is provided");
             return;
         }
         if (model.version !== GRID_VERSION) {
@@ -122,14 +122,14 @@ let ChartService = class ChartService extends BeanStub {
             };
             const cellRange = getCellRange(chartAllRangeParams);
             if (!cellRange) {
-                console.warn("AG Grid - unable to create chart as there are no columns in the grid.");
+                console.warn("ZING Grid - unable to create chart as there are no columns in the grid.");
                 return;
             }
             return this.createChart(cellRange, params.chartType, params.chartThemeName, true, true, params.chartContainer, undefined, undefined, params.unlinkChart, false, model.chartOptions);
         }
         const cellRange = getCellRange(params.cellRange);
         if (!cellRange) {
-            console.warn("AG Grid - unable to create chart as no range is selected");
+            console.warn("ZING Grid - unable to create chart as no range is selected");
             return;
         }
         return this.createChart(cellRange, params.chartType, params.chartThemeName, false, params.suppressChartRanges, params.chartContainer, params.aggFunc, undefined, params.unlinkChart, false, model.chartOptions, model.chartPalette, params.seriesChartTypes);
@@ -138,7 +138,7 @@ let ChartService = class ChartService extends BeanStub {
         var _a;
         const cellRange = (_a = this.rangeService) === null || _a === void 0 ? void 0 : _a.createCellRangeFromCellRangeParams(params.cellRange);
         if (!cellRange) {
-            console.warn("AG Grid - unable to create chart as no range is selected");
+            console.warn("ZING Grid - unable to create chart as no range is selected");
             return;
         }
         return this.createChart(cellRange, params.chartType, params.chartThemeName, false, params.suppressChartRanges, params.chartContainer, params.aggFunc, params.chartThemeOverrides, params.unlinkChart, undefined, undefined, undefined, params.seriesChartTypes);
@@ -158,7 +158,7 @@ let ChartService = class ChartService extends BeanStub {
             ? this.rangeService.createCellRangeFromCellRangeParams(chartAllRangeParams)
             : undefined;
         if (!cellRange) {
-            console.warn("AG Grid - unable to create chart as there are no columns in the grid.");
+            console.warn("ZING Grid - unable to create chart as there are no columns in the grid.");
             return;
         }
         return this.createChart(cellRange, params.chartType, params.chartThemeName, true, true, params.chartContainer, undefined, params.chartThemeOverrides, params.unlinkChart);
@@ -167,7 +167,7 @@ let ChartService = class ChartService extends BeanStub {
         var _a;
         const cellRange = (_a = this.rangeService) === null || _a === void 0 ? void 0 : _a.createCellRangeFromCellRangeParams(params.cellRange);
         if (!cellRange) {
-            console.warn("AG Grid - unable to create chart as no range is selected");
+            console.warn("ZING Grid - unable to create chart as no range is selected");
             return;
         }
         const crossFiltering = true;

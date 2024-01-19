@@ -11,8 +11,8 @@ import { Events } from "../../eventKeys";
 export class CheckboxCellEditor extends PopupComponent {
     constructor() {
         super(/* html */ `
-            <div class="ag-cell-wrapper ag-cell-edit-wrapper ag-checkbox-edit">
-                <ag-checkbox role="presentation" ref="eCheckbox"></ag-checkbox>
+            <div class="zing-cell-wrapper zing-cell-edit-wrapper zing-checkbox-edit">
+                <zing-checkbox role="presentation" ref="eCheckbox"></zing-checkbox>
             </div>`);
     }
     init(params) {

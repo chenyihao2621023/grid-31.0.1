@@ -10,12 +10,12 @@ export class TotalAndFilteredRowsComp extends NameValueComp {
     postConstruct() {
         // this component is only really useful with client side row model
         if (this.gridApi.getModel().getType() !== 'clientSide') {
-            console.warn(`AG Grid: agTotalAndFilteredRowCountComponent should only be used with the client side row model.`);
+            console.warn(`ZING Grid: zingTotalAndFilteredRowCountComponent should only be used with the client side row model.`);
             return;
         }
         this.setLabel('totalAndFilteredRows', 'Rows');
-        this.addCssClass('ag-status-panel');
-        this.addCssClass('ag-status-panel-total-and-filtered-row-count');
+        this.addCssClass('zing-status-panel');
+        this.addCssClass('zing-status-panel-total-and-filtered-row-count');
         this.setDisplayed(true);
         this.addManagedListener(this.eventService, Events.EVENT_MODEL_UPDATED, this.onDataChanged.bind(this));
         this.onDataChanged();

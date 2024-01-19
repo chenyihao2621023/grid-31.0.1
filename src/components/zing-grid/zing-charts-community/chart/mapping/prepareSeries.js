@@ -9,7 +9,7 @@ export function groupSeriesByType(seriesOptions) {
     var _a, _b, _c;
     const groupMap = {};
     const stackMap = {};
-    const defaultUnstackedGroup = 'default-ag-charts-group';
+    const defaultUnstackedGroup = 'default-zing-charts-group';
     const result = [];
     for (const s of seriesOptions) {
         const type = (_a = s.type) !== null && _a !== void 0 ? _a : 'line';

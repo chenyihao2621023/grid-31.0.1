@@ -263,7 +263,7 @@ let DataTypeService = class DataTypeService extends BeanStub {
     }
     doColDefPropsPreventInference(colDef, propsToCheckForInference) {
         return [
-            ['cellRenderer', 'agSparklineCellRenderer'], ['valueGetter', undefined], ['valueParser', undefined], ['refData', undefined]
+            ['cellRenderer', 'zingSparklineCellRenderer''], ['valueGetter', undefined], ['valueParser', undefined], ['refData', undefined]
         ].some(([prop, comparisonValue]) => this.doesColDefPropPreventInference(colDef, propsToCheckForInference, prop, comparisonValue));
     }
     doesColDefPropPreventInference(colDef, checkProps, prop, comparisonValue) {
@@ -480,7 +480,7 @@ let DataTypeService = class DataTypeService extends BeanStub {
         };
         switch (dataTypeDefinition.baseDataType) {
             case 'number': {
-                colDef.cellEditor = 'agNumberCellEditor';
+                colDef.cellEditor = 'zingNumberCellEditor'';
                 if (usingSetFilter) {
                     mergeFilterParams({
                         comparator: (a, b) => {
@@ -495,8 +495,8 @@ let DataTypeService = class DataTypeService extends BeanStub {
                 break;
             }
             case 'boolean': {
-                colDef.cellEditor = 'agCheckboxCellEditor';
-                colDef.cellRenderer = 'agCheckboxCellRenderer';
+                colDef.cellEditor = 'zingCheckboxCellEditor'';
+                colDef.cellRenderer = 'zingCheckboxCellRenderer'';
                 colDef.suppressKeyboardEvent = (params) => !!params.colDef.editable && params.event.key === KeyCode.SPACE;
                 if (usingSetFilter) {
                     mergeFilterParams({
@@ -531,7 +531,7 @@ let DataTypeService = class DataTypeService extends BeanStub {
                 break;
             }
             case 'date': {
-                colDef.cellEditor = 'agDateCellEditor';
+                colDef.cellEditor = 'zingDateCellEditor'';
                 colDef.keyCreator = (params) => formatValue(params.column, params.node, params.value);
                 if (usingSetFilter) {
                     mergeFilterParams({
@@ -552,7 +552,7 @@ let DataTypeService = class DataTypeService extends BeanStub {
                 break;
             }
             case 'dateString': {
-                colDef.cellEditor = 'agDateStringCellEditor';
+                colDef.cellEditor = 'zingDateStringCellEditor'';
                 colDef.keyCreator = (params) => formatValue(params.column, params.node, params.value);
                 const convertToDate = this.getDateParserFunction();
                 if (usingSetFilter) {

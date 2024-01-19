@@ -13,7 +13,7 @@ import { Canvas, createCanvas } from 'canvas';
 import * as fs from 'fs';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
-import { mockCanvas } from 'ag-charts-test';
+import { mockCanvas } from 'zing-charts-test';
 import { AgCharts, _ModuleSupport } from '../../main';
 const { Animation, AnimationManager, resetIds } = _ModuleSupport;
 const FAILURE_THRESHOLD = Number((_a = process.env.SNAPSHOT_FAILURE_THRESHOLD) !== null && _a !== void 0 ? _a : 0.001);
@@ -35,7 +35,7 @@ export function prepareTestOptions(options, container = document.body) {
     options.height = CANVAS_HEIGHT;
     options.container = container;
     let baseTestTheme = {
-        baseTheme: 'ag-default',
+        baseTheme: 'zing-default',
         palette: {
             fills: ['#f3622d', '#fba71b', '#57b757', '#41a9c9', '#4258c9', '#9a42c8', '#c84164', '#888888'],
             strokes: ['#aa4520', '#b07513', '#3d803d', '#2d768d', '#2e3e8d', '#6c2e8c', '#8c2d46', '#5f5f5f'],
@@ -57,7 +57,7 @@ export function prepareTestOptions(options, container = document.body) {
     return options;
 }
 function isChartInstance(chartOrProxy) {
-    return chartOrProxy.constructor.name !== 'AgChartInstanceProxy' || chartOrProxy.className != null;
+    return chartOrProxy.constructor.name !== 'ZingChartInstanceProxy' || chartOrProxy.className != null;
 }
 export function deproxy(chartOrProxy) {
     return isChartInstance(chartOrProxy) ? chartOrProxy : chartOrProxy.chart;

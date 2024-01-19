@@ -47,7 +47,7 @@ export class NumberAxis extends CartesianAxis {
     }
     updateSecondaryAxisTicks(primaryTickCount) {
         if (this.dataDomain == null) {
-            throw new Error('AG Charts - dataDomain not calculated, cannot perform tick calculation.');
+            throw new Error('ZING Charts - dataDomain not calculated, cannot perform tick calculation.');
         }
         if (this.dataDomain.domain.length === 0)
             return [];

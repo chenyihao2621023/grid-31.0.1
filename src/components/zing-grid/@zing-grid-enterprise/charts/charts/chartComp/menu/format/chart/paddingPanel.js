@@ -56,12 +56,12 @@ export class PaddingPanel extends Component {
     }
 }
 PaddingPanel.TEMPLATE = `<div>
-            <ag-group-component ref="chartPaddingGroup">
-                <ag-slider ref="paddingTopSlider"></ag-slider>
-                <ag-slider ref="paddingRightSlider"></ag-slider>
-                <ag-slider ref="paddingBottomSlider"></ag-slider>
-                <ag-slider ref="paddingLeftSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="chartPaddingGroup">
+                <zing-slider ref="paddingTopSlider"></zing-slider>
+                <zing-slider ref="paddingRightSlider"></zing-slider>
+                <zing-slider ref="paddingBottomSlider"></zing-slider>
+                <zing-slider ref="paddingLeftSlider"></zing-slider>
+            </zing-group-component>
         <div>`;
 __decorate([
     RefSelector('chartPaddingGroup')

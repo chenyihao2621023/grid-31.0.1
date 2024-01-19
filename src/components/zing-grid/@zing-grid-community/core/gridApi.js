@@ -90,7 +90,7 @@ let GridApi = class GridApi {
             return false;
         }
         if (this.excelCreator.getFactoryMode() === ExcelFactoryMode.MULTI_SHEET) {
-            console.warn("AG Grid: The Excel Exporter is currently on Multi Sheet mode. End that operation by calling 'api.getMultipleSheetAsExcel()' or 'api.exportMultipleSheetsAsExcel()'");
+            console.warn("ZING Grid: The Excel Exporter is currently on Multi Sheet mode. End that operation by calling 'api.getMultipleSheetAsExcel()' or 'api.exportMultipleSheetsAsExcel()'");
             return false;
         }
         return true;
@@ -148,7 +148,7 @@ let GridApi = class GridApi {
         }
     }
     logMissingRowModel(apiMethod, ...requiredRowModels) {
-        console.error(`AG Grid: api.${apiMethod} can only be called when gridOptions.rowModelType is ${requiredRowModels.join(' or ')}`);
+        console.error(`ZING Grid: api.${apiMethod} can only be called when gridOptions.rowModelType is ${requiredRowModels.join(' or ')}`);
     }
     /** Gets the number of top pinned rows. */
     getPinnedTopRowCount() {
@@ -330,11 +330,11 @@ let GridApi = class GridApi {
     setNodesSelected(params) {
         const allNodesValid = params.nodes.every(node => {
             if (node.rowPinned) {
-                console.warn('AG Grid: cannot select pinned rows');
+                console.warn('ZING Grid: cannot select pinned rows');
                 return false;
             }
             if (node.id === undefined) {
-                console.warn('AG Grid: cannot select node until id for node is known');
+                console.warn('ZING Grid: cannot select node until id for node is known');
                 return false;
             }
             return true;
@@ -678,7 +678,7 @@ let GridApi = class GridApi {
     resetRowHeights() {
         if (exists(this.clientSideRowModel)) {
             if (this.columnModel.isAutoRowHeightActive()) {
-                console.warn('AG Grid: calling gridApi.resetRowHeights() makes no sense when using Auto Row Height.');
+                console.warn('ZING Grid: calling gridApi.resetRowHeights() makes no sense when using Auto Row Height.');
                 return;
             }
             this.clientSideRowModel.resetRowHeights();
@@ -697,7 +697,7 @@ let GridApi = class GridApi {
                 this.serverSideRowModel.setRowCount(rowCount, maxRowFound);
                 return;
             }
-            console.error('AG Grid: setRowCount cannot be used while using row grouping.');
+            console.error('ZING Grid: setRowCount cannot be used while using row grouping.');
             return;
         }
         if (this.infiniteRowModel) {
@@ -946,7 +946,7 @@ let GridApi = class GridApi {
             column = this.columnModel.getPrimaryColumn(colKey);
         }
         if (!column) {
-            console.error(`AG Grid: column '${colKey}' not found`);
+            console.error(`ZING Grid: column '${colKey}' not found`);
             return;
         }
         this.menuFactory.showMenuAfterMouseEvent(column, mouseEvent);
@@ -992,7 +992,7 @@ let GridApi = class GridApi {
     startEditingCell(params) {
         const column = this.columnModel.getGridColumn(params.colKey);
         if (!column) {
-            console.warn(`AG Grid: no column found for ${params.colKey}`);
+            console.warn(`ZING Grid: no column found for ${params.colKey}`);
             return;
         }
         const cellPosition = {
@@ -1058,7 +1058,7 @@ let GridApi = class GridApi {
         const startRow = (_a = params.startRow) !== null && _a !== void 0 ? _a : 0;
         const route = (_b = params.route) !== null && _b !== void 0 ? _b : [];
         if (startRow < 0) {
-            console.warn(`AG Grid: invalid value ${params.startRow} for startRow, the value should be >= 0`);
+            console.warn(`ZING Grid: invalid value ${params.startRow} for startRow, the value should be >= 0`);
             return;
         }
         if (this.serverSideRowModel) {

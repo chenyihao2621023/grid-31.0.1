@@ -90,7 +90,7 @@ export class ToolPanelFilterComp extends Component {
         this.expandedCallback();
     }
     addFilterElement() {
-        const filterPanelWrapper = _.loadTemplate(/* html */ `<div class="ag-filter-toolpanel-instance-filter"></div>`);
+        const filterPanelWrapper = _.loadTemplate(/* html */ `<div class="zing-filter-toolpanel-instance-filter"></div>`);
         const filterWrapper = this.filterManager.getOrCreateFilterWrapper(this.column, 'TOOLBAR');
         if (!filterWrapper) {
             return;
@@ -105,7 +105,7 @@ export class ToolPanelFilterComp extends Component {
                 if (filterContainerEl) {
                     filterPanelWrapper.appendChild(filterContainerEl);
                 }
-                this.agFilterToolPanelBody.appendChild(filterPanelWrapper);
+                this.zingFilterToolPanelBody.appendChild(filterPanelWrapper);
                 if (filter.afterGuiAttached) {
                     filter.afterGuiAttached({ container: 'toolPanel' });
                 }
@@ -126,7 +126,7 @@ export class ToolPanelFilterComp extends Component {
         this.expandedCallback();
     }
     removeFilterElement() {
-        _.clearElement(this.agFilterToolPanelBody);
+        _.clearElement(this.zingFilterToolPanelBody);
     }
     isExpanded() {
         return this.expanded;
@@ -166,13 +166,13 @@ export class ToolPanelFilterComp extends Component {
     }
 }
 ToolPanelFilterComp.TEMPLATE = `
-        <div class="ag-filter-toolpanel-instance">
-            <div class="ag-filter-toolpanel-header ag-filter-toolpanel-instance-header" ref="eFilterToolPanelHeader" role="button" aria-expanded="false">
-                <div ref="eExpand" class="ag-filter-toolpanel-expand"></div>
-                <span ref="eFilterName" class="ag-header-cell-text"></span>
-                <span ref="eFilterIcon" class="ag-header-icon ag-filter-icon ag-filter-toolpanel-instance-header-icon" aria-hidden="true"></span>
+        <div class="zing-filter-toolpanel-instance">
+            <div class="zing-filter-toolpanel-header zing-filter-toolpanel-instance-header" ref="eFilterToolPanelHeader" role="button" aria-expanded="false">
+                <div ref="eExpand" class="zing-filter-toolpanel-expand"></div>
+                <span ref="eFilterName" class="zing-header-cell-text"></span>
+                <span ref="eFilterIcon" class="zing-header-icon zing-filter-icon zing-filter-toolpanel-instance-header-icon" aria-hidden="true"></span>
             </div>
-            <div class="ag-filter-toolpanel-instance-body ag-filter" ref="agFilterToolPanelBody"></div>
+            <div class="zing-filter-toolpanel-instance-body zing-filter" ref="zingFilterToolPanelBody"></div>
         </div>`;
 __decorate([
     RefSelector('eFilterToolPanelHeader')
@@ -181,8 +181,8 @@ __decorate([
     RefSelector('eFilterName')
 ], ToolPanelFilterComp.prototype, "eFilterName", void 0);
 __decorate([
-    RefSelector('agFilterToolPanelBody')
-], ToolPanelFilterComp.prototype, "agFilterToolPanelBody", void 0);
+    RefSelector('zingFilterToolPanelBody'')
+], ToolPanelFilterComp.prototype, "zingFilterToolPanelBody", void 0);
 __decorate([
     RefSelector('eFilterIcon')
 ], ToolPanelFilterComp.prototype, "eFilterIcon", void 0);

@@ -160,7 +160,7 @@ export class LicenseManager {
     }
     isWebsiteUrl() {
         const hostname = this.getHostname();
-        return hostname.match(/^((?:[\w-]+\.)?ag-grid\.com)$/) !== null;
+        return hostname.match(/^((?:[\w-]+\.)?zing-grid\.com)$/) !== null;
     }
     isLocalhost() {
         const hostname = this.getHostname();
@@ -260,7 +260,7 @@ export class LicenseManager {
         if (exists(incorrectLicenseType) && incorrectLicenseType && licenseType === 'GRID') {
             console.error('* The license supplied is for AG Grid Enterprise Only and does not cover AG Charts Enterprise                    *');
         }
-        console.error('* Your license for AG Charts Enterprise is not valid - please contact info@ag-grid.com to obtain a valid license. *');
+        console.error('* Your license for AG Charts Enterprise is not valid - please contact info@zing-grid.com to obtain a valid license. *');
         console.error('*****************************************************************************************************************');
         console.error('*****************************************************************************************************************');
         this.watermarkMessage = 'Invalid License';
@@ -270,7 +270,7 @@ export class LicenseManager {
         console.error('***************************************** AG Charts Enterprise License *******************************************');
         console.error('*****************************************   Trial Period Expired.    *******************************************');
         console.error(`* Your license for AG Charts Enterprise expired on ${formattedExpiryDate}.                                                *`);
-        console.error('* Please email info@ag-grid.com to purchase a license.                                                         *');
+        console.error('* Please email info@zing-grid.com to purchase a license.                                                         *');
         console.error('****************************************************************************************************************');
         console.error('****************************************************************************************************************');
         this.watermarkMessage = 'Trial Period Expired';
@@ -281,7 +281,7 @@ export class LicenseManager {
         console.error('****************************************** License Key Not Found ***********************************************');
         console.error('* All AG Charts Enterprise features are unlocked.                                                                *');
         console.error('* This is an evaluation only version, it is not licensed for development projects intended for production.     *');
-        console.error('* If you want to hide the watermark, please email info@ag-grid.com for a trial license.                        *');
+        console.error('* If you want to hide the watermark, please email info@zing-grid.com for a trial license.                        *');
         console.error('****************************************************************************************************************');
         console.error('****************************************************************************************************************');
         this.watermarkMessage = 'For Trial Use Only';
@@ -298,7 +298,7 @@ export class LicenseManager {
         console.error(`* license end date. The license key that you have expires on ${formattedExpiryDate}, however the version of AG Charts you    *`);
         console.error(`* are trying to use was released on ${formattedReleaseDate}.                                                               *`);
         console.error('*                                                                                                                          *');
-        console.error('* Please contact info@ag-grid.com to renew your subscription to new versions and get a new license key to work with this   *');
+        console.error('* Please contact info@zing-grid.com to renew your subscription to new versions and get a new license key to work with this   *');
         console.error('* version of AG Charts.                                                                                                      *');
         console.error('****************************************************************************************************************************');
         console.error('****************************************************************************************************************************');

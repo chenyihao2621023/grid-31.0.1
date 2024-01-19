@@ -94,5 +94,5 @@ export class SparklineTooltip {
         }
     }
 }
-SparklineTooltip.class = 'ag-sparkline-tooltip';
+SparklineTooltip.class = 'zing-sparkline-tooltip';
 //# sourceMappingURL=sparklineTooltip.js.map

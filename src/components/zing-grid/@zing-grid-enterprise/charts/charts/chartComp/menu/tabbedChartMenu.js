@@ -26,14 +26,14 @@ export class TabbedChartMenu extends Component {
         });
         this.tabbedLayout = new TabbedLayout({
             items: this.tabs,
-            cssClass: 'ag-chart-tabbed-menu',
+            cssClass: 'zing-chart-tabbed-menu',
             keepScrollPosition: true
         });
         this.getContext().createBean(this.tabbedLayout);
     }
     createTab(name, title, TabPanelClass) {
         const eWrapperDiv = document.createElement('div');
-        eWrapperDiv.classList.add('ag-chart-tab', `ag-chart-${title}`);
+        eWrapperDiv.classList.add('zing-chart-tab', `zing-chart-${title}`);
         const comp = new TabPanelClass(this.chartController, this.chartOptionsService);
         this.getContext().createBean(comp);
         eWrapperDiv.appendChild(comp.getGui());
@@ -47,7 +47,7 @@ export class TabbedChartMenu extends Component {
                 titleLabel: translatedTitle,
                 bodyPromise: AgPromise.resolve(eWrapperDiv),
                 getScrollableContainer: () => {
-                    const scrollableContainer = eWrapperDiv.querySelector('.ag-scrollable-container');
+                    const scrollableContainer = eWrapperDiv.querySelector('.zing-scrollable-container');
                     return (scrollableContainer || eWrapperDiv);
                 },
                 name

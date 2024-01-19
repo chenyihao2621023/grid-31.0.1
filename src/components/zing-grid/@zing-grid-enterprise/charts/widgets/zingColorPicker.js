@@ -2,7 +2,7 @@ import { ZingColorPanel } from "./zingColorPanel";
 import { ZingPickerField, ZingDialog } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class ZingColorPicker extends ZingPickerField {
     constructor(config) {
-        super(Object.assign({ pickerAriaLabelKey: 'ariaLabelColorPicker', pickerAriaLabelValue: 'Color Picker', pickerType: 'ag-list', className: 'ag-color-picker', pickerIcon: 'colorPicker' }, config));
+        super(Object.assign({ pickerAriaLabelKey: 'ariaLabelColorPicker', pickerAriaLabelValue: 'Color Picker', pickerType: 'zing-list', className: 'zing-color-picker', pickerIcon: 'colorPicker' }, config));
         if (config && config.color) {
             this.value = config.color;
         }
@@ -30,7 +30,7 @@ export class ZingColorPicker extends ZingPickerField {
     renderAndPositionPicker() {
         const pickerComponent = this.pickerComponent;
         const colorPanel = this.createBean(new ZingColorPanel({ picker: this }));
-        pickerComponent.addCssClass('ag-color-dialog');
+        pickerComponent.addCssClass('zing-color-dialog');
         colorPanel.addDestroyFunc(() => {
             if (pickerComponent.isAlive()) {
                 this.destroyBean(pickerComponent);

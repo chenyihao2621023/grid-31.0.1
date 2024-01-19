@@ -145,7 +145,7 @@ export class HeaderComp extends Component {
         }
         this.currentSuppressMenuHide = this.shouldSuppressMenuHide();
         this.addManagedListener(this.eMenu, 'click', () => this.showMenu(this.eMenu));
-        this.eMenu.classList.toggle('ag-header-menu-always-show', this.currentSuppressMenuHide);
+        this.eMenu.classList.toggle('zing-header-menu-always-show', this.currentSuppressMenuHide);
     }
     showMenu(eventSource) {
         if (!eventSource) {
@@ -180,7 +180,7 @@ export class HeaderComp extends Component {
         if (this.eLabel) {
             this.addManagedListener(this.eLabel, 'click', (event) => {
                 // sometimes when moving a column via dragging, this was also firing a clicked event.
-                // here is issue raised by user: https://ag-grid.zendesk.com/agent/tickets/1076
+                // here is issue raised by user: https://zing-grid.zendesk.com/agent/tickets/1076
                 // this check stops sort if a) column is moving or b) column moved less than 200ms ago (so caters for race condition)
                 const moving = this.params.column.isMoving();
                 const nowTime = new Date().getTime();
@@ -195,15 +195,15 @@ export class HeaderComp extends Component {
             });
         }
         const onSortingChanged = () => {
-            this.addOrRemoveCssClass('ag-header-cell-sorted-asc', this.params.column.isSortAscending());
-            this.addOrRemoveCssClass('ag-header-cell-sorted-desc', this.params.column.isSortDescending());
-            this.addOrRemoveCssClass('ag-header-cell-sorted-none', this.params.column.isSortNone());
+            this.addOrRemoveCssClass('zing-header-cell-sorted-asc', this.params.column.isSortAscending());
+            this.addOrRemoveCssClass('zing-header-cell-sorted-desc', this.params.column.isSortDescending());
+            this.addOrRemoveCssClass('zing-header-cell-sorted-none', this.params.column.isSortNone());
             if (this.params.column.getColDef().showRowGroup) {
                 const sourceColumns = this.columnModel.getSourceColumnsForGroupColumn(this.params.column);
                 // this == is intentional, as it allows null and undefined to match, which are both unsorted states
                 const sortDirectionsMatch = sourceColumns === null || sourceColumns === void 0 ? void 0 : sourceColumns.every(sourceCol => this.params.column.getSort() == sourceCol.getSort());
                 const isMultiSorting = !sortDirectionsMatch;
-                this.addOrRemoveCssClass('ag-header-cell-sorted-mixed', isMultiSorting);
+                this.addOrRemoveCssClass('zing-header-cell-sorted-mixed', isMultiSorting);
             }
         };
         this.addManagedListener(this.eventService, Events.EVENT_SORT_CHANGED, onSortingChanged);
@@ -221,12 +221,12 @@ export class HeaderComp extends Component {
         setDisplayed(this.eFilter, filterPresent, { skipAriaHidden: true });
     }
 }
-HeaderComp.TEMPLATE = `<div class="ag-cell-label-container" role="presentation">
-            <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true"></span>
-            <div ref="eLabel" class="ag-header-cell-label" role="presentation">
-                <span ref="eText" class="ag-header-cell-text"></span>
-                <span ref="eFilter" class="ag-header-icon ag-header-label-icon ag-filter-icon" aria-hidden="true"></span>
-                <ag-sort-indicator ref="eSortIndicator"></ag-sort-indicator>
+HeaderComp.TEMPLATE = `<div class="zing-cell-label-container" role="presentation">
+            <span ref="eMenu" class="zing-header-icon zing-header-cell-menu-button" aria-hidden="true"></span>
+            <div ref="eLabel" class="zing-header-cell-label" role="presentation">
+                <span ref="eText" class="zing-header-cell-text"></span>
+                <span ref="eFilter" class="zing-header-icon zing-header-label-icon zing-filter-icon" aria-hidden="true"></span>
+                <zing-sort-indicator ref="eSortIndicator"></zing-sort-indicator>
             </div>
         </div>`;
 __decorate([

@@ -39,13 +39,13 @@ export class PrimaryColsHeaderPanel extends Component {
     onFunctionsReadOnlyPropChanged() {
         const readOnly = this.gridOptionsService.get('functionsReadOnly');
         this.eSelect.setReadOnly(readOnly);
-        this.eSelect.addOrRemoveCssClass('ag-column-select-column-readonly', readOnly);
+        this.eSelect.addOrRemoveCssClass('zing-column-select-column-readonly', readOnly);
     }
     init(params) {
         this.params = params;
         const readOnly = this.gridOptionsService.get('functionsReadOnly');
         this.eSelect.setReadOnly(readOnly);
-        this.eSelect.addOrRemoveCssClass('ag-column-select-column-readonly', readOnly);
+        this.eSelect.addOrRemoveCssClass('zing-column-select-column-readonly', readOnly);
         if (this.columnModel.isReady()) {
             this.showOrHideOptions();
         }
@@ -102,10 +102,10 @@ export class PrimaryColsHeaderPanel extends Component {
     }
 }
 PrimaryColsHeaderPanel.DEBOUNCE_DELAY = 300;
-PrimaryColsHeaderPanel.TEMPLATE = `<div class="ag-column-select-header" role="presentation">
-            <div ref="eExpand" class="ag-column-select-header-icon"></div>
-            <ag-checkbox ref="eSelect" class="ag-column-select-header-checkbox"></ag-checkbox>
-            <ag-input-text-field class="ag-column-select-header-filter-wrapper" ref="eFilterTextField"></ag-input-text-field>
+PrimaryColsHeaderPanel.TEMPLATE = `<div class="zing-column-select-header" role="presentation">
+            <div ref="eExpand" class="zing-column-select-header-icon"></div>
+            <zing-checkbox ref="eSelect" class="zing-column-select-header-checkbox"></zing-checkbox>
+            <zing-input-text-field class="zing-column-select-header-filter-wrapper" ref="eFilterTextField"></zing-input-text-field>
         </div>`;
 __decorate([
     Autowired('columnModel')

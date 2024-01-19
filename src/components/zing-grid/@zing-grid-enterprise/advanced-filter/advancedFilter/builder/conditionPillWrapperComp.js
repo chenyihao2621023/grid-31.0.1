@@ -9,7 +9,7 @@ import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class ConditionPillWrapperComp extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-advanced-filter-builder-item-condition" role="presentation"></div>
+            <div class="zing-advanced-filter-builder-item-condition" role="presentation"></div>
         `);
         this.validationMessage = null;
     }
@@ -45,7 +45,7 @@ export class ConditionPillWrapperComp extends Component {
         this.eColumnPill = this.createPill({
             key: this.getColumnKey(),
             displayValue: (_a = this.getColumnDisplayValue()) !== null && _a !== void 0 ? _a : this.getDefaultColumnDisplayValue(),
-            cssClass: 'ag-advanced-filter-builder-column-pill',
+            cssClass: 'zing-advanced-filter-builder-column-pill',
             isSelect: true,
             getEditorParams: () => ({ values: this.advancedFilterExpressionService.getColumnAutocompleteEntries() }),
             update: (key) => this.setColumnKey(key),
@@ -66,7 +66,7 @@ export class ConditionPillWrapperComp extends Component {
         this.eOperatorPill = this.createPill({
             key: this.getOperatorKey(),
             displayValue: (_a = this.getOperatorDisplayValue()) !== null && _a !== void 0 ? _a : this.getDefaultOptionSelectValue(),
-            cssClass: 'ag-advanced-filter-builder-option-pill',
+            cssClass: 'zing-advanced-filter-builder-option-pill',
             isSelect: true,
             getEditorParams: () => ({ values: this.getOperatorAutocompleteEntries() }),
             update: (key) => this.setOperatorKey(key),
@@ -83,7 +83,7 @@ export class ConditionPillWrapperComp extends Component {
             key,
             displayValue: key,
             baseCellDataType: this.baseCellDataType,
-            cssClass: 'ag-advanced-filter-builder-value-pill',
+            cssClass: 'zing-advanced-filter-builder-value-pill',
             isSelect: false,
             update: (key) => this.setOperand(key),
             ariaLabel: this.advancedFilterExpressionService.translate('ariaAdvancedFilterBuilderValue')

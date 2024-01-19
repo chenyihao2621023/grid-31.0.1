@@ -1,11 +1,11 @@
 export const defaultTooltipCss = `
-.ag-sparkline-tooltip-wrapper {
+.zing-sparkline-tooltip-wrapper {
     position: absolute;
     user-select: none;
     pointer-events: none;
 }
 
-.ag-sparkline-tooltip {
+.zing-sparkline-tooltip {
     position: relative;
     font: 12px arial,sans-serif;
     border-radius: 2px;
@@ -18,21 +18,21 @@ export const defaultTooltipCss = `
     color: rgba(0,0,0, 0.67);
 }
 
-.ag-sparkline-tooltip-content {
+.zing-sparkline-tooltip-content {
     padding: 0 7px;
     opacity: 1;
 }
 
-.ag-sparkline-tooltip-title {
+.zing-sparkline-tooltip-title {
     padding-left: 7px;
     opacity: 1;
 }
 
-.ag-sparkline-tooltip-wrapper-hidden {
+.zing-sparkline-tooltip-wrapper-hidden {
     top: -10000px !important;
 }
 
-.ag-sparkline-wrapper {
+.zing-sparkline-wrapper {
     box-sizing: border-box;
     overflow: hidden;
 }

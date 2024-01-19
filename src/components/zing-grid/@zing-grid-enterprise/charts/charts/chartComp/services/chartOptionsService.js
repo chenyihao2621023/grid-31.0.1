@@ -32,7 +32,7 @@ export class ChartOptionsService extends BeanStub {
     awaitChartOptionUpdate(func) {
         const chart = this.chartController.getChartProxy().getChart();
         chart.waitForUpdate().then(() => func())
-            .catch((e) => console.error(`AG Grid - chart update failed`, e));
+            .catch((e) => console.error(`ZING Grid - chart update failed`, e));
     }
     getAxisProperty(expression) {
         var _a;

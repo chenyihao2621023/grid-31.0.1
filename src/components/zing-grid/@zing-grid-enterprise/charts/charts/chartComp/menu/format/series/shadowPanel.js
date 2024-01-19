@@ -51,12 +51,12 @@ export class ShadowPanel extends Component {
     }
 }
 ShadowPanel.TEMPLATE = `<div>
-            <ag-group-component ref="shadowGroup">
-                <ag-color-picker ref="shadowColorPicker"></ag-color-picker>
-                <ag-slider ref="shadowBlurSlider"></ag-slider>
-                <ag-slider ref="shadowXOffsetSlider"></ag-slider>
-                <ag-slider ref="shadowYOffsetSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="shadowGroup">
+                <zing-color-picker ref="shadowColorPicker"></zing-color-picker>
+                <zing-slider ref="shadowBlurSlider"></zing-slider>
+                <zing-slider ref="shadowXOffsetSlider"></zing-slider>
+                <zing-slider ref="shadowYOffsetSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('shadowGroup')

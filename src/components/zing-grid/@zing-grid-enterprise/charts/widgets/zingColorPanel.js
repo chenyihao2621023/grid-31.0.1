@@ -229,7 +229,7 @@ export class ZingColorPanel extends Component {
     initRecentColors() {
         const recentColors = ZingColorPanel.recentColors;
         const innerHtml = recentColors.map((color, index) => {
-            return ( /* html */`<div class="ag-recent-color" id=${index} style="background-color: ${color}; width: 15px; height: 15px;" recent-color="${color}" tabIndex="${this.tabIndex}"></div>`);
+            return ( /* html */`<div class="zing-recent-color" id=${index} style="background-color: ${color}; width: 15px; height: 15px;" recent-color="${color}" tabIndex="${this.tabIndex}"></div>`);
         });
         this.recentColors.innerHTML = innerHtml.join('');
     }
@@ -277,24 +277,24 @@ export class ZingColorPanel extends Component {
 }
 ZingColorPanel.maxRecentColors = 8;
 ZingColorPanel.recentColors = [];
-ZingColorPanel.TEMPLATE = `<div class="ag-color-panel" tabindex="-1">
-            <div ref="spectrumColor" class="ag-spectrum-color">
-                <div class="ag-spectrum-sat ag-spectrum-fill">
-                    <div ref="spectrumVal" class="ag-spectrum-val ag-spectrum-fill">
-                        <div ref="spectrumDragger" class="ag-spectrum-dragger"></div>
+ZingColorPanel.TEMPLATE = `<div class="zing-color-panel" tabindex="-1">
+            <div ref="spectrumColor" class="zing-spectrum-color">
+                <div class="zing-spectrum-sat zing-spectrum-fill">
+                    <div ref="spectrumVal" class="zing-spectrum-val zing-spectrum-fill">
+                        <div ref="spectrumDragger" class="zing-spectrum-dragger"></div>
                     </div>
                 </div>
             </div>
-            <div class="ag-spectrum-tools">
-                <div ref="spectrumHue" class="ag-spectrum-hue ag-spectrum-tool">
-                    <div class="ag-spectrum-hue-background"></div>
-                    <div ref="spectrumHueSlider" class="ag-spectrum-slider"></div>
+            <div class="zing-spectrum-tools">
+                <div ref="spectrumHue" class="zing-spectrum-hue zing-spectrum-tool">
+                    <div class="zing-spectrum-hue-background"></div>
+                    <div ref="spectrumHueSlider" class="zing-spectrum-slider"></div>
                 </div>
-                <div ref="spectrumAlpha" class="ag-spectrum-alpha ag-spectrum-tool">
-                    <div class="ag-spectrum-alpha-background"></div>
-                    <div ref="spectrumAlphaSlider" class="ag-spectrum-slider"></div>
+                <div ref="spectrumAlpha" class="zing-spectrum-alpha zing-spectrum-tool">
+                    <div class="zing-spectrum-alpha-background"></div>
+                    <div ref="spectrumAlphaSlider" class="zing-spectrum-slider"></div>
                 </div>
-                <div ref="recentColors" class="ag-recent-colors"></div>
+                <div ref="recentColors" class="zing-recent-colors"></div>
             </div>
         </div>`;
 __decorate([

@@ -19,35 +19,35 @@ const QUARTZ_FONT_SIZE = 14;
 const QUARTZ_GRID_SIZE = 8;
 const HARD_CODED_SIZES = {
     // this item is required for custom themes
-    'ag-theme-custom': {
+    'zing-theme-custom': {
         headerHeight: 25,
         headerCellMinWidth: 24,
         listItemHeight: BASE_GRID_SIZE * 5,
         rowHeight: 25,
         chartMenuPanelWidth: 220
     },
-    'ag-theme-material': {
+    'zing-theme-material': {
         headerHeight: MAT_GRID_SIZE * 7,
         headerCellMinWidth: 48,
         listItemHeight: MAT_GRID_SIZE * 4,
         rowHeight: MAT_GRID_SIZE * 6,
         chartMenuPanelWidth: 240
     },
-    'ag-theme-balham': {
+    'zing-theme-balham': {
         headerHeight: BALHAM_GRID_SIZE * 8,
         headerCellMinWidth: 24,
         listItemHeight: BALHAM_GRID_SIZE * 6,
         rowHeight: BALHAM_GRID_SIZE * 7,
         chartMenuPanelWidth: 220
     },
-    'ag-theme-alpine': {
+    'zing-theme-alpine': {
         headerHeight: ALPINE_GRID_SIZE * 8,
         headerCellMinWidth: 36,
         listItemHeight: ALPINE_GRID_SIZE * 4,
         rowHeight: ALPINE_GRID_SIZE * 7,
         chartMenuPanelWidth: 240
     },
-    'ag-theme-quartz': {
+    'zing-theme-quartz': {
         headerHeight: QUARTZ_FONT_SIZE + QUARTZ_GRID_SIZE * 4.25,
         headerCellMinWidth: 36,
         listItemHeight: QUARTZ_ICON_SIZE + QUARTZ_GRID_SIZE,
@@ -59,18 +59,18 @@ const HARD_CODED_SIZES = {
  * this object contains a list of Sass variables and an array
  * of CSS styles required to get the correct value.
  * eg. $virtual-item-height requires a structure, so we can get its height.
- * <div class="ag-theme-balham">
- *     <div class="ag-virtual-list-container">
- *         <div class="ag-virtual-list-item"></div>
+ * <div class="zing-theme-balham">
+ *     <div class="zing-virtual-list-container">
+ *         <div class="zing-virtual-list-item"></div>
  *     </div>
  * </div>
  */
 const SASS_PROPERTY_BUILDER = {
-    headerHeight: ['ag-header-row'],
-    headerCellMinWidth: ['ag-header-cell'],
-    listItemHeight: ['ag-virtual-list-item'],
-    rowHeight: ['ag-row'],
-    chartMenuPanelWidth: ['ag-chart-docked-container']
+    headerHeight: ['zing-header-row'],
+    headerCellMinWidth: ['zing-header-cell'],
+    listItemHeight: ['zing-virtual-list-item'],
+    rowHeight: ['zing-row'],
+    chartMenuPanelWidth: ['zing-chart-docked-container']
 };
 let Environment = class Environment extends BeanStub {
     constructor() {
@@ -98,7 +98,7 @@ let Environment = class Environment extends BeanStub {
     }
     getSassVariable(key) {
         const { themeFamily, el } = this.getTheme();
-        if (!themeFamily || themeFamily.indexOf('ag-theme') !== 0) {
+        if (!themeFamily || themeFamily.indexOf('zing-theme') !== 0) {
             return;
         }
         if (!this.calculatedSizes) {
@@ -115,7 +115,7 @@ let Environment = class Environment extends BeanStub {
         return this.calculatedSizes[themeFamily][key];
     }
     calculateValueForSassProperty(property, theme, themeElement) {
-        const useTheme = 'ag-theme-' + (theme.match('material') ? 'material' : theme.match('balham') ? 'balham' : theme.match('alpine') ? 'alpine' : 'custom');
+        const useTheme = 'zing-theme-' + (theme.match('material') ? 'material' : theme.match('balham') ? 'balham' : theme.match('alpine') ? 'alpine' : 'custom');
         const defaultValue = HARD_CODED_SIZES[useTheme][property];
         const eDocument = this.gridOptionsService.getDocument();
         if (!themeElement) {
@@ -188,17 +188,17 @@ let Environment = class Environment extends BeanStub {
         return this.getFromTheme(20, 'listItemHeight');
     }
     refreshRowHeightVariable() {
-        const oldRowHeight = this.eGridDiv.style.getPropertyValue('--ag-line-height').trim();
+        const oldRowHeight = this.eGridDiv.style.getPropertyValue('--zing-line-height').trim();
         const height = this.gridOptionsService.get('rowHeight');
         if (height == null || isNaN(height) || !isFinite(height)) {
             if (oldRowHeight !== null) {
-                this.eGridDiv.style.setProperty('--ag-line-height', null);
+                this.eGridDiv.style.setProperty('--zing-line-height', null);
             }
             return -1;
         }
         const newRowHeight = `${height}px`;
         if (oldRowHeight != newRowHeight) {
-            this.eGridDiv.style.setProperty('--ag-line-height', newRowHeight);
+            this.eGridDiv.style.setProperty('--zing-line-height', newRowHeight);
             return height;
         }
         return oldRowHeight != '' ? parseFloat(oldRowHeight) : -1;

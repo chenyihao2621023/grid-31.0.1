@@ -17,8 +17,8 @@ export class AnimateShowChangeCellRenderer extends Component {
     }
     init(params) {
         // this.params = params;
-        this.eValue = this.queryForHtmlElement('.ag-value-change-value');
-        this.eDelta = this.queryForHtmlElement('.ag-value-change-delta');
+        this.eValue = this.queryForHtmlElement('.zing-value-change-value');
+        this.eDelta = this.queryForHtmlElement('.zing-value-change-delta');
         this.refresh(params);
     }
     showDelta(params, delta) {
@@ -33,8 +33,8 @@ export class AnimateShowChangeCellRenderer extends Component {
             // because negative, use ABS to remove sign
             this.eDelta.innerHTML = ARROW_DOWN + valueToUse;
         }
-        this.eDelta.classList.toggle('ag-value-change-delta-up', deltaUp);
-        this.eDelta.classList.toggle('ag-value-change-delta-down', !deltaUp);
+        this.eDelta.classList.toggle('zing-value-change-delta-up', deltaUp);
+        this.eDelta.classList.toggle('zing-value-change-delta-down', !deltaUp);
     }
     setTimerToRemoveDelta() {
         // the refreshCount makes sure that if the value updates again while
@@ -49,7 +49,7 @@ export class AnimateShowChangeCellRenderer extends Component {
         }, 2000);
     }
     hideDeltaValue() {
-        this.eValue.classList.remove('ag-value-change-value-highlight');
+        this.eValue.classList.remove('zing-value-change-value-highlight');
         clearElement(this.eDelta);
     }
     refresh(params) {
@@ -78,7 +78,7 @@ export class AnimateShowChangeCellRenderer extends Component {
         // highlight the current value, but only if it's not new, otherwise it
         // would get highlighted first time the value is shown
         if (this.lastValue) {
-            this.eValue.classList.add('ag-value-change-value-highlight');
+            this.eValue.classList.add('zing-value-change-value-highlight');
         }
         this.setTimerToRemoveDelta();
         this.lastValue = value;
@@ -86,8 +86,8 @@ export class AnimateShowChangeCellRenderer extends Component {
     }
 }
 AnimateShowChangeCellRenderer.TEMPLATE = '<span>' +
-    '<span class="ag-value-change-delta"></span>' +
-    '<span class="ag-value-change-value"></span>' +
+    '<span class="zing-value-change-delta"></span>' +
+    '<span class="zing-value-change-value"></span>' +
     '</span>';
 __decorate([
     Autowired('filterManager')

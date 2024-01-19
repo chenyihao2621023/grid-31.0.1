@@ -9,7 +9,7 @@ import { BeanStub } from "../../context/beanStub";
 import { Autowired } from "../../context/context";
 import { RowNode } from "../../entities/rowNode";
 import { removeAriaExpanded, setAriaExpanded } from "../../utils/aria";
-import { isElementInEventPath, isStopPropagationForAgGrid, stopPropagationForAgGrid } from "../../utils/event";
+import { isElementInEventPath, isStopPropagationForZingGrid, stopPropagationForZingGrid } from "../../utils/event";
 import { missing } from "../../utils/generic";
 import { createIconNoSpan } from "../../utils/icon";
 import { cloneObject } from "../../utils/object";
@@ -263,7 +263,7 @@ export class GroupCellRendererCtrl extends BeanStub {
                 footerValue = this.expressionService.evaluate(footerValueGetter, paramsClone);
             }
             else {
-                console.warn('AG Grid: footerValueGetter should be either a function or a string (expression)');
+                console.warn('ZING Grid: footerValueGetter should be either a function or a string (expression)');
             }
         }
         else {
@@ -382,11 +382,11 @@ export class GroupCellRendererCtrl extends BeanStub {
         this.addManagedListener(this.displayedGroupNode, RowNode.EVENT_HAS_CHILDREN_CHANGED, expandableChangedListener);
     }
     onExpandClicked(mouseEvent) {
-        if (isStopPropagationForAgGrid(mouseEvent)) {
+        if (isStopPropagationForZingGrid(mouseEvent)) {
             return;
         }
         // so if we expand a node, it does not also get selected.
-        stopPropagationForAgGrid(mouseEvent);
+        stopPropagationForZingGrid(mouseEvent);
         this.onExpandOrContract(mouseEvent);
     }
     onExpandOrContract(e) {
@@ -443,13 +443,13 @@ export class GroupCellRendererCtrl extends BeanStub {
         const pivotModeAndLeafGroup = pivotMode && displayedGroup.leafGroup;
         const addExpandableCss = isExpandable && !pivotModeAndLeafGroup;
         const isTotalFooterNode = node.footer && node.level === -1;
-        this.comp.addOrRemoveCssClass('ag-cell-expandable', addExpandableCss);
-        this.comp.addOrRemoveCssClass('ag-row-group', addExpandableCss);
+        this.comp.addOrRemoveCssClass('zing-cell-expandable', addExpandableCss);
+        this.comp.addOrRemoveCssClass('zing-row-group', addExpandableCss);
         if (pivotMode) {
-            this.comp.addOrRemoveCssClass('ag-pivot-leaf-group', pivotModeAndLeafGroup);
+            this.comp.addOrRemoveCssClass('zing-pivot-leaf-group', pivotModeAndLeafGroup);
         }
         else if (!isTotalFooterNode) {
-            this.comp.addOrRemoveCssClass('ag-row-group-leaf-indent', !addExpandableCss);
+            this.comp.addOrRemoveCssClass('zing-row-group-leaf-indent', !addExpandableCss);
         }
     }
     onRowNodeIsExpandableChanged() {
@@ -484,7 +484,7 @@ export class GroupCellRendererCtrl extends BeanStub {
         if (this.indentClass) {
             this.comp.addOrRemoveCssClass(this.indentClass, false);
         }
-        this.indentClass = 'ag-row-group-indent-' + paddingCount;
+        this.indentClass = 'zing-row-group-indent-' + paddingCount;
         this.comp.addOrRemoveCssClass(this.indentClass, true);
     }
     addFullWidthRowDraggerIfNeeded() {
@@ -538,7 +538,7 @@ export class GroupCellRendererCtrl extends BeanStub {
         this.onExpandOrContract(event);
     }
     onCellDblClicked(mouseEvent) {
-        if (isStopPropagationForAgGrid(mouseEvent)) {
+        if (isStopPropagationForZingGrid(mouseEvent)) {
             return;
         }
         // we want to avoid acting on double click events on the expand / contract icon,

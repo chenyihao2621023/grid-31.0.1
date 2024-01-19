@@ -1,7 +1,7 @@
 import { MODULE_CONFLICTS } from '../../module/module';
 import { Logger } from '../../util/logger';
 import { CARTESIAN_AXIS_POSITIONS, CARTESIAN_AXIS_TYPES } from '../themes/constants';
-import { isAgCartesianChartOptions } from './types';
+import { isZingCartesianChartOptions } from './types';
 export const DEFAULT_CARTESIAN_CHART_OVERRIDES = {
     axes: [
         {
@@ -16,7 +16,7 @@ export const DEFAULT_CARTESIAN_CHART_OVERRIDES = {
 };
 export function swapAxes(opts) {
     var _a;
-    if (!isAgCartesianChartOptions(opts)) {
+    if (!isZingCartesianChartOptions(opts)) {
         return opts;
     }
     const [axis0, axis1] = (_a = opts.axes) !== null && _a !== void 0 ? _a : [];

@@ -62,7 +62,7 @@ export class ZingMenuItemComponent extends Component {
         if (!this.params.subMenu) {
             return;
         }
-        const ePopup = loadTemplate(/* html */ `<div class="ag-menu" role="presentation"></div>`);
+        const ePopup = loadTemplate(/* html */ `<div class="zing-menu" role="presentation"></div>`);
         let destroySubMenu;
         if (this.params.subMenu instanceof Array) {
             const currentLevel = getAriaLevel(this.getGui());
@@ -166,7 +166,7 @@ export class ZingMenuItemComponent extends Component {
                 icon.innerHTML = this.params.icon;
             }
             else {
-                console.warn('AG Grid: menu item icon must be DOM node or string');
+                console.warn('ZING Grid: menu item icon must be DOM node or string');
             }
         }
         this.getGui().appendChild(icon);
@@ -283,7 +283,7 @@ export class ZingMenuItemComponent extends Component {
         }
     }
     getClassName(suffix) {
-        const prefix = this.params.isCompact ? 'ag-compact-menu-option' : 'ag-menu-option';
+        const prefix = this.params.isCompact ? 'zing-compact-menu-option' : 'zing-menu-option';
         return suffix ? `${prefix}-${suffix}` : prefix;
     }
 }

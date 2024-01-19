@@ -30,9 +30,9 @@ export class TabbedLayout extends Component {
         this.addDestroyFunc(() => { var _a, _b, _c; return (_c = (_b = (_a = this.activeItem) === null || _a === void 0 ? void 0 : _a.tabbedItem) === null || _b === void 0 ? void 0 : _b.afterDetachedCallback) === null || _c === void 0 ? void 0 : _c.call(_b); });
     }
     static getTemplate(cssClass) {
-        return /* html */ `<div class="ag-tabs ${cssClass}">
-            <div ref="eHeader" role="tablist" class="ag-tabs-header ${cssClass ? `${cssClass}-header` : ''}"></div>
-            <div ref="eBody" role="presentation" class="ag-tabs-body ${cssClass ? `${cssClass}-body` : ''}"></div>
+        return /* html */ `<div class="zing-tabs ${cssClass}">
+            <div ref="eHeader" role="tablist" class="zing-tabs-header ${cssClass ? `${cssClass}-header` : ''}"></div>
+            <div ref="eBody" role="presentation" class="zing-tabs-body ${cssClass ? `${cssClass}-body` : ''}"></div>
         </div>`;
     }
     handleKeyDown(e) {
@@ -107,7 +107,7 @@ export class TabbedLayout extends Component {
         setAriaRole(eHeaderButton, 'tab');
         eHeaderButton.setAttribute('tabindex', '-1');
         eHeaderButton.appendChild(item.title);
-        eHeaderButton.classList.add('ag-tab');
+        eHeaderButton.classList.add('zing-tab');
         this.eHeader.appendChild(eHeaderButton);
         setAriaLabel(eHeaderButton, item.titleLabel);
         const wrapper = {
@@ -159,10 +159,10 @@ export class TabbedLayout extends Component {
             }
         });
         if (this.activeItem) {
-            this.activeItem.eHeaderButton.classList.remove('ag-tab-selected');
+            this.activeItem.eHeaderButton.classList.remove('zing-tab-selected');
             (_b = (_a = this.activeItem.tabbedItem).afterDetachedCallback) === null || _b === void 0 ? void 0 : _b.call(_a);
         }
-        eHeaderButton.classList.add('ag-tab-selected');
+        eHeaderButton.classList.add('zing-tab-selected');
         this.activeItem = wrapper;
     }
 }

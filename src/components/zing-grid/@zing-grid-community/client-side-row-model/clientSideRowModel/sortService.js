@@ -173,7 +173,7 @@ let SortService = class SortService extends BeanStub {
             groupDisplayCols.forEach(groupDisplayCol => {
                 const showRowGroup = groupDisplayCol.getColDef().showRowGroup;
                 if (typeof showRowGroup !== 'string') {
-                    console.error('AG Grid: groupHideOpenParents only works when specifying specific columns for colDef.showRowGroup');
+                    console.error('ZING Grid: groupHideOpenParents only works when specifying specific columns for colDef.showRowGroup');
                     return;
                 }
                 const displayingGroupKey = showRowGroup;

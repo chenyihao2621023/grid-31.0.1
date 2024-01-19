@@ -12,9 +12,9 @@ export class ZingAbstractInputField extends ZingAbstractField {
     constructor(config, className, inputType = 'text', displayFieldTag = 'input') {
         super(config, /* html */ `
             <div role="presentation">
-                <div ref="eLabel" class="ag-input-field-label"></div>
-                <div ref="eWrapper" class="ag-wrapper ag-input-wrapper" role="presentation">
-                    <${displayFieldTag} ref="eInput" class="ag-input-field-input"></${displayFieldTag}>
+                <div ref="eLabel" class="zing-input-field-label"></div>
+                <div ref="eWrapper" class="zing-wrapper zing-input-wrapper" role="presentation">
+                    <${displayFieldTag} ref="eInput" class="zing-input-field-input"></${displayFieldTag}>
                 </div>
             </div>`, className);
         this.inputType = inputType;
@@ -26,8 +26,8 @@ export class ZingAbstractInputField extends ZingAbstractField {
         this.eLabel.classList.add(`${this.className}-label`);
         this.eWrapper.classList.add(`${this.className}-input-wrapper`);
         this.eInput.classList.add(`${this.className}-input`);
-        this.addCssClass('ag-input-field');
-        this.eInput.id = this.eInput.id || `ag-${this.getCompId()}-input`;
+        this.addCssClass('zing-input-field');
+        this.eInput.id = this.eInput.id || `zing-${this.getCompId()}-input`;
         const { width, value } = this.config;
         if (width != null) {
             this.setWidth(width);

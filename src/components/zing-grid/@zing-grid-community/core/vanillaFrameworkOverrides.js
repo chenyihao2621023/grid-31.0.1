@@ -36,7 +36,7 @@ export var VanillaFrameworkOverrides = /** @class */ (function () {
     };
     VanillaFrameworkOverrides.prototype.getDocLink = function (path) {
         var framework = this.frameworkName === 'solid' ? 'react' : this.frameworkName;
-        return "https://www.ag-grid.com/".concat(framework, "-data-grid").concat(path ? "/".concat(path) : '');
+        return "https://www.zing-grid.com/".concat(framework, "-data-grid").concat(path ? "/".concat(path) : '');
     };
     return VanillaFrameworkOverrides;
 }());

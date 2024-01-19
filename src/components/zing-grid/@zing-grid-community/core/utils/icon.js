@@ -151,8 +151,8 @@ export function createIcon(iconName, gridOptionsService, column) {
     const iconContents = createIconNoSpan(iconName, gridOptionsService, column);
     if (iconContents) {
         const { className } = iconContents;
-        if ((typeof className === 'string' && className.indexOf('ag-icon') > -1) ||
-            (typeof className === 'object' && className['ag-icon'])) {
+        if ((typeof className === 'string' && className.indexOf('zing-icon') > -1) ||
+            (typeof className === 'object' && className['zing-icon'])) {
             return iconContents;
         }
     }
@@ -192,21 +192,21 @@ export function createIconNoSpan(iconName, gridOptionsService, column, forceCrea
         if (isNodeOrElement(rendererResult)) {
             return rendererResult;
         }
-        console.warn('AG Grid: iconRenderer should return back a string or a dom object');
+        console.warn('ZING Grid: iconRenderer should return back a string or a dom object');
     }
     else {
         const span = document.createElement('span');
         let cssClass = iconNameClassMap[iconName];
         if (!cssClass) {
             if (!forceCreate) {
-                console.warn(`AG Grid: Did not find icon ${iconName}`);
+                console.warn(`ZING Grid: Did not find icon ${iconName}`);
                 cssClass = '';
             }
             else {
                 cssClass = iconName;
             }
         }
-        span.setAttribute('class', `ag-icon ag-icon-${cssClass}`);
+        span.setAttribute('class', `zing-icon zing-icon-${cssClass}`);
         span.setAttribute('unselectable', 'on');
         setAriaRole(span, 'presentation');
         return span;

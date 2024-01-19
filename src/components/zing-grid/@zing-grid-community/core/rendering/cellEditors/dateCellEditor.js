@@ -3,7 +3,7 @@ import { SimpleCellEditor } from "./simpleCellEditor";
 import { exists } from "../../utils/generic";
 class DateCellEditorInput {
     getTemplate() {
-        return /* html */ `<ag-input-date-field class="ag-cell-editor" ref="eInput"></ag-input-date-field>`;
+        return /* html */ `<zing-input-date-field class="zing-cell-editor" ref="eInput"></zing-input-date-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;

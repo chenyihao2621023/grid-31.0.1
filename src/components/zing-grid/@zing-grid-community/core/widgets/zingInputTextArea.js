@@ -1,7 +1,7 @@
 import { ZingAbstractInputField } from "./zingAbstractInputField";
 export class ZingInputTextArea extends ZingAbstractInputField {
     constructor(config) {
-        super(config, 'ag-text-area', null, 'textarea');
+        super(config, 'zing-text-area', null, 'textarea');
     }
     setValue(value, silent) {
         const ret = super.setValue(value, silent);

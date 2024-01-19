@@ -11,7 +11,7 @@ import { KeyCode } from '../../constants/keyCode';
 export class SimpleCellEditor extends PopupComponent {
     constructor(cellEditorInput) {
         super(/* html */ `
-            <div class="ag-cell-edit-wrapper">
+            <div class="zing-cell-edit-wrapper">
                 ${cellEditorInput.getTemplate()}
             </div>`);
         this.cellEditorInput = cellEditorInput;

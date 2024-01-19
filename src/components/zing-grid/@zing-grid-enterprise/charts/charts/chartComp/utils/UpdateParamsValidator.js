@@ -8,7 +8,7 @@ const validateIfDefined = (validationFn) => {
 const isString = (value) => typeof value === 'string';
 const isBoolean = (value) => typeof value === 'boolean';
 const isValidSeriesChartType = (value) => typeof value === 'object';
-const createWarnMessage = (property, expectedType) => (value) => `AG Grid - unable to update chart as invalid params supplied:  \`${property}: ${value}\`, expected ${expectedType}.`;
+const createWarnMessage = (property, expectedType) => (value) => `ZING Grid - unable to update chart as invalid params supplied:  \`${property}: ${value}\`, expected ${expectedType}.`;
 export class UpdateParamsValidator {
     static validateChartParams(params) {
         let paramsToValidate = params;
@@ -20,7 +20,7 @@ export class UpdateParamsValidator {
             case 'crossFilterChartUpdate':
                 return UpdateParamsValidator.validateUpdateCrossFilterChartParams(params);
             default:
-                console.warn(`AG Grid - Invalid value supplied for 'type': ${params.type}. It must be either 'rangeChartUpdate', 'pivotChartUpdate', or 'crossFilterChartUpdate'.`);
+                console.warn(`ZING Grid - Invalid value supplied for 'type': ${params.type}. It must be either 'rangeChartUpdate', 'pivotChartUpdate', or 'crossFilterChartUpdate'.`);
                 return false;
         }
     }
@@ -63,7 +63,7 @@ export class UpdateParamsValidator {
         // Check for unexpected properties
         for (const property in params) {
             if (!validPropertyNames.includes(property)) {
-                console.warn(`AG Grid - Unexpected property supplied. ${paramsType} does not contain: \`${property}\`.`);
+                console.warn(`ZING Grid - Unexpected property supplied. ${paramsType} does not contain: \`${property}\`.`);
                 return false;
             }
         }
@@ -95,7 +95,7 @@ UpdateParamsValidator.validChartTypes = [
 UpdateParamsValidator.validateChartType = validateIfDefined((chartType) => {
     return UpdateParamsValidator.validChartTypes.includes(chartType);
 });
-UpdateParamsValidator.validateAgChartThemeOverrides = validateIfDefined((themeOverrides) => {
+UpdateParamsValidator.validateZingChartThemeOverrides = validateIfDefined((themeOverrides) => {
     // ensure supplied AgChartThemeOverrides is an object - can be improved if necessary?
     return typeof themeOverrides === 'object';
 });
@@ -121,8 +121,8 @@ UpdateParamsValidator.commonValidations = [
     },
     {
         property: 'chartThemeOverrides',
-        validationFn: UpdateParamsValidator.validateAgChartThemeOverrides,
-        warnMessage: createWarnMessage('chartThemeOverrides', 'AgChartThemeOverrides')
+        validationFn: UpdateParamsValidator.validateZingChartThemeOverrides,
+        warnMessage: createWarnMessage('chartThemeOverrides', 'ZingChartThemeOverrides')
     },
     { property: 'unlinkChart', validationFn: isBoolean, warnMessage: createWarnMessage('unlinkChart', 'boolean') },
 ];

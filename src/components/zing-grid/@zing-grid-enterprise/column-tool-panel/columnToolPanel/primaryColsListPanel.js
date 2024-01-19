@@ -21,7 +21,7 @@ class UIColumnModel {
         return this.items[index];
     }
 }
-const PRIMARY_COLS_LIST_PANEL_CLASS = 'ag-column-select-list';
+const PRIMARY_COLS_LIST_PANEL_CLASS = 'zing-column-select-list';
 export class PrimaryColsListPanel extends Component {
     constructor() {
         super(PrimaryColsListPanel.TEMPLATE);
@@ -286,7 +286,7 @@ export class PrimaryColsListPanel extends Component {
         });
         const unrecognisedGroupIds = groupIds.filter(groupId => !_.includes(expandedGroupIds, groupId));
         if (unrecognisedGroupIds.length > 0) {
-            console.warn('AG Grid: unable to find group(s) for supplied groupIds:', unrecognisedGroupIds);
+            console.warn('ZING Grid: unable to find group(s) for supplied groupIds:', unrecognisedGroupIds);
         }
     }
     getExpandState() {

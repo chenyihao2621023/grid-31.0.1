@@ -341,7 +341,7 @@ let ColumnFactory = class ColumnFactory extends BeanStub {
         const userTypes = this.gridOptionsService.get('columnTypes') || {};
         iterateObject(userTypes, (key, value) => {
             if (key in allColumnTypes) {
-                console.warn(`AG Grid: the column type '${key}' is a default column type and cannot be overridden.`);
+                console.warn(`ZING Grid: the column type '${key}' is a default column type and cannot be overridden.`);
             }
             else {
                 const colType = value;
@@ -359,7 +359,7 @@ let ColumnFactory = class ColumnFactory extends BeanStub {
                 mergeDeep(colDefMerged, typeColDef, false, true);
             }
             else {
-                console.warn("AG Grid: colDef.type '" + t + "' does not correspond to defined gridOptions.columnTypes");
+                console.warn("ZING Grid: colDef.type '" + t + "' does not correspond to defined gridOptions.columnTypes");
             }
         });
     }

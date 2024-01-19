@@ -2,12 +2,12 @@ import { ZingRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/c
 export class AddDropdownComp extends ZingRichSelect {
     constructor(params) {
         super(Object.assign(Object.assign({}, params), { template: /* html */ `
-                <div class="ag-picker-field" role="presentation">
+                <div class="zing-picker-field" role="presentation">
                     <div ref="eLabel"></div>
-                    <div ref="eWrapper" class="ag-wrapper ag-picker-collapsed">
-                        <div ref="eDisplayField" class="ag-picker-field-display"></div>
-                        <ag-input-text-field ref="eInput" class="ag-rich-select-field-input"></ag-input-text-field>
-                        <div ref="eIcon" class="ag-picker-field-icon" aria-hidden="true"></div>
+                    <div ref="eWrapper" class="zing-wrapper zing-picker-collapsed">
+                        <div ref="eDisplayField" class="zing-picker-field-display"></div>
+                        <zing-input-text-field ref="eInput" class="zing-rich-select-field-input"></zing-input-text-field>
+                        <div ref="eIcon" class="zing-picker-field-icon" aria-hidden="true"></div>
                     </div>
                 </div>` }));
         this.params = params;
@@ -31,7 +31,7 @@ export class AddDropdownComp extends ZingRichSelect {
         _.setAriaLabel(this.eWrapper, ariaLabel);
     }
     onEnterKeyDown(event) {
-        _.stopPropagationForAgGrid(event);
+        _.stopPropagationForZingGrid(event);
         if (this.isPickerDisplayed) {
             super.onEnterKeyDown(event);
         }

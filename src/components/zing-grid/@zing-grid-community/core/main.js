@@ -188,7 +188,7 @@ export { TooltipFeature } from "./widgets/tooltipFeature";
 export { CustomTooltipFeature } from "./widgets/customTooltipFeature";
 // charts
 export * from "./interfaces/iChartOptions";
-export * from "./interfaces/iAgChartOptions";
+export * from "./interfaces/iZingChartOptions";
 // sparklines
 export * from "./interfaces/iSparklineCellRendererParams";
 export { ModuleNames } from "./modules/moduleNames";

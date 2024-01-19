@@ -1,7 +1,7 @@
 export class MultiIndexMap {
     constructor(...indexes) {
         if (indexes.length < 1) {
-            throw new Error('AG Grid: At least one index must be provided.');
+            throw new Error('ZING Grid: At least one index must be provided.');
         }
         this.indexes = indexes;
         this.maps = new Map(this.indexes.map(index => [index, new Map()]));
@@ -9,7 +9,7 @@ export class MultiIndexMap {
     getBy(index, key) {
         const map = this.maps.get(index);
         if (!map) {
-            throw new Error(`AG Grid: ${String(index)} not found`);
+            throw new Error(`ZING Grid: ${String(index)} not found`);
         }
         return map.get(key);
     }
@@ -17,7 +17,7 @@ export class MultiIndexMap {
         this.indexes.forEach(index => {
             const map = this.maps.get(index);
             if (!map) {
-                throw new Error(`AG Grid: ${String(index)} not found`);
+                throw new Error(`ZING Grid: ${String(index)} not found`);
             }
             map.set(item[index], item);
         });
@@ -26,7 +26,7 @@ export class MultiIndexMap {
         this.indexes.forEach(index => {
             const map = this.maps.get(index);
             if (!map) {
-                throw new Error(`AG Grid: ${String(index)} not found`);
+                throw new Error(`ZING Grid: ${String(index)} not found`);
             }
             map.delete(item[index]);
         });
@@ -37,7 +37,7 @@ export class MultiIndexMap {
     getIterator(index) {
         const map = this.maps.get(index);
         if (!map) {
-            throw new Error(`AG Grid: ${String(index)} not found`);
+            throw new Error(`ZING Grid: ${String(index)} not found`);
         }
         return map.values();
     }

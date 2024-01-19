@@ -15,9 +15,9 @@ const compIdSequence = new NumberSequence();
 export class Component extends BeanStub {
     constructor(template) {
         super();
-        // if false, then CSS class "ag-hidden" is applied, which sets "display: none"
+        // if false, then CSS class "zing-hidden" is applied, which sets "display: none"
         this.displayed = true;
-        // if false, then CSS class "ag-invisible" is applied, which sets "visibility: hidden"
+        // if false, then CSS class "zing-invisible" is applied, which sets "visibility: hidden"
         this.visible = true;
         // unique id for this row component. this is used for getting a reference to the HTML dom.
         // we cannot use the RowNode id as this is not unique (due to animation, old rows can be lying
@@ -69,7 +69,7 @@ export class Component extends BeanStub {
             }
         }
     }
-    // for registered components only, eg creates ZingCheckbox instance from ag-checkbox HTML tag
+    // for registered components only, eg creates ZingCheckbox instance from zing-checkbox HTML tag
     createChildComponentsFromTags(parentNode, paramsMap) {
         // we MUST take a copy of the list first, as the 'swapComponentForNode' adds comments into the DOM
         // which messes up the traversal order of the children.
@@ -93,7 +93,7 @@ export class Component extends BeanStub {
                     const items = Array.prototype.slice.call(childNode.children);
                     childComp.addItems(items);
                 }
-                // replace the tag (eg ag-checkbox) with the proper HTMLElement (eg 'div') in the dom
+                // replace the tag (eg zing-checkbox) with the proper HTMLElement (eg 'div') in the dom
                 this.swapComponentForNode(childComp, parentNode, childNode);
             }
             else if (childNode.childNodes) {
@@ -104,7 +104,7 @@ export class Component extends BeanStub {
     createComponentFromElement(element, afterPreCreateCallback, paramsMap) {
         const key = element.nodeName;
         const componentParams = paramsMap ? paramsMap[element.getAttribute('ref')] : undefined;
-        const ComponentClass = this.agStackComponentsRegistry.getComponentClass(key);
+        const ComponentClass = this.zingStackComponentsRegistry.getComponentClass(key);
         if (ComponentClass) {
             Component.elementGettingCreated = element;
             const newComponent = new ComponentClass(componentParams);
@@ -135,7 +135,7 @@ export class Component extends BeanStub {
     iterateOverQuerySelectors(action) {
         let thisPrototype = Object.getPrototypeOf(this);
         while (thisPrototype != null) {
-            const metaData = thisPrototype.__agComponentMetaData;
+            const metaData = thisPrototype.__zingComponentMetaData;
             const currentProtoName = getFunctionName(thisPrototype.constructor);
             if (metaData && metaData[currentProtoName] && metaData[currentProtoName].querySelectors) {
                 metaData[currentProtoName].querySelectors.forEach((querySelector) => action(querySelector));
@@ -159,7 +159,7 @@ export class Component extends BeanStub {
     }
     setTemplateFromElement(element, paramsMap) {
         this.eGui = element;
-        this.eGui.__agComponent = this;
+        this.eGui.__zingComponent = this;
         this.wireQuerySelectors();
         // context will not be available when user sets template in constructor
         if (!!this.getContext()) {
@@ -192,7 +192,7 @@ export class Component extends BeanStub {
                 // otherwise use querySelector, which looks at children
                 const resultOfQuery = this.eGui.querySelector(querySelector.querySelector);
                 if (resultOfQuery) {
-                    setResult(resultOfQuery.__agComponent || resultOfQuery);
+                    setResult(resultOfQuery.__zingComponent || resultOfQuery);
                 }
             }
         });
@@ -213,7 +213,7 @@ export class Component extends BeanStub {
         return this.parentComponent;
     }
     // this method is for older code, that wants to provide the gui element,
-    // it is not intended for this to be in ag-Stack
+    // it is not intended for this to be in zing-Stack
     setGui(eGui) {
         this.eGui = eGui;
     }
@@ -268,8 +268,8 @@ export class Component extends BeanStub {
             this.parentComponent = undefined;
         }
         const eGui = this.eGui;
-        if (eGui && eGui.__agComponent) {
-            eGui.__agComponent = undefined;
+        if (eGui && eGui.__zingComponent) {
+            eGui.__zingComponent = undefined;
         }
         super.destroy();
     }
@@ -299,8 +299,8 @@ export class Component extends BeanStub {
 }
 Component.EVENT_DISPLAYED_CHANGED = 'displayedChanged';
 __decorate([
-    Autowired('agStackComponentsRegistry')
-], Component.prototype, "agStackComponentsRegistry", void 0);
+    Autowired('zingStackComponentsRegistry'')
+], Component.prototype, "zingStackComponentsRegistry", void 0);
 __decorate([
     PreConstruct
 ], Component.prototype, "preConstructOnComponent", null);

@@ -50,8 +50,8 @@ export class LargeTextCellEditor extends PopupComponent {
         return this.params.parseValue(value);
     }
 }
-LargeTextCellEditor.TEMPLATE = `<div class="ag-large-text">
-            <ag-input-text-area ref="eTextArea" class="ag-large-text-input"></ag-input-text-area>
+LargeTextCellEditor.TEMPLATE = `<div class="zing-large-text">
+            <zing-input-text-area ref="eTextArea" class="zing-large-text-input"></zing-input-text-area>
         </div>`;
 __decorate([
     RefSelector("eTextArea")

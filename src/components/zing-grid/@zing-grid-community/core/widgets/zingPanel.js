@@ -18,12 +18,12 @@ export class ZingPanel extends Component {
     }
     static getTemplate(config) {
         const cssIdentifier = (config && config.cssIdentifier) || 'default';
-        return /* html */ `<div class="ag-panel ag-${cssIdentifier}-panel" tabindex="-1">
-            <div ref="eTitleBar" class="ag-panel-title-bar ag-${cssIdentifier}-panel-title-bar ag-unselectable">
-                <span ref="eTitle" class="ag-panel-title-bar-title ag-${cssIdentifier}-panel-title-bar-title"></span>
-                <div ref="eTitleBarButtons" class="ag-panel-title-bar-buttons ag-${cssIdentifier}-panel-title-bar-buttons"></div>
+        return /* html */ `<div class="zing-panel zing-${cssIdentifier}-panel" tabindex="-1">
+            <div ref="eTitleBar" class="zing-panel-title-bar zing-${cssIdentifier}-panel-title-bar zing-unselectable">
+                <span ref="eTitle" class="zing-panel-title-bar-title zing-${cssIdentifier}-panel-title-bar-title"></span>
+                <div ref="eTitleBarButtons" class="zing-panel-title-bar-buttons zing-${cssIdentifier}-panel-title-bar-buttons"></div>
             </div>
-            <div ref="eContentWrapper" class="ag-panel-content-wrapper ag-${cssIdentifier}-panel-content-wrapper"></div>
+            <div ref="eContentWrapper" class="zing-panel-content-wrapper zing-${cssIdentifier}-panel-content-wrapper"></div>
         </div>`;
     }
     postConstruct() {
@@ -97,7 +97,7 @@ export class ZingPanel extends Component {
             this.getContext().createBean(closeButtonComp);
             const eGui = closeButtonComp.getGui();
             const child = createIconNoSpan('close', this.gridOptionsService);
-            child.classList.add('ag-panel-title-bar-button-icon');
+            child.classList.add('zing-panel-title-bar-button-icon');
             eGui.appendChild(child);
             this.addTitleBarButton(closeButtonComp);
             closeButtonComp.addManagedListener(eGui, 'click', this.onBtClose.bind(this));
@@ -120,7 +120,7 @@ export class ZingPanel extends Component {
             position = len;
         }
         position = Math.max(0, Math.min(position, len));
-        button.addCssClass('ag-panel-title-bar-button');
+        button.addCssClass('zing-panel-title-bar-button');
         const eGui = button.getGui();
         if (position === 0) {
             eTitleBarButtons.insertAdjacentElement('afterbegin', eGui);
@@ -157,7 +157,7 @@ export class ZingPanel extends Component {
         super.destroy();
     }
 }
-ZingPanel.CLOSE_BTN_TEMPLATE = `<div class="ag-button"></div>`;
+ZingPanel.CLOSE_BTN_TEMPLATE = `<div class="zing-button"></div>`;
 __decorate([
     RefSelector('eContentWrapper')
 ], ZingPanel.prototype, "eContentWrapper", void 0);

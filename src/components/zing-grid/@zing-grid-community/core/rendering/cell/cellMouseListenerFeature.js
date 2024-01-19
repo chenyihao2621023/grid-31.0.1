@@ -1,7 +1,7 @@
 import { Events } from "../../events";
 import { isBrowserSafari, isIOSUserAgent } from "../../utils/browser";
 import { isElementChildOfClass, isFocusableFormField } from "../../utils/dom";
-import { isEventSupported, isStopPropagationForAgGrid } from "../../utils/event";
+import { isEventSupported, isStopPropagationForZingGrid } from "../../utils/event";
 import { Beans } from "../beans";
 export class CellMouseListenerFeature extends Beans {
     constructor(ctrl, beans, column) {
@@ -11,7 +11,7 @@ export class CellMouseListenerFeature extends Beans {
         this.column = column;
     }
     onMouseEvent(eventName, mouseEvent) {
-        if (isStopPropagationForAgGrid(mouseEvent)) {
+        if (isStopPropagationForZingGrid(mouseEvent)) {
             return;
         }
         switch (eventName) {
@@ -159,7 +159,7 @@ export class CellMouseListenerFeature extends Beans {
         return false;
     }
     containsWidget(target) {
-        return isElementChildOfClass(target, 'ag-selection-checkbox', 3);
+        return isElementChildOfClass(target, 'zing-selection-checkbox', 3);
     }
     onMouseOut(mouseEvent) {
         if (this.mouseStayingInsideCell(mouseEvent)) {

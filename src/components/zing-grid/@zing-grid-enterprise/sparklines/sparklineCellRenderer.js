@@ -49,7 +49,7 @@ export class SparklineCellRenderer extends Component {
         super.destroy();
     }
 }
-SparklineCellRenderer.TEMPLATE /* html */ = `<div class="ag-sparkline-wrapper">
+SparklineCellRenderer.TEMPLATE /* html */ = `<div class="zing-sparkline-wrapper">
             <span ref="eSparkline"></span>
         </div>`;
 __decorate([

@@ -139,7 +139,7 @@ export class AdvancedFilterCtrl extends BeanStub {
             if (allThemes.length) {
                 eAdvancedFilterCompGui.classList.add(...allThemes);
             }
-            eAdvancedFilterCompGui.classList.add(this.gridOptionsService.get('enableRtl') ? 'ag-rtl' : 'ag-ltr');
+            eAdvancedFilterCompGui.classList.add(this.gridOptionsService.get('enableRtl') ? 'zing-rtl' : 'zing-ltr');
             advancedFilterParent.appendChild(eAdvancedFilterCompGui);
             this.eFilterComp = eAdvancedFilterComp;
         }

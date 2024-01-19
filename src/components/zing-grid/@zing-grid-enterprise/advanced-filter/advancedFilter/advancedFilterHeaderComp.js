@@ -9,7 +9,7 @@ import { AdvancedFilterComp } from "./advancedFilterComp";
 export class AdvancedFilterHeaderComp extends Component {
     constructor(enabled) {
         super(/* html */ `
-            <div class="ag-advanced-filter-header" role="row">
+            <div class="zing-advanced-filter-header" role="row">
             </div>`);
         this.enabled = enabled;
     }
@@ -51,7 +51,7 @@ export class AdvancedFilterHeaderComp extends Component {
             // unmanaged as can be recreated
             this.eAdvancedFilter = this.createBean(new AdvancedFilterComp());
             const eAdvancedFilterGui = this.eAdvancedFilter.getGui();
-            this.eAdvancedFilter.addCssClass('ag-advanced-filter-header-cell');
+            this.eAdvancedFilter.addCssClass('zing-advanced-filter-header-cell');
             this.height = this.columnModel.getFloatingFiltersHeight();
             const height = `${this.height}px`;
             eGui.style.height = height;

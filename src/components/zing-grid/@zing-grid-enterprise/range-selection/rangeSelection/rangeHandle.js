@@ -46,5 +46,5 @@ export class RangeHandle extends AbstractSelectionHandle {
         cellRange.startColumn = column;
     }
 }
-RangeHandle.TEMPLATE = `<div class="ag-range-handle"></div>`;
+RangeHandle.TEMPLATE = `<div class="zing-range-handle"></div>`;
 //# sourceMappingURL=rangeHandle.js.map

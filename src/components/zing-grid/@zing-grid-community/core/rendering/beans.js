@@ -141,8 +141,8 @@ __decorate([
     Autowired('ctrlsFactory')
 ], Beans.prototype, "ctrlsFactory", void 0);
 __decorate([
-    Autowired('agStackComponentsRegistry')
-], Beans.prototype, "agStackComponentsRegistry", void 0);
+    Autowired('zingStackComponentsRegistry'')
+], Beans.prototype, "zingStackComponentsRegistry", void 0);
 __decorate([
     Autowired('valueCache')
 ], Beans.prototype, "valueCache", void 0);

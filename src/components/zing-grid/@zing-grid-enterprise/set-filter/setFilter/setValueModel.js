@@ -201,7 +201,7 @@ export class SetValueModel {
             if (firstValue && typeof firstValue !== 'object' && typeof firstValue !== 'function') {
                 const firstKey = this.createKey(firstValue);
                 if (firstKey == null) {
-                    _.warnOnce('Set Filter Key Creator is returning null for provided values and provided values are primitives. Please provide complex objects or set convertValuesToStrings=true in the filterParams. See https://www.ag-grid.com/javascript-data-grid/filter-set-filter-list/#filter-value-types');
+                    _.warnOnce('Set Filter Key Creator is returning null for provided values and provided values are primitives. Please provide complex objects or set convertValuesToStrings=true in the filterParams. See https://www.zing-grid.com/javascript-data-grid/filter-set-filter-list/#filter-value-types');
                 }
                 else {
                     _.warnOnce('Set Filter has a Key Creator, but provided values are primitives. Did you mean to provide complex objects or enable convertValuesToStrings?');
@@ -250,7 +250,7 @@ export class SetValueModel {
     getParamsForValuesFromRows(removeUnavailableValues = false) {
         if (!this.clientSideValuesExtractor) {
             _.doOnce(() => {
-                console.error('AG Grid: Set Filter cannot initialise because you are using a row model that does not contain all rows in the browser. Either use a different filter type, or configure Set Filter such that you provide it with values');
+                console.error('ZING Grid: Set Filter cannot initialise because you are using a row model that does not contain all rows in the browser. Either use a different filter type, or configure Set Filter such that you provide it with values');
             }, 'setFilterValueNotCSRM');
             return null;
         }

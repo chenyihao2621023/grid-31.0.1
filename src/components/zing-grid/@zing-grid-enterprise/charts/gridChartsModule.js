@@ -20,9 +20,9 @@ export const GridChartsModule = {
     beans: [
         ChartService, ChartTranslationService, ChartCrossFilterService
     ],
-    agStackComponents: [
-        { componentName: 'AgColorPicker', componentClass: ZingColorPicker },
-        { componentName: 'AgAngleSelect', componentClass: ZingAngleSelect },
+    zingStackComponents: [
+        { componentName: 'ZingColorPicker', componentClass: ZingColorPicker },
+        { componentName: 'ZingAngleSelect', componentClass: ZingAngleSelect },
     ],
     dependantModules: [
         RangeSelectionModule,

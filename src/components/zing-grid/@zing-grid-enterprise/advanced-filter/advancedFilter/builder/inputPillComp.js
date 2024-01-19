@@ -8,9 +8,9 @@ import { ZingInputDateField, ZingInputNumberField, ZingInputTextField, Autowired
 export class InputPillComp extends Component {
     constructor(params) {
         super(/* html */ `
-            <div class="ag-advanced-filter-builder-pill-wrapper" role="presentation">
-                <div ref="ePill" class="ag-advanced-filter-builder-pill" role="button">
-                    <span ref="eLabel" class="ag-advanced-filter-builder-pill-display"></span>
+            <div class="zing-advanced-filter-builder-pill-wrapper" role="presentation">
+                <div ref="ePill" class="zing-advanced-filter-builder-pill" role="button">
+                    <span ref="eLabel" class="zing-advanced-filter-builder-pill-display"></span>
                 </div>
             </div>
         `);
@@ -33,7 +33,7 @@ export class InputPillComp extends Component {
             switch (event.key) {
                 case KeyCode.ENTER:
                     event.preventDefault();
-                    _.stopPropagationForAgGrid(event);
+                    _.stopPropagationForZingGrid(event);
                     this.showEditor();
                     break;
             }
@@ -55,12 +55,12 @@ export class InputPillComp extends Component {
             switch (event.key) {
                 case KeyCode.ENTER:
                     event.preventDefault();
-                    _.stopPropagationForAgGrid(event);
+                    _.stopPropagationForZingGrid(event);
                     this.updateValue(true);
                     break;
                 case KeyCode.ESCAPE:
                     event.preventDefault();
-                    _.stopPropagationForAgGrid(event);
+                    _.stopPropagationForZingGrid(event);
                     this.hideEditor(true);
                     break;
             }
@@ -101,18 +101,18 @@ export class InputPillComp extends Component {
     }
     renderValue() {
         let value;
-        this.eLabel.classList.remove('ag-advanced-filter-builder-value-empty', 'ag-advanced-filter-builder-value-number', 'ag-advanced-filter-builder-value-text');
+        this.eLabel.classList.remove('zing-advanced-filter-builder-value-empty', 'zing-advanced-filter-builder-value-number', 'zing-advanced-filter-builder-value-text');
         if (!_.exists(this.value)) {
             value = this.advancedFilterExpressionService.translate('advancedFilterBuilderEnterValue');
-            this.eLabel.classList.add('ag-advanced-filter-builder-value-empty');
+            this.eLabel.classList.add('zing-advanced-filter-builder-value-empty');
         }
         else if (this.params.type === 'number') {
             value = this.value;
-            this.eLabel.classList.add('ag-advanced-filter-builder-value-number');
+            this.eLabel.classList.add('zing-advanced-filter-builder-value-number');
         }
         else {
             value = `"${this.value}"`;
-            this.eLabel.classList.add('ag-advanced-filter-builder-value-text');
+            this.eLabel.classList.add('zing-advanced-filter-builder-value-text');
         }
         this.eLabel.innerText = value;
     }

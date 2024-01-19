@@ -22,7 +22,7 @@ export class OptionsFactory {
             const requiredProperties = [['displayKey'], ['displayName'], ['predicate', 'test']];
             const propertyCheck = (keys) => {
                 if (!keys.some(key => filterOption[key] != null)) {
-                    console.warn(`AG Grid: ignoring FilterOptionDef as it doesn't contain one of '${keys}'`);
+                    console.warn(`ZING Grid: ignoring FilterOptionDef as it doesn't contain one of '${keys}'`);
                     return false;
                 }
                 return true;
@@ -47,11 +47,11 @@ export class OptionsFactory {
                 this.defaultOption = firstFilterOption.displayKey;
             }
             else {
-                console.warn(`AG Grid: invalid FilterOptionDef supplied as it doesn't contain a 'displayKey'`);
+                console.warn(`ZING Grid: invalid FilterOptionDef supplied as it doesn't contain a 'displayKey'`);
             }
         }
         else {
-            console.warn('AG Grid: no filter options for filter');
+            console.warn('ZING Grid: no filter options for filter');
         }
     }
     getDefaultOption() {

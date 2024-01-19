@@ -52,8 +52,8 @@ export class HeaderFilterCellCtrl extends AbstractHeaderCellCtrl {
     }
     setupUi() {
         this.comp.setButtonWrapperDisplayed(!this.suppressFilterButton && this.active);
-        this.comp.addOrRemoveBodyCssClass('ag-floating-filter-full-body', this.suppressFilterButton);
-        this.comp.addOrRemoveBodyCssClass('ag-floating-filter-body', !this.suppressFilterButton);
+        this.comp.addOrRemoveBodyCssClass('zing-floating-filter-full-body', this.suppressFilterButton);
+        this.comp.addOrRemoveBodyCssClass('zing-floating-filter-body', !this.suppressFilterButton);
         if (!this.active || this.iconCreated) {
             return;
         }
@@ -151,8 +151,8 @@ export class HeaderFilterCellCtrl extends AbstractHeaderCellCtrl {
         if (isRelatedWithin) {
             return;
         }
-        const notFromHeaderWrapper = !!e.relatedTarget && !e.relatedTarget.classList.contains('ag-floating-filter');
-        const fromWithinHeader = !!e.relatedTarget && isElementChildOfClass(e.relatedTarget, 'ag-floating-filter');
+        const notFromHeaderWrapper = !!e.relatedTarget && !e.relatedTarget.classList.contains('zing-floating-filter');
+        const fromWithinHeader = !!e.relatedTarget && isElementChildOfClass(e.relatedTarget, 'zing-floating-filter');
         if (notFromHeaderWrapper && fromWithinHeader && e.target === this.eGui) {
             const lastFocusEvent = this.lastFocusEvent;
             const fromTab = !!(lastFocusEvent && lastFocusEvent.key === KeyCode.TAB);
@@ -171,7 +171,7 @@ export class HeaderFilterCellCtrl extends AbstractHeaderCellCtrl {
                 return;
             }
             const hovered = this.columnHoverService.isHovered(this.column);
-            this.comp.addOrRemoveCssClass('ag-column-hover', hovered);
+            this.comp.addOrRemoveCssClass('zing-column-hover', hovered);
         };
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_HOVER_CHANGED, listener);
         listener();

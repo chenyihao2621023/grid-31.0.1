@@ -5,14 +5,14 @@ export const Logger = {
         console.log(...logContent);
     },
     warn(message, ...logContent) {
-        console.warn(`AG Charts - ${message}`, ...logContent);
+        console.warn(`ZING Charts - ${message}`, ...logContent);
     },
     error(message, ...logContent) {
         if (typeof message === 'object') {
-            console.error(`AG Charts error`, message, ...logContent);
+            console.error(`ZING Charts error`, message, ...logContent);
         }
         else {
-            console.error(`AG Charts - ${message}`, ...logContent);
+            console.error(`ZING Charts - ${message}`, ...logContent);
         }
     },
     table(...logContent) {

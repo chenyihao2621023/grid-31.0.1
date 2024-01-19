@@ -7,11 +7,11 @@ export function RefSelector(ref) {
 }
 function querySelectorFunc(selector, refSelector, classPrototype, methodOrAttributeName, index) {
     if (selector === null) {
-        console.error('AG Grid: QuerySelector selector should not be null');
+        console.error('ZING Grid: QuerySelector selector should not be null');
         return;
     }
     if (typeof index === 'number') {
-        console.error('AG Grid: QuerySelector should be on an attribute');
+        console.error('ZING Grid: QuerySelector should be on an attribute');
         return;
     }
     addToObjectProps(classPrototype, 'querySelectors', {
@@ -27,7 +27,7 @@ function querySelectorFunc(selector, refSelector, classPrototype, methodOrAttrib
 //
 // function methodFunc(alias: string, target: Object, methodName: string) {
 //     if (alias === null) {
-//         console.error("AG Grid: EventListener eventName should not be null");
+//         console.error("ZING Grid: EventListener eventName should not be null");
 //         return;
 //     }
 //
@@ -45,12 +45,12 @@ function addToObjectProps(target, key, value) {
     props[key].push(value);
 }
 function getOrCreateProps(target, instanceName) {
-    if (!target.__agComponentMetaData) {
-        target.__agComponentMetaData = {};
+    if (!target.__zingComponentMetaData) {
+        target.__zingComponentMetaData = {};
     }
-    if (!target.__agComponentMetaData[instanceName]) {
-        target.__agComponentMetaData[instanceName] = {};
+    if (!target.__zingComponentMetaData[instanceName]) {
+        target.__zingComponentMetaData[instanceName] = {};
     }
-    return target.__agComponentMetaData[instanceName];
+    return target.__zingComponentMetaData[instanceName];
 }
 //# sourceMappingURL=componentAnnotations.js.map

@@ -385,12 +385,12 @@ export class Series extends Observable {
     pickNodeClosestDatum(_point) {
         // Override point for subclasses - but if this is invoked, the subclass specified it wants
         // to use this feature.
-        throw new Error('AG Charts - Series.pickNodeClosestDatum() not implemented');
+        throw new Error('ZING Charts - Series.pickNodeClosestDatum() not implemented');
     }
     pickNodeMainAxisFirst(_point, _requireCategoryAxis) {
         // Override point for subclasses - but if this is invoked, the subclass specified it wants
         // to use this feature.
-        throw new Error('AG Charts - Series.pickNodeMainAxisFirst() not implemented');
+        throw new Error('ZING Charts - Series.pickNodeMainAxisFirst() not implemented');
     }
     fireNodeClickEvent(event, datum) {
         this.fireEvent(new this.NodeClickEvent('nodeClick', event, datum, this));

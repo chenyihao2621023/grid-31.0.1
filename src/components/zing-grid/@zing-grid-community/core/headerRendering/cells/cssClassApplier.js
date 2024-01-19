@@ -1,6 +1,6 @@
 import { missing } from "../../utils/generic";
-const CSS_FIRST_COLUMN = 'ag-column-first';
-const CSS_LAST_COLUMN = 'ag-column-last';
+const CSS_FIRST_COLUMN = 'zing-column-first';
+const CSS_LAST_COLUMN = 'zing-column-last';
 export class CssClassApplier {
     static getHeaderClassesFromColDef(abstractColDef, gridOptionsService, column, columnGroup) {
         if (missing(abstractColDef)) {

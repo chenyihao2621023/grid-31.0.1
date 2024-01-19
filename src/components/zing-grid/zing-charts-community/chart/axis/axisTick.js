@@ -8,7 +8,7 @@ import { Default } from '../../util/default';
 import { TimeInterval } from '../../util/time/interval';
 import { isFiniteNumber } from '../../util/type-guards';
 import { ARRAY, BOOLEAN, COLOR_STRING, MIN_SPACING, POSITIVE_NUMBER, Validate, predicateWithMessage, } from '../../util/validation';
-const TICK_INTERVAL = predicateWithMessage((value) => (isFiniteNumber(value) && value > 0) || value instanceof TimeInterval, `a non-zero positive Number value or, for a time axis, a Time Interval such as 'agCharts.time.month'`);
+const TICK_INTERVAL = predicateWithMessage((value) => (isFiniteNumber(value) && value > 0) || value instanceof TimeInterval, `a non-zero positive Number value or, for a time axis, a Time Interval such as 'zingCharts'.time.month'`);
 export class AxisTick {
     constructor() {
         this.enabled = true;

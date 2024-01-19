@@ -8,8 +8,8 @@ export const MultiFilterModule = {
     moduleName: ModuleNames.MultiFilterModule,
     beans: [],
     userComponents: [
-        { componentName: 'agMultiColumnFilter', componentClass: MultiFilter },
-        { componentName: 'agMultiColumnFloatingFilter', componentClass: MultiFloatingFilterComp },
+        { componentName: 'zingMultiColumnFilter'', componentClass: MultiFilter },
+        { componentName: 'zingMultiColumnFloatingFilter'', componentClass: MultiFloatingFilterComp },
     ],
     dependantModules: [
         EnterpriseCoreModule

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired } from "../../../context/context";
 import { ProvidedColumnGroup } from "../../../entities/providedColumnGroup";
 import { setDisplayed } from "../../../utils/dom";
-import { isStopPropagationForAgGrid, stopPropagationForAgGrid } from "../../../utils/event";
+import { isStopPropagationForZingGrid, stopPropagationForZingGrid } from "../../../utils/event";
 import { warnOnce } from "../../../utils/function";
 import { exists } from "../../../utils/generic";
 import { createIconNoSpan } from "../../../utils/icon";
@@ -38,10 +38,10 @@ export class HeaderGroupComp extends Component {
         }
     }
     setupExpandIcons() {
-        this.addInIcon("columnGroupOpened", "agOpened");
-        this.addInIcon("columnGroupClosed", "agClosed");
+        this.addInIcon("columnGroupOpened", "zingOpened");
+        this.addInIcon("columnGroupClosed", "zingClosed");
         const expandAction = (event) => {
-            if (isStopPropagationForAgGrid(event)) {
+            if (isStopPropagationForZingGrid(event)) {
                 return;
             }
             const newExpandedValue = !this.params.columnGroup.isExpanded();
@@ -50,7 +50,7 @@ export class HeaderGroupComp extends Component {
         this.addTouchAndClickListeners(this.eCloseIcon, expandAction);
         this.addTouchAndClickListeners(this.eOpenIcon, expandAction);
         const stopPropagationAction = (event) => {
-            stopPropagationForAgGrid(event);
+            stopPropagationForZingGrid(event);
         };
         // adding stopPropagation to the double click for the icons prevents double click action happening
         // when the icons are clicked. if the icons are double clicked, then the groups should open and
@@ -102,23 +102,23 @@ export class HeaderGroupComp extends Component {
         const { displayName, columnGroup } = this.params;
         if (exists(displayName)) {
             const displayNameSanitised = escapeString(displayName);
-            this.getRefElement('agLabel').innerHTML = displayNameSanitised;
+            this.getRefElement('zingLabel'').innerHTML = displayNameSanitised;
         }
-        this.addOrRemoveCssClass('ag-sticky-label', !((_a = columnGroup.getColGroupDef()) === null || _a === void 0 ? void 0 : _a.suppressStickyLabel));
+        this.addOrRemoveCssClass('zing-sticky-label', !((_a = columnGroup.getColGroupDef()) === null || _a === void 0 ? void 0 : _a.suppressStickyLabel));
     }
 }
-HeaderGroupComp.TEMPLATE = `<div class="ag-header-group-cell-label" ref="agContainer" role="presentation">
-            <span ref="agLabel" class="ag-header-group-text" role="presentation"></span>
-            <span ref="agOpened" class="ag-header-icon ag-header-expand-icon ag-header-expand-icon-expanded"></span>
-            <span ref="agClosed" class="ag-header-icon ag-header-expand-icon ag-header-expand-icon-collapsed"></span>
+HeaderGroupComp.TEMPLATE = `<div class="zing-header-group-cell-label" ref="zingContainer" role="presentation">
+            <span ref="zingLabel" class="zing-header-group-text" role="presentation"></span>
+            <span ref="zingOpened" class="zing-header-icon zing-header-expand-icon zing-header-expand-icon-expanded"></span>
+            <span ref="zingClosed" class="zing-header-icon zing-header-expand-icon zing-header-expand-icon-collapsed"></span>
         </div>`;
 __decorate([
     Autowired("columnModel")
 ], HeaderGroupComp.prototype, "columnModel", void 0);
 __decorate([
-    RefSelector("agOpened")
+    RefSelector("zingOpened")
 ], HeaderGroupComp.prototype, "eOpenIcon", void 0);
 __decorate([
-    RefSelector("agClosed")
+    RefSelector("zingClosed")
 ], HeaderGroupComp.prototype, "eCloseIcon", void 0);
 //# sourceMappingURL=headerGroupComp.js.map

@@ -403,7 +403,7 @@ let ServerSideRowModel = class ServerSideRowModel extends BeanStub {
                 });
             }
             else {
-                throw new Error('AG Grid: Unsupported store type');
+                throw new Error('ZING Grid: Unsupported store type');
             }
         });
         return states;
@@ -517,7 +517,7 @@ let ServerSideRowModel = class ServerSideRowModel extends BeanStub {
                 rootStore.setRowCount(rowCount, lastRowIndexKnown);
                 return;
             }
-            console.error('AG Grid: Infinite scrolling must be enabled in order to set the row count.');
+            console.error('ZING Grid: Infinite scrolling must be enabled in order to set the row count.');
         }
     }
 };

@@ -9,7 +9,7 @@ export class LayoutService extends Listeners {
         if (this.isLayoutStage(eventType) || this.isLayoutComplete(eventType)) {
             return super.addListener(eventType, handler);
         }
-        throw new Error(`AG Charts - unsupported listener type: ${eventType}`);
+        throw new Error(`ZING Charts - unsupported listener type: ${eventType}`);
     }
     dispatchPerformLayout(stage, ctx) {
         if (this.isLayoutStage(stage)) {

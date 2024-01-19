@@ -93,7 +93,7 @@ export class DateFilter extends ScalarFilter {
                     return params[param] == null ? fallback : Number(params[param]);
                 }
                 else {
-                    console.warn(`AG Grid: DateFilter ${param} is not a number`);
+                    console.warn(`ZING Grid: DateFilter ${param} is not a number`);
                 }
             }
             return fallback;
@@ -101,7 +101,7 @@ export class DateFilter extends ScalarFilter {
         this.minValidYear = yearParser('minValidYear', DEFAULT_MIN_YEAR);
         this.maxValidYear = yearParser('maxValidYear', DEFAULT_MAX_YEAR);
         if (this.minValidYear > this.maxValidYear) {
-            console.warn(`AG Grid: DateFilter minValidYear should be <= maxValidYear`);
+            console.warn(`ZING Grid: DateFilter minValidYear should be <= maxValidYear`);
         }
         if (params.minValidDate) {
             this.minValidDate = params.minValidDate instanceof Date ? params.minValidDate : parseDateTimeFromString(params.minValidDate);
@@ -116,7 +116,7 @@ export class DateFilter extends ScalarFilter {
             this.maxValidDate = null;
         }
         if (this.minValidDate && this.maxValidDate && this.minValidDate > this.maxValidDate) {
-            console.warn(`AG Grid: DateFilter minValidDate should be <= maxValidDate`);
+            console.warn(`ZING Grid: DateFilter minValidDate should be <= maxValidDate`);
         }
         this.filterModelFormatter = new DateFilterModelFormatter(this.dateFilterParams, this.localeService, this.optionsFactory);
     }
@@ -142,15 +142,15 @@ export class DateFilter extends ScalarFilter {
     }
     createValueElement() {
         const eCondition = document.createElement('div');
-        eCondition.classList.add('ag-filter-body');
+        eCondition.classList.add('zing-filter-body');
         this.createFromToElement(eCondition, this.eConditionPanelsFrom, this.dateConditionFromComps, 'from');
         this.createFromToElement(eCondition, this.eConditionPanelsTo, this.dateConditionToComps, 'to');
         return eCondition;
     }
     createFromToElement(eCondition, eConditionPanels, dateConditionComps, fromTo) {
         const eConditionPanel = document.createElement('div');
-        eConditionPanel.classList.add(`ag-filter-${fromTo}`);
-        eConditionPanel.classList.add(`ag-filter-date-${fromTo}`);
+        eConditionPanel.classList.add(`zing-filter-${fromTo}`);
+        eConditionPanel.classList.add(`zing-filter-date-${fromTo}`);
         eConditionPanels.push(eConditionPanel);
         eCondition.appendChild(eConditionPanel);
         dateConditionComps.push(this.createDateCompWrapper(eConditionPanel));

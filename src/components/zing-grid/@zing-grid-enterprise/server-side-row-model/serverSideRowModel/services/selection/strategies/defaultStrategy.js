@@ -33,14 +33,14 @@ export class DefaultStrategy extends BeanStub {
             toggledNodes: new Set(),
         };
         if (typeof state !== 'object') {
-            console.error('AG Grid: The provided selection state should be an object.');
+            console.error('ZING Grid: The provided selection state should be an object.');
             return;
         }
         if ('selectAll' in state && typeof state.selectAll === 'boolean') {
             newState.selectAll = state.selectAll;
         }
         else {
-            console.error('AG Grid: Select all status should be of boolean type.');
+            console.error('ZING Grid: Select all status should be of boolean type.');
             return;
         }
         if ('toggledNodes' in state && Array.isArray(state.toggledNodes)) {
@@ -49,12 +49,12 @@ export class DefaultStrategy extends BeanStub {
                     newState.toggledNodes.add(key);
                 }
                 else {
-                    console.warn(`AG Grid: Provided ids must be of string type. Invalid id provided: ${key}`);
+                    console.warn(`ZING Grid: Provided ids must be of string type. Invalid id provided: ${key}`);
                 }
             });
         }
         else {
-            console.error('AG Grid: `toggledNodes` must be an array of string ids.');
+            console.error('ZING Grid: `toggledNodes` must be an array of string ids.');
             return;
         }
         this.selectedState = newState;
@@ -77,7 +77,7 @@ export class DefaultStrategy extends BeanStub {
         const onlyThisNode = params.clearSelection && params.newValue && !params.rangeSelect;
         if (this.rowSelection !== 'multiple' || onlyThisNode) {
             if (params.nodes.length > 1) {
-                throw new Error('AG Grid: cannot select multiple rows when rowSelection is set to \'single\'');
+                throw new Error('ZING Grid: cannot select multiple rows when rowSelection is set to \'single\'');
             }
             const node = params.nodes[0];
             if (params.newValue) {
@@ -114,7 +114,7 @@ export class DefaultStrategy extends BeanStub {
         };
         if (params.rangeSelect && this.lastSelected) {
             if (params.nodes.length > 1) {
-                throw new Error('AG Grid: cannot select multiple rows when using rangeSelect');
+                throw new Error('ZING Grid: cannot select multiple rows when using rangeSelect');
             }
             const node = params.nodes[0];
             const lastSelectedNode = this.rowModel.getRowNode(this.lastSelected);
@@ -137,7 +137,7 @@ export class DefaultStrategy extends BeanStub {
     }
     getSelectedNodes() {
         if (this.selectAllUsed) {
-            console.warn(`AG Grid: getSelectedNodes and getSelectedRows functions cannot be used with select all functionality with the server-side row model.
+            console.warn(`ZING Grid: getSelectedNodes and getSelectedRows functions cannot be used with select all functionality with the server-side row model.
                 Use \`api.getServerSideSelectionState()\` instead.`);
         }
         return Object.values(this.selectedNodes);

@@ -21,7 +21,7 @@ export class GridHeaderDropZones extends Component {
     }
     createNorthPanel() {
         const topPanelGui = document.createElement('div');
-        topPanelGui.classList.add('ag-column-drop-wrapper');
+        topPanelGui.classList.add('zing-column-drop-wrapper');
         _.setAriaRole(topPanelGui, 'presentation');
         this.rowGroupComp = new RowGroupDropZonePanel(true);
         this.createManagedBean(this.rowGroupComp);
@@ -36,8 +36,8 @@ export class GridHeaderDropZones extends Component {
     }
     onDropPanelVisible() {
         const bothDisplayed = this.rowGroupComp.isDisplayed() && this.pivotComp.isDisplayed();
-        this.rowGroupComp.addOrRemoveCssClass('ag-column-drop-horizontal-half-width', bothDisplayed);
-        this.pivotComp.addOrRemoveCssClass('ag-column-drop-horizontal-half-width', bothDisplayed);
+        this.rowGroupComp.addOrRemoveCssClass('zing-column-drop-horizontal-half-width', bothDisplayed);
+        this.pivotComp.addOrRemoveCssClass('zing-column-drop-horizontal-half-width', bothDisplayed);
     }
     onRowGroupChanged() {
         if (!this.rowGroupComp) {

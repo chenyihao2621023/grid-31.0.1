@@ -12,10 +12,10 @@ import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class AdvancedFilterBuilderItemAddComp extends Component {
     constructor(item, focusWrapper) {
         super(/* html */ `
-            <div class="ag-advanced-filter-builder-item-wrapper" role="presentation">
-                <div ref="eItem" class="ag-advanced-filter-builder-item" role="presentation">
-                    <div class="ag-advanced-filter-builder-item-tree-lines" aria-hidden="true">
-                        <div class="ag-advanced-filter-builder-item-tree-line-vertical-top ag-advanced-filter-builder-item-tree-line-horizontal"></div>
+            <div class="zing-advanced-filter-builder-item-wrapper" role="presentation">
+                <div ref="eItem" class="zing-advanced-filter-builder-item" role="presentation">
+                    <div class="zing-advanced-filter-builder-item-tree-lines" aria-hidden="true">
+                        <div class="zing-advanced-filter-builder-item-tree-line-vertical-top zing-advanced-filter-builder-item-tree-line-horizontal"></div>
                     </div>
                 </div>
             </div>

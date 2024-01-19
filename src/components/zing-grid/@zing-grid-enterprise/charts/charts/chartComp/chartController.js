@@ -9,7 +9,7 @@ import { _Theme } from "@/components/zing-grid/zing-charts-community/main.js";
 import { getSeriesType } from "./utils/seriesTypeMapper";
 import { isStockTheme } from "./chartProxies/chartTheme";
 import { UpdateParamsValidator } from "./utils/UpdateParamsValidator";
-export const DEFAULT_THEMES = ['ag-default', 'ag-material', 'ag-sheets', 'ag-polychroma', 'ag-vivid'];
+export const DEFAULT_THEMES = ['zing-default', 'zing-material', 'zing-sheets', 'zing-polychroma', 'zing-vivid'];
 export class ChartController extends BeanStub {
     constructor(model) {
         super();
@@ -299,7 +299,7 @@ export class ChartController extends BeanStub {
     validUpdateType(params) {
         var _a;
         if (!params.type) {
-            console.warn(`AG Grid - Unable to update chart as the 'type' is missing. It must be either 'rangeChartUpdate', 'pivotChartUpdate', or 'crossFilterChartUpdate'.`);
+            console.warn(`ZING Grid - Unable to update chart as the 'type' is missing. It must be either 'rangeChartUpdate', 'pivotChartUpdate', or 'crossFilterChartUpdate'.`);
             return false;
         }
         const chartTypeMap = {
@@ -311,7 +311,7 @@ export class ChartController extends BeanStub {
         const valid = params.type ===
             `${currentChartType[0].toLowerCase()}${currentChartType.slice(1).replace(/ /g, '')}Update`;
         if (!valid) {
-            console.warn(`AG Grid - Unable to update chart as a '${params.type}' update type is not permitted on a ${currentChartType}.`);
+            console.warn(`ZING Grid - Unable to update chart as a '${params.type}' update type is not permitted on a ${currentChartType}.`);
         }
         return valid;
     }

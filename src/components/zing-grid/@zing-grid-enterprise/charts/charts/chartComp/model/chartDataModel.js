@@ -175,7 +175,7 @@ export class ChartDataModel extends BeanStub {
         let order = 1;
         const aggFuncDimension = this.suppliedCellRange.columns[0]; //TODO
         dimensionCols.forEach(column => {
-            const isAutoGroupCol = column.getColId() === 'ag-Grid-AutoColumn';
+            const isAutoGroupCol = column.getColId() === 'zing-Grid-AutoColumn';
             let selected = false;
             if (this.crossFiltering && this.aggFunc) {
                 if (aggFuncDimension.getColId() === column.getColId()) {

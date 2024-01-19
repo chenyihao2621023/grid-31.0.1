@@ -632,7 +632,7 @@ export class Legend {
         const { listeners: { legendItemDoubleClick }, ctx: { chartService }, item: { toggleSeriesVisible }, } = this;
         const { offsetX, offsetY } = event;
         // Integrated charts do not handle double click behaviour correctly due to multiple instances of the
-        // chart being created. See https://ag-grid.atlassian.net/browse/RTI-1381
+        // chart being created. See https://zing-grid.atlassian.net/browse/RTI-1381
         if (chartService.mode === 'integrated') {
             return;
         }

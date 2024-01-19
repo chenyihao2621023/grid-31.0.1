@@ -2,7 +2,7 @@ import { _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { _Theme, } from '@/components/zing-grid/zing-charts-community/main.js';
 import { ALL_AXIS_TYPES } from '../utils/axisTypeMapper';
 import { getSeriesType } from '../utils/seriesTypeMapper';
-export function createAgChartTheme(chartProxyParams, proxy) {
+export function createZingChartTheme(chartProxyParams, proxy) {
     var _a;
     const { chartOptionsToRestore, chartPaletteToRestore, chartThemeToRestore } = chartProxyParams;
     const themeName = getSelectedTheme(chartProxyParams);
@@ -131,7 +131,7 @@ export function lookupCustomChartTheme(chartProxyParams, name) {
     const { customChartThemes } = chartProxyParams;
     const customChartTheme = customChartThemes && customChartThemes[name];
     if (!customChartTheme) {
-        console.warn(`AG Grid: no stock theme exists with the name '${name}' and no ` +
+        console.warn(`ZING Grid: no stock theme exists with the name '${name}' and no ` +
             "custom chart theme with that name was supplied to 'customChartThemes'");
     }
     return customChartTheme;

@@ -73,7 +73,7 @@ let CellNavigationService = class CellNavigationService extends BeanStub {
                     break;
                 default:
                     pointer = null;
-                    console.warn('AG Grid: unknown key for navigation ' + key);
+                    console.warn('ZING Grid: unknown key for navigation ' + key);
                     break;
             }
             if (pointer) {

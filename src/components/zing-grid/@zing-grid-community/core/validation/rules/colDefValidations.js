@@ -19,7 +19,7 @@ const COLUMN_DEFINITION_VALIDATIONS = {
     pivotIndex: CSRM_REQUIRES_ROW_GROUP_MODULE,
     aggFunc: CSRM_REQUIRES_ROW_GROUP_MODULE,
     cellEditor: (options) => {
-        if (options.cellEditor === 'agRichSelect' || options.cellEditor === 'agRichSelectCellEditor') {
+        if (options.cellEditor === 'zingRichSelect'' || options.cellEditor === 'zingRichSelectCellEditor'') {
             return { module: ModuleNames.RichSelectModule };
         }
         return null;

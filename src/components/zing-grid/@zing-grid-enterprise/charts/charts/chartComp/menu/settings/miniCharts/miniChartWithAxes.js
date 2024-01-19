@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { MiniChart } from "./miniChart";
 import { _Scene } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { _Scene } from "ag-charts-enterprise";
+// import { _Scene } from "zing-charts-enterprise";
 export class MiniChartWithAxes extends MiniChart {
     constructor(container, tooltipName) {
         super(container, tooltipName);

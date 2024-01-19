@@ -1,269 +1,269 @@
-.ag-theme-balham, .ag-theme-balham-dark, .ag-theme-balham-auto-dark {
-  --ag-balham-active-color: #0091ea;
-  --ag-foreground-color: #000;
-  --ag-background-color: #fff;
-  --ag-header-background-color: #f5f7f7;
-  --ag-tooltip-background-color: #cbd0d3;
-  --ag-subheader-background-color: #e2e9eb;
-  --ag-control-panel-background-color: #f5f7f7;
-  --ag-border-color: #bdc3c7;
-  --ag-odd-row-background-color: #fcfdfe;
-  --ag-row-hover-color: #ecf0f1;
-  --ag-column-hover-color: #ecf0f1;
-  --ag-input-border-color: #95a5a6;
-  --ag-invalid-color: #e02525;
-  --ag-input-disabled-background-color: #ebebeb;
-  --ag-checkbox-unchecked-color: #7f8c8d;
-  --ag-input-focus-border-color: #719ECE;
-  --ag-advanced-filter-join-pill-color: #f08e8d;
-  --ag-advanced-filter-column-pill-color: #a6e194;
-  --ag-advanced-filter-option-pill-color: #f3c08b;
-  --ag-advanced-filter-value-pill-color: #85c0e4;
-  --ag-input-focus-box-shadow: 0 0 2px 1px var(--ag-input-focus-border-color);
-  --ag-range-selection-border-color: var(--ag-balham-active-color);
-  --ag-checkbox-checked-color: var(--ag-balham-active-color);
-  --ag-checkbox-background-color: var(--ag-background-color);
-  --ag-secondary-foreground-color: rgba(0, 0, 0, 0.54);
-  --ag-disabled-foreground-color: rgba(0, 0, 0, 0.38);
-  --ag-subheader-toolbar-background-color: rgba(226, 233, 235, 0.5);
-  --ag-row-border-color: rgba(189, 195, 199, 0.58);
-  --ag-chip-background-color: rgba(0, 0, 0, 0.1);
-  --ag-range-selection-background-color: rgba(0, 145, 234, 0.2);
-  --ag-range-selection-background-color-2: rgba(0, 145, 234, 0.36);
-  --ag-range-selection-background-color-3: rgba(0, 145, 234, 0.49);
-  --ag-range-selection-background-color-4: rgba(0, 145, 234, 0.59);
-  --ag-selected-row-background-color: rgba(0, 145, 234, 0.28);
-  --ag-header-column-separator-color: rgba(189, 195, 199, 0.5);
-  --ag-input-disabled-border-color: rgba(149, 165, 166, 0.3);
-  --ag-header-column-separator-display: block;
-  --ag-header-column-separator-height: 50%;
-  --ag-grid-size: 4px;
-  --ag-icon-size: 16px;
-  --ag-row-height: calc(var(--ag-grid-size) * 7);
-  --ag-header-height: calc(var(--ag-grid-size) * 8);
-  --ag-list-item-height: calc(var(--ag-grid-size) * 6);
-  --ag-row-group-indent-size: calc(var(--ag-grid-size) * 3 + var(--ag-icon-size));
-  --ag-cell-horizontal-padding: calc(var(--ag-grid-size) * 3);
-  --ag-input-height: calc(var(--ag-grid-size) * 4);
-  --ag-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --ag-font-size: 12px;
-  --ag-icon-font-family: agGridBalham;
-  --ag-border-radius: 2px;
-  --ag-checkbox-border-radius: 3px;
-  --ag-card-shadow: none;
+.zing-theme-balham, .zing-theme-balham-dark, .zing-theme-balham-auto-dark {
+  --zing-balham-active-color: #0091ea;
+  --zing-foreground-color: #000;
+  --zing-background-color: #fff;
+  --zing-header-background-color: #f5f7f7;
+  --zing-tooltip-background-color: #cbd0d3;
+  --zing-subheader-background-color: #e2e9eb;
+  --zing-control-panel-background-color: #f5f7f7;
+  --zing-border-color: #bdc3c7;
+  --zing-odd-row-background-color: #fcfdfe;
+  --zing-row-hover-color: #ecf0f1;
+  --zing-column-hover-color: #ecf0f1;
+  --zing-input-border-color: #95a5a6;
+  --zing-invalid-color: #e02525;
+  --zing-input-disabled-background-color: #ebebeb;
+  --zing-checkbox-unchecked-color: #7f8c8d;
+  --zing-input-focus-border-color: #719ECE;
+  --zing-advanced-filter-join-pill-color: #f08e8d;
+  --zing-advanced-filter-column-pill-color: #a6e194;
+  --zing-advanced-filter-option-pill-color: #f3c08b;
+  --zing-advanced-filter-value-pill-color: #85c0e4;
+  --zing-input-focus-box-shadow: 0 0 2px 1px var(--zing-input-focus-border-color);
+  --zing-range-selection-border-color: var(--zing-balham-active-color);
+  --zing-checkbox-checked-color: var(--zing-balham-active-color);
+  --zing-checkbox-background-color: var(--zing-background-color);
+  --zing-secondary-foreground-color: rgba(0, 0, 0, 0.54);
+  --zing-disabled-foreground-color: rgba(0, 0, 0, 0.38);
+  --zing-subheader-toolbar-background-color: rgba(226, 233, 235, 0.5);
+  --zing-row-border-color: rgba(189, 195, 199, 0.58);
+  --zing-chip-background-color: rgba(0, 0, 0, 0.1);
+  --zing-range-selection-background-color: rgba(0, 145, 234, 0.2);
+  --zing-range-selection-background-color-2: rgba(0, 145, 234, 0.36);
+  --zing-range-selection-background-color-3: rgba(0, 145, 234, 0.49);
+  --zing-range-selection-background-color-4: rgba(0, 145, 234, 0.59);
+  --zing-selected-row-background-color: rgba(0, 145, 234, 0.28);
+  --zing-header-column-separator-color: rgba(189, 195, 199, 0.5);
+  --zing-input-disabled-border-color: rgba(149, 165, 166, 0.3);
+  --zing-header-column-separator-display: block;
+  --zing-header-column-separator-height: 50%;
+  --zing-grid-size: 4px;
+  --zing-icon-size: 16px;
+  --zing-row-height: calc(var(--zing-grid-size) * 7);
+  --zing-header-height: calc(var(--zing-grid-size) * 8);
+  --zing-list-item-height: calc(var(--zing-grid-size) * 6);
+  --zing-row-group-indent-size: calc(var(--zing-grid-size) * 3 + var(--zing-icon-size));
+  --zing-cell-horizontal-padding: calc(var(--zing-grid-size) * 3);
+  --zing-input-height: calc(var(--zing-grid-size) * 4);
+  --zing-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --zing-font-size: 12px;
+  --zing-icon-font-family: zingGridBalham;
+  --zing-border-radius: 2px;
+  --zing-checkbox-border-radius: 3px;
+  --zing-card-shadow: none;
 }
 
-.ag-theme-balham-dark {
-  --ag-balham-active-color: #00B0FF;
-  --ag-foreground-color: #F5F5F5;
-  --ag-background-color: #2d3436;
-  --ag-header-background-color: #1c1c1c;
-  --ag-tooltip-background-color: #1c1f20;
-  --ag-subheader-background-color: #111;
-  --ag-control-panel-background-color: #202020;
-  --ag-border-color: #424242;
-  --ag-odd-row-background-color: #262c2e;
-  --ag-row-hover-color: #3d4749;
-  --ag-column-hover-color: #3d4749;
-  --ag-input-border-color: #f0f0f0;
-  --ag-input-disabled-background-color: rgba(48, 46, 46, 0.3);
-  --ag-modal-overlay-background-color: rgba(45, 52, 54, 0.66);
-  --ag-checkbox-unchecked-color: #ecf0f1;
-  --ag-advanced-filter-join-pill-color: #7a3a37;
-  --ag-advanced-filter-column-pill-color: #355f2d;
-  --ag-advanced-filter-option-pill-color: #5a3168;
-  --ag-advanced-filter-value-pill-color: #374c86;
-  --ag-secondary-foreground-color: var(--ag-foreground-color);
-  --ag-disabled-foreground-color: rgba(245, 245, 245, 0.38);
-  --ag-subheader-toolbar-background-color: rgba(17, 17, 17, 0.5);
-  --ag-row-border-color: #5c5c5c;
-  --ag-chip-background-color: rgba(245, 245, 245, 0.08);
-  --ag-range-selection-background-color: rgba(0, 176, 255, 0.2);
-  --ag-range-selection-background-color-2: rgba(0, 176, 255, 0.36);
-  --ag-range-selection-background-color-3: rgba(0, 176, 255, 0.49);
-  --ag-range-selection-background-color-4: rgba(0, 176, 255, 0.59);
-  --ag-selected-row-background-color: rgba(0, 176, 255, 0.28);
-  --ag-header-column-separator-color: rgba(66, 66, 66, 0.5);
-  --ag-input-disabled-border-color: rgba(240, 240, 240, 0.3);
-  --ag-header-foreground-color: rgba(245, 245, 245, 0.64);
-  --ag-toggle-button-off-background-color: transparent;
-  --ag-toggle-button-off-border-color: var(--ag-foreground-color);
-  --ag-range-selection-chart-category-background-color: rgba(26, 177, 74, 0.5);
-  --ag-range-selection-chart-background-color: rgba(45, 166, 255, 0.5);
-  --ag-input-focus-box-shadow: 0 0 4px 1.5px var(--ag-input-focus-border-color);
+.zing-theme-balham-dark {
+  --zing-balham-active-color: #00B0FF;
+  --zing-foreground-color: #F5F5F5;
+  --zing-background-color: #2d3436;
+  --zing-header-background-color: #1c1c1c;
+  --zing-tooltip-background-color: #1c1f20;
+  --zing-subheader-background-color: #111;
+  --zing-control-panel-background-color: #202020;
+  --zing-border-color: #424242;
+  --zing-odd-row-background-color: #262c2e;
+  --zing-row-hover-color: #3d4749;
+  --zing-column-hover-color: #3d4749;
+  --zing-input-border-color: #f0f0f0;
+  --zing-input-disabled-background-color: rgba(48, 46, 46, 0.3);
+  --zing-modal-overlay-background-color: rgba(45, 52, 54, 0.66);
+  --zing-checkbox-unchecked-color: #ecf0f1;
+  --zing-advanced-filter-join-pill-color: #7a3a37;
+  --zing-advanced-filter-column-pill-color: #355f2d;
+  --zing-advanced-filter-option-pill-color: #5a3168;
+  --zing-advanced-filter-value-pill-color: #374c86;
+  --zing-secondary-foreground-color: var(--zing-foreground-color);
+  --zing-disabled-foreground-color: rgba(245, 245, 245, 0.38);
+  --zing-subheader-toolbar-background-color: rgba(17, 17, 17, 0.5);
+  --zing-row-border-color: #5c5c5c;
+  --zing-chip-background-color: rgba(245, 245, 245, 0.08);
+  --zing-range-selection-background-color: rgba(0, 176, 255, 0.2);
+  --zing-range-selection-background-color-2: rgba(0, 176, 255, 0.36);
+  --zing-range-selection-background-color-3: rgba(0, 176, 255, 0.49);
+  --zing-range-selection-background-color-4: rgba(0, 176, 255, 0.59);
+  --zing-selected-row-background-color: rgba(0, 176, 255, 0.28);
+  --zing-header-column-separator-color: rgba(66, 66, 66, 0.5);
+  --zing-input-disabled-border-color: rgba(240, 240, 240, 0.3);
+  --zing-header-foreground-color: rgba(245, 245, 245, 0.64);
+  --zing-toggle-button-off-background-color: transparent;
+  --zing-toggle-button-off-border-color: var(--zing-foreground-color);
+  --zing-range-selection-chart-category-background-color: rgba(26, 177, 74, 0.5);
+  --zing-range-selection-chart-background-color: rgba(45, 166, 255, 0.5);
+  --zing-input-focus-box-shadow: 0 0 4px 1.5px var(--zing-input-focus-border-color);
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  .ag-theme-balham-auto-dark {
-    --ag-balham-active-color: #00B0FF;
-    --ag-foreground-color: #F5F5F5;
-    --ag-background-color: #2d3436;
-    --ag-header-background-color: #1c1c1c;
-    --ag-tooltip-background-color: #1c1f20;
-    --ag-subheader-background-color: #111;
-    --ag-control-panel-background-color: #202020;
-    --ag-border-color: #424242;
-    --ag-odd-row-background-color: #262c2e;
-    --ag-row-hover-color: #3d4749;
-    --ag-column-hover-color: #3d4749;
-    --ag-input-border-color: #f0f0f0;
-    --ag-input-disabled-background-color: rgba(48, 46, 46, 0.3);
-    --ag-modal-overlay-background-color: rgba(45, 52, 54, 0.66);
-    --ag-checkbox-unchecked-color: #ecf0f1;
-    --ag-advanced-filter-join-pill-color: #7a3a37;
-    --ag-advanced-filter-column-pill-color: #355f2d;
-    --ag-advanced-filter-option-pill-color: #5a3168;
-    --ag-advanced-filter-value-pill-color: #374c86;
-    --ag-secondary-foreground-color: var(--ag-foreground-color);
-    --ag-disabled-foreground-color: rgba(245, 245, 245, 0.38);
-    --ag-subheader-toolbar-background-color: rgba(17, 17, 17, 0.5);
-    --ag-row-border-color: #5c5c5c;
-    --ag-chip-background-color: rgba(245, 245, 245, 0.08);
-    --ag-range-selection-background-color: rgba(0, 176, 255, 0.2);
-    --ag-range-selection-background-color-2: rgba(0, 176, 255, 0.36);
-    --ag-range-selection-background-color-3: rgba(0, 176, 255, 0.49);
-    --ag-range-selection-background-color-4: rgba(0, 176, 255, 0.59);
-    --ag-selected-row-background-color: rgba(0, 176, 255, 0.28);
-    --ag-header-column-separator-color: rgba(66, 66, 66, 0.5);
-    --ag-input-disabled-border-color: rgba(240, 240, 240, 0.3);
-    --ag-header-foreground-color: rgba(245, 245, 245, 0.64);
-    --ag-toggle-button-off-background-color: transparent;
-    --ag-toggle-button-off-border-color: var(--ag-foreground-color);
-    --ag-range-selection-chart-category-background-color: rgba(26, 177, 74, 0.5);
-    --ag-range-selection-chart-background-color: rgba(45, 166, 255, 0.5);
-    --ag-input-focus-box-shadow: 0 0 4px 1.5px var(--ag-input-focus-border-color);
+  .zing-theme-balham-auto-dark {
+    --zing-balham-active-color: #00B0FF;
+    --zing-foreground-color: #F5F5F5;
+    --zing-background-color: #2d3436;
+    --zing-header-background-color: #1c1c1c;
+    --zing-tooltip-background-color: #1c1f20;
+    --zing-subheader-background-color: #111;
+    --zing-control-panel-background-color: #202020;
+    --zing-border-color: #424242;
+    --zing-odd-row-background-color: #262c2e;
+    --zing-row-hover-color: #3d4749;
+    --zing-column-hover-color: #3d4749;
+    --zing-input-border-color: #f0f0f0;
+    --zing-input-disabled-background-color: rgba(48, 46, 46, 0.3);
+    --zing-modal-overlay-background-color: rgba(45, 52, 54, 0.66);
+    --zing-checkbox-unchecked-color: #ecf0f1;
+    --zing-advanced-filter-join-pill-color: #7a3a37;
+    --zing-advanced-filter-column-pill-color: #355f2d;
+    --zing-advanced-filter-option-pill-color: #5a3168;
+    --zing-advanced-filter-value-pill-color: #374c86;
+    --zing-secondary-foreground-color: var(--zing-foreground-color);
+    --zing-disabled-foreground-color: rgba(245, 245, 245, 0.38);
+    --zing-subheader-toolbar-background-color: rgba(17, 17, 17, 0.5);
+    --zing-row-border-color: #5c5c5c;
+    --zing-chip-background-color: rgba(245, 245, 245, 0.08);
+    --zing-range-selection-background-color: rgba(0, 176, 255, 0.2);
+    --zing-range-selection-background-color-2: rgba(0, 176, 255, 0.36);
+    --zing-range-selection-background-color-3: rgba(0, 176, 255, 0.49);
+    --zing-range-selection-background-color-4: rgba(0, 176, 255, 0.59);
+    --zing-selected-row-background-color: rgba(0, 176, 255, 0.28);
+    --zing-header-column-separator-color: rgba(66, 66, 66, 0.5);
+    --zing-input-disabled-border-color: rgba(240, 240, 240, 0.3);
+    --zing-header-foreground-color: rgba(245, 245, 245, 0.64);
+    --zing-toggle-button-off-background-color: transparent;
+    --zing-toggle-button-off-border-color: var(--zing-foreground-color);
+    --zing-range-selection-chart-category-background-color: rgba(26, 177, 74, 0.5);
+    --zing-range-selection-chart-background-color: rgba(45, 166, 255, 0.5);
+    --zing-input-focus-box-shadow: 0 0 4px 1.5px var(--zing-input-focus-border-color);
     color-scheme: dark;
   }
 }
-.ag-theme-balham .ag-filter-toolpanel-header,
-.ag-theme-balham .ag-filter-toolpanel-search,
-.ag-theme-balham .ag-status-bar,
-.ag-theme-balham .ag-header-row,
-.ag-theme-balham .ag-multi-filter-group-title-bar, .ag-theme-balham-dark .ag-filter-toolpanel-header,
-.ag-theme-balham-dark .ag-filter-toolpanel-search,
-.ag-theme-balham-dark .ag-status-bar,
-.ag-theme-balham-dark .ag-header-row,
-.ag-theme-balham-dark .ag-multi-filter-group-title-bar, .ag-theme-balham-auto-dark .ag-filter-toolpanel-header,
-.ag-theme-balham-auto-dark .ag-filter-toolpanel-search,
-.ag-theme-balham-auto-dark .ag-status-bar,
-.ag-theme-balham-auto-dark .ag-header-row,
-.ag-theme-balham-auto-dark .ag-multi-filter-group-title-bar {
+.zing-theme-balham .zing-filter-toolpanel-header,
+.zing-theme-balham .zing-filter-toolpanel-search,
+.zing-theme-balham .zing-status-bar,
+.zing-theme-balham .zing-header-row,
+.zing-theme-balham .zing-multi-filter-group-title-bar, .zing-theme-balham-dark .zing-filter-toolpanel-header,
+.zing-theme-balham-dark .zing-filter-toolpanel-search,
+.zing-theme-balham-dark .zing-status-bar,
+.zing-theme-balham-dark .zing-header-row,
+.zing-theme-balham-dark .zing-multi-filter-group-title-bar, .zing-theme-balham-auto-dark .zing-filter-toolpanel-header,
+.zing-theme-balham-auto-dark .zing-filter-toolpanel-search,
+.zing-theme-balham-auto-dark .zing-status-bar,
+.zing-theme-balham-auto-dark .zing-header-row,
+.zing-theme-balham-auto-dark .zing-multi-filter-group-title-bar {
   font-weight: 600;
-  color: var(--ag-header-foreground-color);
+  color: var(--zing-header-foreground-color);
 }
-.ag-theme-balham .ag-ltr input[class^=ag-]:not([type]), .ag-theme-balham .ag-ltr input[class^=ag-][type=text], .ag-theme-balham .ag-ltr input[class^=ag-][type=number], .ag-theme-balham .ag-ltr input[class^=ag-][type=tel], .ag-theme-balham .ag-ltr input[class^=ag-][type=date], .ag-theme-balham .ag-ltr input[class^=ag-][type=datetime-local], .ag-theme-balham .ag-ltr textarea[class^=ag-], .ag-theme-balham-dark .ag-ltr input[class^=ag-]:not([type]), .ag-theme-balham-dark .ag-ltr input[class^=ag-][type=text], .ag-theme-balham-dark .ag-ltr input[class^=ag-][type=number], .ag-theme-balham-dark .ag-ltr input[class^=ag-][type=tel], .ag-theme-balham-dark .ag-ltr input[class^=ag-][type=date], .ag-theme-balham-dark .ag-ltr input[class^=ag-][type=datetime-local], .ag-theme-balham-dark .ag-ltr textarea[class^=ag-], .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-]:not([type]), .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-][type=text], .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-][type=number], .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-][type=tel], .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-][type=date], .ag-theme-balham-auto-dark .ag-ltr input[class^=ag-][type=datetime-local], .ag-theme-balham-auto-dark .ag-ltr textarea[class^=ag-] {
-  padding-left: var(--ag-grid-size);
+.zing-theme-balham .zing-ltr input[class^=zing-]:not([type]), .zing-theme-balham .zing-ltr input[class^=zing-][type=text], .zing-theme-balham .zing-ltr input[class^=zing-][type=number], .zing-theme-balham .zing-ltr input[class^=zing-][type=tel], .zing-theme-balham .zing-ltr input[class^=zing-][type=date], .zing-theme-balham .zing-ltr input[class^=zing-][type=datetime-local], .zing-theme-balham .zing-ltr textarea[class^=zing-], .zing-theme-balham-dark .zing-ltr input[class^=zing-]:not([type]), .zing-theme-balham-dark .zing-ltr input[class^=zing-][type=text], .zing-theme-balham-dark .zing-ltr input[class^=zing-][type=number], .zing-theme-balham-dark .zing-ltr input[class^=zing-][type=tel], .zing-theme-balham-dark .zing-ltr input[class^=zing-][type=date], .zing-theme-balham-dark .zing-ltr input[class^=zing-][type=datetime-local], .zing-theme-balham-dark .zing-ltr textarea[class^=zing-], .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-]:not([type]), .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-][type=text], .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-][type=number], .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-][type=tel], .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-][type=date], .zing-theme-balham-auto-dark .zing-ltr input[class^=zing-][type=datetime-local], .zing-theme-balham-auto-dark .zing-ltr textarea[class^=zing-] {
+  padding-left: var(--zing-grid-size);
 }
 
-.ag-theme-balham .ag-rtl input[class^=ag-]:not([type]), .ag-theme-balham .ag-rtl input[class^=ag-][type=text], .ag-theme-balham .ag-rtl input[class^=ag-][type=number], .ag-theme-balham .ag-rtl input[class^=ag-][type=tel], .ag-theme-balham .ag-rtl input[class^=ag-][type=date], .ag-theme-balham .ag-rtl input[class^=ag-][type=datetime-local], .ag-theme-balham .ag-rtl textarea[class^=ag-], .ag-theme-balham-dark .ag-rtl input[class^=ag-]:not([type]), .ag-theme-balham-dark .ag-rtl input[class^=ag-][type=text], .ag-theme-balham-dark .ag-rtl input[class^=ag-][type=number], .ag-theme-balham-dark .ag-rtl input[class^=ag-][type=tel], .ag-theme-balham-dark .ag-rtl input[class^=ag-][type=date], .ag-theme-balham-dark .ag-rtl input[class^=ag-][type=datetime-local], .ag-theme-balham-dark .ag-rtl textarea[class^=ag-], .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-]:not([type]), .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-][type=text], .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-][type=number], .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-][type=tel], .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-][type=date], .ag-theme-balham-auto-dark .ag-rtl input[class^=ag-][type=datetime-local], .ag-theme-balham-auto-dark .ag-rtl textarea[class^=ag-] {
-  padding-right: var(--ag-grid-size);
+.zing-theme-balham .zing-rtl input[class^=zing-]:not([type]), .zing-theme-balham .zing-rtl input[class^=zing-][type=text], .zing-theme-balham .zing-rtl input[class^=zing-][type=number], .zing-theme-balham .zing-rtl input[class^=zing-][type=tel], .zing-theme-balham .zing-rtl input[class^=zing-][type=date], .zing-theme-balham .zing-rtl input[class^=zing-][type=datetime-local], .zing-theme-balham .zing-rtl textarea[class^=zing-], .zing-theme-balham-dark .zing-rtl input[class^=zing-]:not([type]), .zing-theme-balham-dark .zing-rtl input[class^=zing-][type=text], .zing-theme-balham-dark .zing-rtl input[class^=zing-][type=number], .zing-theme-balham-dark .zing-rtl input[class^=zing-][type=tel], .zing-theme-balham-dark .zing-rtl input[class^=zing-][type=date], .zing-theme-balham-dark .zing-rtl input[class^=zing-][type=datetime-local], .zing-theme-balham-dark .zing-rtl textarea[class^=zing-], .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-]:not([type]), .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-][type=text], .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-][type=number], .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-][type=tel], .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-][type=date], .zing-theme-balham-auto-dark .zing-rtl input[class^=zing-][type=datetime-local], .zing-theme-balham-auto-dark .zing-rtl textarea[class^=zing-] {
+  padding-right: var(--zing-grid-size);
 }
 
-.ag-theme-balham .ag-column-drop-vertical-empty-message, .ag-theme-balham .ag-status-bar, .ag-theme-balham-dark .ag-column-drop-vertical-empty-message, .ag-theme-balham-dark .ag-status-bar, .ag-theme-balham-auto-dark .ag-column-drop-vertical-empty-message, .ag-theme-balham-auto-dark .ag-status-bar {
+.zing-theme-balham .zing-column-drop-vertical-empty-message, .zing-theme-balham .zing-status-bar, .zing-theme-balham-dark .zing-column-drop-vertical-empty-message, .zing-theme-balham-dark .zing-status-bar, .zing-theme-balham-auto-dark .zing-column-drop-vertical-empty-message, .zing-theme-balham-auto-dark .zing-status-bar {
   font-weight: 600;
-  color: var(--ag-disabled-foreground-color);
+  color: var(--zing-disabled-foreground-color);
 }
-.ag-theme-balham.ag-dnd-ghost, .ag-theme-balham-dark.ag-dnd-ghost, .ag-theme-balham-auto-dark.ag-dnd-ghost {
-  font-size: var(--ag-font-size);
+.zing-theme-balham.zing-dnd-ghost, .zing-theme-balham-dark.zing-dnd-ghost, .zing-theme-balham-auto-dark.zing-dnd-ghost {
+  font-size: var(--zing-font-size);
   font-weight: 600;
 }
-.ag-theme-balham .ag-tab, .ag-theme-balham-dark .ag-tab, .ag-theme-balham-auto-dark .ag-tab {
+.zing-theme-balham .zing-tab, .zing-theme-balham-dark .zing-tab, .zing-theme-balham-auto-dark .zing-tab {
   border: 1px solid transparent;
-  padding: var(--ag-grid-size) calc(var(--ag-grid-size) * 2);
-  margin: var(--ag-grid-size);
+  padding: var(--zing-grid-size) calc(var(--zing-grid-size) * 2);
+  margin: var(--zing-grid-size);
   margin-bottom: -1px;
 }
-.ag-theme-balham .ag-tab-selected, .ag-theme-balham-dark .ag-tab-selected, .ag-theme-balham-auto-dark .ag-tab-selected {
-  background-color: var(--ag-background-color);
-  border-color: var(--ag-border-color);
+.zing-theme-balham .zing-tab-selected, .zing-theme-balham-dark .zing-tab-selected, .zing-theme-balham-auto-dark .zing-tab-selected {
+  background-color: var(--zing-background-color);
+  border-color: var(--zing-border-color);
   border-bottom-color: transparent;
 }
-.ag-theme-balham .ag-tabs-header, .ag-theme-balham-dark .ag-tabs-header, .ag-theme-balham-auto-dark .ag-tabs-header {
-  border-bottom: 1px solid var(--ag-border-color);
+.zing-theme-balham .zing-tabs-header, .zing-theme-balham-dark .zing-tabs-header, .zing-theme-balham-auto-dark .zing-tabs-header {
+  border-bottom: 1px solid var(--zing-border-color);
 }
-.ag-theme-balham .ag-column-drop-cell, .ag-theme-balham-dark .ag-column-drop-cell, .ag-theme-balham-auto-dark .ag-column-drop-cell {
-  height: calc(var(--ag-grid-size) * 6);
+.zing-theme-balham .zing-column-drop-cell, .zing-theme-balham-dark .zing-column-drop-cell, .zing-theme-balham-auto-dark .zing-column-drop-cell {
+  height: calc(var(--zing-grid-size) * 6);
 }
-.ag-theme-balham .ag-column-drop-vertical-title, .ag-theme-balham-dark .ag-column-drop-vertical-title, .ag-theme-balham-auto-dark .ag-column-drop-vertical-title {
-  color: var(--ag-foreground-color);
+.zing-theme-balham .zing-column-drop-vertical-title, .zing-theme-balham-dark .zing-column-drop-vertical-title, .zing-theme-balham-auto-dark .zing-column-drop-vertical-title {
+  color: var(--zing-foreground-color);
 }
-.ag-theme-balham .ag-column-drop-vertical-cell, .ag-theme-balham-dark .ag-column-drop-vertical-cell, .ag-theme-balham-auto-dark .ag-column-drop-vertical-cell {
-  margin-left: calc(var(--ag-grid-size) * 2);
-  margin-right: calc(var(--ag-grid-size) * 2);
+.zing-theme-balham .zing-column-drop-vertical-cell, .zing-theme-balham-dark .zing-column-drop-vertical-cell, .zing-theme-balham-auto-dark .zing-column-drop-vertical-cell {
+  margin-left: calc(var(--zing-grid-size) * 2);
+  margin-right: calc(var(--zing-grid-size) * 2);
 }
-.ag-theme-balham .ag-column-drop-vertical-cell-text, .ag-theme-balham-dark .ag-column-drop-vertical-cell-text, .ag-theme-balham-auto-dark .ag-column-drop-vertical-cell-text {
-  margin-left: calc(var(--ag-grid-size) * 2);
+.zing-theme-balham .zing-column-drop-vertical-cell-text, .zing-theme-balham-dark .zing-column-drop-vertical-cell-text, .zing-theme-balham-auto-dark .zing-column-drop-vertical-cell-text {
+  margin-left: calc(var(--zing-grid-size) * 2);
 }
-.ag-theme-balham .ag-column-drop-vertical-icon, .ag-theme-balham-dark .ag-column-drop-vertical-icon, .ag-theme-balham-auto-dark .ag-column-drop-vertical-icon {
-  color: var(--ag-secondary-foreground-color);
+.zing-theme-balham .zing-column-drop-vertical-icon, .zing-theme-balham-dark .zing-column-drop-vertical-icon, .zing-theme-balham-auto-dark .zing-column-drop-vertical-icon {
+  color: var(--zing-secondary-foreground-color);
 }
-.ag-theme-balham .ag-ltr .ag-column-drop-vertical-empty-message, .ag-theme-balham-dark .ag-ltr .ag-column-drop-vertical-empty-message, .ag-theme-balham-auto-dark .ag-ltr .ag-column-drop-vertical-empty-message {
-  padding-left: calc(var(--ag-icon-size) + var(--ag-grid-size) * 2);
-  padding-right: var(--ag-grid-size);
-}
-
-.ag-theme-balham .ag-rtl .ag-column-drop-vertical-empty-message, .ag-theme-balham-dark .ag-rtl .ag-column-drop-vertical-empty-message, .ag-theme-balham-auto-dark .ag-rtl .ag-column-drop-vertical-empty-message {
-  padding-right: calc(var(--ag-icon-size) + var(--ag-grid-size) * 2);
-  padding-left: var(--ag-grid-size);
+.zing-theme-balham .zing-ltr .zing-column-drop-vertical-empty-message, .zing-theme-balham-dark .zing-ltr .zing-column-drop-vertical-empty-message, .zing-theme-balham-auto-dark .zing-ltr .zing-column-drop-vertical-empty-message {
+  padding-left: calc(var(--zing-icon-size) + var(--zing-grid-size) * 2);
+  padding-right: var(--zing-grid-size);
 }
 
-.ag-theme-balham .ag-column-drop-horizontal, .ag-theme-balham-dark .ag-column-drop-horizontal, .ag-theme-balham-auto-dark .ag-column-drop-horizontal {
-  height: var(--ag-header-height);
+.zing-theme-balham .zing-rtl .zing-column-drop-vertical-empty-message, .zing-theme-balham-dark .zing-rtl .zing-column-drop-vertical-empty-message, .zing-theme-balham-auto-dark .zing-rtl .zing-column-drop-vertical-empty-message {
+  padding-right: calc(var(--zing-icon-size) + var(--zing-grid-size) * 2);
+  padding-left: var(--zing-grid-size);
 }
-.ag-theme-balham .ag-column-drop-empty, .ag-theme-balham-dark .ag-column-drop-empty, .ag-theme-balham-auto-dark .ag-column-drop-empty {
-  color: var(--ag-disabled-foreground-color);
+
+.zing-theme-balham .zing-column-drop-horizontal, .zing-theme-balham-dark .zing-column-drop-horizontal, .zing-theme-balham-auto-dark .zing-column-drop-horizontal {
+  height: var(--zing-header-height);
 }
-.ag-theme-balham .ag-column-drop-horizontal-cell-text, .ag-theme-balham-dark .ag-column-drop-horizontal-cell-text, .ag-theme-balham-auto-dark .ag-column-drop-horizontal-cell-text {
-  margin-left: calc(var(--ag-grid-size) * 2);
+.zing-theme-balham .zing-column-drop-empty, .zing-theme-balham-dark .zing-column-drop-empty, .zing-theme-balham-auto-dark .zing-column-drop-empty {
+  color: var(--zing-disabled-foreground-color);
 }
-.ag-theme-balham .ag-column-drop-vertical, .ag-theme-balham-dark .ag-column-drop-vertical, .ag-theme-balham-auto-dark .ag-column-drop-vertical {
-  padding-top: calc(var(--ag-grid-size) * 2);
+.zing-theme-balham .zing-column-drop-horizontal-cell-text, .zing-theme-balham-dark .zing-column-drop-horizontal-cell-text, .zing-theme-balham-auto-dark .zing-column-drop-horizontal-cell-text {
+  margin-left: calc(var(--zing-grid-size) * 2);
 }
-.ag-theme-balham .ag-column-select-column-readonly.ag-icon-grip,
-.ag-theme-balham .ag-column-select-column-readonly .ag-icon-grip, .ag-theme-balham-dark .ag-column-select-column-readonly.ag-icon-grip,
-.ag-theme-balham-dark .ag-column-select-column-readonly .ag-icon-grip, .ag-theme-balham-auto-dark .ag-column-select-column-readonly.ag-icon-grip,
-.ag-theme-balham-auto-dark .ag-column-select-column-readonly .ag-icon-grip {
+.zing-theme-balham .zing-column-drop-vertical, .zing-theme-balham-dark .zing-column-drop-vertical, .zing-theme-balham-auto-dark .zing-column-drop-vertical {
+  padding-top: calc(var(--zing-grid-size) * 2);
+}
+.zing-theme-balham .zing-column-select-column-readonly.zing-icon-grip,
+.zing-theme-balham .zing-column-select-column-readonly .zing-icon-grip, .zing-theme-balham-dark .zing-column-select-column-readonly.zing-icon-grip,
+.zing-theme-balham-dark .zing-column-select-column-readonly .zing-icon-grip, .zing-theme-balham-auto-dark .zing-column-select-column-readonly.zing-icon-grip,
+.zing-theme-balham-auto-dark .zing-column-select-column-readonly .zing-icon-grip {
   opacity: 0.35;
 }
-.ag-theme-balham .ag-menu-header, .ag-theme-balham-dark .ag-menu-header, .ag-theme-balham-auto-dark .ag-menu-header {
-  background-color: var(--ag-header-background-color);
+.zing-theme-balham .zing-menu-header, .zing-theme-balham-dark .zing-menu-header, .zing-theme-balham-auto-dark .zing-menu-header {
+  background-color: var(--zing-header-background-color);
 }
-.ag-theme-balham .ag-overlay-loading-center, .ag-theme-balham-dark .ag-overlay-loading-center, .ag-theme-balham-auto-dark .ag-overlay-loading-center {
-  background-color: var(--ag-background-color);
-  border: 1px solid var(--ag-border-color);
-  color: var(--ag-foreground-color);
-  padding: calc(var(--ag-grid-size) * 4);
+.zing-theme-balham .zing-overlay-loading-center, .zing-theme-balham-dark .zing-overlay-loading-center, .zing-theme-balham-auto-dark .zing-overlay-loading-center {
+  background-color: var(--zing-background-color);
+  border: 1px solid var(--zing-border-color);
+  color: var(--zing-foreground-color);
+  padding: calc(var(--zing-grid-size) * 4);
 }
-.ag-theme-balham .ag-tooltip, .ag-theme-balham-dark .ag-tooltip, .ag-theme-balham-auto-dark .ag-tooltip {
+.zing-theme-balham .zing-tooltip, .zing-theme-balham-dark .zing-tooltip, .zing-theme-balham-auto-dark .zing-tooltip {
   border: none;
 }
-.ag-theme-balham .ag-panel-title-bar-button-icon, .ag-theme-balham-dark .ag-panel-title-bar-button-icon, .ag-theme-balham-auto-dark .ag-panel-title-bar-button-icon {
-  font-size: calc(var(--ag-icon-size) + var(--ag-grid-size));
+.zing-theme-balham .zing-panel-title-bar-button-icon, .zing-theme-balham-dark .zing-panel-title-bar-button-icon, .zing-theme-balham-auto-dark .zing-panel-title-bar-button-icon {
+  font-size: calc(var(--zing-icon-size) + var(--zing-grid-size));
 }
-.ag-theme-balham .ag-chart-data-section,
-.ag-theme-balham .ag-chart-format-section, .ag-theme-balham-dark .ag-chart-data-section,
-.ag-theme-balham-dark .ag-chart-format-section, .ag-theme-balham-auto-dark .ag-chart-data-section,
-.ag-theme-balham-auto-dark .ag-chart-format-section {
-  padding-bottom: calc(var(--ag-grid-size) * 0.5);
+.zing-theme-balham .zing-chart-data-section,
+.zing-theme-balham .zing-chart-format-section, .zing-theme-balham-dark .zing-chart-data-section,
+.zing-theme-balham-dark .zing-chart-format-section, .zing-theme-balham-auto-dark .zing-chart-data-section,
+.zing-theme-balham-auto-dark .zing-chart-format-section {
+  padding-bottom: calc(var(--zing-grid-size) * 0.5);
 }
-.ag-theme-balham .ag-group-toolbar, .ag-theme-balham-dark .ag-group-toolbar, .ag-theme-balham-auto-dark .ag-group-toolbar {
-  background-color: var(--ag-subheader-toolbar-background-color);
+.zing-theme-balham .zing-group-toolbar, .zing-theme-balham-dark .zing-group-toolbar, .zing-theme-balham-auto-dark .zing-group-toolbar {
+  background-color: var(--zing-subheader-toolbar-background-color);
 }
-.ag-theme-balham .ag-chart-tab, .ag-theme-balham-dark .ag-chart-tab, .ag-theme-balham-auto-dark .ag-chart-tab {
-  padding-top: calc(var(--ag-grid-size) * 0.5);
+.zing-theme-balham .zing-chart-tab, .zing-theme-balham-dark .zing-chart-tab, .zing-theme-balham-auto-dark .zing-chart-tab {
+  padding-top: calc(var(--zing-grid-size) * 0.5);
 }
-.ag-theme-balham .ag-charts-format-sub-level-group-item, .ag-theme-balham-dark .ag-charts-format-sub-level-group-item, .ag-theme-balham-auto-dark .ag-charts-format-sub-level-group-item {
-  margin-bottom: calc(var(--ag-grid-size) * 1.5);
+.zing-theme-balham .zing-charts-format-sub-level-group-item, .zing-theme-balham-dark .zing-charts-format-sub-level-group-item, .zing-theme-balham-auto-dark .zing-charts-format-sub-level-group-item {
+  margin-bottom: calc(var(--zing-grid-size) * 1.5);
 }
-.ag-theme-balham .ag-chart-menu-close, .ag-theme-balham-dark .ag-chart-menu-close, .ag-theme-balham-auto-dark .ag-chart-menu-close {
-  background: var(--ag-background-color);
+.zing-theme-balham .zing-chart-menu-close, .zing-theme-balham-dark .zing-chart-menu-close, .zing-theme-balham-auto-dark .zing-chart-menu-close {
+  background: var(--zing-background-color);
 }
-.ag-theme-balham .ag-chart-menu-close:hover .ag-icon, .ag-theme-balham-dark .ag-chart-menu-close:hover .ag-icon, .ag-theme-balham-auto-dark .ag-chart-menu-close:hover .ag-icon {
-  border-color: var(--ag-border-color);
+.zing-theme-balham .zing-chart-menu-close:hover .zing-icon, .zing-theme-balham-dark .zing-chart-menu-close:hover .zing-icon, .zing-theme-balham-auto-dark .zing-chart-menu-close:hover .zing-icon {
+  border-color: var(--zing-border-color);
 }
-.ag-theme-balham .ag-chart-menu-close .ag-icon, .ag-theme-balham-dark .ag-chart-menu-close .ag-icon, .ag-theme-balham-auto-dark .ag-chart-menu-close .ag-icon {
-  background: var(--ag-header-background-color);
-  border: 1px solid var(--ag-secondary-border-color);
+.zing-theme-balham .zing-chart-menu-close .zing-icon, .zing-theme-balham-dark .zing-chart-menu-close .zing-icon, .zing-theme-balham-auto-dark .zing-chart-menu-close .zing-icon {
+  background: var(--zing-header-background-color);
+  border: 1px solid var(--zing-secondary-border-color);
   border-right: none;
 }

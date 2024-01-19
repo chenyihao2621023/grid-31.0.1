@@ -3,7 +3,7 @@ import { exists } from "../../utils/generic";
 import { KeyCode } from "../../constants/keyCode";
 class NumberCellEditorInput {
     getTemplate() {
-        return /* html */ `<ag-input-number-field class="ag-cell-editor" ref="eInput"></ag-input-number-field>`;
+        return /* html */ `<zing-input-number-field class="zing-cell-editor" ref="eInput"></zing-input-number-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;
@@ -25,7 +25,7 @@ class NumberCellEditorInput {
             eInput.addManagedListener(inputEl, 'keydown', this.preventStepping);
         }
         else if (params.showStepperButtons) {
-            inputEl.classList.add('ag-number-field-input-stepper');
+            inputEl.classList.add('zing-number-field-input-stepper');
         }
     }
     preventStepping(e) {

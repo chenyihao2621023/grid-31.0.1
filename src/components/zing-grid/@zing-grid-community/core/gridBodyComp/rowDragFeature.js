@@ -196,7 +196,7 @@ export class RowDragFeature extends BeanStub {
             return;
         }
         if (this.dragAndDropService.findExternalZone(params)) {
-            console.warn('AG Grid: addRowDropZone - target already exists in the list of DropZones. Use `removeRowDropZone` before adding it again.');
+            console.warn('ZING Grid: addRowDropZone - target already exists in the list of DropZones. Use `removeRowDropZone` before adding it again.');
             return;
         }
         let processedParams = {

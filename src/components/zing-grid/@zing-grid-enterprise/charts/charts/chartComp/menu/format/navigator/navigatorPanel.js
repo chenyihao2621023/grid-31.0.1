@@ -45,9 +45,9 @@ export class NavigatorPanel extends Component {
     }
 }
 NavigatorPanel.TEMPLATE = `<div>
-            <ag-group-component ref="navigatorGroup">
-                <ag-slider ref="navigatorHeightSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="navigatorGroup">
+                <zing-slider ref="navigatorHeightSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('navigatorGroup')

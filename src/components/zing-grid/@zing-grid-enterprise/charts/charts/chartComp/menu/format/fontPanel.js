@@ -148,15 +148,15 @@ export class FontPanel extends Component {
         super.destroy();
     }
 }
-FontPanel.TEMPLATE = `<div class="ag-font-panel">
-            <ag-group-component ref="fontGroup">
-                <ag-select ref="familySelect"></ag-select>
-                <ag-select ref="weightStyleSelect"></ag-select>
-                <div class="ag-charts-font-size-color">
-                    <ag-select ref="sizeSelect"></ag-select>
-                    <ag-color-picker ref="colorPicker"></ag-color-picker>
+FontPanel.TEMPLATE = `<div class="zing-font-panel">
+            <zing-group-component ref="fontGroup">
+                <zing-select ref="familySelect"></zing-select>
+                <zing-select ref="weightStyleSelect"></zing-select>
+                <div class="zing-charts-font-size-color">
+                    <zing-select ref="sizeSelect"></zing-select>
+                    <zing-color-picker ref="colorPicker"></zing-color-picker>
                 </div>
-            </ag-group-component>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('fontGroup')

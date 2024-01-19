@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ProvidedFilter, AgPromise, Autowired, ZingGroupComponent, TabGuardComp, ZingMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class MultiFilter extends TabGuardComp {
     constructor() {
-        super(/* html */ `<div class="ag-multi-filter ag-menu-list-compact"></div>`);
+        super(/* html */ `<div class="zing-multi-filter zing-menu-list-compact"></div>`);
         this.filterDefs = [];
         this.filters = [];
         this.guiDestroyFuncs = [];
@@ -24,7 +24,7 @@ export class MultiFilter extends TabGuardComp {
         const { filters } = params;
         return filters && filters.length > 0 ?
             filters :
-            [{ filter: 'agTextColumnFilter' }, { filter: 'agSetColumnFilter' }];
+            [{ filter: 'zingTextColumnFilter'' }, { filter: 'zingSetColumnFilter'' }];
     }
     init(params) {
         this.params = params;
@@ -57,7 +57,7 @@ export class MultiFilter extends TabGuardComp {
         this.destroyChildren();
         this.filters.forEach((filter, index) => {
             if (index > 0) {
-                this.appendChild(_.loadTemplate(/* html */ `<div class="ag-filter-separator"></div>`));
+                this.appendChild(_.loadTemplate(/* html */ `<div class="zing-filter-separator"></div>`));
             }
             const filterDef = this.filterDefs[index];
             const filterTitle = this.getFilterTitle(filter, filterDef);
@@ -95,7 +95,7 @@ export class MultiFilter extends TabGuardComp {
         const menuItem = this.createBean(new ZingMenuItemComponent({
             name,
             subMenu: filter,
-            cssClasses: ['ag-multi-filter-menu-item'],
+            cssClasses: ['zing-multi-filter-menu-item'],
             isCompact: true,
             isAnotherSubMenuOpen: () => false,
         }));
@@ -276,11 +276,11 @@ export class MultiFilter extends TabGuardComp {
         const filterParams = Object.assign(Object.assign({}, this.filterManager.createFilterParams(this.column, this.column.getColDef())), { filterModifiedCallback, filterChangedCallback: additionalEventAttributes => {
                 this.executeWhenAllFiltersReady(() => this.filterChanged(index, additionalEventAttributes));
             }, doesRowPassOtherFilter: (node) => doesRowPassOtherFilter(node) && this.doesFilterPass({ node, data: node.data }, filterInstance) });
-        const compDetails = this.userComponentFactory.getFilterDetails(filterDef, filterParams, 'agTextColumnFilter');
+        const compDetails = this.userComponentFactory.getFilterDetails(filterDef, filterParams, 'zingTextColumnFilter'');
         if (!compDetails) {
             return null;
         }
-        const filterPromise = compDetails.newAgStackInstance();
+        const filterPromise = compDetails.newZingStackInstance();
         if (filterPromise) {
             filterPromise.then(filter => filterInstance = filter);
         }

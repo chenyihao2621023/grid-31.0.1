@@ -2,7 +2,7 @@ export class Downloader {
     static download(fileName, content) {
         const win = document.defaultView || window;
         if (!win) {
-            console.warn('AG Grid: There is no `window` associated with the current `document`');
+            console.warn('ZING Grid: There is no `window` associated with the current `document`');
             return;
         }
         const element = document.createElement('a');

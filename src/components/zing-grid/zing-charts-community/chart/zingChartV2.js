@@ -38,20 +38,20 @@ import { setupModules } from './factory/setupModules';
 import { HierarchyChart } from './hierarchyChart';
 import { noDataCloneMergeOptions, prepareOptions } from './mapping/prepare';
 import { AxisPositionGuesser } from './mapping/prepareAxis';
-import { isAgCartesianChartOptions, isAgHierarchyChartOptions, isAgPolarChartOptions, optionsType, } from './mapping/types';
+import { isZingCartesianChartOptions, isZingHierarchyChartOptions, isZingPolarChartOptions, optionsType, } from './mapping/types';
 import { PolarChart } from './polarChart';
 const debug = Debug.create(true, 'opts');
 function chartType(options) {
-    if (isAgCartesianChartOptions(options)) {
+    if (isZingCartesianChartOptions(options)) {
         return 'cartesian';
     }
-    else if (isAgPolarChartOptions(options)) {
+    else if (isZingPolarChartOptions(options)) {
         return 'polar';
     }
-    else if (isAgHierarchyChartOptions(options)) {
+    else if (isZingHierarchyChartOptions(options)) {
         return 'hierarchy';
     }
-    throw new Error(`AG Chart - unknown type of chart for options with type: ${options.type}`);
+    throw new Error(`ZING Chart - unknown type of chart for options with type: ${options.type}`);
 }
 /**
  * Factory for creating and updating instances of AgChartInstance.
@@ -136,7 +136,7 @@ export class AgCharts {
         return AgChartsInternal.getImageDataURL(chart, options);
     }
 }
-AgCharts.INVALID_CHART_REF_MESSAGE = 'AG Charts - invalid chart reference passed';
+AgCharts.INVALID_CHART_REF_MESSAGE = 'ZING Charts - invalid chart reference passed';
 AgCharts.licenseChecked = false;
 /** @deprecated use AgCharts instead */
 export class AgChart {
@@ -201,8 +201,8 @@ class AgChartsInternal {
         }
         proxyInstances.set(chart, proxy);
         if (Debug.check() && typeof window !== 'undefined') {
-            (_a = (_b = window).agChartInstances) !== null && _a !== void 0 ? _a : (_b.agChartInstances = {});
-            window.agChartInstances[chart.id] = chart;
+            (_a = (_b = window).zingChartInstances) !== null && _a !== void 0 ? _a : (_b.zingChartInstances = {});
+            window.zingChartInstances[chart.id] = chart;
         }
         const chartToUpdate = chart;
         chartToUpdate.queuedUserOptions.push(chartOptions);
@@ -289,16 +289,16 @@ class AgChartsInternal {
     }
     static createChartInstance(options, specialOverrides, oldChart) {
         const transferableResource = oldChart === null || oldChart === void 0 ? void 0 : oldChart.destroy({ keepTransferableResources: true });
-        if (isAgCartesianChartOptions(options)) {
+        if (isZingCartesianChartOptions(options)) {
             return new CartesianChart(specialOverrides, transferableResource);
         }
-        else if (isAgHierarchyChartOptions(options)) {
+        else if (isZingHierarchyChartOptions(options)) {
             return new HierarchyChart(specialOverrides, transferableResource);
         }
-        else if (isAgPolarChartOptions(options)) {
+        else if (isZingPolarChartOptions(options)) {
             return new PolarChart(specialOverrides, transferableResource);
         }
-        throw new Error(`AG Charts - couldn't apply configuration, check options are correctly structured and series types are specified`);
+        throw new Error(`ZING Charts - couldn't apply configuration, check options are correctly structured and series types are specified`);
     }
     static updateDelta(chart, processedOptions, userOptions) {
         var _a;
@@ -319,15 +319,15 @@ function applyChartOptions(chart, processedOptions, userOptions) {
     const completeOptions = jsonMerge([(_a = chart.processedOptions) !== null && _a !== void 0 ? _a : {}, processedOptions], noDataCloneMergeOptions);
     const modulesChanged = applyModules(chart, completeOptions);
     const skip = ['type', 'data', 'series', 'listeners', 'theme', 'legend.listeners'];
-    if (isAgCartesianChartOptions(processedOptions) || isAgPolarChartOptions(processedOptions)) {
+    if (isZingCartesianChartOptions(processedOptions) || isZingPolarChartOptions(processedOptions)) {
         // Append axes to defaults.
         skip.push('axes');
     }
-    else if (isAgHierarchyChartOptions(processedOptions)) {
+    else if (isZingHierarchyChartOptions(processedOptions)) {
         // Use defaults.
     }
     else {
-        throw new Error(`AG Charts - couldn't apply configuration, check type of options and chart: ${processedOptions['type']}`);
+        throw new Error(`ZING Charts - couldn't apply configuration, check type of options and chart: ${processedOptions['type']}`);
     }
     // Needs to be done before applying the series to detect if a seriesNode[Double]Click listener has been added
     if (processedOptions.listeners) {
@@ -438,7 +438,7 @@ function applyAxes(chart, options, forceRecreate) {
     if (matchingTypes) {
         const oldOpts = chart.processedOptions;
         const moduleContext = chart.getModuleContext();
-        if (isAgCartesianChartOptions(oldOpts)) {
+        if (isZingCartesianChartOptions(oldOpts)) {
             chart.axes.forEach((a, i) => {
                 var _a, _b;
                 const previousOpts = (_b = (_a = oldOpts.axes) === null || _a === void 0 ? void 0 : _a[i]) !== null && _b !== void 0 ? _b : {};

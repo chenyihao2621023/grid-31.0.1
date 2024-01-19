@@ -13,7 +13,7 @@ import { exists } from "../utils/generic";
 import { setAriaActiveDescendant, setAriaSelected } from "../utils/aria";
 export class RichSelectRow extends Component {
     constructor(params, wrapperEl) {
-        super(/* html */ `<div class="ag-rich-select-row" role="presentation"></div>`);
+        super(/* html */ `<div class="zing-rich-select-row" role="presentation"></div>`);
         this.params = params;
         this.wrapperEl = wrapperEl;
     }
@@ -44,7 +44,7 @@ export class RichSelectRow extends Component {
                 const startPart = escapeString(parsedValue.slice(0, index), true);
                 const highlightedPart = escapeString(parsedValue.slice(index, highlightEndIndex), true);
                 const endPart = escapeString(parsedValue.slice(highlightEndIndex));
-                this.renderValueWithoutRenderer(`${startPart}<span class="ag-rich-select-row-text-highlight">${highlightedPart}</span>${endPart}`);
+                this.renderValueWithoutRenderer(`${startPart}<span class="zing-rich-select-row-text-highlight">${highlightedPart}</span>${endPart}`);
             }
             else {
                 hasMatch = false;
@@ -57,7 +57,7 @@ export class RichSelectRow extends Component {
     updateHighlighted(highlighted) {
         var _a;
         const eGui = this.getGui();
-        const parentId = `ag-rich-select-row-${this.getCompId()}`;
+        const parentId = `zing-rich-select-row-${this.getCompId()}`;
         (_a = eGui.parentElement) === null || _a === void 0 ? void 0 : _a.setAttribute('id', parentId);
         if (highlighted) {
             const parentAriaEl = this.getParentComponent().getAriaElement();
@@ -65,7 +65,7 @@ export class RichSelectRow extends Component {
             this.wrapperEl.setAttribute('data-active-option', parentId);
         }
         setAriaSelected(eGui.parentElement, highlighted);
-        this.addOrRemoveCssClass('ag-rich-select-row-selected', highlighted);
+        this.addOrRemoveCssClass('zing-rich-select-row-selected', highlighted);
     }
     populateWithoutRenderer(value, valueFormatted) {
         const eDocument = this.gridOptionsService.getDocument();
@@ -97,7 +97,7 @@ export class RichSelectRow extends Component {
             });
         }
         if (userCompDetails) {
-            cellRendererPromise = userCompDetails.newAgStackInstance();
+            cellRendererPromise = userCompDetails.newZingStackInstance();
         }
         if (cellRendererPromise) {
             bindCellRendererToHtmlElement(cellRendererPromise, this.getGui());

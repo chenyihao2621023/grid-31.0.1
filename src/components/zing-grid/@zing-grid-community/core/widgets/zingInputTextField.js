@@ -2,7 +2,7 @@ import { ZingAbstractInputField } from './zingAbstractInputField';
 import { exists } from '../utils/generic';
 import { isEventFromPrintableCharacter } from '../utils/keyboard';
 export class ZingInputTextField extends ZingAbstractInputField {
-    constructor(config, className = 'ag-text-field', inputType = 'text') {
+    constructor(config, className = 'zing-text-field', inputType = 'text') {
         super(config, className, inputType);
     }
     postConstruct() {

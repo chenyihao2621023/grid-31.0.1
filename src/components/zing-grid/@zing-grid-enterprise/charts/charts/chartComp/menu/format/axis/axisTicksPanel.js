@@ -44,11 +44,11 @@ export class AxisTicksPanel extends Component {
     }
 }
 AxisTicksPanel.TEMPLATE = `<div>
-            <ag-group-component ref="axisTicksGroup">
-                <ag-color-picker ref="axisTicksColorPicker"></ag-color-picker>
-                <ag-slider ref="axisTicksWidthSlider"></ag-slider>
-                <ag-slider ref="axisTicksSizeSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="axisTicksGroup">
+                <zing-color-picker ref="axisTicksColorPicker"></zing-color-picker>
+                <zing-slider ref="axisTicksWidthSlider"></zing-slider>
+                <zing-slider ref="axisTicksSizeSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('axisTicksGroup')

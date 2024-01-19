@@ -9,9 +9,9 @@ export const RangeSelectionModule = {
     version: VERSION,
     moduleName: ModuleNames.RangeSelectionModule,
     beans: [RangeService, SelectionHandleFactory],
-    agStackComponents: [
-        { componentName: 'AgFillHandle', componentClass: FillHandle },
-        { componentName: 'AgRangeHandle', componentClass: RangeHandle }
+    zingStackComponents: [
+        { componentName: 'ZingFillHandle', componentClass: FillHandle },
+        { componentName: 'ZingRangeHandle', componentClass: RangeHandle }
     ],
     dependantModules: [
         EnterpriseCoreModule

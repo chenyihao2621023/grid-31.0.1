@@ -143,7 +143,7 @@ export class TitleEdit extends Component {
     }
 }
 TitleEdit.TEMPLATE = `<textarea
-             class="ag-chart-title-edit"
+             class="zing-chart-title-edit"
              style="padding:0; border:none; border-radius: 0; min-height: 0; text-align: center; resize: none;" />
         `;
 __decorate([

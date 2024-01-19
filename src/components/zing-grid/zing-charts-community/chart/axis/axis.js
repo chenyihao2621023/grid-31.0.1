@@ -909,7 +909,7 @@ export class Axis {
         });
     }
     updateSecondaryAxisTicks(_primaryTickCount) {
-        throw new Error('AG Charts - unexpected call to updateSecondaryAxisTicks() - check axes configuration.');
+        throw new Error('ZING Charts - unexpected call to updateSecondaryAxisTicks() - check axes configuration.');
     }
     updateSelections(lineData, data, params) {
         this.lineNode.datum = lineData;

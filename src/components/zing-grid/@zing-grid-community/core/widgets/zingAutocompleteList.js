@@ -151,8 +151,8 @@ export class ZingAutocompleteList extends PopupComponent {
         return (_a = this.selectedValue) !== null && _a !== void 0 ? _a : null;
     }
 }
-ZingAutocompleteList.TEMPLATE = `<div class="ag-autocomplete-list-popup">
-            <div ref="eList" class="ag-autocomplete-list"></div>
+ZingAutocompleteList.TEMPLATE = `<div class="zing-autocomplete-list-popup">
+            <div ref="eList" class="zing-autocomplete-list"></div>
         <div>`;
 __decorate([
     RefSelector('eList')

@@ -7,7 +7,7 @@ export const SparklinesModule = {
     version: VERSION,
     moduleName: ModuleNames.SparklinesModule,
     beans: [SparklineTooltipSingleton],
-    userComponents: [{ componentName: 'agSparklineCellRenderer', componentClass: SparklineCellRenderer }],
+    userComponents: [{ componentName: 'zingSparklineCellRenderer'', componentClass: SparklineCellRenderer }],
     dependantModules: [EnterpriseCoreModule],
 };
 //# sourceMappingURL=sparklinesModule.js.map

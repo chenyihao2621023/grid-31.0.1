@@ -164,7 +164,7 @@ export function jsonApply(target, source, params = {}) {
     var _a, _b, _c;
     const { path, matcherPath = path ? path.replace(/(\[[0-9+]+])/i, '[]') : undefined, skip = [], constructors = {}, constructedArrays = new WeakMap(), allowedTypes = {}, idx, } = params;
     if (target == null) {
-        throw new Error(`AG Charts - target is uninitialised: ${path !== null && path !== void 0 ? path : '<root>'}`);
+        throw new Error(`ZING Charts - target is uninitialised: ${path !== null && path !== void 0 ? path : '<root>'}`);
     }
     if (source == null) {
         return target;

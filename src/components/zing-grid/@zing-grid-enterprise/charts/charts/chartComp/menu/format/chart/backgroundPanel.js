@@ -38,9 +38,9 @@ export class BackgroundPanel extends Component {
     }
 }
 BackgroundPanel.TEMPLATE = `<div>
-            <ag-group-component ref="chartBackgroundGroup">
-                <ag-color-picker ref="colorPicker"></ag-color-picker>
-            </ag-group-component>
+            <zing-group-component ref="chartBackgroundGroup">
+                <zing-color-picker ref="colorPicker"></zing-color-picker>
+            </zing-group-component>
         <div>`;
 __decorate([
     RefSelector('chartBackgroundGroup')

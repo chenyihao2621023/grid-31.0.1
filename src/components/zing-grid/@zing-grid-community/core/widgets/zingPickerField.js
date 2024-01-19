@@ -13,11 +13,11 @@ import { KeyCode } from '../constants/keyCode';
 import { Autowired } from "../context/context";
 import { Events } from "../eventKeys";
 const TEMPLATE = /* html */ `
-    <div class="ag-picker-field" role="presentation">
+    <div class="zing-picker-field" role="presentation">
         <div ref="eLabel"></div>
-            <div ref="eWrapper" class="ag-wrapper ag-picker-field-wrapper ag-picker-collapsed">
-            <div ref="eDisplayField" class="ag-picker-field-display"></div>
-            <div ref="eIcon" class="ag-picker-field-icon" aria-hidden="true"></div>
+            <div ref="eWrapper" class="zing-wrapper zing-picker-field-wrapper zing-picker-collapsed">
+            <div ref="eDisplayField" class="zing-picker-field-display"></div>
+            <div ref="eIcon" class="zing-picker-field-icon" aria-hidden="true"></div>
         </div>
     </div>`;
 export class ZingPickerField extends ZingAbstractField {
@@ -51,7 +51,7 @@ export class ZingPickerField extends ZingAbstractField {
     postConstruct() {
         super.postConstruct();
         this.setupAria();
-        const displayId = `ag-${this.getCompId()}-display`;
+        const displayId = `zing-${this.getCompId()}-display`;
         this.eDisplayField.setAttribute('id', displayId);
         const ariaEl = this.getAriaElement();
         this.addManagedListener(ariaEl, 'keydown', this.onKeyDown.bind(this));
@@ -211,8 +211,8 @@ export class ZingPickerField extends ZingAbstractField {
         }
         const ariaEl = this.getAriaElement();
         setAriaExpanded(ariaEl, expanded);
-        this.eWrapper.classList.toggle('ag-picker-expanded', expanded);
-        this.eWrapper.classList.toggle('ag-picker-collapsed', !expanded);
+        this.eWrapper.classList.toggle('zing-picker-expanded', expanded);
+        this.eWrapper.classList.toggle('zing-picker-collapsed', !expanded);
     }
     onPickerFocusIn() {
         this.togglePickerHasFocus(true);
@@ -227,7 +227,7 @@ export class ZingPickerField extends ZingAbstractField {
         if (!this.pickerComponent) {
             return;
         }
-        this.eWrapper.classList.toggle('ag-picker-has-focus', focused);
+        this.eWrapper.classList.toggle('zing-picker-has-focus', focused);
     }
     hidePicker() {
         if (this.hideCurrentPicker) {

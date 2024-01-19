@@ -24,7 +24,7 @@ let ExpressionService = class ExpressionService extends BeanStub {
             return this.evaluateExpression(expression, params);
         }
         else {
-            console.error('AG Grid: value should be either a string or a function', expression);
+            console.error('ZING Grid: value should be either a string or a function', expression);
         }
     }
     evaluateExpression(expression, params) {

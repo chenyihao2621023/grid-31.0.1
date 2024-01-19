@@ -73,9 +73,9 @@ export class PrimaryColsPanel extends Component {
         return this.primaryColsListPanel.getExpandedGroups();
     }
 }
-PrimaryColsPanel.TEMPLATE = `<div class="ag-column-select">
-            <ag-primary-cols-header ref="primaryColsHeaderPanel"></ag-primary-cols-header>
-            <ag-primary-cols-list ref="primaryColsListPanel"></ag-primary-cols-list>
+PrimaryColsPanel.TEMPLATE = `<div class="zing-column-select">
+            <zing-primary-cols-header ref="primaryColsHeaderPanel"></zing-primary-cols-header>
+            <zing-primary-cols-list ref="primaryColsListPanel"></zing-primary-cols-list>
         </div>`;
 __decorate([
     RefSelector('primaryColsHeaderPanel')

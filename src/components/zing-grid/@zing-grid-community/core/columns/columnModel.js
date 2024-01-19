@@ -275,7 +275,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
     }
     isPivotSettingAllowed(pivot) {
         if (pivot && this.gridOptionsService.get('treeData')) {
-            console.warn("AG Grid: Pivot mode not available in conjunction Tree Data i.e. 'gridOptions.treeData: true'");
+            console.warn("ZING Grid: Pivot mode not available in conjunction Tree Data i.e. 'gridOptions.treeData: true'");
             return false;
         }
         return true;
@@ -969,7 +969,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
                 if (loopCount > 1000) {
                     // this should never happen, but in the future, someone might introduce a bug here,
                     // so we stop the browser from hanging and report bug properly
-                    console.error('AG Grid: infinite loop in resizeColumnSets');
+                    console.error('ZING Grid: infinite loop in resizeColumnSets');
                     break;
                 }
                 finishedColsGrew = false;
@@ -1077,8 +1077,8 @@ let ColumnModel = class ColumnModel extends BeanStub {
         }
         this.columnAnimationService.start();
         if (toIndex > this.gridColumns.length - columnsToMoveKeys.length) {
-            console.warn('AG Grid: tried to insert columns in invalid location, toIndex = ' + toIndex);
-            console.warn('AG Grid: remember that you should not count the moving columns when calculating the new index');
+            console.warn('ZING Grid: tried to insert columns in invalid location, toIndex = ' + toIndex);
+            console.warn('ZING Grid: remember that you should not count the moving columns when calculating the new index');
             return;
         }
         // we want to pull all the columns out first and put them into an ordered list
@@ -1322,7 +1322,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
             return;
         }
         if (this.gridOptionsService.isDomLayout('print')) {
-            console.warn(`AG Grid: Changing the column pinning status is not allowed with domLayout='print'`);
+            console.warn(`ZING Grid: Changing the column pinning status is not allowed with domLayout='print'`);
             return;
         }
         this.columnAnimationService.start();
@@ -1580,7 +1580,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
             return false;
         }
         if (params && params.state && !params.state.forEach) {
-            console.warn('AG Grid: applyColumnState() - the state attribute should be an array, however an array was not found. Please provide an array of items (one for each col you want to change) for state.');
+            console.warn('ZING Grid: applyColumnState() - the state attribute should be an array, however an array was not found. Please provide an array of items (one for each col you want to change) for state.');
             return false;
         }
         const applyStates = (states, existingColumns, getById) => {
@@ -1724,7 +1724,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
         // is less sexy for the code here, but it keeps consistency.
         newOrder = this.placeLockedColumns(newOrder);
         if (!this.doesMovePassMarryChildren(newOrder)) {
-            console.warn('AG Grid: Applying column order broke a group where columns should be married together. Applying new order has been discarded.');
+            console.warn('ZING Grid: Applying column order broke a group where columns should be married together. Applying new order has been discarded.');
             return;
         }
         this.gridColumns = newOrder;
@@ -1934,7 +1934,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
             }
             else {
                 if (exists(aggFunc)) {
-                    console.warn('AG Grid: stateItem.aggFunc must be a string. if using your own aggregation ' +
+                    console.warn('ZING Grid: stateItem.aggFunc must be a string. if using your own aggregation ' +
                         'functions, register the functions first before using them in get/set state. This is because it is ' +
                         'intended for the column state to be stored and retrieved as simple JSON.');
                 }
@@ -2006,7 +2006,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
         }
         const column = this.getGridColumn(key);
         if (!column) {
-            console.warn('AG Grid: could not find column ' + key);
+            console.warn('ZING Grid: could not find column ' + key);
         }
         return column;
     }
@@ -2111,7 +2111,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
                 // valueGetter is an expression, so execute the expression
                 return this.expressionService.evaluate(headerValueGetter, params);
             }
-            console.warn('AG Grid: headerValueGetter must be a function or a string');
+            console.warn('ZING Grid: headerValueGetter must be a function or a string');
             return '';
         }
         else if (colDef.headerName != null) {
@@ -2409,7 +2409,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
     getProvidedColumnGroup(key) {
         // if (key instanceof ProvidedColumnGroup) { return key; }
         if (typeof key !== 'string') {
-            console.error('AG Grid: group key must be a string');
+            console.error('ZING Grid: group key must be a string');
         }
         // otherwise, search for the column group by id
         let res = null;

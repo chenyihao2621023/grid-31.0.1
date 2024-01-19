@@ -239,7 +239,7 @@ let MenuItemMapper = class MenuItemMapper extends BeanStub {
             case 'chartRange':
                 return (_a = this.chartMenuItemMapper.getChartItems(key)) !== null && _a !== void 0 ? _a : null;
             default: {
-                console.warn(`AG Grid: unknown menu item type ${key}`);
+                console.warn(`ZING Grid: unknown menu item type ${key}`);
                 return null;
             }
         }

@@ -12,8 +12,8 @@ import { warnOnce } from '../../../utils/function';
 export class DefaultDateComponent extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-filter-filter">
-                <ag-input-text-field class="ag-date-filter" ref="eDateInput"></ag-input-text-field>
+            <div class="zing-filter-filter">
+                <zing-input-text-field class="zing-date-filter" ref="eDateInput"></zing-input-text-field>
             </div>`);
     }
     // this is a user component, and IComponent has "public destroy()" as part of the interface.

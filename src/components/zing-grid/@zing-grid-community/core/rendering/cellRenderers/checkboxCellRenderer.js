@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Component } from "../../widgets/component";
 import { RefSelector } from "../../widgets/componentAnnotations";
-import { stopPropagationForAgGrid } from "../../utils/event";
+import { stopPropagationForZingGrid } from "../../utils/event";
 import { Events } from "../../events";
 import { KeyCode } from "../../constants/keyCode";
 import { getAriaCheckboxStateName, setAriaLive } from "../../utils/aria";
@@ -22,7 +22,7 @@ export class CheckboxCellRenderer extends Component {
         inputEl.setAttribute('tabindex', '-1');
         setAriaLive(inputEl, 'polite');
         this.addManagedListener(inputEl, 'click', (event) => {
-            stopPropagationForAgGrid(event);
+            stopPropagationForZingGrid(event);
             if (this.eCheckbox.isDisabled()) {
                 return;
             }
@@ -30,7 +30,7 @@ export class CheckboxCellRenderer extends Component {
             this.onCheckboxChanged(isSelected);
         });
         this.addManagedListener(inputEl, 'dblclick', (event) => {
-            stopPropagationForAgGrid(event);
+            stopPropagationForZingGrid(event);
         });
         const eDocument = this.gridOptionsService.getDocument();
         this.addManagedListener(this.params.eGridCell, 'keydown', (event) => {
@@ -114,8 +114,8 @@ export class CheckboxCellRenderer extends Component {
     }
 }
 CheckboxCellRenderer.TEMPLATE = `
-        <div class="ag-cell-wrapper ag-checkbox-cell" role="presentation">
-            <ag-checkbox role="presentation" ref="eCheckbox"></ag-checkbox>
+        <div class="zing-cell-wrapper zing-checkbox-cell" role="presentation">
+            <zing-checkbox role="presentation" ref="eCheckbox"></zing-checkbox>
         </div>`;
 __decorate([
     RefSelector('eCheckbox')

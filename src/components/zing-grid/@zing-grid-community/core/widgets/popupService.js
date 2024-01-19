@@ -10,7 +10,7 @@ import { Events } from '../events';
 import { BeanStub } from "../context/beanStub";
 import { getAbsoluteHeight, getAbsoluteWidth, getElementRectWithOffset } from '../utils/dom';
 import { last } from '../utils/array';
-import { isElementInEventPath, isStopPropagationForAgGrid } from '../utils/event';
+import { isElementInEventPath, isStopPropagationForZingGrid } from '../utils/event';
 import { KeyCode } from '../constants/keyCode';
 import { AgPromise } from "../utils";
 import { setAriaLabel, setAriaRole } from "../utils/aria";
@@ -173,14 +173,14 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         }
         const positions = ['right', 'left', 'over', 'above', 'under'];
         positions.forEach(position => {
-            alignedToElement.classList.remove(`ag-has-popup-positioned-${position}`);
-            ePopup.classList.remove(`ag-popup-positioned-${position}`);
+            alignedToElement.classList.remove(`zing-has-popup-positioned-${position}`);
+            ePopup.classList.remove(`zing-popup-positioned-${position}`);
         });
         if (!positioned) {
             return;
         }
-        alignedToElement.classList.add(`ag-has-popup-positioned-${positioned}`);
-        ePopup.classList.add(`ag-popup-positioned-${positioned}`);
+        alignedToElement.classList.add(`zing-has-popup-positioned-${positioned}`);
+        ePopup.classList.add(`zing-popup-positioned-${positioned}`);
     }
     callPostProcessPopup(type, ePopup, eventSource, mouseEvent, column, rowNode) {
         const callback = this.gridOptionsService.getCallback('postProcessPopup');
@@ -281,7 +281,7 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         const eDocument = this.gridOptionsService.getDocument();
         const { eChild, ariaLabel, alwaysOnTop, positionCallback, anchorToElement } = params;
         if (!eDocument) {
-            console.warn('AG Grid: could not find the document, document is empty');
+            console.warn('ZING Grid: could not find the document, document is empty');
             return { hideFunc: () => { } };
         }
         const pos = this.getPopupIndex(eChild);
@@ -319,8 +319,8 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         if (allThemes.length) {
             eWrapper.classList.add(...allThemes);
         }
-        eWrapper.classList.add('ag-popup');
-        element.classList.add(this.gridOptionsService.get('enableRtl') ? 'ag-rtl' : 'ag-ltr', 'ag-popup-child');
+        eWrapper.classList.add('zing-popup');
+        element.classList.add(this.gridOptionsService.get('enableRtl') ? 'zing-rtl' : 'zing-ltr', 'zing-popup-child');
         if (!element.hasAttribute('role')) {
             setAriaRole(element, 'dialog');
         }
@@ -339,7 +339,7 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         const { allThemes } = this.environment.getTheme();
         for (const popup of this.popupList) {
             for (const className of Array.from(popup.wrapper.classList)) {
-                if (className.startsWith("ag-theme-")) {
+                if (className.startsWith("zing-theme-")) {
                     popup.wrapper.classList.remove(className);
                 }
             }
@@ -358,7 +358,7 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
                 return;
             }
             const key = event.key;
-            if (key === KeyCode.ESCAPE && !isStopPropagationForAgGrid(event)) {
+            if (key === KeyCode.ESCAPE && !isStopPropagationForZingGrid(event)) {
                 removeListeners({ keyboardEvent: event });
             }
         };
@@ -515,13 +515,13 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         }
         // if the user did not write their own Custom Element to be rendered as popup
         // and this component has an additional popup element, they should have the
-        // `ag-custom-component-popup` class to be detected as part of the Custom Component
+        // `zing-custom-component-popup` class to be detected as part of the Custom Component
         return this.isElementWithinCustomPopup(event.target);
     }
     isElementWithinCustomPopup(el) {
         const eDocument = this.gridOptionsService.getDocument();
         while (el && el !== eDocument.body) {
-            if (el.classList.contains('ag-custom-component-popup') || el.parentElement === null) {
+            if (el.classList.contains('zing-custom-component-popup') || el.parentElement === null) {
                 return true;
             }
             el = el.parentElement;
@@ -529,26 +529,26 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         return false;
     }
     getWrapper(ePopup) {
-        while (!ePopup.classList.contains('ag-popup') && ePopup.parentElement) {
+        while (!ePopup.classList.contains('zing-popup') && ePopup.parentElement) {
             ePopup = ePopup.parentElement;
         }
-        return ePopup.classList.contains('ag-popup') ? ePopup : null;
+        return ePopup.classList.contains('zing-popup') ? ePopup : null;
     }
     setAlwaysOnTop(ePopup, alwaysOnTop) {
         const eWrapper = this.getWrapper(ePopup);
         if (!eWrapper) {
             return;
         }
-        eWrapper.classList.toggle('ag-always-on-top', !!alwaysOnTop);
+        eWrapper.classList.toggle('zing-always-on-top', !!alwaysOnTop);
         if (alwaysOnTop) {
             this.bringPopupToFront(eWrapper);
         }
     }
     bringPopupToFront(ePopup) {
         const parent = this.getPopupParent();
-        const popupList = Array.prototype.slice.call(parent.querySelectorAll('.ag-popup'));
+        const popupList = Array.prototype.slice.call(parent.querySelectorAll('.zing-popup'));
         const popupLen = popupList.length;
-        const alwaysOnTopList = Array.prototype.slice.call(parent.querySelectorAll('.ag-popup.ag-always-on-top'));
+        const alwaysOnTopList = Array.prototype.slice.call(parent.querySelectorAll('.zing-popup.zing-always-on-top'));
         const onTopLength = alwaysOnTopList.length;
         const eWrapper = this.getWrapper(ePopup);
         if (!eWrapper || popupLen <= 1 || !parent.contains(ePopup)) {
@@ -563,7 +563,7 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
             }
         });
         if (onTopLength) {
-            const isPopupAlwaysOnTop = eWrapper.classList.contains('ag-always-on-top');
+            const isPopupAlwaysOnTop = eWrapper.classList.contains('zing-always-on-top');
             if (isPopupAlwaysOnTop) {
                 if (pos !== popupLen - 1) {
                     last(alwaysOnTopList).insertAdjacentElement('afterend', eWrapper);

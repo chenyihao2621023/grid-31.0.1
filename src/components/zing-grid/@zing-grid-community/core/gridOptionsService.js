@@ -18,7 +18,7 @@ import { GRID_OPTION_DEFAULTS } from "./validation/rules/gridOptionsValidations"
 let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
     constructor() {
         this.destroyed = false;
-        this.domDataKey = '__AG_' + Math.random().toString();
+        this.domDataKey = '__ZING_' + Math.random().toString();
         this.propertyEventService = new EventService();
         // responsible for calling the onXXX functions on gridOptions
         // It forces events defined in GridOptionsService.alwaysSyncGlobalEvents to be fired synchronously.
@@ -173,7 +173,7 @@ let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
         changeSet.properties = events.map(event => event.type);
         events.forEach(event => {
             if (this.gridOptions.debug) {
-                console.log(`AG Grid: Updated property ${event.type} from ${String(event.previousValue)} to ${String(event.currentValue)}.`);
+                console.log(`ZING Grid: Updated property ${event.type} from ${String(event.previousValue)} to ${String(event.currentValue)}.`);
             }
             this.propertyEventService.dispatchEvent(event);
         });
@@ -273,7 +273,7 @@ let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
         if (rowHeight !== -1) {
             return rowHeight;
         }
-        console.warn('AG Grid row height must be a number if not using standard row model');
+        console.warn('ZING Grid row height must be a number if not using standard row model');
         return this.environment.getDefaultRowHeight();
     }
     isNumeric(value) {

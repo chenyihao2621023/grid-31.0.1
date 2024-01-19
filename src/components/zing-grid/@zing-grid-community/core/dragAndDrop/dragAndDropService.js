@@ -282,9 +282,9 @@ let DragAndDropService = DragAndDropService_1 = class DragAndDropService extends
         if (theme) {
             this.eGhost.classList.add(theme);
         }
-        this.eGhostIcon = this.eGhost.querySelector('.ag-dnd-ghost-icon');
+        this.eGhostIcon = this.eGhost.querySelector('.zing-dnd-ghost-icon');
         this.setGhostIcon(null);
-        const eText = this.eGhost.querySelector('.ag-dnd-ghost-label');
+        const eText = this.eGhost.querySelector('.zing-dnd-ghost-label');
         let dragItemName = this.dragSource.dragItemName;
         if (isFunction(dragItemName)) {
             dragItemName = dragItemName();
@@ -323,7 +323,7 @@ let DragAndDropService = DragAndDropService_1 = class DragAndDropService extends
         }
         this.eGhostParent = targetEl;
         if (!this.eGhostParent) {
-            console.warn('AG Grid: could not find document body, it is needed for dragging columns');
+            console.warn('ZING Grid: could not find document body, it is needed for dragging columns');
         }
         else {
             this.eGhostParent.appendChild(this.eGhost);
@@ -364,7 +364,7 @@ let DragAndDropService = DragAndDropService_1 = class DragAndDropService extends
                 eIcon = this.eHideIcon;
                 break;
         }
-        this.eGhostIcon.classList.toggle('ag-shake-left-to-right', shake);
+        this.eGhostIcon.classList.toggle('zing-shake-left-to-right', shake);
         if (eIcon === this.eHideIcon && this.gridOptionsService.get('suppressDragLeaveHidesColumns')) {
             return;
         }
@@ -382,9 +382,9 @@ DragAndDropService.ICON_AGGREGATE = 'aggregate';
 DragAndDropService.ICON_PIVOT = 'pivot';
 DragAndDropService.ICON_NOT_ALLOWED = 'notAllowed';
 DragAndDropService.ICON_HIDE = 'hide';
-DragAndDropService.GHOST_TEMPLATE = `<div class="ag-dnd-ghost ag-unselectable">
-            <span class="ag-dnd-ghost-icon ag-shake-left-to-right"></span>
-            <div class="ag-dnd-ghost-label"></div>
+DragAndDropService.GHOST_TEMPLATE = `<div class="zing-dnd-ghost zing-unselectable">
+            <span class="zing-dnd-ghost-icon zing-shake-left-to-right"></span>
+            <div class="zing-dnd-ghost-label"></div>
         </div>`;
 __decorate([
     Autowired('dragService')

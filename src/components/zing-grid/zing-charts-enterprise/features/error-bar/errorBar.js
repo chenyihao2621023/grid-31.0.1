@@ -8,7 +8,7 @@ function toErrorBoundCartesianSeries(ctx) {
             return ctx.series;
         }
     }
-    throw new Error(`AG Charts - unsupported series type '${ctx.series.type}', error bars supported series types: ${AgErrorBarSupportedSeriesTypes.join(', ')}`);
+    throw new Error(`ZING Charts - unsupported series type '${ctx.series.type}', error bars supported series types: ${AgErrorBarSupportedSeriesTypes.join(', ')}`);
 }
 export class ErrorBars extends _ModuleSupport.BaseModuleInstance {
     constructor(ctx) {

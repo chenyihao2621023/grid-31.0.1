@@ -2,15 +2,15 @@ import { includes, last } from "../../utils/array";
 import { CellRangeType, SelectionHandleType } from "../../interfaces/IRangeService";
 import { missing } from "../../utils/generic";
 import { setAriaSelected } from "../../utils/aria";
-const CSS_CELL_RANGE_SELECTED = 'ag-cell-range-selected';
-const CSS_CELL_RANGE_CHART = 'ag-cell-range-chart';
-const CSS_CELL_RANGE_SINGLE_CELL = 'ag-cell-range-single-cell';
-const CSS_CELL_RANGE_CHART_CATEGORY = 'ag-cell-range-chart-category';
-const CSS_CELL_RANGE_HANDLE = 'ag-cell-range-handle';
-const CSS_CELL_RANGE_TOP = 'ag-cell-range-top';
-const CSS_CELL_RANGE_RIGHT = 'ag-cell-range-right';
-const CSS_CELL_RANGE_BOTTOM = 'ag-cell-range-bottom';
-const CSS_CELL_RANGE_LEFT = 'ag-cell-range-left';
+const CSS_CELL_RANGE_SELECTED = 'zing-cell-range-selected';
+const CSS_CELL_RANGE_CHART = 'zing-cell-range-chart';
+const CSS_CELL_RANGE_SINGLE_CELL = 'zing-cell-range-single-cell';
+const CSS_CELL_RANGE_CHART_CATEGORY = 'zing-cell-range-chart-category';
+const CSS_CELL_RANGE_HANDLE = 'zing-cell-range-handle';
+const CSS_CELL_RANGE_TOP = 'zing-cell-range-top';
+const CSS_CELL_RANGE_RIGHT = 'zing-cell-range-right';
+const CSS_CELL_RANGE_BOTTOM = 'zing-cell-range-bottom';
+const CSS_CELL_RANGE_LEFT = 'zing-cell-range-left';
 export class CellRangeFeature {
     constructor(beans, ctrl) {
         this.beans = beans;

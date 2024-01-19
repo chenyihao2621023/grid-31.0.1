@@ -15,20 +15,20 @@ const darkTheme = () => new DarkTheme();
 const lightThemes = {
     undefined: lightTheme,
     null: lightTheme,
-    'ag-default': lightTheme,
-    'ag-sheets': () => new SheetsLight(),
-    'ag-polychroma': () => new PolychromaLight(),
-    'ag-vivid': () => new VividLight(),
-    'ag-material': () => new MaterialLight(),
+    'zing-default': lightTheme,
+    'zing-sheets': () => new SheetsLight(),
+    'zing-polychroma': () => new PolychromaLight(),
+    'zing-vivid': () => new VividLight(),
+    'zing-material': () => new MaterialLight(),
 };
 const darkThemes = {
     undefined: darkTheme,
     null: darkTheme,
-    'ag-default-dark': darkTheme,
-    'ag-sheets-dark': () => new SheetsDark(),
-    'ag-polychroma-dark': () => new PolychromaDark(),
-    'ag-vivid-dark': () => new VividDark(),
-    'ag-material-dark': () => new MaterialDark(),
+    'zing-default-dark': darkTheme,
+    'zing-sheets-dark': () => new SheetsDark(),
+    'zing-polychroma-dark': () => new PolychromaDark(),
+    'zing-vivid-dark': () => new VividDark(),
+    'zing-material-dark': () => new MaterialDark(),
 };
 export const themes = Object.assign(Object.assign({}, darkThemes), lightThemes);
 function validateChartThemeObject(unknownObject) {
@@ -93,7 +93,7 @@ export function getChartTheme(unvalidatedValue) {
         if (stockTheme) {
             return stockTheme();
         }
-        Logger.warnOnce(`the theme [${value}] is invalid, using [ag-default] instead.`);
+        Logger.warnOnce(`the theme [${value}] is invalid, using [zing-default] instead.`);
         return lightTheme();
     }
     // Flatten recursive themes.

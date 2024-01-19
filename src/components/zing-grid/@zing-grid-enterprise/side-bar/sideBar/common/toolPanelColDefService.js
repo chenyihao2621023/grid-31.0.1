@@ -51,7 +51,7 @@ let ToolPanelColDefService = class ToolPanelColDefService extends BeanStub {
             }
         });
         if (invalidColIds.length > 0) {
-            console.warn('AG Grid: unable to find grid columns for the supplied colDef(s):', invalidColIds);
+            console.warn('ZING Grid: unable to find grid columns for the supplied colDef(s):', invalidColIds);
         }
         return mappedResults;
     }

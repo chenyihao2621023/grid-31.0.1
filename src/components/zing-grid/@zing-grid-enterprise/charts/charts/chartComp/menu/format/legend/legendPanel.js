@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { _, Autowired, Component, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-// import { AgChartLegendPosition } from "ag-charts-enterprise";
+// import { AgChartLegendPosition } from "zing-charts-enterprise";
 import { FontPanel } from "../fontPanel";
 import { getMaxValue } from "../formatPanel";
 export class LegendPanel extends Component {
@@ -126,15 +126,15 @@ export class LegendPanel extends Component {
     }
 }
 LegendPanel.TEMPLATE = `<div>
-            <ag-group-component ref="legendGroup">
-                <ag-select ref="legendPositionSelect"></ag-select>
-                <ag-slider ref="legendPaddingSlider"></ag-slider>
-                <ag-slider ref="markerSizeSlider"></ag-slider>
-                <ag-slider ref="markerStrokeSlider"></ag-slider>
-                <ag-slider ref="markerPaddingSlider"></ag-slider>
-                <ag-slider ref="itemPaddingXSlider"></ag-slider>
-                <ag-slider ref="itemPaddingYSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="legendGroup">
+                <zing-select ref="legendPositionSelect"></zing-select>
+                <zing-slider ref="legendPaddingSlider"></zing-slider>
+                <zing-slider ref="markerSizeSlider"></zing-slider>
+                <zing-slider ref="markerStrokeSlider"></zing-slider>
+                <zing-slider ref="markerPaddingSlider"></zing-slider>
+                <zing-slider ref="itemPaddingXSlider"></zing-slider>
+                <zing-slider ref="itemPaddingYSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('legendGroup')

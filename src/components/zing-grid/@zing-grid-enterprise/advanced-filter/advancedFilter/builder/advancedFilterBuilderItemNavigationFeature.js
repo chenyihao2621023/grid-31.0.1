@@ -18,22 +18,22 @@ export class AdvancedFilterBuilderItemNavigationFeature extends BeanStub {
                 case KeyCode.TAB:
                     if (!event.defaultPrevented) {
                         // tab guard handled the navigation. stop from reaching virtual list
-                        _.stopPropagationForAgGrid(event);
+                        _.stopPropagationForZingGrid(event);
                     }
                     break;
                 case KeyCode.UP:
                 case KeyCode.DOWN:
                     // if this hasn't been handled by an editor, prevent virtual list navigation
-                    _.stopPropagationForAgGrid(event);
+                    _.stopPropagationForZingGrid(event);
                     break;
                 case KeyCode.ESCAPE:
-                    if (_.isStopPropagationForAgGrid(event)) {
+                    if (_.isStopPropagationForZingGrid(event)) {
                         return;
                     }
                     const eDocument = this.gridOptionsService.getDocument();
                     if (this.eGui.contains(eDocument.activeElement)) {
                         event.preventDefault();
-                        _.stopPropagationForAgGrid(event);
+                        _.stopPropagationForZingGrid(event);
                         this.focusWrapper.focus();
                     }
                     break;
@@ -42,24 +42,24 @@ export class AdvancedFilterBuilderItemNavigationFeature extends BeanStub {
         this.addManagedListener(this.focusWrapper, 'keydown', (event) => {
             switch (event.key) {
                 case KeyCode.ENTER:
-                    if (_.isStopPropagationForAgGrid(event)) {
+                    if (_.isStopPropagationForZingGrid(event)) {
                         return;
                     }
                     const eDocument = this.gridOptionsService.getDocument();
                     if (eDocument.activeElement === this.focusWrapper) {
                         event.preventDefault();
-                        _.stopPropagationForAgGrid(event);
+                        _.stopPropagationForZingGrid(event);
                         this.eFocusableComp.getFocusableElement().focus();
                     }
                     break;
             }
         });
         this.addManagedListener(this.focusWrapper, 'focusin', () => {
-            this.focusWrapper.classList.add('ag-advanced-filter-builder-virtual-list-item-highlight');
+            this.focusWrapper.classList.add('zing-advanced-filter-builder-virtual-list-item-highlight');
         });
         this.addManagedListener(this.focusWrapper, 'focusout', (event) => {
             if (!this.focusWrapper.contains(event.relatedTarget)) {
-                this.focusWrapper.classList.remove('ag-advanced-filter-builder-virtual-list-item-highlight');
+                this.focusWrapper.classList.remove('zing-advanced-filter-builder-virtual-list-item-highlight');
             }
         });
     }

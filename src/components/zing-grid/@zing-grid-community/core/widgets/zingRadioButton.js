@@ -2,7 +2,7 @@ import { ZingCheckbox } from './zingCheckbox';
 import { Events } from '../eventKeys';
 export class ZingRadioButton extends ZingCheckbox {
     constructor(config) {
-        super(config, 'ag-radio-button', 'radio');
+        super(config, 'zing-radio-button', 'radio');
     }
     isSelected() {
         return this.eInput.checked;

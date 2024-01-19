@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Component, PostConstruct, Events } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class HorizontalResizeComp extends Component {
     constructor() {
-        super(/* html */ `<div class="ag-tool-panel-horizontal-resize"></div>`);
+        super(/* html */ `<div class="zing-tool-panel-horizontal-resize"></div>`);
         this.minWidth = 100;
         this.maxWidth = null;
     }

@@ -8,7 +8,7 @@ import { Autowired, Component } from "@/components/zing-grid/@zing-grid-communit
 export class JoinPillWrapperComp extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-advanced-filter-builder-item-condition" role="presentation"></div>
+            <div class="zing-advanced-filter-builder-item-condition" role="presentation"></div>
         `);
     }
     init(params) {
@@ -18,7 +18,7 @@ export class JoinPillWrapperComp extends Component {
         this.ePill = createPill({
             key: filterModel.type,
             displayValue: this.advancedFilterExpressionService.parseJoinOperator(filterModel),
-            cssClass: 'ag-advanced-filter-builder-join-pill',
+            cssClass: 'zing-advanced-filter-builder-join-pill',
             isSelect: true,
             getEditorParams: () => ({ values: this.advancedFilterExpressionService.getJoinOperatorAutocompleteEntries() }),
             update: (key) => filterModel.type = key,

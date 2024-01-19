@@ -51,7 +51,7 @@ let AnimationFrameService = class AnimationFrameService extends BeanStub {
     // when it should not.
     verifyAnimationFrameOn(methodName) {
         if (this.useAnimationFrame === false) {
-            console.warn(`AG Grid: AnimationFrameService.${methodName} called but animation frames are off`);
+            console.warn(`ZING Grid: AnimationFrameService.${methodName} called but animation frames are off`);
         }
     }
     createTask(task, index, list) {

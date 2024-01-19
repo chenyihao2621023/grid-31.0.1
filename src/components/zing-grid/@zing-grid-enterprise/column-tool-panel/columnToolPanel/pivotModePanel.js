@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Component, Events, PreConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class PivotModePanel extends Component {
     createTemplate() {
-        return /* html */ `<div class="ag-pivot-mode-panel">
-                <ag-toggle-button ref="cbPivotMode" class="ag-pivot-mode-select"></ag-toggle-button>
+        return /* html */ `<div class="zing-pivot-mode-panel">
+                <zing-toggle-button ref="cbPivotMode" class="zing-pivot-mode-select"></zing-toggle-button>
             </div>`;
     }
     init() {

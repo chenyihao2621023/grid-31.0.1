@@ -311,7 +311,7 @@ export class SimpleFilter extends ProvidedFilter {
     createOption() {
         const eType = this.createManagedBean(new ZingSelect());
         this.eTypes.push(eType);
-        eType.addCssClass('ag-filter-select');
+        eType.addCssClass('zing-filter-select');
         this.eFilterBody.appendChild(eType.getGui());
         const eConditionBody = this.createValueElement();
         this.eConditionBodies.push(eConditionBody);
@@ -325,7 +325,7 @@ export class SimpleFilter extends ProvidedFilter {
     createJoinOperatorPanel() {
         const eJoinOperatorPanel = document.createElement('div');
         this.eJoinOperatorPanels.push(eJoinOperatorPanel);
-        eJoinOperatorPanel.classList.add('ag-filter-condition');
+        eJoinOperatorPanel.classList.add('zing-filter-condition');
         const eJoinOperatorAnd = this.createJoinOperator(this.eJoinOperatorsAnd, eJoinOperatorPanel, 'and');
         const eJoinOperatorOr = this.createJoinOperator(this.eJoinOperatorsOr, eJoinOperatorPanel, 'or');
         this.eFilterBody.appendChild(eJoinOperatorPanel);
@@ -341,8 +341,8 @@ export class SimpleFilter extends ProvidedFilter {
     createJoinOperator(eJoinOperators, eJoinOperatorPanel, andOr) {
         const eJoinOperator = this.createManagedBean(new ZingRadioButton());
         eJoinOperators.push(eJoinOperator);
-        eJoinOperator.addCssClass('ag-filter-condition-operator');
-        eJoinOperator.addCssClass(`ag-filter-condition-operator-${andOr}`);
+        eJoinOperator.addCssClass('zing-filter-condition-operator');
+        eJoinOperator.addCssClass(`zing-filter-condition-operator-${andOr}`);
         eJoinOperatorPanel.appendChild(eJoinOperator.getGui());
         return eJoinOperator;
     }
@@ -707,7 +707,7 @@ export class SimpleFilter extends ProvidedFilter {
     resetJoinOperator(eJoinOperator, index, value, label, uniqueGroupId) {
         this.updateJoinOperatorDisabled(eJoinOperator
             .setValue(value, true)
-            .setName(`ag-simple-filter-and-or-${this.getCompId()}-${uniqueGroupId}`)
+            .setName(`zing-simple-filter-and-or-${this.getCompId()}-${uniqueGroupId}`)
             .setLabel(label), index);
     }
     updateJoinOperatorsDisabled() {

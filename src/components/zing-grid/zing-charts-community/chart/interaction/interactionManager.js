@@ -26,7 +26,7 @@ const EVENT_HANDLERS = [
     'wheel',
 ];
 const CSS = `
-.ag-chart-wrapper {
+.zing-chart-wrapper {
     touch-action: none;
 }
 `;

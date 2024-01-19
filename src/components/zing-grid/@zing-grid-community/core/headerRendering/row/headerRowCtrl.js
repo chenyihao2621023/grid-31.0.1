@@ -21,9 +21,9 @@ export class HeaderRowCtrl extends BeanStub {
         this.rowIndex = rowIndex;
         this.pinned = pinned;
         this.type = type;
-        const typeClass = type == HeaderRowType.COLUMN_GROUP ? `ag-header-row-column-group` :
-            type == HeaderRowType.FLOATING_FILTER ? `ag-header-row-column-filter` : `ag-header-row-column`;
-        this.headerRowClass = `ag-header-row ${typeClass}`;
+        const typeClass = type == HeaderRowType.COLUMN_GROUP ? `zing-header-row-column-group` :
+            type == HeaderRowType.FLOATING_FILTER ? `zing-header-row-column-filter` : `zing-header-row-column`;
+        this.headerRowClass = `zing-header-row ${typeClass}`;
     }
     postConstruct() {
         this.isPrintLayout = this.gridOptionsService.isDomLayout('print');

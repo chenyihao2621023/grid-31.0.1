@@ -1,7 +1,7 @@
 import { ZingAbstractInputField } from "./zingAbstractInputField";
 export class ZingInputRange extends ZingAbstractInputField {
     constructor(config) {
-        super(config, 'ag-range-field', 'range');
+        super(config, 'zing-range-field', 'range');
     }
     postConstruct() {
         super.postConstruct();

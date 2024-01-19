@@ -33,12 +33,12 @@ let ImmutableService = class ImmutableService extends BeanStub {
     // converts the setRowData() command to a transaction
     createTransactionForRowData(rowData) {
         if (_.missing(this.clientSideRowModel)) {
-            console.error('AG Grid: ImmutableService only works with ClientSideRowModel');
+            console.error('ZING Grid: ImmutableService only works with ClientSideRowModel');
             return;
         }
         const getRowIdFunc = this.gridOptionsService.getCallback('getRowId');
         if (getRowIdFunc == null) {
-            console.error('AG Grid: ImmutableService requires getRowId() callback to be implemented, your row data needs IDs!');
+            console.error('ZING Grid: ImmutableService requires getRowId() callback to be implemented, your row data needs IDs!');
             return;
         }
         // convert the data into a transaction object by working out adds, removes and updates

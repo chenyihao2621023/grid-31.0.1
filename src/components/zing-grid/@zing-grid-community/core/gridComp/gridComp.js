@@ -60,18 +60,18 @@ export class GridComp extends TabGuardComp {
         this.addOrRemoveCssClass(LayoutCssClasses.PRINT, params.print);
     }
     createTemplate() {
-        const dropZones = this.ctrl.showDropZones() ? '<ag-grid-header-drop-zones></ag-grid-header-drop-zones>' : '';
-        const sideBar = this.ctrl.showSideBar() ? '<ag-side-bar ref="sideBar"></ag-side-bar>' : '';
-        const statusBar = this.ctrl.showStatusBar() ? '<ag-status-bar ref="statusBar"></ag-status-bar>' : '';
-        const watermark = this.ctrl.showWatermark() ? '<ag-watermark></ag-watermark>' : '';
-        const template = /* html */ `<div class="ag-root-wrapper" role="presentation">
+        const dropZones = this.ctrl.showDropZones() ? '<zing-grid-header-drop-zones></zing-grid-header-drop-zones>' : '';
+        const sideBar = this.ctrl.showSideBar() ? '<zing-side-bar ref="sideBar"></zing-side-bar>' : '';
+        const statusBar = this.ctrl.showStatusBar() ? '<zing-status-bar ref="statusBar"></zing-status-bar>' : '';
+        const watermark = this.ctrl.showWatermark() ? '<zing-watermark></zing-watermark>' : '';
+        const template = /* html */ `<div class="zing-root-wrapper" role="presentation">
                 ${dropZones}
-                <div class="ag-root-wrapper-body" ref="rootWrapperBody" role="presentation">
-                    <ag-grid-body ref="gridBody"></ag-grid-body>
+                <div class="zing-root-wrapper-body" ref="rootWrapperBody" role="presentation">
+                    <zing-grid-body ref="gridBody"></zing-grid-body>
                     ${sideBar}
                 </div>
                 ${statusBar}
-                <ag-pagination></ag-pagination>
+                <zing-pagination></zing-pagination>
                 ${watermark}
             </div>`;
         return template;

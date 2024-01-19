@@ -16,7 +16,7 @@ export class AggregationComp extends Component {
     }
     postConstruct() {
         if (!this.isValidRowModel()) {
-            console.warn(`AG Grid: agAggregationComponent should only be used with the client and server side row model.`);
+            console.warn(`ZING Grid: zingAggregationComponent should only be used with the client and server side row model.`);
             return;
         }
         this.avgAggregationComp.setLabel('avg', 'Average');
@@ -47,11 +47,11 @@ export class AggregationComp extends Component {
     getAggregationValueComponent(aggFuncName) {
         // converts user supplied agg name to our reference - eg: sum => sumAggregationComp
         const refComponentName = `${aggFuncName}AggregationComp`;
-        // if the user has specified the agAggregationPanelComp but no aggFuncs we show the all
-        // if the user has specified the agAggregationPanelComp and aggFuncs, then we only show the aggFuncs listed
+        // if the user has specified the zingAggregationPanelComp but no aggFuncs we show the all
+        // if the user has specified the zingAggregationPanelComp and aggFuncs, then we only show the aggFuncs listed
         let statusBarValueComponent = null;
         const statusBar = this.gridOptionsService.get('statusBar');
-        const aggregationPanelConfig = _.exists(statusBar) && statusBar ? statusBar.statusPanels.find(panel => panel.statusPanel === 'agAggregationComponent') : null;
+        const aggregationPanelConfig = _.exists(statusBar) && statusBar ? statusBar.statusPanels.find(panel => panel.statusPanel === 'zingAggregationComponent'') : null;
         if (_.exists(aggregationPanelConfig) && aggregationPanelConfig) {
             // a little defensive here - if no statusPanelParams show it, if componentParams we also expect aggFuncs
             if (!_.exists(aggregationPanelConfig.statusPanelParams) ||
@@ -147,12 +147,12 @@ export class AggregationComp extends Component {
         this.setAggregationComponentValue('avg', (sum / numberCount), gotNumberResult);
     }
 }
-AggregationComp.TEMPLATE = `<div class="ag-status-panel ag-status-panel-aggregations">
-            <ag-name-value ref="avgAggregationComp"></ag-name-value>
-            <ag-name-value ref="countAggregationComp"></ag-name-value>
-            <ag-name-value ref="minAggregationComp"></ag-name-value>
-            <ag-name-value ref="maxAggregationComp"></ag-name-value>
-            <ag-name-value ref="sumAggregationComp"></ag-name-value>
+AggregationComp.TEMPLATE = `<div class="zing-status-panel zing-status-panel-aggregations">
+            <zing-name-value ref="avgAggregationComp"></zing-name-value>
+            <zing-name-value ref="countAggregationComp"></zing-name-value>
+            <zing-name-value ref="minAggregationComp"></zing-name-value>
+            <zing-name-value ref="maxAggregationComp"></zing-name-value>
+            <zing-name-value ref="sumAggregationComp"></zing-name-value>
         </div>`;
 __decorate([
     Optional('rangeService')

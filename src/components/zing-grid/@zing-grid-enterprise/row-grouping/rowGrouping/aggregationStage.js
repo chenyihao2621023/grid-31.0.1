@@ -194,7 +194,7 @@ let AggregationStage = class AggregationStage extends BeanStub {
             this.aggFuncService.getAggFunc(aggFuncOrString) :
             aggFuncOrString;
         if (typeof aggFunc !== 'function') {
-            console.error(`AG Grid: unrecognised aggregation function ${aggFuncOrString}`);
+            console.error(`ZING Grid: unrecognised aggregation function ${aggFuncOrString}`);
             return null;
         }
         const aggFuncAny = aggFunc;

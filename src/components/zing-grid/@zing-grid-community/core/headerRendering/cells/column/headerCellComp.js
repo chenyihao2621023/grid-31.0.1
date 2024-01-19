@@ -48,7 +48,7 @@ export class HeaderCellComp extends AbstractHeaderCellComp {
     setUserCompDetails(compDetails) {
         this.headerCompVersion++;
         const versionCopy = this.headerCompVersion;
-        compDetails.newAgStackInstance().then(comp => this.afterCompCreated(versionCopy, comp));
+        compDetails.newZingStackInstance().then(comp => this.afterCompCreated(versionCopy, comp));
     }
     afterCompCreated(version, headerComp) {
         if (version != this.headerCompVersion || !this.isAlive()) {
@@ -62,9 +62,9 @@ export class HeaderCellComp extends AbstractHeaderCellComp {
         this.ctrl.setDragSource(this.getGui());
     }
 }
-HeaderCellComp.TEMPLATE = `<div class="ag-header-cell" role="columnheader" tabindex="-1">
-            <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
-            <div ref="eHeaderCompWrapper" class="ag-header-cell-comp-wrapper" role="presentation"></div>
+HeaderCellComp.TEMPLATE = `<div class="zing-header-cell" role="columnheader" tabindex="-1">
+            <div ref="eResize" class="zing-header-cell-resize" role="presentation"></div>
+            <div ref="eHeaderCompWrapper" class="zing-header-cell-comp-wrapper" role="presentation"></div>
         </div>`;
 __decorate([
     RefSelector('eResize')

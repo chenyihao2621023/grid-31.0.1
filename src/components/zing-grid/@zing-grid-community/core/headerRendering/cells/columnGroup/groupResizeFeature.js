@@ -149,7 +149,7 @@ export class GroupResizeFeature extends BeanStub {
         }
     }
     toggleColumnResizing(resizing) {
-        this.comp.addOrRemoveCssClass('ag-column-resizing', resizing);
+        this.comp.addOrRemoveCssClass('zing-column-resizing', resizing);
     }
     getColumnsToResize() {
         const leafCols = this.columnGroup.getDisplayedLeafColumns();

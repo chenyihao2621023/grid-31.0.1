@@ -14,12 +14,12 @@ export const RowGroupingModule = {
     version: VERSION,
     moduleName: ModuleNames.RowGroupingModule,
     beans: [AggregationStage, FilterAggregatesStage, GroupStage, PivotColDefService, PivotStage, AggFuncService],
-    agStackComponents: [
-        { componentName: 'AgGridHeaderDropZones', componentClass: GridHeaderDropZones }
+    zingStackComponents: [
+        { componentName: 'ZingGridHeaderDropZones', componentClass: GridHeaderDropZones }
     ],
     userComponents: [
-        { componentName: 'agGroupColumnFilter', componentClass: GroupFilter },
-        { componentName: 'agGroupColumnFloatingFilter', componentClass: GroupFloatingFilterComp },
+        { componentName: 'zingGroupColumnFilter'', componentClass: GroupFilter },
+        { componentName: 'zingGroupColumnFloatingFilter'', componentClass: GroupFloatingFilterComp },
     ],
     dependantModules: [
         EnterpriseCoreModule

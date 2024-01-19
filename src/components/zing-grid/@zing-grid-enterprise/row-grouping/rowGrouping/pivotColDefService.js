@@ -156,7 +156,7 @@ let PivotColDefService = PivotColDefService_1 = class PivotColDefService extends
         const aggFuncs = valueCols.map(valueCol => valueCol.getAggFunc());
         // don't add pivot totals if there is less than 1 aggFunc or they are not all the same
         if (!aggFuncs || aggFuncs.length < 1 || !this.sameAggFuncs(aggFuncs)) {
-            // console.warn('AG Grid: aborting adding pivot total columns - value columns require same aggFunc');
+            // console.warn('ZING Grid: aborting adding pivot total columns - value columns require same aggFunc');
             return;
         }
         // arbitrarily select a value column to use as a template for pivot columns
@@ -269,7 +269,7 @@ let PivotColDefService = PivotColDefService_1 = class PivotColDefService extends
         colDef.pivotKeys = pivotKeys;
         colDef.pivotValueColumn = valueColumn;
         if (colDef.filter === true) {
-            colDef.filter = 'agNumberColumnFilter';
+            colDef.filter = 'zingNumberColumnFilter'';
         }
         return colDef;
     }

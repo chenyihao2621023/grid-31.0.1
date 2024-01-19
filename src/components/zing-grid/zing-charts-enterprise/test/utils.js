@@ -1,4 +1,4 @@
-import { prepareTestOptions } from 'ag-charts-community-test';
+import { prepareTestOptions } from 'zing-charts-community-test';
 export function prepareEnterpriseTestOptions(options, container = document.body) {
     var _a, _b;
     if (!options.animation && !((_a = options.series) === null || _a === void 0 ? void 0 : _a.some(({ type }) => type === 'treemap'))) {

@@ -20,7 +20,7 @@ export class GridHeaderCtrl extends BeanStub {
             handleKeyDown: this.handleKeyDown.bind(this),
             onFocusOut: this.onFocusOut.bind(this)
         }));
-        // for setting ag-pivot-on / ag-pivot-off CSS classes
+        // for setting zing-pivot-on / zing-pivot-off CSS classes
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_PIVOT_MODE_CHANGED, this.onPivotModeChanged.bind(this));
         this.addManagedListener(this.eventService, Events.EVENT_DISPLAYED_COLUMNS_CHANGED, this.onDisplayedColumnsChanged.bind(this));
         this.onPivotModeChanged();
@@ -74,13 +74,13 @@ export class GridHeaderCtrl extends BeanStub {
     }
     onPivotModeChanged() {
         const pivotMode = this.columnModel.isPivotMode();
-        this.comp.addOrRemoveCssClass('ag-pivot-on', pivotMode);
-        this.comp.addOrRemoveCssClass('ag-pivot-off', !pivotMode);
+        this.comp.addOrRemoveCssClass('zing-pivot-on', pivotMode);
+        this.comp.addOrRemoveCssClass('zing-pivot-off', !pivotMode);
     }
     onDisplayedColumnsChanged() {
         const columns = this.columnModel.getAllDisplayedColumns();
         const shouldAllowOverflow = columns.some(col => col.isSpanHeaderHeight());
-        this.comp.addOrRemoveCssClass('ag-header-allow-overflow', shouldAllowOverflow);
+        this.comp.addOrRemoveCssClass('zing-header-allow-overflow', shouldAllowOverflow);
     }
     onTabKeyDown(e) {
         const isRtl = this.gridOptionsService.get('enableRtl');

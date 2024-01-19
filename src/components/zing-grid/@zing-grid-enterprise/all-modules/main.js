@@ -1,4 +1,4 @@
-import { AllCommunityModules } from "@ag-grid-community/all-modules";
+import { AllCommunityModules } from "@zing-grid-community/all-modules";
 import { AdvancedFilterModule } from "@/components/zing-grid/@zing-grid-enterprise/advanced-filter/main.js";
 import { ClipboardModule } from "@/components/zing-grid/@zing-grid-enterprise/clipboard/main.js";
 import { ColumnsToolPanelModule } from "@/components/zing-grid/@zing-grid-enterprise/column-tool-panel/main.js";
@@ -17,7 +17,7 @@ import { SideBarModule } from "@/components/zing-grid/@zing-grid-enterprise/side
 import { StatusBarModule } from "@/components/zing-grid/@zing-grid-enterprise/status-bar/main.js";
 import { ViewportRowModelModule } from "@/components/zing-grid/@zing-grid-enterprise/viewport-row-model/main.js";
 import { SparklinesModule } from "@/components/zing-grid/@zing-grid-enterprise/sparklines/main.js";
-export * from "@ag-grid-community/all-modules";
+export * from "@zing-grid-community/all-modules";
 export * from "@/components/zing-grid/@zing-grid-enterprise/advanced-filter/main.js";
 export * from "@/components/zing-grid/@zing-grid-enterprise/clipboard/main.js";
 export * from "@/components/zing-grid/@zing-grid-enterprise/column-tool-panel/main.js";

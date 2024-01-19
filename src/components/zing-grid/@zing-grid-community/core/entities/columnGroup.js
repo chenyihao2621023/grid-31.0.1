@@ -83,13 +83,13 @@ export class ColumnGroup {
         this.oldLeft = left;
         if (this.left !== left) {
             this.left = left;
-            this.localEventService.dispatchEvent(this.createAgEvent(ColumnGroup.EVENT_LEFT_CHANGED));
+            this.localEventService.dispatchEvent(this.createZingEvent(ColumnGroup.EVENT_LEFT_CHANGED));
         }
     }
     getPinned() {
         return this.pinned;
     }
-    createAgEvent(type) {
+    createZingEvent(type) {
         return { type };
     }
     addEventListener(eventType, listener) {
@@ -233,7 +233,7 @@ export class ColumnGroup {
         // it not expandable, everything is visible
         if (!isExpandable) {
             this.displayedChildren = this.children;
-            this.localEventService.dispatchEvent(this.createAgEvent(ColumnGroup.EVENT_DISPLAYED_CHILDREN_CHANGED));
+            this.localEventService.dispatchEvent(this.createZingEvent(ColumnGroup.EVENT_DISPLAYED_CHILDREN_CHANGED));
             return;
         }
         // Add cols based on columnGroupShow
@@ -264,7 +264,7 @@ export class ColumnGroup {
                     break;
             }
         });
-        this.localEventService.dispatchEvent(this.createAgEvent(ColumnGroup.EVENT_DISPLAYED_CHILDREN_CHANGED));
+        this.localEventService.dispatchEvent(this.createZingEvent(ColumnGroup.EVENT_DISPLAYED_CHILDREN_CHANGED));
     }
 }
 ColumnGroup.EVENT_LEFT_CHANGED = 'leftChanged';

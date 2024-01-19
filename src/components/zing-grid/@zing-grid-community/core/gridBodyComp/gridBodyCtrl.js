@@ -15,12 +15,12 @@ import { getTabIndex, isInvisibleScrollbar, isIOSUserAgent } from "../utils/brow
 import { TouchListener } from "../widgets/touchListener";
 export var RowAnimationCssClasses;
 (function (RowAnimationCssClasses) {
-    RowAnimationCssClasses["ANIMATION_ON"] = "ag-row-animation";
-    RowAnimationCssClasses["ANIMATION_OFF"] = "ag-row-no-animation";
+    RowAnimationCssClasses["ANIMATION_ON"] = "zing-row-animation";
+    RowAnimationCssClasses["ANIMATION_OFF"] = "zing-row-no-animation";
 })(RowAnimationCssClasses || (RowAnimationCssClasses = {}));
-export const CSS_CLASS_FORCE_VERTICAL_SCROLL = 'ag-force-vertical-scroll';
-const CSS_CLASS_CELL_SELECTABLE = 'ag-selectable';
-const CSS_CLASS_COLUMN_MOVING = 'ag-column-moving';
+export const CSS_CLASS_FORCE_VERTICAL_SCROLL = 'zing-force-vertical-scroll';
+const CSS_CLASS_CELL_SELECTABLE = 'zing-selectable';
+const CSS_CLASS_COLUMN_MOVING = 'zing-column-moving';
 export class GridBodyCtrl extends BeanStub {
     constructor() {
         super(...arguments);
@@ -69,14 +69,14 @@ export class GridBodyCtrl extends BeanStub {
             this.addManagedListener(element, 'focusin', (e) => {
                 const { target } = e;
                 // element being focused is nested?
-                const isFocusedElementNested = isElementChildOfClass(target, 'ag-root', element);
-                element.classList.toggle('ag-has-focus', !isFocusedElementNested);
+                const isFocusedElementNested = isElementChildOfClass(target, 'zing-root', element);
+                element.classList.toggle('zing-has-focus', !isFocusedElementNested);
             });
             this.addManagedListener(element, 'focusout', (e) => {
                 const { target, relatedTarget } = e;
                 const gridContainRelatedTarget = element.contains(relatedTarget);
-                const isNestedRelatedTarget = isElementChildOfClass(relatedTarget, 'ag-root', element);
-                const isNestedTarget = isElementChildOfClass(target, 'ag-root', element);
+                const isNestedRelatedTarget = isElementChildOfClass(relatedTarget, 'zing-root', element);
+                const isNestedTarget = isElementChildOfClass(target, 'zing-root', element);
                 // element losing focus belongs to a nested grid,
                 // it should not be handled here.
                 if (isNestedTarget) {
@@ -85,7 +85,7 @@ export class GridBodyCtrl extends BeanStub {
                 // the grid does not contain, or the focus element is within
                 // a nested grid
                 if (!gridContainRelatedTarget || isNestedRelatedTarget) {
-                    element.classList.remove('ag-has-focus');
+                    element.classList.remove('zing-has-focus');
                 }
             });
         });
@@ -196,8 +196,8 @@ export class GridBodyCtrl extends BeanStub {
         this.addFullWidthContainerWheelListener();
     }
     addFullWidthContainerWheelListener() {
-        const fullWidthContainer = this.eBodyViewport.querySelector('.ag-full-width-container');
-        const eCenterColsViewport = this.eBodyViewport.querySelector('.ag-center-cols-viewport');
+        const fullWidthContainer = this.eBodyViewport.querySelector('.zing-full-width-container');
+        const eCenterColsViewport = this.eBodyViewport.querySelector('.zing-center-cols-viewport');
         if (fullWidthContainer && eCenterColsViewport) {
             this.addManagedListener(fullWidthContainer, 'wheel', (e) => this.onFullWidthContainerWheel(e, eCenterColsViewport));
         }
@@ -358,7 +358,7 @@ export class GridBodyCtrl extends BeanStub {
             }, 500);
         }
         else {
-            console.warn('AG Grid: tried to call sizeColumnsToFit() but the grid is coming back with ' +
+            console.warn('ZING Grid: tried to call sizeColumnsToFit() but the grid is coming back with ' +
                 'zero width, maybe the grid is not visible yet on the screen?');
         }
     }

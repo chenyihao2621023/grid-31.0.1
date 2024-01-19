@@ -20,7 +20,7 @@ export class AbstractFakeScrollComp extends Component {
     postConstruct() {
         this.addManagedListener(this.eventService, Events.EVENT_SCROLL_VISIBILITY_CHANGED, this.onScrollVisibilityChanged.bind(this));
         this.onScrollVisibilityChanged();
-        this.addOrRemoveCssClass('ag-apple-scrollbar', isMacOsUserAgent() || isIOSUserAgent());
+        this.addOrRemoveCssClass('zing-apple-scrollbar', isMacOsUserAgent() || isIOSUserAgent());
     }
     initialiseInvisibleScrollbar() {
         if (this.invisibleScrollbar !== undefined) {
@@ -36,8 +36,8 @@ export class AbstractFakeScrollComp extends Component {
         const activateEvents = ['mouseenter', 'mousedown', 'touchstart'];
         const deactivateEvents = ['mouseleave', 'touchend'];
         const eGui = this.getGui();
-        activateEvents.forEach(eventName => this.addManagedListener(eGui, eventName, () => this.addOrRemoveCssClass('ag-scrollbar-active', true)));
-        deactivateEvents.forEach(eventName => this.addManagedListener(eGui, eventName, () => this.addOrRemoveCssClass('ag-scrollbar-active', false)));
+        activateEvents.forEach(eventName => this.addManagedListener(eGui, eventName, () => this.addOrRemoveCssClass('zing-scrollbar-active', true)));
+        deactivateEvents.forEach(eventName => this.addManagedListener(eGui, eventName, () => this.addOrRemoveCssClass('zing-scrollbar-active', false)));
     }
     onScrollVisibilityChanged() {
         // initialiseInvisibleScrollbar should only be called once, but the reason
@@ -55,12 +55,12 @@ export class AbstractFakeScrollComp extends Component {
                     window.clearTimeout(this.hideTimeout);
                     this.hideTimeout = null;
                 }
-                this.addOrRemoveCssClass('ag-scrollbar-scrolling', true);
+                this.addOrRemoveCssClass('zing-scrollbar-scrolling', true);
             }
         });
         this.addManagedListener(this.eventService, Events.EVENT_BODY_SCROLL_END, () => {
             this.hideTimeout = window.setTimeout(() => {
-                this.addOrRemoveCssClass('ag-scrollbar-scrolling', false);
+                this.addOrRemoveCssClass('zing-scrollbar-scrolling', false);
                 this.hideTimeout = null;
             }, 400);
         });

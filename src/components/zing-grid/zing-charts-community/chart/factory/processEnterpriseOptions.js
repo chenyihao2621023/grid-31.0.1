@@ -57,11 +57,11 @@ export function removeUsedEnterpriseOptions(options) {
     }
     if (usedOptions.length > 0) {
         Logger.warnOnce([
-            `unable to use these enterprise features as 'ag-charts-enterprise' has not been loaded:`,
+            `unable to use these enterprise features as 'zing-charts-enterprise' has not been loaded:`,
             ``,
             ...usedOptions,
             ``,
-            'See: https://charts.ag-grid.com/javascript/installation/',
+            'See: https://charts.zing-grid.com/javascript/installation/',
         ].join('\n'));
     }
 }

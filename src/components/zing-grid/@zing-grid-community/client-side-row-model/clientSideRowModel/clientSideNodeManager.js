@@ -28,7 +28,7 @@ export class ClientSideNodeManager {
     }
     setRowData(rowData) {
         if (typeof rowData === 'string') {
-            console.warn('AG Grid: rowData must be an array, however you passed in a string. If you are loading JSON, make sure you convert the JSON string to JavaScript objects first');
+            console.warn('ZING Grid: rowData must be an array, however you passed in a string. If you are loading JSON, make sure you convert the JSON string to JavaScript objects first');
             return;
         }
         this.dataLoaded = true;
@@ -44,9 +44,9 @@ export class ClientSideNodeManager {
         this.nextId = 0;
         this.allNodesMap = {};
         if (rowData) {
-            // we use rootNode as the parent, however if using ag-grid-enterprise, the grouping stage
+            // we use rootNode as the parent, however if using zing-grid-enterprise, the grouping stage
             // sets the parent node on each row (even if we are not grouping). so setting parent node
-            // here is for benefit of ag-grid-community users
+            // here is for benefit of zing-grid-community users
             rootNode.allLeafChildren = rowData.map(dataItem => this.createNode(dataItem, this.rootNode, ClientSideNodeManager.TOP_LEVEL));
         }
         else {
@@ -205,7 +205,7 @@ export class ClientSideNodeManager {
             const id = getRowIdFunc({ data, level: 0 });
             rowNode = this.allNodesMap[id];
             if (!rowNode) {
-                console.error(`AG Grid: could not find row id=${id}, data item was not found for this id`);
+                console.error(`ZING Grid: could not find row id=${id}, data item was not found for this id`);
                 return null;
             }
         }
@@ -213,7 +213,7 @@ export class ClientSideNodeManager {
             // find rowNode using object references
             rowNode = this.rootNode.allLeafChildren.find(node => node.data === data);
             if (!rowNode) {
-                console.error(`AG Grid: could not find data item as object was not found`, data);
+                console.error(`ZING Grid: could not find data item as object was not found`, data);
                 console.error(`Consider using getRowId to help the Grid find matching row data`);
                 return null;
             }
@@ -231,7 +231,7 @@ export class ClientSideNodeManager {
         node.level = level;
         node.setDataAndId(dataItem, this.nextId.toString());
         if (this.allNodesMap[node.id]) {
-            console.warn(`AG Grid: duplicate node id '${node.id}' detected from getRowId callback, this could cause issues in your grid.`);
+            console.warn(`ZING Grid: duplicate node id '${node.id}' detected from getRowId callback, this could cause issues in your grid.`);
         }
         this.allNodesMap[node.id] = node;
         this.nextId++;

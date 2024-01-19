@@ -10,11 +10,11 @@ export class ChartDatasource extends BeanStub {
     getData(params) {
         if (params.crossFiltering) {
             if (params.grouping) {
-                console.warn("AG Grid: crossing filtering with row grouping is not supported.");
+                console.warn("ZING Grid: crossing filtering with row grouping is not supported.");
                 return { chartData: [], columnNames: {} };
             }
             if (!this.gridOptionsService.isRowModelType('clientSide')) {
-                console.warn("AG Grid: crossing filtering is only supported in the client side row model.");
+                console.warn("ZING Grid: crossing filtering is only supported in the client side row model.");
                 return { chartData: [], columnNames: {} };
             }
         }

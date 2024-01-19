@@ -8,7 +8,7 @@ import { _, AgPromise, ZingSelect, Autowired, Events, PostConstruct, RefSelector
 export class GroupFilter extends TabGuardComp {
     constructor() {
         super(/* html */ `
-            <div class="ag-group-filter">
+            <div class="zing-group-filter">
                 <div ref="eGroupField"></div>
                 <div ref="eUnderlyingFilter"></div>
             </div>
@@ -79,7 +79,7 @@ export class GroupFilter extends TabGuardComp {
             }
             this.createGroupFieldSelectElement(sourceColumns);
             this.eGroupField.appendChild(this.eGroupFieldSelect.getGui());
-            this.eGroupField.appendChild(_.loadTemplate(/* html */ `<div class="ag-filter-separator"></div>`));
+            this.eGroupField.appendChild(_.loadTemplate(/* html */ `<div class="zing-filter-separator"></div>`));
             _.setDisplayed(this.eGroupField, true);
         }
         return sourceColumns;
@@ -98,7 +98,7 @@ export class GroupFilter extends TabGuardComp {
         }));
         this.eGroupFieldSelect.setValue(this.selectedColumn.getId());
         this.eGroupFieldSelect.onValueChange((newValue) => this.updateSelectedColumn(newValue));
-        this.eGroupFieldSelect.addCssClass('ag-group-filter-field-select-wrapper');
+        this.eGroupFieldSelect.addCssClass('zing-group-filter-field-select-wrapper');
         if (sourceColumns.length === 1) {
             this.eGroupFieldSelect.setDisabled(true);
         }

@@ -95,11 +95,11 @@ let FilterManager = class FilterManager extends BeanStub {
             modelKeys.forEach(colId => {
                 const column = this.columnModel.getPrimaryColumn(colId) || this.columnModel.getGridColumn(colId);
                 if (!column) {
-                    console.warn('AG Grid: setFilterModel() - no column found for colId: ' + colId);
+                    console.warn('ZING Grid: setFilterModel() - no column found for colId: ' + colId);
                     return;
                 }
                 if (!column.isFilterAllowed()) {
-                    console.warn('AG Grid: setFilterModel() - unable to fully apply model, filtering disabled for colId: ' + colId);
+                    console.warn('ZING Grid: setFilterModel() - unable to fully apply model, filtering disabled for colId: ' + colId);
                     return;
                 }
                 const filterWrapper = this.getOrCreateFilterWrapper(column, 'NO_UI');
@@ -134,7 +134,7 @@ let FilterManager = class FilterManager extends BeanStub {
         return new AgPromise(resolve => {
             filterPromise.then(filter => {
                 if (typeof filter.setModel !== 'function') {
-                    console.warn('AG Grid: filter missing setModel method, which is needed for setFilterModel');
+                    console.warn('ZING Grid: filter missing setModel method, which is needed for setFilterModel');
                     resolve();
                 }
                 (filter.setModel(newModel) || AgPromise.resolve()).then(() => resolve());
@@ -151,7 +151,7 @@ let FilterManager = class FilterManager extends BeanStub {
                 return null;
             }
             if (typeof filter.getModel !== 'function') {
-                console.warn('AG Grid: filter API missing getModel method, which is needed for getFilterModel');
+                console.warn('ZING Grid: filter API missing getModel method, which is needed for getFilterModel');
                 return;
             }
             const model = filter.getModel();
@@ -215,7 +215,7 @@ let FilterManager = class FilterManager extends BeanStub {
                 return false;
             } // this never happens, including to avoid compile error
             if (!filter.isFilterActive) {
-                console.warn('AG Grid: Filter is missing isFilterActive() method');
+                console.warn('ZING Grid: Filter is missing isFilterActive() method');
                 return false;
             }
             return filter.isFilterActive();
@@ -330,7 +330,7 @@ let FilterManager = class FilterManager extends BeanStub {
         if (additionalEventAttributes) {
             mergeDeep(filterChangedEvent, additionalEventAttributes);
         }
-        // because internal events are not async in ag-grid, when the dispatchEvent
+        // because internal events are not async in zing-grid, when the dispatchEvent
         // method comes back, we know all listeners have finished executing.
         this.processingFilterChange = true;
         this.eventService.dispatchEvent(filterChangedEvent);
@@ -443,18 +443,18 @@ let FilterManager = class FilterManager extends BeanStub {
     getDefaultFilter(column) {
         let defaultFilter;
         if (ModuleRegistry.__isRegistered(ModuleNames.SetFilterModule, this.context.getGridId())) {
-            defaultFilter = 'agSetColumnFilter';
+            defaultFilter = 'zingSetColumnFilter'';
         }
         else {
             const cellDataType = column.getColDef().cellDataType;
             if (cellDataType === 'number') {
-                defaultFilter = 'agNumberColumnFilter';
+                defaultFilter = 'zingNumberColumnFilter'';
             }
             else if (cellDataType === 'date' || cellDataType === 'dateString') {
-                defaultFilter = 'agDateColumnFilter';
+                defaultFilter = 'zingDateColumnFilter'';
             }
             else {
-                defaultFilter = 'agTextColumnFilter';
+                defaultFilter = 'zingTextColumnFilter'';
             }
         }
         return defaultFilter;
@@ -462,18 +462,18 @@ let FilterManager = class FilterManager extends BeanStub {
     getDefaultFloatingFilter(column) {
         let defaultFloatingFilterType;
         if (ModuleRegistry.__isRegistered(ModuleNames.SetFilterModule, this.context.getGridId())) {
-            defaultFloatingFilterType = 'agSetColumnFloatingFilter';
+            defaultFloatingFilterType = 'zingSetColumnFloatingFilter'';
         }
         else {
             const cellDataType = column.getColDef().cellDataType;
             if (cellDataType === 'number') {
-                defaultFloatingFilterType = 'agNumberColumnFloatingFilter';
+                defaultFloatingFilterType = 'zingNumberColumnFloatingFilter'';
             }
             else if (cellDataType === 'date' || cellDataType === 'dateString') {
-                defaultFloatingFilterType = 'agDateColumnFloatingFilter';
+                defaultFloatingFilterType = 'zingDateColumnFloatingFilter'';
             }
             else {
-                defaultFloatingFilterType = 'agTextColumnFloatingFilter';
+                defaultFloatingFilterType = 'zingTextColumnFloatingFilter'';
             }
         }
         return defaultFloatingFilterType;
@@ -489,7 +489,7 @@ let FilterManager = class FilterManager extends BeanStub {
         }
         return {
             filterPromise: () => {
-                const filterPromise = compDetails.newAgStackInstance();
+                const filterPromise = compDetails.newZingStackInstance();
                 if (filterPromise) {
                     filterPromise.then(r => filterInstance = r);
                 }
@@ -533,12 +533,12 @@ let FilterManager = class FilterManager extends BeanStub {
     }
     putIntoGui(filterWrapper, source) {
         const eFilterGui = document.createElement('div');
-        eFilterGui.className = 'ag-filter';
+        eFilterGui.className = 'zing-filter';
         filterWrapper.guiPromise = new AgPromise(resolve => {
             filterWrapper.filterPromise.then(filter => {
                 let guiFromFilter = filter.getGui();
                 if (!exists(guiFromFilter)) {
-                    console.warn(`AG Grid: getGui method from filter returned ${guiFromFilter}, it should be a DOM element or an HTML template string.`);
+                    console.warn(`ZING Grid: getGui method from filter returned ${guiFromFilter}, it should be a DOM element or an HTML template string.`);
                 }
                 // for backwards compatibility with Angular 1 - we
                 // used to allow providing back HTML from getGui().
@@ -591,7 +591,7 @@ let FilterManager = class FilterManager extends BeanStub {
         // Instead, create them by default when any filter changes.
         const groupColumns = this.columnModel.getGroupAutoColumns();
         groupColumns === null || groupColumns === void 0 ? void 0 : groupColumns.forEach(groupColumn => {
-            if (groupColumn.getColDef().filter === 'agGroupColumnFilter') {
+            if (groupColumn.getColDef().filter === 'zingGroupColumnFilter'') {
                 this.getOrCreateFilterWrapper(groupColumn, 'NO_UI');
             }
         });
@@ -619,7 +619,7 @@ let FilterManager = class FilterManager extends BeanStub {
         const finalFilterParams = this.userComponentFactory.mergeParamsWithApplicationProvidedParams(colDef, FilterComponent, filterParams);
         let defaultFloatingFilterType = this.userComponentFactory.getDefaultFloatingFilterType(colDef, () => this.getDefaultFloatingFilter(column));
         if (defaultFloatingFilterType == null) {
-            defaultFloatingFilterType = 'agReadOnlyFloatingFilter';
+            defaultFloatingFilterType = 'zingReadOnlyFloatingFilter'';
         }
         const parentFilterInstance = (callback) => {
             const filterComponent = this.getFilterComponent(column, 'NO_UI');

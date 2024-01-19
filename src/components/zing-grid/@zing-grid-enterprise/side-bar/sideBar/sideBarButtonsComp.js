@@ -46,7 +46,7 @@ export class SideBarButtonsComp extends Component {
     }
 }
 SideBarButtonsComp.EVENT_SIDE_BAR_BUTTON_CLICKED = 'sideBarButtonClicked';
-SideBarButtonsComp.TEMPLATE = `<div class="ag-side-buttons" role="tablist"></div>`;
+SideBarButtonsComp.TEMPLATE = `<div class="zing-side-buttons" role="tablist"></div>`;
 __decorate([
     Autowired('focusService')
 ], SideBarButtonsComp.prototype, "focusService", void 0);

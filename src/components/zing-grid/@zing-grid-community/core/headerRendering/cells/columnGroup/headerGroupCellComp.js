@@ -27,7 +27,7 @@ export class HeaderGroupCellComp extends AbstractHeaderCellComp {
         this.ctrl.setComp(compProxy, eGui, this.eResize);
     }
     setUserCompDetails(details) {
-        details.newAgStackInstance().then(comp => this.afterHeaderCompCreated(comp));
+        details.newZingStackInstance().then(comp => this.afterHeaderCompCreated(comp));
     }
     afterHeaderCompCreated(headerGroupComp) {
         const destroyFunc = () => this.destroyBean(headerGroupComp);
@@ -43,8 +43,8 @@ export class HeaderGroupCellComp extends AbstractHeaderCellComp {
         this.ctrl.setDragSource(eGui);
     }
 }
-HeaderGroupCellComp.TEMPLATE = `<div class="ag-header-group-cell" role="columnheader" tabindex="-1">
-            <div ref="eResize" class="ag-header-cell-resize" role="presentation"></div>
+HeaderGroupCellComp.TEMPLATE = `<div class="zing-header-group-cell" role="columnheader" tabindex="-1">
+            <div ref="eResize" class="zing-header-cell-resize" role="presentation"></div>
         </div>`;
 __decorate([
     Autowired('userComponentFactory')

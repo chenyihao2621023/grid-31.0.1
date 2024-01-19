@@ -13,8 +13,8 @@ import { makeNull } from "../utils/generic";
 export class ZingAutocomplete extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-autocomplete" role="presentation">
-                <ag-input-text-field ref="eAutocompleteInput"></ag-input-text-field>
+            <div class="zing-autocomplete" role="presentation">
+                <zing-input-text-field ref="eAutocompleteInput"></zing-input-text-field>
             </div>`);
         this.isListOpen = false;
         this.lastPosition = 0;

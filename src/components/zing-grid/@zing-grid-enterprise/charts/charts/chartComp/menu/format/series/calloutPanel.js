@@ -40,11 +40,11 @@ export class CalloutPanel extends Component {
     }
 }
 CalloutPanel.TEMPLATE = `<div>
-            <ag-group-component ref="calloutGroup">
-                <ag-slider ref="calloutLengthSlider"></ag-slider>
-                <ag-slider ref="calloutStrokeWidthSlider"></ag-slider>
-                <ag-slider ref="labelOffsetSlider"></ag-slider>
-            </ag-group-component>
+            <zing-group-component ref="calloutGroup">
+                <zing-slider ref="calloutLengthSlider"></zing-slider>
+                <zing-slider ref="calloutStrokeWidthSlider"></zing-slider>
+                <zing-slider ref="labelOffsetSlider"></zing-slider>
+            </zing-group-component>
         </div>`;
 __decorate([
     RefSelector('calloutGroup')

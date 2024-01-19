@@ -27,7 +27,7 @@ export const Debug = {
         if (debugSelectors.length === 0) {
             debugSelectors.push(true);
         }
-        const chartDebug = toArray(windowValue('agChartsDebug'));
+        const chartDebug = toArray(windowValue('zingChartsDebug''));
         return chartDebug.some((selector) => debugSelectors.includes(selector));
     },
 };

@@ -141,7 +141,7 @@ export class MoveColumnFeature {
             switch (hDirection) {
                 case HorizontalDirection.Left: return HorizontalDirection.Right;
                 case HorizontalDirection.Right: return HorizontalDirection.Left;
-                default: console.error(`AG Grid: Unknown direction ${hDirection}`);
+                default: console.error(`ZING Grid: Unknown direction ${hDirection}`);
             }
         }
         else {

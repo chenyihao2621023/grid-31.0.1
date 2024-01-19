@@ -23,7 +23,7 @@ export function radioCssClass(element, elementClass, otherElementClass) {
     }
 }
 export const FOCUSABLE_SELECTOR = '[tabindex], input, select, button, textarea, [href]';
-export const FOCUSABLE_EXCLUDE = '[disabled], .ag-disabled:not(.ag-button), .ag-disabled *';
+export const FOCUSABLE_EXCLUDE = '[disabled], .zing-disabled:not(.zing-button), .zing-disabled *';
 export function isFocusableFormField(element) {
     const matches = Element.prototype.matches || Element.prototype.msMatchesSelector;
     const inputSelector = 'input, select, button, textarea';
@@ -35,14 +35,14 @@ export function isFocusableFormField(element) {
 }
 export function setDisplayed(element, displayed, options = {}) {
     const { skipAriaHidden } = options;
-    element.classList.toggle('ag-hidden', !displayed);
+    element.classList.toggle('zing-hidden', !displayed);
     if (!skipAriaHidden) {
         setAriaHidden(element, !displayed);
     }
 }
 export function setVisible(element, visible, options = {}) {
     const { skipAriaHidden } = options;
-    element.classList.toggle('ag-invisible', !visible);
+    element.classList.toggle('zing-invisible', !visible);
     if (!skipAriaHidden) {
         setAriaHidden(element, !visible);
     }

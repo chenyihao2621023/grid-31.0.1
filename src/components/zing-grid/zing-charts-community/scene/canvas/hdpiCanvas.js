@@ -274,7 +274,7 @@ export class HdpiCanvas {
                     depth--;
                 }
                 else {
-                    throw new Error('AG Charts - Unable to restore() past depth 0');
+                    throw new Error('ZING Charts - Unable to restore() past depth 0');
                 }
             },
             setTransform(a, b, c, d, e, f) {
@@ -292,7 +292,7 @@ export class HdpiCanvas {
             },
             verifyDepthZero() {
                 if (depth !== 0) {
-                    throw new Error('AG Charts - Save/restore depth is non-zero: ' + depth);
+                    throw new Error('ZING Charts - Save/restore depth is non-zero: ' + depth);
                 }
             },
         };

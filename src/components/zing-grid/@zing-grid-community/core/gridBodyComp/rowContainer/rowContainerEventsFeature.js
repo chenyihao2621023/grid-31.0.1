@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { BeanStub } from "../../context/beanStub";
-import { getCtrlForEventTarget, isStopPropagationForAgGrid, isEventSupported } from "../../utils/event";
+import { getCtrlForEventTarget, isStopPropagationForZingGrid, isEventSupported } from "../../utils/event";
 import { Autowired, Optional, PostConstruct } from "../../context/context";
 import { RowCtrl } from "../../rendering/row/rowCtrl";
 import { isIOSUserAgent } from "../../utils/browser";
@@ -42,7 +42,7 @@ export class RowContainerEventsFeature extends BeanStub {
     }
     processMouseEvent(eventName, mouseEvent) {
         if (!this.mouseEventService.isEventFromThisGrid(mouseEvent) ||
-            isStopPropagationForAgGrid(mouseEvent)) {
+            isStopPropagationForZingGrid(mouseEvent)) {
             return;
         }
         const rowComp = this.getRowForEvent(mouseEvent);

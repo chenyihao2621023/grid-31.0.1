@@ -20,7 +20,7 @@ export class GroupCellRenderer extends Component {
             addOrRemoveCssClass: (cssClass, value) => this.addOrRemoveCssClass(cssClass, value),
             setContractedDisplayed: expanded => setDisplayed(this.eContracted, expanded),
             setExpandedDisplayed: expanded => setDisplayed(this.eExpanded, expanded),
-            setCheckboxVisible: visible => this.eCheckbox.classList.toggle('ag-invisible', !visible)
+            setCheckboxVisible: visible => this.eCheckbox.classList.toggle('zing-invisible', !visible)
         };
         const ctrl = this.createManagedBean(new GroupCellRendererCtrl());
         const fullWidth = !params.colDef;
@@ -32,7 +32,7 @@ export class GroupCellRenderer extends Component {
     }
     setRenderDetails(compDetails, valueToDisplay) {
         if (compDetails) {
-            const componentPromise = compDetails.newAgStackInstance();
+            const componentPromise = compDetails.newZingStackInstance();
             if (!componentPromise) {
                 return;
             }
@@ -64,12 +64,12 @@ export class GroupCellRenderer extends Component {
         return false;
     }
 }
-GroupCellRenderer.TEMPLATE = `<span class="ag-cell-wrapper">
-            <span class="ag-group-expanded" ref="eExpanded"></span>
-            <span class="ag-group-contracted" ref="eContracted"></span>
-            <span class="ag-group-checkbox ag-invisible" ref="eCheckbox"></span>
-            <span class="ag-group-value" ref="eValue"></span>
-            <span class="ag-group-child-count" ref="eChildCount"></span>
+GroupCellRenderer.TEMPLATE = `<span class="zing-cell-wrapper">
+            <span class="zing-group-expanded" ref="eExpanded"></span>
+            <span class="zing-group-contracted" ref="eContracted"></span>
+            <span class="zing-group-checkbox zing-invisible" ref="eCheckbox"></span>
+            <span class="zing-group-value" ref="eValue"></span>
+            <span class="zing-group-child-count" ref="eChildCount"></span>
         </span>`;
 __decorate([
     RefSelector('eExpanded')

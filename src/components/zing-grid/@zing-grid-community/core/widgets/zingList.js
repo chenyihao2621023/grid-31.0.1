@@ -13,7 +13,7 @@ import { Events } from "../eventKeys";
 import { isVisible } from "../utils/dom";
 export class ZingList extends Component {
     constructor(cssIdentifier = 'default') {
-        super(/* html */ `<div class="ag-list ag-${cssIdentifier}-list" role="listbox"></div>`);
+        super(/* html */ `<div class="zing-list zing-${cssIdentifier}-list" role="listbox"></div>`);
         this.cssIdentifier = cssIdentifier;
         this.options = [];
         this.itemEls = [];
@@ -64,7 +64,7 @@ export class ZingList extends Component {
         return this;
     }
     updateIndices() {
-        const options = this.getGui().querySelectorAll('.ag-list-item');
+        const options = this.getGui().querySelectorAll('.zing-list-item');
         options.forEach((option, idx) => {
             setAriaPosInSet(option, idx + 1);
             setAriaSetSize(option, options.length);
@@ -73,7 +73,7 @@ export class ZingList extends Component {
     renderOption(value, text) {
         const itemEl = document.createElement('div');
         setAriaRole(itemEl, 'option');
-        itemEl.classList.add('ag-list-item', `ag-${this.cssIdentifier}-list-item`);
+        itemEl.classList.add('zing-list-item', `zing-${this.cssIdentifier}-list-item`);
         itemEl.innerHTML = `<span>${text}</span>`;
         itemEl.tabIndex = -1;
         this.itemEls.push(itemEl);
@@ -152,7 +152,7 @@ export class ZingList extends Component {
     }
 }
 ZingList.EVENT_ITEM_SELECTED = 'selectedItem';
-ZingList.ACTIVE_CLASS = 'ag-active-item';
+ZingList.ACTIVE_CLASS = 'zing-active-item';
 __decorate([
     PostConstruct
 ], ZingList.prototype, "init", null);

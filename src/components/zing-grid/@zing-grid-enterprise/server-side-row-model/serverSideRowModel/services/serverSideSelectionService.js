@@ -55,11 +55,11 @@ let ServerSideSelectionService = class ServerSideSelectionService extends BeanSt
         const { nodes } = params, otherParams = __rest(params, ["nodes"]);
         const rowSelection = this.gridOptionsService.get('rowSelection');
         if (nodes.length > 1 && rowSelection !== 'multiple') {
-            console.warn(`AG Grid: cannot multi select while rowSelection='single'`);
+            console.warn(`ZING Grid: cannot multi select while rowSelection='single'`);
             return 0;
         }
         if (nodes.length > 1 && params.rangeSelect) {
-            console.warn(`AG Grid: cannot use range selection when multi selecting rows`);
+            console.warn(`ZING Grid: cannot use range selection when multi selecting rows`);
             return 0;
         }
         const adjustedParams = Object.assign({ nodes: nodes.filter(node => node.selectable) }, otherParams);
@@ -144,7 +144,7 @@ let ServerSideSelectionService = class ServerSideSelectionService extends BeanSt
     }
     selectAllRowNodes(params) {
         if (params.justCurrentPage || params.justFiltered) {
-            console.warn("AG Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
+            console.warn("ZING Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
         }
         this.selectionStrategy.selectAllRowNodes(params);
         this.rowModel.forEachNode(node => {
@@ -161,7 +161,7 @@ let ServerSideSelectionService = class ServerSideSelectionService extends BeanSt
     }
     deselectAllRowNodes(params) {
         if (params.justCurrentPage || params.justFiltered) {
-            console.warn("AG Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
+            console.warn("ZING Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
         }
         this.selectionStrategy.deselectAllRowNodes(params);
         this.rowModel.forEachNode(node => {
@@ -185,7 +185,7 @@ let ServerSideSelectionService = class ServerSideSelectionService extends BeanSt
     }
     // used by CSRM
     getBestCostNodeSelection() {
-        console.warn('AG Grid: calling gridApi.getBestCostNodeSelection() is only possible when using rowModelType=`clientSide`.');
+        console.warn('ZING Grid: calling gridApi.getBestCostNodeSelection() is only possible when using rowModelType=`clientSide`.');
         return undefined;
     }
     // used by CSRM

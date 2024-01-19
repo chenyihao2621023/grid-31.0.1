@@ -32,16 +32,16 @@ export class ZingGroupComponent extends Component {
     static getTemplate(params) {
         const cssIdentifier = params.cssIdentifier || 'default';
         const direction = params.direction || 'vertical';
-        return /* html */ `<div class="ag-group ag-${cssIdentifier}-group" role="presentation">
-            <div class="ag-group-title-bar ag-${cssIdentifier}-group-title-bar ag-unselectable" ref="eTitleBar" role="button">
-                <span class="ag-group-title-bar-icon ag-${cssIdentifier}-group-title-bar-icon" ref="eGroupOpenedIcon" role="presentation"></span>
-                <span class="ag-group-title-bar-icon ag-${cssIdentifier}-group-title-bar-icon" ref="eGroupClosedIcon" role="presentation"></span>
-                <span ref="eTitle" class="ag-group-title ag-${cssIdentifier}-group-title"></span>
+        return /* html */ `<div class="zing-group zing-${cssIdentifier}-group" role="presentation">
+            <div class="zing-group-title-bar zing-${cssIdentifier}-group-title-bar zing-unselectable" ref="eTitleBar" role="button">
+                <span class="zing-group-title-bar-icon zing-${cssIdentifier}-group-title-bar-icon" ref="eGroupOpenedIcon" role="presentation"></span>
+                <span class="zing-group-title-bar-icon zing-${cssIdentifier}-group-title-bar-icon" ref="eGroupClosedIcon" role="presentation"></span>
+                <span ref="eTitle" class="zing-group-title zing-${cssIdentifier}-group-title"></span>
             </div>
-            <div ref="eToolbar" class="ag-group-toolbar ag-${cssIdentifier}-group-toolbar">
-                <ag-checkbox ref="cbGroupEnabled"></ag-checkbox>
+            <div ref="eToolbar" class="zing-group-toolbar zing-${cssIdentifier}-group-toolbar">
+                <zing-checkbox ref="cbGroupEnabled"></zing-checkbox>
             </div>
-            <div ref="eContainer" class="ag-group-container ag-group-container-${direction} ag-${cssIdentifier}-group-container"></div>
+            <div ref="eContainer" class="zing-group-container zing-group-container-${direction} zing-${cssIdentifier}-group-container"></div>
         </div>`;
     }
     postConstruct() {
@@ -100,10 +100,10 @@ export class ZingGroupComponent extends Component {
     }
     setAlignItems(alignment) {
         if (this.alignItems !== alignment) {
-            this.removeCssClass(`ag-group-item-alignment-${this.alignItems}`);
+            this.removeCssClass(`zing-group-item-alignment-${this.alignItems}`);
         }
         this.alignItems = alignment;
-        const newCls = `ag-group-item-alignment-${this.alignItems}`;
+        const newCls = `zing-group-item-alignment-${this.alignItems}`;
         this.addCssClass(newCls);
         return this;
     }
@@ -131,7 +131,7 @@ export class ZingGroupComponent extends Component {
     addItem(item) {
         const container = this.eContainer;
         const el = item instanceof Component ? item.getGui() : item;
-        el.classList.add('ag-group-item', `ag-${this.cssIdentifier}-group-item`);
+        el.classList.add('zing-group-item', `zing-${this.cssIdentifier}-group-item`);
         container.appendChild(el);
         this.items.push(el);
     }
@@ -179,16 +179,16 @@ export class ZingGroupComponent extends Component {
         return this;
     }
     refreshDisabledStyles() {
-        this.addOrRemoveCssClass('ag-disabled', !this.enabled);
+        this.addOrRemoveCssClass('zing-disabled', !this.enabled);
         if (this.suppressEnabledCheckbox && !this.enabled) {
-            this.eTitleBar.classList.add('ag-disabled-group-title-bar');
+            this.eTitleBar.classList.add('zing-disabled-group-title-bar');
             this.eTitleBar.removeAttribute('tabindex');
         }
         else {
-            this.eTitleBar.classList.remove('ag-disabled-group-title-bar');
+            this.eTitleBar.classList.remove('zing-disabled-group-title-bar');
             this.eTitleBar.setAttribute('tabindex', '0');
         }
-        this.eContainer.classList.toggle('ag-disabled-group-container', !this.enabled);
+        this.eContainer.classList.toggle('zing-disabled-group-container', !this.enabled);
     }
 }
 ZingGroupComponent.EVENT_EXPANDED = 'expanded';

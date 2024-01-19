@@ -9,9 +9,9 @@ import { Autowired, PostConstruct } from "../context/context";
 import { ManagedFocusFeature } from "./managedFocusFeature";
 export var TabGuardClassNames;
 (function (TabGuardClassNames) {
-    TabGuardClassNames["TAB_GUARD"] = "ag-tab-guard";
-    TabGuardClassNames["TAB_GUARD_TOP"] = "ag-tab-guard-top";
-    TabGuardClassNames["TAB_GUARD_BOTTOM"] = "ag-tab-guard-bottom";
+    TabGuardClassNames["TAB_GUARD"] = "zing-tab-guard";
+    TabGuardClassNames["TAB_GUARD_TOP"] = "zing-tab-guard-top";
+    TabGuardClassNames["TAB_GUARD_BOTTOM"] = "zing-tab-guard-bottom";
 })(TabGuardClassNames || (TabGuardClassNames = {}));
 ;
 export class TabGuardCtrl extends BeanStub {

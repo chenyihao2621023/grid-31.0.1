@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { _ModuleSupport, _Scene } from '@/components/zing-grid/zing-charts-community/main.js';
 const { ActionOnSet, Validate, NUMBER, BOOLEAN, STRING, FUNCTION } = _ModuleSupport;
 const { BBox } = _Scene;
-const DEFAULT_LABEL_CLASS = 'ag-crosshair-label';
+const DEFAULT_LABEL_CLASS = 'zing-crosshair-label';
 export const defaultLabelCss = `
 .${DEFAULT_LABEL_CLASS} {
     position: absolute;

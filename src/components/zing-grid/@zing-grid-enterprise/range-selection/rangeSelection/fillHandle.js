@@ -288,10 +288,10 @@ export class FillHandle extends AbstractSelectionHandle {
                 return;
             }
             const comp = cell.getComp();
-            comp.addOrRemoveCssClass('ag-selection-fill-top', false);
-            comp.addOrRemoveCssClass('ag-selection-fill-right', false);
-            comp.addOrRemoveCssClass('ag-selection-fill-bottom', false);
-            comp.addOrRemoveCssClass('ag-selection-fill-left', false);
+            comp.addOrRemoveCssClass('zing-selection-fill-top', false);
+            comp.addOrRemoveCssClass('zing-selection-fill-right', false);
+            comp.addOrRemoveCssClass('zing-selection-fill-bottom', false);
+            comp.addOrRemoveCssClass('zing-selection-fill-left', false);
         });
         this.markedCells.length = 0;
         this.isUp = false;
@@ -365,10 +365,10 @@ export class FillHandle extends AbstractSelectionHandle {
                         this.markedCells.push(cell);
                         const cellCtrl = cell.getComp();
                         if (!cellInRange) {
-                            cellCtrl.addOrRemoveCssClass('ag-selection-fill-left', i === 0);
-                            cellCtrl.addOrRemoveCssClass('ag-selection-fill-right', i === colLen - 1);
+                            cellCtrl.addOrRemoveCssClass('zing-selection-fill-left', i === 0);
+                            cellCtrl.addOrRemoveCssClass('zing-selection-fill-right', i === colLen - 1);
                         }
-                        cellCtrl.addOrRemoveCssClass(isMovingUp ? 'ag-selection-fill-top' : 'ag-selection-fill-bottom', this.rowPositionUtils.sameRow(row, endPosition));
+                        cellCtrl.addOrRemoveCssClass(isMovingUp ? 'zing-selection-fill-top' : 'zing-selection-fill-bottom', this.rowPositionUtils.sameRow(row, endPosition));
                     }
                 }
             }
@@ -394,7 +394,7 @@ export class FillHandle extends AbstractSelectionHandle {
                 if (cell) {
                     this.markedCells.push(cell);
                     const cellComp = cell.getComp();
-                    cellComp.addOrRemoveCssClass('ag-selection-fill-bottom', this.rowPositionUtils.sameRow(row, endPosition));
+                    cellComp.addOrRemoveCssClass('zing-selection-fill-bottom', this.rowPositionUtils.sameRow(row, endPosition));
                 }
             }
             if (isLastRow) {
@@ -424,14 +424,14 @@ export class FillHandle extends AbstractSelectionHandle {
                 if (cell) {
                     this.markedCells.push(cell);
                     const cellComp = cell.getComp();
-                    cellComp.addOrRemoveCssClass('ag-selection-fill-top', this.rowPositionUtils.sameRow(row, rangeStartRow));
-                    cellComp.addOrRemoveCssClass('ag-selection-fill-bottom', this.rowPositionUtils.sameRow(row, rangeEndRow));
+                    cellComp.addOrRemoveCssClass('zing-selection-fill-top', this.rowPositionUtils.sameRow(row, rangeStartRow));
+                    cellComp.addOrRemoveCssClass('zing-selection-fill-bottom', this.rowPositionUtils.sameRow(row, rangeEndRow));
                     if (isMovingLeft) {
                         this.isLeft = true;
-                        cellComp.addOrRemoveCssClass('ag-selection-fill-left', column === colsToMark[0]);
+                        cellComp.addOrRemoveCssClass('zing-selection-fill-left', column === colsToMark[0]);
                     }
                     else {
-                        cellComp.addOrRemoveCssClass('ag-selection-fill-right', column === _.last(colsToMark));
+                        cellComp.addOrRemoveCssClass('zing-selection-fill-right', column === _.last(colsToMark));
                     }
                 }
                 row = this.cellNavigationService.getRowBelow(row);
@@ -458,7 +458,7 @@ export class FillHandle extends AbstractSelectionHandle {
                 if (cell) {
                     this.markedCells.push(cell);
                     const cellComp = cell.getComp();
-                    cellComp.addOrRemoveCssClass('ag-selection-fill-right', column === colsToMark[0]);
+                    cellComp.addOrRemoveCssClass('zing-selection-fill-right', column === colsToMark[0]);
                 }
                 row = this.cellNavigationService.getRowBelow(row);
             } while (!isLastRow);
@@ -474,7 +474,7 @@ export class FillHandle extends AbstractSelectionHandle {
         super.refresh(cellCtrl);
     }
 }
-FillHandle.TEMPLATE = `<div class="ag-fill-handle"></div>`;
+FillHandle.TEMPLATE = `<div class="zing-fill-handle"></div>`;
 __decorate([
     Autowired('valueService')
 ], FillHandle.prototype, "valueService", void 0);

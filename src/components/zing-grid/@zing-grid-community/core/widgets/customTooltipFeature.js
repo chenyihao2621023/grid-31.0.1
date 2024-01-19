@@ -157,7 +157,7 @@ export class CustomTooltipFeature extends BeanStub {
     prepareToShowTooltip(mouseEvent) {
         // every mouseenter should be following by a mouseleave, however for some unknown, it's possible for
         // mouseenter to be called twice in a row, which can happen if editing the cell. this was reported
-        // in https://ag-grid.atlassian.net/browse/AG-4422. to get around this, we check the state, and if
+        // in https://zing-grid.atlassian.net/browse/AG-4422. to get around this, we check the state, and if
         // state is != nothing, then we know mouseenter was already received.
         if (this.state != TooltipStates.NOTHING || CustomTooltipFeature.isLocked) {
             return false;
@@ -208,7 +208,7 @@ export class CustomTooltipFeature extends BeanStub {
         // we disregard it
         const callback = this.newTooltipComponentCallback.bind(this, this.tooltipInstanceCount);
         const userDetails = this.userComponentFactory.getTooltipCompDetails(params);
-        userDetails.newAgStackInstance().then(callback);
+        userDetails.newZingStackInstance().then(callback);
     }
     hideTooltip(forceHide) {
         if (!forceHide && this.isInteractingWithTooltip) {
@@ -235,14 +235,14 @@ export class CustomTooltipFeature extends BeanStub {
         }
         const eGui = tooltipComp.getGui();
         this.tooltipComp = tooltipComp;
-        if (!eGui.classList.contains('ag-tooltip')) {
-            eGui.classList.add('ag-tooltip-custom');
+        if (!eGui.classList.contains('zing-tooltip')) {
+            eGui.classList.add('zing-tooltip-custom');
         }
         if (this.tooltipTrigger === TooltipTrigger.HOVER) {
-            eGui.classList.add('ag-tooltip-animate');
+            eGui.classList.add('zing-tooltip-animate');
         }
         if (this.interactionEnabled) {
-            eGui.classList.add('ag-tooltip-interactive');
+            eGui.classList.add('zing-tooltip-interactive');
         }
         const translate = this.localeService.getLocaleTextFunc();
         const addPopupRes = this.popupService.addPopup({
@@ -323,7 +323,7 @@ export class CustomTooltipFeature extends BeanStub {
     }
     destroyTooltipComp() {
         // add class to fade out the tooltip
-        this.tooltipComp.getGui().classList.add('ag-tooltip-hiding');
+        this.tooltipComp.getGui().classList.add('zing-tooltip-hiding');
         // make local copies of these variables, as we use them in the async function below,
         // and we clear then to 'undefined' later, so need to take a copy before they are undefined.
         const tooltipPopupDestroyFunc = this.tooltipPopupDestroyFunc;

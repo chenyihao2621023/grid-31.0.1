@@ -60,7 +60,7 @@ export class LazyStore extends BeanStub {
         var _a, _b, _c;
         const idFunc = this.gridOptionsService.getCallback('getRowId');
         if (!idFunc) {
-            console.warn('AG Grid: getRowId callback must be implemented for transactions to work. Transaction was ignored.');
+            console.warn('ZING Grid: getRowId callback must be implemented for transactions to work. Transaction was ignored.');
             return {
                 status: ServerSideTransactionResultStatus.Cancelled,
             };

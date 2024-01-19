@@ -12,11 +12,11 @@ import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class AdvancedFilterBuilderComp extends Component {
     constructor() {
         super(/* html */ `
-            <div role="presentation" class="ag-advanced-filter-builder" tabindex="-1">
-                <div role="presentation" class="ag-advanced-filter-builder-list" ref="eList"></div>
-                <div role="presentation" class="ag-advanced-filter-builder-button-panel">
-                    <button class="ag-button ag-standard-button ag-advanced-filter-builder-apply-button" ref="eApplyFilterButton"></button>
-                    <button class="ag-button ag-standard-button ag-advanced-filter-builder-cancel-button" ref="eCancelFilterButton"></button>
+            <div role="presentation" class="zing-advanced-filter-builder" tabindex="-1">
+                <div role="presentation" class="zing-advanced-filter-builder-list" ref="eList"></div>
+                <div role="presentation" class="zing-advanced-filter-builder-button-panel">
+                    <button class="zing-button zing-standard-button zing-advanced-filter-builder-apply-button" ref="eApplyFilterButton"></button>
+                    <button class="zing-button zing-standard-button zing-advanced-filter-builder-cancel-button" ref="eCancelFilterButton"></button>
                 </div>
             </div>`);
         this.validationMessage = null;
@@ -93,8 +93,8 @@ export class AdvancedFilterBuilderComp extends Component {
         }, this.beans));
         this.validationTooltipFeature.setComp(this.eApplyFilterButton);
         this.validate();
-        this.addManagedListener(this.eApplyFilterButton, 'mouseenter', () => this.addOrRemoveCssClass('ag-advanced-filter-builder-validation', true));
-        this.addManagedListener(this.eApplyFilterButton, 'mouseleave', () => this.addOrRemoveCssClass('ag-advanced-filter-builder-validation', false));
+        this.addManagedListener(this.eApplyFilterButton, 'mouseenter', () => this.addOrRemoveCssClass('zing-advanced-filter-builder-validation', true));
+        this.addManagedListener(this.eApplyFilterButton, 'mouseleave', () => this.addOrRemoveCssClass('zing-advanced-filter-builder-validation', false));
         this.eCancelFilterButton.innerText = this.advancedFilterExpressionService.translate('advancedFilterBuilderCancel');
         this.activateTabIndex([this.eCancelFilterButton]);
         this.addManagedListener(this.eCancelFilterButton, 'click', () => this.close());

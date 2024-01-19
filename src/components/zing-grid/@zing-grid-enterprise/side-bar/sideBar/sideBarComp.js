@@ -38,7 +38,7 @@ export class SideBarComp extends Component {
         const sideBarGui = sideBarButtonsComp.getGui();
         const eDocument = this.gridOptionsService.getDocument();
         const activeElement = eDocument.activeElement;
-        const openPanel = eGui.querySelector('.ag-tool-panel-wrapper:not(.ag-hidden)');
+        const openPanel = eGui.querySelector('.zing-tool-panel-wrapper:not(.zing-hidden)');
         const target = e.target;
         if (!openPanel) {
             return;
@@ -61,7 +61,7 @@ export class SideBarComp extends Component {
             nextEl = this.focusService.findFocusableElementBeforeTabGuard(openPanel, target);
         }
         if (!nextEl) {
-            nextEl = sideBarGui.querySelector('.ag-selected button');
+            nextEl = sideBarGui.querySelector('.zing-selected button');
         }
         if (nextEl) {
             e.preventDefault();
@@ -74,7 +74,7 @@ export class SideBarComp extends Component {
             return;
         }
         const sideBarGui = this.sideBarButtonsComp.getGui();
-        const buttons = Array.prototype.slice.call(sideBarGui.querySelectorAll('.ag-side-button'));
+        const buttons = Array.prototype.slice.call(sideBarGui.querySelectorAll('.zing-side-button'));
         const currentButton = eDocument.activeElement;
         const currentPos = buttons.findIndex(button => button.contains(currentButton));
         let nextPos = null;
@@ -149,8 +149,8 @@ export class SideBarComp extends Component {
         this.position = position;
         const isLeft = position === 'left';
         const resizerSide = isLeft ? 'right' : 'left';
-        this.addOrRemoveCssClass('ag-side-bar-left', isLeft);
-        this.addOrRemoveCssClass('ag-side-bar-right', !isLeft);
+        this.addOrRemoveCssClass('zing-side-bar-left', isLeft);
+        this.addOrRemoveCssClass('zing-side-bar-right', !isLeft);
         this.toolPanelWrappers.forEach(wrapper => {
             wrapper.setResizerSizerSide(resizerSide);
         });
@@ -182,17 +182,17 @@ export class SideBarComp extends Component {
     }
     validateDef(def) {
         if (def.id == null) {
-            console.warn(`AG Grid: please review all your toolPanel components, it seems like at least one of them doesn't have an id`);
+            console.warn(`ZING Grid: please review all your toolPanel components, it seems like at least one of them doesn't have an id`);
             return false;
         }
         // helpers, in case user doesn't have the right module loaded
-        if (def.toolPanel === 'agColumnsToolPanel') {
+        if (def.toolPanel === 'zingColumnsToolPanel'') {
             const moduleMissing = !ModuleRegistry.__assertRegistered(ModuleNames.ColumnsToolPanelModule, 'Column Tool Panel', this.context.getGridId());
             if (moduleMissing) {
                 return false;
             }
         }
-        if (def.toolPanel === 'agFiltersToolPanel') {
+        if (def.toolPanel === 'zingFiltersToolPanel'') {
             const moduleMissing = !ModuleRegistry.__assertRegistered(ModuleNames.FiltersToolPanelModule, 'Filters Tool Panel', this.context.getGridId());
             if (moduleMissing) {
                 return false;
@@ -242,7 +242,7 @@ export class SideBarComp extends Component {
     getToolPanelInstance(key) {
         const toolPanelWrapper = this.toolPanelWrappers.filter(toolPanel => toolPanel.getToolPanelId() === key)[0];
         if (!toolPanelWrapper) {
-            console.warn(`AG Grid: unable to lookup Tool Panel as invalid key supplied: ${key}`);
+            console.warn(`ZING Grid: unable to lookup Tool Panel as invalid key supplied: ${key}`);
             return;
         }
         return toolPanelWrapper.getToolPanelInstance();
@@ -297,8 +297,8 @@ export class SideBarComp extends Component {
         super.destroy();
     }
 }
-SideBarComp.TEMPLATE = `<div class="ag-side-bar ag-unselectable">
-            <ag-side-bar-buttons ref="sideBarButtons"></ag-side-bar-buttons>
+SideBarComp.TEMPLATE = `<div class="zing-side-bar zing-unselectable">
+            <zing-side-bar-buttons ref="sideBarButtons"></zing-side-bar-buttons>
         </div>`;
 __decorate([
     Autowired('focusService')

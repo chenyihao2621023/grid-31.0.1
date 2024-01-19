@@ -29,7 +29,7 @@ let OverlayService = class OverlayService extends BeanStub {
         }
         const params = {};
         const compDetails = this.userComponentFactory.getLoadingOverlayCompDetails(params);
-        this.showOverlay(compDetails, 'ag-overlay-loading-wrapper');
+        this.showOverlay(compDetails, 'zing-overlay-loading-wrapper');
     }
     showNoRowsOverlay() {
         if (this.gridOptionsService.get('suppressNoRowsOverlay')) {
@@ -37,10 +37,10 @@ let OverlayService = class OverlayService extends BeanStub {
         }
         const params = {};
         const compDetails = this.userComponentFactory.getNoRowsOverlayCompDetails(params);
-        this.showOverlay(compDetails, 'ag-overlay-no-rows-wrapper');
+        this.showOverlay(compDetails, 'zing-overlay-no-rows-wrapper');
     }
     showOverlay(compDetails, wrapperCssClass) {
-        const promise = compDetails.newAgStackInstance();
+        const promise = compDetails.newZingStackInstance();
         this.manuallyDisplayed = this.columnModel.isReady() && !this.paginationProxy.isEmpty();
         this.overlayWrapperComp.showOverlay(promise, wrapperCssClass);
     }

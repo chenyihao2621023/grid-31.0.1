@@ -60,7 +60,7 @@ export class ChartPanel extends Component {
     }
 }
 ChartPanel.TEMPLATE = `<div>
-            <ag-group-component ref="chartGroup"></ag-group-component>
+            <zing-group-component ref="chartGroup"></zing-group-component>
         </div>`;
 __decorate([
     RefSelector('chartGroup')

@@ -11,7 +11,7 @@ import { KeyCode } from '../constants/keyCode';
 import { waitUntil } from '../utils/function';
 import { TabGuardComp } from './tabGuardComp';
 import { Events } from '../eventKeys';
-import { stopPropagationForAgGrid } from '../utils/event';
+import { stopPropagationForZingGrid } from '../utils/event';
 export class VirtualList extends TabGuardComp {
     constructor(params) {
         super(VirtualList.getTemplate((params === null || params === void 0 ? void 0 : params.cssIdentifier) || 'default'));
@@ -58,7 +58,7 @@ export class VirtualList extends TabGuardComp {
     }
     onFocusIn(e) {
         const target = e.target;
-        if (target.classList.contains('ag-virtual-list-item')) {
+        if (target.classList.contains('zing-virtual-list-item')) {
             this.lastFocusedRowIndex = getAriaPosInSet(target) - 1;
         }
         return false;
@@ -84,7 +84,7 @@ export class VirtualList extends TabGuardComp {
             e.preventDefault();
         }
         else {
-            stopPropagationForAgGrid(e);
+            stopPropagationForZingGrid(e);
             this.forceFocusOutOfContainer(e.shiftKey);
         }
     }
@@ -122,8 +122,8 @@ export class VirtualList extends TabGuardComp {
         this.renderedRows.forEach((value, key) => func(value.rowComponent, key));
     }
     static getTemplate(cssIdentifier) {
-        return ( /* html */`<div class="ag-virtual-list-viewport ag-${cssIdentifier}-virtual-list-viewport" role="presentation">
-                <div class="ag-virtual-list-container ag-${cssIdentifier}-virtual-list-container" ref="eContainer"></div>
+        return ( /* html */`<div class="zing-virtual-list-viewport zing-${cssIdentifier}-virtual-list-viewport" role="presentation">
+                <div class="zing-virtual-list-container zing-${cssIdentifier}-virtual-list-container" ref="eContainer"></div>
             </div>`);
     }
     getItemHeight() {
@@ -135,7 +135,7 @@ export class VirtualList extends TabGuardComp {
     ensureIndexVisible(index, scrollPartialIntoView = true) {
         const lastRow = this.model.getRowCount();
         if (typeof index !== 'number' || index < 0 || index >= lastRow) {
-            console.warn('AG Grid: invalid row index for ensureIndexVisible: ' + index);
+            console.warn('ZING Grid: invalid row index for ensureIndexVisible: ' + index);
             return false;
         }
         const rowTopPixel = index * this.rowHeight;
@@ -238,7 +238,7 @@ export class VirtualList extends TabGuardComp {
     insertRow(rowIndex) {
         const value = this.model.getRow(rowIndex);
         const eDiv = document.createElement('div');
-        eDiv.classList.add('ag-virtual-list-item', `ag-${this.cssIdentifier}-virtual-list-item`);
+        eDiv.classList.add('zing-virtual-list-item', `zing-${this.cssIdentifier}-virtual-list-item`);
         setAriaRole(eDiv, this.ariaRole === 'tree' ? 'treeitem' : 'option');
         setAriaSetSize(eDiv, this.model.getRowCount());
         setAriaPosInSet(eDiv, rowIndex + 1);

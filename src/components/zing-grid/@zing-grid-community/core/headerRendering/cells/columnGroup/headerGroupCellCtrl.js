@@ -186,14 +186,14 @@ export class HeaderGroupCellCtrl extends AbstractHeaderCellCtrl {
         // having different classes below allows the style to not have a bottom border
         // on the group header, if no group is specified
         if (this.column.isPadding()) {
-            classes.push('ag-header-group-cell-no-group');
+            classes.push('zing-header-group-cell-no-group');
             const leafCols = this.column.getLeafColumns();
             if (leafCols.every(col => col.isSpanHeaderHeight())) {
-                classes.push('ag-header-span-height');
+                classes.push('zing-header-span-height');
             }
         }
         else {
-            classes.push('ag-header-group-cell-with-group');
+            classes.push('zing-header-group-cell-with-group');
         }
         classes.forEach(c => this.comp.addOrRemoveCssClass(c, true));
     }
@@ -203,7 +203,7 @@ export class HeaderGroupCellCtrl extends AbstractHeaderCellCtrl {
         // this function adds or removes the moving css, based on if the col is moving.
         // this is what makes the header go dark when it is been moved (gives impression to
         // user that the column was picked up).
-        const listener = () => this.comp.addOrRemoveCssClass('ag-header-cell-moving', this.column.isMoving());
+        const listener = () => this.comp.addOrRemoveCssClass('zing-header-cell-moving', this.column.isMoving());
         leafColumns.forEach(col => {
             this.addManagedListener(col, Column.EVENT_MOVING_CHANGED, listener);
         });

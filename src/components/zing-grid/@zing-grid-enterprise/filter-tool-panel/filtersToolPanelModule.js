@@ -9,12 +9,12 @@ export const FiltersToolPanelModule = {
     version: VERSION,
     moduleName: ModuleNames.FiltersToolPanelModule,
     beans: [],
-    agStackComponents: [
-        { componentName: 'AgFiltersToolPanelHeader', componentClass: FiltersToolPanelHeaderPanel },
-        { componentName: 'AgFiltersToolPanelList', componentClass: FiltersToolPanelListPanel }
+    zingStackComponents: [
+        { componentName: 'ZingFiltersToolPanelHeader', componentClass: FiltersToolPanelHeaderPanel },
+        { componentName: 'ZingFiltersToolPanelList', componentClass: FiltersToolPanelListPanel }
     ],
     userComponents: [
-        { componentName: 'agFiltersToolPanel', componentClass: FiltersToolPanel },
+        { componentName: 'zingFiltersToolPanel'', componentClass: FiltersToolPanel },
     ],
     dependantModules: [
         SideBarModule,

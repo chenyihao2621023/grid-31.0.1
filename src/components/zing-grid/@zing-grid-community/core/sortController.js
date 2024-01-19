@@ -90,7 +90,7 @@ let SortController = SortController_1 = class SortController extends BeanStub {
             sortingOrder = SortController_1.DEFAULT_SORTING_ORDER;
         }
         if (!Array.isArray(sortingOrder) || sortingOrder.length <= 0) {
-            console.warn(`AG Grid: sortingOrder must be an array with at least one element, currently it\'s ${sortingOrder}`);
+            console.warn(`ZING Grid: sortingOrder must be an array with at least one element, currently it\'s ${sortingOrder}`);
             return null;
         }
         const currentIndex = sortingOrder.indexOf(column.getSort());
@@ -105,7 +105,7 @@ let SortController = SortController_1 = class SortController extends BeanStub {
         }
         // verify the sort type exists, as the user could provide the sortingOrder, need to make sure it's valid
         if (SortController_1.DEFAULT_SORTING_ORDER.indexOf(result) < 0) {
-            console.warn('AG Grid: invalid sort type ' + result);
+            console.warn('ZING Grid: invalid sort type ' + result);
             return null;
         }
         return result;

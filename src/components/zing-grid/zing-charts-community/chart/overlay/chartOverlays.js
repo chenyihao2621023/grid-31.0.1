@@ -1,8 +1,8 @@
 import { Overlay } from './overlay';
 export class ChartOverlays {
     constructor(parent) {
-        this.noData = new Overlay('ag-chart-no-data-overlay', parent);
-        this.noVisibleSeries = new Overlay('ag-chart-no-visible-series', parent);
+        this.noData = new Overlay('zing-chart-no-data-overlay', parent);
+        this.noVisibleSeries = new Overlay('zing-chart-no-visible-series', parent);
         this.noVisibleSeries.text = 'No visible series';
     }
     destroy() {

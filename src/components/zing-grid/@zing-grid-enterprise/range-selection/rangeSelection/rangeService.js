@@ -657,12 +657,12 @@ let RangeService = class RangeService extends BeanStub {
         const isSameColumn = columnFrom === columnTo;
         const fromIndex = allColumns.indexOf(columnFrom);
         if (fromIndex < 0) {
-            console.warn(`AG Grid: column ${columnFrom.getId()} is not visible`);
+            console.warn(`ZING Grid: column ${columnFrom.getId()} is not visible`);
             return;
         }
         const toIndex = isSameColumn ? fromIndex : allColumns.indexOf(columnTo);
         if (toIndex < 0) {
-            console.warn(`AG Grid: column ${columnTo.getId()} is not visible`);
+            console.warn(`ZING Grid: column ${columnTo.getId()} is not visible`);
             return;
         }
         if (isSameColumn) {

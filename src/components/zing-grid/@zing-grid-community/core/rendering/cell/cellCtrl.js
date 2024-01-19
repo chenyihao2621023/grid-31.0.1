@@ -17,15 +17,15 @@ import { getValueUsingField } from "../../utils/object";
 import { getElementSize } from "../../utils/dom";
 import { setAriaColIndex } from "../../utils/aria";
 import { CssClassApplier } from "../../headerRendering/cells/cssClassApplier";
-const CSS_CELL = 'ag-cell';
-const CSS_AUTO_HEIGHT = 'ag-cell-auto-height';
-const CSS_NORMAL_HEIGHT = 'ag-cell-normal-height';
-const CSS_CELL_FOCUS = 'ag-cell-focus';
-const CSS_CELL_FIRST_RIGHT_PINNED = 'ag-cell-first-right-pinned';
-const CSS_CELL_LAST_LEFT_PINNED = 'ag-cell-last-left-pinned';
-const CSS_CELL_NOT_INLINE_EDITING = 'ag-cell-not-inline-editing';
-const CSS_COLUMN_HOVER = 'ag-column-hover';
-const CSS_CELL_WRAP_TEXT = 'ag-cell-wrap-text';
+const CSS_CELL = 'zing-cell';
+const CSS_AUTO_HEIGHT = 'zing-cell-auto-height';
+const CSS_NORMAL_HEIGHT = 'zing-cell-normal-height';
+const CSS_CELL_FOCUS = 'zing-cell-focus';
+const CSS_CELL_FIRST_RIGHT_PINNED = 'zing-cell-first-right-pinned';
+const CSS_CELL_LAST_LEFT_PINNED = 'zing-cell-last-left-pinned';
+const CSS_CELL_NOT_INLINE_EDITING = 'zing-cell-not-inline-editing';
+const CSS_COLUMN_HOVER = 'zing-column-hover';
+const CSS_CELL_WRAP_TEXT = 'zing-cell-wrap-text';
 let instanceIdSequence = 0;
 export class CellCtrl extends BeanStub {
     constructor(column, rowNode, beans, rowCtrl) {
@@ -542,8 +542,8 @@ export class CellCtrl extends BeanStub {
         if (!this.cellComp) {
             return;
         }
-        const fullName = `ag-cell-${cssName}`;
-        const animationFullName = `ag-cell-${cssName}-animation`;
+        const fullName = `zing-cell-${cssName}`;
+        const animationFullName = `zing-cell-${cssName}-animation`;
         const { gridOptionsService } = this.beans;
         if (!flashDelay) {
             flashDelay = gridOptionsService.get('cellFlashDelay');

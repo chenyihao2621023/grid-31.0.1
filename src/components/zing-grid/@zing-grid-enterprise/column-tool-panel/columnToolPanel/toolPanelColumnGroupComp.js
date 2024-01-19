@@ -24,14 +24,14 @@ export class ToolPanelColumnGroupComp extends Component {
     init() {
         this.setTemplate(ToolPanelColumnGroupComp.TEMPLATE);
         this.eDragHandle = _.createIconNoSpan('columnDrag', this.gridOptionsService);
-        this.eDragHandle.classList.add('ag-drag-handle', 'ag-column-select-column-group-drag-handle');
+        this.eDragHandle.classList.add('zing-drag-handle', 'zing-column-select-column-group-drag-handle');
         const checkboxGui = this.cbSelect.getGui();
         const checkboxInput = this.cbSelect.getInputElement();
         checkboxGui.insertAdjacentElement('afterend', this.eDragHandle);
         checkboxInput.setAttribute('tabindex', '-1');
         this.eLabel.innerHTML = this.displayName ? this.displayName : '';
         this.setupExpandContract();
-        this.addCssClass('ag-column-select-indent-' + this.columnDept);
+        this.addCssClass('zing-column-select-indent-' + this.columnDept);
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_PIVOT_MODE_CHANGED, this.onColumnStateChanged.bind(this));
         this.addManagedListener(this.eLabel, 'click', this.onLabelClicked.bind(this));
         this.addManagedListener(this.cbSelect, Events.EVENT_FIELD_VALUE_CHANGED, this.onCheckboxChanged.bind(this));
@@ -228,7 +228,7 @@ export class ToolPanelColumnGroupComp extends Component {
         this.processingColumnStateChange = true;
         this.cbSelect.setValue(selectedValue);
         this.cbSelect.setReadOnly(readOnlyValue);
-        this.addOrRemoveCssClass('ag-column-select-column-group-readonly', readOnlyValue);
+        this.addOrRemoveCssClass('zing-column-select-column-group-readonly', readOnlyValue);
         this.processingColumnStateChange = false;
     }
     workOutSelectedValue() {
@@ -314,13 +314,13 @@ export class ToolPanelColumnGroupComp extends Component {
         this.cbSelect.setValue(selected, true);
     }
 }
-ToolPanelColumnGroupComp.TEMPLATE = `<div class="ag-column-select-column-group" aria-hidden="true">
-            <span class="ag-column-group-icons" ref="eColumnGroupIcons" >
-                <span class="ag-column-group-closed-icon" ref="eGroupClosedIcon"></span>
-                <span class="ag-column-group-opened-icon" ref="eGroupOpenedIcon"></span>
+ToolPanelColumnGroupComp.TEMPLATE = `<div class="zing-column-select-column-group" aria-hidden="true">
+            <span class="zing-column-group-icons" ref="eColumnGroupIcons" >
+                <span class="zing-column-group-closed-icon" ref="eGroupClosedIcon"></span>
+                <span class="zing-column-group-opened-icon" ref="eGroupOpenedIcon"></span>
             </span>
-            <ag-checkbox ref="cbSelect" class="ag-column-select-checkbox"></ag-checkbox>
-            <span class="ag-column-select-column-label" ref="eLabel"></span>
+            <zing-checkbox ref="cbSelect" class="zing-column-select-checkbox"></zing-checkbox>
+            <span class="zing-column-select-column-label" ref="eLabel"></span>
         </div>`;
 __decorate([
     Autowired('columnModel')

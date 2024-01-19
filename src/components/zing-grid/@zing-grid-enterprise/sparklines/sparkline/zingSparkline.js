@@ -177,7 +177,7 @@ const offsetValidator = (property, value, defaultOffset) => {
     if (isNumber(value)) {
         return true;
     }
-    const message = `AG Charts: ${property} must be a number, the value you provided is not a valid number. Using the default of ${defaultOffset}px.`;
+    const message = `ZING Charts: ${property} must be a number, the value you provided is not a valid number. Using the default of ${defaultOffset}px.`;
     doOnce(() => console.warn(message), `${property} not a number`);
     return false;
 };

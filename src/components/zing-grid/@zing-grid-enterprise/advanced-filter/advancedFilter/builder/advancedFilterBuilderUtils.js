@@ -2,7 +2,7 @@ export function getAdvancedFilterBuilderAddButtonParams(translate, maxPickerWidt
     return {
         pickerAriaLabelKey: 'ariaLabelAdvancedFilterBuilderAddField',
         pickerAriaLabelValue: 'Advanced Filter Builder Add Field',
-        pickerType: 'ag-list',
+        pickerType: 'zing-list',
         valueList: [{
                 key: 'condition',
                 displayValue: translate('advancedFilterBuilderAddCondition')
@@ -13,7 +13,7 @@ export function getAdvancedFilterBuilderAddButtonParams(translate, maxPickerWidt
         valueFormatter: (value) => { var _a; return value == null ? null : (_a = value.displayValue) !== null && _a !== void 0 ? _a : value.key; },
         pickerIcon: 'advancedFilterBuilderAdd',
         maxPickerWidth: `${maxPickerWidth !== null && maxPickerWidth !== void 0 ? maxPickerWidth : 120}px`,
-        wrapperClassName: 'ag-advanced-filter-builder-item-button',
+        wrapperClassName: 'zing-advanced-filter-builder-item-button',
         ariaLabel: translate('advancedFilterBuilderAddButtonTooltip')
     };
 }

@@ -8,8 +8,8 @@ export const SetFilterModule = {
     moduleName: ModuleNames.SetFilterModule,
     beans: [],
     userComponents: [
-        { componentName: 'agSetColumnFilter', componentClass: SetFilter },
-        { componentName: 'agSetColumnFloatingFilter', componentClass: SetFloatingFilterComp },
+        { componentName: 'zingSetColumnFilter'', componentClass: SetFilter },
+        { componentName: 'zingSetColumnFloatingFilter'', componentClass: SetFloatingFilterComp },
     ],
     dependantModules: [
         EnterpriseCoreModule

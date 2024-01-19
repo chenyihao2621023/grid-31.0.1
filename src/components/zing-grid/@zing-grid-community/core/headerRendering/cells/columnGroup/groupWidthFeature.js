@@ -51,7 +51,7 @@ export class GroupWidthFeature extends BeanStub {
     onWidthChanged() {
         const columnWidth = this.columnGroup.getActualWidth();
         this.comp.setWidth(`${columnWidth}px`);
-        this.comp.addOrRemoveCssClass('ag-hidden', columnWidth === 0);
+        this.comp.addOrRemoveCssClass('zing-hidden', columnWidth === 0);
     }
 }
 __decorate([

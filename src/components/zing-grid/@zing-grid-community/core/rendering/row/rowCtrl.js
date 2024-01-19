@@ -7,7 +7,7 @@ import { ModuleNames } from "../../modules/moduleNames";
 import { ModuleRegistry } from "../../modules/moduleRegistry";
 import { setAriaExpanded, setAriaLabel, setAriaRowIndex, setAriaSelected } from "../../utils/aria";
 import { isElementChildOfClass } from "../../utils/dom";
-import { isStopPropagationForAgGrid } from "../../utils/event";
+import { isStopPropagationForZingGrid } from "../../utils/event";
 import { warnOnce, executeNextVMTurn } from "../../utils/function";
 import { exists, makeNull } from "../../utils/generic";
 import { escapeString } from "../../utils/string";
@@ -199,7 +199,7 @@ export class RowCtrl extends BeanStub {
                 if (!this.isAlive()) {
                     return;
                 }
-                gui.rowComp.addOrRemoveCssClass('ag-after-created', true);
+                gui.rowComp.addOrRemoveCssClass('zing-after-created', true);
             });
         }
         this.executeProcessRowPostCreateFunc();
@@ -232,7 +232,7 @@ export class RowCtrl extends BeanStub {
         const shouldFade = this.fadeInAnimation[containerType];
         if (shouldFade) {
             executeNextVMTurn(() => {
-                gui.rowComp.addOrRemoveCssClass('ag-opacity-zero', false);
+                gui.rowComp.addOrRemoveCssClass('zing-opacity-zero', false);
             });
             this.fadeInAnimation[containerType] = false;
         }
@@ -251,7 +251,7 @@ export class RowCtrl extends BeanStub {
         const pinned = this.getPinnedForContainer(gui.containerType);
         const params = this.createFullWidthParams(gui.element, pinned);
         if (this.rowType == RowType.FullWidthDetail) {
-            if (!ModuleRegistry.__assertRegistered(ModuleNames.MasterDetailModule, "cell renderer 'agDetailCellRenderer' (for master detail)", this.beans.context.getGridId())) {
+            if (!ModuleRegistry.__assertRegistered(ModuleNames.MasterDetailModule, "cell renderer 'zingDetailCellRenderer'' (for master detail)", this.beans.context.getGridId())) {
                 return;
             }
         }
@@ -636,8 +636,8 @@ export class RowCtrl extends BeanStub {
         this.allRowGuis.forEach(gui => {
             const aboveOn = highlighted === RowHighlightPosition.Above;
             const belowOn = highlighted === RowHighlightPosition.Below;
-            gui.rowComp.addOrRemoveCssClass('ag-row-highlight-above', aboveOn);
-            gui.rowComp.addOrRemoveCssClass('ag-row-highlight-below', belowOn);
+            gui.rowComp.addOrRemoveCssClass('zing-row-highlight-above', aboveOn);
+            gui.rowComp.addOrRemoveCssClass('zing-row-highlight-below', belowOn);
         });
     }
     onRowNodeDraggingChanged() {
@@ -645,15 +645,15 @@ export class RowCtrl extends BeanStub {
     }
     postProcessRowDragging() {
         const dragging = this.rowNode.dragging;
-        this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('ag-row-dragging', dragging));
+        this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('zing-row-dragging', dragging));
     }
     updateExpandedCss() {
         const expandable = this.rowNode.isExpandable();
         const expanded = this.rowNode.expanded == true;
         this.allRowGuis.forEach(gui => {
-            gui.rowComp.addOrRemoveCssClass('ag-row-group', expandable);
-            gui.rowComp.addOrRemoveCssClass('ag-row-group-expanded', expandable && expanded);
-            gui.rowComp.addOrRemoveCssClass('ag-row-group-contracted', expandable && !expanded);
+            gui.rowComp.addOrRemoveCssClass('zing-row-group', expandable);
+            gui.rowComp.addOrRemoveCssClass('zing-row-group-expanded', expandable && expanded);
+            gui.rowComp.addOrRemoveCssClass('zing-row-group-contracted', expandable && !expanded);
             setAriaExpanded(gui.element, expandable && expanded);
         });
     }
@@ -692,7 +692,7 @@ export class RowCtrl extends BeanStub {
         keyboardEvent.preventDefault();
     }
     onTabKeyDown(keyboardEvent) {
-        if (keyboardEvent.defaultPrevented || isStopPropagationForAgGrid(keyboardEvent)) {
+        if (keyboardEvent.defaultPrevented || isStopPropagationForZingGrid(keyboardEvent)) {
             return;
         }
         const currentFullWidthComp = this.allRowGuis.find(c => c.element.contains(keyboardEvent.target));
@@ -714,7 +714,7 @@ export class RowCtrl extends BeanStub {
         if (!element) {
             return;
         } // can happen with react ui, comp not yet ready
-        element.classList.toggle('ag-full-width-focus', isFocused);
+        element.classList.toggle('zing-full-width-focus', isFocused);
         if (isFocused) {
             // we don't scroll normal rows into view when we focus them, so we don't want
             // to scroll Full Width rows either.
@@ -780,14 +780,14 @@ export class RowCtrl extends BeanStub {
         return event;
     }
     onRowDblClick(mouseEvent) {
-        if (isStopPropagationForAgGrid(mouseEvent)) {
+        if (isStopPropagationForZingGrid(mouseEvent)) {
             return;
         }
-        const agEvent = this.createRowEventWithSource(Events.EVENT_ROW_DOUBLE_CLICKED, mouseEvent);
+        const zingEvent = this.createRowEventWithSource(Events.EVENT_ROW_DOUBLE_CLICKED, mouseEvent);
         this.beans.eventService.dispatchEvent(agEvent);
     }
     onRowMouseDown(mouseEvent) {
-        this.lastMouseDownOnDragger = isElementChildOfClass(mouseEvent.target, 'ag-row-drag', 3);
+        this.lastMouseDownOnDragger = isElementChildOfClass(mouseEvent.target, 'zing-row-drag', 3);
         if (!this.isFullWidth()) {
             return;
         }
@@ -804,11 +804,11 @@ export class RowCtrl extends BeanStub {
         });
     }
     onRowClick(mouseEvent) {
-        const stop = isStopPropagationForAgGrid(mouseEvent) || this.lastMouseDownOnDragger;
+        const stop = isStopPropagationForZingGrid(mouseEvent) || this.lastMouseDownOnDragger;
         if (stop) {
             return;
         }
-        const agEvent = this.createRowEventWithSource(Events.EVENT_ROW_CLICKED, mouseEvent);
+        const zingEvent = this.createRowEventWithSource(Events.EVENT_ROW_CLICKED, mouseEvent);
         this.beans.eventService.dispatchEvent(agEvent);
         // ctrlKey for windows, metaKey for Apple
         const isMultiKey = mouseEvent.ctrlKey || mouseEvent.metaKey;
@@ -919,8 +919,8 @@ export class RowCtrl extends BeanStub {
     onUiLevelChanged() {
         const newLevel = this.beans.rowCssClassCalculator.calculateRowLevel(this.rowNode);
         if (this.rowLevel != newLevel) {
-            const classToAdd = 'ag-row-level-' + newLevel;
-            const classToRemove = 'ag-row-level-' + this.rowLevel;
+            const classToAdd = 'zing-row-level-' + newLevel;
+            const classToRemove = 'zing-row-level-' + this.rowLevel;
             this.allRowGuis.forEach(gui => {
                 gui.rowComp.addOrRemoveCssClass(classToAdd, true);
                 gui.rowComp.addOrRemoveCssClass(classToRemove, false);
@@ -942,11 +942,11 @@ export class RowCtrl extends BeanStub {
         const newLast = this.isLastRowOnPage();
         if (this.firstRowOnPage !== newFirst) {
             this.firstRowOnPage = newFirst;
-            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('ag-row-first', newFirst));
+            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('zing-row-first', newFirst));
         }
         if (this.lastRowOnPage !== newLast) {
             this.lastRowOnPage = newLast;
-            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('ag-row-last', newLast));
+            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('zing-row-last', newLast));
         }
     }
     stopEditing(cancel = false) {
@@ -976,13 +976,13 @@ export class RowCtrl extends BeanStub {
     }
     setInlineEditingCss(editing) {
         this.allRowGuis.forEach(gui => {
-            gui.rowComp.addOrRemoveCssClass("ag-row-inline-editing", editing);
-            gui.rowComp.addOrRemoveCssClass("ag-row-not-inline-editing", !editing);
+            gui.rowComp.addOrRemoveCssClass("zing-row-inline-editing", editing);
+            gui.rowComp.addOrRemoveCssClass("zing-row-not-inline-editing", !editing);
         });
     }
     setEditingRow(value) {
         this.editingRow = value;
-        this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('ag-row-editing', value));
+        this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('zing-row-editing', value));
         const event = value ?
             this.createRowEvent(Events.EVENT_ROW_EDITING_STARTED)
             : this.createRowEvent(Events.EVENT_ROW_EDITING_STOPPED);
@@ -1068,7 +1068,7 @@ export class RowCtrl extends BeanStub {
         // part 1 - rowStyle
         const rowStyle = this.gridOptionsService.get('rowStyle');
         if (rowStyle && typeof rowStyle === 'function') {
-            console.warn('AG Grid: rowStyle should be an object of key/value styles, not be a function, use getRowStyle() instead');
+            console.warn('ZING Grid: rowStyle should be an object of key/value styles, not be a function, use getRowStyle() instead');
             return;
         }
         // part 1 - rowStyleFunc
@@ -1093,7 +1093,7 @@ export class RowCtrl extends BeanStub {
         // setting the required value
         const selected = !!this.rowNode.isSelected();
         this.forEachGui(gui, gui => {
-            gui.rowComp.addOrRemoveCssClass('ag-row-selected', selected);
+            gui.rowComp.addOrRemoveCssClass('zing-row-selected', selected);
             setAriaSelected(gui.element, selected ? true : undefined);
             const ariaLabel = this.createAriaLabel();
             setAriaLabel(gui.element, ariaLabel == null ? '' : ariaLabel);
@@ -1133,12 +1133,12 @@ export class RowCtrl extends BeanStub {
             // adding hovers from that point onwards. Also, do not highlight while dragging elements around.
             if (!this.beans.dragService.isDragging() &&
                 !this.gridOptionsService.get('suppressRowHoverHighlight')) {
-                eRow.classList.add('ag-row-hover');
+                eRow.classList.add('zing-row-hover');
                 this.rowNode.setHovered(true);
             }
         });
         this.addManagedListener(this.rowNode, RowNode.EVENT_MOUSE_LEAVE, () => {
-            eRow.classList.remove('ag-row-hover');
+            eRow.classList.remove('zing-row-hover');
             this.rowNode.setHovered(false);
         });
     }
@@ -1179,7 +1179,7 @@ export class RowCtrl extends BeanStub {
         this.forEachGui(gui, gui => {
             gui.element.style.height = `${rowHeight}px`;
             // If the row height is coming from a function, this means some rows can
-            // be smaller than the theme had intended. so we set --ag-line-height on
+            // be smaller than the theme had intended. so we set --zing-line-height on
             // the row, which is picked up by the theme CSS and is used in a calc
             // for the CSS line-height property, which makes sure the line-height is
             // not bigger than the row height, otherwise the row text would not fit.
@@ -1189,7 +1189,7 @@ export class RowCtrl extends BeanStub {
             // resulting in a new line-height and so on loop.
             // const heightFromFunc = this.gridOptionsService.getRowHeightForNode(this.rowNode).height;
             if (lineHeight) {
-                gui.element.style.setProperty('--ag-line-height', lineHeight);
+                gui.element.style.setProperty('--zing-line-height', lineHeight);
             }
         });
     }
@@ -1228,7 +1228,7 @@ export class RowCtrl extends BeanStub {
             this.setRowTop(rowTop);
         }
         else {
-            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('ag-opacity-zero', true));
+            this.allRowGuis.forEach(gui => gui.rowComp.addOrRemoveCssClass('zing-opacity-zero', true));
         }
     }
     destroySecondPass() {
@@ -1245,8 +1245,8 @@ export class RowCtrl extends BeanStub {
     }
     setFocusedClasses(gui) {
         this.forEachGui(gui, gui => {
-            gui.rowComp.addOrRemoveCssClass('ag-row-focus', this.rowFocused);
-            gui.rowComp.addOrRemoveCssClass('ag-row-no-focus', !this.rowFocused);
+            gui.rowComp.addOrRemoveCssClass('zing-row-focus', this.rowFocused);
+            gui.rowComp.addOrRemoveCssClass('zing-row-no-focus', !this.rowFocused);
         });
     }
     onCellFocused() {
@@ -1394,8 +1394,8 @@ export class RowCtrl extends BeanStub {
         const ariaRowIndex = headerRowCount + this.rowNode.rowIndex + 1;
         this.forEachGui(gui, c => {
             c.rowComp.setRowIndex(rowIndexStr);
-            c.rowComp.addOrRemoveCssClass('ag-row-even', rowIsEven);
-            c.rowComp.addOrRemoveCssClass('ag-row-odd', !rowIsEven);
+            c.rowComp.addOrRemoveCssClass('zing-row-even', rowIsEven);
+            c.rowComp.addOrRemoveCssClass('zing-row-odd', !rowIsEven);
             setAriaRowIndex(c.element, ariaRowIndex);
         });
     }

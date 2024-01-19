@@ -2,7 +2,7 @@ import { PopupComponent } from '../widgets/popupComponent';
 import { escapeString } from '../utils/string';
 export class TooltipComponent extends PopupComponent {
     constructor() {
-        super(/* html */ `<div class="ag-tooltip"></div>`);
+        super(/* html */ `<div class="zing-tooltip"></div>`);
     }
     // will need to type params
     init(params) {

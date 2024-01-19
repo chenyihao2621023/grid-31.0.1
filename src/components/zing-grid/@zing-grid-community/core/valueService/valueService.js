@@ -130,11 +130,11 @@ let ValueService = class ValueService extends BeanStub {
         }
         const { field, valueSetter } = column.getColDef();
         if (missing(field) && missing(valueSetter)) {
-            console.warn(`AG Grid: you need either field or valueSetter set on colDef for editing to work`);
+            console.warn(`ZING Grid: you need either field or valueSetter set on colDef for editing to work`);
             return false;
         }
         if (!this.dataTypeService.checkType(column, newValue)) {
-            console.warn(`AG Grid: Data type of the new value does not match the cell data type of the column`);
+            console.warn(`ZING Grid: Data type of the new value does not match the cell data type of the column`);
             return false;
         }
         const params = {

@@ -1,7 +1,7 @@
 import { Events } from "../events";
 import { ZingAbstractInputField } from './zingAbstractInputField';
 export class ZingCheckbox extends ZingAbstractInputField {
-    constructor(config, className = 'ag-checkbox', inputType = 'checkbox') {
+    constructor(config, className = 'zing-checkbox', inputType = 'checkbox') {
         super(config, className, inputType);
         this.labelAlignment = 'right';
         this.selected = false;
@@ -22,12 +22,12 @@ export class ZingCheckbox extends ZingAbstractInputField {
         return this.readOnly;
     }
     setReadOnly(readOnly) {
-        this.eWrapper.classList.toggle('ag-disabled', readOnly);
+        this.eWrapper.classList.toggle('zing-disabled', readOnly);
         this.eInput.disabled = readOnly;
         this.readOnly = readOnly;
     }
     setDisabled(disabled) {
-        this.eWrapper.classList.toggle('ag-disabled', disabled);
+        this.eWrapper.classList.toggle('zing-disabled', disabled);
         return super.setDisabled(disabled);
     }
     toggle() {
@@ -93,8 +93,8 @@ export class ZingCheckbox extends ZingAbstractInputField {
         this.dispatchChange(selected, previousValue, e);
     }
     refreshSelectedClass(value) {
-        this.eWrapper.classList.toggle('ag-checked', value === true);
-        this.eWrapper.classList.toggle('ag-indeterminate', value == null);
+        this.eWrapper.classList.toggle('zing-checked', value === true);
+        this.eWrapper.classList.toggle('zing-indeterminate', value == null);
     }
 }
 //# sourceMappingURL=zingCheckbox.js.map

@@ -35,14 +35,14 @@ export class SetFilterListItem extends Component {
         this.refreshVariableAriaLabels();
         if (this.isTree) {
             if (this.depth > 0) {
-                this.addCssClass('ag-set-filter-indent-' + this.depth);
+                this.addCssClass('zing-set-filter-indent-' + this.depth);
             }
             if (this.isGroup) {
                 this.setupExpansion();
             }
             else {
                 if (this.groupsExist) {
-                    this.addCssClass('ag-set-filter-add-group-indent');
+                    this.addCssClass('zing-set-filter-add-group-indent');
                 }
             }
             _.setAriaLevel(this.getAriaElement(), this.depth + 1);
@@ -220,7 +220,7 @@ export class SetFilterListItem extends Component {
     }
     renderCell() {
         const compDetails = this.userComponentFactory.getSetFilterCellRendererDetails(this.params, this.cellRendererParams);
-        const cellRendererPromise = compDetails ? compDetails.newAgStackInstance() : undefined;
+        const cellRendererPromise = compDetails ? compDetails.newZingStackInstance() : undefined;
         if (cellRendererPromise == null) {
             this.renderCellWithoutCellRenderer();
             return;
@@ -250,17 +250,17 @@ export class SetFilterListItem extends Component {
 SetFilterListItem.EVENT_SELECTION_CHANGED = 'selectionChanged';
 SetFilterListItem.EVENT_EXPANDED_CHANGED = 'expandedChanged';
 SetFilterListItem.GROUP_TEMPLATE = `
-        <div class="ag-set-filter-item" aria-hidden="true">
-            <span class="ag-set-filter-group-icons">
-                <span class="ag-set-filter-group-closed-icon" ref="eGroupClosedIcon"></span>
-                <span class="ag-set-filter-group-opened-icon" ref="eGroupOpenedIcon"></span>
-                <span class="ag-set-filter-group-indeterminate-icon" ref="eGroupIndeterminateIcon"></span>
+        <div class="zing-set-filter-item" aria-hidden="true">
+            <span class="zing-set-filter-group-icons">
+                <span class="zing-set-filter-group-closed-icon" ref="eGroupClosedIcon"></span>
+                <span class="zing-set-filter-group-opened-icon" ref="eGroupOpenedIcon"></span>
+                <span class="zing-set-filter-group-indeterminate-icon" ref="eGroupIndeterminateIcon"></span>
             </span>
-            <ag-checkbox ref="eCheckbox" class="ag-set-filter-item-checkbox"></ag-checkbox>
+            <zing-checkbox ref="eCheckbox" class="zing-set-filter-item-checkbox"></zing-checkbox>
         </div>`;
 SetFilterListItem.TEMPLATE = `
-        <div class="ag-set-filter-item">
-            <ag-checkbox ref="eCheckbox" class="ag-set-filter-item-checkbox"></ag-checkbox>
+        <div class="zing-set-filter-item">
+            <zing-checkbox ref="eCheckbox" class="zing-set-filter-item-checkbox"></zing-checkbox>
         </div>`;
 __decorate([
     Autowired('valueFormatterService')

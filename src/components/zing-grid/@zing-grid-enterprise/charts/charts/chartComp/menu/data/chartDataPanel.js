@@ -75,7 +75,7 @@ export class ChartDataPanel extends Component {
                     this.createSeriesChartTypeGroup(valueCols);
                 }
                 else {
-                    console.warn(`AG Grid: invalid charts data panel group name supplied: '${type}'`);
+                    console.warn(`ZING Grid: invalid charts data panel group name supplied: '${type}'`);
                 }
             });
         }
@@ -117,7 +117,7 @@ export class ChartDataPanel extends Component {
     createComponent(component, id) {
         const eDiv = document.createElement('div');
         eDiv.id = id;
-        eDiv.className = 'ag-chart-data-section';
+        eDiv.className = 'zing-chart-data-section';
         eDiv.appendChild(component.getGui());
         return eDiv;
     }
@@ -180,7 +180,7 @@ export class ChartDataPanel extends Component {
         const getSeriesLabel = this.generateGetSeriesLabel();
         columns.forEach(col => {
             const comp = this.seriesGroupComp.createManagedBean(new ZingCheckbox());
-            comp.addCssClass('ag-data-select-checkbox');
+            comp.addCssClass('zing-data-select-checkbox');
             const label = getSeriesLabel(col);
             comp.setLabel(label);
             comp.setValue(col.selected);
@@ -267,7 +267,7 @@ export class ChartDataPanel extends Component {
     }
     addDragHandle(comp, col) {
         const eDragHandle = _.createIconNoSpan('columnDrag', this.gridOptionsService);
-        eDragHandle.classList.add('ag-drag-handle', 'ag-chart-data-column-drag-handle');
+        eDragHandle.classList.add('zing-drag-handle', 'zing-chart-data-column-drag-handle');
         comp.getGui().insertAdjacentElement('beforeend', eDragHandle);
         const dragSource = {
             type: DragSourceType.ChartPanel,
@@ -347,7 +347,7 @@ export class ChartDataPanel extends Component {
         this.clearHoveredItems();
         this.lastHoveredItem = { comp, position };
         const eGui = comp.getGui();
-        eGui.classList.add('ag-list-item-hovered', `ag-item-highlight-${position}`);
+        eGui.classList.add('zing-list-item-hovered', `zing-item-highlight-${position}`);
     }
     checkHoveredItem(draggingEvent) {
         if (_.missing(draggingEvent.vDirection)) {
@@ -356,7 +356,7 @@ export class ChartDataPanel extends Component {
         const mouseEvent = draggingEvent.event;
         for (const comp of this.columnComps.values()) {
             const eGui = comp.getGui();
-            if (!eGui.querySelector('.ag-chart-data-column-drag-handle')) {
+            if (!eGui.querySelector('.zing-chart-data-column-drag-handle')) {
                 continue;
             }
             const rect = eGui.getBoundingClientRect();
@@ -392,7 +392,7 @@ export class ChartDataPanel extends Component {
     }
     clearHoveredItems() {
         this.columnComps.forEach(columnComp => {
-            columnComp.getGui().classList.remove('ag-list-item-hovered', 'ag-item-highlight-top', 'ag-item-highlight-bottom');
+            columnComp.getGui().classList.remove('zing-list-item-hovered', 'zing-item-highlight-top', 'zing-item-highlight-bottom');
         });
         this.lastHoveredItem = undefined;
     }
@@ -400,7 +400,7 @@ export class ChartDataPanel extends Component {
         return type === DragSourceType.ChartPanel;
     }
 }
-ChartDataPanel.TEMPLATE = `<div class="ag-chart-data-wrapper ag-scrollable-container"></div>`;
+ChartDataPanel.TEMPLATE = `<div class="zing-chart-data-wrapper zing-scrollable-container"></div>`;
 __decorate([
     Autowired('dragAndDropService')
 ], ChartDataPanel.prototype, "dragAndDropService", void 0);

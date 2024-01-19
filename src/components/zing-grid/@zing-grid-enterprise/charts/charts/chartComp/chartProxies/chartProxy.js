@@ -2,7 +2,7 @@ import { _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { _Theme, AgCharts } from "@/components/zing-grid/zing-charts-community/main.js";
 import { getSeriesType } from "../utils/seriesTypeMapper";
 import { deproxy } from "../utils/integration";
-import { createAgChartTheme, lookupCustomChartTheme } from './chartTheme';
+import { createZingChartTheme, lookupCustomChartTheme } from './chartTheme';
 export class ChartProxy {
     constructor(chartProxyParams) {
         this.chartProxyParams = chartProxyParams;
@@ -82,7 +82,7 @@ export class ChartProxy {
         const formattingPanelOverrides = this.chart != null ?
             { overrides: this.getActiveFormattingPanelOverrides() } : {};
         this.clearThemeOverrides = false;
-        return Object.assign(Object.assign({}, existingOptions), { theme: Object.assign(Object.assign({}, createAgChartTheme(this.chartProxyParams, this)), (updatedOverrides ? { overrides: updatedOverrides } : formattingPanelOverrides)), container: this.chartProxyParams.parentElement, mode: 'integrated' });
+        return Object.assign(Object.assign({}, existingOptions), { theme: Object.assign(Object.assign({}, createZingChartTheme(this.chartProxyParams, this)), (updatedOverrides ? { overrides: updatedOverrides } : formattingPanelOverrides)), container: this.chartProxyParams.parentElement, mode: 'integrated' });
     }
     getActiveFormattingPanelOverrides() {
         var _a, _b;

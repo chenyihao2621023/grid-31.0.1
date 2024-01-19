@@ -2,7 +2,7 @@ import { SimpleCellEditor } from "./simpleCellEditor";
 import { exists } from "../../utils/generic";
 class TextCellEditorInput {
     getTemplate() {
-        return /* html */ `<ag-input-text-field class="ag-cell-editor" ref="eInput"></ag-input-text-field>`;
+        return /* html */ `<zing-input-text-field class="zing-cell-editor" ref="eInput"></zing-input-text-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;

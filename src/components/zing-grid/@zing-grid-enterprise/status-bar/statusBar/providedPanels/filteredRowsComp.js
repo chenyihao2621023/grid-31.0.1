@@ -11,11 +11,11 @@ export class FilteredRowsComp extends NameValueComp {
         this.setLabel('filteredRows', 'Filtered');
         // this component is only really useful with client side row model
         if (this.gridApi.getModel().getType() !== 'clientSide') {
-            console.warn(`AG Grid: agFilteredRowCountComponent should only be used with the client side row model.`);
+            console.warn(`ZING Grid: zingFilteredRowCountComponent should only be used with the client side row model.`);
             return;
         }
-        this.addCssClass('ag-status-panel');
-        this.addCssClass('ag-status-panel-filtered-row-count');
+        this.addCssClass('zing-status-panel');
+        this.addCssClass('zing-status-panel-filtered-row-count');
         this.setDisplayed(true);
         const listener = this.onDataChanged.bind(this);
         this.addManagedListener(this.eventService, Events.EVENT_MODEL_UPDATED, listener);

@@ -75,7 +75,7 @@ export class MiniChartsContainer extends Component {
                     return;
                 }
                 const miniWrapper = document.createElement('div');
-                miniWrapper.classList.add('ag-chart-mini-thumbnail');
+                miniWrapper.classList.add('zing-chart-mini-thumbnail');
                 const miniClassChartType = MiniClass.chartType;
                 this.addManagedListener(miniWrapper, 'click', () => {
                     this.chartController.setChartType(miniClassChartType);
@@ -94,11 +94,11 @@ export class MiniChartsContainer extends Component {
         for (const miniChartType in this.wrappers) {
             const miniChart = this.wrappers[miniChartType];
             const selected = miniChartType === selectedChartType;
-            miniChart.classList.toggle('ag-selected', selected);
+            miniChart.classList.toggle('zing-selected', selected);
         }
     }
 }
-MiniChartsContainer.TEMPLATE = `<div class="ag-chart-settings-mini-wrapper"></div>`;
+MiniChartsContainer.TEMPLATE = `<div class="zing-chart-settings-mini-wrapper"></div>`;
 __decorate([
     Autowired('chartTranslationService')
 ], MiniChartsContainer.prototype, "chartTranslationService", void 0);

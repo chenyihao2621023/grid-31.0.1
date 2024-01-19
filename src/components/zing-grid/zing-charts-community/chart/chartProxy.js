@@ -9,7 +9,7 @@ export class AgChartInstanceProxy {
             // Simple case.
             return true;
         }
-        if (((_a = x.constructor) === null || _a === void 0 ? void 0 : _a.name) === 'AgChartInstanceProxy' && x.chart != null) {
+        if (((_a = x.constructor) === null || _a === void 0 ? void 0 : _a.name) === 'ZingChartInstanceProxy' && x.chart != null) {
             // instanceof can fail if mixing bundles (e.g. grid all-modules vs. standalone).
             return true;
         }

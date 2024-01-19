@@ -47,11 +47,11 @@ let ChartColumnService = class ChartColumnService extends BeanStub {
                     case 'excluded':
                         return;
                     default:
-                        console.warn(`AG Grid: unexpected chartDataType value '${chartDataType}' supplied, instead use 'category', 'series' or 'excluded'`);
+                        console.warn(`ZING Grid: unexpected chartDataType value '${chartDataType}' supplied, instead use 'category', 'series' or 'excluded'`);
                         break;
                 }
             }
-            if (colDef.colId === 'ag-Grid-AutoColumn') {
+            if (colDef.colId === 'zing-Grid-AutoColumn') {
                 dimensionCols.add(col);
                 return;
             }
@@ -65,7 +65,7 @@ let ChartColumnService = class ChartColumnService extends BeanStub {
         return { dimensionCols, valueCols };
     }
     isNumberCol(col) {
-        if (col.getColId() === 'ag-Grid-AutoColumn') {
+        if (col.getColId() === 'zing-Grid-AutoColumn') {
             return false;
         }
         const row = this.rowRenderer.getRowNode({ rowIndex: 0, rowPinned: null });

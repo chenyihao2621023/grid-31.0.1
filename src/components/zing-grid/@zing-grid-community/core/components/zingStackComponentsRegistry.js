@@ -31,7 +31,7 @@ let ZingStackComponentsRegistry = class AgStackComponentsRegistry extends BeanSt
     }
 };
 ZingStackComponentsRegistry = __decorate([
-    Bean('agStackComponentsRegistry')
+    Bean('zingStackComponentsRegistry'')
 ], ZingStackComponentsRegistry);
 export { ZingStackComponentsRegistry };
 //# sourceMappingURL=zingStackComponentsRegistry.js.map

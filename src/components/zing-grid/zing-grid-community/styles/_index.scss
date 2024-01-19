@@ -1,7 +1,7 @@
 
 //
-// This file defines the public Sass API to ag-Grid's styles.
-// https://ag-grid.com/javascript-data-grid/global-style-customisation-sass/
+// This file defines the public Sass API to zing-Grid's styles.
+// https://zing-grid.com/javascript-data-grid/global-style-customisation-sass/
 //
 
 @use "sass:map";
@@ -25,9 +25,9 @@
     $themes: -get-themes($global-params);
 
     @if $no-native-widgets {
-        @include -load-css-file("ag-grid-no-native-widgets.css");
+        @include -load-css-file("zing-grid-no-native-widgets.css");
     } @else {
-        @include -load-css-file("ag-grid.css");
+        @include -load-css-file("zing-grid.css");
     }
 
     $global-extended-theme-name: -clean-theme-name(map.get($global-params, "extend-theme"));
@@ -47,7 +47,7 @@
             @include -load-theme-css-file($extended-theme-name);
         }
 
-        $font: map.get($theme-params, "--ag-icon-font-family");
+        $font: map.get($theme-params, "--zing-icon-font-family");
         $font: map.get($-theme-fonts, $theme-name) !default;
         $font: map.get($-theme-fonts, $extended-theme-name) !default;
         @if $font {
@@ -60,13 +60,13 @@
 
         @if $extended-theme-name and $extended-theme-name != $theme-name {
             // alias all the styles in the extended theme to the new theme name
-            .ag-theme-#{$theme-name} {
-                @extend .ag-theme-#{$extended-theme-name};
+            .zing-theme-#{$theme-name} {
+                @extend .zing-theme-#{$extended-theme-name};
             }
         }
 
-        // Emit CSS variable declarations for a set of params, converting (foo: bar) to `--ag-foo: bar`
-        .ag-theme-#{$theme-name} {
+        // Emit CSS variable declarations for a set of params, converting (foo: bar) to `--zing-foo: bar`
+        .zing-theme-#{$theme-name} {
             $color-blend-theme-name: $extended-theme-name;
             $color-blend-theme-name: $theme-name !default;
             $blend-function-name: "-theme-#{$color-blend-theme-name}-color-blends";
@@ -118,7 +118,7 @@ $-loaded-css-files: ();
         @return null;
     }
     $name: string.to-lower-case($name);
-    $remove-prefix: "ag-theme-";
+    $remove-prefix: "zing-theme-";
     @if string.index($name, $remove-prefix) == 1 {
         $name: string.slice($name, string.length($remove-prefix) + 1);
     }
@@ -135,12 +135,12 @@ $-loaded-css-files: ();
     }
     $name: string.to-lower-case($name);
     
-    $proposed-variable-name: "--ag-#{$name}";
+    $proposed-variable-name: "--zing-#{$name}";
     @if map.has-key($-variable-param-types, $proposed-variable-name) {
         $name: $proposed-variable-name;
     }
         
-    $remove-prefix: "ag-theme-";
+    $remove-prefix: "zing-theme-";
     @if string.index($name, $remove-prefix) == 1 {
         $name: string.slice($name, string.length($remove-prefix) + 1);
     }
@@ -166,23 +166,23 @@ $-theme-variables: (
 );
 
 $-theme-css-files: (
-    "quartz": "ag-theme-quartz-no-font.css",
-    "quartz-dark": "ag-theme-quartz-no-font.css",
-    "alpine": "ag-theme-alpine-no-font.css",
-    "alpine-dark": "ag-theme-alpine-no-font.css",
-    "balham": "ag-theme-balham-no-font.css",
-    "balham-dark": "ag-theme-balham-no-font.css",
-    "material": "ag-theme-material-no-font.css",
+    "quartz": "zing-theme-quartz-no-font.css",
+    "quartz-dark": "zing-theme-quartz-no-font.css",
+    "alpine": "zing-theme-alpine-no-font.css",
+    "alpine-dark": "zing-theme-alpine-no-font.css",
+    "balham": "zing-theme-balham-no-font.css",
+    "balham-dark": "zing-theme-balham-no-font.css",
+    "material": "zing-theme-material-no-font.css",
 );
 
 $-theme-fonts: (
-    "quartz": "agGridQuartz",
-    "quartz-dark": "agGridQuartz",
-    "alpine": "agGridAlpine",
-    "alpine-dark": "agGridAlpine",
-    "balham": "agGridBalham",
-    "balham-dark": "agGridBalham",
-    "material": "agGridMaterial",
+    "quartz": "zingGridQuartz",
+    "quartz-dark": "zingGridQuartz",
+    "alpine": "zingGridAlpine",
+    "alpine-dark": "zingGridAlpine",
+    "balham": "zingGridBalham",
+    "balham-dark": "zingGridBalham",
+    "material": "zingGridMaterial",
 );
 
 @function -is-provided-theme($theme-name) {
@@ -235,50 +235,50 @@ $-theme-fonts: (
 @function -base-color-blends($params) {
     // Simple defaults. We need to define the defaults for any parameters
     // that are used in blending below
-    $params: -param-default($params, --ag-foreground-color,            #000);
-    $params: -param-default($params, --ag-background-color,            #fff);
-    $params: -param-default($params, --ag-range-selection-border-color, --ag-foreground-color);
+    $params: -param-default($params, --zing-foreground-color,            #000);
+    $params: -param-default($params, --zing-background-color,            #fff);
+    $params: -param-default($params, --zing-range-selection-border-color, --zing-foreground-color);
 
     // Blended defaults.
-    $params: -param-default($params, --ag-disabled-foreground-color,          --ag-foreground-color,                 $alpha: 0.5);
-    $params: -param-default($params, --ag-modal-overlay-background-color,     --ag-background-color,                 $alpha: 0.66);
-    $params: -param-default($params, --ag-range-selection-background-color,   --ag-range-selection-border-color,     $alpha: 0.2);
-    $params: -param-default($params, --ag-range-selection-background-color-2, --ag-range-selection-background-color, $self-overlay: 2);
-    $params: -param-default($params, --ag-range-selection-background-color-3, --ag-range-selection-background-color, $self-overlay: 3);
-    $params: -param-default($params, --ag-range-selection-background-color-4, --ag-range-selection-background-color, $self-overlay: 4);
-    $params: -param-default($params, --ag-border-color,                       --ag-foreground-color,                 $alpha: 0.25);
-    $params: -param-default($params, --ag-header-column-separator-color,      --ag-border-color,                     $alpha: 0.5);
-    $params: -param-default($params, --ag-header-column-resize-handle-color,  --ag-border-color,                     $alpha: 0.5);
-    $params: -param-default($params, --ag-input-disabled-border-color,        --ag-input-border-color,               $alpha: 0.3);
+    $params: -param-default($params, --zing-disabled-foreground-color,          --zing-foreground-color,                 $alpha: 0.5);
+    $params: -param-default($params, --zing-modal-overlay-background-color,     --zing-background-color,                 $alpha: 0.66);
+    $params: -param-default($params, --zing-range-selection-background-color,   --zing-range-selection-border-color,     $alpha: 0.2);
+    $params: -param-default($params, --zing-range-selection-background-color-2, --zing-range-selection-background-color, $self-overlay: 2);
+    $params: -param-default($params, --zing-range-selection-background-color-3, --zing-range-selection-background-color, $self-overlay: 3);
+    $params: -param-default($params, --zing-range-selection-background-color-4, --zing-range-selection-background-color, $self-overlay: 4);
+    $params: -param-default($params, --zing-border-color,                       --zing-foreground-color,                 $alpha: 0.25);
+    $params: -param-default($params, --zing-header-column-separator-color,      --zing-border-color,                     $alpha: 0.5);
+    $params: -param-default($params, --zing-header-column-resize-handle-color,  --zing-border-color,                     $alpha: 0.5);
+    $params: -param-default($params, --zing-input-disabled-border-color,        --zing-input-border-color,               $alpha: 0.3);
     @return $params;
 }
 
 @function -theme-alpine-color-blends($params) {
     // Simple defaults. We need to define the defaults for any parameters
     // that are used in blending either below or in the base color blends
-    $params: -param-default($params, --ag-background-color,            #fff);
-    $params: -param-default($params, --ag-foreground-color,            #181d1f);
-    $params: -param-default($params, --ag-subheader-background-color,  #fff);
-    $params: -param-default($params, --ag-alpine-active-color,         #2196f3);
-    $params: -param-default($params, --ag-range-selection-border-color, --ag-alpine-active-color);
+    $params: -param-default($params, --zing-background-color,            #fff);
+    $params: -param-default($params, --zing-foreground-color,            #181d1f);
+    $params: -param-default($params, --zing-subheader-background-color,  #fff);
+    $params: -param-default($params, --zing-alpine-active-color,         #2196f3);
+    $params: -param-default($params, --zing-range-selection-border-color, --zing-alpine-active-color);
 
     // Blended defaults
-    $params: -param-default($params, --ag-subheader-toolbar-background-color, --ag-subheader-background-color, $alpha: 0.5);
-    $params: -param-default($params, --ag-selected-row-background-color,      --ag-alpine-active-color,        $alpha: 0.1);
-    $params: -param-default($params, --ag-row-hover-color,                    --ag-alpine-active-color,        $alpha: 0.1);
-    $params: -param-default($params, --ag-column-hover-color,                 --ag-alpine-active-color,        $alpha: 0.1);
-    $params: -param-default($params, --ag-chip-background-color,              --ag-foreground-color,           $alpha: 0.07);
-    $params: -param-default($params, --ag-input-disabled-background-color,    --ag-border-color,               $alpha: 0.15);
-    $params: -param-default($params, --ag-input-disabled-border-color,        --ag-border-color,               $alpha: 0.3);
-    $params: -param-default($params, --ag-disabled-foreground-color,          --ag-foreground-color,           $alpha: 0.5);
-    $params: -param-default($params, --ag-input-focus-border-color,           --ag-alpine-active-color,        $alpha: 0.4);
+    $params: -param-default($params, --zing-subheader-toolbar-background-color, --zing-subheader-background-color, $alpha: 0.5);
+    $params: -param-default($params, --zing-selected-row-background-color,      --zing-alpine-active-color,        $alpha: 0.1);
+    $params: -param-default($params, --zing-row-hover-color,                    --zing-alpine-active-color,        $alpha: 0.1);
+    $params: -param-default($params, --zing-column-hover-color,                 --zing-alpine-active-color,        $alpha: 0.1);
+    $params: -param-default($params, --zing-chip-background-color,              --zing-foreground-color,           $alpha: 0.07);
+    $params: -param-default($params, --zing-input-disabled-background-color,    --zing-border-color,               $alpha: 0.15);
+    $params: -param-default($params, --zing-input-disabled-border-color,        --zing-border-color,               $alpha: 0.3);
+    $params: -param-default($params, --zing-disabled-foreground-color,          --zing-foreground-color,           $alpha: 0.5);
+    $params: -param-default($params, --zing-input-focus-border-color,           --zing-alpine-active-color,        $alpha: 0.4);
     @return $params;
 }
 
 @function -theme-alpine-dark-color-blends($params) {
-    $params: -param-default($params, --ag-background-color,           #181d1f);
-    $params: -param-default($params, --ag-foreground-color,           #fff);
-    $params: -param-default($params, --ag-subheader-background-color, #000);
+    $params: -param-default($params, --zing-background-color,           #181d1f);
+    $params: -param-default($params, --zing-foreground-color,           #fff);
+    $params: -param-default($params, --zing-subheader-background-color, #000);
 
     @return -theme-alpine-color-blends($params);
 }
@@ -286,33 +286,33 @@ $-theme-fonts: (
 @function -theme-balham-color-blends($params) {
     // Simple defaults. We need to define the defaults for any parameters
     // that are used in blending either below or in the base color blends
-    $params: -param-default($params, --ag-background-color,             #fff);
-    $params: -param-default($params, --ag-foreground-color,             #000);
-    $params: -param-default($params, --ag-border-color,                 #bdc3c7);
-    $params: -param-default($params, --ag-subheader-background-color,   #e2e9eb);
-    $params: -param-default($params, --ag-balham-active-color,          #0091ea);
-    $params: -param-default($params, --ag-range-selection-border-color, --ag-balham-active-color);
+    $params: -param-default($params, --zing-background-color,             #fff);
+    $params: -param-default($params, --zing-foreground-color,             #000);
+    $params: -param-default($params, --zing-border-color,                 #bdc3c7);
+    $params: -param-default($params, --zing-subheader-background-color,   #e2e9eb);
+    $params: -param-default($params, --zing-balham-active-color,          #0091ea);
+    $params: -param-default($params, --zing-range-selection-border-color, --zing-balham-active-color);
 
     // Blended defaults
-    $params: -param-default($params, --ag-secondary-foreground-color,         --ag-foreground-color,           $alpha: 0.54);
-    $params: -param-default($params, --ag-disabled-foreground-color,          --ag-foreground-color,           $alpha: 0.38);
-    $params: -param-default($params, --ag-subheader-toolbar-background-color, --ag-subheader-background-color, $alpha: 0.5);
-    $params: -param-default($params, --ag-row-border-color,                   --ag-border-color,               $alpha: 0.58);
-    $params: -param-default($params, --ag-chip-background-color,              --ag-foreground-color,           $alpha: 0.1);
-    $params: -param-default($params, --ag-selected-row-background-color,      --ag-balham-active-color,        $alpha: 0.28);
-    $params: -param-default($params, --ag-header-column-separator-color,      --ag-border-color,               $alpha: 0.5);
+    $params: -param-default($params, --zing-secondary-foreground-color,         --zing-foreground-color,           $alpha: 0.54);
+    $params: -param-default($params, --zing-disabled-foreground-color,          --zing-foreground-color,           $alpha: 0.38);
+    $params: -param-default($params, --zing-subheader-toolbar-background-color, --zing-subheader-background-color, $alpha: 0.5);
+    $params: -param-default($params, --zing-row-border-color,                   --zing-border-color,               $alpha: 0.58);
+    $params: -param-default($params, --zing-chip-background-color,              --zing-foreground-color,           $alpha: 0.1);
+    $params: -param-default($params, --zing-selected-row-background-color,      --zing-balham-active-color,        $alpha: 0.28);
+    $params: -param-default($params, --zing-header-column-separator-color,      --zing-border-color,               $alpha: 0.5);
     @return $params;
 }
 
 @function -theme-balham-dark-color-blends($params) {
-    $params: -param-default($params, --ag-background-color,           #181d1f);
-    $params: -param-default($params, --ag-foreground-color,           #fff);
-    $params: -param-default($params, --ag-border-color,               #424242);
-    $params: -param-default($params, --ag-subheader-background-color, #000);
-    $params: -param-default($params, --ag-balham-active-color,        #00B0FF);
+    $params: -param-default($params, --zing-background-color,           #181d1f);
+    $params: -param-default($params, --zing-foreground-color,           #fff);
+    $params: -param-default($params, --zing-border-color,               #424242);
+    $params: -param-default($params, --zing-subheader-background-color, #000);
+    $params: -param-default($params, --zing-balham-active-color,        #00B0FF);
 
-    $params: -param-default($params, --ag-disabled-foreground-color, --ag-foreground-color, $alpha: 0.38);
-    $params: -param-default($params, --ag-header-foreground-color,   --ag-foreground-color, $alpha: 0.64);
+    $params: -param-default($params, --zing-disabled-foreground-color, --zing-foreground-color, $alpha: 0.38);
+    $params: -param-default($params, --zing-header-foreground-color,   --zing-foreground-color, $alpha: 0.64);
 
     @return  -theme-balham-color-blends($params);
 }
@@ -320,18 +320,18 @@ $-theme-fonts: (
 @function -theme-material-color-blends($params) {
     // Simple defaults. We need to define the defaults for any parameters
     // that are used in blending either below or in the base color blends
-    $params: -param-default($params, --ag-background-color,                  #fff);
-    $params: -param-default($params, --ag-foreground-color,                  rgba(0, 0, 0, 0.87));
-    $params: -param-default($params, --ag-subheader-background-color,        #eee);
-    $params: -param-default($params, --ag-material-primary-color,            #3f51b5);
-    $params: -param-default($params, --ag-range-selection-border-color,       --ag-material-primary-color);
-    $params: -param-default($params, --ag-range-selection-background-color,  rgba(122, 134, 203, 0.1));
-    $params: -param-default($params, --ag-border-color,                      #e2e2e2);
+    $params: -param-default($params, --zing-background-color,                  #fff);
+    $params: -param-default($params, --zing-foreground-color,                  rgba(0, 0, 0, 0.87));
+    $params: -param-default($params, --zing-subheader-background-color,        #eee);
+    $params: -param-default($params, --zing-material-primary-color,            #3f51b5);
+    $params: -param-default($params, --zing-range-selection-border-color,       --zing-material-primary-color);
+    $params: -param-default($params, --zing-range-selection-background-color,  rgba(122, 134, 203, 0.1));
+    $params: -param-default($params, --zing-border-color,                      #e2e2e2);
 
     // Blended defaults
-    $params: -param-default($params, --ag-secondary-foreground-color,         --ag-foreground-color,           $alpha: 0.54);
-    $params: -param-default($params, --ag-disabled-foreground-color,          --ag-foreground-color,           $alpha: 0.38);
-    $params: -param-default($params, --ag-subheader-toolbar-background-color, --ag-subheader-background-color, $alpha: 0.5);
+    $params: -param-default($params, --zing-secondary-foreground-color,         --zing-foreground-color,           $alpha: 0.54);
+    $params: -param-default($params, --zing-disabled-foreground-color,          --zing-foreground-color,           $alpha: 0.38);
+    $params: -param-default($params, --zing-subheader-toolbar-background-color, --zing-subheader-background-color, $alpha: 0.5);
     @return $params;
 }
 
@@ -340,15 +340,15 @@ $-theme-fonts: (
 //  $params: -param-default($params, x, y) - default x to the value of y (if y is set)
 //  $params: -param-default($params, x, y, $alpha: 0.5) - default x to the value of y made 50% transparent
 @function -param-default($params, $target, $source, $alpha: null, $self-overlay: null) {
-    @if string.index($target, "--ag-") != 1 {
-        @error "Internal error: $target to -param-default should start --ag-";
+    @if string.index($target, "--zing-") != 1 {
+        @error "Internal error: $target to -param-default should start --zing-";
     }
     $value: null;
     @if type-of($source) == "color" {
         $value: $source;
     } @else {
-        @if string.index($source, "--ag-") != 1 {
-            @error "Internal error: $source to -param-default should start --ag-";
+        @if string.index($source, "--zing-") != 1 {
+            @error "Internal error: $source to -param-default should start --zing-";
         }
         $value: map.get($params, $source);
     }
@@ -377,123 +377,123 @@ $-param-type-descriptions: (
     "any": "any value",
 );
 
-// params that are copied to --ag-param-name variables
+// params that are copied to --zing-param-name variables
 $-variable-param-types: (
-    --ag-foreground-color: "color",
-    --ag-data-color: "color",
-    --ag-secondary-foreground-color: "color",
-    --ag-header-foreground-color: "color",
-    --ag-disabled-foreground-color: "color",
-    --ag-background-color: "color",
-    --ag-header-background-color: "color",
-    --ag-tooltip-background-color: "color",
-    --ag-subheader-background-color: "color",
-    --ag-subheader-toolbar-background-color: "color",
-    --ag-control-panel-background-color: "color",
-    --ag-side-button-selected-background-color: "color",
-    --ag-selected-row-background-color: "color",
-    --ag-odd-row-background-color: "color",
-    --ag-modal-overlay-background-color: "color",
-    --ag-row-hover-color: "color",
-    --ag-column-hover-color: "color",
-    --ag-range-selection-border-color: "color",
-    --ag-range-selection-border-style: "border-style",
-    --ag-range-selection-background-color: "color",
-    --ag-range-selection-background-color-2: "color",
-    --ag-range-selection-background-color-3: "color",
-    --ag-range-selection-background-color-4: "color",
-    --ag-range-selection-highlight-color: "color",
-    --ag-selected-tab-underline-color: "color",
-    --ag-selected-tab-underline-width: "length",
-    --ag-selected-tab-underline-transition-speed: "duration",
-    --ag-range-selection-chart-category-background-color: "color",
-    --ag-range-selection-chart-background-color: "color",
-    --ag-header-cell-hover-background-color: "color",
-    --ag-header-cell-moving-background-color: "color",
-    --ag-value-change-value-highlight-background-color: "color",
-    --ag-value-change-delta-up-color: "color",
-    --ag-value-change-delta-down-color: "color",
-    --ag-chip-background-color: "color",
-    --ag-borders: "border-style-and-size",
-    --ag-border-color: "color",
-    --ag-borders-critical: "border-style-and-size",
-    --ag-borders-secondary: "border-style-and-size",
-    --ag-secondary-border-color: "color",
+    --zing-foreground-color: "color",
+    --zing-data-color: "color",
+    --zing-secondary-foreground-color: "color",
+    --zing-header-foreground-color: "color",
+    --zing-disabled-foreground-color: "color",
+    --zing-background-color: "color",
+    --zing-header-background-color: "color",
+    --zing-tooltip-background-color: "color",
+    --zing-subheader-background-color: "color",
+    --zing-subheader-toolbar-background-color: "color",
+    --zing-control-panel-background-color: "color",
+    --zing-side-button-selected-background-color: "color",
+    --zing-selected-row-background-color: "color",
+    --zing-odd-row-background-color: "color",
+    --zing-modal-overlay-background-color: "color",
+    --zing-row-hover-color: "color",
+    --zing-column-hover-color: "color",
+    --zing-range-selection-border-color: "color",
+    --zing-range-selection-border-style: "border-style",
+    --zing-range-selection-background-color: "color",
+    --zing-range-selection-background-color-2: "color",
+    --zing-range-selection-background-color-3: "color",
+    --zing-range-selection-background-color-4: "color",
+    --zing-range-selection-highlight-color: "color",
+    --zing-selected-tab-underline-color: "color",
+    --zing-selected-tab-underline-width: "length",
+    --zing-selected-tab-underline-transition-speed: "duration",
+    --zing-range-selection-chart-category-background-color: "color",
+    --zing-range-selection-chart-background-color: "color",
+    --zing-header-cell-hover-background-color: "color",
+    --zing-header-cell-moving-background-color: "color",
+    --zing-value-change-value-highlight-background-color: "color",
+    --zing-value-change-delta-up-color: "color",
+    --zing-value-change-delta-down-color: "color",
+    --zing-chip-background-color: "color",
+    --zing-borders: "border-style-and-size",
+    --zing-border-color: "color",
+    --zing-borders-critical: "border-style-and-size",
+    --zing-borders-secondary: "border-style-and-size",
+    --zing-secondary-border-color: "color",
 
-    --ag-row-border-style: "border-style",
-    --ag-row-border-width: "length",
-    --ag-row-border-color: "color",
+    --zing-row-border-style: "border-style",
+    --zing-row-border-width: "length",
+    --zing-row-border-color: "color",
 
-    --ag-cell-horizontal-border: "border-style-and-color",
-    --ag-borders-input: "border-style-and-size",
-    --ag-input-border-color: "color",
-    --ag-borders-input-invalid: "border-style-and-size",
-    --ag-input-border-color-invalid: "color",
-    --ag-borders-side-button: "border-style-and-size",
-    --ag-border-radius: "length",
-    --ag-header-column-separator-display: "display",
-    --ag-header-column-separator-height: "length",
-    --ag-header-column-separator-width: "length",
-    --ag-header-column-separator-color: "color",
-    --ag-header-column-resize-handle-display: "display",
-    --ag-header-column-resize-handle-height: "length",
-    --ag-header-column-resize-handle-width: "length",
-    --ag-header-column-resize-handle-color: "color",
-    --ag-invalid-color: "color",
-    --ag-input-disabled-border-color: "color",
-    --ag-input-disabled-background-color: "color",
-    --ag-checkbox-background-color: "color",
-    --ag-checkbox-border-radius: "length",
-    --ag-checkbox-checked-color: "color",
-    --ag-checkbox-unchecked-color: "color",
-    --ag-checkbox-indeterminate-color: "color",
-    --ag-toggle-button-off-border-color: "color",
-    --ag-toggle-button-off-background-color: "color",
-    --ag-toggle-button-on-border-color: "color",
-    --ag-toggle-button-on-background-color: "color",
-    --ag-toggle-button-switch-background-color: "color",
-    --ag-toggle-button-switch-border-color: "color",
-    --ag-toggle-button-border-width: "length",
-    --ag-toggle-button-height: "length",
-    --ag-toggle-button-width: "length",
-    --ag-input-focus-box-shadow: "any",
-    --ag-input-focus-border-color: "color",
-    --ag-minichart-selected-chart-color: "color",
-    --ag-minichart-selected-page-color: "color",
-    --ag-grid-size: "length",
-    --ag-icon-size: "length",
-    --ag-widget-container-horizontal-padding: "length",
-    --ag-widget-container-vertical-padding: "length",
-    --ag-widget-horizontal-spacing: "length",
-    --ag-widget-vertical-spacing: "length",
-    --ag-cell-horizontal-padding: "length",
-    --ag-cell-widget-spacing: "length",
-    --ag-row-height: "length",
-    --ag-header-height: "length",
-    --ag-list-item-height: "length",
-    --ag-column-select-indent-size: "length",
-    --ag-set-filter-indent-size: "length",
-    --ag-advanced-filter-builder-indent-size: "length",
-    --ag-row-group-indent-size: "length",
-    --ag-filter-tool-panel-group-indent: "length",
-    --ag-tab-min-width: "length",
-    --ag-menu-min-width: "length",
-    --ag-side-bar-panel-width: "length",
-    --ag-font-family: "any",
-    --ag-font-size: "length",
-    --ag-card-radius: "length",
-    --ag-card-shadow: "any",
-    --ag-popup-shadow: "any",
-    --ag-active-color: "color",
-    --ag-alpine-active-color: "color",
-    --ag-balham-active-color: "color",
-    --ag-material-primary-color: "color",
-    --ag-material-accent-color: "color",
-    --ag-icon-font-family: "any"
+    --zing-cell-horizontal-border: "border-style-and-color",
+    --zing-borders-input: "border-style-and-size",
+    --zing-input-border-color: "color",
+    --zing-borders-input-invalid: "border-style-and-size",
+    --zing-input-border-color-invalid: "color",
+    --zing-borders-side-button: "border-style-and-size",
+    --zing-border-radius: "length",
+    --zing-header-column-separator-display: "display",
+    --zing-header-column-separator-height: "length",
+    --zing-header-column-separator-width: "length",
+    --zing-header-column-separator-color: "color",
+    --zing-header-column-resize-handle-display: "display",
+    --zing-header-column-resize-handle-height: "length",
+    --zing-header-column-resize-handle-width: "length",
+    --zing-header-column-resize-handle-color: "color",
+    --zing-invalid-color: "color",
+    --zing-input-disabled-border-color: "color",
+    --zing-input-disabled-background-color: "color",
+    --zing-checkbox-background-color: "color",
+    --zing-checkbox-border-radius: "length",
+    --zing-checkbox-checked-color: "color",
+    --zing-checkbox-unchecked-color: "color",
+    --zing-checkbox-indeterminate-color: "color",
+    --zing-toggle-button-off-border-color: "color",
+    --zing-toggle-button-off-background-color: "color",
+    --zing-toggle-button-on-border-color: "color",
+    --zing-toggle-button-on-background-color: "color",
+    --zing-toggle-button-switch-background-color: "color",
+    --zing-toggle-button-switch-border-color: "color",
+    --zing-toggle-button-border-width: "length",
+    --zing-toggle-button-height: "length",
+    --zing-toggle-button-width: "length",
+    --zing-input-focus-box-shadow: "any",
+    --zing-input-focus-border-color: "color",
+    --zing-minichart-selected-chart-color: "color",
+    --zing-minichart-selected-page-color: "color",
+    --zing-grid-size: "length",
+    --zing-icon-size: "length",
+    --zing-widget-container-horizontal-padding: "length",
+    --zing-widget-container-vertical-padding: "length",
+    --zing-widget-horizontal-spacing: "length",
+    --zing-widget-vertical-spacing: "length",
+    --zing-cell-horizontal-padding: "length",
+    --zing-cell-widget-spacing: "length",
+    --zing-row-height: "length",
+    --zing-header-height: "length",
+    --zing-list-item-height: "length",
+    --zing-column-select-indent-size: "length",
+    --zing-set-filter-indent-size: "length",
+    --zing-advanced-filter-builder-indent-size: "length",
+    --zing-row-group-indent-size: "length",
+    --zing-filter-tool-panel-group-indent: "length",
+    --zing-tab-min-width: "length",
+    --zing-menu-min-width: "length",
+    --zing-side-bar-panel-width: "length",
+    --zing-font-family: "any",
+    --zing-font-size: "length",
+    --zing-card-radius: "length",
+    --zing-card-shadow: "any",
+    --zing-popup-shadow: "any",
+    --zing-active-color: "color",
+    --zing-alpine-active-color: "color",
+    --zing-balham-active-color: "color",
+    --zing-material-primary-color: "color",
+    --zing-material-accent-color: "color",
+    --zing-icon-font-family: "any"
 );
 
 @each $icon-name in map.keys($icon-font-codes) {
-    $-variable-param-types: map.set($-variable-param-types, "--ag-icon-font-code-#{$icon-name}", "any");
+    $-variable-param-types: map.set($-variable-param-types, "--zing-icon-font-code-#{$icon-name}", "any");
 }
 
 // params that are not copied to CSS variables

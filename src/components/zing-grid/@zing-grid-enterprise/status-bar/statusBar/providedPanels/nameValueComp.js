@@ -19,9 +19,9 @@ export class NameValueComp extends Component {
         this.eValue.innerHTML = value;
     }
 }
-NameValueComp.TEMPLATE = `<div class="ag-status-name-value">
+NameValueComp.TEMPLATE = `<div class="zing-status-name-value">
             <span ref="eLabel"></span>:&nbsp;
-            <span ref="eValue" class="ag-status-name-value-value"></span>
+            <span ref="eValue" class="zing-status-name-value-value"></span>
         </div>`;
 __decorate([
     RefSelector('eLabel')

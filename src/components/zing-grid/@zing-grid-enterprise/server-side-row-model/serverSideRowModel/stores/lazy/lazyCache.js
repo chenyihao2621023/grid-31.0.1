@@ -183,7 +183,7 @@ export class LazyCache extends BeanStub {
     }
     setRowCount(rowCount, isLastRowIndexKnown) {
         if (rowCount < 0) {
-            throw new Error('AG Grid: setRowCount can only accept a positive row count.');
+            throw new Error('ZING Grid: setRowCount can only accept a positive row count.');
         }
         this.numberOfRows = rowCount;
         if (isLastRowIndexKnown != null) {
@@ -595,7 +595,7 @@ export class LazyCache extends BeanStub {
             const duplicates = this.extractDuplicateIds(response.rowData);
             if (duplicates.length > 0) {
                 const duplicateIdText = duplicates.join(', ');
-                console.warn(`AG Grid: Unable to display rows as duplicate row ids (${duplicateIdText}) were returned by the getRowId callback. Please modify the getRowId callback to provide unique ids.`);
+                console.warn(`ZING Grid: Unable to display rows as duplicate row ids (${duplicateIdText}) were returned by the getRowId callback. Please modify the getRowId callback to provide unique ids.`);
                 this.onLoadFailed(firstRowIndex, numberOfRowsExpected);
                 return;
             }
@@ -736,7 +736,7 @@ export class LazyCache extends BeanStub {
     updateRowNodes(updates) {
         if (this.getRowIdFunc == null) {
             // throw error, as this is type checked in the store. User likely abusing internal apis if here.
-            throw new Error('AG Grid: Transactions can only be applied when row ids are supplied.');
+            throw new Error('ZING Grid: Transactions can only be applied when row ids are supplied.');
         }
         const updatedNodes = [];
         updates.forEach(data => {
@@ -760,7 +760,7 @@ export class LazyCache extends BeanStub {
         }
         if (this.getRowIdFunc == null) {
             // throw error, as this is type checked in the store. User likely abusing internal apis if here.
-            throw new Error('AG Grid: Transactions can only be applied when row ids are supplied.');
+            throw new Error('ZING Grid: Transactions can only be applied when row ids are supplied.');
         }
         const uniqueInsertsMap = {};
         inserts.forEach(data => {
@@ -802,7 +802,7 @@ export class LazyCache extends BeanStub {
     removeRowNodes(idsToRemove) {
         if (this.getRowIdFunc == null) {
             // throw error, as this is type checked in the store. User likely abusing internal apis if here.
-            throw new Error('AG Grid: Transactions can only be applied when row ids are supplied.');
+            throw new Error('ZING Grid: Transactions can only be applied when row ids are supplied.');
         }
         const removedNodes = [];
         const nodesToVerify = [];

@@ -118,7 +118,7 @@ export class FiltersToolPanelListPanel extends Component {
                 return filterComp;
             }
             const filterGroupComp = this.createBean(new ToolPanelFilterGroupComp(column, [filterComp], this.onGroupExpanded.bind(this), depth, true));
-            filterGroupComp.addCssClassToTitleBar('ag-filter-toolpanel-header');
+            filterGroupComp.addCssClassToTitleBar('zing-filter-toolpanel-header');
             if (!expansionState.get(filterGroupComp.getFilterGroupId())) {
                 // Default state on creation is expanded. Desired initial state is collapsed. Always collapse unless expanded before.
                 filterGroupComp.collapse();
@@ -131,9 +131,9 @@ export class FiltersToolPanelListPanel extends Component {
         const filterListName = translate('ariaFilterPanelList', 'Filter List');
         const localeFilters = translate('filters', 'Filters');
         const eGui = this.getGui();
-        const groupSelector = '.ag-filter-toolpanel-group-wrapper';
-        const itemSelector = '.ag-filter-toolpanel-group-item';
-        const hiddenSelector = '.ag-hidden';
+        const groupSelector = '.zing-filter-toolpanel-group-wrapper';
+        const itemSelector = '.zing-filter-toolpanel-group-item';
+        const hiddenSelector = '.zing-hidden';
         const visibleItems = eGui.querySelectorAll(`${itemSelector}:not(${groupSelector}, ${hiddenSelector})`);
         const totalVisibleItems = visibleItems.length;
         _.setAriaLabel(this.getAriaElement(), `${filterListName} ${totalVisibleItems} ${localeFilters}`);
@@ -153,7 +153,7 @@ export class FiltersToolPanelListPanel extends Component {
         }
         const filterGroupComp = new ToolPanelFilterGroupComp(columnGroup, childFilterComps, this.onGroupExpanded.bind(this), depth, false);
         this.createBean(filterGroupComp);
-        filterGroupComp.addCssClassToTitleBar('ag-filter-toolpanel-header');
+        filterGroupComp.addCssClassToTitleBar('zing-filter-toolpanel-header');
         const expansionStateValue = expansionState.get(filterGroupComp.getFilterGroupId());
         if ((this.isInitialState && !expansionStateValue) || expansionStateValue === false) {
             // Default state on creation is expanded. Desired initial state is expanded. Only collapse if collapsed before or using initial state.
@@ -232,7 +232,7 @@ export class FiltersToolPanelListPanel extends Component {
         if (groupIds) {
             const unrecognisedGroupIds = groupIds.filter(groupId => updatedGroupIds.indexOf(groupId) < 0);
             if (unrecognisedGroupIds.length > 0) {
-                console.warn('AG Grid: unable to find groups for these supplied groupIds:', unrecognisedGroupIds);
+                console.warn('ZING Grid: unable to find groups for these supplied groupIds:', unrecognisedGroupIds);
             }
         }
     }
@@ -270,7 +270,7 @@ export class FiltersToolPanelListPanel extends Component {
         if (colIds) {
             const unrecognisedColIds = colIds.filter(colId => updatedColIds.indexOf(colId) < 0);
             if (unrecognisedColIds.length > 0) {
-                console.warn('AG Grid: unable to find columns for these supplied colIds:', unrecognisedColIds);
+                console.warn('ZING Grid: unable to find columns for these supplied colIds:', unrecognisedColIds);
             }
         }
     }
@@ -351,12 +351,12 @@ export class FiltersToolPanelListPanel extends Component {
         this.filterGroupComps.forEach((filterGroup, idx) => {
             recursivelySearch(filterGroup, false);
             if (firstVisible === undefined) {
-                if (!filterGroup.containsCssClass('ag-hidden')) {
+                if (!filterGroup.containsCssClass('zing-hidden')) {
                     firstVisible = idx;
                     lastVisible = idx;
                 }
             }
-            else if (!filterGroup.containsCssClass('ag-hidden') && lastVisible !== idx) {
+            else if (!filterGroup.containsCssClass('zing-hidden') && lastVisible !== idx) {
                 lastVisible = idx;
             }
         });
@@ -365,13 +365,13 @@ export class FiltersToolPanelListPanel extends Component {
     }
     setFirstAndLastVisible(firstIdx, lastIdx) {
         this.filterGroupComps.forEach((filterGroup, idx) => {
-            filterGroup.removeCssClass('ag-first-group-visible');
-            filterGroup.removeCssClass('ag-last-group-visible');
+            filterGroup.removeCssClass('zing-first-group-visible');
+            filterGroup.removeCssClass('zing-last-group-visible');
             if (idx === firstIdx) {
-                filterGroup.addCssClass('ag-first-group-visible');
+                filterGroup.addCssClass('zing-first-group-visible');
             }
             if (idx === lastIdx) {
-                filterGroup.addCssClass('ag-last-group-visible');
+                filterGroup.addCssClass('zing-last-group-visible');
             }
         });
     }
@@ -407,7 +407,7 @@ export class FiltersToolPanelListPanel extends Component {
         super.destroy();
     }
 }
-FiltersToolPanelListPanel.TEMPLATE = `<div class="ag-filter-list-panel"></div>`;
+FiltersToolPanelListPanel.TEMPLATE = `<div class="zing-filter-list-panel"></div>`;
 __decorate([
     Autowired("gridApi")
 ], FiltersToolPanelListPanel.prototype, "gridApi", void 0);

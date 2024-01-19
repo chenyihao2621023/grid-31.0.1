@@ -36,7 +36,7 @@ export class GridChartComp extends Component {
             seriesChartTypes: this.params.seriesChartTypes,
         };
         const isRtl = this.gridOptionsService.get('enableRtl');
-        this.addCssClass(isRtl ? 'ag-rtl' : 'ag-ltr');
+        this.addCssClass(isRtl ? 'zing-rtl' : 'zing-ltr');
         // only the chart controller interacts with the chart model
         const model = this.createBean(new ChartDataModel(modelParams));
         this.chartController = this.createManagedBean(new ChartController(model));
@@ -98,12 +98,12 @@ export class GridChartComp extends Component {
         this.chartType = chartType;
         this.chartProxy = GridChartComp.createChartProxy(chartProxyParams);
         if (!this.chartProxy) {
-            console.warn('AG Grid: invalid chart type supplied: ', chartProxyParams.chartType);
+            console.warn('ZING Grid: invalid chart type supplied: ', chartProxyParams.chartType);
             return;
         }
         const canvas = this.eChart.querySelector('canvas');
         if (canvas) {
-            canvas.classList.add('ag-charts-canvas');
+            canvas.classList.add('zing-charts-canvas');
         }
         this.chartController.setChartProxy(this.chartProxy);
         this.chartOptionsService = this.createBean(new ChartOptionsService(this.chartController));
@@ -148,7 +148,7 @@ export class GridChartComp extends Component {
             case 'customCombo':
                 return new ComboChartProxy(chartProxyParams);
             default:
-                throw `AG Grid: Unable to create chart as an invalid chartType = '${chartProxyParams.chartType}' was supplied.`;
+                throw `ZING Grid: Unable to create chart as an invalid chartType = '${chartProxyParams.chartType}' was supplied.`;
         }
     }
     addDialog() {
@@ -307,7 +307,7 @@ export class GridChartComp extends Component {
         if (customChartThemes) {
             _.getAllKeysInObjects([customChartThemes]).forEach(customThemeName => {
                 if (!_.includes(suppliedThemes, customThemeName)) {
-                    console.warn("AG Grid: a custom chart theme with the name '" + customThemeName + "' has been " +
+                    console.warn("ZING Grid: a custom chart theme with the name '" + customThemeName + "' has been " +
                         "supplied but not added to the 'chartThemes' list");
                 }
             });
@@ -366,13 +366,13 @@ export class GridChartComp extends Component {
         this.raiseChartDestroyedEvent();
     }
 }
-GridChartComp.TEMPLATE = `<div class="ag-chart" tabindex="-1">
-            <div ref="eChartContainer" tabindex="-1" class="ag-chart-components-wrapper">
-                <div ref="eChart" class="ag-chart-canvas-wrapper"></div>
-                <div ref="eEmpty" class="ag-chart-empty-text ag-unselectable"></div>
+GridChartComp.TEMPLATE = `<div class="zing-chart" tabindex="-1">
+            <div ref="eChartContainer" tabindex="-1" class="zing-chart-components-wrapper">
+                <div ref="eChart" class="zing-chart-canvas-wrapper"></div>
+                <div ref="eEmpty" class="zing-chart-empty-text zing-unselectable"></div>
             </div>
             <div ref="eTitleEditContainer"></div>
-            <div ref="eMenuContainer" class="ag-chart-docked-container" style="min-width: 0px;"></div>
+            <div ref="eMenuContainer" class="zing-chart-docked-container" style="min-width: 0px;"></div>
         </div>`;
 __decorate([
     RefSelector('eChart')

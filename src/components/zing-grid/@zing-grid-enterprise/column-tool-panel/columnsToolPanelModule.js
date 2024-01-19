@@ -12,13 +12,13 @@ export const ColumnsToolPanelModule = {
     version: VERSION,
     moduleName: ModuleNames.ColumnsToolPanelModule,
     beans: [ModelItemUtils],
-    agStackComponents: [
-        { componentName: 'AgPrimaryColsHeader', componentClass: PrimaryColsHeaderPanel },
-        { componentName: 'AgPrimaryColsList', componentClass: PrimaryColsListPanel },
-        { componentName: 'AgPrimaryCols', componentClass: PrimaryColsPanel }
+    zingStackComponents: [
+        { componentName: 'ZingPrimaryColsHeader', componentClass: PrimaryColsHeaderPanel },
+        { componentName: 'ZingPrimaryColsList', componentClass: PrimaryColsListPanel },
+        { componentName: 'ZingPrimaryCols', componentClass: PrimaryColsPanel }
     ],
     userComponents: [
-        { componentName: 'agColumnsToolPanel', componentClass: ColumnToolPanel },
+        { componentName: 'zingColumnsToolPanel'', componentClass: ColumnToolPanel },
     ],
     dependantModules: [
         EnterpriseCoreModule,

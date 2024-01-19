@@ -19,13 +19,13 @@ export class SideBarButtonComp extends Component {
         this.setLabel();
         this.setIcon();
         this.addManagedListener(this.eToggleButton, 'click', this.onButtonPressed.bind(this));
-        this.eToggleButton.setAttribute('id', `ag-${this.getCompId()}-button`);
+        this.eToggleButton.setAttribute('id', `zing-${this.getCompId()}-button`);
     }
     createTemplate() {
-        const res = /* html */ `<div class="ag-side-button" role="presentation">
-                <button type="button" ref="eToggleButton" tabindex="-1" role="tab" aria-expanded="false" class="ag-button ag-side-button-button">
-                    <div ref="eIconWrapper" class="ag-side-button-icon-wrapper" aria-hidden="true"></div>
-                    <span ref ="eLabel" class="ag-side-button-label"></span>
+        const res = /* html */ `<div class="zing-side-button" role="presentation">
+                <button type="button" ref="eToggleButton" tabindex="-1" role="tab" aria-expanded="false" class="zing-button zing-side-button-button">
+                    <div ref="eIconWrapper" class="zing-side-button-icon-wrapper" aria-hidden="true"></div>
+                    <span ref ="eLabel" class="zing-side-button-label"></span>
                 </button>
             </div>`;
         return res;
@@ -43,7 +43,7 @@ export class SideBarButtonComp extends Component {
         this.dispatchEvent({ type: SideBarButtonComp.EVENT_TOGGLE_BUTTON_CLICKED });
     }
     setSelected(selected) {
-        this.addOrRemoveCssClass('ag-selected', selected);
+        this.addOrRemoveCssClass('zing-selected', selected);
         _.setAriaExpanded(this.eToggleButton, selected);
     }
     getButtonElement() {

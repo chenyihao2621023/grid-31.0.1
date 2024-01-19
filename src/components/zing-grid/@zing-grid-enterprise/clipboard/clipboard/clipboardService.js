@@ -17,7 +17,7 @@ var CellClearType;
     CellClearType[CellClearType["FocusedCell"] = 2] = "FocusedCell";
 })(CellClearType || (CellClearType = {}));
 ;
-const apiError = (method) => `AG Grid: Unable to use the Clipboard API (navigator.clipboard.${method}()). ` +
+const apiError = (method) => `ZING Grid: Unable to use the Clipboard API (navigator.clipboard.${method}()). ` +
     'The reason why it could not be used has been logged in the previous line. ' +
     'For this reason the grid has defaulted to using a workaround which doesn\'t perform as well. ' +
     'Either fix why Clipboard API is blocked, OR stop this message from appearing by setting grid ' +
@@ -758,7 +758,7 @@ let ClipboardService = ClipboardService_1 = class ClipboardService extends BeanS
             element.focus({ preventScroll: true });
             const result = eDocument.execCommand('copy');
             if (!result) {
-                console.warn('AG Grid: Browser did not allow document.execCommand(\'copy\'). Ensure ' +
+                console.warn('ZING Grid: Browser did not allow document.execCommand(\'copy\'). Ensure ' +
                     'api.copySelectedRowsToClipboard() is invoked via a user event, i.e. button click, otherwise ' +
                     'the browser will prevent it for security reasons.');
             }
@@ -785,7 +785,7 @@ let ClipboardService = ClipboardService_1 = class ClipboardService extends BeanS
             callbackNow(eTempInput);
         }
         catch (err) {
-            console.warn('AG Grid: Browser does not support document.execCommand(\'copy\') for clipboard operations');
+            console.warn('ZING Grid: Browser does not support document.execCommand(\'copy\') for clipboard operations');
         }
         //It needs 100 otherwise OS X seemed to not always be able to paste... Go figure...
         if (callbackAfter) {

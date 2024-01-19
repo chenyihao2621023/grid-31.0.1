@@ -198,7 +198,7 @@ export class EnterpriseMenu extends BeanStub {
         const tabs = this.getTabsToCreate().map(name => this.createTab(name));
         this.tabbedLayout = new TabbedLayout({
             items: tabs,
-            cssClass: 'ag-menu',
+            cssClass: 'zing-menu',
             onActiveItemClicked: this.onHidePopup.bind(this),
             onItemClicked: this.onTabItemClicked.bind(this)
         });
@@ -232,7 +232,7 @@ export class EnterpriseMenu extends BeanStub {
         }
         isValid = isValid && EnterpriseMenu.TABS_DEFAULT.indexOf(menuTabName) > -1;
         if (!isValid) {
-            console.warn(`AG Grid: Trying to render an invalid menu item '${menuTabName}'. Check that your 'menuTabs' contains one of [${itemsToConsider}]`);
+            console.warn(`ZING Grid: Trying to render an invalid menu item '${menuTabName}'. Check that your 'menuTabs' contains one of [${itemsToConsider}]`);
         }
         return isValid;
     }
@@ -390,7 +390,7 @@ export class EnterpriseMenu extends BeanStub {
     createFilterPanel() {
         const filterWrapper = this.filterManager.getOrCreateFilterWrapper(this.column, 'COLUMN_MENU');
         if (!filterWrapper) {
-            throw new Error('AG Grid - Unable to instantiate filter');
+            throw new Error('ZING Grid - Unable to instantiate filter');
         }
         const afterFilterAttachedCallback = (params) => {
             if (!(filterWrapper === null || filterWrapper === void 0 ? void 0 : filterWrapper.filterPromise)) {
@@ -420,7 +420,7 @@ export class EnterpriseMenu extends BeanStub {
     }
     createColumnsPanel() {
         const eWrapperDiv = document.createElement('div');
-        eWrapperDiv.classList.add('ag-menu-column-select-wrapper');
+        eWrapperDiv.classList.add('zing-menu-column-select-wrapper');
         const columnSelectPanel = this.createManagedBean(new PrimaryColsPanel());
         let columnsMenuParams = this.column.getColDef().columnsMenuParams;
         if (!columnsMenuParams) {
@@ -447,7 +447,7 @@ export class EnterpriseMenu extends BeanStub {
             columnSelectPanel.setColumnLayout(columnLayout);
         }
         const columnSelectPanelGui = columnSelectPanel.getGui();
-        columnSelectPanelGui.classList.add('ag-menu-column-select');
+        columnSelectPanelGui.classList.add('zing-menu-column-select');
         eWrapperDiv.appendChild(columnSelectPanelGui);
         this.tabItemColumns = {
             title: _.createIconNoSpan('columns', this.gridOptionsService, this.column), //createColumnsIcon(),

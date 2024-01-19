@@ -53,7 +53,7 @@ export function getSeries(chartType, moduleCtx) {
     if (seriesConstructor) {
         return new seriesConstructor(moduleCtx);
     }
-    throw new Error(`AG Charts - unknown series type: ${chartType}`);
+    throw new Error(`ZING Charts - unknown series type: ${chartType}`);
 }
 export function getSeriesDefaults(chartType) {
     return SERIES_DEFAULTS[chartType];
@@ -108,7 +108,7 @@ export function isDefaultAxisSwapNeeded(opts) {
         const isDefaultAxisSwapped = (_b = SWAP_DEFAULT_AXES_CONDITIONS[type]) === null || _b === void 0 ? void 0 : _b.call(SWAP_DEFAULT_AXES_CONDITIONS, series);
         if (isDefaultAxisSwapped != null) {
             if (result != null && result != isDefaultAxisSwapped) {
-                throw new Error('AG Charts - The provided series have incompatible directions');
+                throw new Error('ZING Charts - The provided series have incompatible directions');
             }
             result = isDefaultAxisSwapped;
         }

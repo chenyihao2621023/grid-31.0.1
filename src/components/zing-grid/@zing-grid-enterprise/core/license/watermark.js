@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Component, PostConstruct, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class WatermarkComp extends Component {
     constructor() {
-        super(/* html*/ `<div class="ag-watermark">
-                <div ref="eLicenseTextRef" class="ag-watermark-text"></div>
+        super(/* html*/ `<div class="zing-watermark">
+                <div ref="eLicenseTextRef" class="zing-watermark-text"></div>
             </div>`);
     }
     postConstruct() {
@@ -16,7 +16,7 @@ export class WatermarkComp extends Component {
         this.setDisplayed(show);
         if (show) {
             this.eLicenseTextRef.innerText = this.licenseManager.getWatermarkMessage();
-            window.setTimeout(() => this.addCssClass('ag-opacity-zero'), 0);
+            window.setTimeout(() => this.addCssClass('zing-opacity-zero'), 0);
             window.setTimeout(() => this.setDisplayed(false), 5000);
         }
     }

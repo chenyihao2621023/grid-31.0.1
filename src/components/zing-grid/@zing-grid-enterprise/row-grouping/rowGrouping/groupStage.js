@@ -399,7 +399,7 @@ let GroupStage = class GroupStage extends BeanStub {
         const path = this.getGroupInfo(childNode, details);
         const parentGroup = this.findParentForNode(childNode, path, details, batchRemover);
         if (!parentGroup.group) {
-            console.warn(`AG Grid: duplicate group keys for row data, keys should be unique`, [parentGroup.data, childNode.data]);
+            console.warn(`ZING Grid: duplicate group keys for row data, keys should be unique`, [parentGroup.data, childNode.data]);
         }
         if (details.usingTreeData) {
             this.swapGroupWithUserNode(parentGroup, childNode, isMove);

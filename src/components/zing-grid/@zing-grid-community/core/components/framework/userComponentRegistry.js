@@ -40,56 +40,56 @@ import { CheckboxCellEditor } from "../../rendering/cellEditors/checkboxCellEdit
 let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
     constructor() {
         super(...arguments);
-        this.agGridDefaults = {
+        this.zingGridDefaults = {
             //date
-            agDateInput: DefaultDateComponent,
+            zingDateInput: DefaultDateComponent,
             //header
-            agColumnHeader: HeaderComp,
-            agColumnGroupHeader: HeaderGroupComp,
-            agSortIndicator: SortIndicatorComp,
+            zingColumnHeader: HeaderComp,
+            zingColumnGroupHeader: HeaderGroupComp,
+            zingSortIndicator: SortIndicatorComp,
             //floating filters
-            agTextColumnFloatingFilter: TextFloatingFilter,
-            agNumberColumnFloatingFilter: NumberFloatingFilter,
-            agDateColumnFloatingFilter: DateFloatingFilter,
-            agReadOnlyFloatingFilter: ReadOnlyFloatingFilter,
+            zingTextColumnFloatingFilter: TextFloatingFilter,
+            zingNumberColumnFloatingFilter: NumberFloatingFilter,
+            zingDateColumnFloatingFilter: DateFloatingFilter,
+            zingReadOnlyFloatingFilter: ReadOnlyFloatingFilter,
             // renderers
-            agAnimateShowChangeCellRenderer: AnimateShowChangeCellRenderer,
-            agAnimateSlideCellRenderer: AnimateSlideCellRenderer,
-            agGroupCellRenderer: GroupCellRenderer,
-            agGroupRowRenderer: GroupCellRenderer,
-            agLoadingCellRenderer: LoadingCellRenderer,
-            agCheckboxCellRenderer: CheckboxCellRenderer,
+            zingAnimateShowChangeCellRenderer: AnimateShowChangeCellRenderer,
+            zingAnimateSlideCellRenderer: AnimateSlideCellRenderer,
+            zingGroupCellRenderer: GroupCellRenderer,
+            zingGroupRowRenderer: GroupCellRenderer,
+            zingLoadingCellRenderer: LoadingCellRenderer,
+            zingCheckboxCellRenderer: CheckboxCellRenderer,
             //editors
-            agCellEditor: TextCellEditor,
-            agTextCellEditor: TextCellEditor,
-            agNumberCellEditor: NumberCellEditor,
-            agDateCellEditor: DateCellEditor,
-            agDateStringCellEditor: DateStringCellEditor,
-            agSelectCellEditor: SelectCellEditor,
-            agLargeTextCellEditor: LargeTextCellEditor,
-            agCheckboxCellEditor: CheckboxCellEditor,
+            zingCellEditor: TextCellEditor,
+            zingTextCellEditor: TextCellEditor,
+            zingNumberCellEditor: NumberCellEditor,
+            zingDateCellEditor: DateCellEditor,
+            zingDateStringCellEditor: DateStringCellEditor,
+            zingSelectCellEditor: SelectCellEditor,
+            zingLargeTextCellEditor: LargeTextCellEditor,
+            zingCheckboxCellEditor: CheckboxCellEditor,
             //filter
-            agTextColumnFilter: TextFilter,
-            agNumberColumnFilter: NumberFilter,
-            agDateColumnFilter: DateFilter,
+            zingTextColumnFilter: TextFilter,
+            zingNumberColumnFilter: NumberFilter,
+            zingDateColumnFilter: DateFilter,
             //overlays
-            agLoadingOverlay: LoadingOverlayComponent,
-            agNoRowsOverlay: NoRowsOverlayComponent,
+            zingLoadingOverlay: LoadingOverlayComponent,
+            zingNoRowsOverlay: NoRowsOverlayComponent,
             // tooltips
-            agTooltipComponent: TooltipComponent
+            zingTooltipComponent: TooltipComponent
         };
         /** Used to provide useful error messages if a user is trying to use an enterprise component without loading the module. */
-        this.enterpriseAgDefaultCompsModule = {
-            agSetColumnFilter: ModuleNames.SetFilterModule,
-            agSetColumnFloatingFilter: ModuleNames.SetFilterModule,
-            agMultiColumnFilter: ModuleNames.MultiFilterModule,
-            agMultiColumnFloatingFilter: ModuleNames.MultiFilterModule,
-            agGroupColumnFilter: ModuleNames.RowGroupingModule,
-            agGroupColumnFloatingFilter: ModuleNames.RowGroupingModule,
-            agRichSelect: ModuleNames.RichSelectModule,
-            agRichSelectCellEditor: ModuleNames.RichSelectModule,
-            agDetailCellRenderer: ModuleNames.MasterDetailModule,
-            agSparklineCellRenderer: ModuleNames.SparklinesModule
+        this.enterpriseZingDefaultCompsModule = {
+            zingSetColumnFilter: ModuleNames.SetFilterModule,
+            zingSetColumnFloatingFilter: ModuleNames.SetFilterModule,
+            zingMultiColumnFilter: ModuleNames.MultiFilterModule,
+            zingMultiColumnFloatingFilter: ModuleNames.MultiFilterModule,
+            zingGroupColumnFilter: ModuleNames.RowGroupingModule,
+            zingGroupColumnFloatingFilter: ModuleNames.RowGroupingModule,
+            zingRichSelect: ModuleNames.RichSelectModule,
+            zingRichSelectCellEditor: ModuleNames.RichSelectModule,
+            zingDetailCellRenderer: ModuleNames.MasterDetailModule,
+            zingSparklineCellRenderer: ModuleNames.SparklinesModule
         };
         this.jsComps = {};
     }
@@ -99,11 +99,11 @@ let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
         }
     }
     registerDefaultComponent(name, component) {
-        if (this.agGridDefaults[name]) {
+        if (this.zingGridDefaults[name]) {
             console.error(`Trying to overwrite a default component. You should call registerComponent`);
             return;
         }
-        this.agGridDefaults[name] = component;
+        this.zingGridDefaults[name] = component;
     }
     registerJsComponent(name, component) {
         this.jsComps[name] = component;
@@ -122,13 +122,13 @@ let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
             const isFwkComp = this.getFrameworkOverrides().isFrameworkComponent(jsComponent);
             return createResult(jsComponent, isFwkComp);
         }
-        const defaultComponent = this.agGridDefaults[name];
+        const defaultComponent = this.zingGridDefaults[name];
         if (defaultComponent) {
             return createResult(defaultComponent, false);
         }
-        const moduleForComponent = this.enterpriseAgDefaultCompsModule[name];
+        const moduleForComponent = this.enterpriseZingDefaultCompsModule[name];
         if (moduleForComponent) {
-            ModuleRegistry.__assertRegistered(moduleForComponent, `AG Grid '${propertyName}' component: ${name}`, this.context.getGridId());
+            ModuleRegistry.__assertRegistered(moduleForComponent, `ZING Grid '${propertyName}' component: ${name}`, this.context.getGridId());
         }
         else {
             doOnce(() => { this.warnAboutMissingComponent(propertyName, name); }, "MissingComp" + name);
@@ -138,11 +138,11 @@ let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
     warnAboutMissingComponent(propertyName, componentName) {
         const validComponents = [
             // Don't include the old names / internals in potential suggestions
-            ...Object.keys(this.agGridDefaults).filter(k => !['agCellEditor', 'agGroupRowRenderer', 'agSortIndicator'].includes(k)),
+            ...Object.keys(this.zingGridDefaults).filter(k => !['zingCellEditor'', 'zingGroupRowRenderer'', 'zingSortIndicator''].includes(k)),
             ...Object.keys(this.jsComps)
         ];
         const suggestions = fuzzySuggestions(componentName, validComponents, true, 0.8).values;
-        console.warn(`AG Grid: Could not find '${componentName}' component. It was configured as "${propertyName}: '${componentName}'" but it wasn't found in the list of registered components.`);
+        console.warn(`ZING Grid: Could not find '${componentName}' component. It was configured as "${propertyName}: '${componentName}'" but it wasn't found in the list of registered components.`);
         if (suggestions.length > 0) {
             console.warn(`         Did you mean: [${suggestions.slice(0, 3)}]?`);
         }

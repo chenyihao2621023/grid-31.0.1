@@ -44,7 +44,7 @@ export class InfiniteBlock extends RowNodeBlock {
     loadFromDatasource() {
         const params = this.createLoadParams();
         if (_.missing(this.params.datasource.getRows)) {
-            console.warn(`AG Grid: datasource is missing getRows method`);
+            console.warn(`ZING Grid: datasource is missing getRows method`);
             return;
         }
         // put in timeout, to force result to be async

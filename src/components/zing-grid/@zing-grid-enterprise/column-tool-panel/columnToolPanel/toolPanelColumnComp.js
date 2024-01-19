@@ -20,7 +20,7 @@ export class ToolPanelColumnComp extends Component {
     init() {
         this.setTemplate(ToolPanelColumnComp.TEMPLATE);
         this.eDragHandle = _.createIconNoSpan('columnDrag', this.gridOptionsService);
-        this.eDragHandle.classList.add('ag-drag-handle', 'ag-column-select-column-drag-handle');
+        this.eDragHandle.classList.add('zing-drag-handle', 'zing-column-select-column-drag-handle');
         const checkboxGui = this.cbSelect.getGui();
         const checkboxInput = this.cbSelect.getInputElement();
         checkboxGui.insertAdjacentElement('afterend', this.eDragHandle);
@@ -30,9 +30,9 @@ export class ToolPanelColumnComp extends Component {
         // if grouping, we add an extra level of indent, to cater for expand/contract icons we need to indent for
         const indent = this.columnDept;
         if (this.groupsExist) {
-            this.addCssClass('ag-column-select-add-group-indent');
+            this.addCssClass('zing-column-select-add-group-indent');
         }
-        this.addCssClass(`ag-column-select-indent-${indent}`);
+        this.addCssClass(`zing-column-select-indent-${indent}`);
         this.setupDragging();
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_PIVOT_MODE_CHANGED, this.onColumnStateChanged.bind(this));
         this.addManagedListener(this.column, Column.EVENT_VALUE_CHANGED, this.onColumnStateChanged.bind(this));
@@ -208,8 +208,8 @@ export class ToolPanelColumnComp extends Component {
             canBeDragged = forceDraggable || !disableDraggable;
         }
         this.cbSelect.setReadOnly(!canBeToggled);
-        this.eDragHandle.classList.toggle('ag-column-select-column-readonly', !canBeDragged);
-        this.addOrRemoveCssClass('ag-column-select-column-readonly', !canBeDragged && !canBeToggled);
+        this.eDragHandle.classList.toggle('zing-column-select-column-readonly', !canBeDragged);
+        this.addOrRemoveCssClass('zing-column-select-column-readonly', !canBeDragged && !canBeToggled);
         const checkboxPassive = isPivotMode && this.gridOptionsService.get('functionsPassive');
         this.cbSelect.setPassive(checkboxPassive);
         this.processingColumnStateChange = false;
@@ -234,12 +234,12 @@ export class ToolPanelColumnComp extends Component {
         return false;
     }
     setExpanded(value) {
-        console.warn('AG Grid: can not expand a column item that does not represent a column group header');
+        console.warn('ZING Grid: can not expand a column item that does not represent a column group header');
     }
 }
-ToolPanelColumnComp.TEMPLATE = `<div class="ag-column-select-column" aria-hidden="true">
-            <ag-checkbox ref="cbSelect" class="ag-column-select-checkbox"></ag-checkbox>
-            <span class="ag-column-select-column-label" ref="eLabel"></span>
+ToolPanelColumnComp.TEMPLATE = `<div class="zing-column-select-column" aria-hidden="true">
+            <zing-checkbox ref="cbSelect" class="zing-column-select-checkbox"></zing-checkbox>
+            <span class="zing-column-select-column-label" ref="eLabel"></span>
         </div>`;
 __decorate([
     Autowired('columnModel')

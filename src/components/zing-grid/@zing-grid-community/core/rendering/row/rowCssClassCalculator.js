@@ -13,51 +13,51 @@ let RowCssClassCalculator = class RowCssClassCalculator {
         if (exists(params.extraCssClass)) {
             classes.push(params.extraCssClass);
         }
-        classes.push('ag-row');
-        classes.push(params.rowFocused ? 'ag-row-focus' : 'ag-row-no-focus');
+        classes.push('zing-row');
+        classes.push(params.rowFocused ? 'zing-row-focus' : 'zing-row-no-focus');
         if (params.fadeRowIn) {
-            classes.push('ag-opacity-zero');
+            classes.push('zing-opacity-zero');
         }
-        classes.push(params.rowIsEven ? 'ag-row-even' : 'ag-row-odd');
+        classes.push(params.rowIsEven ? 'zing-row-even' : 'zing-row-odd');
         if (params.rowNode.isRowPinned()) {
-            classes.push('ag-row-pinned');
+            classes.push('zing-row-pinned');
         }
         if (params.rowNode.isSelected()) {
-            classes.push('ag-row-selected');
+            classes.push('zing-row-selected');
         }
         if (params.rowNode.footer) {
-            classes.push('ag-row-footer');
+            classes.push('zing-row-footer');
         }
-        classes.push('ag-row-level-' + params.rowLevel);
+        classes.push('zing-row-level-' + params.rowLevel);
         if (params.rowNode.stub) {
-            classes.push('ag-row-loading');
+            classes.push('zing-row-loading');
         }
         if (params.fullWidthRow) {
-            classes.push('ag-full-width-row');
+            classes.push('zing-full-width-row');
         }
         if (params.expandable) {
-            classes.push('ag-row-group');
-            classes.push(params.rowNode.expanded ? 'ag-row-group-expanded' : 'ag-row-group-contracted');
+            classes.push('zing-row-group');
+            classes.push(params.rowNode.expanded ? 'zing-row-group-expanded' : 'zing-row-group-contracted');
         }
         if (params.rowNode.dragging) {
-            classes.push('ag-row-dragging');
+            classes.push('zing-row-dragging');
         }
         pushAll(classes, this.processClassesFromGridOptions(params.rowNode));
         pushAll(classes, this.preProcessRowClassRules(params.rowNode));
         // we use absolute position unless we are doing print layout
-        classes.push(params.printLayout ? 'ag-row-position-relative' : 'ag-row-position-absolute');
+        classes.push(params.printLayout ? 'zing-row-position-relative' : 'zing-row-position-absolute');
         if (params.firstRowOnPage) {
-            classes.push('ag-row-first');
+            classes.push('zing-row-first');
         }
         if (params.lastRowOnPage) {
-            classes.push('ag-row-last');
+            classes.push('zing-row-last');
         }
         if (params.fullWidthRow) {
             if (params.pinned === 'left') {
-                classes.push('ag-cell-last-left-pinned');
+                classes.push('zing-cell-last-left-pinned');
             }
             if (params.pinned === 'right') {
-                classes.push('ag-cell-first-right-pinned');
+                classes.push('zing-cell-first-right-pinned');
             }
         }
         return classes;
@@ -76,7 +76,7 @@ let RowCssClassCalculator = class RowCssClassCalculator {
         const rowClass = this.gridOptionsService.get('rowClass');
         if (rowClass) {
             if (typeof rowClass === 'function') {
-                console.warn('AG Grid: rowClass should not be a function, please use getRowClass instead');
+                console.warn('ZING Grid: rowClass should not be a function, please use getRowClass instead');
                 return [];
             }
             process(rowClass);

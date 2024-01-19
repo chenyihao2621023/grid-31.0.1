@@ -112,12 +112,12 @@ export class SortIndicatorComp extends Component {
         }
     }
 }
-SortIndicatorComp.TEMPLATE = `<span class="ag-sort-indicator-container">
-            <span ref="eSortOrder" class="ag-sort-indicator-icon ag-sort-order ag-hidden" aria-hidden="true"></span>
-            <span ref="eSortAsc" class="ag-sort-indicator-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"></span>
-            <span ref="eSortDesc" class="ag-sort-indicator-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"></span>
-            <span ref="eSortMixed" class="ag-sort-indicator-icon ag-sort-mixed-icon ag-hidden" aria-hidden="true"></span>
-            <span ref="eSortNone" class="ag-sort-indicator-icon ag-sort-none-icon ag-hidden" aria-hidden="true"></span>
+SortIndicatorComp.TEMPLATE = `<span class="zing-sort-indicator-container">
+            <span ref="eSortOrder" class="zing-sort-indicator-icon zing-sort-order zing-hidden" aria-hidden="true"></span>
+            <span ref="eSortAsc" class="zing-sort-indicator-icon zing-sort-ascending-icon zing-hidden" aria-hidden="true"></span>
+            <span ref="eSortDesc" class="zing-sort-indicator-icon zing-sort-descending-icon zing-hidden" aria-hidden="true"></span>
+            <span ref="eSortMixed" class="zing-sort-indicator-icon zing-sort-mixed-icon zing-hidden" aria-hidden="true"></span>
+            <span ref="eSortNone" class="zing-sort-indicator-icon zing-sort-none-icon zing-hidden" aria-hidden="true"></span>
         </span>`;
 __decorate([
     RefSelector('eSortOrder')

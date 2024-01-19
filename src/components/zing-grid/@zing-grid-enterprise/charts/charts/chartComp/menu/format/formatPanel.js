@@ -83,7 +83,7 @@ export class FormatPanel extends Component {
                 this.addComponent(new NavigatorPanel(opts));
             }
             else {
-                console.warn(`AG Grid: invalid charts format panel group name supplied: '${groupDef.type}'`);
+                console.warn(`ZING Grid: invalid charts format panel group name supplied: '${groupDef.type}'`);
             }
         });
         this.chartType = chartType;
@@ -97,7 +97,7 @@ export class FormatPanel extends Component {
     addComponent(component) {
         this.createBean(component);
         this.panels.push(component);
-        component.addCssClass('ag-chart-format-section');
+        component.addCssClass('zing-chart-format-section');
         this.getGui().appendChild(component.getGui());
     }
     destroyPanels() {
@@ -111,7 +111,7 @@ export class FormatPanel extends Component {
         super.destroy();
     }
 }
-FormatPanel.TEMPLATE = `<div class="ag-chart-format-wrapper"></div>`;
+FormatPanel.TEMPLATE = `<div class="zing-chart-format-wrapper"></div>`;
 __decorate([
     PostConstruct
 ], FormatPanel.prototype, "init", null);

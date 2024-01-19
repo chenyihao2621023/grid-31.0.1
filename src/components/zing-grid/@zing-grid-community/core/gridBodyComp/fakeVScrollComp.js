@@ -24,7 +24,7 @@ export class FakeVScrollComp extends AbstractFakeScrollComp {
         const invisibleScrollbar = this.invisibleScrollbar;
         const scrollbarWidth = vScrollShowing ? (this.gridOptionsService.getScrollbarWidth() || 0) : 0;
         const adjustedScrollbarWidth = (scrollbarWidth === 0 && invisibleScrollbar) ? 16 : scrollbarWidth;
-        this.addOrRemoveCssClass('ag-scrollbar-invisible', invisibleScrollbar);
+        this.addOrRemoveCssClass('zing-scrollbar-invisible', invisibleScrollbar);
         setFixedWidth(this.getGui(), adjustedScrollbarWidth);
         setFixedWidth(this.eViewport, adjustedScrollbarWidth);
         setFixedWidth(this.eContainer, adjustedScrollbarWidth);
@@ -47,9 +47,9 @@ export class FakeVScrollComp extends AbstractFakeScrollComp {
         this.getViewport().scrollTop = value;
     }
 }
-FakeVScrollComp.TEMPLATE = `<div class="ag-body-vertical-scroll" aria-hidden="true">
-            <div class="ag-body-vertical-scroll-viewport" ref="eViewport">
-                <div class="ag-body-vertical-scroll-container" ref="eContainer"></div>
+FakeVScrollComp.TEMPLATE = `<div class="zing-body-vertical-scroll" aria-hidden="true">
+            <div class="zing-body-vertical-scroll-viewport" ref="eViewport">
+                <div class="zing-body-vertical-scroll-container" ref="eContainer"></div>
             </div>
         </div>`;
 __decorate([

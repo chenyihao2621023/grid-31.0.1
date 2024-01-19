@@ -9,7 +9,7 @@ import { Autowired } from "../context/context";
 import { Events } from "../eventKeys";
 import { setAriaActiveDescendant, setAriaControls, setAriaLabel } from "../utils/aria";
 import { bindCellRendererToHtmlElement, clearElement, isVisible } from "../utils/dom";
-import { stopPropagationForAgGrid } from "../utils/event";
+import { stopPropagationForZingGrid } from "../utils/event";
 import { debounce } from "../utils/function";
 import { fuzzySuggestions } from "../utils/fuzzyMatch";
 import { exists } from "../utils/generic";
@@ -20,20 +20,20 @@ import { RichSelectRow } from "./zingRichSelectRow";
 import { RefSelector } from "./componentAnnotations";
 import { VirtualList } from "./virtualList";
 const TEMPLATE = /* html */ `
-    <div class="ag-picker-field" role="presentation">
+    <div class="zing-picker-field" role="presentation">
         <div ref="eLabel"></div>
-            <div ref="eWrapper" class="ag-wrapper ag-picker-field-wrapper ag-rich-select-value ag-picker-collapsed">
-            <div ref="eDisplayField" class="ag-picker-field-display"></div>
-            <ag-input-text-field ref="eInput" class="ag-rich-select-field-input"></ag-input-text-field>
-            <div ref="eIcon" class="ag-picker-field-icon" aria-hidden="true"></div>
+            <div ref="eWrapper" class="zing-wrapper zing-picker-field-wrapper zing-rich-select-value zing-picker-collapsed">
+            <div ref="eDisplayField" class="zing-picker-field-display"></div>
+            <zing-input-text-field ref="eInput" class="zing-rich-select-field-input"></zing-input-text-field>
+            <div ref="eIcon" class="zing-picker-field-icon" aria-hidden="true"></div>
         </div>
     </div>`;
 export class ZingRichSelect extends ZingPickerField {
     constructor(config) {
         var _a, _b;
-        super(Object.assign(Object.assign({ pickerAriaLabelKey: 'ariaLabelRichSelectField', pickerAriaLabelValue: 'Rich Select Field', pickerType: 'ag-list', className: 'ag-rich-select', pickerIcon: 'smallDown', ariaRole: 'combobox', template: (_a = config === null || config === void 0 ? void 0 : config.template) !== null && _a !== void 0 ? _a : TEMPLATE, modalPicker: false }, config), { 
+        super(Object.assign(Object.assign({ pickerAriaLabelKey: 'ariaLabelRichSelectField', pickerAriaLabelValue: 'Rich Select Field', pickerType: 'zing-list', className: 'zing-rich-select', pickerIcon: 'smallDown', ariaRole: 'combobox', template: (_a = config === null || config === void 0 ? void 0 : config.template) !== null && _a !== void 0 ? _a : TEMPLATE, modalPicker: false }, config), { 
             // maxPickerHeight needs to be set after expanding `config`
-            maxPickerHeight: (_b = config === null || config === void 0 ? void 0 : config.maxPickerHeight) !== null && _b !== void 0 ? _b : 'calc(var(--ag-row-height) * 6.5)' }));
+            maxPickerHeight: (_b = config === null || config === void 0 ? void 0 : config.maxPickerHeight) !== null && _b !== void 0 ? _b : 'calc(var(--zing-row-height) * 6.5)' }));
         this.searchString = '';
         this.highlightedItem = -1;
         this.lastRowHovered = -1;
@@ -61,7 +61,7 @@ export class ZingRichSelect extends ZingPickerField {
             this.eInput
                 .setAutoComplete(false)
                 .setInputPlaceholder(placeholder);
-            this.eDisplayField.classList.add('ag-hidden');
+            this.eDisplayField.classList.add('zing-hidden');
         }
         else {
             this.eInput.setDisplayed(false);
@@ -80,7 +80,7 @@ export class ZingRichSelect extends ZingPickerField {
         const eDocument = this.gridOptionsService.getDocument();
         const translate = this.localeService.getLocaleTextFunc();
         const el = eDocument.createElement('div');
-        el.classList.add('ag-loading-text');
+        el.classList.add('zing-loading-text');
         el.innerText = translate('loadingOoo', 'Loading...');
         this.eLoading = el;
     }
@@ -99,8 +99,8 @@ export class ZingRichSelect extends ZingPickerField {
         const eListAriaEl = this.listComponent.getAriaElement();
         this.addManagedListener(eListGui, 'mousemove', this.onPickerMouseMove.bind(this));
         this.addManagedListener(eListGui, 'mousedown', e => e.preventDefault());
-        eListGui.classList.add('ag-rich-select-list');
-        const listId = `ag-rich-select-list-${this.listComponent.getCompId()}`;
+        eListGui.classList.add('zing-rich-select-list');
+        const listId = `zing-rich-select-list-${this.listComponent.getCompId()}`;
         eListAriaEl.setAttribute('id', listId);
         const translate = this.localeService.getLocaleTextFunc();
         const ariaLabel = translate(this.config.pickerAriaLabelKey, this.config.pickerAriaLabelValue);
@@ -125,7 +125,7 @@ export class ZingRichSelect extends ZingPickerField {
         }
         let userCompDetailsPromise;
         if (userCompDetails) {
-            userCompDetailsPromise = userCompDetails.newAgStackInstance();
+            userCompDetailsPromise = userCompDetails.newZingStackInstance();
         }
         if (userCompDetailsPromise) {
             clearElement(eDisplayField);
@@ -137,13 +137,13 @@ export class ZingRichSelect extends ZingPickerField {
         else {
             if (exists(this.value)) {
                 eDisplayField.innerText = valueFormatted;
-                eDisplayField.classList.remove('ag-display-as-placeholder');
+                eDisplayField.classList.remove('zing-display-as-placeholder');
             }
             else {
                 const { placeholder } = config;
                 if (exists(placeholder)) {
                     eDisplayField.innerHTML = `${escapeString(placeholder)}`;
-                    eDisplayField.classList.add('ag-display-as-placeholder');
+                    eDisplayField.classList.add('zing-display-as-placeholder');
                 }
                 else {
                     clearElement(eDisplayField);
@@ -388,7 +388,7 @@ export class ZingRichSelect extends ZingPickerField {
         var _a;
         const eListGui = (_a = this.listComponent) === null || _a === void 0 ? void 0 : _a.getGui();
         const toggleValue = this.currentList ? this.currentList.length === 0 : false;
-        eListGui === null || eListGui === void 0 ? void 0 : eListGui.classList.toggle('ag-hidden', toggleValue);
+        eListGui === null || eListGui === void 0 ? void 0 : eListGui.classList.toggle('zing-hidden', toggleValue);
     }
     clearSearchString() {
         this.searchString = '';
@@ -519,7 +519,7 @@ export class ZingRichSelect extends ZingPickerField {
                 if (this.isPickerDisplayed) {
                     if (isVisible(this.listComponent.getGui())) {
                         event.preventDefault();
-                        stopPropagationForAgGrid(event);
+                        stopPropagationForZingGrid(event);
                     }
                     this.hidePicker();
                 }

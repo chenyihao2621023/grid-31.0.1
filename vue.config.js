@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path');
 module.exports = defineConfig({
-  transpileDependencies: ['src/components/zing-grid/ag-grid-community.auto.complete.esm.js'],
+  transpileDependencies: true,
   lintOnSave: false,
   configureWebpack: {
     resolve: {

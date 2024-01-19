@@ -52,12 +52,12 @@ export class ComboChartModel extends BeanStub {
     updateSeriesChartTypesForCustomCombo() {
         const seriesChartTypesSupplied = this.seriesChartTypes && this.seriesChartTypes.length > 0;
         if (!seriesChartTypesSupplied && !this.suppressComboChartWarnings) {
-            console.warn(`AG Grid: 'seriesChartTypes' are required when the 'customCombo' chart type is specified.`);
+            console.warn(`ZING Grid: 'seriesChartTypes' are required when the 'customCombo' chart type is specified.`);
         }
         // ensure correct chartTypes are supplied
         this.seriesChartTypes = this.seriesChartTypes.map(s => {
             if (!ComboChartModel.SUPPORTED_COMBO_CHART_TYPES.includes(s.chartType)) {
-                console.warn(`AG Grid: invalid chartType '${s.chartType}' supplied in 'seriesChartTypes', converting to 'line' instead.`);
+                console.warn(`ZING Grid: invalid chartType '${s.chartType}' supplied in 'seriesChartTypes', converting to 'line' instead.`);
                 s.chartType = 'line';
             }
             return s;
@@ -69,7 +69,7 @@ export class ComboChartModel extends BeanStub {
             const providedSeriesChartType = this.savedCustomSeriesChartTypes.find(s => s.colId === valueCol.colId);
             if (!providedSeriesChartType) {
                 if (valueCol.selected && !this.suppressComboChartWarnings) {
-                    console.warn(`AG Grid: no 'seriesChartType' found for colId = '${valueCol.colId}', defaulting to 'line'.`);
+                    console.warn(`ZING Grid: no 'seriesChartType' found for colId = '${valueCol.colId}', defaulting to 'line'.`);
                 }
                 return {
                     colId: valueCol.colId,

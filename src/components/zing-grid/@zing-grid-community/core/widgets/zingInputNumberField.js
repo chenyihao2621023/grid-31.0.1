@@ -3,7 +3,7 @@ import { addOrRemoveAttribute } from '../utils/dom';
 import { exists } from "../utils/generic";
 export class ZingInputNumberField extends ZingInputTextField {
     constructor(config) {
-        super(config, 'ag-number-field', 'number');
+        super(config, 'zing-number-field', 'number');
     }
     postConstruct() {
         super.postConstruct();

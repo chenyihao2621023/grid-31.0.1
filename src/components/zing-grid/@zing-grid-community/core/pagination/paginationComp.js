@@ -105,26 +105,26 @@ export class PaginationComp extends Component {
         const strNext = localeTextFunc('nextPage', 'Next Page');
         const strLast = localeTextFunc('lastPage', 'Last Page');
         const compId = this.getCompId();
-        return /* html */ `<div class="ag-paging-panel ag-unselectable" id="ag-${compId}">
-                <ag-page-size-selector ref="pageSizeComp"></ag-page-size-selector>
-                <span class="ag-paging-row-summary-panel" role="status">
-                    <span id="ag-${compId}-first-row" ref="lbFirstRowOnPage" class="ag-paging-row-summary-panel-number"></span>
-                    <span id="ag-${compId}-to">${strTo}</span>
-                    <span id="ag-${compId}-last-row" ref="lbLastRowOnPage" class="ag-paging-row-summary-panel-number"></span>
-                    <span id="ag-${compId}-of">${strOf}</span>
-                    <span id="ag-${compId}-row-count" ref="lbRecordCount" class="ag-paging-row-summary-panel-number"></span>
+        return /* html */ `<div class="zing-paging-panel zing-unselectable" id="zing-${compId}">
+                <zing-page-size-selector ref="pageSizeComp"></zing-page-size-selector>
+                <span class="zing-paging-row-summary-panel" role="status">
+                    <span id="zing-${compId}-first-row" ref="lbFirstRowOnPage" class="zing-paging-row-summary-panel-number"></span>
+                    <span id="zing-${compId}-to">${strTo}</span>
+                    <span id="zing-${compId}-last-row" ref="lbLastRowOnPage" class="zing-paging-row-summary-panel-number"></span>
+                    <span id="zing-${compId}-of">${strOf}</span>
+                    <span id="zing-${compId}-row-count" ref="lbRecordCount" class="zing-paging-row-summary-panel-number"></span>
                 </span>
-                <span class="ag-paging-page-summary-panel" role="presentation">
-                    <div ref="btFirst" class="ag-button ag-paging-button" role="button" aria-label="${strFirst}"></div>
-                    <div ref="btPrevious" class="ag-button ag-paging-button" role="button" aria-label="${strPrevious}"></div>
-                    <span class="ag-paging-description" role="status">
-                        <span id="ag-${compId}-start-page">${strPage}</span>
-                        <span id="ag-${compId}-start-page-number" ref="lbCurrent" class="ag-paging-number"></span>
-                        <span id="ag-${compId}-of-page">${strOf}</span>
-                        <span id="ag-${compId}-of-page-number" ref="lbTotal" class="ag-paging-number"></span>
+                <span class="zing-paging-page-summary-panel" role="presentation">
+                    <div ref="btFirst" class="zing-button zing-paging-button" role="button" aria-label="${strFirst}"></div>
+                    <div ref="btPrevious" class="zing-button zing-paging-button" role="button" aria-label="${strPrevious}"></div>
+                    <span class="zing-paging-description" role="status">
+                        <span id="zing-${compId}-start-page">${strPage}</span>
+                        <span id="zing-${compId}-start-page-number" ref="lbCurrent" class="zing-paging-number"></span>
+                        <span id="zing-${compId}-of-page">${strOf}</span>
+                        <span id="zing-${compId}-of-page-number" ref="lbTotal" class="zing-paging-number"></span>
                     </span>
-                    <div ref="btNext" class="ag-button ag-paging-button" role="button" aria-label="${strNext}"></div>
-                    <div ref="btLast" class="ag-button ag-paging-button" role="button" aria-label="${strLast}"></div>
+                    <div ref="btNext" class="zing-button zing-paging-button" role="button" aria-label="${strNext}"></div>
+                    <div ref="btLast" class="zing-button zing-paging-button" role="button" aria-label="${strLast}"></div>
                 </span>
             </div>`;
     }
@@ -159,7 +159,7 @@ export class PaginationComp extends Component {
     }
     toggleButtonDisabled(button, disabled) {
         setAriaDisabled(button, disabled);
-        button.classList.toggle('ag-disabled', disabled);
+        button.classList.toggle('zing-disabled', disabled);
     }
     updateRowLabels() {
         const currentPage = this.paginationProxy.getCurrentPage();

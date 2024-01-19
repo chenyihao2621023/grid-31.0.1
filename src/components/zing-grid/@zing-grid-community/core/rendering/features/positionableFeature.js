@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { BeanStub } from "../../context/beanStub";
 import { Autowired } from "../../context/context";
 import { getAbsoluteHeight, getAbsoluteWidth, isVisible, setFixedHeight, setFixedWidth } from "../../utils/dom";
-const RESIZE_CONTAINER_STYLE = 'ag-resizer-wrapper';
+const RESIZE_CONTAINER_STYLE = 'zing-resizer-wrapper';
 const RESIZE_TEMPLATE = /* html */ `<div class="${RESIZE_CONTAINER_STYLE}">
-        <div ref="eTopLeftResizer" class="ag-resizer ag-resizer-topLeft"></div>
-        <div ref="eTopResizer" class="ag-resizer ag-resizer-top"></div>
-        <div ref="eTopRightResizer" class="ag-resizer ag-resizer-topRight"></div>
-        <div ref="eRightResizer" class="ag-resizer ag-resizer-right"></div>
-        <div ref="eBottomRightResizer" class="ag-resizer ag-resizer-bottomRight"></div>
-        <div ref="eBottomResizer" class="ag-resizer ag-resizer-bottom"></div>
-        <div ref="eBottomLeftResizer" class="ag-resizer ag-resizer-bottomLeft"></div>
-        <div ref="eLeftResizer" class="ag-resizer ag-resizer-left"></div>
+        <div ref="eTopLeftResizer" class="zing-resizer zing-resizer-topLeft"></div>
+        <div ref="eTopResizer" class="zing-resizer zing-resizer-top"></div>
+        <div ref="eTopRightResizer" class="zing-resizer zing-resizer-topRight"></div>
+        <div ref="eRightResizer" class="zing-resizer zing-resizer-right"></div>
+        <div ref="eBottomRightResizer" class="zing-resizer zing-resizer-bottomRight"></div>
+        <div ref="eBottomResizer" class="zing-resizer zing-resizer-bottom"></div>
+        <div ref="eBottomLeftResizer" class="zing-resizer zing-resizer-bottomLeft"></div>
+        <div ref="eLeftResizer" class="zing-resizer zing-resizer-left"></div>
     </div>`;
 export class PositionableFeature extends BeanStub {
     constructor(element, config) {
@@ -473,8 +473,8 @@ export class PositionableFeature extends BeanStub {
             isBottom: !!side.match(/bottom/i),
             isLeft: !!side.match(/left/i),
         };
-        this.element.classList.add('ag-resizing');
-        this.resizerMap[side].element.classList.add('ag-active');
+        this.element.classList.add('zing-resizing');
+        this.resizerMap[side].element.classList.add('zing-active');
         const { popup, forcePopupParentAsOffsetParent } = this.config;
         if (!popup && !forcePopupParentAsOffsetParent) {
             this.applySizeToSiblings(this.currentResizer.isBottom || this.currentResizer.isTop);
@@ -488,7 +488,7 @@ export class PositionableFeature extends BeanStub {
         if (!parent) {
             return null;
         }
-        return Array.prototype.slice.call(parent.children).filter((el) => !el.classList.contains('ag-hidden'));
+        return Array.prototype.slice.call(parent.children).filter((el) => !el.classList.contains('zing-hidden'));
     }
     getMinSizeOfSiblings() {
         const siblings = this.getSiblings() || [];
@@ -620,8 +620,8 @@ export class PositionableFeature extends BeanStub {
             api: this.gridOptionsService.api,
             columnApi: this.gridOptionsService.columnApi
         };
-        this.element.classList.remove('ag-resizing');
-        this.resizerMap[side].element.classList.remove('ag-active');
+        this.element.classList.remove('zing-resizing');
+        this.resizerMap[side].element.classList.remove('zing-active');
         this.dispatchEvent(params);
     }
     refreshSize() {
@@ -641,7 +641,7 @@ export class PositionableFeature extends BeanStub {
             this.initialisePosition();
         }
         this.isMoving = true;
-        this.element.classList.add('ag-moving');
+        this.element.classList.add('zing-moving');
         this.updateDragStartPosition(e.clientX, e.clientY);
     }
     onMove(e) {
@@ -665,7 +665,7 @@ export class PositionableFeature extends BeanStub {
     onMoveEnd() {
         this.isMoving = false;
         this.boundaryEl = null;
-        this.element.classList.remove('ag-moving');
+        this.element.classList.remove('zing-moving');
     }
     setOffsetParent() {
         if (this.config.forcePopupParentAsOffsetParent) {

@@ -77,14 +77,14 @@ let EventService = class EventService {
         (async ? this.globalAsyncListeners : this.globalSyncListeners).delete(listener);
     }
     dispatchEvent(event) {
-        let agEvent = event;
+        let zingEvent = event;
         if (this.gridOptionsService) {
             // Apply common properties to all dispatched events if this event service has had its beans set with gridOptionsService.
             // Note there are multiple instances of EventService that are used local to components which do not set gridOptionsService.
             const { api, columnApi, context } = this.gridOptionsService;
-            agEvent.api = api;
-            agEvent.columnApi = columnApi;
-            agEvent.context = context;
+            zingEvent.api = api;
+            zingEvent.columnApi = columnApi;
+            zingEvent.context = context;
         }
         this.dispatchToListeners(agEvent, true);
         this.dispatchToListeners(agEvent, false);

@@ -16,7 +16,7 @@ let ComponentMetadataProvider = class ComponentMetadataProvider extends BeanStub
             detailCellRenderer: {
                 mandatoryMethodList: [],
                 optionalMethodList: ['refresh'],
-                functionAdapter: this.agComponentUtils.adaptCellRendererFunction.bind(this.agComponentUtils)
+                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
             },
             headerComponent: {
                 mandatoryMethodList: [],
@@ -49,7 +49,7 @@ let ComponentMetadataProvider = class ComponentMetadataProvider extends BeanStub
             cellRenderer: {
                 mandatoryMethodList: [],
                 optionalMethodList: ['refresh', 'afterGuiAttached'],
-                functionAdapter: this.agComponentUtils.adaptCellRendererFunction.bind(this.agComponentUtils)
+                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
             },
             cellEditor: {
                 mandatoryMethodList: ['getValue'],
@@ -58,17 +58,17 @@ let ComponentMetadataProvider = class ComponentMetadataProvider extends BeanStub
             innerRenderer: {
                 mandatoryMethodList: [],
                 optionalMethodList: ['afterGuiAttached'],
-                functionAdapter: this.agComponentUtils.adaptCellRendererFunction.bind(this.agComponentUtils)
+                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
             },
             fullWidthCellRenderer: {
                 mandatoryMethodList: [],
                 optionalMethodList: ['refresh', 'afterGuiAttached'],
-                functionAdapter: this.agComponentUtils.adaptCellRendererFunction.bind(this.agComponentUtils)
+                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
             },
             groupRowRenderer: {
                 mandatoryMethodList: [],
                 optionalMethodList: ['afterGuiAttached'],
-                functionAdapter: this.agComponentUtils.adaptCellRendererFunction.bind(this.agComponentUtils)
+                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
             },
             filter: {
                 mandatoryMethodList: ['isFilterActive', 'doesFilterPass', 'getModel', 'setModel'],
@@ -97,8 +97,8 @@ let ComponentMetadataProvider = class ComponentMetadataProvider extends BeanStub
     }
 };
 __decorate([
-    Autowired("agComponentUtils")
-], ComponentMetadataProvider.prototype, "agComponentUtils", void 0);
+    Autowired("zingComponentUtils")
+], ComponentMetadataProvider.prototype, "zingComponentUtils", void 0);
 __decorate([
     PostConstruct
 ], ComponentMetadataProvider.prototype, "postConstruct", null);

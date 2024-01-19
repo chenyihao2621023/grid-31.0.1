@@ -21,7 +21,7 @@ let CsvCreator = class CsvCreator extends BaseCreator {
     }
     export(userParams) {
         if (this.isExportSuppressed()) {
-            console.warn(`AG Grid: Export cancelled. Export is not allowed as per your configuration.`);
+            console.warn(`ZING Grid: Export cancelled. Export is not allowed as per your configuration.`);
             return '';
         }
         const mergedParams = this.getMergedParams(userParams);

@@ -22,9 +22,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { Bean, ComponentUtil, Events, createGrid } from '@/components/zing-grid/zing-grid-community/main.js';
 import { VueFrameworkComponentWrapper } from './VueFrameworkComponentWrapper';
-import { getAgGridProperties } from './Utils';
+import { getZingGridProperties } from './Utils';
 import { VueFrameworkOverrides } from './VueFrameworkOverrides';
-var _a = getAgGridProperties(), props = _a[0], computed = _a[1], watch = _a[2], model = _a[3];
+var _a = getZingGridProperties(), props = _a[0], computed = _a[1], watch = _a[2], model = _a[3];
 var ZingGridVue = /** @class */ (function (_super) {
     __extends(ZingGridVue, _super);
     function ZingGridVue() {
@@ -111,7 +111,7 @@ var ZingGridVue = /** @class */ (function (_super) {
         var thisAsAny = this;
         if ((thisAsAny.rowData || this.gridOptions.rowData) &&
             thisAsAny.rowDataModel) {
-            console.warn('AG Grid: Using both rowData and rowDataModel. rowData will be ignored.');
+            console.warn('ZING Grid: Using both rowData and rowDataModel. rowData will be ignored.');
         }
     };
     ZingGridVue.prototype.getRowData = function () {
@@ -160,7 +160,7 @@ var ZingGridVue = /** @class */ (function (_super) {
         Prop({ default: function () { return []; } })
     ], ZingGridVue.prototype, "modules", void 0);
     ZingGridVue = ZingGridVue_1 = __decorate([
-        Bean('agGridVue'),
+        Bean('zingGridVue''),
         Component({
             props: props,
             computed: computed,

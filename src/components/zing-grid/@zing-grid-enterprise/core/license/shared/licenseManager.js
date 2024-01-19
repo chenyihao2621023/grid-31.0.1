@@ -147,7 +147,7 @@ export class LicenseManager {
     }
     isWebsiteUrl() {
         const hostname = this.getHostname();
-        return hostname.match(/^((?:\w+\.)?ag-grid\.com)$/) !== null;
+        return hostname.match(/^((?:\w+\.)?zing-grid\.com)$/) !== null;
     }
     isLocalhost() {
         const hostname = this.getHostname();

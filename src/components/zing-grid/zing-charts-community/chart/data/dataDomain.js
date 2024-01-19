@@ -24,7 +24,7 @@ export class DataDomain {
         else if (this.type === 'continuous') {
             return this.continuousDomain;
         }
-        throw new Error('AG Charts - Unsupported data domain type: ' + this.type);
+        throw new Error('ZING Charts - Unsupported data domain type: ' + this.type);
     }
 }
 //# sourceMappingURL=dataDomain.js.map

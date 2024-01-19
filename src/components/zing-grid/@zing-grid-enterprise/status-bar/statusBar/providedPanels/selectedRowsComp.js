@@ -9,12 +9,12 @@ import { NameValueComp } from "./nameValueComp";
 export class SelectedRowsComp extends NameValueComp {
     postConstruct() {
         if (!this.isValidRowModel()) {
-            console.warn(`AG Grid: agSelectedRowCountComponent should only be used with the client and server side row model.`);
+            console.warn(`ZING Grid: zingSelectedRowCountComponent should only be used with the client and server side row model.`);
             return;
         }
         this.setLabel('selectedRows', 'Selected');
-        this.addCssClass('ag-status-panel');
-        this.addCssClass('ag-status-panel-selected-row-count');
+        this.addCssClass('zing-status-panel');
+        this.addCssClass('zing-status-panel-selected-row-count');
         this.onRowSelectionChanged();
         const eventListener = this.onRowSelectionChanged.bind(this);
         this.addManagedListener(this.eventService, Events.EVENT_MODEL_UPDATED, eventListener);

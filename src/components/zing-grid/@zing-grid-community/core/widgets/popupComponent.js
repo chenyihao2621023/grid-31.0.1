@@ -4,14 +4,14 @@ export class PopupComponent extends Component {
         return true;
     }
     setParentComponent(container) {
-        container.addCssClass('ag-has-popup');
+        container.addCssClass('zing-has-popup');
         super.setParentComponent(container);
     }
     destroy() {
         const parentComp = this.parentComponent;
         const hasParent = parentComp && parentComp.isAlive();
         if (hasParent) {
-            parentComp.getGui().classList.remove('ag-has-popup');
+            parentComp.getGui().classList.remove('zing-has-popup');
         }
         super.destroy();
     }

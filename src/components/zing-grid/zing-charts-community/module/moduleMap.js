@@ -5,7 +5,7 @@ export class ModuleMap {
     }
     addModule(module, moduleFactory) {
         if (this.moduleMap.has(module.optionsKey)) {
-            throw new Error(`AG Charts - module already initialised: ${module.optionsKey}`);
+            throw new Error(`ZING Charts - module already initialised: ${module.optionsKey}`);
         }
         this.moduleMap.set(module.optionsKey, moduleFactory(module));
     }

@@ -9,14 +9,14 @@ import { Column } from "../entities/column";
 import { BeanStub } from "../context/beanStub";
 import { mergeDeep } from "../utils/object";
 import { missing } from "../utils/generic";
-export const GROUP_AUTO_COLUMN_ID = 'ag-Grid-AutoColumn';
+export const GROUP_AUTO_COLUMN_ID = 'zing-Grid-AutoColumn';
 let AutoGroupColService = class AutoGroupColService extends BeanStub {
     createAutoGroupColumns(rowGroupColumns) {
         const groupAutoColumns = [];
         const doingTreeData = this.gridOptionsService.get('treeData');
         let doingMultiAutoColumn = this.gridOptionsService.isGroupMultiAutoColumn();
         if (doingTreeData && doingMultiAutoColumn) {
-            console.warn('AG Grid: you cannot mix groupDisplayType = "multipleColumns" with treeData, only one column can be used to display groups when doing tree data');
+            console.warn('ZING Grid: you cannot mix groupDisplayType = "multipleColumns" with treeData, only one column can be used to display groups when doing tree data');
             doingMultiAutoColumn = false;
         }
         // if doing groupDisplayType = "multipleColumns", then we call the method multiple times, once
@@ -74,7 +74,7 @@ let AutoGroupColService = class AutoGroupColService extends BeanStub {
             const noFieldOrValueGetter = missing(res.field) &&
                 missing(res.valueGetter) &&
                 missing(res.filterValueGetter) &&
-                res.filter !== 'agGroupColumnFilter';
+                res.filter !== 'zingGroupColumnFilter'';
             if (noFieldOrValueGetter) {
                 res.filter = false;
             }
@@ -103,7 +103,7 @@ let AutoGroupColService = class AutoGroupColService extends BeanStub {
             (userDef.cellRenderer || userDef.cellRendererSelector);
         // only add the default group cell renderer if user hasn't provided one
         if (!userHasProvidedGroupCellRenderer) {
-            res.cellRenderer = 'agGroupCellRenderer';
+            res.cellRenderer = 'zingGroupCellRenderer'';
         }
         // we never allow moving the group column
         // defaultAutoColDef.suppressMovable = true;

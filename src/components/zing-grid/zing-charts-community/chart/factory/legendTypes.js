@@ -15,7 +15,7 @@ export function getLegend(type, ctx) {
     if (ctor) {
         return new ctor(ctx);
     }
-    throw new Error(`AG Charts - unknown legend type: ${type}`);
+    throw new Error(`ZING Charts - unknown legend type: ${type}`);
 }
 const LEGEND_THEME_TEMPLATES = {};
 export function getLegendThemeTemplates() {

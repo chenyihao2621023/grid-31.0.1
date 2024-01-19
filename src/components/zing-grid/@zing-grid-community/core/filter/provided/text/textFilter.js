@@ -99,7 +99,7 @@ export class TextFilter extends SimpleFilter {
     }
     createValueElement() {
         const eCondition = document.createElement('div');
-        eCondition.classList.add('ag-filter-body');
+        eCondition.classList.add('zing-filter-body');
         setAriaRole(eCondition, 'presentation');
         this.createFromToElement(eCondition, this.eValuesFrom, 'from');
         this.createFromToElement(eCondition, this.eValuesTo, 'to');
@@ -107,8 +107,8 @@ export class TextFilter extends SimpleFilter {
     }
     createFromToElement(eCondition, eValues, fromTo) {
         const eValue = this.createManagedBean(new ZingInputTextField());
-        eValue.addCssClass(`ag-filter-${fromTo}`);
-        eValue.addCssClass('ag-filter-filter');
+        eValue.addCssClass(`zing-filter-${fromTo}`);
+        eValue.addCssClass('zing-filter-filter');
         eValues.push(eValue);
         eCondition.appendChild(eValue.getGui());
     }

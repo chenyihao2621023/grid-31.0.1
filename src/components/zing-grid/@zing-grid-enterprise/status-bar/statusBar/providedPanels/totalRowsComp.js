@@ -11,11 +11,11 @@ export class TotalRowsComp extends NameValueComp {
         this.setLabel('totalRows', 'Total Rows');
         // this component is only really useful with client side row model
         if (this.gridApi.getModel().getType() !== 'clientSide') {
-            console.warn(`AG Grid: agTotalRowCountComponent should only be used with the client side row model.`);
+            console.warn(`ZING Grid: zingTotalRowCountComponent should only be used with the client side row model.`);
             return;
         }
-        this.addCssClass('ag-status-panel');
-        this.addCssClass('ag-status-panel-total-row-count');
+        this.addCssClass('zing-status-panel');
+        this.addCssClass('zing-status-panel-total-row-count');
         this.setDisplayed(true);
         this.addManagedListener(this.eventService, Events.EVENT_MODEL_UPDATED, this.onDataChanged.bind(this));
         this.onDataChanged();

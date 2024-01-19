@@ -57,7 +57,7 @@ export class FloatingFilterTextInputService extends BeanStub {
 export class TextInputFloatingFilter extends SimpleFloatingFilter {
     postConstruct() {
         this.setTemplate(/* html */ `
-            <div class="ag-floating-filter-input" role="presentation" ref="eFloatingFilterInputContainer"></div>
+            <div class="zing-floating-filter-input" role="presentation" ref="eFloatingFilterInputContainer"></div>
         `);
     }
     getDefaultDebounceMs() {

@@ -9,12 +9,12 @@ import { AdvancedFilterCtrl } from './advancedFilterCtrl';
 export class AdvancedFilterComp extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-advanced-filter" role="presentation" tabindex="-1">
-                <ag-autocomplete ref="eAutocomplete"></ag-autocomplete>
-                <button class="ag-button ag-standard-button ag-advanced-filter-apply-button" ref="eApplyFilterButton"></button>
-                <button class="ag-advanced-filter-builder-button" ref="eBuilderFilterButton">
+            <div class="zing-advanced-filter" role="presentation" tabindex="-1">
+                <zing-autocomplete ref="eAutocomplete"></zing-autocomplete>
+                <button class="zing-button zing-standard-button zing-advanced-filter-apply-button" ref="eApplyFilterButton"></button>
+                <button class="zing-advanced-filter-builder-button" ref="eBuilderFilterButton">
                     <span ref="eBuilderFilterButtonIcon" aria-hidden="true"></span>
-                    <span class="ag-advanced-filter-builder-button-label" ref="eBuilderFilterButtonLabel"></span>
+                    <span class="zing-advanced-filter-builder-button-label" ref="eBuilderFilterButtonLabel"></span>
                 </button>
             </div>`);
         this.expressionParser = null;

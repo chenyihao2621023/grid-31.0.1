@@ -73,7 +73,7 @@ let MouseEventService = MouseEventService_1 = class MouseEventService extends Be
     }
 };
 MouseEventService.gridInstanceSequence = new NumberSequence();
-MouseEventService.GRID_DOM_KEY = '__ag_grid_instance';
+MouseEventService.GRID_DOM_KEY = '__zing_grid_instance';
 __decorate([
     Autowired('ctrlsService')
 ], MouseEventService.prototype, "ctrlsService", void 0);

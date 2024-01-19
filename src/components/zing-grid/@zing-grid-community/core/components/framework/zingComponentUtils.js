@@ -50,7 +50,7 @@ __decorate([
     Autowired("componentMetadataProvider")
 ], ZingComponentUtils.prototype, "componentMetadataProvider", void 0);
 ZingComponentUtils = __decorate([
-    Bean("agComponentUtils")
+    Bean("zingComponentUtils")
 ], ZingComponentUtils);
 export { ZingComponentUtils };
 //# sourceMappingURL=zingComponentUtils.js.map

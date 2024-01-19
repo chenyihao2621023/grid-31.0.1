@@ -89,9 +89,9 @@ export class FiltersToolPanel extends Component {
         super.destroy();
     }
 }
-FiltersToolPanel.TEMPLATE = `<div class="ag-filter-toolpanel">
-            <ag-filters-tool-panel-header ref="filtersToolPanelHeaderPanel"></ag-filters-tool-panel-header>
-            <ag-filters-tool-panel-list ref="filtersToolPanelListPanel"></ag-filters-tool-panel-list>
+FiltersToolPanel.TEMPLATE = `<div class="zing-filter-toolpanel">
+            <zing-filters-tool-panel-header ref="filtersToolPanelHeaderPanel"></zing-filters-tool-panel-header>
+            <zing-filters-tool-panel-list ref="filtersToolPanelListPanel"></zing-filters-tool-panel-list>
          </div>`;
 __decorate([
     RefSelector('filtersToolPanelHeaderPanel')

@@ -18,7 +18,7 @@ export class SeriesLayerManager {
         const { internalId, type, rootGroup: seriesRootGroup, highlightGroup: seriesHighlightGroup, annotationGroup: seriesAnnotationGroup, seriesGrouping, } = seriesConfig;
         const { groupIndex = internalId } = seriesGrouping !== null && seriesGrouping !== void 0 ? seriesGrouping : {};
         if (this.series[internalId] != null) {
-            throw new Error(`AG Charts - series already has an allocated layer: ${this.series[internalId]}`);
+            throw new Error(`ZING Charts - series already has an allocated layer: ${this.series[internalId]}`);
         }
         // Re-evaluate mode only on first series addition - we can't swap strategy mid-setup.
         if (Object.keys(this.series).length === 0) {
@@ -85,7 +85,7 @@ export class SeriesLayerManager {
         const { internalId, seriesGrouping, rootGroup, highlightGroup, annotationGroup, type } = seriesConfig;
         const { groupIndex = internalId } = seriesGrouping !== null && seriesGrouping !== void 0 ? seriesGrouping : {};
         if (this.series[internalId] == null) {
-            throw new Error(`AG Charts - series doesn't have an allocated layer: ${internalId}`);
+            throw new Error(`ZING Charts - series doesn't have an allocated layer: ${internalId}`);
         }
         const lookupIndex = this.lookupIdx(groupIndex);
         const groupInfo = (_b = (_a = this.groups[type]) === null || _a === void 0 ? void 0 : _a[lookupIndex]) !== null && _b !== void 0 ? _b : (_c = this.series[internalId]) === null || _c === void 0 ? void 0 : _c.layerState;

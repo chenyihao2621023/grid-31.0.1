@@ -13,9 +13,9 @@ export var EXPAND_STATE;
 })(EXPAND_STATE || (EXPAND_STATE = {}));
 export class FiltersToolPanelHeaderPanel extends Component {
     preConstruct() {
-        this.setTemplate(/* html */ `<div class="ag-filter-toolpanel-search" role="presentation">
-                <div ref="eExpand" class="ag-filter-toolpanel-expand"></div>
-                <ag-input-text-field ref="eFilterTextField" class="ag-filter-toolpanel-search-input"></ag-input-text-field>
+        this.setTemplate(/* html */ `<div class="zing-filter-toolpanel-search" role="presentation">
+                <div ref="eExpand" class="zing-filter-toolpanel-expand"></div>
+                <zing-input-text-field ref="eFilterTextField" class="zing-filter-toolpanel-search-input"></zing-input-text-field>
             </div>`);
     }
     postConstruct() {

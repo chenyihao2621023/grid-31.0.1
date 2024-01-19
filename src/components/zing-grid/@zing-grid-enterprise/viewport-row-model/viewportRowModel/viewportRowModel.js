@@ -114,7 +114,7 @@ let ViewportRowModel = class ViewportRowModel extends BeanStub {
         this.viewportDatasource = viewportDatasource;
         this.rowCount = -1;
         if (!viewportDatasource.init) {
-            console.warn('AG Grid: viewport is missing init method.');
+            console.warn('ZING Grid: viewport is missing init method.');
         }
         else {
             viewportDatasource.init({

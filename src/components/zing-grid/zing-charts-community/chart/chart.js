@@ -62,7 +62,7 @@ function initialiseSpecialOverrides(opts) {
         globalWindow = global.window;
     }
     else {
-        throw new Error('AG Charts - unable to resolve global window');
+        throw new Error('ZING Charts - unable to resolve global window');
     }
     let globalDocument;
     if (opts.document != null) {
@@ -75,7 +75,7 @@ function initialiseSpecialOverrides(opts) {
         globalDocument = global.document;
     }
     else {
-        throw new Error('AG Charts - unable to resolve global document');
+        throw new Error('ZING Charts - unable to resolve global document');
     }
     return {
         document: globalDocument,
@@ -220,7 +220,7 @@ export class Chart extends Observable {
         this.axisGroup = new Group({ name: 'Axes', layer: true, zIndex: Layers.AXIS_ZINDEX });
         root.appendChild(this.axisGroup);
         this.element = element;
-        element.classList.add('ag-chart-wrapper');
+        element.classList.add('zing-chart-wrapper');
         element.style.position = 'relative';
         this.scene = scene !== null && scene !== void 0 ? scene : new Scene(this.specialOverrides);
         this.scene.root = root;
@@ -256,7 +256,7 @@ export class Chart extends Observable {
     }
     addModule(module) {
         if (this.modules.has(module.optionsKey)) {
-            throw new Error(`AG Charts - module already initialised: ${module.optionsKey}`);
+            throw new Error(`ZING Charts - module already initialised: ${module.optionsKey}`);
         }
         const moduleInstance = new module.instanceConstructor(this.getModuleContext());
         if (module.type === 'legend') {
@@ -1006,12 +1006,12 @@ __decorate([
         newValue(value) {
             if (this.destroyed)
                 return;
-            value.setAttribute('data-ag-charts', '');
+            value.setAttribute('data-zing-charts', '');
             value.appendChild(this.element);
             chartsInstances.set(value, this);
         },
         oldValue(value) {
-            value.removeAttribute('data-ag-charts');
+            value.removeAttribute('data-zing-charts');
             value.removeChild(this.element);
             chartsInstances.delete(value);
         },

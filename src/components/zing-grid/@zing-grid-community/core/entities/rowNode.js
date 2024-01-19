@@ -168,7 +168,7 @@ export class RowNode {
                 // make sure id provided doesn't start with 'row-group-' as this is reserved. also check that
                 // it has 'startsWith' in case the user provided a number.
                 if (this.id !== null && typeof this.id === 'string' && this.id.startsWith(RowNode.ID_PREFIX_ROW_GROUP)) {
-                    console.error(`AG Grid: Row IDs cannot start with ${RowNode.ID_PREFIX_ROW_GROUP}, this is a reserved prefix for AG Grid's row grouping feature.`);
+                    console.error(`ZING Grid: Row IDs cannot start with ${RowNode.ID_PREFIX_ROW_GROUP}, this is a reserved prefix for AG Grid's row grouping feature.`);
                 }
                 // force id to be a string
                 if (this.id !== null && typeof this.id !== 'string') {
@@ -732,7 +732,7 @@ export class RowNode {
      */
     setSelected(newValue, clearSelection = false, source = 'api') {
         if (typeof source === 'boolean') {
-            console.warn('AG Grid: since version v30, rowNode.setSelected() property `suppressFinishActions` has been removed, please use `gridApi.setNodesSelected()` for bulk actions, and the event `source` property for ignoring events instead.');
+            console.warn('ZING Grid: since version v30, rowNode.setSelected() property `suppressFinishActions` has been removed, please use `gridApi.setNodesSelected()` for bulk actions, and the event `source` property for ignoring events instead.');
             return;
         }
         this.setSelectedParams({
@@ -745,11 +745,11 @@ export class RowNode {
     // this is for internal use only. To make calling code more readable, this is the same method as setSelected except it takes names parameters
     setSelectedParams(params) {
         if (this.rowPinned) {
-            console.warn('AG Grid: cannot select pinned rows');
+            console.warn('ZING Grid: cannot select pinned rows');
             return 0;
         }
         if (this.id === undefined) {
-            console.warn('AG Grid: cannot select node until id for node is known');
+            console.warn('ZING Grid: cannot select node until id for node is known');
             return 0;
         }
         return this.beans.selectionService.setNodesSelected(Object.assign(Object.assign({}, params), { nodes: [this.footer ? this.sibling : this] }));

@@ -82,7 +82,7 @@ export class DataModel {
         let keys = true;
         for (const next of props) {
             if (next.type === 'key' && !keys) {
-                throw new Error('AG Charts - internal config error: keys must come before values.');
+                throw new Error('ZING Charts - internal config error: keys must come before values.');
             }
             if (next.type === 'value' && keys) {
                 keys = false;
@@ -112,20 +112,20 @@ export class DataModel {
             .map((def, index) => (Object.assign(Object.assign({}, def), { index })));
         for (const def of this.values) {
             if (def.property == null) {
-                throw new Error(`AG Charts - internal config error: no properties specified for value definitions: ${JSON.stringify(def)}`);
+                throw new Error(`ZING Charts - internal config error: no properties specified for value definitions: ${JSON.stringify(def)}`);
             }
         }
         const verifyMatchGroupId = ({ matchGroupIds }) => {
             for (const matchGroupId of matchGroupIds !== null && matchGroupIds !== void 0 ? matchGroupIds : []) {
                 if (!this.values.some((def) => def.groupId === matchGroupId)) {
-                    throw new Error(`AG Charts - internal config error: matchGroupIds properties must match defined groups (${matchGroupId}).`);
+                    throw new Error(`ZING Charts - internal config error: matchGroupIds properties must match defined groups (${matchGroupId}).`);
                 }
             }
         };
         const verifyMatchIds = ({ matchIds }) => {
             for (const matchId of matchIds !== null && matchIds !== void 0 ? matchIds : []) {
                 if (!this.values.some((def) => { var _a; return (_a = def.ids) === null || _a === void 0 ? void 0 : _a.some(([scope, id]) => scope === matchId[0] && id === matchId[1]); })) {
-                    throw new Error(`AG Charts - internal config error: matchGroupIds properties must match defined groups (${matchId}).`);
+                    throw new Error(`ZING Charts - internal config error: matchGroupIds properties must match defined groups (${matchId}).`);
                 }
             }
         };
@@ -184,7 +184,7 @@ export class DataModel {
         if (result.length > 0) {
             return result;
         }
-        throw new Error(`AG Charts - didn't find property definition for [${searchId}, ${searchScope.id}]`);
+        throw new Error(`ZING Charts - didn't find property definition for [${searchId}, ${searchScope.id}]`);
     }
     getDomain(scope, searchId, type = 'value', processedData) {
         var _a, _b, _c, _d;
@@ -305,7 +305,7 @@ export class DataModel {
         if (result >= 0) {
             return result;
         }
-        throw new Error(`AG Charts - configuration error, unknown property ${JSON.stringify(prop)} in scope(s) ${JSON.stringify(scopes)}`);
+        throw new Error(`ZING Charts - configuration error, unknown property ${JSON.stringify(prop)} in scope(s) ${JSON.stringify(scopes)}`);
     }
     extractData(data, sources) {
         var _a, _b, _c, _d, _e;

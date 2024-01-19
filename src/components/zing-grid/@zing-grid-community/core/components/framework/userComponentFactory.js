@@ -12,11 +12,11 @@ import { CellEditorComponent, CellRendererComponent, DateComponent, FilterCompon
 import { FloatingFilterMapper } from '../../filter/floating/floatingFilterMapper';
 let UserComponentFactory = class UserComponentFactory extends BeanStub {
     getHeaderCompDetails(colDef, params) {
-        return this.getCompDetails(colDef, HeaderComponent, 'agColumnHeader', params);
+        return this.getCompDetails(colDef, HeaderComponent, 'zingColumnHeader'', params);
     }
     getHeaderGroupCompDetails(params) {
         const colGroupDef = params.columnGroup.getColGroupDef();
-        return this.getCompDetails(colGroupDef, HeaderGroupComponent, 'agColumnGroupHeader', params);
+        return this.getCompDetails(colGroupDef, HeaderGroupComponent, 'zingColumnGroupHeader'', params);
     }
     // this one is unusual, as it can be LoadingCellRenderer, DetailCellRenderer, FullWidthCellRenderer or GroupRowRenderer.
     // so we have to pass the type in.
@@ -24,13 +24,13 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
         return this.getCompDetails(this.gridOptions, FullWidth, null, params, true);
     }
     getFullWidthLoadingCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthLoading, 'agLoadingCellRenderer', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthLoading, 'zingLoadingCellRenderer'', params, true);
     }
     getFullWidthGroupCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthGroup, 'agGroupRowRenderer', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthGroup, 'zingGroupRowRenderer'', params, true);
     }
     getFullWidthDetailCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthDetail, 'agDetailCellRenderer', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthDetail, 'zingDetailCellRenderer'', params, true);
     }
     // CELL RENDERER
     getInnerRendererDetails(def, params) {
@@ -44,23 +44,23 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
     }
     // CELL EDITOR
     getCellEditorDetails(def, params) {
-        return this.getCompDetails(def, CellEditorComponent, 'agCellEditor', params, true);
+        return this.getCompDetails(def, CellEditorComponent, 'zingCellEditor'', params, true);
     }
     // FILTER
     getFilterDetails(def, params, defaultFilter) {
         return this.getCompDetails(def, FilterComponent, defaultFilter, params, true);
     }
     getDateCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, DateComponent, 'agDateInput', params, true);
+        return this.getCompDetails(this.gridOptions, DateComponent, 'zingDateInput'', params, true);
     }
     getLoadingOverlayCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, LoadingOverlayComponent, 'agLoadingOverlay', params, true);
+        return this.getCompDetails(this.gridOptions, LoadingOverlayComponent, 'zingLoadingOverlay'', params, true);
     }
     getNoRowsOverlayCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, NoRowsOverlayComponent, 'agNoRowsOverlay', params, true);
+        return this.getCompDetails(this.gridOptions, NoRowsOverlayComponent, 'zingNoRowsOverlay'', params, true);
     }
     getTooltipCompDetails(params) {
-        return this.getCompDetails(params.colDef, TooltipComponent, 'agTooltipComponent', params, true);
+        return this.getCompDetails(params.colDef, TooltipComponent, 'zingTooltipComponent'', params, true);
     }
     getSetFilterCellRendererDetails(def, params) {
         return this.getCompDetails(def, CellRendererComponent, null, params);
@@ -93,12 +93,12 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
             lookupFromRegistry(defaultName);
         }
         // if we have a comp option, and it's a function, replace it with an object equivalent adaptor
-        if (jsComp && cellRenderer && !this.agComponentUtils.doesImplementIComponent(jsComp)) {
-            jsComp = this.agComponentUtils.adaptFunction(propertyName, jsComp);
+        if (jsComp && cellRenderer && !this.zingComponentUtils.doesImplementIComponent(jsComp)) {
+            jsComp = this.zingComponentUtils.adaptFunction(propertyName, jsComp);
         }
         if (!jsComp && !fwComp) {
             if (mandatory) {
-                console.error(`AG Grid: Could not find component ${compName}, did you forget to configure this component?`);
+                console.error(`ZING Grid: Could not find component ${compName}, did you forget to configure this component?`);
             }
             return;
         }
@@ -112,7 +112,7 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
             type: type,
             popupFromSelector,
             popupPositionFromSelector,
-            newAgStackInstance: () => this.newAgStackInstance(componentClass, componentFromFramework, paramsMerged, type)
+            newZingStackInstance: () => this.newZingStackInstance(componentClass, componentFromFramework, paramsMerged, type)
         };
     }
     getCompKeys(defObject, type, params) {
@@ -125,7 +125,7 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
         let popupPositionFromSelector;
         // there are two types of js comps, class based and func based. we can only check for
         // class based, by checking if getGui() exists. no way to differentiate js func based vs eg react func based
-        // const isJsClassComp = (comp: any) => this.agComponentUtils.doesImplementIComponent(comp);
+        // const isJsClassComp = (comp: any) => this.zingComponentUtils.doesImplementIComponent(comp);
         // const fwActive = this.frameworkComponentWrapper != null;
         // pull from defObject if available
         if (defObject) {
@@ -160,7 +160,7 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
         }
         return { compName, jsComp, fwComp, paramsFromSelector, popupFromSelector, popupPositionFromSelector };
     }
-    newAgStackInstance(ComponentClass, componentFromFramework, params, type) {
+    newZingStackInstance(ComponentClass, componentFromFramework, params, type) {
         const propertyName = type.propertyName;
         const jsComponent = !componentFromFramework;
         // using javascript component
@@ -231,8 +231,8 @@ __decorate([
     Autowired('gridOptions')
 ], UserComponentFactory.prototype, "gridOptions", void 0);
 __decorate([
-    Autowired('agComponentUtils')
-], UserComponentFactory.prototype, "agComponentUtils", void 0);
+    Autowired('zingComponentUtils'')
+], UserComponentFactory.prototype, "zingComponentUtils", void 0);
 __decorate([
     Autowired('componentMetadataProvider')
 ], UserComponentFactory.prototype, "componentMetadataProvider", void 0);

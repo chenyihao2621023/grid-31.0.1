@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { _, Autowired, Bean, BeanStub, RowNode } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-export const GROUP_MISSING_KEY_ID = 'ag-Grid-MissingKey';
+export const GROUP_MISSING_KEY_ID = 'zing-Grid-MissingKey';
 let BlockUtils = class BlockUtils extends BeanStub {
     createRowNode(params) {
         const rowNode = new RowNode(this.beans);
@@ -64,7 +64,7 @@ let BlockUtils = class BlockUtils extends BeanStub {
         rowNode.key = this.valueService.getValue(rowNode.rowGroupColumn, rowNode);
         if (rowNode.key === null || rowNode.key === undefined) {
             _.doOnce(() => {
-                console.warn(`AG Grid: null and undefined values are not allowed for server side row model keys`);
+                console.warn(`ZING Grid: null and undefined values are not allowed for server side row model keys`);
                 if (rowNode.rowGroupColumn) {
                     console.warn(`column = ${rowNode.rowGroupColumn.getId()}`);
                 }
@@ -225,7 +225,7 @@ let BlockUtils = class BlockUtils extends BeanStub {
         let bottomPointer = 0;
         let topPointer = rowNodes.length - 1;
         if (_.missing(topPointer) || _.missing(bottomPointer)) {
-            console.warn(`AG Grid: error: topPointer = ${topPointer}, bottomPointer = ${bottomPointer}`);
+            console.warn(`ZING Grid: error: topPointer = ${topPointer}, bottomPointer = ${bottomPointer}`);
             return undefined;
         }
         while (true) {
@@ -254,7 +254,7 @@ let BlockUtils = class BlockUtils extends BeanStub {
                 topPointer = midPointer - 1;
             }
             else {
-                console.warn(`AG Grid: error: unable to locate rowIndex = ${displayRowIndex} in cache`);
+                console.warn(`ZING Grid: error: unable to locate rowIndex = ${displayRowIndex} in cache`);
                 return undefined;
             }
         }

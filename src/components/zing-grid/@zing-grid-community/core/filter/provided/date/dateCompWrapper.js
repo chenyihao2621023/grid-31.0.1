@@ -7,7 +7,7 @@ export class DateCompWrapper {
         this.context = context;
         this.eParent = eParent;
         const compDetails = userComponentFactory.getDateCompDetails(dateComponentParams);
-        const promise = compDetails.newAgStackInstance();
+        const promise = compDetails.newZingStackInstance();
         promise.then(dateComp => {
             // because async, check the filter still exists after component comes back
             if (!this.alive) {

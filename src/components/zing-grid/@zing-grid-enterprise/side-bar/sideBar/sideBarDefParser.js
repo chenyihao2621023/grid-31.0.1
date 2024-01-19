@@ -20,7 +20,7 @@ export class SideBarDefParser {
             toParse.forEach(key => {
                 const lookupResult = SideBarDefParser.DEFAULT_BY_KEY[key];
                 if (!lookupResult) {
-                    console.warn(`AG Grid: the key ${key} is not a valid key for specifying a tool panel, valid keys are: ${Object.keys(SideBarDefParser.DEFAULT_BY_KEY).join(',')}`);
+                    console.warn(`ZING Grid: the key ${key} is not a valid key for specifying a tool panel, valid keys are: ${Object.keys(SideBarDefParser.DEFAULT_BY_KEY).join(',')}`);
                     return;
                 }
                 comps.push(lookupResult);
@@ -51,7 +51,7 @@ export class SideBarDefParser {
             if (typeof it === 'string') {
                 const lookupResult = SideBarDefParser.DEFAULT_BY_KEY[it];
                 if (!lookupResult) {
-                    console.warn(`AG Grid: the key ${it} is not a valid key for specifying a tool panel, valid keys are: ${Object.keys(SideBarDefParser.DEFAULT_BY_KEY).join(',')}`);
+                    console.warn(`ZING Grid: the key ${it} is not a valid key for specifying a tool panel, valid keys are: ${Object.keys(SideBarDefParser.DEFAULT_BY_KEY).join(',')}`);
                     return;
                 }
                 toAdd = lookupResult;
@@ -69,14 +69,14 @@ SideBarDefParser.DEFAULT_COLUMN_COMP = {
     labelDefault: 'Columns',
     labelKey: 'columns',
     iconKey: 'columns',
-    toolPanel: 'agColumnsToolPanel',
+    toolPanel: 'zingColumnsToolPanel'',
 };
 SideBarDefParser.DEFAULT_FILTER_COMP = {
     id: 'filters',
     labelDefault: 'Filters',
     labelKey: 'filters',
     iconKey: 'filter',
-    toolPanel: 'agFiltersToolPanel',
+    toolPanel: 'zingFiltersToolPanel'',
 };
 SideBarDefParser.DEFAULT_BY_KEY = {
     columns: SideBarDefParser.DEFAULT_COLUMN_COMP,

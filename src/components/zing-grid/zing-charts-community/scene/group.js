@@ -40,7 +40,7 @@ export class Group extends Node {
             this.layer = undefined;
         }
         if (this.layer) {
-            throw new Error('AG Charts - unable to deregister scene rendering layer!');
+            throw new Error('ZING Charts - unable to deregister scene rendering layer!');
         }
         super._setLayerManager(scene);
         if (scene && ((_a = this.opts) === null || _a === void 0 ? void 0 : _a.layer)) {

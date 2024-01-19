@@ -54,7 +54,7 @@ export class RowComp extends Component {
             }
         };
         // if not in cache, create new one
-        const res = compDetails.newAgStackInstance();
+        const res = compDetails.newZingStackInstance();
         if (!res) {
             return;
         }
@@ -105,7 +105,7 @@ export class RowComp extends Component {
     }
     setFullWidthRowComp(fullWidthRowComponent) {
         if (this.fullWidthCellRenderer) {
-            console.error('AG Grid - should not be setting fullWidthRowComponent twice');
+            console.error('ZING Grid - should not be setting fullWidthRowComponent twice');
         }
         this.fullWidthCellRenderer = fullWidthRowComponent;
         this.addDestroyFunc(() => {

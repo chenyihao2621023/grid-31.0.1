@@ -28,7 +28,7 @@ export class RowDragComp extends Component {
     }
     postConstruct() {
         if (!this.customGui) {
-            this.setTemplate(/* html */ `<div class="ag-drag-handle ag-row-drag" aria-hidden="true"></div>`);
+            this.setTemplate(/* html */ `<div class="zing-drag-handle zing-row-drag" aria-hidden="true"></div>`);
             this.getGui().appendChild(createIconNoSpan('rowDrag', this.gridOptionsService, null));
             this.addDragSource();
         }

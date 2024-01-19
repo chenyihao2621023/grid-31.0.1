@@ -9,9 +9,9 @@ import { BeanStub } from "../context/beanStub";
 import { warnOnce } from "../utils/function";
 export var LayoutCssClasses;
 (function (LayoutCssClasses) {
-    LayoutCssClasses["AUTO_HEIGHT"] = "ag-layout-auto-height";
-    LayoutCssClasses["NORMAL"] = "ag-layout-normal";
-    LayoutCssClasses["PRINT"] = "ag-layout-print";
+    LayoutCssClasses["AUTO_HEIGHT"] = "zing-layout-auto-height";
+    LayoutCssClasses["NORMAL"] = "zing-layout-normal";
+    LayoutCssClasses["PRINT"] = "zing-layout-print";
 })(LayoutCssClasses || (LayoutCssClasses = {}));
 export class LayoutFeature extends BeanStub {
     constructor(view) {

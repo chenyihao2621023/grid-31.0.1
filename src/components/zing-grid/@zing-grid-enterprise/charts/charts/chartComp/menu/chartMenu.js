@@ -39,7 +39,7 @@ export class ChartMenu extends Component {
         });
         this.refreshMenuClasses();
         if (!this.gridOptionsService.get('suppressChartToolPanelsButton') && this.panels.length > 0) {
-            this.getGui().classList.add('ag-chart-tool-panel-button-enable');
+            this.getGui().classList.add('zing-chart-tool-panel-button-enable');
             this.addManagedListener(this.eHideButton, 'click', this.toggleMenu.bind(this));
         }
         this.addManagedListener(this.chartController, ChartController.EVENT_CHART_API_UPDATE, this.createButtons.bind(this));
@@ -75,8 +75,8 @@ export class ChartMenu extends Component {
                 ? toolbarItemsFunc(params).filter(option => {
                     if (!CHART_TOOLBAR_ALLOW_LIST.includes(option)) {
                         const msg = CHART_TOOL_PANEL_ALLOW_LIST.includes(option)
-                            ? `AG Grid: '${option}' is a Chart Tool Panel option and will be ignored since 'chartToolPanelsDef' is used. Please use 'chartToolPanelsDef.panels' grid option instead`
-                            : `AG Grid: '${option}' is not a valid Chart Toolbar Option`;
+                            ? `ZING Grid: '${option}' is a Chart Tool Panel option and will be ignored since 'chartToolPanelsDef' is used. Please use 'chartToolPanelsDef.panels' grid option instead`
+                            : `ZING Grid: '${option}' is not a valid Chart Toolbar Option`;
                         console.warn(msg);
                         return false;
                     }
@@ -86,7 +86,7 @@ export class ChartMenu extends Component {
             const panelsOverride = (_b = (_a = this.gridOptionsService.get('chartToolPanelsDef')) === null || _a === void 0 ? void 0 : _a.panels) === null || _b === void 0 ? void 0 : _b.map(panel => {
                 const menuOption = CHART_TOOL_PANEL_MENU_OPTIONS[panel];
                 if (!menuOption) {
-                    console.warn(`AG Grid - invalid panel in chartToolPanelsDef.panels: '${panel}'`);
+                    console.warn(`ZING Grid - invalid panel in chartToolPanelsDef.panels: '${panel}'`);
                 }
                 return menuOption;
             }).filter(panel => Boolean(panel));
@@ -120,13 +120,13 @@ export class ChartMenu extends Component {
                 };
                 tabOptions = toolbarItemsFunc(params).filter(option => {
                     if (!this.buttons[option]) {
-                        console.warn(`AG Grid: '${option}' is not a valid Chart Toolbar Option`);
+                        console.warn(`ZING Grid: '${option}' is not a valid Chart Toolbar Option`);
                         return false;
                     }
                     // If not legacy, remove chart tool panel options here,
                     // and add them all in one go below
                     else if (!isLegacyToolbar && CHART_TOOL_PANEL_ALLOW_LIST.includes(option)) {
-                        const msg = `AG Grid: '${option}' is a Chart Tool Panel option and will be ignored. Please use 'chartToolPanelsDef.panels' grid option instead`;
+                        const msg = `ZING Grid: '${option}' is a Chart Tool Panel option and will be ignored. Please use 'chartToolPanelsDef.panels' grid option instead`;
                         console.warn(msg);
                         return false;
                     }
@@ -151,9 +151,9 @@ export class ChartMenu extends Component {
     }
     toggleDetached(e) {
         const target = e.target;
-        const active = target.classList.contains('ag-icon-linked');
-        target.classList.toggle('ag-icon-linked', !active);
-        target.classList.toggle('ag-icon-unlinked', active);
+        const active = target.classList.contains('zing-icon-linked');
+        target.classList.toggle('zing-icon-linked', !active);
+        target.classList.toggle('zing-icon-unlinked', active);
         const tooltipKey = active ? 'chartUnlinkToolbarTooltip' : 'chartLinkToolbarTooltip';
         const tooltipTitle = this.chartTranslationService.translate(tooltipKey);
         if (tooltipTitle) {
@@ -171,7 +171,7 @@ export class ChartMenu extends Component {
             const buttonConfig = this.buttons[button];
             const [iconName, callback] = buttonConfig;
             const buttonEl = _.createIconNoSpan(iconName, this.gridOptionsService, undefined, true);
-            buttonEl.classList.add('ag-chart-menu-icon');
+            buttonEl.classList.add('zing-chart-menu-icon');
             const tooltipTitle = this.chartTranslationService.translate(button + 'ToolbarTooltip');
             if (tooltipTitle && buttonEl instanceof HTMLElement) {
                 buttonEl.title = tooltipTitle;
@@ -240,7 +240,7 @@ export class ChartMenu extends Component {
      */
     animate = true) {
         if (!animate) {
-            this.eMenuPanelContainer.classList.add('ag-no-transition');
+            this.eMenuPanelContainer.classList.add('zing-no-transition');
         }
         if (this.menuPanel && !panel) {
             this.showContainer();
@@ -249,7 +249,7 @@ export class ChartMenu extends Component {
             const menuPanel = panel || this.defaultPanel;
             let tab = this.panels.indexOf(menuPanel);
             if (tab < 0) {
-                console.warn(`AG Grid: '${panel}' is not a valid Chart Tool Panel name`);
+                console.warn(`ZING Grid: '${panel}' is not a valid Chart Tool Panel name`);
                 tab = this.panels.indexOf(this.defaultPanel);
             }
             if (this.menuPanel) {
@@ -266,7 +266,7 @@ export class ChartMenu extends Component {
                 if (!this.isAlive()) {
                     return;
                 }
-                this.eMenuPanelContainer.classList.remove('ag-no-transition');
+                this.eMenuPanelContainer.classList.remove('zing-no-transition');
             }, 500);
         }
     }
@@ -278,11 +278,11 @@ export class ChartMenu extends Component {
         }, 500);
     }
     refreshMenuClasses() {
-        this.eChartContainer.classList.toggle('ag-chart-menu-visible', this.menuVisible);
-        this.eChartContainer.classList.toggle('ag-chart-menu-hidden', !this.menuVisible);
+        this.eChartContainer.classList.toggle('zing-chart-menu-visible', this.menuVisible);
+        this.eChartContainer.classList.toggle('zing-chart-menu-hidden', !this.menuVisible);
         if (!this.gridOptionsService.get('suppressChartToolPanelsButton')) {
-            this.eHideButtonIcon.classList.toggle('ag-icon-contracted', this.menuVisible);
-            this.eHideButtonIcon.classList.toggle('ag-icon-expanded', !this.menuVisible);
+            this.eHideButtonIcon.classList.toggle('zing-icon-contracted', this.menuVisible);
+            this.eHideButtonIcon.classList.toggle('zing-icon-expanded', !this.menuVisible);
         }
     }
     showParent(width) {
@@ -303,9 +303,9 @@ export class ChartMenu extends Component {
 }
 ChartMenu.EVENT_DOWNLOAD_CHART = "downloadChart";
 ChartMenu.TEMPLATE = `<div>
-        <div class="ag-chart-menu" ref="eMenu"></div>
-        <button class="ag-button ag-chart-menu-close" ref="eHideButton">
-            <span class="ag-icon ag-icon-contracted" ref="eHideButtonIcon"></span>
+        <div class="zing-chart-menu" ref="eMenu"></div>
+        <button class="zing-button zing-chart-menu-close" ref="eHideButton">
+            <span class="zing-icon zing-icon-contracted" ref="eHideButtonIcon"></span>
         </button>
     </div>`;
 __decorate([

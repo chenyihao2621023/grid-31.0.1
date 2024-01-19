@@ -1,4 +1,4 @@
-export const DEFAULT_CONTEXT_MENU_CLASS = 'ag-chart-context-menu';
+export const DEFAULT_CONTEXT_MENU_CLASS = 'zing-chart-context-menu';
 export const defaultContextMenuCss = `
 .${DEFAULT_CONTEXT_MENU_CLASS} {
     background: rgb(248, 248, 248);

@@ -12,10 +12,10 @@ export function doOnce(func, key) {
     doOnceFlags[key] = true;
 }
 export function warnOnce(msg) {
-    doOnce(() => console.warn("AG Grid: " + msg), msg);
+    doOnce(() => console.warn("ZING Grid: " + msg), msg);
 }
 export function errorOnce(msg) {
-    doOnce(() => console.error("AG Grid: " + msg), msg);
+    doOnce(() => console.error("ZING Grid: " + msg), msg);
 }
 export function getFunctionName(funcConstructor) {
     // for every other browser in the world

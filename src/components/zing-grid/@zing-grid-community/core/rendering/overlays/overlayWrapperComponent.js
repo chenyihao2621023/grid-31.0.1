@@ -76,9 +76,9 @@ export class OverlayWrapperComponent extends Component {
 }
 // wrapping in outer div, and wrapper, is needed to center the loading icon
 OverlayWrapperComponent.TEMPLATE = `
-        <div class="ag-overlay" aria-hidden="true">
-            <div class="ag-overlay-panel">
-                <div class="ag-overlay-wrapper" ref="eOverlayWrapper"></div>
+        <div class="zing-overlay" aria-hidden="true">
+            <div class="zing-overlay-panel">
+                <div class="zing-overlay-wrapper" ref="eOverlayWrapper"></div>
             </div>
         </div>`;
 __decorate([

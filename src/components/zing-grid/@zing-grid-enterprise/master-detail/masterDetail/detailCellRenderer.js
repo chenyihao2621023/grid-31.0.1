@@ -30,7 +30,7 @@ export class DetailCellRenderer extends Component {
     }
     selectAndSetTemplate() {
         if (this.params.pinned) {
-            this.setTemplate('<div class="ag-details-row"></div>');
+            this.setTemplate('<div class="zing-details-row"></div>');
             return;
         }
         const setDefaultTemplate = () => {
@@ -51,12 +51,12 @@ export class DetailCellRenderer extends Component {
                 this.setTemplate(template);
             }
             else {
-                console.warn('AG Grid: detailCellRendererParams.template should be function or string');
+                console.warn('ZING Grid: detailCellRendererParams.template should be function or string');
                 setDefaultTemplate();
             }
         }
         if (this.eDetailGrid == null) {
-            console.warn('AG Grid: reference to eDetailGrid was missing from the details template. ' +
+            console.warn('ZING Grid: reference to eDetailGrid was missing from the details template. ' +
                 'Please add ref="eDetailGrid" to the template.');
         }
     }
@@ -68,8 +68,8 @@ export class DetailCellRenderer extends Component {
         // this is only needed when suppressReactUi=true, once we remove the old way
         // of doing react, and Master / Details is all native React, then we
         // can remove this code.
-        const agGridReact = this.context.getBean('agGridReact');
-        const agGridReactCloned = agGridReact ? _.cloneObject(agGridReact) : undefined;
+        const zingGridReact = this.context.getBean('zingGridReact'');
+        const zingGridReactCloned = zingGridReact ? _.cloneObject(agGridReact) : undefined;
         // when we create detail grid, the detail grid needs frameworkComponentWrapper so that
         // it created child components correctly, ie  Angular detail grid can have Angular cell renderer.
         // this is only used by Angular and Vue, as React uses native React AG Grid detail grids
@@ -78,7 +78,7 @@ export class DetailCellRenderer extends Component {
         const api = createGrid(this.eDetailGrid, gridOptions, {
             frameworkOverrides,
             providedBeanInstances: {
-                agGridReact: agGridReactCloned,
+                zingGridReact: zingGridReactCloned,
                 frameworkComponentWrapper: frameworkComponentWrapper,
             },
             modules: ModuleRegistry.__getGridRegisteredModules(this.params.api.getGridId()),
@@ -94,8 +94,8 @@ export class DetailCellRenderer extends Component {
         this.detailApi && this.detailApi.setGridOption('rowData', rowData);
     }
 }
-DetailCellRenderer.TEMPLATE = `<div class="ag-details-row" role="gridcell">
-            <div ref="eDetailGrid" class="ag-details-grid" role="presentation"></div>
+DetailCellRenderer.TEMPLATE = `<div class="zing-details-row" role="gridcell">
+            <div ref="eDetailGrid" class="zing-details-grid" role="presentation"></div>
         </div>`;
 __decorate([
     RefSelector('eDetailGrid')

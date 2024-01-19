@@ -13,7 +13,7 @@ import { last } from "../utils/array";
 import { setAriaLevel } from "../utils/aria";
 export class ZingMenuList extends TabGuardComp {
     constructor(level = 1) {
-        super(/* html */ `<div class="ag-menu-list" role="tree"></div>`);
+        super(/* html */ `<div class="zing-menu-list" role="tree"></div>`);
         this.level = level;
         this.menuItems = [];
     }
@@ -26,7 +26,7 @@ export class ZingMenuList extends TabGuardComp {
     onTabKeyDown(e) {
         const parent = this.getParentComponent();
         const parentGui = parent && parent.getGui();
-        const isManaged = parentGui && parentGui.classList.contains('ag-focus-managed');
+        const isManaged = parentGui && parentGui.classList.contains('zing-focus-managed');
         if (!isManaged) {
             e.preventDefault();
         }
@@ -66,7 +66,7 @@ export class ZingMenuList extends TabGuardComp {
                 this.addSeparator();
             }
             else if (typeof menuItemOrString === 'string') {
-                console.warn(`AG Grid: unrecognised menu item ${menuItemOrString}`);
+                console.warn(`ZING Grid: unrecognised menu item ${menuItemOrString}`);
             }
             else {
                 this.addItem(menuItemOrString);
@@ -98,11 +98,11 @@ export class ZingMenuList extends TabGuardComp {
     }
     addSeparator() {
         const separatorHtml = /* html */ `
-            <div class="ag-menu-separator" aria-hidden="true">
-                <div class="ag-menu-separator-part"></div>
-                <div class="ag-menu-separator-part"></div>
-                <div class="ag-menu-separator-part"></div>
-                <div class="ag-menu-separator-part"></div>
+            <div class="zing-menu-separator" aria-hidden="true">
+                <div class="zing-menu-separator-part"></div>
+                <div class="zing-menu-separator-part"></div>
+                <div class="zing-menu-separator-part"></div>
+                <div class="zing-menu-separator-part"></div>
             </div>`;
         this.appendChild(loadTemplate(separatorHtml));
     }

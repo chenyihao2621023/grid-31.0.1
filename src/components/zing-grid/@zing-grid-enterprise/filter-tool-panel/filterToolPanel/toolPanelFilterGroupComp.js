@@ -25,11 +25,11 @@ export class ToolPanelFilterGroupComp extends Component {
     init() {
         this.setGroupTitle();
         this.filterGroupComp.setAlignItems('stretch');
-        this.filterGroupComp.addCssClass(`ag-filter-toolpanel-group-level-${this.depth}`);
-        this.filterGroupComp.addCssClassToTitleBar(`ag-filter-toolpanel-group-level-${this.depth}-header`);
+        this.filterGroupComp.addCssClass(`zing-filter-toolpanel-group-level-${this.depth}`);
+        this.filterGroupComp.addCssClassToTitleBar(`zing-filter-toolpanel-group-level-${this.depth}-header`);
         this.childFilterComps.forEach(filterComp => {
             this.filterGroupComp.addItem(filterComp);
-            filterComp.addCssClassToTitleBar(`ag-filter-toolpanel-group-level-${this.depth + 1}-header`);
+            filterComp.addCssClassToTitleBar(`zing-filter-toolpanel-group-level-${this.depth + 1}-header`);
         });
         this.refreshFilterClass();
         this.addExpandCollapseListeners();
@@ -124,7 +124,7 @@ export class ToolPanelFilterGroupComp extends Component {
     refreshFilterClass() {
         const columns = this.getColumns();
         const anyChildFiltersActive = () => columns.some(col => col.isFilterActive());
-        this.filterGroupComp.addOrRemoveCssClass('ag-has-filter', anyChildFiltersActive());
+        this.filterGroupComp.addOrRemoveCssClass('zing-has-filter', anyChildFiltersActive());
     }
     onFilterOpened(event) {
         // when a filter is opened elsewhere, i.e. column menu we close the filter comp so we also need to collapse
@@ -166,8 +166,8 @@ export class ToolPanelFilterGroupComp extends Component {
         super.destroy();
     }
 }
-ToolPanelFilterGroupComp.TEMPLATE = `<div class="ag-filter-toolpanel-group-wrapper">
-            <ag-group-component ref="filterGroupComp"></ag-group-component>
+ToolPanelFilterGroupComp.TEMPLATE = `<div class="zing-filter-toolpanel-group-wrapper">
+            <zing-group-component ref="filterGroupComp"></zing-group-component>
         </div>`;
 __decorate([
     RefSelector('filterGroupComp')

@@ -25,7 +25,7 @@ export function setupModules() {
         }
         if (m.type === 'series') {
             if (m.chartTypes.length > 1)
-                throw new Error('AG Charts - Module definition error: ' + m.identifier);
+                throw new Error('ZING Charts - Module definition error: ' + m.identifier);
             registerSeries(m.identifier, m.chartTypes[0], m.instanceConstructor, m.seriesDefaults, m.themeTemplate, m.enterpriseThemeTemplate, m.paletteFactory, m.solo, m.stackable, m.groupable, m.stackedByDefault, m.swapDefaultAxesCondition, m.customDefaultsFunction);
         }
         if (m.type === 'series-option' && m.themeTemplate) {

@@ -12,8 +12,8 @@ import { missing } from "../../utils/generic";
 import { KeyCode } from '../../constants/keyCode';
 export class SelectCellEditor extends PopupComponent {
     constructor() {
-        super(/* html */ `<div class="ag-cell-edit-wrapper">
-                <ag-select class="ag-cell-editor" ref="eSelect"></ag-select>
+        super(/* html */ `<div class="zing-cell-edit-wrapper">
+                <zing-select class="zing-cell-editor" ref="eSelect"></zing-select>
             </div>`);
         this.startedByEnter = false;
     }
@@ -22,7 +22,7 @@ export class SelectCellEditor extends PopupComponent {
         const { eSelect, valueFormatterService, gridOptionsService } = this;
         const { values, value, eventKey } = params;
         if (missing(values)) {
-            console.warn('AG Grid: no values found for select cellEditor');
+            console.warn('ZING Grid: no values found for select cellEditor');
             return;
         }
         this.startedByEnter = eventKey != null ? eventKey === KeyCode.ENTER : false;

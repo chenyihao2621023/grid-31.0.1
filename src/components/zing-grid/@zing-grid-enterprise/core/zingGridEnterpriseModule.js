@@ -7,8 +7,8 @@ export const EnterpriseCoreModule = {
     version: VERSION,
     moduleName: ModuleNames.EnterpriseCoreModule,
     beans: [LicenseManager],
-    agStackComponents: [
-        { componentName: 'AgWatermark', componentClass: WatermarkComp }
+    zingStackComponents: [
+        { componentName: 'ZingWatermark', componentClass: WatermarkComp }
     ]
 };
 //# sourceMappingURL=zingGridEnterpriseModule.js.map

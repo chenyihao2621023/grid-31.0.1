@@ -21,7 +21,7 @@ export class DataController {
     request(id, data, opts) {
         return __awaiter(this, void 0, void 0, function* () {
             if (this.status !== 'setup')
-                throw new Error(`AG Charts - data request after data setup phase.`);
+                throw new Error(`ZING Charts - data request after data setup phase.`);
             return new Promise((resolve, reject) => {
                 this.requested.push({
                     id,
@@ -36,7 +36,7 @@ export class DataController {
     execute() {
         return __awaiter(this, void 0, void 0, function* () {
             if (this.status !== 'setup')
-                throw new Error(`AG Charts - data request after data setup phase.`);
+                throw new Error(`ZING Charts - data request after data setup phase.`);
             this.status = 'executed';
             this.debug('DataController.execute() - requested', this.requested);
             const { valid, invalid } = this.validateRequests(this.requested);
@@ -76,7 +76,7 @@ export class DataController {
                         this.splitResult(dataModel, processedData, ids, resultCbs);
                     }
                     else {
-                        rejects.forEach((cb) => cb(new Error(`AG Charts - no processed data generated`)));
+                        rejects.forEach((cb) => cb(new Error(`ZING Charts - no processed data generated`)));
                     }
                 }
                 catch (error) {

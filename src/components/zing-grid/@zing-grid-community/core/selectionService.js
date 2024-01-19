@@ -44,7 +44,7 @@ let SelectionService = class SelectionService extends BeanStub {
             return 0;
         const { newValue, clearSelection, suppressFinishActions, rangeSelect, event, source = 'api', } = params;
         if (params.nodes.length > 1 && !this.isMultiselect()) {
-            console.warn(`AG Grid: cannot multi select while rowSelection='single'`);
+            console.warn(`ZING Grid: cannot multi select while rowSelection='single'`);
             return 0;
         }
         // groupSelectsFiltered only makes sense when group selects children
@@ -54,7 +54,7 @@ let SelectionService = class SelectionService extends BeanStub {
         const nodes = params.nodes.map(node => node.footer ? node.sibling : node);
         if (rangeSelect) {
             if (params.nodes.length > 1) {
-                console.warn('AG Grid: cannot range select while selecting multiple rows');
+                console.warn('ZING Grid: cannot range select while selecting multiple rows');
                 return 0;
             }
             const lastSelectedNode = this.getLastSelectedNode();
@@ -352,7 +352,7 @@ let SelectionService = class SelectionService extends BeanStub {
         const { source, justFiltered, justCurrentPage } = params;
         if (justCurrentPage || justFiltered) {
             if (!rowModelClientSide) {
-                console.error("AG Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
+                console.error("ZING Grid: selecting just filtered only works when gridOptions.rowModelType='clientSide'");
                 return;
             }
             this.getNodesToSelect(justFiltered, justCurrentPage).forEach(callback);

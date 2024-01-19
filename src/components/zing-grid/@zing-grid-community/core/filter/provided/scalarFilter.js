@@ -63,7 +63,7 @@ export class ScalarFilter extends SimpleFilter {
             case ScalarFilter.NOT_BLANK:
                 return !this.isBlank(cellValue);
             default:
-                console.warn('AG Grid: Unexpected type of filter "' + filterModel.type + '", it looks like the filter was configured with incorrect Filter Options');
+                console.warn('ZING Grid: Unexpected type of filter "' + filterModel.type + '", it looks like the filter was configured with incorrect Filter Options');
                 return true;
         }
     }

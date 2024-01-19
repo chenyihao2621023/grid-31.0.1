@@ -6,9 +6,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Autowired, Component, PostConstruct } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { _Scene } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { _Scene } from "ag-charts-enterprise";
-const CANVAS_CLASS = 'ag-chart-mini-thumbnail-canvas';
-const ERROR_MESSAGE = 'AG Grid - chart update failed';
+// import { _Scene } from "zing-charts-enterprise";
+const CANVAS_CLASS = 'zing-chart-mini-thumbnail-canvas';
+const ERROR_MESSAGE = 'ZING Grid - chart update failed';
 export class MiniChart extends Component {
     constructor(container, tooltipName) {
         super();

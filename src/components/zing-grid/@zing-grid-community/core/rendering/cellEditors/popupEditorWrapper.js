@@ -9,7 +9,7 @@ import { isUserSuppressingKeyboardEvent } from "../../utils/keyboard";
 import { PostConstruct } from "../../context/context";
 export class PopupEditorWrapper extends PopupComponent {
     constructor(params) {
-        super(/* html */ `<div class="ag-popup-editor" tabindex="-1"/>`);
+        super(/* html */ `<div class="zing-popup-editor" tabindex="-1"/>`);
         this.params = params;
     }
     postConstruct() {

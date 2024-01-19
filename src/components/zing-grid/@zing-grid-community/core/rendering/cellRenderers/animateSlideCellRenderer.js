@@ -12,7 +12,7 @@ export class AnimateSlideCellRenderer extends Component {
     constructor() {
         super(AnimateSlideCellRenderer.TEMPLATE);
         this.refreshCount = 0;
-        this.eCurrent = this.queryForHtmlElement('.ag-value-slide-current');
+        this.eCurrent = this.queryForHtmlElement('.zing-value-slide-current');
     }
     init(params) {
         this.refresh(params);
@@ -27,7 +27,7 @@ export class AnimateSlideCellRenderer extends Component {
         if (this.ePrevious) {
             this.getGui().removeChild(this.ePrevious);
         }
-        this.ePrevious = loadTemplate('<span class="ag-value-slide-previous ag-value-slide-out"></span>');
+        this.ePrevious = loadTemplate('<span class="zing-value-slide-previous zing-value-slide-out"></span>');
         this.ePrevious.innerHTML = this.eCurrent.innerHTML;
         this.getGui().insertBefore(this.ePrevious, this.eCurrent);
         // having timeout of 0 allows use to skip to the next css turn,
@@ -37,7 +37,7 @@ export class AnimateSlideCellRenderer extends Component {
             if (refreshCountCopy !== this.refreshCount) {
                 return;
             }
-            this.ePrevious.classList.add('ag-value-slide-out-end');
+            this.ePrevious.classList.add('zing-value-slide-out-end');
         }, 50);
         window.setTimeout(() => {
             if (refreshCountCopy !== this.refreshCount) {
@@ -75,7 +75,7 @@ export class AnimateSlideCellRenderer extends Component {
     }
 }
 AnimateSlideCellRenderer.TEMPLATE = `<span>
-            <span class="ag-value-slide-current"></span>
+            <span class="zing-value-slide-current"></span>
         </span>`;
 __decorate([
     Autowired('filterManager')

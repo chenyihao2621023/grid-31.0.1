@@ -11,8 +11,8 @@ import { SetValueModel } from './setValueModel';
 export class SetFloatingFilterComp extends Component {
     constructor() {
         super(/* html */ `
-            <div class="ag-floating-filter-input ag-set-floating-filter-input" role="presentation">
-                <ag-input-text-field ref="eFloatingFilterText"></ag-input-text-field>
+            <div class="zing-floating-filter-input zing-set-floating-filter-input" role="presentation">
+                <zing-input-text-field ref="eFloatingFilterText"></zing-input-text-field>
             </div>`);
         this.availableValuesListenerAdded = false;
         this.filterModelFormatter = new SetFilterModelFormatter();
@@ -44,7 +44,7 @@ export class SetFloatingFilterComp extends Component {
     parentSetFilterInstance(cb) {
         this.params.parentFilterInstance((filter) => {
             if (!(filter instanceof SetFilter)) {
-                throw new Error('AG Grid - SetFloatingFilter expects SetFilter as its parent');
+                throw new Error('ZING Grid - SetFloatingFilter expects SetFilter as its parent');
             }
             cb(filter);
         });

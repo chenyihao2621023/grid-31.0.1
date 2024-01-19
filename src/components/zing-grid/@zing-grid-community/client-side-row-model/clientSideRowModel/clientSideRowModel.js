@@ -413,7 +413,7 @@ let ClientSideRowModel = class ClientSideRowModel extends BeanStub {
             paramsStep = stepsMapped[step];
         }
         if (_.missing(paramsStep)) {
-            console.error(`AG Grid: invalid step ${step}, available steps are ${Object.keys(stepsMapped).join(', ')}`);
+            console.error(`ZING Grid: invalid step ${step}, available steps are ${Object.keys(stepsMapped).join(', ')}`);
             return undefined;
         }
         const animate = !this.gridOptionsService.get('suppressAnimationFrame');
@@ -525,7 +525,7 @@ let ClientSideRowModel = class ClientSideRowModel extends BeanStub {
         return result;
     }
     setDatasource(datasource) {
-        console.error('AG Grid: should never call setDatasource on clientSideRowController');
+        console.error('ZING Grid: should never call setDatasource on clientSideRowController');
     }
     getTopLevelNodes() {
         return this.rootNode ? this.rootNode.childrenAfterGroup : null;

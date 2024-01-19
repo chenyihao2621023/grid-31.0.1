@@ -78,7 +78,7 @@ export class AbstractSelectionHandle extends Component {
         document.body.classList.add(this.getDraggingCssClass());
     }
     getDraggingCssClass() {
-        return `ag-dragging-${this.type === SelectionHandleType.FILL ? 'fill' : 'range'}-handle`;
+        return `zing-dragging-${this.type === SelectionHandleType.FILL ? 'fill' : 'range'}-handle`;
     }
     updateValuesOnMove(e) {
         const cell = this.mouseEventService.getCellPositionForEvent(e);

@@ -30,7 +30,7 @@ export class SelectAllFeature extends BeanStub {
     setComp(ctrl) {
         this.headerCellCtrl = ctrl;
         this.cbSelectAll = this.createManagedBean(new ZingCheckbox());
-        this.cbSelectAll.addCssClass('ag-header-select-all');
+        this.cbSelectAll.addCssClass('zing-header-select-all');
         setAriaRole(this.cbSelectAll.getGui(), 'presentation');
         this.showOrHideSelectAll();
         this.addManagedListener(this.eventService, Events.EVENT_NEW_COLUMNS_LOADED, this.onNewColumnsLoaded.bind(this));
@@ -104,7 +104,7 @@ export class SelectAllFeature extends BeanStub {
     checkSelectionType(feature) {
         const isMultiSelect = this.gridOptionsService.get('rowSelection') === 'multiple';
         if (!isMultiSelect) {
-            console.warn(`AG Grid: ${feature} is only available if using 'multiple' rowSelection.`);
+            console.warn(`ZING Grid: ${feature} is only available if using 'multiple' rowSelection.`);
             return false;
         }
         return true;
@@ -113,7 +113,7 @@ export class SelectAllFeature extends BeanStub {
         const rowModelType = this.rowModel.getType();
         const rowModelMatches = rowModelType === 'clientSide' || rowModelType === 'serverSide';
         if (!rowModelMatches) {
-            console.warn(`AG Grid: ${feature} is only available if using 'clientSide' or 'serverSide' rowModelType, you are using ${rowModelType}.`);
+            console.warn(`ZING Grid: ${feature} is only available if using 'clientSide' or 'serverSide' rowModelType, you are using ${rowModelType}.`);
             return false;
         }
         return true;

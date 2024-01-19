@@ -11,11 +11,11 @@ export class Context {
         }
         this.contextParams = params;
         this.logger = logger;
-        this.logger.log(">> creating ag-Application Context");
+        this.logger.log(">> creating zing-Application Context");
         this.createBeans();
         const beanInstances = this.getBeanInstances();
         this.wireBeans(beanInstances);
-        this.logger.log(">> ag-Application Context ready - component is alive");
+        this.logger.log(">> zing-Application Context ready - component is alive");
     }
     getBeanInstances() {
         return values(this.beanWrappers).map(beanEntry => beanEntry.beanInstance);
@@ -45,8 +45,8 @@ export class Context {
         // instantiate all beans - overridden beans will be left out
         iterateObject(this.beanWrappers, (key, beanEntry) => {
             let constructorParamsMeta;
-            if (beanEntry.bean.__agBeanMetaData && beanEntry.bean.__agBeanMetaData.autowireMethods && beanEntry.bean.__agBeanMetaData.autowireMethods.agConstructor) {
-                constructorParamsMeta = beanEntry.bean.__agBeanMetaData.autowireMethods.agConstructor;
+            if (beanEntry.bean.__zingBeanMetaData && beanEntry.bean.__zingBeanMetaData.autowireMethods && beanEntry.bean.__zingBeanMetaData.autowireMethods.zingConstructor) {
+                constructorParamsMeta = beanEntry.bean.__zingBeanMetaData.autowireMethods.zingConstructor;
             }
             const constructorParams = this.getBeansForParameters(constructorParamsMeta, beanEntry.bean.name);
             const newInstance = new (beanEntry.bean.bind.apply(beanEntry.bean, [null, ...constructorParams]));
@@ -57,7 +57,7 @@ export class Context {
     }
     // tslint:disable-next-line
     createBeanWrapper(BeanClass) {
-        const metaData = BeanClass.__agBeanMetaData;
+        const metaData = BeanClass.__zingBeanMetaData;
         if (!metaData) {
             let beanName;
             if (BeanClass.prototype.constructor) {
@@ -79,7 +79,7 @@ export class Context {
     autoWireBeans(beanInstances) {
         beanInstances.forEach(beanInstance => {
             this.forEachMetaDataInHierarchy(beanInstance, (metaData, beanName) => {
-                const attributes = metaData.agClassAttributes;
+                const attributes = metaData.zingClassAttributes;
                 if (!attributes) {
                     return;
                 }
@@ -95,7 +95,7 @@ export class Context {
             this.forEachMetaDataInHierarchy(beanInstance, (metaData, beanName) => {
                 iterateObject(metaData.autowireMethods, (methodName, wireParams) => {
                     // skip constructor, as this is dealt with elsewhere
-                    if (methodName === "agConstructor") {
+                    if (methodName === "zingConstructor") {
                         return;
                     }
                     const initParams = this.getBeansForParameters(wireParams, beanName);
@@ -108,8 +108,8 @@ export class Context {
         let prototype = Object.getPrototypeOf(beanInstance);
         while (prototype != null) {
             const constructor = prototype.constructor;
-            if (constructor.hasOwnProperty('__agBeanMetaData')) {
-                const metaData = constructor.__agBeanMetaData;
+            if (constructor.hasOwnProperty('__zingBeanMetaData')) {
+                const metaData = constructor.__zingBeanMetaData;
                 const beanName = this.getBeanName(constructor);
                 callback(metaData, beanName);
             }
@@ -117,8 +117,8 @@ export class Context {
         }
     }
     getBeanName(constructor) {
-        if (constructor.__agBeanMetaData && constructor.__agBeanMetaData.beanName) {
-            return constructor.__agBeanMetaData.beanName;
+        if (constructor.__zingBeanMetaData && constructor.__zingBeanMetaData.beanName) {
+            return constructor.__zingBeanMetaData.beanName;
         }
         const constructorString = constructor.toString();
         const beanName = constructorString.substring(9, constructorString.indexOf("("));
@@ -136,7 +136,7 @@ export class Context {
     }
     lookupBeanInstance(wiringBean, beanName, optional = false) {
         if (this.destroyed) {
-            this.logger.log(`AG Grid: bean reference ${beanName} is used after the grid is destroyed!`);
+            this.logger.log(`ZING Grid: bean reference ${beanName} is used after the grid is destroyed!`);
             return null;
         }
         if (beanName === "context") {
@@ -150,7 +150,7 @@ export class Context {
             return beanEntry.beanInstance;
         }
         if (!optional) {
-            console.error(`AG Grid: unable to find bean reference ${beanName} while initialising ${wiringBean}`);
+            console.error(`ZING Grid: unable to find bean reference ${beanName} while initialising ${wiringBean}`);
         }
         return null;
     }
@@ -184,12 +184,12 @@ export class Context {
         // Set before doing the destroy, so if context.destroy() gets called via another bean
         // we are marked as destroyed already to prevent running destroy() twice
         this.destroyed = true;
-        this.logger.log(">> Shutting down ag-Application Context");
+        this.logger.log(">> Shutting down zing-Application Context");
         const beanInstances = this.getBeanInstances();
         this.destroyBeans(beanInstances);
         this.contextParams.providedBeanInstances = null;
         ModuleRegistry.__unRegisterGridModules(this.contextParams.gridId);
-        this.logger.log(">> ag-Application Context shut down - component is dead");
+        this.logger.log(">> zing-Application Context shut down - component is dead");
     }
     destroyBean(bean) {
         if (!bean) {
@@ -257,19 +257,19 @@ export function Optional(name) {
 }
 function autowiredFunc(target, name, optional, classPrototype, methodOrAttributeName, index) {
     if (name === null) {
-        console.error("AG Grid: Autowired name should not be null");
+        console.error("ZING Grid: Autowired name should not be null");
         return;
     }
     if (typeof index === "number") {
-        console.error("AG Grid: Autowired should be on an attribute");
+        console.error("ZING Grid: Autowired should be on an attribute");
         return;
     }
     // it's an attribute on the class
     const props = getOrCreateProps(target.constructor);
-    if (!props.agClassAttributes) {
-        props.agClassAttributes = [];
+    if (!props.zingClassAttributes) {
+        props.zingClassAttributes = [];
     }
-    props.agClassAttributes.push({
+    props.zingClassAttributes.push({
         attributeName: methodOrAttributeName,
         beanName: name,
         optional: optional
@@ -288,7 +288,7 @@ export function Qualifier(name) {
             }
             else {
                 props = getOrCreateProps(constructor);
-                methodName = "agConstructor";
+                methodName = "zingConstructor";
             }
             if (!props.autowireMethods) {
                 props.autowireMethods = {};
@@ -301,9 +301,9 @@ export function Qualifier(name) {
     };
 }
 function getOrCreateProps(target) {
-    if (!target.hasOwnProperty("__agBeanMetaData")) {
-        target.__agBeanMetaData = {};
+    if (!target.hasOwnProperty("__zingBeanMetaData")) {
+        target.__zingBeanMetaData = {};
     }
-    return target.__agBeanMetaData;
+    return target.__zingBeanMetaData;
 }
 //# sourceMappingURL=context.js.map

@@ -9,7 +9,7 @@ import { ExcelXlsxFactory } from './excelXlsxFactory';
 import { BaseCreator, Downloader, RowType, ZipContainer } from "@/components/zing-grid/@zing-grid-community/csv-export/main.js";
 import { ExcelSerializingSession } from './excelSerializingSession';
 export const getMultipleSheetsAsExcel = (params) => {
-    const { data, fontSize = 11, author = 'AG Grid' } = params;
+    const { data, fontSize = 11, author = 'ZING Grid' } = params;
     const hasImages = ExcelXlsxFactory.images.size > 0;
     ZipContainer.addFolders([
         '_rels/',
@@ -34,7 +34,7 @@ export const getMultipleSheetsAsExcel = (params) => {
         });
     }
     if (!data || data.length === 0) {
-        console.warn("AG Grid: Invalid params supplied to getMultipleSheetsAsExcel() - `ExcelExportParams.data` is empty.");
+        console.warn("ZING Grid: Invalid params supplied to getMultipleSheetsAsExcel() - `ExcelExportParams.data` is empty.");
         ExcelXlsxFactory.resetFactory();
         return;
     }
@@ -87,7 +87,7 @@ let ExcelCreator = class ExcelCreator extends BaseCreator {
     }
     export(userParams) {
         if (this.isExportSuppressed()) {
-            console.warn(`AG Grid: Export cancelled. Export is not allowed as per your configuration.`);
+            console.warn(`ZING Grid: Export cancelled. Export is not allowed as per your configuration.`);
             return '';
         }
         const mergedParams = this.getMergedParams(userParams);
@@ -140,7 +140,7 @@ let ExcelCreator = class ExcelCreator extends BaseCreator {
     }
     createSerializingSession(params) {
         const { columnModel, valueService, gridOptionsService, valueFormatterService, valueParserService } = this;
-        let sheetName = 'ag-grid';
+        let sheetName = 'zing-grid';
         if (params.sheetName != null) {
             sheetName = _.utf8_encode(String(params.sheetName).substring(0, 31));
         }

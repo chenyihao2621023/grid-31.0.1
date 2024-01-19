@@ -13,16 +13,16 @@ export const StatusBarModule = {
     version: VERSION,
     moduleName: ModuleNames.StatusBarModule,
     beans: [StatusBarService],
-    agStackComponents: [
-        { componentName: 'AgStatusBar', componentClass: StatusBar },
-        { componentName: 'AgNameValue', componentClass: NameValueComp },
+    zingStackComponents: [
+        { componentName: 'ZingStatusBar', componentClass: StatusBar },
+        { componentName: 'ZingNameValue', componentClass: NameValueComp },
     ],
     userComponents: [
-        { componentName: 'agAggregationComponent', componentClass: AggregationComp },
-        { componentName: 'agSelectedRowCountComponent', componentClass: SelectedRowsComp },
-        { componentName: 'agTotalRowCountComponent', componentClass: TotalRowsComp },
-        { componentName: 'agFilteredRowCountComponent', componentClass: FilteredRowsComp },
-        { componentName: 'agTotalAndFilteredRowCountComponent', componentClass: TotalAndFilteredRowsComp }
+        { componentName: 'zingAggregationComponent'', componentClass: AggregationComp },
+        { componentName: 'zingSelectedRowCountComponent'', componentClass: SelectedRowsComp },
+        { componentName: 'zingTotalRowCountComponent'', componentClass: TotalRowsComp },
+        { componentName: 'zingFilteredRowCountComponent'', componentClass: FilteredRowsComp },
+        { componentName: 'zingTotalAndFilteredRowCountComponent'', componentClass: TotalAndFilteredRowsComp }
     ],
     dependantModules: [
         EnterpriseCoreModule

@@ -1,5 +1,5 @@
 import { ComponentUtil } from '@/components/zing-grid/zing-grid-community/main.js';
-export var getAgGridProperties = function () {
+export var getZingGridProperties = function () {
     var props = {
         gridOptions: {
             default: function () {

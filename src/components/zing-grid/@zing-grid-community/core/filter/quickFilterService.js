@@ -60,14 +60,14 @@ let QuickFilterService = QuickFilterService_1 = class QuickFilterService extends
             return null;
         }
         if (!this.gridOptionsService.isRowModelType('clientSide')) {
-            console.warn('AG Grid - Quick filtering only works with the Client-Side Row Model');
+            console.warn('ZING Grid - Quick filtering only works with the Client-Side Row Model');
             return null;
         }
         return newFilter.toUpperCase();
     }
     setQuickFilter(newFilter) {
         if (newFilter != null && typeof newFilter !== 'string') {
-            console.warn(`AG Grid - Grid option quickFilterText only supports string inputs, received: ${typeof newFilter}`);
+            console.warn(`ZING Grid - Grid option quickFilterText only supports string inputs, received: ${typeof newFilter}`);
             return;
         }
         const parsedFilter = this.parseQuickFilter(newFilter);

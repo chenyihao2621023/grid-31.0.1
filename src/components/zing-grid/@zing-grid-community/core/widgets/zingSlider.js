@@ -14,7 +14,7 @@ export class ZingSlider extends ZingAbstractLabel {
         this.labelAlignment = 'top';
     }
     init() {
-        this.eSlider.addCssClass('ag-slider-field');
+        this.eSlider.addCssClass('zing-slider-field');
     }
     onValueChange(callbackFn) {
         const eventChanged = Events.EVENT_FIELD_VALUE_CHANGED;
@@ -66,11 +66,11 @@ export class ZingSlider extends ZingAbstractLabel {
         return this;
     }
 }
-ZingSlider.TEMPLATE = `<div class="ag-slider">
+ZingSlider.TEMPLATE = `<div class="zing-slider">
             <label ref="eLabel"></label>
-            <div class="ag-wrapper ag-slider-wrapper">
-                <ag-input-range ref="eSlider"></ag-input-range>
-                <ag-input-number-field ref="eText"></ag-input-number-field>
+            <div class="zing-wrapper zing-slider-wrapper">
+                <zing-input-range ref="eSlider"></zing-input-range>
+                <zing-input-number-field ref="eText"></zing-input-number-field>
             </div>
         </div>`;
 __decorate([

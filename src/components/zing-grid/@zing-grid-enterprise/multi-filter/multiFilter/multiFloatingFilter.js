@@ -8,7 +8,7 @@ import { Component, _, Autowired, AgPromise, } from '@/components/zing-grid/@zin
 import { MultiFilter } from './multiFilter';
 export class MultiFloatingFilterComp extends Component {
     constructor() {
-        super(/* html */ `<div class="ag-multi-floating-filter ag-floating-filter-input"></div>`);
+        super(/* html */ `<div class="zing-multi-floating-filter zing-floating-filter-input"></div>`);
         this.floatingFilters = [];
         this.compDetailsList = [];
     }
@@ -20,7 +20,7 @@ export class MultiFloatingFilterComp extends Component {
     setParams(compDetailsList) {
         const floatingFilterPromises = [];
         compDetailsList.forEach(compDetails => {
-            const floatingFilterPromise = compDetails === null || compDetails === void 0 ? void 0 : compDetails.newAgStackInstance();
+            const floatingFilterPromise = compDetails === null || compDetails === void 0 ? void 0 : compDetails.newZingStackInstance();
             if (floatingFilterPromise != null) {
                 this.compDetailsList.push(compDetails);
                 floatingFilterPromises.push(floatingFilterPromise);
@@ -114,13 +114,13 @@ export class MultiFloatingFilterComp extends Component {
     }
     getCompDetails(filterDef, params) {
         var _a;
-        let defaultComponentName = (_a = this.userComponentFactory.getDefaultFloatingFilterType(filterDef, () => this.filterManager.getDefaultFloatingFilter(this.params.column))) !== null && _a !== void 0 ? _a : 'agReadOnlyFloatingFilter';
+        let defaultComponentName = (_a = this.userComponentFactory.getDefaultFloatingFilterType(filterDef, () => this.filterManager.getDefaultFloatingFilter(this.params.column))) !== null && _a !== void 0 ? _a : 'zingReadOnlyFloatingFilter'';
         return this.userComponentFactory.getFloatingFilterCompDetails(filterDef, params, defaultComponentName);
     }
     parentMultiFilterInstance(cb) {
         this.params.parentFilterInstance((parent) => {
             if (!(parent instanceof MultiFilter)) {
-                throw new Error('AG Grid - MultiFloatingFilterComp expects MultiFilter as its parent');
+                throw new Error('ZING Grid - MultiFloatingFilterComp expects MultiFilter as its parent');
             }
             cb(parent);
         });

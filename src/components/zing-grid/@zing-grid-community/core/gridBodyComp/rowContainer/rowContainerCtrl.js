@@ -69,28 +69,28 @@ export function getRowContainerTypeForName(name) {
     }
 }
 const ContainerCssClasses = convertToMap([
-    [RowContainerName.CENTER, 'ag-center-cols-container'],
-    [RowContainerName.LEFT, 'ag-pinned-left-cols-container'],
-    [RowContainerName.RIGHT, 'ag-pinned-right-cols-container'],
-    [RowContainerName.FULL_WIDTH, 'ag-full-width-container'],
-    [RowContainerName.TOP_CENTER, 'ag-floating-top-container'],
-    [RowContainerName.TOP_LEFT, 'ag-pinned-left-floating-top'],
-    [RowContainerName.TOP_RIGHT, 'ag-pinned-right-floating-top'],
-    [RowContainerName.TOP_FULL_WIDTH, 'ag-floating-top-full-width-container'],
-    [RowContainerName.STICKY_TOP_CENTER, 'ag-sticky-top-container'],
-    [RowContainerName.STICKY_TOP_LEFT, 'ag-pinned-left-sticky-top'],
-    [RowContainerName.STICKY_TOP_RIGHT, 'ag-pinned-right-sticky-top'],
-    [RowContainerName.STICKY_TOP_FULL_WIDTH, 'ag-sticky-top-full-width-container'],
-    [RowContainerName.BOTTOM_CENTER, 'ag-floating-bottom-container'],
-    [RowContainerName.BOTTOM_LEFT, 'ag-pinned-left-floating-bottom'],
-    [RowContainerName.BOTTOM_RIGHT, 'ag-pinned-right-floating-bottom'],
-    [RowContainerName.BOTTOM_FULL_WIDTH, 'ag-floating-bottom-full-width-container'],
+    [RowContainerName.CENTER, 'zing-center-cols-container'],
+    [RowContainerName.LEFT, 'zing-pinned-left-cols-container'],
+    [RowContainerName.RIGHT, 'zing-pinned-right-cols-container'],
+    [RowContainerName.FULL_WIDTH, 'zing-full-width-container'],
+    [RowContainerName.TOP_CENTER, 'zing-floating-top-container'],
+    [RowContainerName.TOP_LEFT, 'zing-pinned-left-floating-top'],
+    [RowContainerName.TOP_RIGHT, 'zing-pinned-right-floating-top'],
+    [RowContainerName.TOP_FULL_WIDTH, 'zing-floating-top-full-width-container'],
+    [RowContainerName.STICKY_TOP_CENTER, 'zing-sticky-top-container'],
+    [RowContainerName.STICKY_TOP_LEFT, 'zing-pinned-left-sticky-top'],
+    [RowContainerName.STICKY_TOP_RIGHT, 'zing-pinned-right-sticky-top'],
+    [RowContainerName.STICKY_TOP_FULL_WIDTH, 'zing-sticky-top-full-width-container'],
+    [RowContainerName.BOTTOM_CENTER, 'zing-floating-bottom-container'],
+    [RowContainerName.BOTTOM_LEFT, 'zing-pinned-left-floating-bottom'],
+    [RowContainerName.BOTTOM_RIGHT, 'zing-pinned-right-floating-bottom'],
+    [RowContainerName.BOTTOM_FULL_WIDTH, 'zing-floating-bottom-full-width-container'],
 ]);
 const ViewportCssClasses = convertToMap([
-    [RowContainerName.CENTER, 'ag-center-cols-viewport'],
-    [RowContainerName.TOP_CENTER, 'ag-floating-top-viewport'],
-    [RowContainerName.STICKY_TOP_CENTER, 'ag-sticky-top-viewport'],
-    [RowContainerName.BOTTOM_CENTER, 'ag-floating-bottom-viewport'],
+    [RowContainerName.CENTER, 'zing-center-cols-viewport'],
+    [RowContainerName.TOP_CENTER, 'zing-floating-top-viewport'],
+    [RowContainerName.STICKY_TOP_CENTER, 'zing-sticky-top-viewport'],
+    [RowContainerName.BOTTOM_CENTER, 'zing-floating-bottom-viewport'],
 ]);
 export class RowContainerCtrl extends BeanStub {
     static getRowContainerCssClasses(name) {

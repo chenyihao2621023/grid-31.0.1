@@ -53,18 +53,18 @@ export class GroupSelectsChildrenStrategy extends BeanStub {
         const recursivelyDeserializeState = (normalisedState, parentSelected) => {
             var _a, _b;
             if (typeof normalisedState !== 'object') {
-                throw new Error('AG Grid: Each provided state object must be an object.');
+                throw new Error('ZING Grid: Each provided state object must be an object.');
             }
             if ('selectAllChildren' in normalisedState && typeof normalisedState.selectAllChildren !== 'boolean') {
-                throw new Error('AG Grid: `selectAllChildren` must be a boolean value or undefined.');
+                throw new Error('ZING Grid: `selectAllChildren` must be a boolean value or undefined.');
             }
             if ('toggledNodes' in normalisedState) {
                 if (!Array.isArray(normalisedState.toggledNodes)) {
-                    throw new Error('AG Grid: `toggledNodes` must be an array.');
+                    throw new Error('ZING Grid: `toggledNodes` must be an array.');
                 }
                 const allHaveIds = normalisedState.toggledNodes.every(innerState => (typeof innerState === 'object' && 'nodeId' in innerState && typeof innerState.nodeId === 'string'));
                 if (!allHaveIds) {
-                    throw new Error('AG Grid: Every `toggledNode` requires an associated string id.');
+                    throw new Error('ZING Grid: Every `toggledNode` requires an associated string id.');
                 }
             }
             const isThisNodeSelected = (_a = normalisedState.selectAllChildren) !== null && _a !== void 0 ? _a : !parentSelected;
@@ -115,7 +115,7 @@ export class GroupSelectsChildrenStrategy extends BeanStub {
             return 0;
         if (params.rangeSelect) {
             if (nodes.length > 1) {
-                throw new Error('AG Grid: cannot select multiple rows when using rangeSelect');
+                throw new Error('ZING Grid: cannot select multiple rows when using rangeSelect');
             }
             const node = nodes[0];
             const rangeOfNodes = this.rowModel.getNodesInRangeForSelection(node, this.lastSelected);
@@ -260,7 +260,7 @@ export class GroupSelectsChildrenStrategy extends BeanStub {
         }
     }
     getSelectedNodes() {
-        console.warn(`AG Grid: \`getSelectedNodes\` and \`getSelectedRows\` functions cannot be used with \`groupSelectsChildren\` and the server-side row model.
+        console.warn(`ZING Grid: \`getSelectedNodes\` and \`getSelectedRows\` functions cannot be used with \`groupSelectsChildren\` and the server-side row model.
             Use \`api.getServerSideSelectionState()\` instead.`);
         const selectedNodes = [];
         this.rowModel.forEachNode(node => {

@@ -18,7 +18,7 @@ export function getAxis(axisType, moduleCtx) {
     if (axisConstructor) {
         return new axisConstructor(moduleCtx);
     }
-    throw new Error(`AG Charts - unknown axis type: ${axisType}`);
+    throw new Error(`ZING Charts - unknown axis type: ${axisType}`);
 }
 export const AXIS_TYPES = {
     has(axisType) {
