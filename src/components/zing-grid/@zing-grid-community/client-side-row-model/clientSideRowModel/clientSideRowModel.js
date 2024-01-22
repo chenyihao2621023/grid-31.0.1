@@ -964,6 +964,7 @@ let ClientSideRowModel = class ClientSideRowModel extends BeanStub {
     resetRowHeights() {
         const atLeastOne = this.resetRowHeightsForAllRowNodes();
         this.rootNode.setRowHeight(this.rootNode.rowHeight, true);
+        console.log(444, this.rootNode.rowHeight)
         if (this.rootNode.sibling) {
             this.rootNode.sibling.setRowHeight(this.rootNode.sibling.rowHeight, true);
         }

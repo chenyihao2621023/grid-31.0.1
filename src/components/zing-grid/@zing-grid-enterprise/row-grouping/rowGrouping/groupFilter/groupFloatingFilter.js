@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, ZingInputTextField, AgPromise, Autowired, Column, Component, RefSelector, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, ZingInputTextField, ZingPromise, Autowired, Column, Component, RefSelector, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { GroupFilter } from './groupFilter';
 export class GroupFloatingFilterComp extends Component {
     constructor() {
@@ -17,7 +17,7 @@ export class GroupFloatingFilterComp extends Component {
         this.params = params;
         // we only support showing the underlying floating filter for multiple group columns
         const canShowUnderlyingFloatingFilter = this.gridOptionsService.get('groupDisplayType') === 'multipleColumns';
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             this.params.parentFilterInstance(parentFilterInstance => {
                 this.parentFilterInstance = parentFilterInstance;
                 if (canShowUnderlyingFloatingFilter) {
@@ -80,7 +80,7 @@ export class GroupFloatingFilterComp extends Component {
         }
         // fallback to the read-only version
         this.setupReadOnlyFloatingFilterElement();
-        return AgPromise.resolve();
+        return ZingPromise.resolve();
     }
     onColumnVisibleChanged() {
         this.setupUnderlyingFloatingFilterElement();

@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { Component, _, Autowired, AgPromise, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { Component, _, Autowired, ZingPromise, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { MultiFilter } from './multiFilter';
 export class MultiFloatingFilterComp extends Component {
     constructor() {
@@ -26,7 +26,7 @@ export class MultiFloatingFilterComp extends Component {
                 floatingFilterPromises.push(floatingFilterPromise);
             }
         });
-        return AgPromise.all(floatingFilterPromises).then(floatingFilters => {
+        return ZingPromise.all(floatingFilterPromises).then(floatingFilters => {
             floatingFilters.forEach((floatingFilter, index) => {
                 this.floatingFilters.push(floatingFilter);
                 const gui = floatingFilter.getGui();
@@ -114,7 +114,7 @@ export class MultiFloatingFilterComp extends Component {
     }
     getCompDetails(filterDef, params) {
         var _a;
-        let defaultComponentName = (_a = this.userComponentFactory.getDefaultFloatingFilterType(filterDef, () => this.filterManager.getDefaultFloatingFilter(this.params.column))) !== null && _a !== void 0 ? _a : 'zingReadOnlyFloatingFilter'';
+        let defaultComponentName = (_a = this.userComponentFactory.getDefaultFloatingFilterType(filterDef, () => this.filterManager.getDefaultFloatingFilter(this.params.column))) !== null && _a !== void 0 ? _a : 'zingReadOnlyFloatingFilter';
         return this.userComponentFactory.getFloatingFilterCompDetails(filterDef, params, defaultComponentName);
     }
     parentMultiFilterInstance(cb) {

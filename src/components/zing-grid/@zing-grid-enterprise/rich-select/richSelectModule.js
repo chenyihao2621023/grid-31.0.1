@@ -7,8 +7,8 @@ export const RichSelectModule = {
     moduleName: ModuleNames.RichSelectModule,
     beans: [],
     userComponents: [
-        { componentName: 'zingRichSelect'', componentClass: RichSelectCellEditor },
-        { componentName: 'zingRichSelectCellEditor'', componentClass: RichSelectCellEditor }
+        { componentName: 'zingRichSelect', componentClass: RichSelectCellEditor },
+        { componentName: 'zingRichSelectCellEditor', componentClass: RichSelectCellEditor }
     ],
     dependantModules: [
         EnterpriseCoreModule

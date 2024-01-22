@@ -153,7 +153,7 @@ export class DropZoneColumnComp extends Component {
             if (isDelete) {
                 if (!this.isGroupingAndLocked()) {
                     e.preventDefault();
-                    this.dispatchEvent(agEvent);
+                    this.dispatchEvent(zingEvent);
                 }
             }
             if (isEnter && this.isAggregationZone() && !this.gridOptionsService.get('functionsReadOnly')) {
@@ -162,12 +162,12 @@ export class DropZoneColumnComp extends Component {
             }
         });
         this.addManagedListener(this.eButton, 'click', (mouseEvent) => {
-            this.dispatchEvent(agEvent);
+            this.dispatchEvent(zingEvent);
             mouseEvent.stopPropagation();
         });
         const touchListener = new TouchListener(this.eButton);
         this.addManagedListener(touchListener, TouchListener.EVENT_TAP, () => {
-            this.dispatchEvent(agEvent);
+            this.dispatchEvent(zingEvent);
         });
         this.addDestroyFunc(touchListener.destroy.bind(touchListener));
     }

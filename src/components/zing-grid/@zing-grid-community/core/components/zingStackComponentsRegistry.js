@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Bean } from "../context/context";
 import { BeanStub } from "../context/beanStub";
-let ZingStackComponentsRegistry = class AgStackComponentsRegistry extends BeanStub {
+let ZingStackComponentsRegistry = class ZingStackComponentsRegistry extends BeanStub {
     constructor() {
         super(...arguments);
         this.componentsMappedByName = {};
@@ -31,7 +31,7 @@ let ZingStackComponentsRegistry = class AgStackComponentsRegistry extends BeanSt
     }
 };
 ZingStackComponentsRegistry = __decorate([
-    Bean('zingStackComponentsRegistry'')
+    Bean('zingStackComponentsRegistry')
 ], ZingStackComponentsRegistry);
 export { ZingStackComponentsRegistry };
 //# sourceMappingURL=zingStackComponentsRegistry.js.map

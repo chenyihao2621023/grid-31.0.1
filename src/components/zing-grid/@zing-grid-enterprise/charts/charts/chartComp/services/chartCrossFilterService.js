@@ -20,7 +20,7 @@ let ChartCrossFilterService = ChartCrossFilterService_1 = class ChartCrossFilter
             this.updateFilters(filterModel, event, colId);
         }
         else {
-            console.warn("ZING Grid: cross filtering requires a 'zingSetColumnFilter'' or 'zingMultiColumnFilter'' " +
+            console.warn("ZING Grid: cross filtering requires a 'zingSetColumnFilter' or 'zingMultiColumnFilter' " +
                 "to be defined on the column with id: '" + colId + "'");
         }
     }
@@ -60,7 +60,7 @@ let ChartCrossFilterService = ChartCrossFilterService_1 = class ChartCrossFilter
     }
     getUpdatedFilterModel(colId, updatedValues) {
         let columnFilterType = this.getColumnFilterType(colId);
-        if (columnFilterType === 'zingMultiColumnFilter'') {
+        if (columnFilterType === 'zingMultiColumnFilter') {
             return { filterType: 'multi', filterModels: [null, { filterType: 'set', values: updatedValues }] };
         }
         return { filterType: 'set', values: updatedValues };
@@ -89,7 +89,7 @@ let ChartCrossFilterService = ChartCrossFilterService_1 = class ChartCrossFilter
         if (typeof filterType === 'boolean') {
             return filterType;
         }
-        return _.includes(['zingSetColumnFilter'', 'zingMultiColumnFilter''], filterType);
+        return _.includes(['zingSetColumnFilter', 'zingMultiColumnFilter'], filterType);
     }
     getColumnFilterType(colId) {
         let gridColumn = this.getColumnById(colId);

@@ -435,7 +435,7 @@ export class GridBodyScrollFeature extends BeanStub {
             this.centerRowContainerCtrl.setCenterViewportScrollLeft(newHorizontalScroll);
         }
         // this will happen anyway, as the move will cause a 'scroll' event on the body, however
-        // it is possible that the ensureColumnVisible method is called from within AG Grid and
+        // it is possible that the ensureColumnVisible method is called from within ZING Grid and
         // the caller will need to have the columns rendered to continue, which will be before
         // the event has been worked on (which is the case for cell navigation).
         this.centerRowContainerCtrl.onHorizontalViewportChanged();

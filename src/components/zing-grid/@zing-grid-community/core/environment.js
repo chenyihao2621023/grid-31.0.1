@@ -154,7 +154,7 @@ let Environment = class Environment extends BeanStub {
         return this.getSassVariable('chartMenuPanelWidth');
     }
     getTheme() {
-        const reg = /\bag-(material|(?:theme-([\w\-]*)))\b/g;
+        const reg = /\bzing-(material|(?:theme-([\w\-]*)))\b/g;
         let el = this.eGridDiv;
         let themeMatch = null;
         let allThemes = [];

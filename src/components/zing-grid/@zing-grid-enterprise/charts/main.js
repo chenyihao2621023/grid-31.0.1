@@ -1,10 +1,10 @@
 export { GridChartsModule } from "./gridChartsModule";
 export * from './zingGridCoreExtension';
-import { time, AgChart } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { time, AgEnterpriseCharts } from "zing-charts-enterprise";
+import { time, ZingChart } from "@/components/zing-grid/zing-charts-community/main.js";
+// import { time, ZingEnterpriseCharts } from "zing-charts-enterprise";
 export const zingCharts = {
     time,
-    AgChart
-    // AgChart: AgEnterpriseCharts
+    ZingChart
+    // ZingChart: ZingEnterpriseCharts
 };
 //# sourceMappingURL=main.js.map

@@ -69,14 +69,14 @@ SideBarDefParser.DEFAULT_COLUMN_COMP = {
     labelDefault: 'Columns',
     labelKey: 'columns',
     iconKey: 'columns',
-    toolPanel: 'zingColumnsToolPanel'',
+    toolPanel: 'zingColumnsToolPanel',
 };
 SideBarDefParser.DEFAULT_FILTER_COMP = {
     id: 'filters',
     labelDefault: 'Filters',
     labelKey: 'filters',
     iconKey: 'filter',
-    toolPanel: 'zingFiltersToolPanel'',
+    toolPanel: 'zingFiltersToolPanel',
 };
 SideBarDefParser.DEFAULT_BY_KEY = {
     columns: SideBarDefParser.DEFAULT_COLUMN_COMP,

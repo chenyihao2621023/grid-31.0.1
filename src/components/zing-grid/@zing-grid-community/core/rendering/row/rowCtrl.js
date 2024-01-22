@@ -251,7 +251,7 @@ export class RowCtrl extends BeanStub {
         const pinned = this.getPinnedForContainer(gui.containerType);
         const params = this.createFullWidthParams(gui.element, pinned);
         if (this.rowType == RowType.FullWidthDetail) {
-            if (!ModuleRegistry.__assertRegistered(ModuleNames.MasterDetailModule, "cell renderer 'zingDetailCellRenderer'' (for master detail)", this.beans.context.getGridId())) {
+            if (!ModuleRegistry.__assertRegistered(ModuleNames.MasterDetailModule, "cell renderer 'zingDetailCellRenderer' (for master detail)", this.beans.context.getGridId())) {
                 return;
             }
         }
@@ -784,7 +784,7 @@ export class RowCtrl extends BeanStub {
             return;
         }
         const zingEvent = this.createRowEventWithSource(Events.EVENT_ROW_DOUBLE_CLICKED, mouseEvent);
-        this.beans.eventService.dispatchEvent(agEvent);
+        this.beans.eventService.dispatchEvent(zingEvent);
     }
     onRowMouseDown(mouseEvent) {
         this.lastMouseDownOnDragger = isElementChildOfClass(mouseEvent.target, 'zing-row-drag', 3);
@@ -809,7 +809,7 @@ export class RowCtrl extends BeanStub {
             return;
         }
         const zingEvent = this.createRowEventWithSource(Events.EVENT_ROW_CLICKED, mouseEvent);
-        this.beans.eventService.dispatchEvent(agEvent);
+        this.beans.eventService.dispatchEvent(zingEvent);
         // ctrlKey for windows, metaKey for Apple
         const isMultiKey = mouseEvent.ctrlKey || mouseEvent.metaKey;
         const isShiftKey = mouseEvent.shiftKey;
@@ -858,6 +858,7 @@ export class RowCtrl extends BeanStub {
         }
     }
     setupDetailRowAutoHeight(eDetailGui) {
+        console.log(11)
         if (this.rowType !== RowType.FullWidthDetail) {
             return;
         }
@@ -1171,6 +1172,7 @@ export class RowCtrl extends BeanStub {
         if (this.rowNode.rowHeight == null) {
             return;
         }
+        // console.log(this.rowNode.rowHeight)
         const rowHeight = this.rowNode.rowHeight;
         const defaultRowHeight = this.beans.environment.getDefaultRowHeight();
         const isHeightFromFunc = this.gridOptionsService.isGetRowHeightFunction();

@@ -179,7 +179,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
             this.updateDisplayedColumns(source);
             this.checkViewportColumns();
         }
-        // this event is not used by AG Grid, but left here for backwards compatibility,
+        // this event is not used by ZING Grid, but left here for backwards compatibility,
         // in case applications use it
         this.dispatchEverythingChanged(source);
         if (dispatchEventsFunc) {

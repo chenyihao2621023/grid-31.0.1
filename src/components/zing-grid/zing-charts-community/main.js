@@ -2,7 +2,7 @@
 export * from './options/zingChartOptions';
 import * as time_1 from './util/time/index';
 export { time_1 as time };
-export { AgCharts, AgChart } from './chart/zingChartV2';
+export { ZingCharts, ZingChart } from './chart/zingChartV2';
 export { VERSION } from './version';
 // Undocumented APIs used by examples.
 export { Marker } from './chart/marker/marker';

@@ -15,7 +15,7 @@ import { RefSelector } from '../../widgets/componentAnnotations';
 import { PositionableFeature } from '../../rendering/features/positionableFeature';
 /**
  * Contains common logic to all provided filters (apply button, clear button, etc).
- * All the filters that come with AG Grid extend this class. User filters do not
+ * All the filters that come with ZING Grid extend this class. User filters do not
  * extend this class.
  *
  * @param M type of filter-model managed by the concrete sub-class that extends this type

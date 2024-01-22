@@ -299,7 +299,7 @@ export class Component extends BeanStub {
 }
 Component.EVENT_DISPLAYED_CHANGED = 'displayedChanged';
 __decorate([
-    Autowired('zingStackComponentsRegistry'')
+    Autowired('zingStackComponentsRegistry')
 ], Component.prototype, "zingStackComponentsRegistry", void 0);
 __decorate([
     PreConstruct

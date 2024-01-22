@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { _, Autowired, Component, PostConstruct, RefSelector, } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-// import { AgChartLegendPosition } from "zing-charts-enterprise";
+// import { ZingChartLegendPosition } from "zing-charts-enterprise";
 import { FontPanel } from "../fontPanel";
 import { getMaxValue } from "../formatPanel";
 export class LegendPanel extends Component {

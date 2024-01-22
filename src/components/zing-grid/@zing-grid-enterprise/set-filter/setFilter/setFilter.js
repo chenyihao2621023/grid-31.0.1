@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { Autowired, Events, ProvidedFilter, RefSelector, VirtualList, AgPromise, KeyCode, _, GROUP_AUTO_COLUMN_ID, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { Autowired, Events, ProvidedFilter, RefSelector, VirtualList, ZingPromise, KeyCode, _, GROUP_AUTO_COLUMN_ID, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { SetFilterModelValuesType, SetValueModel } from './setValueModel';
 import { SetFilterListItem } from './setFilterListItem';
 import { DEFAULT_LOCALE_TEXT } from './localeText';
@@ -131,7 +131,7 @@ export class SetFilter extends ProvidedFilter {
             // refreshing is expensive. if new and old model are both null (e.g. nothing set), skip.
             // mini filter isn't contained within the model, so always reset
             this.setMiniFilter(null);
-            return AgPromise.resolve();
+            return ZingPromise.resolve();
         }
         return super.setModel(model);
     }
@@ -175,7 +175,7 @@ export class SetFilter extends ProvidedFilter {
         return paramsThatForceReload.some(param => colDef[param] !== (existingColDef === null || existingColDef === void 0 ? void 0 : existingColDef[param]));
     }
     setModelAndRefresh(values) {
-        return this.valueModel ? this.valueModel.setModel(values).then(() => this.checkAndRefreshVirtualList()) : AgPromise.resolve();
+        return this.valueModel ? this.valueModel.setModel(values).then(() => this.checkAndRefreshVirtualList()) : ZingPromise.resolve();
     }
     resetUiToDefaults() {
         this.setMiniFilter(null);

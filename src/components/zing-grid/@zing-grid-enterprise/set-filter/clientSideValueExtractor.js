@@ -1,4 +1,4 @@
-import { AgPromise, Events, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { ZingPromise, Events, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 /** @param V type of value in the Set Filter */
 export class ClientSideValuesExtractor {
     constructor(rowModel, filterParams, createKey, caseFormat, columnModel, valueService, treeDataOrGrouping, treeData, getDataPath, groupAllowUnbalanced, addManagedListener) {
@@ -15,7 +15,7 @@ export class ClientSideValuesExtractor {
         this.addManagedListener = addManagedListener;
     }
     extractUniqueValuesAsync(predicate, existingValues) {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             if (this.rowModel.isRowDataLoaded()) {
                 resolve(this.extractUniqueValues(predicate, existingValues));
             }

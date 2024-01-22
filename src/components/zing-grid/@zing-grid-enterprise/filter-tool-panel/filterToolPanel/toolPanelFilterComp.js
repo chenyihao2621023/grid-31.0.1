@@ -181,7 +181,7 @@ __decorate([
     RefSelector('eFilterName')
 ], ToolPanelFilterComp.prototype, "eFilterName", void 0);
 __decorate([
-    RefSelector('zingFilterToolPanelBody'')
+    RefSelector('zingFilterToolPanelBody')
 ], ToolPanelFilterComp.prototype, "zingFilterToolPanelBody", void 0);
 __decorate([
     RefSelector('eFilterIcon')

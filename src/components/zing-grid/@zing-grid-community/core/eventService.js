@@ -23,7 +23,7 @@ let EventService = class EventService {
     // use autowired attributes, as that would be confusing, as sometimes the attributes
     // would be wired, and sometimes not.
     //
-    // the global event servers used by AG Grid is autowired by the context once, and this
+    // the global event servers used by ZING Grid is autowired by the context once, and this
     // setBeans method gets called once.
     //
     // the times when this class is used outside of the context (eg RowNode has an instance of this
@@ -86,9 +86,9 @@ let EventService = class EventService {
             zingEvent.columnApi = columnApi;
             zingEvent.context = context;
         }
-        this.dispatchToListeners(agEvent, true);
-        this.dispatchToListeners(agEvent, false);
-        this.firedEvents[agEvent.type] = true;
+        this.dispatchToListeners(zingEvent, true);
+        this.dispatchToListeners(zingEvent, false);
+        this.firedEvents[zingEvent.type] = true;
     }
     dispatchEventOnce(event) {
         if (!this.firedEvents[event.type]) {

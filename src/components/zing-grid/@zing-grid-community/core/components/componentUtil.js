@@ -65,7 +65,7 @@ _a = ComponentUtil;
 // all events
 ComponentUtil.EVENTS = values(Events);
 ComponentUtil.VUE_OMITTED_PROPERTY = 'AG-VUE-OMITTED-PROPERTY';
-// events that are internal to AG Grid and should not be exposed to users via documentation or generated framework components
+// events that are internal to ZING Grid and should not be exposed to users via documentation or generated framework components
 /** Exclude the following internal events from code generation to prevent exposing these events via framework components */
 ComponentUtil.EXCLUDED_INTERNAL_EVENTS = [
     Events.EVENT_SCROLLBAR_WIDTH_CHANGED,
@@ -106,7 +106,7 @@ ComponentUtil.EXCLUDED_INTERNAL_EVENTS = [
     Events.EVENT_ROW_COUNT_READY,
     Events.EVENT_SIDE_BAR_UPDATED,
 ];
-// events that are available for use by users of AG Grid and so should be documented
+// events that are available for use by users of ZING Grid and so should be documented
 /** EVENTS that should be exposed via code generation for the framework components.  */
 ComponentUtil.PUBLIC_EVENTS = _a.EVENTS.filter(e => !includes(_a.EXCLUDED_INTERNAL_EVENTS, e));
 // onXXX methods, based on the above events

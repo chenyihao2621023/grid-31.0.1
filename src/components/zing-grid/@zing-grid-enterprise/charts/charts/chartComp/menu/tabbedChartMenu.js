@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgPromise, Autowired, Component, PostConstruct, TabbedLayout } from "@/components/zing-grid/@zing-grid-community/core/main.js";
+import { ZingPromise, Autowired, Component, PostConstruct, TabbedLayout } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { ChartDataPanel } from "./data/chartDataPanel";
 import { FormatPanel } from "./format/formatPanel";
 import { ChartSettingsPanel } from "./settings/chartSettingsPanel";
@@ -45,7 +45,7 @@ export class TabbedChartMenu extends Component {
             tab: {
                 title: titleEl,
                 titleLabel: translatedTitle,
-                bodyPromise: AgPromise.resolve(eWrapperDiv),
+                bodyPromise: ZingPromise.resolve(eWrapperDiv),
                 getScrollableContainer: () => {
                     const scrollableContainer = eWrapperDiv.querySelector('.zing-scrollable-container');
                     return (scrollableContainer || eWrapperDiv);

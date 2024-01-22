@@ -45,7 +45,7 @@ let AnimationFrameService = class AnimationFrameService extends BeanStub {
     isOn() {
         return this.useAnimationFrame;
     }
-    // this method is for our AG Grid sanity only - if animation frames are turned off,
+    // this method is for our ZING Grid sanity only - if animation frames are turned off,
     // then no place in the code should be looking to add any work to be done in animation
     // frames. this stops bugs - where some code is asking for a frame to be executed
     // when it should not.

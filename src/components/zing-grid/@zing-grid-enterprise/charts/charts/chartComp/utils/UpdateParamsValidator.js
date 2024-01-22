@@ -96,7 +96,7 @@ UpdateParamsValidator.validateChartType = validateIfDefined((chartType) => {
     return UpdateParamsValidator.validChartTypes.includes(chartType);
 });
 UpdateParamsValidator.validateZingChartThemeOverrides = validateIfDefined((themeOverrides) => {
-    // ensure supplied AgChartThemeOverrides is an object - can be improved if necessary?
+    // ensure supplied ZingChartThemeOverrides is an object - can be improved if necessary?
     return typeof themeOverrides === 'object';
 });
 UpdateParamsValidator.validateChartParamsCellRange = validateIfDefined((cellRange) => {

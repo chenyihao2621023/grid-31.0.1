@@ -111,7 +111,7 @@ export default {
         this.rowData = data;
       };
 
-      fetch('https://www.zing-grid.com/example-assets/small-olympic-winners.json')
+      fetch('https://www.ag-grid.com/example-assets/small-olympic-winners.json')
           .then((resp) => resp.json())
           .then((data) => updateData(data));
     },

@@ -72,7 +72,7 @@ export class GroupSelectsChildrenStrategy extends BeanStub {
             const doesRedundantStateExist = convertedChildren === null || convertedChildren === void 0 ? void 0 : convertedChildren.some(([_, innerState]) => isThisNodeSelected === innerState.selectAllChildren && innerState.toggledNodes.size === 0);
             if (doesRedundantStateExist) {
                 throw new Error(`
-                    AG Grid: AG Grid: Row selection state could not be parsed due to invalid data. Ensure all child state has toggledNodes or does not conform with the parent rule.
+                    ZING Grid: ZING Grid: Row selection state could not be parsed due to invalid data. Ensure all child state has toggledNodes or does not conform with the parent rule.
                     Please rebuild the selection state and reapply it.
                 `);
             }

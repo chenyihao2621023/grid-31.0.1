@@ -36,7 +36,7 @@ export class Scene {
         this._dirty = false;
         this._root = null;
         this.debug = Debug.create(true, DebugSelectors.SCENE);
-        const { document, window, mode = (_a = windowValue('zingChartsSceneRenderModel'')) !== null && _a !== void 0 ? _a : advancedCompositeIdentifier, width, height, overrideDevicePixelRatio = undefined, } = opts;
+        const { document, window, mode = (_a = windowValue('zingChartsSceneRenderModel')) !== null && _a !== void 0 ? _a : advancedCompositeIdentifier, width, height, overrideDevicePixelRatio = undefined, } = opts;
         this.overrideDevicePixelRatio = overrideDevicePixelRatio;
         this.opts = { document, window, mode };
         this.canvas = new HdpiCanvas({ document, window, width, height, overrideDevicePixelRatio });
@@ -344,7 +344,7 @@ export class Scene {
             }
             return n instanceof Group && n.name != null && match === n.name;
         };
-        const sceneNodeHighlight = toArray(windowValue('zingChartsSceneDebug'')).flatMap((name) => name === 'layout' ? ['seriesRoot', 'legend', 'root', /.*Axis-\d+-axis.*/] : name);
+        const sceneNodeHighlight = toArray(windowValue('zingChartsSceneDebug')).flatMap((name) => name === 'layout' ? ['seriesRoot', 'legend', 'root', /.*Axis-\d+-axis.*/] : name);
         for (const next of sceneNodeHighlight) {
             if (typeof next === 'string' && debugNodes[next] != null)
                 continue;

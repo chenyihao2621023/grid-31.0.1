@@ -1,5 +1,5 @@
 import { includes } from "./utils/array";
-import { AgPromise } from "./utils";
+import { ZingPromise } from "./utils";
 const OUTSIDE_ANGULAR_EVENTS = ['mouseover', 'mouseout', 'mouseenter', 'mouseleave', 'mousemove'];
 const PASSIVE_EVENTS = ['touchstart', 'touchend', 'touchmove', 'touchcancel'];
 /** The base frameworks, eg React & Angular, override this bean with implementations specific to their requirement. */
@@ -15,7 +15,7 @@ export var VanillaFrameworkOverrides = /** @class */ (function () {
         window.setTimeout(action, timeout);
     };
     VanillaFrameworkOverrides.prototype.setInterval = function (action, timeout) {
-        return new AgPromise(function (resolve) {
+        return new ZingPromise(function (resolve) {
             resolve(window.setInterval(action, timeout));
         });
     };

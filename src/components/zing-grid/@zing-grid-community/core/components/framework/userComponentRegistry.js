@@ -138,7 +138,7 @@ let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
     warnAboutMissingComponent(propertyName, componentName) {
         const validComponents = [
             // Don't include the old names / internals in potential suggestions
-            ...Object.keys(this.zingGridDefaults).filter(k => !['zingCellEditor'', 'zingGroupRowRenderer'', 'zingSortIndicator''].includes(k)),
+            ...Object.keys(this.zingGridDefaults).filter(k => !['zingCellEditor', 'zingGroupRowRenderer', 'zingSortIndicator'].includes(k)),
             ...Object.keys(this.jsComps)
         ];
         const suggestions = fuzzySuggestions(componentName, validComponents, true, 0.8).values;

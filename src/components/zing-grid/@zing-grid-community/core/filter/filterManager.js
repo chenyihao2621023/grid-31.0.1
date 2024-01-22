@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { AgPromise, _ } from '../utils';
+import { ZingPromise, _ } from '../utils';
 import { Column } from '../entities/column';
 import { Autowired, Bean, Optional, PostConstruct } from '../context/context';
 import { Events } from '../events';
@@ -115,7 +115,7 @@ let FilterManager = class FilterManager extends BeanStub {
                 allPromises.push(this.setModelOnFilterWrapper(filterWrapper.filterPromise, null));
             });
         }
-        AgPromise.all(allPromises).then(() => {
+        ZingPromise.all(allPromises).then(() => {
             const currentModel = this.getFilterModel();
             const columns = [];
             this.allColumnFilters.forEach((filterWrapper, colId) => {
@@ -131,13 +131,13 @@ let FilterManager = class FilterManager extends BeanStub {
         });
     }
     setModelOnFilterWrapper(filterPromise, newModel) {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             filterPromise.then(filter => {
                 if (typeof filter.setModel !== 'function') {
                     console.warn('ZING Grid: filter missing setModel method, which is needed for setFilterModel');
                     resolve();
                 }
-                (filter.setModel(newModel) || AgPromise.resolve()).then(() => resolve());
+                (filter.setModel(newModel) || ZingPromise.resolve()).then(() => resolve());
             });
         });
     }
@@ -443,18 +443,18 @@ let FilterManager = class FilterManager extends BeanStub {
     getDefaultFilter(column) {
         let defaultFilter;
         if (ModuleRegistry.__isRegistered(ModuleNames.SetFilterModule, this.context.getGridId())) {
-            defaultFilter = 'zingSetColumnFilter'';
+            defaultFilter = 'zingSetColumnFilter';
         }
         else {
             const cellDataType = column.getColDef().cellDataType;
             if (cellDataType === 'number') {
-                defaultFilter = 'zingNumberColumnFilter'';
+                defaultFilter = 'zingNumberColumnFilter';
             }
             else if (cellDataType === 'date' || cellDataType === 'dateString') {
-                defaultFilter = 'zingDateColumnFilter'';
+                defaultFilter = 'zingDateColumnFilter';
             }
             else {
-                defaultFilter = 'zingTextColumnFilter'';
+                defaultFilter = 'zingTextColumnFilter';
             }
         }
         return defaultFilter;
@@ -462,18 +462,18 @@ let FilterManager = class FilterManager extends BeanStub {
     getDefaultFloatingFilter(column) {
         let defaultFloatingFilterType;
         if (ModuleRegistry.__isRegistered(ModuleNames.SetFilterModule, this.context.getGridId())) {
-            defaultFloatingFilterType = 'zingSetColumnFloatingFilter'';
+            defaultFloatingFilterType = 'zingSetColumnFloatingFilter';
         }
         else {
             const cellDataType = column.getColDef().cellDataType;
             if (cellDataType === 'number') {
-                defaultFloatingFilterType = 'zingNumberColumnFloatingFilter'';
+                defaultFloatingFilterType = 'zingNumberColumnFloatingFilter';
             }
             else if (cellDataType === 'date' || cellDataType === 'dateString') {
-                defaultFloatingFilterType = 'zingDateColumnFloatingFilter'';
+                defaultFloatingFilterType = 'zingDateColumnFloatingFilter';
             }
             else {
-                defaultFloatingFilterType = 'zingTextColumnFloatingFilter'';
+                defaultFloatingFilterType = 'zingTextColumnFloatingFilter';
             }
         }
         return defaultFloatingFilterType;
@@ -520,7 +520,7 @@ let FilterManager = class FilterManager extends BeanStub {
             column: column,
             filterPromise: null,
             compiledElement: null,
-            guiPromise: AgPromise.resolve(null),
+            guiPromise: ZingPromise.resolve(null),
             compDetails: null
         };
         const { filterPromise, compDetails } = this.createFilterInstance(column);
@@ -534,7 +534,7 @@ let FilterManager = class FilterManager extends BeanStub {
     putIntoGui(filterWrapper, source) {
         const eFilterGui = document.createElement('div');
         eFilterGui.className = 'zing-filter';
-        filterWrapper.guiPromise = new AgPromise(resolve => {
+        filterWrapper.guiPromise = new ZingPromise(resolve => {
             filterWrapper.filterPromise.then(filter => {
                 let guiFromFilter = filter.getGui();
                 if (!exists(guiFromFilter)) {
@@ -591,7 +591,7 @@ let FilterManager = class FilterManager extends BeanStub {
         // Instead, create them by default when any filter changes.
         const groupColumns = this.columnModel.getGroupAutoColumns();
         groupColumns === null || groupColumns === void 0 ? void 0 : groupColumns.forEach(groupColumn => {
-            if (groupColumn.getColDef().filter === 'zingGroupColumnFilter'') {
+            if (groupColumn.getColDef().filter === 'zingGroupColumnFilter') {
                 this.getOrCreateFilterWrapper(groupColumn, 'NO_UI');
             }
         });
@@ -619,7 +619,7 @@ let FilterManager = class FilterManager extends BeanStub {
         const finalFilterParams = this.userComponentFactory.mergeParamsWithApplicationProvidedParams(colDef, FilterComponent, filterParams);
         let defaultFloatingFilterType = this.userComponentFactory.getDefaultFloatingFilterType(colDef, () => this.getDefaultFloatingFilter(column));
         if (defaultFloatingFilterType == null) {
-            defaultFloatingFilterType = 'zingReadOnlyFloatingFilter'';
+            defaultFloatingFilterType = 'zingReadOnlyFloatingFilter';
         }
         const parentFilterInstance = (callback) => {
             const filterComponent = this.getFilterComponent(column, 'NO_UI');

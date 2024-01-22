@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { _, Autowired, Component, PostConstruct, RefSelector } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { MiniChartsContainer } from "./miniChartsContainer";
-// import { AgChartThemePalette } from "zing-charts-enterprise";
+// import { ZingChartThemePalette } from "zing-charts-enterprise";
 import { ChartController } from "../../chartController";
 export class ChartSettingsPanel extends Component {
     constructor(chartController) {

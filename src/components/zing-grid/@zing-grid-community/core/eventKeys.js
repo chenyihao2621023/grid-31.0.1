@@ -138,7 +138,7 @@ Events.EVENT_HEIGHT_SCALE_CHANGED = 'heightScaleChanged';
 /** The displayed page for pagination has changed. For example the data was filtered or sorted,
  * or the user has moved to a different page. */
 Events.EVENT_PAGINATION_CHANGED = 'paginationChanged';
-/** Only used by React, Angular, Web Components and VueJS AG Grid components
+/** Only used by React, Angular, Web Components and VueJS ZING Grid components
  * (not used if doing plain JavaScript). If the grid receives changes due
  * to bound properties, this event fires after the grid has finished processing the change. */
 Events.EVENT_COMPONENT_STATE_CHANGED = 'componentStateChanged';

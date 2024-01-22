@@ -12,7 +12,7 @@ import { getAbsoluteHeight, getAbsoluteWidth, getElementRectWithOffset } from '.
 import { last } from '../utils/array';
 import { isElementInEventPath, isStopPropagationForZingGrid } from '../utils/event';
 import { KeyCode } from '../constants/keyCode';
-import { AgPromise } from "../utils";
+import { ZingPromise } from "../utils";
 import { setAriaLabel, setAriaRole } from "../utils/aria";
 import { exists } from "../utils/generic";
 var DIRECTION;
@@ -463,7 +463,7 @@ let PopupService = PopupService_1 = class PopupService extends BeanStub {
         const top = parseInt(topPx.substring(0, topPx.length - 1), 10);
         const leftPx = ePopup.style.left;
         const left = parseInt(leftPx.substring(0, leftPx.length - 1), 10);
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             this.getFrameworkOverrides().setInterval(() => {
                 const pRect = eParent.getBoundingClientRect();
                 const sRect = element.getBoundingClientRect();

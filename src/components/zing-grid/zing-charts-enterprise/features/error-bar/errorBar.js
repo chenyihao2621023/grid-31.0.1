@@ -1,14 +1,14 @@
-import { AgErrorBarSupportedSeriesTypes, _ModuleSupport, _Scene } from '@/components/zing-grid/zing-charts-community/main.js';
+import { ZingErrorBarSupportedSeriesTypes, _ModuleSupport, _Scene } from '@/components/zing-grid/zing-charts-community/main.js';
 import { ErrorBarGroup, ErrorBarNode } from './errorBarNode';
 import { ErrorBarProperties } from './errorBarProperties';
 const { isDefined, fixNumericExtent, mergeDefaults, valueProperty, ChartAxisDirection } = _ModuleSupport;
 function toErrorBoundCartesianSeries(ctx) {
-    for (const supportedType of AgErrorBarSupportedSeriesTypes) {
+    for (const supportedType of ZingErrorBarSupportedSeriesTypes) {
         if (supportedType == ctx.series.type) {
             return ctx.series;
         }
     }
-    throw new Error(`ZING Charts - unsupported series type '${ctx.series.type}', error bars supported series types: ${AgErrorBarSupportedSeriesTypes.join(', ')}`);
+    throw new Error(`ZING Charts - unsupported series type '${ctx.series.type}', error bars supported series types: ${ZingErrorBarSupportedSeriesTypes.join(', ')}`);
 }
 export class ErrorBars extends _ModuleSupport.BaseModuleInstance {
     constructor(ctx) {

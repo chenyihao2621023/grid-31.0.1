@@ -1,2 +1,2 @@
-export const AgErrorBarSupportedSeriesTypes = ['bar', 'line', 'scatter'];
+export const ZingErrorBarSupportedSeriesTypes = ['bar', 'line', 'scatter'];
 //# sourceMappingURL=errorBarOptions.js.map

@@ -27,7 +27,7 @@ import { Logger } from '../util/logger';
 import { CartesianChart } from './cartesianChart';
 import { Chart } from './chart';
 import { getJsonApplyOptions } from './chartOptions';
-import { AgChartInstanceProxy } from './chartProxy';
+import { ZingChartInstanceProxy } from './chartProxy';
 import { ChartUpdateType } from './chartUpdateType';
 import { getAxis } from './factory/axisTypes';
 import { isEnterpriseSeriesType, isEnterpriseSeriesTypeLoaded } from './factory/expectedEnterpriseModules';
@@ -54,11 +54,11 @@ function chartType(options) {
     throw new Error(`ZING Chart - unknown type of chart for options with type: ${options.type}`);
 }
 /**
- * Factory for creating and updating instances of AgChartInstance.
+ * Factory for creating and updating instances of ZingChartInstance.
  *
  * @docsInterface
  */
-export class AgCharts {
+export class ZingCharts {
     static licenseCheck(options) {
         var _a, _b, _c;
         if (this.licenseChecked)
@@ -72,25 +72,25 @@ export class AgCharts {
         this.licenseKey = licenseKey;
     }
     /**
-     * Returns the `AgChartInstance` for a DOM node, if there is one.
+     * Returns the `ZingChartInstance` for a DOM node, if there is one.
      */
     static getInstance(element) {
-        return AgChartsInternal.getInstance(element);
+        return ZingChartsInternal.getInstance(element);
     }
     /**
-     * Create a new `AgChartInstance` based upon the given configuration options.
+     * Create a new `ZingChartInstance` based upon the given configuration options.
      */
     static create(options) {
         var _a, _b, _c;
         this.licenseCheck(options);
-        const chart = AgChartsInternal.createOrUpdate(options);
+        const chart = ZingChartsInternal.createOrUpdate(options);
         if ((_a = this.licenseManager) === null || _a === void 0 ? void 0 : _a.isDisplayWatermark()) {
             (_b = enterpriseModule.injectWatermark) === null || _b === void 0 ? void 0 : _b.call(enterpriseModule, (_c = options.document) !== null && _c !== void 0 ? _c : document, chart.chart.element, this.licenseManager.getWatermarkMessage());
         }
         return chart;
     }
     /**
-     * Update an existing `AgChartInstance`. Options provided should be complete and not
+     * Update an existing `ZingChartInstance`. Options provided should be complete and not
      * partial.
      *
      * __NOTE__: As each call could trigger a chart redraw, multiple calls to update options in
@@ -98,13 +98,13 @@ export class AgCharts {
      * debounce changes to avoid unintended partial update renderings.
      */
     static update(chart, options) {
-        if (!AgChartInstanceProxy.isInstance(chart)) {
-            throw new Error(AgCharts.INVALID_CHART_REF_MESSAGE);
+        if (!ZingChartInstanceProxy.isInstance(chart)) {
+            throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
-        AgChartsInternal.createOrUpdate(options, chart);
+        ZingChartsInternal.createOrUpdate(options, chart);
     }
     /**
-     * Update an existing `AgChartInstance` by applying a partial set of option changes.
+     * Update an existing `ZingChartInstance` by applying a partial set of option changes.
      *
      * __NOTE__: As each call could trigger a chart redraw, each individual delta options update
      * should leave the chart in a valid options state. Also, multiple calls to update options in
@@ -112,77 +112,77 @@ export class AgCharts {
      * debounce changes to avoid unintended partial update renderings.
      */
     static updateDelta(chart, deltaOptions) {
-        if (!AgChartInstanceProxy.isInstance(chart)) {
-            throw new Error(AgCharts.INVALID_CHART_REF_MESSAGE);
+        if (!ZingChartInstanceProxy.isInstance(chart)) {
+            throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
-        AgChartsInternal.updateUserDelta(chart, deltaOptions);
+        ZingChartsInternal.updateUserDelta(chart, deltaOptions);
     }
     /**
-     * Starts a browser-based image download for the given `AgChartInstance`.
+     * Starts a browser-based image download for the given `ZingChartInstance`.
      */
     static download(chart, options) {
-        if (!(chart instanceof AgChartInstanceProxy)) {
-            throw new Error(AgCharts.INVALID_CHART_REF_MESSAGE);
+        if (!(chart instanceof ZingChartInstanceProxy)) {
+            throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
-        AgChartsInternal.download(chart, options);
+        ZingChartsInternal.download(chart, options);
     }
     /**
-     * Returns a base64-encoded image data URL for the given `AgChartInstance`.
+     * Returns a base64-encoded image data URL for the given `ZingChartInstance`.
      */
     static getImageDataURL(chart, options) {
-        if (!(chart instanceof AgChartInstanceProxy)) {
-            throw new Error(AgCharts.INVALID_CHART_REF_MESSAGE);
+        if (!(chart instanceof ZingChartInstanceProxy)) {
+            throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
-        return AgChartsInternal.getImageDataURL(chart, options);
+        return ZingChartsInternal.getImageDataURL(chart, options);
     }
 }
-AgCharts.INVALID_CHART_REF_MESSAGE = 'ZING Charts - invalid chart reference passed';
-AgCharts.licenseChecked = false;
-/** @deprecated use AgCharts instead */
-export class AgChart {
+ZingCharts.INVALID_CHART_REF_MESSAGE = 'ZING Charts - invalid chart reference passed';
+ZingCharts.licenseChecked = false;
+/** @deprecated use ZingCharts instead */
+export class ZingChart {
     static warnDeprecated(memberName) {
         const warnDeprecated = createDeprecationWarning();
-        warnDeprecated(`AgChart.${memberName}`, `Use AgCharts.${memberName} instead`);
+        warnDeprecated(`ZingChart.${memberName}`, `Use ZingCharts.${memberName} instead`);
     }
     static create(options) {
-        AgChart.warnDeprecated('create');
-        return AgCharts.create(options);
+        ZingChart.warnDeprecated('create');
+        return ZingCharts.create(options);
     }
     static update(chart, options) {
-        AgChart.warnDeprecated('update');
-        return AgCharts.update(chart, options);
+        ZingChart.warnDeprecated('update');
+        return ZingCharts.update(chart, options);
     }
     static updateDelta(chart, deltaOptions) {
-        AgChart.warnDeprecated('updateDelta');
-        return AgCharts.updateDelta(chart, deltaOptions);
+        ZingChart.warnDeprecated('updateDelta');
+        return ZingCharts.updateDelta(chart, deltaOptions);
     }
     static download(chart, options) {
-        AgChart.warnDeprecated('download');
-        return AgCharts.download(chart, options);
+        ZingChart.warnDeprecated('download');
+        return ZingCharts.download(chart, options);
     }
     static getImageDataURL(chart, options) {
-        AgChart.warnDeprecated('getImageDataURL');
-        return AgCharts.getImageDataURL(chart, options);
+        ZingChart.warnDeprecated('getImageDataURL');
+        return ZingCharts.getImageDataURL(chart, options);
     }
 }
 const proxyInstances = new WeakMap();
-class AgChartsInternal {
+class ZingChartsInternal {
     static getInstance(element) {
         const chart = Chart.getInstance(element);
         return chart != null ? proxyInstances.get(chart) : undefined;
     }
     static initialiseModules() {
-        if (AgChartsInternal.initialised)
+        if (ZingChartsInternal.initialised)
             return;
         registerInbuiltModules();
         setupModules();
-        AgChartsInternal.initialised = true;
+        ZingChartsInternal.initialised = true;
     }
     static createOrUpdate(userOptions, proxy) {
         var _a;
         var _b;
-        AgChartsInternal.initialiseModules();
-        debug('>>> AgChartV2.createOrUpdate() user options', userOptions);
+        ZingChartsInternal.initialiseModules();
+        debug('>>> ZingChartV2.createOrUpdate() user options', userOptions);
         const { overrideDevicePixelRatio, document, window: userWindow } = userOptions, chartOptions = __rest(userOptions, ["overrideDevicePixelRatio", "document", "window"]);
         const specialOverrides = { overrideDevicePixelRatio, document, window: userWindow };
         const processedOptions = prepareOptions(chartOptions);
@@ -191,10 +191,10 @@ class AgChartsInternal {
             proxyInstances.delete(chart);
         }
         if (chart == null || chartType(chartOptions) !== chartType(chart.processedOptions)) {
-            chart = AgChartsInternal.createChartInstance(processedOptions, specialOverrides, chart);
+            chart = ZingChartsInternal.createChartInstance(processedOptions, specialOverrides, chart);
         }
         if (proxy == null) {
-            proxy = new AgChartInstanceProxy(chart);
+            proxy = new ZingChartInstanceProxy(chart);
         }
         else {
             proxy.chart = chart;
@@ -221,7 +221,7 @@ class AgChartsInternal {
                 dequeue();
                 return;
             }
-            yield AgChartsInternal.updateDelta(chartToUpdate, deltaOptions, chartOptions);
+            yield ZingChartsInternal.updateDelta(chartToUpdate, deltaOptions, chartOptions);
             dequeue();
         }));
         return proxy;
@@ -231,9 +231,9 @@ class AgChartsInternal {
         const { chart, chart: { queuedUserOptions }, } = proxy;
         const lastUpdateOptions = (_a = queuedUserOptions[queuedUserOptions.length - 1]) !== null && _a !== void 0 ? _a : chart.userOptions;
         const userOptions = jsonMerge([lastUpdateOptions, deltaOptions]);
-        debug('>>> AgChartV2.updateUserDelta() user delta', deltaOptions);
-        debug('AgChartV2.updateUserDelta() - base options', lastUpdateOptions);
-        AgChartsInternal.createOrUpdate(userOptions, proxy);
+        debug('>>> ZingChartV2.updateUserDelta() user delta', deltaOptions);
+        debug('ZingChartV2.updateUserDelta() - base options', lastUpdateOptions);
+        ZingChartsInternal.createOrUpdate(userOptions, proxy);
     }
     /**
      * Returns the content of the current canvas as an image.
@@ -241,7 +241,7 @@ class AgChartsInternal {
      */
     static download(proxy, opts) {
         const asyncDownload = () => __awaiter(this, void 0, void 0, function* () {
-            const maybeClone = yield AgChartsInternal.prepareResizedChart(proxy, opts);
+            const maybeClone = yield ZingChartsInternal.prepareResizedChart(proxy, opts);
             const { chart } = maybeClone;
             chart.scene.download(opts === null || opts === void 0 ? void 0 : opts.fileName, opts === null || opts === void 0 ? void 0 : opts.fileFormat);
             if (maybeClone !== proxy) {
@@ -252,7 +252,7 @@ class AgChartsInternal {
     }
     static getImageDataURL(proxy, opts) {
         return __awaiter(this, void 0, void 0, function* () {
-            const maybeClone = yield AgChartsInternal.prepareResizedChart(proxy, opts);
+            const maybeClone = yield ZingChartsInternal.prepareResizedChart(proxy, opts);
             const { chart } = maybeClone;
             const result = chart.scene.canvas.getDataURL(opts === null || opts === void 0 ? void 0 : opts.fileFormat);
             if (maybeClone !== proxy) {
@@ -282,7 +282,7 @@ class AgChartsInternal {
                 (_a = options.animation) !== null && _a !== void 0 ? _a : (options.animation = {});
                 options.animation.enabled = false;
             }
-            const clonedChart = AgChartsInternal.createOrUpdate(options);
+            const clonedChart = ZingChartsInternal.createOrUpdate(options);
             yield clonedChart.chart.waitForUpdate();
             return clonedChart;
         });
@@ -308,12 +308,12 @@ class AgChartsInternal {
             }
             if (chart.destroyed)
                 return;
-            debug('AgChartV2.updateDelta() - applying delta', processedOptions);
+            debug('ZingChartV2.updateDelta() - applying delta', processedOptions);
             applyChartOptions(chart, processedOptions, userOptions);
         });
     }
 }
-AgChartsInternal.initialised = false;
+ZingChartsInternal.initialised = false;
 function applyChartOptions(chart, processedOptions, userOptions) {
     var _a, _b, _c;
     const completeOptions = jsonMerge([(_a = chart.processedOptions) !== null && _a !== void 0 ? _a : {}, processedOptions], noDataCloneMergeOptions);
@@ -365,7 +365,7 @@ function applyChartOptions(chart, processedOptions, userOptions) {
     chart.userOptions = jsonMerge([(_c = chart.userOptions) !== null && _c !== void 0 ? _c : {}, userOptions], noDataCloneMergeOptions);
     const majorChange = forceNodeDataRefresh || modulesChanged;
     const updateType = majorChange ? ChartUpdateType.PROCESS_DATA : ChartUpdateType.PERFORM_LAYOUT;
-    debug('AgChartV2.applyChartOptions() - update type', ChartUpdateType[updateType]);
+    debug('ZingChartV2.applyChartOptions() - update type', ChartUpdateType[updateType]);
     chart.update(updateType, { forceNodeDataRefresh, newAnimationBatch: true });
 }
 function applyModules(chart, options) {
@@ -416,13 +416,13 @@ function applySeries(chart, options) {
             if (!seriesDiff) {
                 return;
             }
-            debug(`AgChartV2.applySeries() - applying series diff idx ${i}`, seriesDiff);
+            debug(`ZingChartV2.applySeries() - applying series diff idx ${i}`, seriesDiff);
             applySeriesValues(s, seriesDiff);
             s.markNodeDataDirty();
         });
         return false;
     }
-    debug(`AgChartV2.applySeries() - creating new series instances`);
+    debug(`ZingChartV2.applySeries() - creating new series instances`);
     chart.series = createSeries(chart, optSeries);
     return true;
 }
@@ -443,7 +443,7 @@ function applyAxes(chart, options, forceRecreate) {
                 var _a, _b;
                 const previousOpts = (_b = (_a = oldOpts.axes) === null || _a === void 0 ? void 0 : _a[i]) !== null && _b !== void 0 ? _b : {};
                 const axisDiff = jsonDiff(previousOpts, optAxes[i]);
-                debug(`AgChartV2.applyAxes() - applying axis diff idx ${i}`, axisDiff);
+                debug(`ZingChartV2.applyAxes() - applying axis diff idx ${i}`, axisDiff);
                 const path = `axes[${i}]`;
                 const skip = ['axes[].type'];
                 applyOptionValues(a, moduleContext, axisDiff, { path, skip });

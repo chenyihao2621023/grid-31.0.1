@@ -16,7 +16,7 @@ export class ModuleRegistry {
     static registerModules(modules) {
         ModuleRegistry.__registerModules(modules, true, undefined);
     }
-    /** AG GRID INTERNAL - Module registration helper. */
+    /** ZING GRID INTERNAL - Module registration helper. */
     static __register(module, moduleBased, gridId) {
         ModuleRegistry.runVersionChecks(module);
         if (gridId !== undefined) {
@@ -31,11 +31,11 @@ export class ModuleRegistry {
         }
         ModuleRegistry.setModuleBased(moduleBased);
     }
-    /** AG GRID INTERNAL - Unregister grid scoped module. */
+    /** ZING GRID INTERNAL - Unregister grid scoped module. */
     static __unRegisterGridModules(gridId) {
         delete ModuleRegistry.gridModulesMap[gridId];
     }
-    /** AG GRID INTERNAL - Module registration helper. */
+    /** ZING GRID INTERNAL - Module registration helper. */
     static __registerModules(modules, moduleBased, gridId) {
         ModuleRegistry.setModuleBased(moduleBased);
         if (!modules) {
@@ -53,10 +53,10 @@ export class ModuleRegistry {
             ModuleRegistry.currentModuleVersion = module.version;
         }
         if (!module.version) {
-            console.error(`ZING Grid: You are using incompatible versions of AG Grid modules. Major and minor versions should always match across modules. '${module.moduleName}' is incompatible. Please update all modules to the same version.`);
+            console.error(`ZING Grid: You are using incompatible versions of ZING Grid modules. Major and minor versions should always match across modules. '${module.moduleName}' is incompatible. Please update all modules to the same version.`);
         }
         else if (!ModuleRegistry.isValidModuleVersion(module)) {
-            console.error(`ZING Grid: You are using incompatible versions of AG Grid modules. Major and minor versions should always match across modules. '${module.moduleName}' is version ${module.version} but the other modules are version ${this.currentModuleVersion}. Please update all modules to the same version.`);
+            console.error(`ZING Grid: You are using incompatible versions of ZING Grid modules. Major and minor versions should always match across modules. '${module.moduleName}' is version ${module.version} but the other modules are version ${this.currentModuleVersion}. Please update all modules to the same version.`);
         }
         if (module.validate) {
             const result = module.validate();
@@ -80,12 +80,12 @@ export class ModuleRegistry {
         }
     }
     /**
-     * AG GRID INTERNAL - Set if files are being served from a single UMD bundle to provide accurate enterprise upgrade steps.
+     * ZING GRID INTERNAL - Set if files are being served from a single UMD bundle to provide accurate enterprise upgrade steps.
      */
     static __setIsBundled() {
         ModuleRegistry.isBundled = true;
     }
-    /** AG GRID INTERNAL - Assert a given module has been register, globally or individually with this grid. */
+    /** ZING GRID INTERNAL - Assert a given module has been register, globally or individually with this grid. */
     static __assertRegistered(moduleName, reason, gridId) {
         var _a;
         if (this.__isRegistered(moduleName, gridId)) {
@@ -128,16 +128,16 @@ For more info see: https://www.zing-grid.com/javascript-grid/packages/`;
         }, warningKey);
         return false;
     }
-    /** AG GRID INTERNAL - Is the given module registered, globally or individually with this grid. */
+    /** ZING GRID INTERNAL - Is the given module registered, globally or individually with this grid. */
     static __isRegistered(moduleName, gridId) {
         var _a;
         return !!ModuleRegistry.globalModulesMap[moduleName] || !!((_a = ModuleRegistry.gridModulesMap[gridId]) === null || _a === void 0 ? void 0 : _a[moduleName]);
     }
-    /** AG GRID INTERNAL - Get all registered modules globally / individually for this grid. */
+    /** ZING GRID INTERNAL - Get all registered modules globally / individually for this grid. */
     static __getRegisteredModules(gridId) {
         return [...values(ModuleRegistry.globalModulesMap), ...values(ModuleRegistry.gridModulesMap[gridId] || {})];
     }
-    /** AG GRID INTERNAL - Get the list of modules registered individually for this grid. */
+    /** ZING GRID INTERNAL - Get the list of modules registered individually for this grid. */
     static __getGridRegisteredModules(gridId) {
         var _a;
         return values((_a = ModuleRegistry.gridModulesMap[gridId]) !== null && _a !== void 0 ? _a : {}) || [];

@@ -18,8 +18,8 @@ export const RowGroupingModule = {
         { componentName: 'ZingGridHeaderDropZones', componentClass: GridHeaderDropZones }
     ],
     userComponents: [
-        { componentName: 'zingGroupColumnFilter'', componentClass: GroupFilter },
-        { componentName: 'zingGroupColumnFloatingFilter'', componentClass: GroupFloatingFilterComp },
+        { componentName: 'zingGroupColumnFilter', componentClass: GroupFilter },
+        { componentName: 'zingGroupColumnFloatingFilter', componentClass: GroupFloatingFilterComp },
     ],
     dependantModules: [
         EnterpriseCoreModule

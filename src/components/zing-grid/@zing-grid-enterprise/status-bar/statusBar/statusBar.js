@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { Autowired, Component, PostConstruct, PreDestroy, AgPromise, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { Autowired, Component, PostConstruct, PreDestroy, ZingPromise, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class StatusBar extends Component {
     constructor() {
         super(StatusBar.TEMPLATE);
@@ -68,7 +68,7 @@ export class StatusBar extends Component {
                 promise
             });
         });
-        AgPromise.all(componentDetails.map((details) => details.promise))
+        ZingPromise.all(componentDetails.map((details) => details.promise))
             .then(() => {
             componentDetails.forEach(componentDetail => {
                 componentDetail.promise.then((component) => {

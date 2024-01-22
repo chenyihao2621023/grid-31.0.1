@@ -14,7 +14,7 @@ import * as fs from 'fs';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 import { mockCanvas } from 'zing-charts-test';
-import { AgCharts, _ModuleSupport } from '../../main';
+import { ZingCharts, _ModuleSupport } from '../../main';
 const { Animation, AnimationManager, resetIds } = _ModuleSupport;
 const FAILURE_THRESHOLD = Number((_a = process.env.SNAPSHOT_FAILURE_THRESHOLD) !== null && _a !== void 0 ? _a : 0.001);
 export const IMAGE_SNAPSHOT_DEFAULTS = {
@@ -245,7 +245,7 @@ export function toMatchImage(actual, expected, { writeDiff = true } = {}) {
 export function createChart(options) {
     return __awaiter(this, void 0, void 0, function* () {
         options = prepareTestOptions(Object.assign({}, options));
-        const chart = deproxy(AgCharts.create(options));
+        const chart = deproxy(ZingCharts.create(options));
         yield waitForChartStability(chart);
         return chart;
     });

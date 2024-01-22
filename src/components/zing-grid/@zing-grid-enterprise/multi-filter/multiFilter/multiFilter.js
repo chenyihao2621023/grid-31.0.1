@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { ProvidedFilter, AgPromise, Autowired, ZingGroupComponent, TabGuardComp, ZingMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { ProvidedFilter, ZingPromise, Autowired, ZingGroupComponent, TabGuardComp, ZingMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class MultiFilter extends TabGuardComp {
     constructor() {
         super(/* html */ `<div class="zing-multi-filter zing-menu-list-compact"></div>`);
@@ -24,7 +24,7 @@ export class MultiFilter extends TabGuardComp {
         const { filters } = params;
         return filters && filters.length > 0 ?
             filters :
-            [{ filter: 'zingTextColumnFilter'' }, { filter: 'zingSetColumnFilter'' }];
+            [{ filter: 'zingTextColumnFilter' }, { filter: 'zingSetColumnFilter' }];
     }
     init(params) {
         this.params = params;
@@ -40,7 +40,7 @@ export class MultiFilter extends TabGuardComp {
             }
         });
         // we have to refresh the GUI here to ensure that Angular components are not rendered in odd places
-        return AgPromise
+        return ZingPromise
             .all(filterPromises)
             .then(filters => {
             this.filters = filters;
@@ -181,7 +181,7 @@ export class MultiFilter extends TabGuardComp {
     }
     setModel(model) {
         const setFilterModel = (filter, filterModel) => {
-            return new AgPromise(resolve => {
+            return new ZingPromise(resolve => {
                 const promise = filter.setModel(filterModel);
                 promise ? promise.then(() => resolve()) : resolve();
             });
@@ -204,7 +204,7 @@ export class MultiFilter extends TabGuardComp {
                 promises.push(res);
             });
         }
-        return AgPromise.all(promises).then(() => { });
+        return ZingPromise.all(promises).then(() => { });
     }
     applyModel(source = 'api') {
         let result = false;
@@ -276,7 +276,7 @@ export class MultiFilter extends TabGuardComp {
         const filterParams = Object.assign(Object.assign({}, this.filterManager.createFilterParams(this.column, this.column.getColDef())), { filterModifiedCallback, filterChangedCallback: additionalEventAttributes => {
                 this.executeWhenAllFiltersReady(() => this.filterChanged(index, additionalEventAttributes));
             }, doesRowPassOtherFilter: (node) => doesRowPassOtherFilter(node) && this.doesFilterPass({ node, data: node.data }, filterInstance) });
-        const compDetails = this.userComponentFactory.getFilterDetails(filterDef, filterParams, 'zingTextColumnFilter'');
+        const compDetails = this.userComponentFactory.getFilterDetails(filterDef, filterParams, 'zingTextColumnFilter');
         if (!compDetails) {
             return null;
         }

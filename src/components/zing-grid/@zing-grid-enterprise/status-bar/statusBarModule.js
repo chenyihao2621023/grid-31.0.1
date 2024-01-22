@@ -18,11 +18,11 @@ export const StatusBarModule = {
         { componentName: 'ZingNameValue', componentClass: NameValueComp },
     ],
     userComponents: [
-        { componentName: 'zingAggregationComponent'', componentClass: AggregationComp },
-        { componentName: 'zingSelectedRowCountComponent'', componentClass: SelectedRowsComp },
-        { componentName: 'zingTotalRowCountComponent'', componentClass: TotalRowsComp },
-        { componentName: 'zingFilteredRowCountComponent'', componentClass: FilteredRowsComp },
-        { componentName: 'zingTotalAndFilteredRowCountComponent'', componentClass: TotalAndFilteredRowsComp }
+        { componentName: 'zingAggregationComponent', componentClass: AggregationComp },
+        { componentName: 'zingSelectedRowCountComponent', componentClass: SelectedRowsComp },
+        { componentName: 'zingTotalRowCountComponent', componentClass: TotalRowsComp },
+        { componentName: 'zingFilteredRowCountComponent', componentClass: FilteredRowsComp },
+        { componentName: 'zingTotalAndFilteredRowCountComponent', componentClass: TotalAndFilteredRowsComp }
     ],
     dependantModules: [
         EnterpriseCoreModule

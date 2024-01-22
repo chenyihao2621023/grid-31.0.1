@@ -318,7 +318,7 @@ let ValueService = class ValueService extends BeanStub {
         }
         result = String(result);
         if (result === '[object Object]') {
-            warnOnce('a column you are grouping or pivoting by has objects as values. If you want to group by complex objects then either a) use a colDef.keyCreator (se AG Grid docs) or b) to toString() on the object to return a key');
+            warnOnce('a column you are grouping or pivoting by has objects as values. If you want to group by complex objects then either a) use a colDef.keyCreator (se ZING Grid docs) or b) to toString() on the object to return a key');
         }
         return result;
     }

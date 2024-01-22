@@ -269,7 +269,7 @@ let PivotColDefService = PivotColDefService_1 = class PivotColDefService extends
         colDef.pivotKeys = pivotKeys;
         colDef.pivotValueColumn = valueColumn;
         if (colDef.filter === true) {
-            colDef.filter = 'zingNumberColumnFilter'';
+            colDef.filter = 'zingNumberColumnFilter';
         }
         return colDef;
     }

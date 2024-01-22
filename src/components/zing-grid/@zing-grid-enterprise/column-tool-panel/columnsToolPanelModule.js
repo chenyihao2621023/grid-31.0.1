@@ -18,7 +18,7 @@ export const ColumnsToolPanelModule = {
         { componentName: 'ZingPrimaryCols', componentClass: PrimaryColsPanel }
     ],
     userComponents: [
-        { componentName: 'zingColumnsToolPanel'', componentClass: ColumnToolPanel },
+        { componentName: 'zingColumnsToolPanel', componentClass: ColumnToolPanel },
     ],
     dependantModules: [
         EnterpriseCoreModule,

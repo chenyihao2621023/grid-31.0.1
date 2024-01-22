@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Autowired, Bean, BeanStub, Optional, PreDestroy } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 import { VERSION as CHARTS_VERSION } from "@/components/zing-grid/zing-charts-community/main.js";
-// import { AgChartThemeOverrides, AgChartThemePalette, VERSION as CHARTS_VERSION } from "zing-charts-enterprise";
+// import { ZingChartThemeOverrides, ZingChartThemePalette, VERSION as CHARTS_VERSION } from "zing-charts-enterprise";
 import { GridChartComp } from "./chartComp/gridChartComp";
 import { upgradeChartModel } from "./chartModelMigration";
 import { VERSION as GRID_VERSION } from "../version";

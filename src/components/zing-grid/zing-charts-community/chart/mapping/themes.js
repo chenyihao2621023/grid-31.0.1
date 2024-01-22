@@ -80,7 +80,7 @@ function validateChartTheme(value) {
 export function getChartTheme(unvalidatedValue) {
     var _a;
     // unvalidatedValue is either a built-in theme (`string | ChartTheme`) or a user defined
-    // theme (`AgChartTheme`). In the latter case, we can't make any assumption about the
+    // theme (`ZingChartTheme`). In the latter case, we can't make any assumption about the
     // property types, hence why the input parameter is `unknown`. This abnormal validation
     // is tech debt; the ideal solution would be to integrate user themes with the @Validate
     // decorator like other chart options.

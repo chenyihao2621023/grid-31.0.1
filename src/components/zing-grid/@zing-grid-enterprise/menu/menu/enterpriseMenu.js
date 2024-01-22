@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, Autowired, Bean, BeanStub, ModuleNames, ModuleRegistry, PostConstruct, AgPromise, TabbedLayout, ZingMenuList, ZingMenuItemComponent } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, Autowired, Bean, BeanStub, ModuleNames, ModuleRegistry, PostConstruct, ZingPromise, TabbedLayout, ZingMenuList, ZingMenuItemComponent } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { PrimaryColsPanel } from '@/components/zing-grid/@zing-grid-enterprise/column-tool-panel/main.js';
 let EnterpriseMenuFactory = class EnterpriseMenuFactory extends BeanStub {
     hideActiveMenu() {
@@ -367,7 +367,7 @@ export class EnterpriseMenu extends BeanStub {
         this.tabItemGeneral = {
             title: _.createIconNoSpan('menu', this.gridOptionsService, this.column),
             titleLabel: EnterpriseMenu.TAB_GENERAL.replace('MenuTab', ''),
-            bodyPromise: AgPromise.resolve(this.mainMenuList.getGui()),
+            bodyPromise: ZingPromise.resolve(this.mainMenuList.getGui()),
             name: EnterpriseMenu.TAB_GENERAL
         };
         return this.tabItemGeneral;
@@ -452,7 +452,7 @@ export class EnterpriseMenu extends BeanStub {
         this.tabItemColumns = {
             title: _.createIconNoSpan('columns', this.gridOptionsService, this.column), //createColumnsIcon(),
             titleLabel: EnterpriseMenu.TAB_COLUMNS.replace('MenuTab', ''),
-            bodyPromise: AgPromise.resolve(eWrapperDiv),
+            bodyPromise: ZingPromise.resolve(eWrapperDiv),
             name: EnterpriseMenu.TAB_COLUMNS
         };
         return this.tabItemColumns;

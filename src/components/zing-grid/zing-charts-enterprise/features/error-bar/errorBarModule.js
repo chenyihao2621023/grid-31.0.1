@@ -1,4 +1,4 @@
-import { AgErrorBarSupportedSeriesTypes } from '@/components/zing-grid/zing-charts-community/main.js';
+import { ZingErrorBarSupportedSeriesTypes } from '@/components/zing-grid/zing-charts-community/main.js';
 import { ErrorBars } from './errorBar';
 import { ERROR_BARS_THEME } from './errorBarTheme';
 export const ErrorBarsModule = {
@@ -7,7 +7,7 @@ export const ErrorBarsModule = {
     optionsKey: 'errorBar',
     packageType: 'enterprise',
     chartTypes: ['cartesian'],
-    seriesTypes: AgErrorBarSupportedSeriesTypes,
+    seriesTypes: ZingErrorBarSupportedSeriesTypes,
     instanceConstructor: ErrorBars,
     themeTemplate: ERROR_BARS_THEME,
 };

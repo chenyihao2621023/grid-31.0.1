@@ -1,5 +1,5 @@
 import { ChartProxy } from "../chartProxy";
-import { AgCharts, } from "@/components/zing-grid/zing-charts-community/main.js";
+import { ZingCharts, } from "@/components/zing-grid/zing-charts-community/main.js";
 export class CartesianChartProxy extends ChartProxy {
     constructor(params) {
         super(params);
@@ -9,7 +9,7 @@ export class CartesianChartProxy extends ChartProxy {
     update(params) {
         const axes = this.getAxes(params);
         const options = Object.assign(Object.assign({}, this.getCommonChartOptions(params.updatedOverrides)), { data: this.getData(params, axes), axes, series: this.getSeries(params) });
-        AgCharts.update(this.getChartRef(), options);
+        ZingCharts.update(this.getChartRef(), options);
     }
     getData(params, axes) {
         var _a;

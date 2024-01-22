@@ -7,15 +7,15 @@ const supports = {};
  * and then clicked on a selection checkbox, the popup wasn't closed. this is because the
  * popup listens for clicks on the body, however zing-grid WAS stopping propagation on the
  * checkbox clicks (so the rows didn't pick them up as row selection selection clicks).
- * to get around this, we have a pattern to stop propagation for the purposes of AG Grid,
+ * to get around this, we have a pattern to stop propagation for the purposes of ZING Grid,
  * but we still let the event pass back to the body.
  * @param {Event} event
  */
 export function stopPropagationForZingGrid(event) {
-    event[AG_GRID_STOP_PROPAGATION] = true;
+    event[ZING_GRID_STOP_PROPAGATION] = true;
 }
 export function isStopPropagationForZingGrid(event) {
-    return event[AG_GRID_STOP_PROPAGATION] === true;
+    return event[ZING_GRID_STOP_PROPAGATION] === true;
 }
 export const isEventSupported = (() => {
     const tags = {
@@ -64,13 +64,13 @@ export function createEventPath(event) {
     return res;
 }
 /**
- * Gets the path for a browser Event or from the target on an AG Grid Event
+ * Gets the path for a browser Event or from the target on an ZING Grid Event
  * https://developer.mozilla.org/en-US/docs/Web/API/Event
  * @param {Event| { target: EventTarget }} event
  * @returns {EventTarget[]}
  */
 export function getEventPath(event) {
-    // This can be called with either a browser event or an AG Grid Event that has a target property.
+    // This can be called with either a browser event or an ZING Grid Event that has a target property.
     const eventNoType = event;
     if (eventNoType.path) {
         return eventNoType.path;
@@ -78,7 +78,7 @@ export function getEventPath(event) {
     if (eventNoType.composedPath) {
         return eventNoType.composedPath();
     }
-    // If this is an AG Grid event build the path ourselves
+    // If this is an ZING Grid event build the path ourselves
     return createEventPath(eventNoType);
 }
 export function addSafePassiveEventListener(frameworkOverrides, eElement, event, listener) {

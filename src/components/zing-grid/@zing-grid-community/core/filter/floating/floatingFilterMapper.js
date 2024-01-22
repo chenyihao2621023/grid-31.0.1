@@ -4,17 +4,17 @@ export class FloatingFilterMapper {
     }
 }
 FloatingFilterMapper.filterToFloatingFilterMapping = {
-    set: 'zingSetColumnFloatingFilter'',
-    zingSetColumnFilter: 'zingSetColumnFloatingFilter'',
-    multi: 'zingMultiColumnFloatingFilter'',
-    zingMultiColumnFilter: 'zingMultiColumnFloatingFilter'',
-    group: 'zingGroupColumnFloatingFilter'',
-    zingGroupColumnFilter: 'zingGroupColumnFloatingFilter'',
-    number: 'zingNumberColumnFloatingFilter'',
-    zingNumberColumnFilter: 'zingNumberColumnFloatingFilter'',
-    date: 'zingDateColumnFloatingFilter'',
-    zingDateColumnFilter: 'zingDateColumnFloatingFilter'',
-    text: 'zingTextColumnFloatingFilter'',
-    zingTextColumnFilter: 'zingTextColumnFloatingFilter''
+    set: 'zingSetColumnFloatingFilter',
+    zingSetColumnFilter: 'zingSetColumnFloatingFilter',
+    multi: 'zingMultiColumnFloatingFilter',
+    zingMultiColumnFilter: 'zingMultiColumnFloatingFilter',
+    group: 'zingGroupColumnFloatingFilter',
+    zingGroupColumnFilter: 'zingGroupColumnFloatingFilter',
+    number: 'zingNumberColumnFloatingFilter',
+    zingNumberColumnFilter: 'zingNumberColumnFloatingFilter',
+    date: 'zingDateColumnFloatingFilter',
+    zingDateColumnFilter: 'zingDateColumnFloatingFilter',
+    text: 'zingTextColumnFloatingFilter',
+    zingTextColumnFilter: 'zingTextColumnFloatingFilter'
 };
 //# sourceMappingURL=floatingFilterMapper.js.map

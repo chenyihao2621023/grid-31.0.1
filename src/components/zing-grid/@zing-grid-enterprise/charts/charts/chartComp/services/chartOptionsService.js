@@ -1,5 +1,5 @@
 import { _, BeanStub, Events } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-import { AgCharts } from "@/components/zing-grid/zing-charts-community/main.js";
+import { ZingCharts } from "@/components/zing-grid/zing-charts-community/main.js";
 import { deepMerge } from "../utils/object";
 import { getSeriesType, VALID_SERIES_TYPES } from "../utils/seriesTypeMapper";
 export class ChartOptionsService extends BeanStub {
@@ -110,7 +110,7 @@ export class ChartOptionsService extends BeanStub {
     }
     updateChart(chartOptions) {
         const chartRef = this.chartController.getChartProxy().getChartRef();
-        AgCharts.updateDelta(chartRef, chartOptions);
+        ZingCharts.updateDelta(chartRef, chartOptions);
     }
     createChartOptions({ seriesType, expression, value }) {
         const overrides = {};

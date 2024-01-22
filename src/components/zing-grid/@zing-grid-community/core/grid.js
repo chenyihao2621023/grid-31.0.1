@@ -105,7 +105,7 @@ import { PageSizeSelectorComp } from "./pagination/pageSizeSelector/pageSizeSele
  * Creates a grid inside the provided HTML element.
  * @param eGridDiv Parent element to contain the grid.
  * @param gridOptions Configuration for the grid.
- * @param params Individually register AG Grid Modules to this grid.
+ * @param params Individually register ZING Grid Modules to this grid.
  * @returns api to be used to interact with the grid.
  */
 export function createGrid(eGridDiv, gridOptions, params) {
@@ -221,7 +221,7 @@ export class GridCoreCreator {
     }
     registerStackComponents(beans, registeredModules) {
         const zingStackComponents = this.createZingStackComponentsList(registeredModules);
-        beans.zingStackComponentsRegistry.setupComponents(agStackComponents);
+        beans.zingStackComponentsRegistry.setupComponents(zingStackComponents);
     }
     getRegisteredModules(params, gridId) {
         const passedViaConstructor = params ? params.modules : null;

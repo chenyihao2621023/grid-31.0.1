@@ -14,7 +14,7 @@ export const FiltersToolPanelModule = {
         { componentName: 'ZingFiltersToolPanelList', componentClass: FiltersToolPanelListPanel }
     ],
     userComponents: [
-        { componentName: 'zingFiltersToolPanel'', componentClass: FiltersToolPanel },
+        { componentName: 'zingFiltersToolPanel', componentClass: FiltersToolPanel },
     ],
     dependantModules: [
         SideBarModule,

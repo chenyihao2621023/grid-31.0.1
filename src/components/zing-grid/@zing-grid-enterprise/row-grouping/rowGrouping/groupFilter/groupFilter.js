@@ -4,7 +4,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { _, AgPromise, ZingSelect, Autowired, Events, PostConstruct, RefSelector, TabGuardComp, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, ZingPromise, ZingSelect, Autowired, Events, PostConstruct, RefSelector, TabGuardComp, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class GroupFilter extends TabGuardComp {
     constructor() {
         super(/* html */ `
@@ -108,7 +108,7 @@ export class GroupFilter extends TabGuardComp {
             this.filterColumnPairs = undefined;
             this.selectedFilter = undefined;
             this.groupColumn.setFilterActive(false, 'columnRowGroupChanged');
-            return AgPromise.resolve();
+            return ZingPromise.resolve();
         }
         const filterPromises = [];
         const filterColumnPairs = [];
@@ -129,7 +129,7 @@ export class GroupFilter extends TabGuardComp {
                 }));
             }
         });
-        return AgPromise.all(filterPromises).then(() => {
+        return ZingPromise.all(filterPromises).then(() => {
             this.filterColumnPairs = filterColumnPairs;
             this.groupColumn.setFilterActive(this.isFilterActive(), 'columnRowGroupChanged');
         });
@@ -137,11 +137,11 @@ export class GroupFilter extends TabGuardComp {
     addUnderlyingFilterElement() {
         _.clearElement(this.eUnderlyingFilter);
         if (!this.selectedColumn) {
-            return AgPromise.resolve();
+            return ZingPromise.resolve();
         }
         const filterWrapper = this.filterManager.getOrCreateFilterWrapper(this.selectedColumn, 'COLUMN_MENU');
         if (!filterWrapper) {
-            return AgPromise.resolve();
+            return ZingPromise.resolve();
         }
         return filterWrapper.guiPromise.then(gui => {
             var _a;
@@ -180,7 +180,7 @@ export class GroupFilter extends TabGuardComp {
         return null;
     }
     setModel() {
-        return AgPromise.resolve();
+        return ZingPromise.resolve();
     }
     afterGuiAttached(params) {
         this.afterGuiAttachedParams = params;

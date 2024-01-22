@@ -47,7 +47,7 @@ export class CssClassManager {
             return;
         }
         // we check for spaces before doing the split, as doing the split
-        // created a performance problem (on windows only, see AG-6765)
+        // created a performance problem (on windows only, see ZING-6765)
         if (className.indexOf(' ') >= 0) {
             const list = (className || '').split(' ');
             if (list.length > 1) {

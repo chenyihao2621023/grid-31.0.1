@@ -1,11 +1,11 @@
-export var AgPromiseStatus;
-(function (AgPromiseStatus) {
-    AgPromiseStatus[AgPromiseStatus["IN_PROGRESS"] = 0] = "IN_PROGRESS";
-    AgPromiseStatus[AgPromiseStatus["RESOLVED"] = 1] = "RESOLVED";
-})(AgPromiseStatus || (AgPromiseStatus = {}));
-export class AgPromise {
+export var ZingPromiseStatus;
+(function (ZingPromiseStatus) {
+    ZingPromiseStatus[ZingPromiseStatus["IN_PROGRESS"] = 0] = "IN_PROGRESS";
+    ZingPromiseStatus[ZingPromiseStatus["RESOLVED"] = 1] = "RESOLVED";
+})(ZingPromiseStatus || (ZingPromiseStatus = {}));
+export class ZingPromise {
     static all(promises) {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             let remainingToResolve = promises.length;
             const combinedValues = new Array(remainingToResolve);
             promises.forEach((promise, index) => {
@@ -20,17 +20,17 @@ export class AgPromise {
         });
     }
     static resolve(value = null) {
-        return new AgPromise(resolve => resolve(value));
+        return new ZingPromise(resolve => resolve(value));
     }
     constructor(callback) {
-        this.status = AgPromiseStatus.IN_PROGRESS;
+        this.status = ZingPromiseStatus.IN_PROGRESS;
         this.resolution = null;
         this.waiters = [];
         callback(value => this.onDone(value), params => this.onReject(params));
     }
     then(func) {
-        return new AgPromise(resolve => {
-            if (this.status === AgPromiseStatus.RESOLVED) {
+        return new ZingPromise(resolve => {
+            if (this.status === ZingPromiseStatus.RESOLVED) {
                 resolve(func(this.resolution));
             }
             else {
@@ -39,10 +39,10 @@ export class AgPromise {
         });
     }
     resolveNow(ifNotResolvedValue, ifResolved) {
-        return this.status === AgPromiseStatus.RESOLVED ? ifResolved(this.resolution) : ifNotResolvedValue;
+        return this.status === ZingPromiseStatus.RESOLVED ? ifResolved(this.resolution) : ifNotResolvedValue;
     }
     onDone(value) {
-        this.status = AgPromiseStatus.RESOLVED;
+        this.status = ZingPromiseStatus.RESOLVED;
         this.resolution = value;
         this.waiters.forEach(waiter => waiter(value));
     }

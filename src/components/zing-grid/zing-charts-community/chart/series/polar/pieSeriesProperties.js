@@ -118,7 +118,7 @@ export class PieSeriesProperties extends SeriesProperties {
         this.innerRadiusOffset = 0;
         this.innerRadiusRatio = 1;
         this.strokeWidth = 1;
-        // @todo(AG-10275) remove optionality, set default
+        // @todo(ZING-10275) remove optionality, set default
         this.sectorSpacing = undefined;
         this.innerLabels = new PropertiesArray(DoughnutInnerLabel);
         this.title = new PieTitle();
@@ -128,7 +128,7 @@ export class PieSeriesProperties extends SeriesProperties {
         this.sectorLabel = new PieSeriesSectorLabel();
         this.calloutLine = new PieSeriesCalloutLine();
         this.tooltip = new SeriesTooltip();
-        // @todo(AG-10275) Remove this
+        // @todo(ZING-10275) Remove this
         this.__BACKGROUND_COLOR_DO_NOT_USE = undefined;
     }
 }

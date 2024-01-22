@@ -102,7 +102,7 @@ export class HeaderGroupComp extends Component {
         const { displayName, columnGroup } = this.params;
         if (exists(displayName)) {
             const displayNameSanitised = escapeString(displayName);
-            this.getRefElement('zingLabel'').innerHTML = displayNameSanitised;
+            this.getRefElement('zingLabel').innerHTML = displayNameSanitised;
         }
         this.addOrRemoveCssClass('zing-sticky-label', !((_a = columnGroup.getColGroupDef()) === null || _a === void 0 ? void 0 : _a.suppressStickyLabel));
     }

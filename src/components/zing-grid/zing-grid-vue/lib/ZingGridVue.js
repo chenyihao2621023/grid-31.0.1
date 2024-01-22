@@ -160,7 +160,7 @@ var ZingGridVue = /** @class */ (function (_super) {
         Prop({ default: function () { return []; } })
     ], ZingGridVue.prototype, "modules", void 0);
     ZingGridVue = ZingGridVue_1 = __decorate([
-        Bean('zingGridVue''),
+        Bean('zingGridVue'),
         Component({
             props: props,
             computed: computed,

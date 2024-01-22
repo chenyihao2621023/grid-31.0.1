@@ -1,6 +1,6 @@
 import { OptionsFactory } from './optionsFactory';
 import { ProvidedFilter } from './providedFilter';
-import { AgPromise } from '../../utils';
+import { ZingPromise } from '../../utils';
 import { ZingSelect } from '../../widgets/zingSelect';
 import { ZingRadioButton } from '../../widgets/zingRadioButton';
 import { areEqual } from '../../utils/array';
@@ -240,7 +240,7 @@ export class SimpleFilter extends ProvidedFilter {
         this.lastUiCompletePosition = this.getNumConditions() - 1;
         this.createMissingConditionsAndOperators();
         this.onUiChanged();
-        return AgPromise.resolve();
+        return ZingPromise.resolve();
     }
     validateAndUpdateConditions(conditions) {
         let numConditions = conditions.length;
@@ -688,7 +688,7 @@ export class SimpleFilter extends ProvidedFilter {
         if (!silent) {
             this.onUiChanged();
         }
-        return AgPromise.resolve();
+        return ZingPromise.resolve();
     }
     resetType(eType) {
         const translate = this.localeService.getLocaleTextFunc();

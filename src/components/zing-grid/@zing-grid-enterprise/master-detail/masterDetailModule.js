@@ -8,7 +8,7 @@ export const MasterDetailModule = {
     moduleName: ModuleNames.MasterDetailModule,
     beans: [],
     userComponents: [
-        { componentName: 'zingDetailCellRenderer'', componentClass: DetailCellRenderer }
+        { componentName: 'zingDetailCellRenderer', componentClass: DetailCellRenderer }
     ],
     controllers: [
         { controllerName: 'detailCellRenderer', controllerClass: DetailCellRendererCtrl }

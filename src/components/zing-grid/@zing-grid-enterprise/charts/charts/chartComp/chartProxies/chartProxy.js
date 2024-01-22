@@ -1,5 +1,5 @@
 import { _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
-import { _Theme, AgCharts } from "@/components/zing-grid/zing-charts-community/main.js";
+import { _Theme, ZingCharts } from "@/components/zing-grid/zing-charts-community/main.js";
 import { getSeriesType } from "../utils/seriesTypeMapper";
 import { deproxy } from "../utils/integration";
 import { createZingChartTheme, lookupCustomChartTheme } from './chartTheme';
@@ -13,7 +13,7 @@ export class ChartProxy {
         this.crossFilterCallback = chartProxyParams.crossFilterCallback;
         this.standaloneChartType = getSeriesType(this.chartType);
         if (this.chart == null) {
-            this.chart = AgCharts.create(this.getCommonChartOptions());
+            this.chart = ZingCharts.create(this.getCommonChartOptions());
         }
         else {
             // On chart change, reset formatting panel changes.
@@ -31,7 +31,7 @@ export class ChartProxy {
         const rawChart = deproxy(chart);
         const imageFileName = fileName || (rawChart.title ? rawChart.title.text : 'chart');
         const { width, height } = dimensions || {};
-        AgCharts.download(chart, { width, height, fileName: imageFileName, fileFormat });
+        ZingCharts.download(chart, { width, height, fileName: imageFileName, fileFormat });
     }
     getChartImageDataURL(type) {
         return this.getChart().scene.getDataURL(type);
@@ -53,7 +53,7 @@ export class ChartProxy {
         // the first column is used for X and every other column is treated as Y
         // (or alternates between Y and size for bubble)
         const seriesType = getSeriesType(this.chartProxyParams.chartType);
-        AgCharts.updateDelta(this.chart, { theme: { overrides: { [seriesType]: { paired } } } });
+        ZingCharts.updateDelta(this.chart, { theme: { overrides: { [seriesType]: { paired } } } });
     }
     isPaired() {
         const seriesType = getSeriesType(this.chartProxyParams.chartType);

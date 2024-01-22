@@ -1,5 +1,5 @@
 import { _ModuleSupport } from '@/components/zing-grid/zing-charts-community/main.js';
-import { AgCharts, time } from '@/components/zing-grid/zing-charts-community/main.js';
+import { ZingCharts, time } from '@/components/zing-grid/zing-charts-community/main.js';
 import { AngleCategoryAxisModule } from './axes/angle-category/main';
 import { AngleNumberAxisModule } from './axes/angle-number/main';
 import { RadiusCategoryAxisModule } from './axes/radius-category/main';
@@ -29,7 +29,7 @@ import { WaterfallModule } from './series/waterfall/main';
 // Export types.
 export * from '@/components/zing-grid/zing-charts-community/main.js';
 // Needed for UMD global exports to work correctly.
-export { time, AgCharts };
+export { time, ZingCharts };
 _ModuleSupport.registerModule(AngleCategoryAxisModule);
 _ModuleSupport.registerModule(AngleNumberAxisModule);
 _ModuleSupport.registerModule(AnimationModule);

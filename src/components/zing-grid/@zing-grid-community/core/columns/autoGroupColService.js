@@ -74,7 +74,7 @@ let AutoGroupColService = class AutoGroupColService extends BeanStub {
             const noFieldOrValueGetter = missing(res.field) &&
                 missing(res.valueGetter) &&
                 missing(res.filterValueGetter) &&
-                res.filter !== 'zingGroupColumnFilter'';
+                res.filter !== 'zingGroupColumnFilter';
             if (noFieldOrValueGetter) {
                 res.filter = false;
             }
@@ -103,7 +103,7 @@ let AutoGroupColService = class AutoGroupColService extends BeanStub {
             (userDef.cellRenderer || userDef.cellRendererSelector);
         // only add the default group cell renderer if user hasn't provided one
         if (!userHasProvidedGroupCellRenderer) {
-            res.cellRenderer = 'zingGroupCellRenderer'';
+            res.cellRenderer = 'zingGroupCellRenderer';
         }
         // we never allow moving the group column
         // defaultAutoColDef.suppressMovable = true;

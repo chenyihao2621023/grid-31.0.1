@@ -52,7 +52,7 @@ export const PieSeriesModule = {
         rotation: 0,
         outerRadiusOffset: 0,
         innerRadiusOffset: 0,
-        // @todo(AG-10275) Uncomment this
+        // @todo(ZING-10275) Uncomment this
         // sectorSpacing: 1,
         shadow: {
             enabled: false,
@@ -69,7 +69,7 @@ export const PieSeriesModule = {
             color: DEFAULT_LABEL_COLOUR,
             margin: 2,
         },
-        // @todo(AG-10275) Remove this
+        // @todo(ZING-10275) Remove this
         // @ts-expect-error
         __BACKGROUND_COLOR_DO_NOT_USE: DEFAULT_BACKGROUND_COLOUR,
     },

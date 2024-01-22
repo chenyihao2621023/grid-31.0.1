@@ -18,6 +18,7 @@ let ViewportRowModel = class ViewportRowModel extends BeanStub {
     // we don't implement as lazy row heights is not supported in this row model
     ensureRowHeightsValid(startPixel, endPixel, startLimitIndex, endLimitIndex) { return false; }
     init() {
+        console.log(888)
         this.rowHeight = this.gridOptionsService.getRowHeightAsNumber();
         this.addManagedListener(this.eventService, Events.EVENT_VIEWPORT_CHANGED, this.onViewportChanged.bind(this));
         this.addManagedPropertyListener('viewportDatasource', () => this.updateDatasource());

@@ -186,13 +186,13 @@ export class SideBarComp extends Component {
             return false;
         }
         // helpers, in case user doesn't have the right module loaded
-        if (def.toolPanel === 'zingColumnsToolPanel'') {
+        if (def.toolPanel === 'zingColumnsToolPanel') {
             const moduleMissing = !ModuleRegistry.__assertRegistered(ModuleNames.ColumnsToolPanelModule, 'Column Tool Panel', this.context.getGridId());
             if (moduleMissing) {
                 return false;
             }
         }
-        if (def.toolPanel === 'zingFiltersToolPanel'') {
+        if (def.toolPanel === 'zingFiltersToolPanel') {
             const moduleMissing = !ModuleRegistry.__assertRegistered(ModuleNames.FiltersToolPanelModule, 'Filters Tool Panel', this.context.getGridId());
             if (moduleMissing) {
                 return false;

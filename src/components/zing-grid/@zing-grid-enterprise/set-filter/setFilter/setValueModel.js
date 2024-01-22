@@ -1,4 +1,4 @@
-import { _, AgPromise, TextFilter, EventService } from '@/components/zing-grid/@zing-grid-community/core/main.js';
+import { _, ZingPromise, TextFilter, EventService } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { ClientSideValuesExtractor } from '../clientSideValueExtractor';
 import { FlatSetDisplayValueModel } from './flatSetDisplayValueModel';
 import { TreeSetDisplayValueModel } from './treeSetDisplayValueModel';
@@ -80,7 +80,7 @@ export class SetValueModel {
         this.localEventService.removeEventListener(eventType, listener, async);
     }
     updateOnParamsChange(filterParams) {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             const { values, textFormatter, suppressSorting, } = filterParams;
             const currentProvidedValues = this.providedValues;
             const currentSuppressSorting = this.suppressSorting;
@@ -116,7 +116,7 @@ export class SetValueModel {
      * otherwise the current selection will be preserved.
      */
     refreshValues() {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             // don't get the model until values are resolved, as there could be queued setModel calls
             this.allValuesPromise.then(() => {
                 const currentModel = this.getModel();
@@ -132,7 +132,7 @@ export class SetValueModel {
      * otherwise the current selection will be preserved.
      */
     overrideValues(valuesToUse) {
-        return new AgPromise(resolve => {
+        return new ZingPromise(resolve => {
             // wait for any existing values to be populated before overriding
             this.allValuesPromise.then(() => {
                 this.valuesType = SetFilterModelValuesType.PROVIDED_LIST;
@@ -149,13 +149,13 @@ export class SetValueModel {
                 return true;
             });
         }
-        return AgPromise.resolve(false);
+        return ZingPromise.resolve(false);
     }
     isInitialised() {
         return this.initialised;
     }
     updateAllValues() {
-        this.allValuesPromise = new AgPromise(resolve => {
+        this.allValuesPromise = new ZingPromise(resolve => {
             switch (this.valuesType) {
                 case SetFilterModelValuesType.TAKEN_FROM_GRID_VALUES:
                     this.getValuesFromRowsAsync(false).then(values => resolve(this.processAllValues(values)));
@@ -268,7 +268,7 @@ export class SetValueModel {
     getValuesFromRowsAsync(removeUnavailableValues = false) {
         const params = this.getParamsForValuesFromRows(removeUnavailableValues);
         if (!params) {
-            return AgPromise.resolve(null);
+            return ZingPromise.resolve(null);
         }
         return this.clientSideValuesExtractor.extractUniqueValuesAsync(params.predicate, params.existingValues);
     }

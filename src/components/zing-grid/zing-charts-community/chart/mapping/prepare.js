@@ -30,9 +30,9 @@ function getGlobalTooltipPositionOptions(position) {
         return {};
     }
     const { type, xOffset, yOffset } = position;
-    const AgTooltipPositionTypeMap = { pointer: true, node: true };
+    const ZingTooltipPositionTypeMap = { pointer: true, node: true };
     const result = {};
-    const isTooltipPositionType = (value) => Object.keys(AgTooltipPositionTypeMap).includes(value);
+    const isTooltipPositionType = (value) => Object.keys(ZingTooltipPositionTypeMap).includes(value);
     if (typeof type === 'string' && isTooltipPositionType(type)) {
         result.type = type;
     }

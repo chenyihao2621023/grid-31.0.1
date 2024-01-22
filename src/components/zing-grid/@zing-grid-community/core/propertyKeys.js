@@ -156,7 +156,7 @@ PropertyKeys.FUNCTIONAL_PROPERTIES = [
     'groupRowRenderer', 'fullWidthCellRenderer', 'loadingCellRenderer', 'loadingOverlayComponent', 'noRowsOverlayComponent', 'detailCellRenderer',
     'quickFilterParser', 'quickFilterMatcher'
 ];
-/** These callbacks extend AgGridCommon interface */
+/** These callbacks extend ZingGridCommon interface */
 PropertyKeys.CALLBACK_PROPERTIES = [
     'getLocaleText', 'isExternalFilterPresent', 'getRowHeight', 'getRowClass', 'getRowStyle', 'getContextMenuItems', 'getMainMenuItems',
     'processRowPostCreate', 'processCellForClipboard', 'getGroupRowAgg', 'isFullWidthRow', 'sendToClipboard', 'navigateToNextHeader',

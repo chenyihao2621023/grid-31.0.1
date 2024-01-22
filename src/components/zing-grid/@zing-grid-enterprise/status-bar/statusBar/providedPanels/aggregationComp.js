@@ -51,7 +51,7 @@ export class AggregationComp extends Component {
         // if the user has specified the zingAggregationPanelComp and aggFuncs, then we only show the aggFuncs listed
         let statusBarValueComponent = null;
         const statusBar = this.gridOptionsService.get('statusBar');
-        const aggregationPanelConfig = _.exists(statusBar) && statusBar ? statusBar.statusPanels.find(panel => panel.statusPanel === 'zingAggregationComponent'') : null;
+        const aggregationPanelConfig = _.exists(statusBar) && statusBar ? statusBar.statusPanels.find(panel => panel.statusPanel === 'zingAggregationComponent') : null;
         if (_.exists(aggregationPanelConfig) && aggregationPanelConfig) {
             // a little defensive here - if no statusPanelParams show it, if componentParams we also expect aggFuncs
             if (!_.exists(aggregationPanelConfig.statusPanelParams) ||

@@ -67,7 +67,7 @@ let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
     }
     /**
      * Get the GridOption callback but wrapped so that the common params of api,columnApi and context are automatically applied to the params.
-     * @param property GridOption callback properties based on the fact that this property has a callback with params extending AgGridCommon
+     * @param property GridOption callback properties based on the fact that this property has a callback with params extending ZingGridCommon
      */
     getCallback(property) {
         return this.mergeGridCommonParams(this.gridOptions[property]);

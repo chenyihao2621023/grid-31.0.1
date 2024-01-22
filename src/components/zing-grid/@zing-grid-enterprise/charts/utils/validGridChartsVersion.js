@@ -30,7 +30,7 @@ export function gridChartVersion(gridVersion) {
     };
 }
 export function validGridChartsVersionErrorMessage({ type, gridVersion, chartsVersion }) {
-    const invalidMessage = 'ZING Grid: AG Grid version is incompatible. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.';
+    const invalidMessage = 'ZING Grid: ZING Grid version is incompatible. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.';
     if (!gridVersion) {
         return invalidMessage;
     }
@@ -40,10 +40,10 @@ export function validGridChartsVersionErrorMessage({ type, gridVersion, chartsVe
     }
     const { gridMajorMinor, chartsMajorMinor } = version;
     if (type === 'incompatible') {
-        return `ZING Grid version ${gridVersion} and AG Charts version ${chartsVersion} is not supported. AG Grid version ${gridMajorMinor} should be used with AG Chart ${chartsMajorMinor}. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.`;
+        return `ZING Grid version ${gridVersion} and ZING Charts version ${chartsVersion} is not supported. ZING Grid version ${gridMajorMinor} should be used with ZING Chart ${chartsMajorMinor}. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.`;
     }
     else if (type === 'invalidCharts') {
-        return `ZING Grid version ${gridMajorMinor} should be used with AG Chart ${chartsMajorMinor}. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.`;
+        return `ZING Grid version ${gridMajorMinor} should be used with ZING Chart ${chartsMajorMinor}. Please see https://www.zing-grid.com/javascript-data-grid/modules/ for more information.`;
     }
     return invalidMessage;
 }

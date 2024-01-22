@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Bean } from "../../context/context";
 import { BeanStub } from "../../context/beanStub";
 import { loadTemplate } from "../../utils/dom";
-let ZingComponentUtils = class AgComponentUtils extends BeanStub {
+let ZingComponentUtils = class ZingComponentUtils extends BeanStub {
     adaptFunction(propertyName, jsCompFunc) {
         const metadata = this.componentMetadataProvider.retrieve(propertyName);
         if (metadata && metadata.functionAdapter) {

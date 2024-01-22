@@ -6,17 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { BeanStub } from "../../context/beanStub";
 import { Autowired, Bean, Optional } from "../../context/context";
-import { AgPromise } from "../../utils";
+import { ZingPromise } from "../../utils";
 import { mergeDeep } from '../../utils/object';
 import { CellEditorComponent, CellRendererComponent, DateComponent, FilterComponent, FloatingFilterComponent, FullWidth, FullWidthDetail, FullWidthGroup, FullWidthLoading, HeaderComponent, HeaderGroupComponent, InnerRendererComponent, LoadingOverlayComponent, NoRowsOverlayComponent, StatusPanelComponent, ToolPanelComponent, TooltipComponent } from "./componentTypes";
 import { FloatingFilterMapper } from '../../filter/floating/floatingFilterMapper';
 let UserComponentFactory = class UserComponentFactory extends BeanStub {
     getHeaderCompDetails(colDef, params) {
-        return this.getCompDetails(colDef, HeaderComponent, 'zingColumnHeader'', params);
+        return this.getCompDetails(colDef, HeaderComponent, 'zingColumnHeader', params);
     }
     getHeaderGroupCompDetails(params) {
         const colGroupDef = params.columnGroup.getColGroupDef();
-        return this.getCompDetails(colGroupDef, HeaderGroupComponent, 'zingColumnGroupHeader'', params);
+        return this.getCompDetails(colGroupDef, HeaderGroupComponent, 'zingColumnGroupHeader', params);
     }
     // this one is unusual, as it can be LoadingCellRenderer, DetailCellRenderer, FullWidthCellRenderer or GroupRowRenderer.
     // so we have to pass the type in.
@@ -24,13 +24,13 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
         return this.getCompDetails(this.gridOptions, FullWidth, null, params, true);
     }
     getFullWidthLoadingCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthLoading, 'zingLoadingCellRenderer'', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthLoading, 'zingLoadingCellRenderer', params, true);
     }
     getFullWidthGroupCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthGroup, 'zingGroupRowRenderer'', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthGroup, 'zingGroupRowRenderer', params, true);
     }
     getFullWidthDetailCellRendererDetails(params) {
-        return this.getCompDetails(this.gridOptions, FullWidthDetail, 'zingDetailCellRenderer'', params, true);
+        return this.getCompDetails(this.gridOptions, FullWidthDetail, 'zingDetailCellRenderer', params, true);
     }
     // CELL RENDERER
     getInnerRendererDetails(def, params) {
@@ -44,23 +44,23 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
     }
     // CELL EDITOR
     getCellEditorDetails(def, params) {
-        return this.getCompDetails(def, CellEditorComponent, 'zingCellEditor'', params, true);
+        return this.getCompDetails(def, CellEditorComponent, 'zingCellEditor', params, true);
     }
     // FILTER
     getFilterDetails(def, params, defaultFilter) {
         return this.getCompDetails(def, FilterComponent, defaultFilter, params, true);
     }
     getDateCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, DateComponent, 'zingDateInput'', params, true);
+        return this.getCompDetails(this.gridOptions, DateComponent, 'zingDateInput', params, true);
     }
     getLoadingOverlayCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, LoadingOverlayComponent, 'zingLoadingOverlay'', params, true);
+        return this.getCompDetails(this.gridOptions, LoadingOverlayComponent, 'zingLoadingOverlay', params, true);
     }
     getNoRowsOverlayCompDetails(params) {
-        return this.getCompDetails(this.gridOptions, NoRowsOverlayComponent, 'zingNoRowsOverlay'', params, true);
+        return this.getCompDetails(this.gridOptions, NoRowsOverlayComponent, 'zingNoRowsOverlay', params, true);
     }
     getTooltipCompDetails(params) {
-        return this.getCompDetails(params.colDef, TooltipComponent, 'zingTooltipComponent'', params, true);
+        return this.getCompDetails(params.colDef, TooltipComponent, 'zingTooltipComponent', params, true);
     }
     getSetFilterCellRendererDetails(def, params) {
         return this.getCompDetails(def, CellRendererComponent, null, params);
@@ -175,7 +175,7 @@ let UserComponentFactory = class UserComponentFactory extends BeanStub {
         }
         const deferredInit = this.initComponent(instance, params);
         if (deferredInit == null) {
-            return AgPromise.resolve(instance);
+            return ZingPromise.resolve(instance);
         }
         return deferredInit.then(() => instance);
     }
@@ -231,7 +231,7 @@ __decorate([
     Autowired('gridOptions')
 ], UserComponentFactory.prototype, "gridOptions", void 0);
 __decorate([
-    Autowired('zingComponentUtils'')
+    Autowired('zingComponentUtils')
 ], UserComponentFactory.prototype, "zingComponentUtils", void 0);
 __decorate([
     Autowired('componentMetadataProvider')
