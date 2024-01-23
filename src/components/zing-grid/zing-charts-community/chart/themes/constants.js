@@ -38,4 +38,3 @@ export const POLAR_AXIS_TYPES = {
     RADIUS_NUMBER,
 };
 export const CIRCLE = 'circle';
-//# sourceMappingURL=constants.js.map

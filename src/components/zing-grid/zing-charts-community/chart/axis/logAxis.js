@@ -60,4 +60,3 @@ __decorate([
     Validate(AND(NUMBER_OR_NAN, NON_ZERO_NUMBER, GREATER_THAN('min'))),
     Default(NaN)
 ], LogAxis.prototype, "max", void 0);
-//# sourceMappingURL=logAxis.js.map

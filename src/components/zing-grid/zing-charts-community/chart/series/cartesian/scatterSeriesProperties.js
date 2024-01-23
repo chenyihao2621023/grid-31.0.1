@@ -60,4 +60,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], ScatterSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=scatterSeriesProperties.js.map

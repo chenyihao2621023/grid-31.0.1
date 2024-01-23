@@ -44,9 +44,7 @@ export class RangeBarSeries extends _ModuleSupport.AbstractBarSeries {
         });
         this.properties = new RangeBarProperties();
         this.NodeClickEvent = RangeBarSeriesNodeClickEvent;
-        /**
-         * Used to get the position of bars within each group.
-         */
+        
         this.groupScale = new BandScale();
         this.smallestDataInterval = undefined;
     }
@@ -447,4 +445,3 @@ export class RangeBarSeries extends _ModuleSupport.AbstractBarSeries {
 }
 RangeBarSeries.className = 'RangeBarSeries';
 RangeBarSeries.type = 'range-bar';
-//# sourceMappingURL=rangeBar.js.map

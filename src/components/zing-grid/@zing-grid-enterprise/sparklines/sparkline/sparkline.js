@@ -2,9 +2,7 @@ import { _Scale, _Scene, _Util } from '@/components/zing-grid/zing-charts-commun
 import { defaultTooltipCss } from './tooltip/defaultTooltipCss';
 const { extent, isNumber, isString, isStringObject, isDate, createId, Padding } = _Util;
 const { LinearScale, BandScale, TimeScale } = _Scale;
-/**
- * Constants to declare the expected nominal zIndex for nodes in a sparkline rendering.
- */
+
 export var ZINDICIES;
 (function (ZINDICIES) {
     ZINDICIES[ZINDICIES["SERIES_FILL_ZINDEX"] = 50] = "SERIES_FILL_ZINDEX";
@@ -150,11 +148,7 @@ export class Sparkline {
     get height() {
         return this._height;
     }
-    /**
-     * Generate node data from processed data.
-     * Produce data joins.
-     * Update selection's nodes using node data.
-     */
+    
     update() { }
     // Update y scale based on processed data.
     updateYScale() {
@@ -188,11 +182,7 @@ export class Sparkline {
         }
         this.xScale.domain = xMinMax ? xMinMax.slice() : xData;
     }
-    /**
-     * Return xScale instance based on the provided type or return a `BandScale` by default.
-     * The default type is `category`.
-     * @param type
-     */
+    
     getXScale(type = 'category') {
         switch (type) {
             case 'number':
@@ -239,12 +229,7 @@ export class Sparkline {
         this.updateNodes();
         this.updateCrosshairs();
     }
-    /**
-     * Highlight closest datum and display tooltip if enabled.
-     * Only update if necessary, i.e. only update if the highlighted datum is different from previously highlighted datum,
-     * or if there is no previously highlighted datum.
-     * @param event
-     */
+    
     onMouseMove(event) {
         this.mouseMoveEvent = event;
         this.updateHitPoint(event);
@@ -268,10 +253,7 @@ export class Sparkline {
             this.handleTooltip(event, closestDatum);
         }
     }
-    /**
-     * Dehighlight all nodes and remove tooltip.
-     * @param event
-     */
+    
     onMouseOut(event) {
         this.dehighlightDatum();
         this.tooltip.toggle(false);
@@ -360,11 +342,7 @@ export class Sparkline {
         this.updateAxes();
         this.immediateLayout();
     }
-    /**
-     * Return the type of data provided to the sparkline based on the first truthy value in the data array.
-     * If the value is not a number, array or object, return `undefined`.
-     * @param data
-     */
+    
     getDataType(data) {
         for (const datum of data) {
             if (datum != undefined) {
@@ -380,11 +358,7 @@ export class Sparkline {
             }
         }
     }
-    /**
-     * Return the given value depending on the type of axis.
-     * Return `undefined` if the value is invalid for the given axis type.
-     * @param value
-     */
+    
     getDatum(value, type) {
         if ((type === 'number' && isNumber(value)) || (type === 'time' && (isNumber(value) || isDate(value)))) {
             return value;
@@ -398,18 +372,11 @@ export class Sparkline {
             }
         }
     }
-    /**
-     * Only `true` while we are waiting for the layout to start.
-     * This will be `false` if the layout has already started and is ongoing.
-     */
+    
     get layoutScheduled() {
         return !!this.layoutId;
     }
-    /**
-     * Execute update method on the next available screen repaint to make changes to the canvas.
-     * If we are waiting for a layout to start and a new layout is requested,
-     * cancel the previous layout using the non 0 integer (this.layoutId) returned from requestAnimationFrame.
-     */
+    
     scheduleLayout() {
         if (this.layoutId) {
             cancelAnimationFrame(this.layoutId);
@@ -444,11 +411,7 @@ export class Sparkline {
         rootGroup.translationX = seriesRect.x;
         rootGroup.translationY = seriesRect.y;
     }
-    /**
-     * Return the closest data point to x/y canvas coordinates.
-     * @param x
-     * @param y
-     */
+    
     pickClosestSeriesNodeDatum(x, y) {
         let minDistance = Infinity;
         let closestDatum;
@@ -467,19 +430,11 @@ export class Sparkline {
         }
         return closestDatum;
     }
-    /**
-     * Return the relevant distance between two points.
-     * The distance will be calculated based on the x value of the points for all sparklines except bar sparkline, where the distance is based on the y values.
-     * @param x
-     * @param y
-     */
+    
     getDistance(p1, p2) {
         return Math.abs(p1.x - p2.x);
     }
-    /**
-     * calculate x/y coordinates for tooltip based on coordinates of highlighted datum, position of canvas and page offset.
-     * @param datum
-     */
+    
     handleTooltip(event, datum) {
         var _a, _b;
         const { seriesDatum } = datum;
@@ -548,9 +503,7 @@ export class Sparkline {
     invalidData(data) {
         return !data || !Array.isArray(data) || data.length === 0;
     }
-    /**
-     * Cleanup and remove canvas element from the DOM.
-     */
+    
     destroy() {
         this.scene.container = undefined;
         // remove canvas element from the DOM
@@ -559,4 +512,3 @@ export class Sparkline {
     }
 }
 Sparkline.tooltipDocuments = [];
-//# sourceMappingURL=sparkline.js.map

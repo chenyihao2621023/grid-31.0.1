@@ -11,7 +11,7 @@ import { clearElement } from "../../utils/dom";
 import { warnOnce } from "../../utils/function";
 export class PageSizeSelectorComp extends Component {
     constructor() {
-        super(/* html */ `<span class="zing-paging-page-size"></span>`);
+        super( `<span class="zing-paging-page-size"></span>`);
         this.hasEmptyOption = false;
         this.handlePageSizeItemSelected = () => {
             if (!this.selectPageSizeComp) {
@@ -174,4 +174,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], PageSizeSelectorComp.prototype, "init", null);
-//# sourceMappingURL=pageSizeSelectorComp.js.map

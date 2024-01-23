@@ -65,4 +65,3 @@ export class PolychromaLight extends ChartTheme {
         return palette;
     }
 }
-//# sourceMappingURL=polychromaLight.js.map

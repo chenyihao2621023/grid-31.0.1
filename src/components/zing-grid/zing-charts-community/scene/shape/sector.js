@@ -125,4 +125,3 @@ __decorate([
 __decorate([
     ScenePathChangeDetection()
 ], Sector.prototype, "inset", void 0);
-//# sourceMappingURL=sector.js.map

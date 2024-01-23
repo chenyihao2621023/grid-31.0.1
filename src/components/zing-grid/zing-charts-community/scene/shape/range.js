@@ -111,4 +111,3 @@ __decorate([
 __decorate([
     SceneChangeDetection({ redraw: RedrawType.MINOR })
 ], Range.prototype, "isRange", void 0);
-//# sourceMappingURL=range.js.map

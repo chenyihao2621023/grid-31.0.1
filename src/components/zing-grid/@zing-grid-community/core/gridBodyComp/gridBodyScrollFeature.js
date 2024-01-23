@@ -523,4 +523,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], GridBodyScrollFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=gridBodyScrollFeature.js.map

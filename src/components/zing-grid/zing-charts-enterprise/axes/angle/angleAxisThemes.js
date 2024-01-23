@@ -6,4 +6,3 @@ export const ANGLE_AXIS_THEME = {
         __extends__: _Theme.EXTENDS_AXES_GRID_LINE_DEFAULTS,
     },
 };
-//# sourceMappingURL=angleAxisThemes.js.map

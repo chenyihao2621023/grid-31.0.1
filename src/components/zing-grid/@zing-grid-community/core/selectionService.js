@@ -176,10 +176,7 @@ let SelectionService = class SelectionService extends BeanStub {
     getSelectionCount() {
         return this.selectedNodes.size;
     }
-    /**
-     * This method is used by the CSRM to remove groups which are being disposed of,
-     * events do not need fired in this case
-     */
+    
     filterFromSelection(predicate) {
         const newSelectedNodes = new Map();
         this.selectedNodes.forEach((rowNode, key) => {
@@ -410,11 +407,7 @@ let SelectionService = class SelectionService extends BeanStub {
         // only selected
         return selectedCount > 0;
     }
-    /**
-     * @param justFiltered whether to just include nodes which have passed the filter
-     * @param justCurrentPage whether to just include nodes on the current page
-     * @returns all nodes including unselectable nodes which are the target of this selection attempt
-     */
+    
     getNodesToSelect(justFiltered = false, justCurrentPage = false) {
         if (this.rowModel.getType() !== 'clientSide') {
             throw new Error(`selectAll only available when rowModelType='clientSide', ie not ${this.rowModel.getType()}`);
@@ -518,4 +511,3 @@ SelectionService = __decorate([
     Bean('selectionService')
 ], SelectionService);
 export { SelectionService };
-//# sourceMappingURL=selectionService.js.map

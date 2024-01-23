@@ -112,4 +112,3 @@ export function getChartTheme(unvalidatedValue) {
     const baseTheme = flattenedTheme.baseTheme ? getChartTheme(flattenedTheme.baseTheme) : lightTheme();
     return new baseTheme.constructor(flattenedTheme);
 }
-//# sourceMappingURL=themes.js.map

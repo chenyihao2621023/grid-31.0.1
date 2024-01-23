@@ -68,4 +68,3 @@ export function prepareAreaPathAnimation(newData, oldData, diff) {
     const marker = prepareMarkerAnimation(markerPairMap, status);
     return { fill, marker };
 }
-//# sourceMappingURL=areaUtil.js.map

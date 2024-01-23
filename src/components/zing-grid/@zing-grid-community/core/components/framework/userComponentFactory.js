@@ -246,4 +246,3 @@ UserComponentFactory = __decorate([
     Bean('userComponentFactory')
 ], UserComponentFactory);
 export { UserComponentFactory };
-//# sourceMappingURL=userComponentFactory.js.map

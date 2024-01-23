@@ -35,4 +35,3 @@ import * as easing_1 from './motion/easing';
 export { easing_1 as easing };
 const motion = Object.assign(Object.assign({}, fromToMotion), resetMotion);
 export { motion };
-//# sourceMappingURL=integrated-charts-scene.js.map

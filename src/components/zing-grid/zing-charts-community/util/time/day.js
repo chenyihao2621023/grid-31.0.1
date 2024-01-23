@@ -11,4 +11,3 @@ function decode(encoded) {
 }
 export const day = new CountableTimeInterval(encode, decode);
 export default day;
-//# sourceMappingURL=day.js.map

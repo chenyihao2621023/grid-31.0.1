@@ -32,7 +32,7 @@ export class ZingGroupComponent extends Component {
     static getTemplate(params) {
         const cssIdentifier = params.cssIdentifier || 'default';
         const direction = params.direction || 'vertical';
-        return /* html */ `<div class="zing-group zing-${cssIdentifier}-group" role="presentation">
+        return  `<div class="zing-group zing-${cssIdentifier}-group" role="presentation">
             <div class="zing-group-title-bar zing-${cssIdentifier}-group-title-bar zing-unselectable" ref="eTitleBar" role="button">
                 <span class="zing-group-title-bar-icon zing-${cssIdentifier}-group-title-bar-icon" ref="eGroupOpenedIcon" role="presentation"></span>
                 <span class="zing-group-title-bar-icon zing-${cssIdentifier}-group-title-bar-icon" ref="eGroupClosedIcon" role="presentation"></span>
@@ -217,4 +217,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingGroupComponent.prototype, "postConstruct", null);
-//# sourceMappingURL=zingGroupComponent.js.map

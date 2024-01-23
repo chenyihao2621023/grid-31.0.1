@@ -6,4 +6,3 @@ export const markerPaletteFactory = (params) => {
     const { fill, stroke } = singleSeriesPaletteFactory(params);
     return { marker: { fill, stroke } };
 };
-//# sourceMappingURL=theme.js.map

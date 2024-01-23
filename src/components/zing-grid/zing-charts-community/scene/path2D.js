@@ -258,4 +258,3 @@ export class Path2D {
         return coords;
     }
 }
-//# sourceMappingURL=path2D.js.map

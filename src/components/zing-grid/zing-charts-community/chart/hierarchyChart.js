@@ -49,4 +49,3 @@ export class HierarchyChart extends Chart {
 }
 HierarchyChart.className = 'HierarchyChart';
 HierarchyChart.type = 'hierarchy';
-//# sourceMappingURL=hierarchyChart.js.map

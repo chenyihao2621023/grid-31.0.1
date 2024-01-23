@@ -111,4 +111,3 @@ export class BackgroundImage {
         return { x: left, y: top, width, height };
     }
 }
-//# sourceMappingURL=backgroundImage.js.map

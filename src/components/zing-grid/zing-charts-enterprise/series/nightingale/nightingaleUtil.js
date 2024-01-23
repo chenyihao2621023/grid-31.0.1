@@ -39,4 +39,3 @@ export function prepareNightingaleAnimationFunctions(axisZeroRadius) {
 export function resetNightingaleSelectionFn(_sect, { innerRadius, outerRadius, startAngle, endAngle }) {
     return { innerRadius, outerRadius, startAngle, endAngle };
 }
-//# sourceMappingURL=nightingaleUtil.js.map

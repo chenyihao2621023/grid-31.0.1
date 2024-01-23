@@ -34,9 +34,7 @@ export class BoxPlotSeries extends _ModuleSupport.AbstractBarSeries {
         });
         this.properties = new BoxPlotSeriesProperties();
         this.NodeClickEvent = BoxPlotSeriesNodeClickEvent;
-        /**
-         * Used to get the position of items within each group.
-         */
+        
         this.groupScale = new _Scale.BandScale();
         this.smallestDataInterval = undefined;
     }
@@ -345,4 +343,3 @@ export class BoxPlotSeries extends _ModuleSupport.AbstractBarSeries {
         return result;
     }
 }
-//# sourceMappingURL=boxPlotSeries.js.map

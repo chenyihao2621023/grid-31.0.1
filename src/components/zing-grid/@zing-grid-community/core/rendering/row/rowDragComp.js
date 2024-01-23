@@ -28,7 +28,7 @@ export class RowDragComp extends Component {
     }
     postConstruct() {
         if (!this.customGui) {
-            this.setTemplate(/* html */ `<div class="zing-drag-handle zing-row-drag" aria-hidden="true"></div>`);
+            this.setTemplate( `<div class="zing-drag-handle zing-row-drag" aria-hidden="true"></div>`);
             this.getGui().appendChild(createIconNoSpan('rowDrag', this.gridOptionsService, null));
             this.addDragSource();
         }
@@ -216,4 +216,3 @@ class ManagedVisibilityStrategy extends VisibilityStrategy {
 __decorate([
     PostConstruct
 ], ManagedVisibilityStrategy.prototype, "postConstruct", null);
-//# sourceMappingURL=rowDragComp.js.map

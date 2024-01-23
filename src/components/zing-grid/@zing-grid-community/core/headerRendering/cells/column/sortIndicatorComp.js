@@ -140,4 +140,3 @@ __decorate([
 __decorate([
     Autowired('sortController')
 ], SortIndicatorComp.prototype, "sortController", void 0);
-//# sourceMappingURL=sortIndicatorComp.js.map

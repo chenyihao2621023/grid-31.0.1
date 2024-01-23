@@ -638,4 +638,3 @@ export class WaterfallSeries extends _ModuleSupport.AbstractBarSeries {
 }
 WaterfallSeries.className = 'WaterfallSeries';
 WaterfallSeries.type = 'waterfall';
-//# sourceMappingURL=waterfallSeries.js.map

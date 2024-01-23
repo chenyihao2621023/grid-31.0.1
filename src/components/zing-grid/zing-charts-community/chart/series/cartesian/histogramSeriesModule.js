@@ -43,4 +43,3 @@ export const HistogramSeriesModule = {
         return { fill, stroke };
     },
 };
-//# sourceMappingURL=histogramSeriesModule.js.map

@@ -411,4 +411,3 @@ export const HISTOGRAM_CROSSLINES = Object.assign(Object.assign({}, XY_HISTOGRAM
             ],
         },
     ] });
-//# sourceMappingURL=examples.js.map

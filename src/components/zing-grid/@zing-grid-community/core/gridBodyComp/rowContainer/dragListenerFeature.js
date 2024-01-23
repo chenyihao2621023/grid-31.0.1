@@ -52,4 +52,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], DragListenerFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=dragListenerFeature.js.map

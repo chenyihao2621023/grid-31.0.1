@@ -72,4 +72,3 @@ export * from './motion/resetMotion';
 export * from './motion/fromToMotion';
 export { resetIds } from './util/id';
 export { ChartUpdateType } from './chart/chartUpdateType';
-//# sourceMappingURL=module-support.js.map

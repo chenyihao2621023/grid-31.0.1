@@ -15,7 +15,7 @@ import { parseDateTimeFromString, serialiseDate } from '../../../utils/date';
 import { debounce } from '../../../utils/function';
 export class DateFloatingFilter extends SimpleFloatingFilter {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-floating-filter-input" role="presentation">
                 <zing-input-text-field ref="eReadOnlyText"></zing-input-text-field>
                 <div ref="eDateWrapper" style="display: flex;"></div>
@@ -119,4 +119,3 @@ __decorate([
 __decorate([
     RefSelector('eDateWrapper')
 ], DateFloatingFilter.prototype, "eDateWrapper", void 0);
-//# sourceMappingURL=dateFloatingFilter.js.map

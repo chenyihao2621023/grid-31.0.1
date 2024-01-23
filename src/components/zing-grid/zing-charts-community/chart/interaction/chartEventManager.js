@@ -30,4 +30,3 @@ export class ChartEventManager extends BaseManager {
         this.listeners.dispatch('axis-hover', event);
     }
 }
-//# sourceMappingURL=chartEventManager.js.map

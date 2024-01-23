@@ -50,4 +50,3 @@ export class AxisPositionGuesser {
         return this.result;
     }
 }
-//# sourceMappingURL=prepareAxis.js.map

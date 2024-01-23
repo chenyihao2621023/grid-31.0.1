@@ -40,4 +40,3 @@ export class ZingMenuPanel extends TabGuardComp {
 __decorate([
     PostConstruct
 ], ZingMenuPanel.prototype, "postConstruct", null);
-//# sourceMappingURL=zingMenuPanel.js.map

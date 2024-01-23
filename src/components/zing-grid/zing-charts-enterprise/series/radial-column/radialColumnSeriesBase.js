@@ -367,4 +367,3 @@ export class RadialColumnSeriesBase extends _ModuleSupport.PolarSeries {
         return null;
     }
 }
-//# sourceMappingURL=radialColumnSeriesBase.js.map

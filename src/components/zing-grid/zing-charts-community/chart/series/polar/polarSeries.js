@@ -32,19 +32,10 @@ export class PolarSeries extends DataModelSeries {
         this.itemSelection = Selection.select(this.sectorGroup, () => this.nodeFactory(), false);
         this.labelSelection = Selection.select(this.labelGroup, Text, false);
         this.highlightSelection = Selection.select(this.highlightGroup, () => this.nodeFactory());
-        /**
-         * The center of the polar series (for example, the center of a pie).
-         * If the polar chart has multiple series, all of them will have their
-         * center set to the same value as a result of the polar chart layout.
-         * The center coordinates are not supposed to be set by the user.
-         */
+        
         this.centerX = 0;
         this.centerY = 0;
-        /**
-         * The maximum radius the series can use.
-         * This value is set automatically as a result of the polar chart layout
-         * and is not supposed to be set by the user.
-         */
+        
         this.radius = 0;
         this.sectorGroup.zIndexSubOrder = [() => this._declarationOrder, 1];
         this.animationResetFns = animationResetFns;
@@ -128,4 +119,3 @@ export class PolarSeries extends DataModelSeries {
         return { seriesRect };
     }
 }
-//# sourceMappingURL=polarSeries.js.map

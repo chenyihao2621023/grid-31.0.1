@@ -16,4 +16,3 @@ export const RANGE_AREA_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=rangeAreaDefaults.js.map

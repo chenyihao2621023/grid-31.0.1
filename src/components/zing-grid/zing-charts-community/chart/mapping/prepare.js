@@ -301,4 +301,3 @@ function preparePieOptions(pieSeriesTheme, seriesOptions, mergedSeries) {
         mergedSeries.innerLabels = DELETE;
     }
 }
-//# sourceMappingURL=prepare.js.map

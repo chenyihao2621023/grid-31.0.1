@@ -42,4 +42,3 @@ export function injectWatermark(document, parentElement, text) {
     element.appendChild(textElement);
     parentElement.appendChild(element);
 }
-//# sourceMappingURL=watermark.js.map

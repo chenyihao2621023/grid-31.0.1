@@ -1,6 +1,4 @@
-/**
- * Zip two arrays into an object of keys and values, or an object of keys with a single value.
- */
+
 export function zipObject(keys, values) {
     const zipped = {};
     if (Array.isArray(values)) {
@@ -15,4 +13,3 @@ export function zipObject(keys, values) {
     }
     return zipped;
 }
-//# sourceMappingURL=zip.js.map

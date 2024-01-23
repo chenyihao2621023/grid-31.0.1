@@ -121,4 +121,3 @@ __decorate([
 __decorate([
     Autowired('dragAndDropService')
 ], GridCtrl.prototype, "dragAndDropService", void 0);
-//# sourceMappingURL=gridCtrl.js.map

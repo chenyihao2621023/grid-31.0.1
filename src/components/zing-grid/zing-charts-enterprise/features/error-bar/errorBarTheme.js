@@ -11,4 +11,3 @@ export const ERROR_BARS_THEME = {
         },
     },
 };
-//# sourceMappingURL=errorBarTheme.js.map

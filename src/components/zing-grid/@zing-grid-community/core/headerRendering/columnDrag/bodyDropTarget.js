@@ -101,4 +101,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], BodyDropTarget.prototype, "init", null);
-//# sourceMappingURL=bodyDropTarget.js.map

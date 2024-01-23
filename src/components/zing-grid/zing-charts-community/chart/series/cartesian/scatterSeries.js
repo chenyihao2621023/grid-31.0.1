@@ -282,4 +282,3 @@ export class ScatterSeries extends CartesianSeries {
 }
 ScatterSeries.className = 'ScatterSeries';
 ScatterSeries.type = 'scatter';
-//# sourceMappingURL=scatterSeries.js.map

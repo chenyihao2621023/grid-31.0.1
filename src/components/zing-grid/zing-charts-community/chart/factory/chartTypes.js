@@ -42,4 +42,3 @@ export function getChartType(seriesType) {
     var _a;
     return (_a = TYPES[seriesType]) !== null && _a !== void 0 ? _a : 'unknown';
 }
-//# sourceMappingURL=chartTypes.js.map

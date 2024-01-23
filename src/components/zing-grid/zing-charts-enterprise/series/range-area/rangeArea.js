@@ -502,4 +502,3 @@ export class RangeAreaSeries extends _ModuleSupport.CartesianSeries {
 }
 RangeAreaSeries.className = 'RangeAreaSeries';
 RangeAreaSeries.type = 'range-area';
-//# sourceMappingURL=rangeArea.js.map

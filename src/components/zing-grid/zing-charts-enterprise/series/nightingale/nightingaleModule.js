@@ -22,4 +22,3 @@ export const NightingaleModule = {
     groupable: true,
     stackedByDefault: true,
 };
-//# sourceMappingURL=nightingaleModule.js.map

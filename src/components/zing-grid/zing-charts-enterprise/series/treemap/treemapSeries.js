@@ -174,10 +174,7 @@ export class TreemapSeries extends _ModuleSupport.HierarchySeries {
             });
         });
     }
-    /**
-     * Squarified Treemap algorithm
-     * https://www.win.tue.nl/~vanwijk/stm.pdf
-     */
+    
     squarify(node, bbox, outputBoxes) {
         const { index, datum, children } = node;
         if (bbox.width <= 0 || bbox.height <= 0) {
@@ -598,4 +595,3 @@ export class TreemapSeries extends _ModuleSupport.HierarchySeries {
 }
 TreemapSeries.className = 'TreemapSeries';
 TreemapSeries.type = 'treemap';
-//# sourceMappingURL=treemapSeries.js.map

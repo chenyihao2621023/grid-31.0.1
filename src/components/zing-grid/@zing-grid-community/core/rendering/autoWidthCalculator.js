@@ -65,7 +65,7 @@ let AutoWidthCalculator = class AutoWidthCalculator extends BeanStub {
         return this.gridOptionsService.get('autoSizePadding');
     }
     getHeaderCellForColumn(column) {
-        /* tslint:enable */
+        
         let element = null;
         this.ctrlsService.getHeaderRowContainerCtrls().forEach(container => {
             const res = container.getHtmlElementForColumnHeader(column);
@@ -139,4 +139,3 @@ AutoWidthCalculator = __decorate([
     Bean('autoWidthCalculator')
 ], AutoWidthCalculator);
 export { AutoWidthCalculator };
-//# sourceMappingURL=autoWidthCalculator.js.map

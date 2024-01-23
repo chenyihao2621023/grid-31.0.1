@@ -17,4 +17,3 @@ export function hasConstrainedCanvasMemory() {
     }
     return true;
 }
-//# sourceMappingURL=userAgent.js.map

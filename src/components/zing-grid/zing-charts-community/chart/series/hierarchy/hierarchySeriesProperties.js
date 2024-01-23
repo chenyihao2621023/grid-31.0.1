@@ -36,4 +36,3 @@ __decorate([
 __decorate([
     Validate(COLOR_STRING_ARRAY, { optional: true })
 ], HierarchySeriesProperties.prototype, "colorRange", void 0);
-//# sourceMappingURL=hierarchySeriesProperties.js.map

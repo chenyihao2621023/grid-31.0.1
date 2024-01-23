@@ -6,4 +6,3 @@ export const BackgroundModule = {
     chartTypes: ['cartesian', 'polar', 'hierarchy'],
     instanceConstructor: Background,
 };
-//# sourceMappingURL=backgroundModule.js.map

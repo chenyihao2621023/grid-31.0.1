@@ -178,7 +178,7 @@ export class Scene {
     get root() {
         return this._root;
     }
-    /** Alternative to destroy() that preserves re-usable resources. */
+    
     strip() {
         const { layers } = this;
         for (const layer of layers) {
@@ -453,4 +453,3 @@ export class Scene {
     }
 }
 Scene.className = 'Scene';
-//# sourceMappingURL=scene.js.map

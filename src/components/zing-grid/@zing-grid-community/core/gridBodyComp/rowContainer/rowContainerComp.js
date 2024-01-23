@@ -21,13 +21,13 @@ function templateFactory() {
         name === RowContainerName.STICKY_TOP_CENTER ||
         name === RowContainerName.BOTTOM_CENTER;
     if (centerTemplate) {
-        res = /* html */
+        res = 
             `<div class="${cssClasses.viewport}" ref="eViewport" role="presentation">
                 <div class="${cssClasses.container}" ref="eContainer"></div>
             </div>`;
     }
     else {
-        res = /* html */
+        res = 
             `<div class="${cssClasses.container}" ref="eContainer"></div>`;
     }
     return res;
@@ -116,4 +116,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], RowContainerComp.prototype, "preDestroy", null);
-//# sourceMappingURL=rowContainerComp.js.map

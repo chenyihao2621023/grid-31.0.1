@@ -7,4 +7,3 @@ export function Default(defaultValue, replaces = [undefined]) {
         return v;
     });
 }
-//# sourceMappingURL=default.js.map

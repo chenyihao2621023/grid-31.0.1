@@ -86,4 +86,3 @@ export class ZingSelect extends ZingPickerField {
     }
 }
 ZingSelect.EVENT_ITEM_SELECTED = 'selectedItem';
-//# sourceMappingURL=zingSelect.js.map

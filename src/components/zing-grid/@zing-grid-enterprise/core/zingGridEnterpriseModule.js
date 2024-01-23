@@ -11,4 +11,3 @@ export const EnterpriseCoreModule = {
         { componentName: 'ZingWatermark', componentClass: WatermarkComp }
     ]
 };
-//# sourceMappingURL=zingGridEnterpriseModule.js.map

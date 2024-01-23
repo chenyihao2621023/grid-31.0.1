@@ -234,4 +234,3 @@ __decorate([
 __decorate([
     Validate(STRING, { optional: true })
 ], PieSeriesProperties.prototype, "__BACKGROUND_COLOR_DO_NOT_USE", void 0);
-//# sourceMappingURL=pieSeriesProperties.js.map

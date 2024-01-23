@@ -59,13 +59,7 @@ export class SimpleFilterModelFormatter {
         return this.valueFormatter ? ((_a = this.valueFormatter(value !== null && value !== void 0 ? value : null)) !== null && _a !== void 0 ? _a : '') : String(value);
     }
 }
-/**
- * Every filter with a dropdown where the user can specify a comparing type against the filter values.
- *
- * @param M type of filter-model managed by the concrete sub-class that extends this type
- * @param V type of value managed by the concrete sub-class that extends this type
- * @param E type of UI element used for collecting user-input
- */
+
 export class SimpleFilter extends ProvidedFilter {
     constructor() {
         super(...arguments);
@@ -376,9 +370,7 @@ export class SimpleFilter extends ProvidedFilter {
                 this.translate(displayKey),
         };
     }
-    /**
-     * @deprecated As of v29.2 filters can have more than two conditions. Check `colDef.filterParams.maxNumConditions` instead.
-     */
+    
     isAllowTwoConditions() {
         return this.maxNumConditions >= 2;
     }
@@ -750,7 +742,7 @@ export class SimpleFilter extends ProvidedFilter {
             this.attachElementOnChange(element, this.listener);
         });
     }
-    /** returns true if the row passes the said condition */
+    
     individualConditionPasses(params, filterModel) {
         const cellValue = this.getCellValue(params.node);
         const values = this.mapValuesFromModel(filterModel);
@@ -798,4 +790,3 @@ SimpleFilter.CONTAINS = 'contains';
 SimpleFilter.NOT_CONTAINS = 'notContains';
 SimpleFilter.STARTS_WITH = 'startsWith';
 SimpleFilter.ENDS_WITH = 'endsWith';
-//# sourceMappingURL=simpleFilter.js.map

@@ -318,4 +318,3 @@ export function diff(previousData, updateMovedDatums = true) {
 export function createDatumId(keys) {
     return keys.join('___');
 }
-//# sourceMappingURL=processors.js.map

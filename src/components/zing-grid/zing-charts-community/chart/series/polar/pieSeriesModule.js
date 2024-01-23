@@ -84,4 +84,3 @@ export const PieSeriesModule = {
         };
     },
 };
-//# sourceMappingURL=pieSeriesModule.js.map

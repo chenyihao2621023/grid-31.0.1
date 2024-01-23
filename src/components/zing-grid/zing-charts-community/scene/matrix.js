@@ -1,17 +1,5 @@
 import { BBox } from './bbox';
-/**
- * As of Jan 8, 2019, Firefox still doesn't implement
- * `getTransform(): DOMMatrix;`
- * `setTransform(transform?: DOMMatrix2DInit)`
- * in the `CanvasRenderingContext2D`.
- * Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=928150
- * IE11 and Edge 44 also don't have the support.
- * Thus this class, to keep track of the current transform and
- * combine transformations.
- * Standards:
- * https://html.spec.whatwg.org/dev/canvas.html
- * https://www.w3.org/TR/geometry-1/
- */
+
 export class Matrix {
     get e() {
         return [...this.elements];
@@ -45,10 +33,7 @@ export class Matrix {
         const e = this.elements;
         return e[0] === 1 && e[1] === 0 && e[2] === 0 && e[3] === 1 && e[4] === 0 && e[5] === 0;
     }
-    /**
-     * Performs the AxB matrix multiplication and saves the result
-     * to `C`, if given, or to `A` otherwise.
-     */
+    
     AxB(A, B, C) {
         const a = A[0] * B[0] + A[2] * B[1], b = A[1] * B[0] + A[3] * B[1], c = A[0] * B[2] + A[2] * B[3], d = A[1] * B[2] + A[3] * B[3], e = A[0] * B[4] + A[2] * B[5] + A[4], f = A[1] * B[4] + A[3] * B[5] + A[5];
         C = C !== null && C !== void 0 ? C : A;
@@ -59,20 +44,12 @@ export class Matrix {
         C[4] = e;
         C[5] = f;
     }
-    /**
-     * The `other` matrix gets post-multiplied to the current matrix.
-     * Returns the current matrix.
-     * @param other
-     */
+    
     multiplySelf(other) {
         this.AxB(this.elements, other.elements);
         return this;
     }
-    /**
-     * The `other` matrix gets post-multiplied to the current matrix.
-     * Returns a new matrix.
-     * @param other
-     */
+    
     multiply(other) {
         const elements = new Array(6);
         this.AxB(this.elements, other.elements, elements);
@@ -82,9 +59,7 @@ export class Matrix {
         this.AxB(other.elements, this.elements, this.elements);
         return this;
     }
-    /**
-     * Returns the inverse of this matrix as a new matrix.
-     */
+    
     inverse() {
         const el = this.elements;
         let a = el[0], b = el[1], c = el[2], d = el[3];
@@ -96,9 +71,7 @@ export class Matrix {
         d *= rD;
         return new Matrix([d, -b, -c, a, c * f - d * e, b * e - a * f]);
     }
-    /**
-     * Save the inverse of this matrix to the given matrix.
-     */
+    
     inverseTo(other) {
         const el = this.elements;
         let a = el[0], b = el[1], c = el[2], d = el[3];
@@ -246,4 +219,3 @@ export class Matrix {
     }
 }
 Matrix.instance = new Matrix();
-//# sourceMappingURL=matrix.js.map

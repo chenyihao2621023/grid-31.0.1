@@ -30,10 +30,7 @@ const CSS = `
     touch-action: none;
 }
 `;
-/**
- * Manages user interactions with a specific HTMLElement (or interactions that bubble from it's
- * children)
- */
+
 export class InteractionManager extends BaseManager {
     constructor(element, document, window) {
         super();
@@ -249,4 +246,3 @@ InteractionManager.NULL_COORDS = {
     offsetX: -Infinity,
     offsetY: -Infinity,
 };
-//# sourceMappingURL=interactionManager.js.map

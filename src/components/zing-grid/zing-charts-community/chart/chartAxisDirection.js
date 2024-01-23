@@ -3,4 +3,3 @@ export var ChartAxisDirection;
     ChartAxisDirection["X"] = "x";
     ChartAxisDirection["Y"] = "y";
 })(ChartAxisDirection || (ChartAxisDirection = {}));
-//# sourceMappingURL=chartAxisDirection.js.map

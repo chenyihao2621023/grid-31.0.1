@@ -8,7 +8,7 @@ import { Autowired, Component, _ } from "@/components/zing-grid/@zing-grid-commu
 import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class ConditionPillWrapperComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-builder-item-condition" role="presentation"></div>
         `);
         this.validationMessage = null;
@@ -201,4 +201,3 @@ __decorate([
 __decorate([
     Autowired('valueParserService')
 ], ConditionPillWrapperComp.prototype, "valueParserService", void 0);
-//# sourceMappingURL=conditionPillWrapperComp.js.map

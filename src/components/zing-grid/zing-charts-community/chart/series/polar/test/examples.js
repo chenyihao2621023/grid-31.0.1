@@ -261,4 +261,3 @@ export const PIE_CALLOUT_LABELS_COLLISIONS = {
         },
     ],
 };
-//# sourceMappingURL=examples.js.map

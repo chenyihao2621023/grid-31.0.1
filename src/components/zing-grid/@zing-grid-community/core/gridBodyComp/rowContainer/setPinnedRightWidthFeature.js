@@ -32,4 +32,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], SetPinnedRightWidthFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=setPinnedRightWidthFeature.js.map

@@ -50,9 +50,7 @@ let AutoGroupColService = class AutoGroupColService extends BeanStub {
         this.context.createBean(newCol);
         return newCol;
     }
-    /**
-     * Refreshes an auto group col to load changes from defaultColDef or autoGroupColDef
-     */
+    
     updateOneAutoGroupColumn(colToUpdate, index) {
         const oldColDef = colToUpdate.getColDef();
         const underlyingColId = typeof oldColDef.showRowGroup == 'string' ? oldColDef.showRowGroup : undefined;
@@ -140,4 +138,3 @@ AutoGroupColService = __decorate([
     Bean('autoGroupColService')
 ], AutoGroupColService);
 export { AutoGroupColService };
-//# sourceMappingURL=autoGroupColService.js.map

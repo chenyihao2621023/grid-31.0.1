@@ -20,4 +20,3 @@ __decorate([
 __decorate([
     Validate(RATIO)
 ], ZoomRect.prototype, "fillOpacity", void 0);
-//# sourceMappingURL=zoomRect.js.map

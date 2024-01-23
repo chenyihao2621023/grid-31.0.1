@@ -40,4 +40,3 @@ export const validateCrossLineValues = (type, value, range, scale) => {
     Logger.warnOnce(message.join(' '));
     return false;
 };
-//# sourceMappingURL=crossLine.js.map

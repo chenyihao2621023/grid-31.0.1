@@ -22,4 +22,3 @@ export function areScalingEqual(a, b) {
     }
     return false;
 }
-//# sourceMappingURL=scaling.js.map

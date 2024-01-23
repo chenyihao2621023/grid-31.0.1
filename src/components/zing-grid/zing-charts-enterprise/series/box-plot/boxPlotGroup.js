@@ -88,4 +88,3 @@ export class BoxPlotGroup extends _Scene.Group {
         outline.setProperties({ stroke, strokeWidth, strokeOpacity, lineDash, lineDashOffset, fillOpacity: 0 });
     }
 }
-//# sourceMappingURL=boxPlotGroup.js.map

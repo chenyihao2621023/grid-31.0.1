@@ -65,4 +65,3 @@ export class PolychromaDark extends DarkTheme {
         return palette;
     }
 }
-//# sourceMappingURL=polychromaDark.js.map

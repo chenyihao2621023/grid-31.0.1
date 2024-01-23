@@ -24,4 +24,3 @@ export function getLegendThemeTemplates() {
 export function getLegendKeys() {
     return LEGEND_KEYS;
 }
-//# sourceMappingURL=legendTypes.js.map

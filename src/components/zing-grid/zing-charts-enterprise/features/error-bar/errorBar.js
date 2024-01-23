@@ -215,4 +215,3 @@ export class ErrorBars extends _ModuleSupport.BaseModuleInstance {
         return { stroke, strokeWidth, visible, strokeOpacity, lineDash, lineDashOffset };
     }
 }
-//# sourceMappingURL=errorBar.js.map

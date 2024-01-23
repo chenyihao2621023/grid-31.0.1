@@ -178,4 +178,3 @@ __decorate([
 __decorate([
     Autowired('selectionService')
 ], SelectAllFeature.prototype, "selectionService", void 0);
-//# sourceMappingURL=selectAllFeature.js.map

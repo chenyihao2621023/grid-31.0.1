@@ -172,4 +172,3 @@ export class CellRangeFeature {
         this.beans.context.destroyBean(this.selectionHandle);
     }
 }
-//# sourceMappingURL=cellRangeFeature.js.map

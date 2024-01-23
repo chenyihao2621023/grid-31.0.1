@@ -8,7 +8,7 @@ export var RedrawType;
     // Canvas needs to be cleared for these redraw types.
     RedrawType[RedrawType["MAJOR"] = 3] = "MAJOR";
 })(RedrawType || (RedrawType = {}));
-/** @returns true if new Function() is disabled in the current execution context. */
+
 function functionConstructorAvailable() {
     try {
         new Function('return true');
@@ -120,4 +120,3 @@ export class ChangeDetectable {
         return this._dirty > RedrawType.NONE;
     }
 }
-//# sourceMappingURL=changeDetectable.js.map

@@ -53,4 +53,3 @@ function getOrCreateProps(target, instanceName) {
     }
     return target.__zingComponentMetaData[instanceName];
 }
-//# sourceMappingURL=componentAnnotations.js.map

@@ -10,4 +10,3 @@ export const ZoomModule = {
         zoom: { enabled: false },
     },
 };
-//# sourceMappingURL=zoomModule.js.map

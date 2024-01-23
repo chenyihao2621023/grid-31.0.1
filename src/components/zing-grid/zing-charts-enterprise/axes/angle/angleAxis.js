@@ -362,4 +362,3 @@ __decorate([
 __decorate([
     Validate(AND(NUMBER.restrict({ min: 0, max: 720 }), GREATER_THAN('startAngle')), { optional: true })
 ], AngleAxis.prototype, "endAngle", void 0);
-//# sourceMappingURL=angleAxis.js.map

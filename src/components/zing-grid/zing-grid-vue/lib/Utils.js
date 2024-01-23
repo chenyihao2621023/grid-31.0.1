@@ -46,9 +46,7 @@ export var getZingGridProperties = function () {
             if (!this.gridCreated || !this.api) {
                 return;
             }
-            /*
-             * Prevents an infinite loop when using v-model for the rowData
-             */
+            
             if (currentValue === previousValue) {
                 return;
             }

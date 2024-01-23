@@ -10,7 +10,7 @@ import { isBrowserSafari } from "../../utils/browser";
 import { KeyCode } from '../../constants/keyCode';
 export class SimpleCellEditor extends PopupComponent {
     constructor(cellEditorInput) {
-        super(/* html */ `
+        super( `
             <div class="zing-cell-edit-wrapper">
                 ${cellEditorInput.getTemplate()}
             </div>`);
@@ -92,4 +92,3 @@ export class SimpleCellEditor extends PopupComponent {
 __decorate([
     RefSelector('eInput')
 ], SimpleCellEditor.prototype, "eInput", void 0);
-//# sourceMappingURL=simpleCellEditor.js.map

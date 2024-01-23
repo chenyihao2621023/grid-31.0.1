@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { _, ZingPromise, ZingSelect, Autowired, Events, PostConstruct, RefSelector, TabGuardComp, } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class GroupFilter extends TabGuardComp {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-group-filter">
                 <div ref="eGroupField"></div>
                 <div ref="eUnderlyingFilter"></div>
@@ -79,7 +79,7 @@ export class GroupFilter extends TabGuardComp {
             }
             this.createGroupFieldSelectElement(sourceColumns);
             this.eGroupField.appendChild(this.eGroupFieldSelect.getGui());
-            this.eGroupField.appendChild(_.loadTemplate(/* html */ `<div class="zing-filter-separator"></div>`));
+            this.eGroupField.appendChild(_.loadTemplate( `<div class="zing-filter-separator"></div>`));
             _.setDisplayed(this.eGroupField, true);
         }
         return sourceColumns;
@@ -238,4 +238,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], GroupFilter.prototype, "postConstruct", null);
-//# sourceMappingURL=groupFilter.js.map

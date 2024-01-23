@@ -15,4 +15,3 @@ __decorate([
 __decorate([
     Validate(RATIO, { optional: true })
 ], RadialColumnSeriesProperties.prototype, "maxColumnWidthRatio", void 0);
-//# sourceMappingURL=radialColumnSeriesProperties.js.map

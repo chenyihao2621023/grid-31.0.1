@@ -78,4 +78,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], HeaderCellComp.prototype, "destroyHeaderComp", null);
-//# sourceMappingURL=headerCellComp.js.map

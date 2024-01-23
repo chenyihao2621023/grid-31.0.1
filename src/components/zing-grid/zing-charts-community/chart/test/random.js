@@ -20,4 +20,3 @@ export function seedRandom(seed = 1337) {
     // https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number
     return sfc32(0x9e3779b9, 0x243f6a88, 0xb7e15162, realSeed);
 }
-//# sourceMappingURL=random.js.map

@@ -38,4 +38,3 @@ export class UndoRedoStack {
     }
 }
 UndoRedoStack.DEFAULT_STACK_SIZE = 10;
-//# sourceMappingURL=undoRedoStack.js.map

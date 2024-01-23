@@ -9,4 +9,3 @@ export const RadiusNumberAxisModule = {
     instanceConstructor: RadiusNumberAxis,
     themeTemplate: RADIUS_AXIS_THEME,
 };
-//# sourceMappingURL=radiusNumberAxisModule.js.map

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ZingMenuItemComponent, ZingMenuList, Autowired, Column, Component, PostConstruct, ProvidedColumnGroup, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class ToolPanelContextMenu extends Component {
     constructor(column, mouseEvent, parentEl) {
-        super(/* html */ `<div class="zing-menu"></div>`);
+        super( `<div class="zing-menu"></div>`);
         this.column = column;
         this.mouseEvent = mouseEvent;
         this.parentEl = parentEl;
@@ -171,4 +171,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ToolPanelContextMenu.prototype, "postConstruct", null);
-//# sourceMappingURL=toolPanelContextMenu.js.map

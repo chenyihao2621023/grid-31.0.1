@@ -200,4 +200,3 @@ AnimationFrameService = __decorate([
     Bean('animationFrameService')
 ], AnimationFrameService);
 export { AnimationFrameService };
-//# sourceMappingURL=animationFrameService.js.map

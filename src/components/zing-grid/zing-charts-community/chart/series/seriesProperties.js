@@ -100,4 +100,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], SeriesProperties.prototype, "highlightStyle", void 0);
-//# sourceMappingURL=seriesProperties.js.map

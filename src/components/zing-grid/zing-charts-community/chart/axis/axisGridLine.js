@@ -29,4 +29,3 @@ __decorate([
 __decorate([
     Validate(GRID_STYLE)
 ], AxisGridLine.prototype, "style", void 0);
-//# sourceMappingURL=axisGridLine.js.map

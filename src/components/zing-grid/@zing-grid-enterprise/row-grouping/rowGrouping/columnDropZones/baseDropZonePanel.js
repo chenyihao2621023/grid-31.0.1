@@ -8,7 +8,7 @@ import { Autowired, Component, DragSourceType, Events, KeyCode, ManagedFocusFeat
 import { DropZoneColumnComp } from "./dropZoneColumnComp";
 export class BaseDropZonePanel extends Component {
     constructor(horizontal, dropZonePurpose) {
-        super(/* html */ `<div class="zing-unselectable" role="presentation"></div>`);
+        super( `<div class="zing-unselectable" role="presentation"></div>`);
         this.horizontal = horizontal;
         this.dropZonePurpose = dropZonePurpose;
         this.state = BaseDropZonePanel.STATE_NOT_DRAGGING;
@@ -404,4 +404,3 @@ __decorate([
 __decorate([
     Autowired('focusService')
 ], BaseDropZonePanel.prototype, "focusService", void 0);
-//# sourceMappingURL=baseDropZonePanel.js.map

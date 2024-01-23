@@ -8,7 +8,7 @@ import { BeanStub } from "../../context/beanStub";
 import { Autowired } from "../../context/context";
 import { getAbsoluteHeight, getAbsoluteWidth, isVisible, setFixedHeight, setFixedWidth } from "../../utils/dom";
 const RESIZE_CONTAINER_STYLE = 'zing-resizer-wrapper';
-const RESIZE_TEMPLATE = /* html */ `<div class="${RESIZE_CONTAINER_STYLE}">
+const RESIZE_TEMPLATE =  `<div class="${RESIZE_CONTAINER_STYLE}">
         <div ref="eTopLeftResizer" class="zing-resizer zing-resizer-topLeft"></div>
         <div ref="eTopResizer" class="zing-resizer zing-resizer-top"></div>
         <div ref="eTopRightResizer" class="zing-resizer zing-resizer-topRight"></div>
@@ -710,4 +710,3 @@ __decorate([
 __decorate([
     Autowired('dragService')
 ], PositionableFeature.prototype, "dragService", void 0);
-//# sourceMappingURL=positionableFeature.js.map

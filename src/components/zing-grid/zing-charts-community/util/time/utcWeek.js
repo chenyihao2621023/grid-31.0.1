@@ -22,4 +22,3 @@ export const utcWednesday = weekday(3);
 export const utcThursday = weekday(4);
 export const utcFriday = weekday(5);
 export const utcSaturday = weekday(6);
-//# sourceMappingURL=utcWeek.js.map

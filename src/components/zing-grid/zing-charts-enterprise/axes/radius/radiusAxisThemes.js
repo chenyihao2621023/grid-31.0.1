@@ -10,4 +10,3 @@ export const RADIUS_AXIS_THEME = {
         __extends__: _Theme.EXTENDS_AXES_TICK_DEFAULTS,
     },
 };
-//# sourceMappingURL=radiusAxisThemes.js.map

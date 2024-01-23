@@ -6,9 +6,9 @@ export class TreeSetDisplayValueModel {
         this.treeListPathGetter = treeListPathGetter;
         this.treeListFormatter = treeListFormatter;
         this.treeDataOrGrouping = treeDataOrGrouping;
-        /** all displayed items in a tree structure */
+        
         this.allDisplayedItemsTree = [];
-        /** all displayed items flattened and filtered */
+        
         this.activeDisplayedItemsFlat = [];
         this.selectAllItem = {
             depth: 0,
@@ -266,4 +266,3 @@ export class TreeSetDisplayValueModel {
     }
 }
 TreeSetDisplayValueModel.DATE_TREE_LIST_PATH_GETTER = (date) => date ? [String(date.getFullYear()), String(date.getMonth() + 1), String(date.getDate())] : null;
-//# sourceMappingURL=treeSetDisplayValueModel.js.map

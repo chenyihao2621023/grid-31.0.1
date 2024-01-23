@@ -1,9 +1,6 @@
 import { hasConstrainedCanvasMemory } from '../../util/userAgent';
 import { HdpiCanvas } from './hdpiCanvas';
-/**
- * Wraps a native OffscreenCanvas and overrides its OffscreenCanvasRenderingContext2D to
- * provide resolution independent rendering based on `window.devicePixelRatio`.
- */
+
 export class HdpiOffscreenCanvas {
     static isSupported() {
         return typeof OffscreenCanvas !== 'undefined' && OffscreenCanvas.prototype.transferToImageBitmap != null;
@@ -44,11 +41,7 @@ export class HdpiOffscreenCanvas {
     get pixelRatio() {
         return this._pixelRatio;
     }
-    /**
-     * Changes the pixel ratio of the Canvas element to the given value,
-     * or uses the window.devicePixelRatio (default), then resizes the Canvas
-     * element accordingly (default).
-     */
+    
     setPixelRatio(ratio) {
         let pixelRatio = ratio !== null && ratio !== void 0 ? ratio : window.devicePixelRatio;
         if (hasConstrainedCanvasMemory()) {
@@ -78,4 +71,3 @@ export class HdpiOffscreenCanvas {
         this._height = height;
     }
 }
-//# sourceMappingURL=hdpiOffscreenCanvas.js.map

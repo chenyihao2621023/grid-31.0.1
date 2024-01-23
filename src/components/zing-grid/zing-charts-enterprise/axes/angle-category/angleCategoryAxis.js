@@ -101,4 +101,3 @@ __decorate([
 __decorate([
     Validate(RATIO)
 ], AngleCategoryAxis.prototype, "paddingInner", void 0);
-//# sourceMappingURL=angleCategoryAxis.js.map

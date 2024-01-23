@@ -26,4 +26,3 @@ CtrlsFactory = __decorate([
     Bean('ctrlsFactory')
 ], CtrlsFactory);
 export { CtrlsFactory };
-//# sourceMappingURL=ctrlsFactory.js.map

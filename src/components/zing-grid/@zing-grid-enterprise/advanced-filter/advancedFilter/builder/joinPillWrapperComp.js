@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Component } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class JoinPillWrapperComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-builder-item-condition" role="presentation"></div>
         `);
     }
@@ -45,4 +45,3 @@ export class JoinPillWrapperComp extends Component {
 __decorate([
     Autowired('advancedFilterExpressionService')
 ], JoinPillWrapperComp.prototype, "advancedFilterExpressionService", void 0);
-//# sourceMappingURL=joinPillWrapperComp.js.map

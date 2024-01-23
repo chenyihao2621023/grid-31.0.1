@@ -393,4 +393,3 @@ __decorate([
 __decorate([
     Validate(ANCHOR_CORD)
 ], Zoom.prototype, "anchorPointY", void 0);
-//# sourceMappingURL=zoom.js.map

@@ -125,4 +125,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], BulletSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=bulletSeriesProperties.js.map

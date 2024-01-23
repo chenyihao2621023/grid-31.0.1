@@ -1,8 +1,5 @@
 import { hasConstrainedCanvasMemory } from '../../util/userAgent';
-/**
- * Wraps the native Canvas element and overrides its CanvasRenderingContext2D to
- * provide resolution independent rendering based on `window.devicePixelRatio`.
- */
+
 export class HdpiCanvas {
     // The width/height attributes of the Canvas element default to
     // 300/150 according to w3.org.
@@ -92,10 +89,7 @@ export class HdpiCanvas {
     getDataURL(type) {
         return this.element.toDataURL(type);
     }
-    /**
-     * @param fileName The name of the downloaded file.
-     * @param fileFormat The file format, the default is `image/png`
-     */
+    
     download(fileName, fileFormat = 'image/png') {
         fileName = (fileName !== null && fileName !== void 0 ? fileName : '').trim() || 'image';
         const dataUrl = this.getDataURL(fileFormat);
@@ -111,11 +105,7 @@ export class HdpiCanvas {
     get pixelRatio() {
         return this._pixelRatio;
     }
-    /**
-     * Changes the pixel ratio of the Canvas element to the given value,
-     * or uses the window.devicePixelRatio (default), then resizes the Canvas
-     * element accordingly (default).
-     */
+    
     setPixelRatio(ratio) {
         let pixelRatio = ratio !== null && ratio !== void 0 ? ratio : this.window.devicePixelRatio;
         if (hasConstrainedCanvasMemory()) {
@@ -213,11 +203,7 @@ export class HdpiCanvas {
         ctx.textAlign = textAlign;
         return ctx.measureText(text);
     }
-    /**
-     * Returns the width and height of the measured text.
-     * @param text The single-line text to measure.
-     * @param font The font shorthand string.
-     */
+    
     static getTextSize(text, font) {
         if (this.has.textMetrics) {
             const ctx = this.textMeasuringContext;
@@ -313,4 +299,3 @@ export class HdpiCanvas {
 }
 HdpiCanvas.document = globalThis.document;
 HdpiCanvas.textSizeCache = {};
-//# sourceMappingURL=hdpiCanvas.js.map

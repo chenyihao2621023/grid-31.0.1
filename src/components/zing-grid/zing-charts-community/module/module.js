@@ -37,4 +37,3 @@ export const MODULE_CONFLICTS = new Map();
 export function registerModuleConflicts(source, targets) {
     MODULE_CONFLICTS.set(source, targets);
 }
-//# sourceMappingURL=module.js.map

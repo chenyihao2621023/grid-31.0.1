@@ -31,4 +31,3 @@ export function getJsonApplyOptions(ctx) {
         allowedTypes: Object.assign({}, JSON_APPLY_OPTIONS.allowedTypes),
     };
 }
-//# sourceMappingURL=chartOptions.js.map

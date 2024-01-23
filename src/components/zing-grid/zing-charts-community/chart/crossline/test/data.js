@@ -52,4 +52,3 @@ export const DATA_OIL_PETROLEUM = [
     { date: new Date(2019, 11, 23), petrol: 129.16, diesel: 135.81 },
     { date: new Date(2019, 11, 30), petrol: 129.96, diesel: 136.54 },
 ];
-//# sourceMappingURL=data.js.map

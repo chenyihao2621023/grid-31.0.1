@@ -20,4 +20,3 @@ export const BOX_PLOT_SERIES_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=boxPlotDefaults.js.map

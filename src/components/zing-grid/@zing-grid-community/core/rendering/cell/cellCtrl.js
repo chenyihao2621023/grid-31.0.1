@@ -333,9 +333,7 @@ export class CellCtrl extends BeanStub {
             newValueExists: true
         };
     }
-    /**
-     * @returns `True` if the value changes, otherwise `False`.
-     */
+    
     saveNewValue(oldValue, newValue) {
         if (newValue === oldValue) {
             return false;
@@ -349,11 +347,7 @@ export class CellCtrl extends BeanStub {
         this.suppressRefreshCell = false;
         return valueChanged;
     }
-    /**
-     * Ends the Cell Editing
-     * @param cancel `True` if the edit process is being canceled.
-     * @returns `True` if the value of the `GridCell` has been updated, otherwise `False`.
-     */
+    
     stopEditing(cancel = false) {
         if (!this.editing) {
             return false;
@@ -938,4 +932,3 @@ export class CellCtrl extends BeanStub {
     }
 }
 CellCtrl.DOM_DATA_KEY_CELL_CTRL = 'cellCtrl';
-//# sourceMappingURL=cellCtrl.js.map

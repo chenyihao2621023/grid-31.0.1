@@ -14,4 +14,3 @@ export const HEATMAP_SERIES_THEME = {
     },
     itemPadding: 3,
 };
-//# sourceMappingURL=heatmapThemes.js.map

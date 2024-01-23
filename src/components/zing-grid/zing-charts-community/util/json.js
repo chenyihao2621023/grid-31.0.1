@@ -2,19 +2,7 @@ import { Logger } from './logger';
 import { isProperties } from './properties';
 import { isArray, isDate, isFunction, isHtmlElement, isObject, isPlainObject } from './type-guards';
 const CLASS_INSTANCE_TYPE = 'class-instance';
-/**
- * Performs a recursive JSON-diff between a source and target JSON structure.
- *
- * On a per-property basis, takes the target property value where:
- * - types are different.
- * - type is primitive.
- * - type is array and length or content have changed.
- *
- * @param source starting point for diff
- * @param target target for diff vs. source
- *
- * @returns `null` if no differences, or an object with the subset of properties that have changed.
- */
+
 export function jsonDiff(source, target) {
     if (isArray(target)) {
         if (!isArray(source) ||
@@ -66,25 +54,10 @@ export function jsonClone(source) {
     }
     return source;
 }
-/**
- * Special value used by `jsonMerge` to signal that a property should be removed from the merged
- * output.
- */
+
 export const DELETE = Symbol('<delete-property>');
 const NOT_SPECIFIED = Symbol('<unspecified-property>');
-/**
- * Merge together the provide JSON object structures, with the precedence of application running
- * from higher indexes to lower indexes.
- *
- * Deep-clones all objects to avoid mutation of the inputs changing the output object. For arrays,
- * just performs a deep-clone of the entire array, no merging of elements attempted.
- *
- * @param json all json objects to merge
- * @param opts merge options
- * @param opts.avoidDeepClone contains a list of properties where deep clones should be avoided
- *
- * @returns the combination of all the json inputs
- */
+
 export function jsonMerge(json, opts) {
     var _a;
     const avoidDeepClone = (_a = opts === null || opts === void 0 ? void 0 : opts.avoidDeepClone) !== null && _a !== void 0 ? _a : [];
@@ -144,22 +117,7 @@ export function jsonMerge(json, opts) {
     }
     return result;
 }
-/**
- * Recursively apply a JSON object into a class-hierarchy, optionally instantiating certain classes
- * by property name.
- *
- * @param target to apply source JSON properties into
- * @param source to be applied
- * @param params
- * @param params.path path for logging/error purposes, to aid with pinpointing problems
- * @param params.matcherPath path for pattern matching, to lookup allowedTypes override.
- * @param params.skip property names to skip from the source
- * @param params.constructors dictionary of property name to class constructors for properties that
- *                            require object construction
- * @param params.constructedArrays map stores arrays which items should be initialised
- *                                 using a class constructor
- * @param params.allowedTypes overrides by path for allowed property types
- */
+
 export function jsonApply(target, source, params = {}) {
     var _a, _b, _c;
     const { path, matcherPath = path ? path.replace(/(\[[0-9+]+])/i, '[]') : undefined, skip = [], constructors = {}, constructedArrays = new WeakMap(), allowedTypes = {}, idx, } = params;
@@ -251,17 +209,7 @@ export function jsonApply(target, source, params = {}) {
     }
     return target;
 }
-/**
- * Walk the given JSON object graphs, invoking the visit() callback for every object encountered.
- * Arrays are descended into without a callback, however their elements will have the visit()
- * callback invoked if they are objects.
- *
- * @param json to traverse
- * @param visit callback for each non-primitive and non-array object found
- * @param opts
- * @param opts.skip property names to skip when walking
- * @param jsons to traverse in parallel
- */
+
 export function jsonWalk(json, visit, opts, ...jsons) {
     var _a;
     if (isArray(json)) {
@@ -286,9 +234,7 @@ export function jsonWalk(json, visit, opts, ...jsons) {
 function keyMapper(data, key) {
     return data.map((dataObject) => dataObject === null || dataObject === void 0 ? void 0 : dataObject[key]);
 }
-/**
- * Classify the type of value to assist with handling for merge purposes.
- */
+
 function classify(value) {
     if (value == null) {
         return null;
@@ -307,4 +253,3 @@ function classify(value) {
     }
     return 'primitive';
 }
-//# sourceMappingURL=json.js.map

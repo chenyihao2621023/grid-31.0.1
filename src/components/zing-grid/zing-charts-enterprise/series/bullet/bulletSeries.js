@@ -302,4 +302,3 @@ export class BulletSeries extends _ModuleSupport.AbstractBarSeries {
         seriesLabelFadeInAnimation(this, 'annotations', this.ctx.animationManager, annotationSelections);
     }
 }
-//# sourceMappingURL=bulletSeries.js.map

@@ -53,4 +53,3 @@ ValueFormatterService = __decorate([
     Bean('valueFormatterService')
 ], ValueFormatterService);
 export { ValueFormatterService };
-//# sourceMappingURL=valueFormatterService.js.map

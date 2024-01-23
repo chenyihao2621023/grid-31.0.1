@@ -20,4 +20,3 @@ Plus.moves = [
     { x: -1, y: 0 },
     { x: 0, y: -1 },
 ];
-//# sourceMappingURL=plus.js.map

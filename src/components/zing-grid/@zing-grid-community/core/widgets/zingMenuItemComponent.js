@@ -20,7 +20,7 @@ export class ZingMenuItemComponent extends Component {
         this.params = params;
         this.isActive = false;
         this.subMenuIsOpen = false;
-        this.setTemplate(/* html */ `<div class="${this.getClassName()}" tabindex="-1" role="treeitem"></div>`);
+        this.setTemplate( `<div class="${this.getClassName()}" tabindex="-1" role="treeitem"></div>`);
     }
     init() {
         this.addIcon();
@@ -62,7 +62,7 @@ export class ZingMenuItemComponent extends Component {
         if (!this.params.subMenu) {
             return;
         }
-        const ePopup = loadTemplate(/* html */ `<div class="zing-menu" role="presentation"></div>`);
+        const ePopup = loadTemplate( `<div class="zing-menu" role="presentation"></div>`);
         let destroySubMenu;
         if (this.params.subMenu instanceof Array) {
             const currentLevel = getAriaLevel(this.getGui());
@@ -154,7 +154,7 @@ export class ZingMenuItemComponent extends Component {
         if (!this.params.checked && !this.params.icon && this.params.isCompact) {
             return;
         }
-        const icon = loadTemplate(/* html */ `<span ref="eIcon" class="${this.getClassName('part')} ${this.getClassName('icon')}" role="presentation"></span>`);
+        const icon = loadTemplate( `<span ref="eIcon" class="${this.getClassName('part')} ${this.getClassName('icon')}" role="presentation"></span>`);
         if (this.params.checked) {
             icon.appendChild(createIconNoSpan('check', this.gridOptionsService));
         }
@@ -175,7 +175,7 @@ export class ZingMenuItemComponent extends Component {
         if (!this.params.name && this.params.isCompact) {
             return;
         }
-        const name = loadTemplate(/* html */ `<span ref="eName" class="${this.getClassName('part')} ${this.getClassName('text')}">${this.params.name || ''}</span>`);
+        const name = loadTemplate( `<span ref="eName" class="${this.getClassName('part')} ${this.getClassName('text')}">${this.params.name || ''}</span>`);
         this.getGui().appendChild(name);
     }
     addTooltip() {
@@ -200,14 +200,14 @@ export class ZingMenuItemComponent extends Component {
         if (!this.params.shortcut && this.params.isCompact) {
             return;
         }
-        const shortcut = loadTemplate(/* html */ `<span ref="eShortcut" class="${this.getClassName('part')} ${this.getClassName('shortcut')}">${this.params.shortcut || ''}</span>`);
+        const shortcut = loadTemplate( `<span ref="eShortcut" class="${this.getClassName('part')} ${this.getClassName('shortcut')}">${this.params.shortcut || ''}</span>`);
         this.getGui().appendChild(shortcut);
     }
     addSubMenu() {
         if (!this.params.subMenu && this.params.isCompact) {
             return;
         }
-        const pointer = loadTemplate(/* html */ `<span ref="ePopupPointer" class="${this.getClassName('part')} ${this.getClassName('popup-pointer')}"></span>`);
+        const pointer = loadTemplate( `<span ref="ePopupPointer" class="${this.getClassName('part')} ${this.getClassName('popup-pointer')}"></span>`);
         const eGui = this.getGui();
         if (this.params.subMenu) {
             const iconName = this.gridOptionsService.get('enableRtl') ? 'smallLeft' : 'smallRight';
@@ -296,4 +296,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingMenuItemComponent.prototype, "init", null);
-//# sourceMappingURL=zingMenuItemComponent.js.map

@@ -40,4 +40,3 @@ export class SeriesStateManager {
         };
     }
 }
-//# sourceMappingURL=seriesStateManager.js.map

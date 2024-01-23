@@ -12,4 +12,3 @@ export function extendDomain(values, domain = [Infinity, -Infinity]) {
     }
     return domain;
 }
-//# sourceMappingURL=utilFunctions.js.map

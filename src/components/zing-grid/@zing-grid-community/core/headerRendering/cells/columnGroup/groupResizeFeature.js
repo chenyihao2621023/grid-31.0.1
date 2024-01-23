@@ -194,4 +194,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], GroupResizeFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=groupResizeFeature.js.map

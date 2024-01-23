@@ -42,8 +42,5 @@ export * from './series/polar/radarLineOptions';
 export * from './series/polar/radarAreaOptions';
 export * from './series/polar/radialColumnOptions';
 export * from './series/polar/radialOptions';
-/**
- * Internal Use Only: Used to ensure this file is treated as a module until we can use moduleDetection flag in Ts v4.7
- */
+
 export const __FORCE_MODULE_DETECTION = 0;
-//# sourceMappingURL=zingChartOptions.js.map

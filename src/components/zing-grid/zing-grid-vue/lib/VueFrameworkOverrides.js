@@ -16,18 +16,14 @@ var __extends = (this && this.__extends) || (function () {
 import { VanillaFrameworkOverrides } from '@/components/zing-grid/zing-grid-community/main.js';
 
 import { VueComponentFactory } from './VueComponentFactory';
-var VueFrameworkOverrides = /** @class */ (function (_super) {
+var VueFrameworkOverrides =  (function (_super) {
     __extends(VueFrameworkOverrides, _super);
     function VueFrameworkOverrides(parent) {
         var _this = _super.call(this, 'vue') || this;
         _this.parent = parent;
         return _this;
     }
-    /*
-     * vue components are specified in the "components" part of the vue component - as such we need a way to determine
-     * if a given component is within that context - this method provides this
-     * Note: This is only really used/necessary with cellRendererSelectors
-     */
+    
     VueFrameworkOverrides.prototype.frameworkComponent = function (name, components) {
         var foundInstance = !!VueComponentFactory.searchForComponentInstance(this.parent, name, 10, true);
         var result = foundInstance ? name : null;

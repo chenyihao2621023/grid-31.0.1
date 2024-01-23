@@ -36,4 +36,3 @@ export function getAxisThemeTemplate(axisType) {
     var _a;
     return (_a = AXIS_THEME_TEMPLATES[axisType]) !== null && _a !== void 0 ? _a : {};
 }
-//# sourceMappingURL=axisTypes.js.map

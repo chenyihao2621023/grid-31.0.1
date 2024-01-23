@@ -24,4 +24,3 @@ export const HeatmapModule = {
         };
     },
 };
-//# sourceMappingURL=heatmapModule.js.map

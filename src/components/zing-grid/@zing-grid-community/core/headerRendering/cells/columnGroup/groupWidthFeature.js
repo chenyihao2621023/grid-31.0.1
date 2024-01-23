@@ -57,4 +57,3 @@ export class GroupWidthFeature extends BeanStub {
 __decorate([
     PostConstruct
 ], GroupWidthFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=groupWidthFeature.js.map

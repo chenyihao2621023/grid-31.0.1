@@ -22,7 +22,7 @@ export class CellComp extends Component {
         this.rowCtrl = cellCtrl.getRowCtrl();
         this.eRow = eRow;
         this.cellCtrl = cellCtrl;
-        this.setTemplate(/* html */ `<div comp-id="${this.getCompId()}"/>`);
+        this.setTemplate( `<div comp-id="${this.getCompId()}"/>`);
         const eGui = this.getGui();
         this.forceWrapper = cellCtrl.isForceWrapper();
         this.refreshWrapper(false);
@@ -111,7 +111,7 @@ export class CellComp extends Component {
         const usingWrapper = providingControls || this.forceWrapper;
         const putWrapperIn = usingWrapper && this.eCellWrapper == null;
         if (putWrapperIn) {
-            this.eCellWrapper = loadTemplate(/* html */ `<div class="zing-cell-wrapper" role="presentation"></div>`);
+            this.eCellWrapper = loadTemplate( `<div class="zing-cell-wrapper" role="presentation"></div>`);
             this.getGui().appendChild(this.eCellWrapper);
         }
         const takeWrapperOut = !usingWrapper && this.eCellWrapper != null;
@@ -123,7 +123,7 @@ export class CellComp extends Component {
         const usingCellValue = !editing && usingWrapper;
         const putCellValueIn = usingCellValue && this.eCellValue == null;
         if (putCellValueIn) {
-            this.eCellValue = loadTemplate(/* html */ `<span class="zing-cell-value" role="presentation"></span>`);
+            this.eCellValue = loadTemplate( `<span class="zing-cell-value" role="presentation"></span>`);
             this.eCellWrapper.appendChild(this.eCellValue);
         }
         const takeCellValueOut = !usingCellValue && this.eCellValue != null;
@@ -417,4 +417,3 @@ export class CellComp extends Component {
         clearElement(this.getParentOfValue());
     }
 }
-//# sourceMappingURL=cellComp.js.map

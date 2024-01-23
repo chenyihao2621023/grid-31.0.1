@@ -1,9 +1,7 @@
 import { tickFormat } from '../util/numberFormat';
 import ticks, { range, singleTickDomain, tickStep } from '../util/ticks';
 import { ContinuousScale } from './continuousScale';
-/**
- * Maps continuous domain to a continuous range.
- */
+
 export class LinearScale extends ContinuousScale {
     constructor() {
         super([0, 1], [0, 1]);
@@ -42,9 +40,7 @@ export class LinearScale extends ContinuousScale {
         const count = (_a = this.tickCount) !== null && _a !== void 0 ? _a : ContinuousScale.defaultTickCount;
         return (_b = this.interval) !== null && _b !== void 0 ? _b : tickStep(start, stop, count, this.minTickCount, this.maxTickCount);
     }
-    /**
-     * Extends the domain so that it starts and ends on nice round values.
-     */
+    
     updateNiceDomain() {
         var _a;
         const count = (_a = this.tickCount) !== null && _a !== void 0 ? _a : ContinuousScale.defaultTickCount;
@@ -86,4 +82,3 @@ export class LinearScale extends ContinuousScale {
         return tickFormat(ticks !== null && ticks !== void 0 ? ticks : this.ticks(), specifier);
     }
 }
-//# sourceMappingURL=linearScale.js.map

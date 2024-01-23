@@ -16,7 +16,7 @@ import { JoinPillWrapperComp } from "./joinPillWrapperComp";
 import { SelectPillComp } from "./selectPillComp";
 export class AdvancedFilterBuilderItemComp extends TabGuardComp {
     constructor(item, dragFeature, focusWrapper) {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-builder-item-wrapper" role="presentation">
                 <div ref="eItem" class="zing-advanced-filter-builder-item" role="presentation">
                     <div ref="eTreeLines" class="zing-advanced-filter-builder-item-tree-lines" aria-hidden="true"></div>
@@ -375,4 +375,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], AdvancedFilterBuilderItemComp.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterBuilderItemComp.js.map

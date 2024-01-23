@@ -16,4 +16,3 @@ import * as _Util_1 from './sparklines-util';
 export { _Util_1 as _Util };
 import * as _ModuleSupport_1 from './module-support';
 export { _ModuleSupport_1 as _ModuleSupport };
-//# sourceMappingURL=main.js.map

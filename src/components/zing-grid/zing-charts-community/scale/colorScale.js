@@ -130,4 +130,3 @@ __decorate([
 __decorate([
     Invalidating
 ], ColorScale.prototype, "range", void 0);
-//# sourceMappingURL=colorScale.js.map

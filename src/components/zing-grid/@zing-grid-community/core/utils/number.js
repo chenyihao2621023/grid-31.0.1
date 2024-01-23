@@ -31,13 +31,7 @@ export function formatNumberTwoDecimalPlacesAndCommas(value, thousandSeparator, 
     }
     return formatNumberCommas(Math.round(value * 100) / 100, thousandSeparator, decimalSeparator);
 }
-/**
- * the native method number.toLocaleString(undefined, {minimumFractionDigits: 0})
- * puts in decimal places in IE, so we use this method instead
- * from: http://blog.tompawlak.org/number-currency-formatting-javascript
- * @param {number} value
- * @returns {string}
- */
+
 export function formatNumberCommas(value, thousandSeparator, decimalSeparator) {
     if (typeof value !== 'number') {
         return '';
@@ -47,4 +41,3 @@ export function formatNumberCommas(value, thousandSeparator, decimalSeparator) {
 export function sum(values) {
     return values == null ? null : values.reduce((total, value) => total + value, 0);
 }
-//# sourceMappingURL=number.js.map

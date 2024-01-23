@@ -459,4 +459,3 @@ export class SunburstSeries extends _ModuleSupport.HierarchySeries {
 }
 SunburstSeries.className = 'SunburstSeries';
 SunburstSeries.type = 'sunburst';
-//# sourceMappingURL=sunburstSeries.js.map

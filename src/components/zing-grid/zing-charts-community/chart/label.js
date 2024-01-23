@@ -104,4 +104,3 @@ export function calculateLabelBBox(text, bbox, labelX, labelY, labelMatrix) {
         label: { width, height, text },
     };
 }
-//# sourceMappingURL=label.js.map

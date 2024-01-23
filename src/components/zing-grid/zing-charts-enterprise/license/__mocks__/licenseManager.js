@@ -11,4 +11,3 @@ export class LicenseManager {
         return '';
     }
 }
-//# sourceMappingURL=licenseManager.js.map

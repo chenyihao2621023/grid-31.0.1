@@ -194,7 +194,7 @@ let PaginationProxy = class PaginationProxy extends BeanStub {
     getTotalPages() {
         return this.totalPages;
     }
-    /** This is only for state setting before data has been loaded */
+    
     setPage(page) {
         this.currentPage = page;
     }
@@ -379,4 +379,3 @@ PaginationProxy = __decorate([
     Bean('paginationProxy')
 ], PaginationProxy);
 export { PaginationProxy };
-//# sourceMappingURL=paginationProxy.js.map

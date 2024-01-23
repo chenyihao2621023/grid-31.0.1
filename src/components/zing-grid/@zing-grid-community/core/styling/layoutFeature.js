@@ -48,4 +48,3 @@ export class LayoutFeature extends BeanStub {
 __decorate([
     PostConstruct
 ], LayoutFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=layoutFeature.js.map

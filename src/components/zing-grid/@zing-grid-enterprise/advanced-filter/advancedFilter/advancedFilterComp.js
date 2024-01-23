@@ -8,7 +8,7 @@ import { ZingAutocomplete, Autowired, Component, PostConstruct, RefSelector, _ }
 import { AdvancedFilterCtrl } from './advancedFilterCtrl';
 export class AdvancedFilterComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter" role="presentation" tabindex="-1">
                 <zing-autocomplete ref="eAutocomplete"></zing-autocomplete>
                 <button class="zing-button zing-standard-button zing-advanced-filter-apply-button" ref="eApplyFilterButton"></button>
@@ -155,4 +155,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], AdvancedFilterComp.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterComp.js.map

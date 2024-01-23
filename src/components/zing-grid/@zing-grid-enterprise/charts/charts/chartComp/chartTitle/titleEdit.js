@@ -26,7 +26,7 @@ export class TitleEdit extends Component {
         });
         this.addManagedListener(this.getGui(), 'blur', () => this.endEditing());
     }
-    /* should be called when the containing component changes to a new chart proxy */
+    
     refreshTitle(chartController, chartOptionsService) {
         this.chartController = chartController;
         this.chartOptionsService = chartOptionsService;
@@ -152,4 +152,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], TitleEdit.prototype, "init", null);
-//# sourceMappingURL=titleEdit.js.map

@@ -7,4 +7,3 @@ export function prepareEnterpriseTestOptions(options, container = document.body)
     }
     return prepareTestOptions(options, container);
 }
-//# sourceMappingURL=utils.js.map

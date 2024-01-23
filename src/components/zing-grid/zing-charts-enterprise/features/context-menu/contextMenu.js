@@ -14,13 +14,9 @@ export class ContextMenu extends _ModuleSupport.BaseModuleInstance {
         super();
         this.ctx = ctx;
         this.enabled = true;
-        /**
-         * Extra menu actions with a label and callback.
-         */
+        
         this.extraActions = [];
-        /**
-         * Extra menu actions that only appear when clicking on a node.
-         */
+        
         this.extraNodeActions = [];
         this.x = 0;
         this.y = 0;
@@ -261,4 +257,3 @@ ContextMenu.disabledActions = new Set();
 __decorate([
     Validate(BOOLEAN)
 ], ContextMenu.prototype, "enabled", void 0);
-//# sourceMappingURL=contextMenu.js.map

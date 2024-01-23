@@ -11,7 +11,7 @@ import { getAdvancedFilterBuilderAddButtonParams } from "./advancedFilterBuilder
 import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class AdvancedFilterBuilderItemAddComp extends Component {
     constructor(item, focusWrapper) {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-builder-item-wrapper" role="presentation">
                 <div ref="eItem" class="zing-advanced-filter-builder-item" role="presentation">
                     <div class="zing-advanced-filter-builder-item-tree-lines" aria-hidden="true">
@@ -64,4 +64,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], AdvancedFilterBuilderItemAddComp.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterBuilderItemAddComp.js.map

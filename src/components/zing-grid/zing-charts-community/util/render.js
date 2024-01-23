@@ -7,11 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-/**
- * Wrap a function in debouncing trigger function. A requestAnimationFrame() is scheduled
- * after the first schedule() call, and subsequent schedule() calls will be ignored until the
- * animation callback executes.
- */
+
 export function debouncedAnimationFrame(cb) {
     return buildScheduler((cb, _delayMs) => requestAnimationFrame(cb), cb);
 }
@@ -70,4 +66,3 @@ function buildScheduler(scheduleFn, cb) {
         },
     };
 }
-//# sourceMappingURL=render.js.map

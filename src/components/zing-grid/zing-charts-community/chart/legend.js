@@ -55,14 +55,9 @@ __decorate([
 class LegendMarker {
     constructor() {
         this.size = 15;
-        /**
-         * If the marker type is set, the legend will always use that marker type for all its items,
-         * regardless of the type that comes from the `data`.
-         */
+        
         this._shape = undefined;
-        /**
-         * Padding between the marker and the label within each legend item.
-         */
+        
         this.padding = 8;
         this.strokeWidth = undefined;
         this.enabled = true;
@@ -105,19 +100,11 @@ class LegendItem {
         this.marker = new LegendMarker();
         this.label = new LegendLabel();
         this.line = new LegendLine();
-        /** Used to constrain the width of legend items. */
+        
         this.maxWidth = undefined;
-        /**
-         * The legend uses grid layout for its items, occupying as few columns as possible when positioned to left or right,
-         * and as few rows as possible when positioned to top or bottom. This config specifies the amount of horizontal
-         * padding between legend items.
-         */
+        
         this.paddingX = 16;
-        /**
-         * The legend uses grid layout for its items, occupying as few columns as possible when positioned to left or right,
-         * and as few rows as possible when positioned to top or bottom. This config specifies the amount of vertical
-         * padding between legend items.
-         */
+        
         this.paddingY = 8;
         this.toggleSeriesVisible = true;
         this.showSeriesStroke = false;
@@ -183,7 +170,7 @@ export class Legend {
         this.oldSize = [0, 0];
         this.pages = [];
         this.maxPageSize = [0, 0];
-        /** Item index to track on re-pagination, so current page updates appropriately. */
+        
         this.paginationTrackingIndex = 0;
         this.item = new LegendItem();
         this.listeners = new LegendListeners();
@@ -191,17 +178,15 @@ export class Legend {
         this._data = [];
         this._enabled = true;
         this.position = 'bottom';
-        /** Used to constrain the width of the legend. */
+        
         this.maxWidth = undefined;
-        /** Used to constrain the height of the legend. */
+        
         this.maxHeight = undefined;
-        /** Reverse the display order of legend items if `true`. */
+        
         this.reverseOrder = undefined;
         this.preventHidingAll = undefined;
         this.destroyFns = [];
-        /**
-         * Spacing between the legend and the edge of the chart's element.
-         */
+        
         this.spacing = 20;
         this.characterWidths = new Map();
         this.size = [0, 0];
@@ -260,18 +245,7 @@ export class Legend {
         }
         return datum.label.text;
     }
-    /**
-     * The method is given the desired size of the legend, which only serves as a hint.
-     * The vertically oriented legend will take as much horizontal space as needed, but will
-     * respect the height constraints, and the horizontal legend will take as much vertical
-     * space as needed in an attempt not to exceed the given width.
-     * After the layout is done, the {@link size} will contain the actual size of the legend.
-     * If the actual size is not the same as the previous actual size, the legend will fire
-     * the 'layoutChange' event to communicate that another layout is needed, and the above
-     * process should be repeated.
-     * @param width
-     * @param height
-     */
+    
     performLayout(width, height) {
         const { paddingX, paddingY, label, maxWidth, marker: { size: markerSize, padding: markerPadding, shape: markerShape }, label: { maxLength = Infinity, fontStyle, fontWeight, fontSize, fontFamily }, line: itemLine, showSeriesStroke, } = this.item;
         const data = [...this.data];
@@ -816,4 +790,3 @@ __decorate([
 __decorate([
     Validate(POSITIVE_NUMBER)
 ], Legend.prototype, "spacing", void 0);
-//# sourceMappingURL=legend.js.map

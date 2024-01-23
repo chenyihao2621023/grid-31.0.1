@@ -54,4 +54,3 @@ __decorate([
 __decorate([
     Validate(STRING, { optional: true })
 ], Overlay.prototype, "text", void 0);
-//# sourceMappingURL=overlay.js.map

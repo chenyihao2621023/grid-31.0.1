@@ -139,14 +139,7 @@ export const iconNameClassMap = {
     // shown on Advanced Filter Builder rows to remove row
     advancedFilterBuilderRemove: 'minus',
 };
-/**
- * If icon provided, use this (either a string, or a function callback).
- * if not, then use the default icon from the theme
- * @param {string} iconName
- * @param {GridOptionsService} gridOptionsService
- * @param {Column | null} [column]
- * @returns {Element}
- */
+
 export function createIcon(iconName, gridOptionsService, column) {
     const iconContents = createIconNoSpan(iconName, gridOptionsService, column);
     if (iconContents) {
@@ -212,4 +205,3 @@ export function createIconNoSpan(iconName, gridOptionsService, column, forceCrea
         return span;
     }
 }
-//# sourceMappingURL=icon.js.map

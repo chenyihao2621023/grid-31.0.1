@@ -1088,4 +1088,3 @@ __decorate([
 __decorate([
     Validate(UNION(['standalone', 'integrated'], 'a chart mode'))
 ], Chart.prototype, "mode", void 0);
-//# sourceMappingURL=chart.js.map

@@ -87,4 +87,3 @@ __decorate([
 __decorate([
     SceneChangeDetection({ redraw: RedrawType.MAJOR })
 ], LinearGradientFill.prototype, "_mask", void 0);
-//# sourceMappingURL=linearGradientFill.js.map

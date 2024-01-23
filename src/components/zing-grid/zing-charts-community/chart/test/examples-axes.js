@@ -246,4 +246,3 @@ export const GROUPED_CATEGORY_AXIS_GRIDLINE_TICKLINE_CLIPPING = Object.assign(Ob
         Object.assign({ type: 'grouped-category', position: 'bottom' }, extremeAxisConfig),
         Object.assign({ type: 'number', position: 'left' }, extremeAxisConfig),
     ] });
-//# sourceMappingURL=examples-axes.js.map

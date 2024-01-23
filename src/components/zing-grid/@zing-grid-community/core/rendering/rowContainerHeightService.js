@@ -11,10 +11,7 @@ import { BeanStub } from "../context/beanStub";
 import { Autowired, Bean, PostConstruct, Qualifier } from "../context/context";
 import { Events } from "../eventKeys";
 import { getMaxDivHeight } from "../utils/browser";
-/**
- * This class solves the 'max height' problem, where the user might want to show more data than
- * the max div height actually allows.
- */
+
 let RowContainerHeightService = class RowContainerHeightService extends BeanStub {
     constructor() {
         super(...arguments);
@@ -126,4 +123,3 @@ RowContainerHeightService = __decorate([
     Bean('rowContainerHeightService')
 ], RowContainerHeightService);
 export { RowContainerHeightService };
-//# sourceMappingURL=rowContainerHeightService.js.map

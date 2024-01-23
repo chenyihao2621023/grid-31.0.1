@@ -38,4 +38,3 @@ export const BubbleSeriesModule = {
     },
     paletteFactory: markerPaletteFactory,
 };
-//# sourceMappingURL=bubbleSeriesModule.js.map

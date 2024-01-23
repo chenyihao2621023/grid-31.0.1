@@ -628,4 +628,3 @@ __decorate([
 __decorate([
     Autowired('gridApi')
 ], HeaderCellCtrl.prototype, "gridApi", void 0);
-//# sourceMappingURL=headerCellCtrl.js.map

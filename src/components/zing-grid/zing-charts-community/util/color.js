@@ -16,18 +16,7 @@ const srgbFromLinear = (value) => {
     return 12.92 * value;
 };
 export class Color {
-    /**
-     * Every color component should be in the [0, 1] range.
-     * Some easing functions (such as elastic easing) can overshoot the target value by some amount.
-     * So, when animating colors, if the source or target color components are already near
-     * or at the edge of the allowed [0, 1] range, it is possible for the intermediate color
-     * component value to end up outside of that range mid-animation. For this reason the constructor
-     * performs range checking/constraining.
-     * @param r Red component.
-     * @param g Green component.
-     * @param b Blue component.
-     * @param a Alpha (opacity) component.
-     */
+    
     constructor(r, g, b, a = 1) {
         // NaN is treated as 0
         this.r = clamp(0, r || 0, 1);
@@ -35,14 +24,7 @@ export class Color {
         this.b = clamp(0, b || 0, 1);
         this.a = clamp(0, a || 0, 1);
     }
-    /**
-     * A color string can be in one of the following formats to be valid:
-     * - #rgb
-     * - #rrggbb
-     * - rgb(r, g, b)
-     * - rgba(r, g, b, a)
-     * - CSS color name such as 'white', 'orange', 'cyan', etc.
-     */
+    
     static validColorString(str) {
         if (str.indexOf('#') >= 0) {
             return !!Color.parseHex(str);
@@ -52,15 +34,7 @@ export class Color {
         }
         return !!Color.nameToHex[str.toLowerCase()];
     }
-    /**
-     * The given string can be in one of the following formats:
-     * - #rgb
-     * - #rrggbb
-     * - rgb(r, g, b)
-     * - rgba(r, g, b, a)
-     * - CSS color name such as 'white', 'orange', 'cyan', etc.
-     * @param str
-     */
+    
     static fromString(str) {
         // hexadecimal notation
         if (str.indexOf('#') >= 0) {
@@ -315,10 +289,7 @@ export class Color {
         const b = hueToRgb(h / 360 - 1 / 3);
         return [r, g, b];
     }
-    /**
-     * Converts the given RGB triple to an array of HSB (HSV) components.
-     * The hue component will be `NaN` for achromatic colors.
-     */
+    
     static RGBtoHSB(r, g, b) {
         const min = Math.min(r, g, b);
         const max = Math.max(r, g, b);
@@ -347,9 +318,7 @@ export class Color {
         }
         return [H * 360, S, max];
     }
-    /**
-     * Converts the given HSB (HSV) triple to an array of RGB components.
-     */
+    
     static HSBtoRGB(H, S, B) {
         if (isNaN(H)) {
             H = 0;
@@ -434,10 +403,7 @@ export class Color {
     }
 }
 Color.didDebug = false;
-/**
- * CSS Color Module Level 4:
- * https://drafts.csswg.org/css-color/#named-colors
- */
+
 Color.nameToHex = Object.freeze({
     aliceblue: '#F0F8FF',
     antiquewhite: '#FAEBD7',
@@ -589,4 +555,3 @@ Color.nameToHex = Object.freeze({
     yellow: '#FFFF00',
     yellowgreen: '#9ACD32',
 });
-//# sourceMappingURL=color.js.map

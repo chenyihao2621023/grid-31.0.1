@@ -737,4 +737,3 @@ function logProcessedData(processedData) {
         logValues('Values', flattenedValues);
     }
 }
-//# sourceMappingURL=dataModel.js.map

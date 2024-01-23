@@ -34,4 +34,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], HoverFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=hoverFeature.js.map

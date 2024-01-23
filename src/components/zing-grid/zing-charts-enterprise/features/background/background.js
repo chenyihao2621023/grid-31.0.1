@@ -34,4 +34,3 @@ __decorate([
         },
     })
 ], Background.prototype, "image", void 0);
-//# sourceMappingURL=background.js.map

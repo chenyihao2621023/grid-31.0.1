@@ -94,4 +94,3 @@ __decorate([
 __decorate([
     Autowired('animationFrameService')
 ], AbstractFakeScrollComp.prototype, "animationFrameService", void 0);
-//# sourceMappingURL=abstractFakeScrollComp.js.map

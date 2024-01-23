@@ -11,4 +11,3 @@ export const ErrorBarsModule = {
     instanceConstructor: ErrorBars,
     themeTemplate: ERROR_BARS_THEME,
 };
-//# sourceMappingURL=errorBarModule.js.map

@@ -106,4 +106,3 @@ ComponentMetadataProvider = __decorate([
     Bean("componentMetadataProvider")
 ], ComponentMetadataProvider);
 export { ComponentMetadataProvider };
-//# sourceMappingURL=componentMetadataProvider.js.map

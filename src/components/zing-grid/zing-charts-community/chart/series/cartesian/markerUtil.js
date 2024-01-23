@@ -86,4 +86,3 @@ export function prepareMarkerAnimation(pairMap, parentStatus) {
     };
     return { fromFn, toFn };
 }
-//# sourceMappingURL=markerUtil.js.map

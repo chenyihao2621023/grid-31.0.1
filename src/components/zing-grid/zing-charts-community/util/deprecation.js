@@ -29,4 +29,3 @@ export function DeprecatedAndRenamedTo(newPropName, mapValue) {
         return target[newPropName];
     });
 }
-//# sourceMappingURL=deprecation.js.map

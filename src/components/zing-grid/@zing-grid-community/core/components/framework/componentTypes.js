@@ -66,4 +66,3 @@ export const FullWidthDetail = {
     propertyName: 'detailCellRenderer',
     cellRenderer: true
 };
-//# sourceMappingURL=componentTypes.js.map

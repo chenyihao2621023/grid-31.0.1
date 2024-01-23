@@ -602,9 +602,7 @@ let RowRenderer = class RowRenderer extends BeanStub {
         }
         return rowIdsMap.normal[id] != null;
     }
-    /**
-     * @param rowNodes if provided, returns the RowCtrls for the provided rowNodes. otherwise returns all RowCtrls.
-     */
+    
     getRowCtrls(rowNodes) {
         const rowIdsMap = this.mapRowNodes(rowNodes);
         const allRowCtrls = this.getAllRowCtrls();
@@ -995,11 +993,7 @@ let RowRenderer = class RowRenderer extends BeanStub {
             this.eventService.dispatchEvent(event);
         }
     }
-    /**
-     * This event will only be fired once, and is queued until after the browser next renders.
-     * This allows us to fire an event during the start of the render cycle, when we first see data being rendered
-     * but not execute the event until all of the data has finished being rendered to the dom.
-     */
+    
     dispatchFirstDataRenderedEvent() {
         if (this.dataFirstRenderedFired) {
             return;
@@ -1201,4 +1195,3 @@ class RowCtrlCache {
         return this.entriesList;
     }
 }
-//# sourceMappingURL=rowRenderer.js.map

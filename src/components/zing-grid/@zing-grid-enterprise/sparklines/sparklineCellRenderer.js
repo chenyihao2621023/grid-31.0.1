@@ -49,7 +49,7 @@ export class SparklineCellRenderer extends Component {
         super.destroy();
     }
 }
-SparklineCellRenderer.TEMPLATE /* html */ = `<div class="zing-sparkline-wrapper">
+SparklineCellRenderer.TEMPLATE  = `<div class="zing-sparkline-wrapper">
             <span ref="eSparkline"></span>
         </div>`;
 __decorate([
@@ -61,4 +61,3 @@ __decorate([
 __decorate([
     Autowired('sparklineTooltipSingleton')
 ], SparklineCellRenderer.prototype, "sparklineTooltipSingleton", void 0);
-//# sourceMappingURL=sparklineCellRenderer.js.map

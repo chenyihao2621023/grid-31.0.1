@@ -9,4 +9,3 @@ export const GradientLegendModule = {
     instanceConstructor: GradientLegend,
     themeTemplate: GRADIENT_LEGEND_THEME,
 };
-//# sourceMappingURL=main.js.map

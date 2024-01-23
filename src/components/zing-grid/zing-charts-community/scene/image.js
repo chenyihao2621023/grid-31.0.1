@@ -45,4 +45,3 @@ __decorate([
 __decorate([
     SceneChangeDetection({ redraw: RedrawType.MAJOR })
 ], Image.prototype, "opacity", void 0);
-//# sourceMappingURL=image.js.map

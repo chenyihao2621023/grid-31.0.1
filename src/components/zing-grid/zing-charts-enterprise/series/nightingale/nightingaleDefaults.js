@@ -17,4 +17,3 @@ export const NIGHTINGALE_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=nightingaleDefaults.js.map

@@ -35,4 +35,3 @@ export class LayoutService extends Listeners {
         return eventType === this.layoutComplete;
     }
 }
-//# sourceMappingURL=layoutService.js.map

@@ -69,4 +69,3 @@ export class LinearAngleScale extends LinearScale {
 __decorate([
     Invalidating
 ], LinearAngleScale.prototype, "arcLength", void 0);
-//# sourceMappingURL=linearAngleScale.js.map

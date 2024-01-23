@@ -125,4 +125,3 @@ HeaderPositionUtils = __decorate([
     Bean('headerPositionUtils')
 ], HeaderPositionUtils);
 export { HeaderPositionUtils };
-//# sourceMappingURL=headerPosition.js.map

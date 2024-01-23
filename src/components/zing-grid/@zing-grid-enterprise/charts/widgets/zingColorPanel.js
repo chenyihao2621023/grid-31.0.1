@@ -198,10 +198,7 @@ export class ZingColorPanel extends Component {
         this.spectrumColor.style.backgroundColor = spectrumColor.toRgbaString();
         this.spectrumDragger.style.backgroundColor = rgbaColor;
     }
-    /**
-     * @param saturation In the [0, 1] interval.
-     * @param brightness In the [0, 1] interval.
-     */
+    
     setSpectrumValue(saturation, brightness) {
         const valRect = this.spectrumValRect || this.refreshSpectrumRect();
         if (valRect == null) {
@@ -229,7 +226,7 @@ export class ZingColorPanel extends Component {
     initRecentColors() {
         const recentColors = ZingColorPanel.recentColors;
         const innerHtml = recentColors.map((color, index) => {
-            return ( /* html */`<div class="zing-recent-color" id=${index} style="background-color: ${color}; width: 15px; height: 15px;" recent-color="${color}" tabIndex="${this.tabIndex}"></div>`);
+            return ( `<div class="zing-recent-color" id=${index} style="background-color: ${color}; width: 15px; height: 15px;" recent-color="${color}" tabIndex="${this.tabIndex}"></div>`);
         });
         this.recentColors.innerHTML = innerHtml.join('');
     }
@@ -324,4 +321,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingColorPanel.prototype, "postConstruct", null);
-//# sourceMappingURL=zingColorPanel.js.map

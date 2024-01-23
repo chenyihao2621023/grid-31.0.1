@@ -20,12 +20,7 @@ export class ZingRadioButton extends ZingCheckbox {
         super.addInputListeners();
         this.addManagedListener(this.eventService, Events.EVENT_CHECKBOX_CHANGED, this.onChange.bind(this));
     }
-    /**
-     * This ensures that if another radio button in the same named group is selected, we deselect this radio button.
-     * By default the browser does this for you, but we are managing classes ourselves in order to ensure input
-     * elements are styled correctly in IE11, and the DOM 'changed' event is only fired when a button is selected,
-     * not deselected, so we need to use our own event.
-     */
+    
     onChange(event) {
         if (event.selected &&
             event.name &&
@@ -37,4 +32,3 @@ export class ZingRadioButton extends ZingCheckbox {
         }
     }
 }
-//# sourceMappingURL=zingRadioButton.js.map

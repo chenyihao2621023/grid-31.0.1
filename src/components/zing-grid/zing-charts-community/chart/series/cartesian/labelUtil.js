@@ -52,4 +52,3 @@ export function adjustLabelPlacement({ isPositive, isVertical, placement, paddin
     }
     return { x, y, textAlign, textBaseline };
 }
-//# sourceMappingURL=labelUtil.js.map

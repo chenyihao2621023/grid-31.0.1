@@ -175,7 +175,7 @@ export class HeaderRowContainerCtrl extends BeanStub {
         }
     }
     getHtmlElementForColumnHeader(column) {
-        /* tslint:enable */
+        
         const cellCtrl = this.getHeaderCtrlForColumn(column);
         if (!cellCtrl) {
             return null;
@@ -232,4 +232,3 @@ __decorate([
 __decorate([
     Autowired('filterManager')
 ], HeaderRowContainerCtrl.prototype, "filterManager", void 0);
-//# sourceMappingURL=headerRowContainerCtrl.js.map

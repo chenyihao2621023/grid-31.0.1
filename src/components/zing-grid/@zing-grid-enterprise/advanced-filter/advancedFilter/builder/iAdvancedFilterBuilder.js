@@ -5,4 +5,3 @@ AdvancedFilterBuilderEvents.EVENT_MOVED = 'advancedFilterBuilderMoved';
 AdvancedFilterBuilderEvents.EVENT_REMOVED = 'advancedFilterBuilderRemoved';
 AdvancedFilterBuilderEvents.EVENT_VALUE_CHANGED = 'advancedFilterBuilderValueChanged';
 AdvancedFilterBuilderEvents.EVENT_VALID_CHANGED = 'advancedFilterBuilderValidChanged';
-//# sourceMappingURL=iAdvancedFilterBuilder.js.map

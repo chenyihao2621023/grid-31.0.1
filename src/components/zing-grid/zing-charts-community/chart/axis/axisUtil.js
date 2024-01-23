@@ -177,4 +177,3 @@ export function resetAxisLineSelectionFn() {
         return Object.assign({}, datum);
     };
 }
-//# sourceMappingURL=axisUtil.js.map

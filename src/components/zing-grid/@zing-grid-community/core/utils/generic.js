@@ -1,8 +1,4 @@
-/**
- * If value is undefined, null or blank, returns null, otherwise returns the value
- * @param {T} value
- * @returns {T | null}
- */
+
 export function makeNull(value) {
     if (value == null || value === '') {
         return null;
@@ -114,4 +110,3 @@ export function values(object) {
     }
     return Object.values(object);
 }
-//# sourceMappingURL=generic.js.map

@@ -45,4 +45,3 @@ __decorate([
 __decorate([
     Validate(FUNCTION, { optional: true })
 ], AxisTitle.prototype, "formatter", void 0);
-//# sourceMappingURL=axisTitle.js.map

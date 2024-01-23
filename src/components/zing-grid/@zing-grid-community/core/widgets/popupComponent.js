@@ -16,4 +16,3 @@ export class PopupComponent extends Component {
         super.destroy();
     }
 }
-//# sourceMappingURL=popupComponent.js.map

@@ -55,16 +55,7 @@ const HARD_CODED_SIZES = {
         chartMenuPanelWidth: 260
     }
 };
-/**
- * this object contains a list of Sass variables and an array
- * of CSS styles required to get the correct value.
- * eg. $virtual-item-height requires a structure, so we can get its height.
- * <div class="zing-theme-balham">
- *     <div class="zing-virtual-list-container">
- *         <div class="zing-virtual-list-item"></div>
- *     </div>
- * </div>
- */
+
 const SASS_PROPERTY_BUILDER = {
     headerHeight: ['zing-header-row'],
     headerCellMinWidth: ['zing-header-cell'],
@@ -225,4 +216,3 @@ Environment = __decorate([
     Bean('environment')
 ], Environment);
 export { Environment };
-//# sourceMappingURL=environment.js.map

@@ -51,4 +51,3 @@ export function isAxisOptionType(input) {
     }
     return AXIS_TYPES.has(input);
 }
-//# sourceMappingURL=types.js.map

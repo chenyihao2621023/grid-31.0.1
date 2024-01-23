@@ -21,4 +21,3 @@ export const RangeAreaModule = {
         };
     },
 };
-//# sourceMappingURL=rangeAreaModule.js.map

@@ -30,7 +30,7 @@ export class TabbedLayout extends Component {
         this.addDestroyFunc(() => { var _a, _b, _c; return (_c = (_b = (_a = this.activeItem) === null || _a === void 0 ? void 0 : _a.tabbedItem) === null || _b === void 0 ? void 0 : _b.afterDetachedCallback) === null || _c === void 0 ? void 0 : _c.call(_b); });
     }
     static getTemplate(cssClass) {
-        return /* html */ `<div class="zing-tabs ${cssClass}">
+        return  `<div class="zing-tabs ${cssClass}">
             <div ref="eHeader" role="tablist" class="zing-tabs-header ${cssClass ? `${cssClass}-header` : ''}"></div>
             <div ref="eBody" role="presentation" class="zing-tabs-body ${cssClass ? `${cssClass}-body` : ''}"></div>
         </div>`;
@@ -178,4 +178,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], TabbedLayout.prototype, "postConstruct", null);
-//# sourceMappingURL=tabbedLayout.js.map

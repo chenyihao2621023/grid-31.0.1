@@ -68,9 +68,7 @@ export class LineSparkline extends Sparkline {
         const MarkerShape = getMarker(shape);
         return new MarkerShape();
     }
-    /**
-     * If marker shape is changed, this method should be called to remove the previous marker nodes selection.
-     */
+    
     onMarkerShapeChange() {
         this.markerSelection = this.markerSelection.clear();
         this.scheduleLayout();
@@ -269,4 +267,3 @@ export class LineSparkline extends Sparkline {
     }
 }
 LineSparkline.className = 'LineSparkline';
-//# sourceMappingURL=lineSparkline.js.map

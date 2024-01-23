@@ -9,4 +9,3 @@ export class ZingToggleButton extends ZingCheckbox {
         return this;
     }
 }
-//# sourceMappingURL=zingToggleButton.js.map

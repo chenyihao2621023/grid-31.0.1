@@ -12,18 +12,11 @@ const TICK_INTERVAL = predicateWithMessage((value) => (isFiniteNumber(value) && 
 export class AxisTick {
     constructor() {
         this.enabled = true;
-        /**
-         * The line width to be used by axis ticks.
-         */
+        
         this.width = 1;
-        /**
-         * The line length to be used by axis ticks.
-         */
+        
         this.size = 6;
-        /**
-         * The color of the axis ticks.
-         * Use `undefined` rather than `rgba(0, 0, 0, 0)` to make the ticks invisible.
-         */
+        
         this.color = undefined;
         this.interval = undefined;
         this.values = undefined;
@@ -52,4 +45,3 @@ __decorate([
     Validate(MIN_SPACING),
     Default(NaN)
 ], AxisTick.prototype, "minSpacing", void 0);
-//# sourceMappingURL=axisTick.js.map

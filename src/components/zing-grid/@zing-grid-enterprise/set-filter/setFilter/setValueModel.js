@@ -9,21 +9,21 @@ export var SetFilterModelValuesType;
     SetFilterModelValuesType[SetFilterModelValuesType["PROVIDED_CALLBACK"] = 1] = "PROVIDED_CALLBACK";
     SetFilterModelValuesType[SetFilterModelValuesType["TAKEN_FROM_GRID_VALUES"] = 2] = "TAKEN_FROM_GRID_VALUES";
 })(SetFilterModelValuesType || (SetFilterModelValuesType = {}));
-/** @param V type of value in the Set Filter */
+
 export class SetValueModel {
     constructor(params) {
         var _a;
         this.localEventService = new EventService();
         this.miniFilterText = null;
-        /** When true, in excelMode = 'windows', it adds previously selected filter items to newly checked filter selection */
+        
         this.addCurrentSelectionToFilter = false;
-        /** Values provided to the filter for use. */
+        
         this.providedValues = null;
-        /** All possible values for the filter, sorted if required. */
+        
         this.allValues = new Map();
-        /** Remaining keys when filters from other columns have been applied. */
+        
         this.availableKeys = new Set();
-        /** Keys that have been selected for this filter. */
+        
         this.selectedKeys = new Set();
         this.initialised = false;
         const { usingComplexObjects, columnModel, valueService, treeDataTreeList, groupingTreeList, filterParams, gridOptionsService, valueFormatterService, valueFormatter, addManagedListener } = params;
@@ -110,11 +110,7 @@ export class SetValueModel {
             }
         });
     }
-    /**
-     * Re-fetches the values used in the filter from the value source.
-     * If keepSelection is false, the filter selection will be reset to everything selected,
-     * otherwise the current selection will be preserved.
-     */
+    
     refreshValues() {
         return new ZingPromise(resolve => {
             // don't get the model until values are resolved, as there could be queued setModel calls
@@ -126,11 +122,7 @@ export class SetValueModel {
             });
         });
     }
-    /**
-     * Overrides the current values being used for the set filter.
-     * If keepSelection is false, the filter selection will be reset to everything selected,
-     * otherwise the current selection will be preserved.
-     */
+    
     overrideValues(valuesToUse) {
         return new ZingPromise(resolve => {
             // wait for any existing values to be populated before overriding
@@ -141,7 +133,7 @@ export class SetValueModel {
             });
         });
     }
-    /** @return has anything been updated */
+    
     refreshAfterAnyFilterChanged() {
         if (this.showAvailableOnly()) {
             return this.allValuesPromise.then(keys => {
@@ -272,7 +264,7 @@ export class SetValueModel {
         }
         return this.clientSideValuesExtractor.extractUniqueValuesAsync(params.predicate, params.existingValues);
     }
-    /** Sets mini filter value. Returns true if it changed from last value, otherwise false. */
+    
     setMiniFilter(value) {
         value = _.makeNull(value);
         if (this.miniFilterText === value) {
@@ -508,4 +500,3 @@ export class SetValueModel {
     }
 }
 SetValueModel.EVENT_AVAILABLE_VALUES_CHANGED = 'availableValuesChanged';
-//# sourceMappingURL=setValueModel.js.map

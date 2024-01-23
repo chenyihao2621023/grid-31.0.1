@@ -40,10 +40,7 @@ let ServerSideRowModel = class ServerSideRowModel extends BeanStub {
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_ROW_GROUP_CHANGED, resetListener);
         this.addManagedListener(this.eventService, Events.EVENT_COLUMN_PIVOT_MODE_CHANGED, resetListener);
         this.addManagedPropertyListeners([
-            /**
-             * Following properties omitted as they are likely to come with undesired  side effects.
-             * 'getRowId', 'isRowMaster', 'getRowHeight', 'isServerSideGroup', 'getServerSideGroupKey',
-             * */
+            
             'masterDetail', 'treeData', 'removePivotHeaderRowWhenSingleValueColumn',
             'suppressServerSideInfiniteScroll', 'cacheBlockSize',
         ], resetListener);
@@ -287,12 +284,7 @@ let ServerSideRowModel = class ServerSideRowModel extends BeanStub {
         this.updateRowIndexesAndBounds();
         this.dispatchModelUpdated();
     }
-    /** This method is debounced. It is used for row auto-height. If we don't debounce,
-     * then the Row Models will end up recalculating each row position
-     * for each row height change and result in the Row Renderer laying out rows.
-     * This is particularly bad if using print layout, and showing eg 1,000 rows,
-     * each row will change it's height, causing Row Model to update 1,000 times.
-     */
+    
     onRowHeightChangedDebounced() {
         this.onRowHeightChanged_debounced();
     }
@@ -438,7 +430,7 @@ let ServerSideRowModel = class ServerSideRowModel extends BeanStub {
         }
         rootStore.forEachNodeDeepAfterFilterAndSort(callback, undefined, includeFooterNodes);
     }
-    /** @return false if store hasn't started */
+    
     executeOnStore(route, callback) {
         if (!this.started) {
             return false;
@@ -561,4 +553,3 @@ ServerSideRowModel = __decorate([
     Bean('rowModel')
 ], ServerSideRowModel);
 export { ServerSideRowModel };
-//# sourceMappingURL=serverSideRowModel.js.map

@@ -90,4 +90,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], OverlayWrapperComponent.prototype, "postConstruct", null);
-//# sourceMappingURL=overlayWrapperComponent.js.map

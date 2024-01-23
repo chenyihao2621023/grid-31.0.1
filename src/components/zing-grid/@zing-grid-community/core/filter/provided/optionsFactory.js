@@ -1,4 +1,4 @@
-/* Common logic for options, used by both filters and floating filters. */
+
 export class OptionsFactory {
     constructor() {
         this.customFilterOptions = {};
@@ -61,4 +61,3 @@ export class OptionsFactory {
         return this.customFilterOptions[name];
     }
 }
-//# sourceMappingURL=optionsFactory.js.map

@@ -10,4 +10,3 @@ export const BackgroundModule = {
     },
     instanceConstructor: Background,
 };
-//# sourceMappingURL=backgroundModule.js.map

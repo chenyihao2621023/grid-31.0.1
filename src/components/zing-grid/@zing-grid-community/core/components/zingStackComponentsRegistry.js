@@ -34,4 +34,3 @@ ZingStackComponentsRegistry = __decorate([
     Bean('zingStackComponentsRegistry')
 ], ZingStackComponentsRegistry);
 export { ZingStackComponentsRegistry };
-//# sourceMappingURL=zingStackComponentsRegistry.js.map

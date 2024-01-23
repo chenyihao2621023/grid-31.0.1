@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+
 import { doOnce } from './function';
 export const Logger = {
     log(...logContent) {
@@ -25,4 +25,3 @@ export const Logger = {
         doOnce(() => Logger.error(message, ...logContent), `Logger.error: ${message}`);
     },
 };
-//# sourceMappingURL=logger.js.map

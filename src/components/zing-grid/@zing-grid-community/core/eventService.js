@@ -177,4 +177,3 @@ EventService = __decorate([
     Bean('eventService')
 ], EventService);
 export { EventService };
-//# sourceMappingURL=eventService.js.map

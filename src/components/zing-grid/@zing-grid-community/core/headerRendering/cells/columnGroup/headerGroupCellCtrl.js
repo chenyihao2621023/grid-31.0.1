@@ -306,4 +306,3 @@ export class HeaderGroupCellCtrl extends AbstractHeaderCellCtrl {
 __decorate([
     Autowired('columnModel')
 ], HeaderGroupCellCtrl.prototype, "columnModel", void 0);
-//# sourceMappingURL=headerGroupCellCtrl.js.map

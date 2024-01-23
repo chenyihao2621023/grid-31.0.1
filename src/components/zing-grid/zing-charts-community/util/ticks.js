@@ -67,4 +67,3 @@ export function range(start, stop, step) {
     }
     return values;
 }
-//# sourceMappingURL=ticks.js.map

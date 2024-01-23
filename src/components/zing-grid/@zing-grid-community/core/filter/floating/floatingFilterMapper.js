@@ -17,4 +17,3 @@ FloatingFilterMapper.filterToFloatingFilterMapping = {
     text: 'zingTextColumnFloatingFilter',
     zingTextColumnFilter: 'zingTextColumnFloatingFilter'
 };
-//# sourceMappingURL=floatingFilterMapper.js.map

@@ -11,15 +11,9 @@ import { MultiIndexMap } from "./multiIndexMap";
 export class LazyCache extends BeanStub {
     constructor(store, numberOfRows, storeParams) {
         super();
-        /**
-         * Indicates whether this is still the live dataset for this store (used for ignoring old requests after purge)
-         */
+        
         this.live = true;
-        /**
-         * A cache of removed group nodes, this is retained for preserving group
-         * state when the node moves in and out of the cache. Generally caused by
-         * rows moving blocks.
-         */
+        
         this.removedNodeCache = new Map();
         this.store = store;
         this.numberOfRows = numberOfRows;
@@ -46,11 +40,7 @@ export class LazyCache extends BeanStub {
         this.nodesToRefresh.clear();
         this.live = false;
     }
-    /**
-     * Get the row node for a specific display index from this store
-     * @param displayIndex the display index of the node to find
-     * @returns undefined if the node is not in the store bounds, otherwise will always return a node
-     */
+    
     getRowByDisplayIndex(displayIndex) {
         var _a, _b, _c, _d;
         // if index isn't in store, nothing to return
@@ -109,9 +99,7 @@ export class LazyCache extends BeanStub {
         const storeIndexFromEndIndex = this.store.getRowCount() - (this.store.getDisplayIndexEnd() - displayIndex);
         return this.createStubNode(storeIndexFromEndIndex, displayIndex);
     }
-    /**
-     * Used for creating and positioning a stub node without firing a store updated event
-     */
+    
     createStubNode(storeIndex, displayIndex) {
         // bounds are acquired before creating the node, as otherwise it'll use it's own empty self to calculate
         const rowBounds = this.store.getRowBounds(displayIndex);
@@ -123,20 +111,12 @@ export class LazyCache extends BeanStub {
         this.rowLoader.queueLoadCheck();
         return newNode;
     }
-    /**
-     * @param index The row index relative to this store
-     * @returns A rowNode at the given store index
-     */
+    
     getRowByStoreIndex(index) {
         var _a;
         return (_a = this.nodeMap.getBy('index', index)) === null || _a === void 0 ? void 0 : _a.node;
     }
-    /**
-     * Given a number of rows, skips through the given sequence & row top reference (using default row height)
-     * @param numberOfRowsToSkip number of rows to skip over in the given sequence
-     * @param displayIndexSeq the sequence in which to skip
-     * @param nextRowTop the row top reference in which to skip
-     */
+    
     skipDisplayIndexes(numberOfRowsToSkip, displayIndexSeq, nextRowTop) {
         if (numberOfRowsToSkip === 0) {
             return;
@@ -145,10 +125,7 @@ export class LazyCache extends BeanStub {
         displayIndexSeq.skip(numberOfRowsToSkip);
         nextRowTop.value += numberOfRowsToSkip * defaultRowHeight;
     }
-    /**
-     * @param displayIndexSeq the number sequence for generating the display index of each row
-     * @param nextRowTop an object containing the next row top value intended to be modified by ref per row
-     */
+    
     setDisplayIndexes(displayIndexSeq, nextRowTop) {
         // Create a map of display index nodes for access speed
         this.nodeDisplayIndexMap.clear();
@@ -204,9 +181,7 @@ export class LazyCache extends BeanStub {
     getNodesToRefresh() {
         return this.nodesToRefresh;
     }
-    /**
-     * @returns the previous and next loaded row nodes surrounding the given display index
-     */
+    
     getSurroundingNodesByDisplayIndex(displayIndex) {
         let nextNode;
         let previousNode;
@@ -230,11 +205,7 @@ export class LazyCache extends BeanStub {
             return null;
         return { previousNode, nextNode };
     }
-    /**
-     * Get or calculate the display index for a given store index
-     * @param storeIndex the rows index within this store
-     * @returns the rows visible display index relative to the grid
-     */
+    
     getDisplayIndexFromStoreIndex(storeIndex) {
         var _a, _b;
         const nodeAtIndex = this.nodeMap.getBy('index', storeIndex);
@@ -269,12 +240,7 @@ export class LazyCache extends BeanStub {
         const previousDisplayIndex = ((_b = (_a = previousNode.node.childStore) === null || _a === void 0 ? void 0 : _a.getDisplayIndexEnd()) !== null && _b !== void 0 ? _b : previousNode.node.rowIndex);
         return previousDisplayIndex + storeIndexDiff;
     }
-    /**
-     * Creates a new row and inserts it at the given index
-     * @param atStoreIndex the node index relative to this store
-     * @param data the data object to populate the node with
-     * @returns the new row node
-     */
+    
     createRowAtIndex(atStoreIndex, data, createNodeCallback) {
         var _a, _b;
         // make sure an existing node isn't being overwritten
@@ -424,10 +390,7 @@ export class LazyCache extends BeanStub {
     getSsrmParams() {
         return this.store.getSsrmParams();
     }
-    /**
-     * @param id the base id to be prefixed
-     * @returns a node id with prefix if required
-     */
+    
     getPrefixedId(id) {
         if (this.defaultNodeIdPrefix) {
             return this.defaultNodeIdPrefix + '-' + id;
@@ -453,9 +416,7 @@ export class LazyCache extends BeanStub {
         }
         return node.data === data;
     }
-    /**
-     * Deletes any stub nodes not within the given range
-     */
+    
     purgeStubsOutsideOfViewport() {
         const firstRow = this.api.getFirstDisplayedRow();
         const lastRow = this.api.getLastDisplayedRow();
@@ -869,4 +830,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], LazyCache.prototype, "destroyRowNodes", null);
-//# sourceMappingURL=lazyCache.js.map

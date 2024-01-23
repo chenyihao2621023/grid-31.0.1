@@ -9,9 +9,7 @@ import { AxisLabel } from './axisLabel';
 export class CartesianAxisLabel extends AxisLabel {
     constructor() {
         super(...arguments);
-        /**
-         * Rotation angle to use when autoRotate is applied.
-         */
+        
         this.autoRotateAngle = 335;
     }
 }
@@ -21,4 +19,3 @@ __decorate([
 __decorate([
     Validate(DEGREE)
 ], CartesianAxisLabel.prototype, "autoRotateAngle", void 0);
-//# sourceMappingURL=cartesianAxisLabel.js.map

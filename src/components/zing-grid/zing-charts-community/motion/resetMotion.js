@@ -1,10 +1,5 @@
 import { deconstructSelectionsOrNodes } from './animation';
-/**
- * Implements a per-node reset.
- *
- * @param selections contains nodes to be reset
- * @param propsFn callback to determine per-node properties
- */
+
 export function resetMotion(selectionsOrNodes, propsFn) {
     const { nodes, selections } = deconstructSelectionsOrNodes(selectionsOrNodes);
     for (const selection of selections) {
@@ -19,4 +14,3 @@ export function resetMotion(selectionsOrNodes, propsFn) {
         node.setProperties(from);
     }
 }
-//# sourceMappingURL=resetMotion.js.map

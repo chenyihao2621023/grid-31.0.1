@@ -91,10 +91,7 @@ export const INITIAL_GRID_OPTION_KEYS = {
     getLocaleText: true,
     getRowId: true,
 };
-/**
- * These keys are used for validating properties supplied on a gridOptions object, and for code generation.
- * If you change the properties on the gridOptions interface, you *must* update this file as well to be consistent.
- */
+
 export class PropertyKeys {
 }
 PropertyKeys.STRING_PROPERTIES = [
@@ -150,13 +147,13 @@ PropertyKeys.BOOLEAN_PROPERTIES = [
     'suppressServerSideInfiniteScroll', 'rowGroupPanelSuppressSort', 'allowShowChangeAfterFilter', 'enableAdvancedFilter', 'masterDetail', 'treeData',
     'suppressGroupMaintainValueType'
 ];
-/** You do not need to include event callbacks in this list, as they are generated automatically. */
+
 PropertyKeys.FUNCTIONAL_PROPERTIES = [
     'doesExternalFilterPass', 'processPivotResultColDef', 'processPivotResultColGroupDef', 'getBusinessKeyForNode', 'isRowSelectable', 'rowDragText',
     'groupRowRenderer', 'fullWidthCellRenderer', 'loadingCellRenderer', 'loadingOverlayComponent', 'noRowsOverlayComponent', 'detailCellRenderer',
     'quickFilterParser', 'quickFilterMatcher'
 ];
-/** These callbacks extend ZingGridCommon interface */
+
 PropertyKeys.CALLBACK_PROPERTIES = [
     'getLocaleText', 'isExternalFilterPresent', 'getRowHeight', 'getRowClass', 'getRowStyle', 'getContextMenuItems', 'getMainMenuItems',
     'processRowPostCreate', 'processCellForClipboard', 'getGroupRowAgg', 'isFullWidthRow', 'sendToClipboard', 'navigateToNextHeader',
@@ -178,4 +175,3 @@ PropertyKeys.ALL_PROPERTIES = [
     ...PropertyKeys.FUNCTION_PROPERTIES,
     ...PropertyKeys.BOOLEAN_PROPERTIES
 ];
-//# sourceMappingURL=propertyKeys.js.map

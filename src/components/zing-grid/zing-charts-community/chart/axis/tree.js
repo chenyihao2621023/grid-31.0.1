@@ -1,7 +1,4 @@
-/**
- * The tree layout is calculated in abstract x/y coordinates, where the root is at (0, 0)
- * and the tree grows downward from the root.
- */
+
 class TreeNode {
     constructor(label = '', parent, number = 0) {
         this.x = 0;
@@ -42,11 +39,7 @@ class TreeNode {
         return this.parent ? this.parent.children.filter((_, i) => i !== this.number) : [];
     }
 }
-/**
- * Converts an array of ticks, where each tick has an array of labels, to a label tree.
- * If `pad` is `true`, will ensure that every branch matches the depth of the tree by
- * creating empty labels.
- */
+
 export function ticksToTree(ticks, pad = true) {
     const root = new TreeNode();
     let depth = 0;
@@ -301,4 +294,3 @@ export class TreeLayout {
         });
     }
 }
-//# sourceMappingURL=tree.js.map

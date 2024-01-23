@@ -78,4 +78,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], HistogramSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=histogramSeriesProperties.js.map

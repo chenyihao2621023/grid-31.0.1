@@ -43,4 +43,3 @@ export class NightingaleSeries extends RadialColumnSeriesBase {
 }
 NightingaleSeries.className = 'NightingaleSeries';
 NightingaleSeries.type = 'nightingale';
-//# sourceMappingURL=nightingaleSeries.js.map

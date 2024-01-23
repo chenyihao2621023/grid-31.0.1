@@ -78,7 +78,7 @@ let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
             // tooltips
             zingTooltipComponent: TooltipComponent
         };
-        /** Used to provide useful error messages if a user is trying to use an enterprise component without loading the module. */
+        
         this.enterpriseZingDefaultCompsModule = {
             zingSetColumnFilter: ModuleNames.SetFilterModule,
             zingSetColumnFloatingFilter: ModuleNames.SetFilterModule,
@@ -159,4 +159,3 @@ UserComponentRegistry = __decorate([
     Bean('userComponentRegistry')
 ], UserComponentRegistry);
 export { UserComponentRegistry };
-//# sourceMappingURL=userComponentRegistry.js.map

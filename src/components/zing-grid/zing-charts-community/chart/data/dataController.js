@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Debug } from '../../util/debug';
 import { jsonDiff } from '../../util/json';
 import { DataModel } from './dataModel';
-/** Implements cross-series data model coordination. */
+
 export class DataController {
     constructor(mode) {
         this.mode = mode;
@@ -207,4 +207,3 @@ export class DataController {
         }
     }
 }
-//# sourceMappingURL=dataController.js.map

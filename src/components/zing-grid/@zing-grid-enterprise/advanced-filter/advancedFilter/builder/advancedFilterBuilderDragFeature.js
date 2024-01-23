@@ -35,4 +35,3 @@ AdvancedFilterBuilderDragFeature.EVENT_DRAG_ENDED = 'advancedFilterBuilderDragEn
 __decorate([
     PostConstruct
 ], AdvancedFilterBuilderDragFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterBuilderDragFeature.js.map

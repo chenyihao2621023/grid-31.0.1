@@ -64,7 +64,7 @@ export class GridComp extends TabGuardComp {
         const sideBar = this.ctrl.showSideBar() ? '<zing-side-bar ref="sideBar"></zing-side-bar>' : '';
         const statusBar = this.ctrl.showStatusBar() ? '<zing-status-bar ref="statusBar"></zing-status-bar>' : '';
         const watermark = this.ctrl.showWatermark() ? '<zing-watermark></zing-watermark>' : '';
-        const template = /* html */ `<div class="zing-root-wrapper" role="presentation">
+        const template =  `<div class="zing-root-wrapper" role="presentation">
                 ${dropZones}
                 <div class="zing-root-wrapper-body" ref="rootWrapperBody" role="presentation">
                     <zing-grid-body ref="gridBody"></zing-grid-body>
@@ -104,4 +104,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], GridComp.prototype, "postConstruct", null);
-//# sourceMappingURL=gridComp.js.map

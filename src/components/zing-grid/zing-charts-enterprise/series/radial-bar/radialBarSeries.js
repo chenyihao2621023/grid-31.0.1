@@ -394,4 +394,3 @@ export class RadialBarSeries extends _ModuleSupport.PolarSeries {
 }
 RadialBarSeries.className = 'RadialBarSeries';
 RadialBarSeries.type = 'radial-bar';
-//# sourceMappingURL=radialBarSeries.js.map

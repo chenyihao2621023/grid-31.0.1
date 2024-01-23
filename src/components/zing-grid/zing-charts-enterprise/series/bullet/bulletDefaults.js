@@ -15,4 +15,3 @@ export const BULLET_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=bulletDefaults.js.map

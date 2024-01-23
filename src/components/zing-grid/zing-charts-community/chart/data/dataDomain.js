@@ -27,4 +27,3 @@ export class DataDomain {
         throw new Error('ZING Charts - Unsupported data domain type: ' + this.type);
     }
 }
-//# sourceMappingURL=dataDomain.js.map

@@ -65,4 +65,3 @@ __decorate([
 __decorate([
     Validate(BOOLEAN)
 ], LineSeriesProperties.prototype, "connectMissingData", void 0);
-//# sourceMappingURL=lineSeriesProperties.js.map

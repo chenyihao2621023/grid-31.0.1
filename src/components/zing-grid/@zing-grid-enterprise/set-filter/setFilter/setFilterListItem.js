@@ -5,7 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { _, Autowired, Component, PostConstruct, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
-/** @param V type of value in the Set Filter */
+
 export class SetFilterListItem extends Component {
     constructor(params) {
         var _a;
@@ -283,4 +283,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], SetFilterListItem.prototype, "init", null);
-//# sourceMappingURL=setFilterListItem.js.map

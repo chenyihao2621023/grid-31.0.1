@@ -63,4 +63,3 @@ TemplateService = __decorate([
     Bean('templateService')
 ], TemplateService);
 export { TemplateService };
-//# sourceMappingURL=templateService.js.map

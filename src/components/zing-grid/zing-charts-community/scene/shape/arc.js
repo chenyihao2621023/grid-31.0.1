@@ -15,9 +15,7 @@ var ArcType;
     ArcType[ArcType["Chord"] = 1] = "Chord";
     ArcType[ArcType["Round"] = 2] = "Round";
 })(ArcType || (ArcType = {}));
-/**
- * Elliptical arc node.
- */
+
 export class Arc extends Path {
     constructor() {
         super();
@@ -27,18 +25,7 @@ export class Arc extends Path {
         this.startAngle = 0;
         this.endAngle = Math.PI * 2;
         this.counterClockwise = false;
-        /**
-         * The type of arc to render:
-         * - {@link ArcType.Open} - end points of the arc segment are not connected (default)
-         * - {@link ArcType.Chord} - end points of the arc segment are connected by a line segment
-         * - {@link ArcType.Round} - each of the end points of the arc segment are connected
-         *                           to the center of the arc
-         * Arcs with {@link ArcType.Open} do not support hit testing, even if they have their
-         * {@link Shape.fillStyle} set, because they are not closed paths. Hit testing support
-         * would require using two paths - one for rendering, another for hit testing - and there
-         * doesn't seem to be a compelling reason to do that, when one can just use {@link ArcType.Chord}
-         * to create a closed path.
-         */
+        
         this.type = ArcType.Open;
         this.restoreOwnStyles();
     }
@@ -95,4 +82,3 @@ __decorate([
 __decorate([
     ScenePathChangeDetection()
 ], Arc.prototype, "type", void 0);
-//# sourceMappingURL=arc.js.map

@@ -10,4 +10,3 @@ export function sanitizeHtml(text) {
     element.textContent = String(text);
     return element.innerHTML;
 }
-//# sourceMappingURL=sanitize.js.map

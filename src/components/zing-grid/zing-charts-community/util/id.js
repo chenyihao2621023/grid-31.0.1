@@ -15,4 +15,3 @@ export function createId(instance) {
     ID_MAP[className] = nextId;
     return className + '-' + nextId;
 }
-//# sourceMappingURL=id.js.map

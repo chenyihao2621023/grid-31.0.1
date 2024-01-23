@@ -46,4 +46,3 @@ __decorate([
     Validate(AND(NUMBER_OR_NAN, GREATER_THAN('min'))),
     Default(NaN)
 ], RadiusNumberAxis.prototype, "max", void 0);
-//# sourceMappingURL=radiusNumberAxis.js.map

@@ -872,4 +872,3 @@ FilterManager = __decorate([
     Bean('filterManager')
 ], FilterManager);
 export { FilterManager };
-//# sourceMappingURL=filterManager.js.map

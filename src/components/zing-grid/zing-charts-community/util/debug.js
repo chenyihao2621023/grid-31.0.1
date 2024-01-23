@@ -31,4 +31,3 @@ export const Debug = {
         return chartDebug.some((selector) => debugSelectors.includes(selector));
     },
 };
-//# sourceMappingURL=debug.js.map

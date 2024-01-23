@@ -50,4 +50,3 @@ export class Listeners {
         return (_a = this.registeredListeners.get(eventType)) !== null && _a !== void 0 ? _a : [];
     }
 }
-//# sourceMappingURL=listeners.js.map

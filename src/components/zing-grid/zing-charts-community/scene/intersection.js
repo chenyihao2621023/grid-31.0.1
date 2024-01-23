@@ -1,10 +1,6 @@
 import { normalizeAngle360 } from '../util/angle';
 import { cubicRoots } from './polyRoots';
-/**
- * Returns the intersection point for the given pair of line segments, or null,
- * if the segments are parallel or don't intersect.
- * Based on http://paulbourke.net/geometry/pointlineplane/
- */
+
 export function segmentIntersection(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     const d = (ax2 - ax1) * (by2 - by1) - (ay2 - ay1) * (bx2 - bx1);
     if (d === 0) {
@@ -21,11 +17,7 @@ export function segmentIntersection(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2) {
     }
     return null; // The intersection point is outside either or both segments.
 }
-/**
- * Returns intersection points of the given cubic curve and the line segment.
- * Takes in x/y components of cubic control points and line segment start/end points
- * as parameters.
- */
+
 export function cubicSegmentIntersections(px1, py1, px2, py2, px3, py3, px4, py4, x1, y1, x2, y2) {
     const intersections = [];
     // Find line equation coefficients.
@@ -64,10 +56,7 @@ export function cubicSegmentIntersections(px1, py1, px2, py2, px3, py3, px4, py4
     }
     return intersections;
 }
-/**
- * Returns the given coordinates vector multiplied by the coefficient matrix
- * of the parametric cubic Bézier equation.
- */
+
 function bezierCoefficients(P1, P2, P3, P4) {
     return [
         // Bézier expressed as matrix operations:
@@ -77,10 +66,7 @@ function bezierCoefficients(P1, P2, P3, P4) {
         P1, //                 | 1  0  0  0| |P4|
     ];
 }
-/**
- * Returns intersection points of the arc and the line segment.
- * Takes in arc parameters and line segment start/end points.
- */
+
 export function arcIntersections(cx, cy, r, startAngle, endAngle, counterClockwise, x1, y1, x2, y2) {
     // Solving the quadratic equation:
     // 1. y = k * x + y0
@@ -119,4 +105,3 @@ export function arcIntersections(cx, cy, r, startAngle, endAngle, counterClockwi
     });
     return intersections;
 }
-//# sourceMappingURL=intersection.js.map

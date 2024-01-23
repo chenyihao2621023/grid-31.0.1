@@ -9,7 +9,7 @@ import { PostConstruct } from "../context/context";
 import { createIconNoSpan } from "../utils/icon";
 export class DndSourceComp extends Component {
     constructor(rowNode, column, eCell) {
-        super(/* html */ `<div class="zing-drag-handle zing-row-drag" draggable="true"></div>`);
+        super( `<div class="zing-drag-handle zing-row-drag" draggable="true"></div>`);
         this.rowNode = rowNode;
         this.column = column;
         this.eCell = eCell;
@@ -62,4 +62,3 @@ export class DndSourceComp extends Component {
 __decorate([
     PostConstruct
 ], DndSourceComp.prototype, "postConstruct", null);
-//# sourceMappingURL=dndSourceComp.js.map

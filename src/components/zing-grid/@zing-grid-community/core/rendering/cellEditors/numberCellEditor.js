@@ -3,7 +3,7 @@ import { exists } from "../../utils/generic";
 import { KeyCode } from "../../constants/keyCode";
 class NumberCellEditorInput {
     getTemplate() {
-        return /* html */ `<zing-input-number-field class="zing-cell-editor" ref="eInput"></zing-input-number-field>`;
+        return  `<zing-input-number-field class="zing-cell-editor" ref="eInput"></zing-input-number-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;
@@ -59,4 +59,3 @@ export class NumberCellEditor extends SimpleCellEditor {
         super(new NumberCellEditorInput());
     }
 }
-//# sourceMappingURL=numberCellEditor.js.map

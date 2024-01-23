@@ -1,7 +1,4 @@
-/**
- * Proxy class, to allow library users to keep a stable reference to their chart, even if we need
- * to switch concrete class (e.g. when switching between CartesianChart vs. PolarChart).
- */
+
 export class ZingChartInstanceProxy {
     static isInstance(x) {
         var _a;
@@ -31,4 +28,3 @@ export class ZingChartInstanceProxy {
         this.chart.destroy();
     }
 }
-//# sourceMappingURL=chartProxy.js.map

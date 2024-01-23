@@ -49,4 +49,3 @@ export const DATA_REVENUE_BY_PRODUCT_CATEGORY = [
         services: 3.21,
     },
 ];
-//# sourceMappingURL=data.js.map

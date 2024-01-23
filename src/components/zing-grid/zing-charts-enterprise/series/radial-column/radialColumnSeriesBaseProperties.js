@@ -73,4 +73,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], RadialColumnSeriesBaseProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=radialColumnSeriesBaseProperties.js.map

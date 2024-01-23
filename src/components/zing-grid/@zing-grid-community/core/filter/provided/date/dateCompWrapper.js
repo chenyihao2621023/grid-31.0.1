@@ -1,6 +1,5 @@
 import { setDisplayed } from '../../../utils/dom';
-/** Provides sync access to async component. Date component can be lazy created - this class encapsulates
- * this by keeping value locally until DateComp has loaded, then passing DateComp the value. */
+
 export class DateCompWrapper {
     constructor(context, userComponentFactory, dateComponentParams, eParent) {
         this.alive = true;
@@ -87,4 +86,3 @@ export class DateCompWrapper {
         this.dateComp.setDisabled(disabled);
     }
 }
-//# sourceMappingURL=dateCompWrapper.js.map

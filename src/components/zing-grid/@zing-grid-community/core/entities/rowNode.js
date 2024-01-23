@@ -5,39 +5,32 @@ import { exists, missing, missingOrEmpty } from "../utils/generic";
 import { getAllKeysInObjects } from "../utils/object";
 export class RowNode {
     constructor(beans) {
-        /** The current row index. If the row is filtered out or in a collapsed group, this value will be `null`. */
+        
         this.rowIndex = null;
-        /** The key for the group eg Ireland, UK, USA */
+        
         this.key = null;
-        /** Children mapped by the pivot columns. */
+        
         this.childrenMapped = {};
-        /**
-         * This will be `true` if it has a rowIndex assigned, otherwise `false`.
-         */
+        
         this.displayed = false;
-        /** The row top position in pixels. */
+        
         this.rowTop = null;
-        /** The top pixel for this row last time, makes sense if data set was ordered or filtered,
-         * it is used so new rows can animate in from their old position. */
+        
         this.oldRowTop = null;
-        /** `true` by default - can be overridden via gridOptions.isRowSelectable(rowNode) */
+        
         this.selectable = true;
-        /** Used by sorting service - to give deterministic sort to groups. Previously we
-         * just id for this, however id is a string and had slower sorting compared to numbers. */
+        
         this.__objectId = RowNode.OBJECT_ID_SEQUENCE++;
-        /** When one or more Columns are using autoHeight, this keeps track of height of each autoHeight Cell,
-         * indexed by the Column ID. */
+        
         this.__autoHeights = {};
-        /** `true` when nodes with the same id are being removed and added as part of the same batch transaction */
+        
         this.alreadyRendered = false;
         this.highlighted = null;
         this.hovered = false;
         this.selected = false;
         this.beans = beans;
     }
-    /**
-     * Replaces the data on the `rowNode`. When this method is called, the grid will refresh the entire rendered row if it is displayed.
-     */
+    
     setData(data) {
         this.setDataCommon(data, false);
     }
@@ -46,9 +39,7 @@ export class RowNode {
     // guaranteed that the data is the same entity (so grid doesn't need to worry about the id of the
     // underlying data changing, hence doesn't need to worry about selection). the grid, upon receiving
     // dataChanged event, will refresh the cells rather than rip them all out (so user can show transitions).
-    /**
-     * Updates the data on the `rowNode`. When this method is called, the grid will refresh the entire rendered row if it is displayed.
-     */
+    
     updateData(data) {
         this.setDataCommon(data, true);
     }
@@ -321,10 +312,7 @@ export class RowNode {
             this.eventService.dispatchEvent(this.createLocalRowEvent(RowNode.EVENT_GROUP_CHANGED));
         }
     }
-    /**
-     * Sets the row height.
-     * Call if you want to change the height initially assigned to the row.
-     * After calling, you must call `api.onRowHeightChanged()` so the grid knows it needs to work out the placement of the rows. */
+    
     setRowHeight(rowHeight, estimated = false) {
         this.rowHeight = rowHeight;
         this.rowHeightEstimated = estimated;
@@ -430,9 +418,7 @@ export class RowNode {
             this.eventService.dispatchEvent(this.createLocalRowEvent(RowNode.EVENT_UI_LEVEL_CHANGED));
         }
     }
-    /**
-     * Set the expanded state of this rowNode. Pass `true` to expand and `false` to collapse.
-     */
+    
     setExpanded(expanded, e) {
         if (this.expanded === expanded) {
             return;
@@ -469,16 +455,7 @@ export class RowNode {
             this.eventService.dispatchEvent(event);
         }
     }
-    /**
-     * Replaces the value on the `rowNode` for the specified column. When complete,
-     * the grid will refresh the rendered cell on the required row only.
-     * **Note**: This method only fires `onCellEditRequest` when the Grid is in **Read Only** mode.
-     *
-     * @param colKey The column where the value should be updated
-     * @param newValue The new value
-     * @param eventSource The source of the event
-     * @returns `true` if the value was changed, otherwise `false`.
-     */
+    
     setDataValue(colKey, newValue, eventSource) {
         const getColumnFromKey = () => {
             var _a;
@@ -614,19 +591,11 @@ export class RowNode {
         };
         this.dispatchLocalEvent(cellChangedEvent);
     }
-    /**
-     * The first time `quickFilter` runs, the grid creates a one-off string representation of the row.
-     * This string is then used for the quick filter instead of hitting each column separately.
-     * When you edit, using grid editing, this string gets cleared down.
-     * However if you edit without using grid editing, you will need to clear this string down for the row to be updated with the new values.
-     * Otherwise new values will not work with the `quickFilter`. */
+    
     resetQuickFilterAggregateText() {
         this.quickFilterAggregateText = null;
     }
-    /** Returns:
-    * - `true` if the node can be expanded, i.e it is a group or master row.
-    * - `false` if the node cannot be expanded
-    */
+    
     isExpandable() {
         if (this.footer) {
             return false;
@@ -637,10 +606,7 @@ export class RowNode {
         }
         return this.hasChildren() || !!this.master;
     }
-    /** Returns:
-     * - `true` if node is selected,
-     * - `false` if the node isn't selected
-     * - `undefined` if it's partially selected (group where not all children are selected). */
+    
     isSelected() {
         // for footers, we just return what our sibling selected state is, as cannot select a footer
         if (this.footer) {
@@ -648,7 +614,7 @@ export class RowNode {
         }
         return this.selected;
     }
-    /** Perform a depth-first search of this node and its children. */
+    
     depthFirstSearch(callback) {
         if (this.childrenAfterGroup) {
             this.childrenAfterGroup.forEach(child => child.depthFirstSearch(callback));
@@ -724,12 +690,7 @@ export class RowNode {
         this.beans.eventService.dispatchEvent(event);
         return true;
     }
-    /**
-     * Select (or deselect) the node.
-     * @param newValue -`true` for selection, `false` for deselection.
-     * @param clearSelection - If selecting, then passing `true` will select the node exclusively (i.e. NOT do multi select). If doing deselection, `clearSelection` has no impact.
-     * @param source - Source property that will appear in the `selectionChanged` event.
-     */
+    
     setSelected(newValue, clearSelection = false, source = 'api') {
         if (typeof source === 'boolean') {
             console.warn('ZING Grid: since version v30, rowNode.setSelected() property `suppressFinishActions` has been removed, please use `gridApi.setNodesSelected()` for bulk actions, and the event `source` property for ignoring events instead.');
@@ -754,11 +715,7 @@ export class RowNode {
         }
         return this.beans.selectionService.setNodesSelected(Object.assign(Object.assign({}, params), { nodes: [this.footer ? this.sibling : this] }));
     }
-    /**
-     * Returns:
-     * - `true` if node is either pinned to the `top` or `bottom`
-     * - `false` if the node isn't pinned
-     */
+    
     isRowPinned() {
         return this.rowPinned === 'top' || this.rowPinned === 'bottom';
     }
@@ -772,14 +729,14 @@ export class RowNode {
         }
         return false;
     }
-    /** Add an event listener. */
+    
     addEventListener(eventType, listener) {
         if (!this.eventService) {
             this.eventService = new EventService();
         }
         this.eventService.addEventListener(eventType, listener);
     }
-    /** Remove event listener. */
+    
     removeEventListener(eventType, listener) {
         if (!this.eventService) {
             return;
@@ -818,11 +775,7 @@ export class RowNode {
         }
         return foundFirstChildPath ? nodeToSwapIn : null;
     }
-    /**
-     * Returns:
-     * - `true` if the node is a full width cell
-     * - `false` if the node is not a full width cell
-     */
+    
     isFullWidthCell() {
         if (this.detail) {
             return true;
@@ -830,10 +783,7 @@ export class RowNode {
         const isFullWidthCellFunc = this.beans.gridOptionsService.getCallback('isFullWidthRow');
         return isFullWidthCellFunc ? isFullWidthCellFunc({ rowNode: this }) : false;
     }
-    /**
-     * Returns the route of the row node. If the Row Node is a group, it returns the route to that Row Node.
-     * If the Row Node is not a group, it returns `undefined`.
-     */
+    
     getRoute() {
         if (this.key == null) {
             return;
@@ -916,4 +866,3 @@ RowNode.EVENT_SELECTABLE_CHANGED = 'selectableChanged';
 RowNode.EVENT_UI_LEVEL_CHANGED = 'uiLevelChanged';
 RowNode.EVENT_HIGHLIGHT_CHANGED = 'rowHighlightChanged';
 RowNode.EVENT_DRAGGING_CHANGED = 'draggingChanged';
-//# sourceMappingURL=rowNode.js.map

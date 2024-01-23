@@ -129,4 +129,3 @@ PinnedRowModel = __decorate([
     Bean('pinnedRowModel')
 ], PinnedRowModel);
 export { PinnedRowModel };
-//# sourceMappingURL=pinnedRowModel.js.map

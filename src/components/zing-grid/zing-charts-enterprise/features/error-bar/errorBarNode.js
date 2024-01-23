@@ -185,4 +185,3 @@ export class ErrorBarGroup extends _Scene.Group {
         }
     }
 }
-//# sourceMappingURL=errorBarNode.js.map

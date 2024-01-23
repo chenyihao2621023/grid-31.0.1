@@ -13,4 +13,3 @@ function decode(encoded) {
 }
 export const utcYear = new CountableTimeInterval(encode, decode);
 export default utcYear;
-//# sourceMappingURL=utcYear.js.map

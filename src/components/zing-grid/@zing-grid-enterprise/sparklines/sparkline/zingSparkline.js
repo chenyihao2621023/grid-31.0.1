@@ -161,11 +161,7 @@ function initCrosshairLineOptions(target, options) {
     setValueIfPropertyExists(target, 'lineCap', options.lineCap, options);
 }
 const doOnceFlags = {};
-/**
- * If the key was passed before, then doesn't execute the func
- * @param {Function} func
- * @param {string} key
- */
+
 function doOnce(func, key) {
     if (doOnceFlags[key]) {
         return;
@@ -200,4 +196,3 @@ function setValueIfPropertyExists(target, property, value, options) {
         }
     }
 }
-//# sourceMappingURL=zingSparkline.js.map

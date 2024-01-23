@@ -105,7 +105,7 @@ export class PaginationComp extends Component {
         const strNext = localeTextFunc('nextPage', 'Next Page');
         const strLast = localeTextFunc('lastPage', 'Last Page');
         const compId = this.getCompId();
-        return /* html */ `<div class="zing-paging-panel zing-unselectable" id="zing-${compId}">
+        return  `<div class="zing-paging-panel zing-unselectable" id="zing-${compId}">
                 <zing-page-size-selector ref="pageSizeComp"></zing-page-size-selector>
                 <span class="zing-paging-row-summary-panel" role="status">
                     <span id="zing-${compId}-first-row" ref="lbFirstRowOnPage" class="zing-paging-row-summary-panel-number"></span>
@@ -266,4 +266,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], PaginationComp.prototype, "postConstruct", null);
-//# sourceMappingURL=paginationComp.js.map

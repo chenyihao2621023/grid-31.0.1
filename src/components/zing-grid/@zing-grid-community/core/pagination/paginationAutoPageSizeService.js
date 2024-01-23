@@ -66,4 +66,3 @@ PaginationAutoPageSizeService = __decorate([
     Bean('paginationAutoPageSizeService')
 ], PaginationAutoPageSizeService);
 export { PaginationAutoPageSizeService };
-//# sourceMappingURL=paginationAutoPageSizeService.js.map

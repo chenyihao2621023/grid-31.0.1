@@ -50,4 +50,3 @@ export class ZingPromise {
         console.warn('TBI');
     }
 }
-//# sourceMappingURL=promise.js.map

@@ -18,4 +18,3 @@ export const RADAR_SERIES_THEME = {
         strokeWidth: 0,
     },
 };
-//# sourceMappingURL=radarThemes.js.map

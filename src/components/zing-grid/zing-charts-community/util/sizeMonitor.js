@@ -103,4 +103,3 @@ SizeMonitor.elements = new Map();
 SizeMonitor.ready = false;
 SizeMonitor.documentReady = false;
 SizeMonitor.queuedObserveRequests = [];
-//# sourceMappingURL=sizeMonitor.js.map

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ZingInputDateField, ZingInputNumberField, ZingInputTextField, Autowired, Component, Events, KeyCode, PostConstruct, RefSelector, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class InputPillComp extends Component {
     constructor(params) {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-builder-pill-wrapper" role="presentation">
                 <div ref="ePill" class="zing-advanced-filter-builder-pill" role="button">
                     <span ref="eLabel" class="zing-advanced-filter-builder-pill-display"></span>
@@ -143,4 +143,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], InputPillComp.prototype, "postConstruct", null);
-//# sourceMappingURL=inputPillComp.js.map

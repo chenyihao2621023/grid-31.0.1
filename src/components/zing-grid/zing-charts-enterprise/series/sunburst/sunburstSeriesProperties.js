@@ -86,4 +86,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], SunburstSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=sunburstSeriesProperties.js.map

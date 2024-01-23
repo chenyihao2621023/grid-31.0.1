@@ -160,4 +160,3 @@ export class RadiusCrossLine extends PolarCrossLine {
     }
 }
 RadiusCrossLine.className = 'RadiusCrossLine';
-//# sourceMappingURL=radiusCrossLine.js.map

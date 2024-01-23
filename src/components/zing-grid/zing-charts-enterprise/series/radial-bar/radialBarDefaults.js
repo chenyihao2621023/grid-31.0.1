@@ -14,4 +14,3 @@ export const RADIAL_BAR_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=radialBarDefaults.js.map

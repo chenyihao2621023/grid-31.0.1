@@ -44,4 +44,3 @@ PinnedWidthService = __decorate([
     Bean('pinnedWidthService')
 ], PinnedWidthService);
 export { PinnedWidthService };
-//# sourceMappingURL=pinnedWidthService.js.map

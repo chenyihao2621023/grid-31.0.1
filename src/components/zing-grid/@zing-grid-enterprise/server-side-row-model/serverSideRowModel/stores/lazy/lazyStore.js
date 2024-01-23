@@ -40,22 +40,11 @@ export class LazyStore extends BeanStub {
         this.displayIndexEnd = undefined;
         this.destroyBean(this.cache);
     }
-    /**
-     * Given a server response, ingest the rows outside of the data source lifecycle.
-     *
-     * @param rowDataParams the server response containing the rows to ingest
-     * @param startRow the index to start ingesting rows
-     * @param expectedRows the expected number of rows in the response (used to determine if the last row index is known)
-     */
+    
     applyRowData(rowDataParams, startRow, expectedRows) {
         this.cache.onLoadSuccess(startRow, expectedRows, rowDataParams);
     }
-    /**
-     * Applies a given transaction to the data set within this store
-     *
-     * @param transaction an object containing delta instructions determining the changes to apply to this store
-     * @returns an object determining the status of this transaction and effected nodes
-     */
+    
     applyTransaction(transaction) {
         var _a, _b, _c;
         const idFunc = this.gridOptionsService.getCallback('getRowId');
@@ -124,9 +113,7 @@ export class LazyStore extends BeanStub {
             });
         }
     }
-    /**
-     * Clear the display indexes, used for fading rows out when stores are not being destroyed
-     */
+    
     clearDisplayIndexes() {
         this.displayIndexStart = undefined;
         this.displayIndexEnd = undefined;
@@ -136,52 +123,32 @@ export class LazyStore extends BeanStub {
         }
         this.cache.clearDisplayIndexes();
     }
-    /**
-     * @returns an index representing the last sequentially displayed row in the grid for this store
-     */
+    
     getDisplayIndexStart() {
         return this.displayIndexStart;
     }
-    /**
-     * @returns the index representing one after the last sequentially displayed row in the grid for this store
-     */
+    
     getDisplayIndexEnd() {
         return this.displayIndexEnd;
     }
-    /**
-     * @returns the virtual size of this store
-     */
+    
     getRowCount() {
         if (this.parentRowNode.sibling) {
             return this.cache.getRowCount() + 1;
         }
         return this.cache.getRowCount();
     }
-    /**
-     * Sets the current row count of the store, and whether the last row index is known
-     */
+    
     setRowCount(rowCount, isLastRowIndexKnown) {
         this.cache.setRowCount(rowCount, isLastRowIndexKnown);
     }
-    /**
-     * Given a display index, returns whether that row is within this store or a child store of this store
-     *
-     * @param displayIndex the visible index of a row
-     * @returns whether or not the row exists within this store
-     */
+    
     isDisplayIndexInStore(displayIndex) {
         if (this.cache.getRowCount() === 0)
             return false;
         return this.displayIndexStart <= displayIndex && displayIndex < this.getDisplayIndexEnd();
     }
-    /**
-     * Recursively sets up the display indexes and top position of every node belonging to this store.
-     *
-     * Called after a row height changes, or a store updated event.
-     *
-     * @param displayIndexSeq the number sequence for generating the display index of each row
-     * @param nextRowTop an object containing the next row top value intended to be modified by ref per row
-     */
+    
     setDisplayIndexes(displayIndexSeq, nextRowTop) {
         this.displayIndexStart = displayIndexSeq.peek();
         this.topPx = nextRowTop.value;
@@ -193,11 +160,7 @@ export class LazyStore extends BeanStub {
         this.displayIndexEnd = displayIndexSeq.peek();
         this.heightPx = nextRowTop.value - this.topPx;
     }
-    /**
-     * Recursively applies a provided function to every node
-     *
-     * For the purpose of exclusively server side filtered stores, this is the same as getNodes().forEachDeepAfterFilterAndSort
-     */
+    
     forEachStoreDeep(callback, sequence = new NumberSequence()) {
         callback(this, sequence.next());
         this.cache.getNodes().forEach(lazyNode => {
@@ -207,11 +170,7 @@ export class LazyStore extends BeanStub {
             }
         });
     }
-    /**
-     * Recursively applies a provided function to every node
-     *
-     * For the purpose of exclusively server side filtered stores, this is the same as getNodes().forEachDeepAfterFilterAndSort
-     */
+    
     forEachNodeDeep(callback, sequence = new NumberSequence()) {
         this.cache.getNodes().forEach(lazyNode => {
             callback(lazyNode.node, sequence.next());
@@ -221,11 +180,7 @@ export class LazyStore extends BeanStub {
             }
         });
     }
-    /**
-     * Recursively applies a provided function to every node
-     *
-     * For the purpose of exclusively server side filtered stores, this is the same as getNodes().forEachDeep
-     */
+    
     forEachNodeDeepAfterFilterAndSort(callback, sequence = new NumberSequence(), includeFooterNodes = false) {
         const orderedNodes = this.cache.getOrderedNodeMap();
         for (let key in orderedNodes) {
@@ -240,9 +195,7 @@ export class LazyStore extends BeanStub {
             callback(this.parentRowNode.sibling, sequence.next());
         }
     }
-    /**
-     * Removes the failed status from all nodes, and marks them as stub to encourage reloading
-     */
+    
     retryLoads() {
         this.cache.getNodes().forEach(({ node }) => {
             if (node.failedLoad) {
@@ -254,24 +207,14 @@ export class LazyStore extends BeanStub {
         this.forEachChildStoreShallow(store => store.retryLoads());
         this.fireStoreUpdatedEvent();
     }
-    /**
-     * Given a display index, returns the row at that location.
-     *
-     * @param displayRowIndex the displayed index within the grid to search for
-     * @returns the row node if the display index falls within the store, if it didn't exist this will create a new stub to return
-     */
+    
     getRowUsingDisplayIndex(displayRowIndex) {
         if (this.parentRowNode.sibling && displayRowIndex === this.parentRowNode.sibling.rowIndex) {
             return this.parentRowNode.sibling;
         }
         return this.cache.getRowByDisplayIndex(displayRowIndex);
     }
-    /**
-     * Given a display index, returns the row top and height for the row at that index.
-     *
-     * @param displayIndex the display index of the node
-     * @returns an object containing the rowTop and rowHeight of the node at the given displayIndex
-     */
+    
     getRowBounds(displayIndex) {
         var _a;
         if (!this.isDisplayIndexInStore(displayIndex)) {
@@ -309,21 +252,11 @@ export class LazyStore extends BeanStub {
             rowHeight: defaultRowHeight,
         };
     }
-    /**
-     * Given a vertical pixel, determines whether this store contains a row at that pixel
-     *
-     * @param pixel a vertical pixel position from the grid
-     * @returns whether that pixel points to a virtual space belonging to this store
-     */
+    
     isPixelInRange(pixel) {
         return pixel >= this.topPx && pixel < (this.topPx + this.heightPx);
     }
-    /**
-     * Given a vertical pixel, returns the row existing at that pixel location
-     *
-     * @param pixel a vertical pixel position from the grid
-     * @returns the display index at the given pixel location
-     */
+    
     getRowIndexAtPixel(pixel) {
         if (pixel < this.topPx) {
             return this.getDisplayIndexStart();
@@ -373,12 +306,7 @@ export class LazyStore extends BeanStub {
         const numberOfRowDiff = Math.floor((nextTop - pixel) / defaultRowHeight);
         return this.getDisplayIndexEnd() - numberOfRowDiff;
     }
-    /**
-     * Given a path of group keys, returns the child store for that group.
-     *
-     * @param keys the grouping path to the desired store
-     * @returns the child store for the given keys, or null if not found
-     */
+    
     getChildStore(keys) {
         return this.storeUtils.getChildStore(keys, this, (key) => {
             const lazyNode = this.cache.getNodes().find(lazyNode => lazyNode.node.key == key);
@@ -388,11 +316,7 @@ export class LazyStore extends BeanStub {
             return lazyNode.node;
         });
     }
-    /**
-     * Executes a provided callback on each child store belonging to this store
-     *
-     * @param cb the callback to execute
-     */
+    
     forEachChildStoreShallow(cb) {
         this.cache.getNodes().forEach(({ node }) => {
             if (node.childStore) {
@@ -400,13 +324,7 @@ export class LazyStore extends BeanStub {
             }
         });
     }
-    /**
-     * Executes after a change to sorting, determines recursively whether this store or a child requires refreshed.
-     *
-     * If a purge refresh occurs, the row count is preserved.
-     *
-     * @param params a set of properties pertaining to the sort changes
-     */
+    
     refreshAfterSort(params) {
         const serverSortsAllLevels = this.storeUtils.isServerSideSortAllLevels();
         if (serverSortsAllLevels || this.storeUtils.isServerRefreshNeeded(this.parentRowNode, this.ssrmParams.rowGroupCols, params)) {
@@ -420,13 +338,7 @@ export class LazyStore extends BeanStub {
         // if we did purge, no need to do this as all children were destroyed
         this.forEachChildStoreShallow(store => store.refreshAfterSort(params));
     }
-    /**
-     * Executes after a change to filtering, determines recursively whether this store or a child requires refreshed.
-     *
-     * If a refresh occurs, the row count is reset.
-     *
-     * @param params a set of properties pertaining to the filter changes
-     */
+    
     refreshAfterFilter(params) {
         const serverFiltersAllLevels = !this.storeUtils.isServerSideOnlyRefreshFilteredGroups();
         if (serverFiltersAllLevels || this.storeUtils.isServerRefreshNeeded(this.parentRowNode, this.ssrmParams.rowGroupCols, params)) {
@@ -437,11 +349,7 @@ export class LazyStore extends BeanStub {
         // if we did purge, no need to do this as all children were destroyed
         this.forEachChildStoreShallow(store => store.refreshAfterFilter(params));
     }
-    /**
-     * Marks all existing nodes as requiring reloaded, and triggers a load check
-     *
-     * @param purge whether to remove all nodes and data in favour of stub nodes
-     */
+    
     refreshStore(purge) {
         if (purge) {
             this.destroyBean(this.cache);
@@ -451,31 +359,16 @@ export class LazyStore extends BeanStub {
         }
         this.cache.markNodesForRefresh();
     }
-    /**
-     * Used for pagination, given a local/store index, returns the display index of that row
-     *
-     * @param topLevelIndex the store index of a row
-     * @returns the display index for the given store index
-     */
+    
     getTopLevelRowDisplayedIndex(topLevelIndex) {
         const displayIndex = this.cache.getDisplayIndexFromStoreIndex(topLevelIndex);
         return displayIndex !== null && displayIndex !== void 0 ? displayIndex : topLevelIndex;
     }
-    /**
-     * Used for pagination to determine if the last page is known, and for aria to determine if the last grid row is known
-     *
-     * @returns whether the last index of this store is known, or if lazy loading still required
-     */
+    
     isLastRowIndexKnown() {
         return this.cache.isLastRowIndexKnown();
     }
-    /**
-     * Used by the selection service to select a range of nodes
-     *
-     * @param firstInRange the first node in the range to find
-     * @param lastInRange the last node in the range to find
-     * @returns a range of nodes between firstInRange and lastInRange inclusive
-     */
+    
     getRowNodesInRange(firstInRange, lastInRange) {
         const result = [];
         let inActiveRange = false;
@@ -487,11 +380,7 @@ export class LazyStore extends BeanStub {
             return node.rowIndex >= firstInRange.rowIndex && node.rowIndex <= lastInRange.rowIndex;
         }).map(({ node }) => node);
     }
-    /**
-     * Mutates a given array to add this stores state, and recursively add all the children store states.
-     *
-     * @param result a mutable results array
-     */
+    
     addStoreStates(result) {
         result.push({
             suppressInfiniteScroll: false,
@@ -573,4 +462,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], LazyStore.prototype, "destroyRowNodes", null);
-//# sourceMappingURL=lazyStore.js.map

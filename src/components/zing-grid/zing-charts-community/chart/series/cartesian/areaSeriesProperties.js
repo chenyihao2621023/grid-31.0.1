@@ -79,4 +79,3 @@ __decorate([
 __decorate([
     Validate(BOOLEAN)
 ], AreaSeriesProperties.prototype, "connectMissingData", void 0);
-//# sourceMappingURL=areaSeriesProperties.js.map

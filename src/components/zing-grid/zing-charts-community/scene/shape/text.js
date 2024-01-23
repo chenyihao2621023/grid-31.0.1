@@ -559,4 +559,3 @@ function getVerticalOffset(textBaseline) {
 export function splitText(text) {
     return typeof text === 'string' ? text.split(/\r?\n/g) : [];
 }
-//# sourceMappingURL=text.js.map

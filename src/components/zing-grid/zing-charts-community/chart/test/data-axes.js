@@ -62,4 +62,3 @@ export const DATA_YOUTUBE_VIDEOS_STATS_BY_DATE = dateRange(new Date(2022, 0, 1, 
         comments: Math.floor(youtubeRandom3() * 25),
     };
 });
-//# sourceMappingURL=data-axes.js.map

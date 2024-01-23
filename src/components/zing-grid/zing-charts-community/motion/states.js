@@ -35,4 +35,3 @@ export class StateMachine {
         return this.state;
     }
 }
-//# sourceMappingURL=states.js.map

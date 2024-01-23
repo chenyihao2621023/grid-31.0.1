@@ -89,4 +89,3 @@ __decorate([
 __decorate([
     Validate(AND(DATE_OR_DATETIME_MS, GREATER_THAN('min')), { optional: true })
 ], TimeAxis.prototype, "max", void 0);
-//# sourceMappingURL=timeAxis.js.map

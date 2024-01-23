@@ -199,4 +199,3 @@ ProvidedColumnGroup.EVENT_EXPANDABLE_CHANGED = 'expandableChanged';
 __decorate([
     PreDestroy
 ], ProvidedColumnGroup.prototype, "destroy", null);
-//# sourceMappingURL=providedColumnGroup.js.map

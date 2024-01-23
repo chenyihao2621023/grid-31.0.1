@@ -47,9 +47,7 @@ export class BarSeries extends AbstractBarSeries {
             },
         });
         this.properties = new BarSeriesProperties();
-        /**
-         * Used to get the position of bars within each group.
-         */
+        
         this.groupScale = new BandScale();
         this.smallestDataInterval = undefined;
     }
@@ -432,4 +430,3 @@ export class BarSeries extends AbstractBarSeries {
 }
 BarSeries.className = 'BarSeries';
 BarSeries.type = 'bar';
-//# sourceMappingURL=barSeries.js.map

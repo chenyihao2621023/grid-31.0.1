@@ -203,7 +203,7 @@ export class DropZoneColumnComp extends Component {
             getRowCount: function () { return rows.length; }
         });
         this.getContext().createBean(virtualList);
-        const ePopup = _.loadTemplate(/* html*/ `<div class="zing-select-agg-func-popup"></div>`);
+        const ePopup = _.loadTemplate( `<div class="zing-select-agg-func-popup"></div>`);
         ePopup.style.top = '0px';
         ePopup.style.left = '0px';
         ePopup.appendChild(virtualListGui);
@@ -333,10 +333,9 @@ __decorate([
 ], DropZoneColumnComp.prototype, "init", null);
 class AggItemComp extends Component {
     constructor(itemSelected, value) {
-        super(/* html */ `<div class="zing-select-agg-func-item"/>`);
+        super( `<div class="zing-select-agg-func-item"/>`);
         this.selectItem = itemSelected;
         this.getGui().innerText = value;
         this.addGuiEventListener('click', this.selectItem);
     }
 }
-//# sourceMappingURL=dropZoneColumnComp.js.map

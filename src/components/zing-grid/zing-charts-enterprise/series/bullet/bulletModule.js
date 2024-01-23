@@ -44,4 +44,3 @@ export const BulletModule = {
         };
     },
 };
-//# sourceMappingURL=bulletModule.js.map

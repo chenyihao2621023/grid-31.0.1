@@ -10,4 +10,3 @@ export class ChartOverlays {
         this.noVisibleSeries.hide();
     }
 }
-//# sourceMappingURL=chartOverlays.js.map

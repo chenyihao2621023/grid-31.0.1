@@ -10,7 +10,7 @@ import { SetFilterListItem } from './setFilterListItem';
 import { DEFAULT_LOCALE_TEXT } from './localeText';
 import { SetFilterDisplayValue } from './iSetDisplayValueModel';
 import { SetFilterModelFormatter } from './setFilterModelFormatter';
-/** @param V type of value in the Set Filter */
+
 export class SetFilter extends ProvidedFilter {
     constructor() {
         super('setFilter');
@@ -45,7 +45,7 @@ export class SetFilter extends ProvidedFilter {
     // maybe this method belongs in abstractSimpleFilter???
     updateUiVisibility() { }
     createBodyTemplate() {
-        return /* html */ `
+        return  `
             <div class="zing-set-filter">
                 <div ref="eFilterLoading" class="zing-filter-loading zing-hidden">${this.translateForSetFilter('loadingOoo')}</div>
                 <zing-input-text-field class="zing-mini-filter" ref="eMiniFilter"></zing-input-text-field>
@@ -749,11 +749,7 @@ export class SetFilter extends ProvidedFilter {
         return valuesType === SetFilterModelValuesType.TAKEN_FROM_GRID_VALUES;
     }
     //noinspection JSUnusedGlobalSymbols
-    /**
-     * Public method provided so the user can change the value of the filter once
-     * the filter has been already started
-     * @param values The values to use.
-     */
+    
     setFilterValues(values) {
         if (!this.valueModel) {
             throw new Error('Value model has not been created.');
@@ -764,9 +760,7 @@ export class SetFilter extends ProvidedFilter {
         });
     }
     //noinspection JSUnusedGlobalSymbols
-    /**
-     * Public method provided so the user can reset the values of the filter once that it has started.
-     */
+    
     resetFilterValues() {
         if (!this.valueModel) {
             throw new Error('Value model has not been created.');
@@ -1185,4 +1179,3 @@ class TreeModelWrapper {
         return oldRow != null && newRow != null && oldRow.treeKey === newRow.treeKey && oldRow.depth === newRow.depth;
     }
 }
-//# sourceMappingURL=setFilter.js.map

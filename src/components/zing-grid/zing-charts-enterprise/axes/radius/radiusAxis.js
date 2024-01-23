@@ -189,4 +189,3 @@ __decorate([
     Validate(DEGREE),
     Default(0)
 ], RadiusAxis.prototype, "positionAngle", void 0);
-//# sourceMappingURL=radiusAxis.js.map

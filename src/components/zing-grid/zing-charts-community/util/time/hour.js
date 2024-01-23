@@ -9,4 +9,3 @@ function decode(encoded) {
 }
 export const hour = new CountableTimeInterval(encode, decode);
 export default hour;
-//# sourceMappingURL=hour.js.map

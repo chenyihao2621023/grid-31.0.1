@@ -2,8 +2,8 @@ import { includes } from "./utils/array";
 import { ZingPromise } from "./utils";
 const OUTSIDE_ANGULAR_EVENTS = ['mouseover', 'mouseout', 'mouseenter', 'mouseleave', 'mousemove'];
 const PASSIVE_EVENTS = ['touchstart', 'touchend', 'touchmove', 'touchcancel'];
-/** The base frameworks, eg React & Angular, override this bean with implementations specific to their requirement. */
-export var VanillaFrameworkOverrides = /** @class */ (function () {
+
+export var VanillaFrameworkOverrides =  (function () {
     function VanillaFrameworkOverrides(frameworkName) {
         if (frameworkName === void 0) { frameworkName = 'javascript'; }
         this.frameworkName = frameworkName;
@@ -40,4 +40,3 @@ export var VanillaFrameworkOverrides = /** @class */ (function () {
     };
     return VanillaFrameworkOverrides;
 }());
-//# sourceMappingURL=vanillaFrameworkOverrides.js.map

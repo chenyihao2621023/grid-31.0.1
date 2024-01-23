@@ -9,4 +9,3 @@ function decode(encoded) {
 }
 export const month = new CountableTimeInterval(encode, decode);
 export default month;
-//# sourceMappingURL=month.js.map

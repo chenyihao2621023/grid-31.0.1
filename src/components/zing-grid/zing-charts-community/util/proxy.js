@@ -35,14 +35,7 @@ export function ProxyPropertyOnWrite(childName, childProperty) {
         return value;
     });
 }
-/**
- * Allows side-effects to be triggered on property write.
- *
- * @param opts.newValue called when a new value is set - never called for undefined values.
- * @param opts.oldValue called with the old value before a new value is set - never called for
- *                      undefined values.
- * @param opts.changeValue called on any change to the value - always called.
- */
+
 export function ActionOnSet(opts) {
     const { newValue: newValueFn, oldValue: oldValueFn, changeValue: changeValueFn } = opts;
     return addTransformToInstanceProperty((target, _, newValue, oldValue) => {
@@ -58,4 +51,3 @@ export function ActionOnSet(opts) {
         return newValue;
     });
 }
-//# sourceMappingURL=proxy.js.map

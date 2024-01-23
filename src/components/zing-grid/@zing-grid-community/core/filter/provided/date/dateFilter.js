@@ -275,4 +275,3 @@ DateFilter.DEFAULT_FILTER_OPTIONS = [
 __decorate([
     Autowired('userComponentFactory')
 ], DateFilter.prototype, "userComponentFactory", void 0);
-//# sourceMappingURL=dateFilter.js.map

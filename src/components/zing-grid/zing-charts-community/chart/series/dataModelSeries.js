@@ -47,4 +47,3 @@ export class DataModelSeries extends Series {
         }
     }
 }
-//# sourceMappingURL=dataModelSeries.js.map

@@ -11,7 +11,7 @@ import { getSafariVersion, isBrowserChrome, isBrowserFirefox, isBrowserSafari } 
 import { warnOnce } from '../../../utils/function';
 export class DefaultDateComponent extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-filter-filter">
                 <zing-input-text-field class="zing-date-filter" ref="eDateInput"></zing-input-text-field>
             </div>`);
@@ -121,4 +121,3 @@ export class DefaultDateComponent extends Component {
 __decorate([
     RefSelector('eDateInput')
 ], DefaultDateComponent.prototype, "eDateInput", void 0);
-//# sourceMappingURL=defaultDateComponent.js.map

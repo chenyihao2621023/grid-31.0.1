@@ -9,7 +9,7 @@ export class RowComp extends Component {
         this.cellComps = {};
         this.beans = beans;
         this.rowCtrl = ctrl;
-        this.setTemplate(/* html */ `<div comp-id="${this.getCompId()}" style="${this.getInitialStyle(containerType)}"/>`);
+        this.setTemplate( `<div comp-id="${this.getCompId()}" style="${this.getInitialStyle(containerType)}"/>`);
         const eGui = this.getGui();
         const style = eGui.style;
         this.domOrder = this.rowCtrl.getDomOrder();
@@ -132,4 +132,3 @@ export class RowComp extends Component {
         });
     }
 }
-//# sourceMappingURL=rowComp.js.map

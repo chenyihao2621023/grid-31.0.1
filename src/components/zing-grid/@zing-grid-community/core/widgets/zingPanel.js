@@ -18,7 +18,7 @@ export class ZingPanel extends Component {
     }
     static getTemplate(config) {
         const cssIdentifier = (config && config.cssIdentifier) || 'default';
-        return /* html */ `<div class="zing-panel zing-${cssIdentifier}-panel" tabindex="-1">
+        return  `<div class="zing-panel zing-${cssIdentifier}-panel" tabindex="-1">
             <div ref="eTitleBar" class="zing-panel-title-bar zing-${cssIdentifier}-panel-title-bar zing-unselectable">
                 <span ref="eTitle" class="zing-panel-title-bar-title zing-${cssIdentifier}-panel-title-bar-title"></span>
                 <div ref="eTitleBarButtons" class="zing-panel-title-bar-buttons zing-${cssIdentifier}-panel-title-bar-buttons"></div>
@@ -173,4 +173,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingPanel.prototype, "postConstruct", null);
-//# sourceMappingURL=zingPanel.js.map

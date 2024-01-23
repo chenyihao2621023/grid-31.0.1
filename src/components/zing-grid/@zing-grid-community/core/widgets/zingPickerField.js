@@ -12,7 +12,7 @@ import { setElementWidth, getAbsoluteWidth, getInnerHeight, formatSize } from ".
 import { KeyCode } from '../constants/keyCode';
 import { Autowired } from "../context/context";
 import { Events } from "../eventKeys";
-const TEMPLATE = /* html */ `
+const TEMPLATE =  `
     <div class="zing-picker-field" role="presentation">
         <div ref="eLabel"></div>
             <div ref="eWrapper" class="zing-wrapper zing-picker-field-wrapper zing-picker-collapsed">
@@ -286,4 +286,3 @@ __decorate([
 __decorate([
     RefSelector('eIcon')
 ], ZingPickerField.prototype, "eIcon", void 0);
-//# sourceMappingURL=zingPickerField.js.map

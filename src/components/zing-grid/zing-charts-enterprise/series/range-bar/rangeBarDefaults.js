@@ -16,4 +16,3 @@ export const RANGE_BAR_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=rangeBarDefaults.js.map

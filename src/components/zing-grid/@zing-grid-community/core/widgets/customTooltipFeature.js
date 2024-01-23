@@ -401,4 +401,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], CustomTooltipFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=customTooltipFeature.js.map

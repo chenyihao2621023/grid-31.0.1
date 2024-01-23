@@ -59,4 +59,3 @@ export class TabGuardComp extends Component {
         }
     }
 }
-//# sourceMappingURL=tabGuardComp.js.map

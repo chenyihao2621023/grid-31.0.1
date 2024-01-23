@@ -41,4 +41,3 @@ export const WaterfallModule = {
             };
     },
 };
-//# sourceMappingURL=waterfallModule.js.map

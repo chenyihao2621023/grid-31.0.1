@@ -36,4 +36,3 @@ export const NavigatorModule = {
         },
     },
 };
-//# sourceMappingURL=navigatorModule.js.map

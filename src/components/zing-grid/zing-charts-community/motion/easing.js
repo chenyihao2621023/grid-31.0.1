@@ -6,4 +6,3 @@ export const easeInQuad = (n) => n * n;
 export const easeOutQuad = (n) => 1 - Math.pow((1 - n), 2);
 export const easeInOutQuad = (n) => (n < 0.5 ? 2 * n * n : 1 - Math.pow((-2 * n + 2), 2) / 2);
 export const inverseEaseOut = (x) => (2 * Math.asin(x)) / Math.PI;
-//# sourceMappingURL=easing.js.map

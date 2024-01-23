@@ -13,7 +13,7 @@ class DateStringCellEditorInput {
         this.getDataTypeService = getDataTypeService;
     }
     getTemplate() {
-        return /* html */ `<zing-input-date-field class="zing-cell-editor" ref="eInput"></zing-input-date-field>`;
+        return  `<zing-input-date-field class="zing-cell-editor" ref="eInput"></zing-input-date-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;
@@ -54,4 +54,3 @@ export class DateStringCellEditor extends SimpleCellEditor {
 __decorate([
     Autowired('dataTypeService')
 ], DateStringCellEditor.prototype, "dataTypeService", void 0);
-//# sourceMappingURL=dateStringCellEditor.js.map

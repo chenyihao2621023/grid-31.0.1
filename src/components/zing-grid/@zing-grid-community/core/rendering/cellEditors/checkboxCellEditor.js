@@ -10,7 +10,7 @@ import { getAriaCheckboxStateName } from "../../utils/aria";
 import { Events } from "../../eventKeys";
 export class CheckboxCellEditor extends PopupComponent {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-cell-wrapper zing-cell-edit-wrapper zing-checkbox-edit">
                 <zing-checkbox role="presentation" ref="eCheckbox"></zing-checkbox>
             </div>`);
@@ -49,4 +49,3 @@ export class CheckboxCellEditor extends PopupComponent {
 __decorate([
     RefSelector('eCheckbox')
 ], CheckboxCellEditor.prototype, "eCheckbox", void 0);
-//# sourceMappingURL=checkboxCellEditor.js.map

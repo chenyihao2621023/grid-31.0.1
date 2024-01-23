@@ -49,4 +49,3 @@ export class RadialColumnSeries extends RadialColumnSeriesBase {
 }
 RadialColumnSeries.className = 'RadialColumnSeries';
 RadialColumnSeries.type = 'radial-column';
-//# sourceMappingURL=radialColumnSeries.js.map

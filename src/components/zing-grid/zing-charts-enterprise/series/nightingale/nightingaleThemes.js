@@ -10,4 +10,3 @@ export const NIGHTINGALE_SERIES_THEME = {
         __overrides__: _Theme.OVERRIDE_SERIES_LABEL_DEFAULTS,
     },
 };
-//# sourceMappingURL=nightingaleThemes.js.map

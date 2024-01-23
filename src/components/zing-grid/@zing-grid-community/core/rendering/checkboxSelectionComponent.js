@@ -13,7 +13,7 @@ import { stopPropagationForZingGrid } from '../utils/event';
 import { getAriaCheckboxStateName, setAriaLive } from '../utils/aria';
 export class CheckboxSelectionComponent extends Component {
     constructor() {
-        super(/* html*/ `
+        super( `
             <div class="zing-selection-checkbox" role="presentation">
                 <zing-checkbox role="presentation" ref="eCheckbox"></zing-checkbox>
             </div>`);
@@ -140,4 +140,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], CheckboxSelectionComponent.prototype, "postConstruct", null);
-//# sourceMappingURL=checkboxSelectionComponent.js.map

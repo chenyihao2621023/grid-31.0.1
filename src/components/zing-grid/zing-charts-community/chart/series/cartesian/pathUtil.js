@@ -141,4 +141,3 @@ export function updateClipPath({ nodeDataDependencies }, path) {
     (_a = path.clipPath) === null || _a === void 0 ? void 0 : _a.clear({ trackChanges: true });
     (_b = path.clipPath) === null || _b === void 0 ? void 0 : _b.rect(-25, -25, toReal(width) + 50, toReal(height) + 50);
 }
-//# sourceMappingURL=pathUtil.js.map

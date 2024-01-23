@@ -13,4 +13,3 @@ Diamond.moves = [
     { x: -1, y: -1 },
     { x: +1, y: -1 },
 ];
-//# sourceMappingURL=diamond.js.map

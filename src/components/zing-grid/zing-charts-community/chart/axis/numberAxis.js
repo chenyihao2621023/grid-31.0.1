@@ -68,4 +68,3 @@ __decorate([
     Validate(AND(NUMBER_OR_NAN, GREATER_THAN('min'))),
     Default(NaN)
 ], NumberAxis.prototype, "max", void 0);
-//# sourceMappingURL=numberAxis.js.map

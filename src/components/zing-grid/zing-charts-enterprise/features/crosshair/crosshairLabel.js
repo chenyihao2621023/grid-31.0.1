@@ -135,4 +135,3 @@ __decorate([
 __decorate([
     Validate(FUNCTION, { optional: true })
 ], CrosshairLabel.prototype, "renderer", void 0);
-//# sourceMappingURL=crosshairLabel.js.map

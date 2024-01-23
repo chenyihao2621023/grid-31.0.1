@@ -237,7 +237,7 @@ export class RowDragFeature extends BeanStub {
         const onDragging = this.onDragging.bind(this);
         const onDragStop = this.onDragStop.bind(this);
         if (!events) {
-            return { getContainer, onDragEnter, onDragLeave, onDragging, onDragStop, /* @private */ fromGrid: true };
+            return { getContainer, onDragEnter, onDragLeave, onDragging, onDragStop,  fromGrid: true };
         }
         return {
             getContainer,
@@ -265,7 +265,7 @@ export class RowDragFeature extends BeanStub {
                     events.onDragStop(this.draggingToRowDragEvent(Events.EVENT_ROW_DRAG_END, e));
                 })
                 : onDragStop,
-            fromGrid: true /* @private */
+            fromGrid: true 
         };
     }
     draggingToRowDragEvent(type, draggingEvent) {
@@ -370,4 +370,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], RowDragFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=rowDragFeature.js.map

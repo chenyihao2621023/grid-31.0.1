@@ -62,4 +62,3 @@ export function partialAssign(keysToCopy, target, source) {
     }
     return target;
 }
-//# sourceMappingURL=object.js.map

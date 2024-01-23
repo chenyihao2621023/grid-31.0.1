@@ -11,4 +11,3 @@ Triangle.moves = [
     { x: 0.5, y: 0.87 },
     { x: -1, y: 0 },
 ];
-//# sourceMappingURL=triangle.js.map

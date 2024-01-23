@@ -1,9 +1,5 @@
 const doOnceFlags = {};
-/**
- * If the key was passed before, then doesn't execute the func
- * @param {Function} func
- * @param {string} key
- */
+
 export function doOnce(func, key) {
     if (doOnceFlags[key]) {
         return;
@@ -52,11 +48,7 @@ export function executeAfter(funcs, milliseconds = 0) {
         window.setTimeout(() => funcs.forEach(func => func()), milliseconds);
     }
 }
-/**
- * @param {Function} func The function to be debounced
- * @param {number} delay The time in ms to debounce
- * @return {Function} The debounced function
- */
+
 export function debounce(func, delay) {
     let timeout;
     // Calling debounce returns a new anonymous function
@@ -69,11 +61,7 @@ export function debounce(func, delay) {
         }, delay);
     };
 }
-/**
- * @param {Function} func The function to be throttled
- * @param {number} wait The time in ms to throttle
- * @return {Function} The throttled function
- */
+
 export function throttle(func, wait) {
     let previousCall = 0;
     return function (...args) {
@@ -118,4 +106,3 @@ export function callIfPresent(func) {
     }
 }
 export const noop = () => { return; };
-//# sourceMappingURL=function.js.map

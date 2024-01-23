@@ -21,7 +21,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { BaseComponentWrapper, Bean } from '@/components/zing-grid/zing-grid-community/main.js';
 import { VueComponentFactory } from './VueComponentFactory';
-var VueFrameworkComponentWrapper = /** @class */ (function (_super) {
+var VueFrameworkComponentWrapper =  (function (_super) {
     __extends(VueFrameworkComponentWrapper, _super);
     function VueFrameworkComponentWrapper(parent) {
         var _this = _super.call(this) || this;
@@ -30,7 +30,7 @@ var VueFrameworkComponentWrapper = /** @class */ (function (_super) {
     }
     VueFrameworkComponentWrapper.prototype.createWrapper = function (component) {
         var that = this;
-        var DynamicComponent = /** @class */ (function (_super) {
+        var DynamicComponent =  (function (_super) {
             __extends(DynamicComponent, _super);
             function DynamicComponent() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -99,7 +99,7 @@ var VueFrameworkComponentWrapper = /** @class */ (function (_super) {
     return VueFrameworkComponentWrapper;
 }(BaseComponentWrapper));
 export { VueFrameworkComponentWrapper };
-var VueComponent = /** @class */ (function () {
+var VueComponent =  (function () {
     function VueComponent() {
     }
     VueComponent.prototype.getGui = function () {

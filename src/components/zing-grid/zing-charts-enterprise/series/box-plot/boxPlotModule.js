@@ -26,4 +26,3 @@ export const BoxPlotModule = {
         return direction === 'horizontal';
     },
 };
-//# sourceMappingURL=boxPlotModule.js.map

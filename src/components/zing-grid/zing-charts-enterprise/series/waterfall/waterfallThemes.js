@@ -29,4 +29,3 @@ export const WATERFALL_SERIES_THEME = {
         strokeWidth: 2,
     },
 };
-//# sourceMappingURL=waterfallThemes.js.map

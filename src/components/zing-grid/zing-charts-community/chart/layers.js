@@ -1,6 +1,4 @@
-/**
- * Constants to declare the expected nominal zIndex for all types of layer in chart rendering.
- */
+
 export var Layers;
 (function (Layers) {
     Layers[Layers["SERIES_BACKGROUND_ZINDEX"] = 0] = "SERIES_BACKGROUND_ZINDEX";
@@ -14,4 +12,3 @@ export var Layers;
     Layers[Layers["SERIES_CROSSLINE_LINE_ZINDEX"] = 8] = "SERIES_CROSSLINE_LINE_ZINDEX";
     Layers[Layers["LEGEND_ZINDEX"] = 9] = "LEGEND_ZINDEX";
 })(Layers || (Layers = {}));
-//# sourceMappingURL=layers.js.map

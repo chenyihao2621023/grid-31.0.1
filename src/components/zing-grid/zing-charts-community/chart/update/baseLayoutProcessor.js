@@ -100,4 +100,3 @@ export class BaseLayoutProcessor {
         return { shrinkRect: newShrinkRect };
     }
 }
-//# sourceMappingURL=baseLayoutProcessor.js.map

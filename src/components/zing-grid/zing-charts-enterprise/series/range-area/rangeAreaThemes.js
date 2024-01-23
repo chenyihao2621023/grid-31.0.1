@@ -23,4 +23,3 @@ export const RANGE_AREA_SERIES_THEME = {
         __overrides__: _Theme.OVERRIDE_SERIES_LABEL_DEFAULTS,
     },
 };
-//# sourceMappingURL=rangeAreaThemes.js.map

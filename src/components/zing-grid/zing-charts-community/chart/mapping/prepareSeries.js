@@ -1,10 +1,7 @@
 import { Debug } from '../../util/debug';
 import { Logger } from '../../util/logger';
 import { isGroupableSeries, isSeriesStackedByDefault, isStackableSeries } from '../factory/seriesTypes';
-/**
- * Groups the series options objects if they are of type `column` or `bar` and places them in an array at the index where the first instance of this series type was found.
- * Returns an array of arrays containing the ordered and grouped series options objects.
- */
+
 export function groupSeriesByType(seriesOptions) {
     var _a, _b, _c;
     const groupMap = {};
@@ -48,9 +45,7 @@ export function groupSeriesByType(seriesOptions) {
     }
     return result;
 }
-/**
- * Transforms provided series options array into an array containing series options which are compatible with standalone charts series options.
- */
+
 export function processSeriesOptions(_opts, seriesOptions) {
     var _a;
     const result = [];
@@ -147,4 +142,3 @@ export function processSeriesOptions(_opts, seriesOptions) {
     }
     return result;
 }
-//# sourceMappingURL=prepareSeries.js.map

@@ -191,4 +191,3 @@ __decorate([
 __decorate([
     Autowired('dragAndDropService')
 ], AbstractHeaderCellCtrl.prototype, "dragAndDropService", void 0);
-//# sourceMappingURL=abstractHeaderCellCtrl.js.map

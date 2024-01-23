@@ -12,7 +12,7 @@ import { Autowired } from '../../../context/context';
 // the string returned from getModelAsString()
 export class ReadOnlyFloatingFilter extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-floating-filter-input" role="presentation">
                 <zing-input-text-field ref="eFloatingFilterText"></zing-input-text-field>
             </div>`);
@@ -56,4 +56,3 @@ __decorate([
 __decorate([
     Autowired('columnModel')
 ], ReadOnlyFloatingFilter.prototype, "columnModel", void 0);
-//# sourceMappingURL=readOnlyFloatingFilter.js.map

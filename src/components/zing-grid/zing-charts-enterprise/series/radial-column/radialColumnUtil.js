@@ -108,4 +108,3 @@ export function prepareRadialColumnAnimationFunctions(axisZeroRadius) {
 export function resetRadialColumnSelectionFn(_node, { innerRadius, outerRadius, columnWidth, axisInnerRadius, axisOuterRadius, startAngle, endAngle, }) {
     return { innerRadius, outerRadius, columnWidth, axisInnerRadius, axisOuterRadius, startAngle, endAngle };
 }
-//# sourceMappingURL=radialColumnUtil.js.map

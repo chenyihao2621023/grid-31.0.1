@@ -567,4 +567,3 @@ __decorate([
 __decorate([
     Autowired("ctrlsService")
 ], GroupCellRendererCtrl.prototype, "ctrlsService", void 0);
-//# sourceMappingURL=groupCellRendererCtrl.js.map

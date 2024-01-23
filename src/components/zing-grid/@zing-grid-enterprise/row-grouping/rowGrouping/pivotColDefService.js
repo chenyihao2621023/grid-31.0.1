@@ -327,10 +327,7 @@ let PivotColDefService = PivotColDefService_1 = class PivotColDefService extends
         const pivotCols = this.columnModel.getPivotColumns().map((col) => col.getColId());
         return `pivot_${pivotCols.join('-')}_${pivotKeys.join('-')}_${measureColumnId}`;
     }
-    /**
-     * Used by the SSRM to create secondary columns from provided fields
-     * @param fields
-     */
+    
     createColDefsFromFields(fields) {
         ;
         // tear the ids down into groups, while this could be done in-step with the next stage, the lookup is faster 
@@ -410,4 +407,3 @@ PivotColDefService = PivotColDefService_1 = __decorate([
     Bean('pivotColDefService')
 ], PivotColDefService);
 export { PivotColDefService };
-//# sourceMappingURL=pivotColDefService.js.map

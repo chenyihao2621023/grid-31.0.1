@@ -70,4 +70,3 @@ export class ZingColorPicker extends ZingPickerField {
         return this.value;
     }
 }
-//# sourceMappingURL=zingColorPicker.js.map

@@ -17,4 +17,3 @@ export class LoadingOverlayComponent extends Component {
     }
 }
 LoadingOverlayComponent.DEFAULT_LOADING_OVERLAY_TEMPLATE = '<span class="zing-overlay-loading-center">[LOADING...]</span>';
-//# sourceMappingURL=loadingOverlayComponent.js.map

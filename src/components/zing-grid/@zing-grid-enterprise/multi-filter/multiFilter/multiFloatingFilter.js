@@ -8,7 +8,7 @@ import { Component, _, Autowired, ZingPromise, } from '@/components/zing-grid/@z
 import { MultiFilter } from './multiFilter';
 export class MultiFloatingFilterComp extends Component {
     constructor() {
-        super(/* html */ `<div class="zing-multi-floating-filter zing-floating-filter-input"></div>`);
+        super( `<div class="zing-multi-floating-filter zing-floating-filter-input"></div>`);
         this.floatingFilters = [];
         this.compDetailsList = [];
     }
@@ -132,4 +132,3 @@ __decorate([
 __decorate([
     Autowired('filterManager')
 ], MultiFloatingFilterComp.prototype, "filterManager", void 0);
-//# sourceMappingURL=multiFloatingFilter.js.map

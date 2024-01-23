@@ -2,11 +2,7 @@ import { ModuleNames } from '../../modules/moduleNames';
 import { COL_DEF_VALIDATORS } from "./colDefValidations";
 import { PropertyKeys } from "../../propertyKeys";
 import { ComponentUtil } from "../../components/componentUtil";
-/**
- * Deprecations have been kept separately for ease of removing them in the future.
- *
- * If the property was simply renamed, use the `renamed` property. The value will be implicitly copied to the new property.
- */
+
 const GRID_OPTION_DEPRECATIONS = {
     enableChartToolPanelsButton: { version: '29', message: 'The Chart Tool Panels button is now enabled by default. To hide the Chart Tool Panels button and display the hamburger button instead, set suppressChartToolPanelsButton=true.' },
     functionsPassive: { version: '29.2' },
@@ -194,14 +190,9 @@ export const GRID_OPTION_DEFAULTS = {
     functionsPassive: false,
     groupLockGroupColumns: 0,
 };
-/**
- * Used simply to type check the default grid options.
- * Done here to allow inference of the above type, for gridOptionsService.get to infer where defaults exist.
- */
+
 const GRID_OPTIONS_DEFAULT_ASSERTION = GRID_OPTION_DEFAULTS;
-/**
- * Validation rules for gridOptions
- */
+
 const GRID_OPTION_VALIDATIONS = {
     sideBar: { module: ModuleNames.SideBarModule },
     statusBar: { module: ModuleNames.StatusBarModule },
@@ -317,4 +308,3 @@ export const GRID_OPTIONS_VALIDATORS = {
     deprecations: GRID_OPTION_DEPRECATIONS,
     validations: GRID_OPTION_VALIDATIONS,
 };
-//# sourceMappingURL=gridOptionsValidations.js.map

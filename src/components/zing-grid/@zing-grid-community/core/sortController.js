@@ -110,9 +110,7 @@ let SortController = SortController_1 = class SortController extends BeanStub {
         }
         return result;
     }
-    /**
-     * @returns a map of sort indexes for every sorted column, if groups sort primaries then they will have equivalent indices
-     */
+    
     getIndexedSortMap() {
         // pull out all the columns that have sorting set
         let allSortedCols = this.columnModel.getPrimaryAndSecondaryAndAutoColumns()
@@ -228,4 +226,3 @@ SortController = SortController_1 = __decorate([
     Bean('sortController')
 ], SortController);
 export { SortController };
-//# sourceMappingURL=sortController.js.map

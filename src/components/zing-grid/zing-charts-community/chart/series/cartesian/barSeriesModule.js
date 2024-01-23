@@ -57,4 +57,3 @@ export const BarSeriesModule = {
     },
     paletteFactory: singleSeriesPaletteFactory,
 };
-//# sourceMappingURL=barSeriesModule.js.map

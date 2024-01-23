@@ -41,4 +41,3 @@ export class AbstractBarSeries extends CartesianSeries {
         return this.axes[direction];
     }
 }
-//# sourceMappingURL=abstractBarSeries.js.map

@@ -20,4 +20,3 @@ export const RangeBarModule = {
     groupable: true,
     swapDefaultAxesCondition: ({ direction }) => direction === 'horizontal',
 };
-//# sourceMappingURL=rangeBarModule.js.map

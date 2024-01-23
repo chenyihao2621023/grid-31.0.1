@@ -8,4 +8,3 @@ function decode(encoded) {
     return new Date(Date.UTC(year, month, 1));
 }
 export const utcMonth = new CountableTimeInterval(encode, decode);
-//# sourceMappingURL=utcMonth.js.map

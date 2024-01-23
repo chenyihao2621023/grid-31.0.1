@@ -70,9 +70,7 @@ class PaginationMarker {
         this.parent = parent;
         this.shape = Triangle;
         this.size = 15;
-        /**
-         * Inner padding between a pagination button and the label.
-         */
+        
         this.padding = 8;
     }
 }
@@ -306,4 +304,3 @@ export class Pagination {
     }
 }
 Pagination.className = 'Pagination';
-//# sourceMappingURL=pagination.js.map

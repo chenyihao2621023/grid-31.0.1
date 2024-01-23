@@ -13,14 +13,7 @@ import { convertToSet } from '../../utils/set';
 import { Component } from '../../widgets/component';
 import { RefSelector } from '../../widgets/componentAnnotations';
 import { PositionableFeature } from '../../rendering/features/positionableFeature';
-/**
- * Contains common logic to all provided filters (apply button, clear button, etc).
- * All the filters that come with ZING Grid extend this class. User filters do not
- * extend this class.
- *
- * @param M type of filter-model managed by the concrete sub-class that extends this type
- * @param V type of value managed by the concrete sub-class that extends this type
- */
+
 export class ProvidedFilter extends Component {
     constructor(filterNameKey) {
         super();
@@ -61,7 +54,7 @@ export class ProvidedFilter extends Component {
         if (eGui) {
             eGui.removeEventListener('submit', this.onFormSubmit);
         }
-        const templateString = /* html */ `
+        const templateString =  `
             <form class="zing-filter-wrapper">
                 <div class="zing-filter-body-wrapper zing-${this.getCssIdentifier()}-body-wrapper" ref="eFilterBody">
                     ${this.createBodyTemplate()}
@@ -149,7 +142,7 @@ export class ProvidedFilter extends Component {
             }
             const buttonType = type === 'apply' ? 'submit' : 'button';
             const button = loadTemplate(
-            /* html */
+            
             `<button
                     type="${buttonType}"
                     ref="${type}FilterButton"
@@ -224,9 +217,7 @@ export class ProvidedFilter extends Component {
         this.onBtClear();
         this.onBtApply();
     }
-    /**
-     * Applies changes made in the UI to the filter, and returns true if the model has changed.
-     */
+    
     applyModel(source = 'api') {
         const newModel = this.getModelFromUi();
         if (!this.isModelValid(newModel)) {
@@ -276,11 +267,7 @@ export class ProvidedFilter extends Component {
         this.hidePopup(params);
         this.hidePopup = null;
     }
-    /**
-     * By default, if the change came from a floating filter it will be applied immediately, otherwise if there is no
-     * apply button it will be applied after a debounce, otherwise it will not be applied at all. This behaviour can
-     * be adjusted by using the apply parameter.
-     */
+    
     onUiChanged(fromFloatingFilter = false, apply) {
         this.updateUiVisibility();
         this.providedFilterParams.filterModifiedCallback();
@@ -379,4 +366,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ProvidedFilter.prototype, "postConstruct", null);
-//# sourceMappingURL=providedFilter.js.map

@@ -78,4 +78,3 @@ SyncService = __decorate([
     Bean('syncService')
 ], SyncService);
 export { SyncService };
-//# sourceMappingURL=syncService.js.map

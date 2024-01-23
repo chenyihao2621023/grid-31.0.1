@@ -36,4 +36,3 @@ __decorate([
     }),
     Validate(POSITIVE_NUMBER)
 ], Animation.prototype, "duration", void 0);
-//# sourceMappingURL=animation.js.map

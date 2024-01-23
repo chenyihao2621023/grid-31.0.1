@@ -274,4 +274,3 @@ export function formatLabels(baseLabelValue, labelProps, baseSecondaryLabelValue
     }
     return value;
 }
-//# sourceMappingURL=labelFormatter.js.map

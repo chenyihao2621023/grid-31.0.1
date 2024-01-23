@@ -117,4 +117,3 @@ __decorate([
     Validate(AND(NUMBER_OR_NAN, GREATER_THAN('min'))),
     Default(NaN)
 ], AngleNumberAxis.prototype, "max", void 0);
-//# sourceMappingURL=angleNumberAxis.js.map

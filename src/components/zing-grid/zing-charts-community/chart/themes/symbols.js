@@ -28,4 +28,3 @@ export const DEFAULT_POLAR_SERIES_STROKE = Symbol('default-polar-series-stroke')
 export const DEFAULT_DIVERGING_SERIES_COLOUR_RANGE = Symbol('default-diverging-series-colour-range');
 export const DEFAULT_HIERARCHY_FILLS = Symbol('default-hierarchy-fills');
 export const DEFAULT_HIERARCHY_STROKES = Symbol('default-hierarchy-strokes');
-//# sourceMappingURL=symbols.js.map

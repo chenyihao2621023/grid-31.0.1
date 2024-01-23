@@ -1,7 +1,5 @@
 const reUnescapedHtml = /[&<>"']/g;
-/**
- * HTML Escapes.
- */
+
 const HTML_ESCAPES = {
     '&': '&amp;',
     '<': '&lt;',
@@ -9,12 +7,7 @@ const HTML_ESCAPES = {
     '"': '&quot;',
     "'": '&#39;'
 };
-/**
- * It encodes any string in UTF-8 format
- * taken from https://github.com/mathiasbynens/utf8.js
- * @param {string} s
- * @returns {string}
- */
+
 export function utf8_encode(s) {
     const stringFromCharCode = String.fromCharCode;
     function ucs2decode(string) {
@@ -110,11 +103,7 @@ export function escapeString(toEscape, skipEscapingHtmlChars) {
     // in react we don't need to escape html characters, as it's done by the framework
     return stringResult.replace(reUnescapedHtml, chr => HTML_ESCAPES[chr]);
 }
-/**
- * Converts a camelCase string into startCase
- * @param {string} camelCase
- * @return {string}
- */
+
 export function camelCaseToHumanText(camelCase) {
     if (!camelCase || camelCase == null) {
         return null;
@@ -130,12 +119,7 @@ export function camelCaseToHumanText(camelCase) {
         .split(' ');
     return words.map(word => word.substring(0, 1).toUpperCase() + ((word.length > 1) ? word.substring(1, word.length) : '')).join(' ');
 }
-/**
- * Converts a camelCase string into hyphenated string
- * @param {string} camelCase
- * @return {string}
- */
+
 export function camelCaseToHyphenated(camelCase) {
     return camelCase.replace(/[A-Z]/g, s => `-${s.toLocaleLowerCase()}`);
 }
-//# sourceMappingURL=string.js.map

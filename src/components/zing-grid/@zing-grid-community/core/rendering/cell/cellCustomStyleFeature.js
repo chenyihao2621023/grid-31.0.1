@@ -87,4 +87,3 @@ export class CellCustomStyleFeature extends BeanStub {
         super.destroy();
     }
 }
-//# sourceMappingURL=cellCustomStyleFeature.js.map

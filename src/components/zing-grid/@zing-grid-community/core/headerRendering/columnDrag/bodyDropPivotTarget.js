@@ -13,7 +13,7 @@ export class BodyDropPivotTarget {
         this.columnsToPivot = [];
         this.pinned = pinned;
     }
-    /** Callback for when drag enters */
+    
     onDragEnter(draggingEvent) {
         this.clearColumnsList();
         // in pivot mode, we don't accept any drops if functions are read only
@@ -50,7 +50,7 @@ export class BodyDropPivotTarget {
         }
         return null;
     }
-    /** Callback for when drag leaves */
+    
     onDragLeave(draggingEvent) {
         // if we are taking columns out of the center, then we remove them from the report
         this.clearColumnsList();
@@ -60,10 +60,10 @@ export class BodyDropPivotTarget {
         this.columnsToGroup.length = 0;
         this.columnsToPivot.length = 0;
     }
-    /** Callback for when dragging */
+    
     onDragging(draggingEvent) {
     }
-    /** Callback for when drag stops */
+    
     onDragStop(draggingEvent) {
         if (this.columnsToAggregate.length > 0) {
             this.columnModel.addValueColumns(this.columnsToAggregate, "toolPanelDragAndDrop");
@@ -82,4 +82,3 @@ __decorate([
 __decorate([
     Autowired('gridOptionsService')
 ], BodyDropPivotTarget.prototype, "gridOptionsService", void 0);
-//# sourceMappingURL=bodyDropPivotTarget.js.map

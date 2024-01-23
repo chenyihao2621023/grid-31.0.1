@@ -141,4 +141,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], TabGuardCtrl.prototype, "postConstruct", null);
-//# sourceMappingURL=tabGuardCtrl.js.map

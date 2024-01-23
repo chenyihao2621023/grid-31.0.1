@@ -172,4 +172,3 @@ export class AngleCrossLine extends PolarCrossLine {
     }
 }
 AngleCrossLine.className = 'AngleCrossLine';
-//# sourceMappingURL=angleCrossLine.js.map

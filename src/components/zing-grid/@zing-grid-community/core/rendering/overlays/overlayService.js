@@ -87,4 +87,3 @@ OverlayService = __decorate([
     Bean('overlayService')
 ], OverlayService);
 export { OverlayService };
-//# sourceMappingURL=overlayService.js.map

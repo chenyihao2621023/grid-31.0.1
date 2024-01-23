@@ -74,4 +74,3 @@ export class TooltipFeature extends BeanStub {
         super.destroy();
     }
 }
-//# sourceMappingURL=tooltipFeature.js.map

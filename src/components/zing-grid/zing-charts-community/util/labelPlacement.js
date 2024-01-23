@@ -31,11 +31,7 @@ function rectContainsRect(r1, r2x, r2y, r2w, r2h) {
 export function isPointLabelDatum(x) {
     return x != null && typeof x.point === 'object' && typeof x.label === 'object';
 }
-/**
- * @param data Points and labels for one or more series. The order of series determines label placement precedence.
- * @param bounds Bounds to fit the labels into. If a label can't be fully contained, it doesn't fit.
- * @returns Placed labels for the given series (in the given order).
- */
+
 export function placeLabels(data, bounds, padding = 5) {
     const result = [];
     data = data.map((d) => d.slice().sort((a, b) => b.point.size - a.point.size));
@@ -103,4 +99,3 @@ export function axisLabelsOverlap(data, padding) {
     }
     return false;
 }
-//# sourceMappingURL=labelPlacement.js.map

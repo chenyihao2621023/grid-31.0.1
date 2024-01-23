@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Autowired, Component, PostConstruct, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class WatermarkComp extends Component {
     constructor() {
-        super(/* html*/ `<div class="zing-watermark">
+        super( `<div class="zing-watermark">
                 <div ref="eLicenseTextRef" class="zing-watermark-text"></div>
             </div>`);
     }
@@ -33,4 +33,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], WatermarkComp.prototype, "postConstruct", null);
-//# sourceMappingURL=watermark.js.map

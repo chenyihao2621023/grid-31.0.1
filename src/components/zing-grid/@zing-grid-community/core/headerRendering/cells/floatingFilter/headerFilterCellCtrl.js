@@ -310,4 +310,3 @@ __decorate([
 __decorate([
     Autowired('menuFactory')
 ], HeaderFilterCellCtrl.prototype, "menuFactory", void 0);
-//# sourceMappingURL=headerFilterCellCtrl.js.map

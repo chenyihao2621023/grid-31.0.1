@@ -1,7 +1,4 @@
-/**
- * Manages the tooltip HTML an element. Tracks the requested HTML from distinct dependents and
- * handles conflicting tooltip requests.
- */
+
 export class TooltipManager {
     constructor(tooltip, interactionManager) {
         this.states = {};
@@ -114,4 +111,3 @@ export class TooltipManager {
         return meta;
     }
 }
-//# sourceMappingURL=tooltipManager.js.map

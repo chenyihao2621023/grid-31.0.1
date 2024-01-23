@@ -231,13 +231,9 @@ export class ChartMenu extends Component {
         this.menuVisible ? this.hideMenu() : this.showMenu();
     }
     showMenu(
-    /**
-     * Menu panel to show. If empty, shows the existing menu, or creates the default menu if menu panel has not been created
-     */
+    
     panel, 
-    /**
-     * Whether to animate the menu opening
-     */
+    
     animate = true) {
         if (!animate) {
             this.eMenuPanelContainer.classList.add('zing-no-transition');
@@ -323,4 +319,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ChartMenu.prototype, "postConstruct", null);
-//# sourceMappingURL=chartMenu.js.map

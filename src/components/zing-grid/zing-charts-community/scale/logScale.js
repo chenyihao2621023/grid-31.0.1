@@ -176,4 +176,3 @@ export class LogScale extends ContinuousScale {
 __decorate([
     Invalidating
 ], LogScale.prototype, "base", void 0);
-//# sourceMappingURL=logScale.js.map

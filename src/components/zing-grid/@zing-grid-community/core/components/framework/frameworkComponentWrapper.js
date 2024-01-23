@@ -1,4 +1,4 @@
-export var BaseComponentWrapper = /** @class */ (function () {
+export var BaseComponentWrapper =  (function () {
     function BaseComponentWrapper() {
     }
     BaseComponentWrapper.prototype.wrap = function (OriginalConstructor, mandatoryMethodList, optionalMethodList, componentType) {
@@ -32,4 +32,3 @@ export var BaseComponentWrapper = /** @class */ (function () {
     };
     return BaseComponentWrapper;
 }());
-//# sourceMappingURL=frameworkComponentWrapper.js.map

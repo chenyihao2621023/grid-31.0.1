@@ -28,16 +28,16 @@ import { ChartAxisDirection } from '../chartAxisDirection';
 import { accumulatedValue, range, trailingAccumulatedValue } from '../data/aggregateFunctions';
 import { accumulateGroup } from '../data/processors';
 import { Layers } from '../layers';
-/** Modes of matching user interactions to rendered nodes (e.g. hover or click) */
+
 export var SeriesNodePickMode;
 (function (SeriesNodePickMode) {
-    /** Pick matches based upon pick coordinates being inside a matching shape/marker. */
+    
     SeriesNodePickMode[SeriesNodePickMode["EXACT_SHAPE_MATCH"] = 0] = "EXACT_SHAPE_MATCH";
-    /** Pick matches by nearest category/X-axis value, then distance within that category/X-value. */
+    
     SeriesNodePickMode[SeriesNodePickMode["NEAREST_BY_MAIN_AXIS_FIRST"] = 1] = "NEAREST_BY_MAIN_AXIS_FIRST";
-    /** Pick matches by nearest category value, then distance within that category. */
+    
     SeriesNodePickMode[SeriesNodePickMode["NEAREST_BY_MAIN_CATEGORY_AXIS_FIRST"] = 2] = "NEAREST_BY_MAIN_CATEGORY_AXIS_FIRST";
-    /** Pick matches based upon distance to ideal position */
+    
     SeriesNodePickMode[SeriesNodePickMode["NEAREST_NODE"] = 3] = "NEAREST_NODE";
 })(SeriesNodePickMode || (SeriesNodePickMode = {}));
 function basicContinuousCheckDatumValidation(v) {
@@ -472,4 +472,3 @@ __decorate([
         },
     })
 ], Series.prototype, "seriesGrouping", void 0);
-//# sourceMappingURL=series.js.map

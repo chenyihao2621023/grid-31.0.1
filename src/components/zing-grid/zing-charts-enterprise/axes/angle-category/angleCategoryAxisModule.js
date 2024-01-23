@@ -9,4 +9,3 @@ export const AngleCategoryAxisModule = {
     instanceConstructor: AngleCategoryAxis,
     themeTemplate: ANGLE_AXIS_THEME,
 };
-//# sourceMappingURL=angleCategoryAxisModule.js.map

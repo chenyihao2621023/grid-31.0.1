@@ -93,4 +93,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], RangeBarProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=rangeBarProperties.js.map

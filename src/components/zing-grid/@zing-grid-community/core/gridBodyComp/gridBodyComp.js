@@ -11,7 +11,7 @@ import { Component } from '../widgets/component';
 import { RefSelector } from '../widgets/componentAnnotations';
 import { CSS_CLASS_FORCE_VERTICAL_SCROLL, GridBodyCtrl, RowAnimationCssClasses } from "./gridBodyCtrl";
 import { RowContainerName } from "./rowContainer/rowContainerCtrl";
-const GRID_BODY_TEMPLATE = /* html */ `<div class="zing-root zing-unselectable" role="treegrid">
+const GRID_BODY_TEMPLATE =  `<div class="zing-root zing-unselectable" role="treegrid">
         <zing-header-root ref="gridHeader"></zing-header-root>
         <div class="zing-floating-top" ref="eTop" role="presentation">
             <zing-row-container ref="topLeftContainer" name="${RowContainerName.TOP_LEFT}"></zing-row-container>
@@ -133,4 +133,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], GridBodyComp.prototype, "init", null);
-//# sourceMappingURL=gridBodyComp.js.map

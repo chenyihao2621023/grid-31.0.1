@@ -413,4 +413,3 @@ __decorate([
 __decorate([
     Autowired('filterManager')
 ], GridBodyCtrl.prototype, "filterManager", void 0);
-//# sourceMappingURL=gridBodyCtrl.js.map

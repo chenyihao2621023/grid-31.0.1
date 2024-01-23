@@ -13,4 +13,3 @@ export class UpdateService extends Listeners {
         this.dispatch('update-complete', event);
     }
 }
-//# sourceMappingURL=updateService.js.map

@@ -25,10 +25,7 @@ let HeaderNavigationService = class HeaderNavigationService extends BeanStub {
         const centerHeaderContainer = this.ctrlsService.getHeaderRowContainerCtrl();
         return centerHeaderContainer ? centerHeaderContainer.getRowCount() : 0;
     }
-    /*
-     * This method navigates grid header vertically
-     * @return {boolean} true to preventDefault on the event that caused this navigation.
-     */
+    
     navigateVertically(direction, fromHeader, event) {
         if (!fromHeader) {
             fromHeader = this.focusService.getFocusedHeader();
@@ -60,10 +57,7 @@ let HeaderNavigationService = class HeaderNavigationService extends BeanStub {
             event
         });
     }
-    /*
-     * This method navigates grid header horizontally
-     * @return {boolean} true to preventDefault on the event that caused this navigation.
-     */
+    
     navigateHorizontally(direction, fromTab = false, event) {
         const focusedHeader = this.focusService.getFocusedHeader();
         const isLeft = direction === HeaderNavigationDirection.LEFT;
@@ -143,4 +137,3 @@ HeaderNavigationService = __decorate([
     Bean('headerNavigationService')
 ], HeaderNavigationService);
 export { HeaderNavigationService };
-//# sourceMappingURL=headerNavigationService.js.map

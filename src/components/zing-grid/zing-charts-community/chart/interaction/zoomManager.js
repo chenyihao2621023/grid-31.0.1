@@ -1,9 +1,6 @@
 import { ChartAxisDirection } from '../chartAxisDirection';
 import { BaseManager } from './baseManager';
-/**
- * Manages the current zoom state for a chart. Tracks the requested zoom from distinct dependents
- * and handles conflicting zoom requests.
- */
+
 export class ZoomManager extends BaseManager {
     constructor() {
         super(...arguments);
@@ -114,4 +111,3 @@ class AxisZoomManager {
         return (prevZoom === null || prevZoom === void 0 ? void 0 : prevZoom.min) !== ((_a = this.currentZoom) === null || _a === void 0 ? void 0 : _a.min) || (prevZoom === null || prevZoom === void 0 ? void 0 : prevZoom.max) !== ((_b = this.currentZoom) === null || _b === void 0 ? void 0 : _b.max);
     }
 }
-//# sourceMappingURL=zoomManager.js.map

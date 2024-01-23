@@ -15,4 +15,3 @@ export const HEATMAP_DEFAULTS = {
         enabled: true,
     },
 };
-//# sourceMappingURL=heatmapDefaults.js.map

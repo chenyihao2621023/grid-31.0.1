@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { ProvidedFilter, ZingPromise, Autowired, ZingGroupComponent, TabGuardComp, ZingMenuItemComponent, PostConstruct, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class MultiFilter extends TabGuardComp {
     constructor() {
-        super(/* html */ `<div class="zing-multi-filter zing-menu-list-compact"></div>`);
+        super( `<div class="zing-multi-filter zing-menu-list-compact"></div>`);
         this.filterDefs = [];
         this.filters = [];
         this.guiDestroyFuncs = [];
@@ -57,7 +57,7 @@ export class MultiFilter extends TabGuardComp {
         this.destroyChildren();
         this.filters.forEach((filter, index) => {
             if (index > 0) {
-                this.appendChild(_.loadTemplate(/* html */ `<div class="zing-filter-separator"></div>`));
+                this.appendChild(_.loadTemplate( `<div class="zing-filter-separator"></div>`));
             }
             const filterDef = this.filterDefs[index];
             const filterTitle = this.getFilterTitle(filter, filterDef);
@@ -340,4 +340,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], MultiFilter.prototype, "postConstruct", null);
-//# sourceMappingURL=multiFilter.js.map

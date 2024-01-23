@@ -8,7 +8,7 @@ import { _, ZingInputTextField, ZingPromise, Autowired, Column, Component, RefSe
 import { GroupFilter } from './groupFilter';
 export class GroupFloatingFilterComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div ref="eFloatingFilter" class="zing-group-floating-filter zing-floating-filter-input" role="presentation"></div>
         `);
         this.haveAddedColumnListeners = false;
@@ -146,4 +146,3 @@ __decorate([
 __decorate([
     RefSelector('eFloatingFilter')
 ], GroupFloatingFilterComp.prototype, "eFloatingFilter", void 0);
-//# sourceMappingURL=groupFloatingFilter.js.map

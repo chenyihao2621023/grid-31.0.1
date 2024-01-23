@@ -8,4 +8,3 @@ export class AbstractHeaderCellComp extends Component {
         return this.ctrl;
     }
 }
-//# sourceMappingURL=abstractHeaderCellComp.js.map

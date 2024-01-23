@@ -299,11 +299,7 @@ export class Group extends Node {
         });
         return new BBox(left, top, right - left, bottom - top);
     }
-    /**
-     * Transforms bbox given in the canvas coordinate space to bbox in this group's coordinate space and
-     * sets this group's clipRect to the transformed bbox.
-     * @param bbox clipRect bbox in the canvas coordinate space.
-     */
+    
     setClipRectInGroupCoordinateSpace(bbox) {
         this.clipRect = bbox ? this.transformBBox(bbox) : undefined;
     }
@@ -315,4 +311,3 @@ __decorate([
         convertor: (v) => Math.min(1, Math.max(0, v)),
     })
 ], Group.prototype, "opacity", void 0);
-//# sourceMappingURL=group.js.map

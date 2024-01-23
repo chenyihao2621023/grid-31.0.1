@@ -87,4 +87,3 @@ export class NumberFloatingFilter extends TextInputFloatingFilter {
         return this.createManagedBean(new FloatingFilterNumberInputService());
     }
 }
-//# sourceMappingURL=numberFloatingFilter.js.map

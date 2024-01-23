@@ -68,4 +68,3 @@ export class ScalarFilter extends SimpleFilter {
         }
     }
 }
-//# sourceMappingURL=scalarFilter.js.map

@@ -84,4 +84,3 @@ export class RadarAreaSeries extends RadarSeries {
 }
 RadarAreaSeries.className = 'RadarAreaSeries';
 RadarAreaSeries.type = 'radar-area';
-//# sourceMappingURL=radarAreaSeries.js.map

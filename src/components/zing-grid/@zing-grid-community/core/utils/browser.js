@@ -1,7 +1,4 @@
-/**
- * These variables are lazy loaded, as otherwise they try and get initialised when we are loading
- * unit tests and we don't have references to window or document in the unit tests
- */
+
 let isSafari;
 let safariVersion;
 let isChrome;
@@ -30,9 +27,7 @@ export function getSafariVersion() {
     }
     return safariVersion;
 }
-/**
- * Returns true for Chrome and also for Edge (Chromium)
- */
+
 export function isBrowserChrome() {
     if (isChrome === undefined) {
         const win = window;
@@ -142,4 +137,3 @@ export function isInvisibleScrollbar() {
     }
     return invisibleScrollbar;
 }
-//# sourceMappingURL=browser.js.map

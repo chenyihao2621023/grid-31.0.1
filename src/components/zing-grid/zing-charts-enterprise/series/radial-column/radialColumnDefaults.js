@@ -18,4 +18,3 @@ export const RADIAL_COLUMN_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=radialColumnDefaults.js.map

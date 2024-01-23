@@ -2,21 +2,15 @@ import { ModuleNames } from "./moduleNames";
 import { doOnce } from "../utils/function";
 import { values } from "../utils/generic";
 export class ModuleRegistry {
-    /**
-     * Globally register the given module for all grids.
-     * @param module - module to register
-     */
+    
     static register(module) {
         ModuleRegistry.__register(module, true, undefined);
     }
-    /**
-     * Globally register the given modules for all grids.
-     * @param modules - modules to register
-     */
+    
     static registerModules(modules) {
         ModuleRegistry.__registerModules(modules, true, undefined);
     }
-    /** ZING GRID INTERNAL - Module registration helper. */
+    
     static __register(module, moduleBased, gridId) {
         ModuleRegistry.runVersionChecks(module);
         if (gridId !== undefined) {
@@ -31,11 +25,11 @@ export class ModuleRegistry {
         }
         ModuleRegistry.setModuleBased(moduleBased);
     }
-    /** ZING GRID INTERNAL - Unregister grid scoped module. */
+    
     static __unRegisterGridModules(gridId) {
         delete ModuleRegistry.gridModulesMap[gridId];
     }
-    /** ZING GRID INTERNAL - Module registration helper. */
+    
     static __registerModules(modules, moduleBased, gridId) {
         ModuleRegistry.setModuleBased(moduleBased);
         if (!modules) {
@@ -79,13 +73,11 @@ export class ModuleRegistry {
             }
         }
     }
-    /**
-     * ZING GRID INTERNAL - Set if files are being served from a single UMD bundle to provide accurate enterprise upgrade steps.
-     */
+    
     static __setIsBundled() {
         ModuleRegistry.isBundled = true;
     }
-    /** ZING GRID INTERNAL - Assert a given module has been register, globally or individually with this grid. */
+    
     static __assertRegistered(moduleName, reason, gridId) {
         var _a;
         if (this.__isRegistered(moduleName, gridId)) {
@@ -128,21 +120,21 @@ For more info see: https://www.zing-grid.com/javascript-grid/packages/`;
         }, warningKey);
         return false;
     }
-    /** ZING GRID INTERNAL - Is the given module registered, globally or individually with this grid. */
+    
     static __isRegistered(moduleName, gridId) {
         var _a;
         return !!ModuleRegistry.globalModulesMap[moduleName] || !!((_a = ModuleRegistry.gridModulesMap[gridId]) === null || _a === void 0 ? void 0 : _a[moduleName]);
     }
-    /** ZING GRID INTERNAL - Get all registered modules globally / individually for this grid. */
+    
     static __getRegisteredModules(gridId) {
         return [...values(ModuleRegistry.globalModulesMap), ...values(ModuleRegistry.gridModulesMap[gridId] || {})];
     }
-    /** ZING GRID INTERNAL - Get the list of modules registered individually for this grid. */
+    
     static __getGridRegisteredModules(gridId) {
         var _a;
         return values((_a = ModuleRegistry.gridModulesMap[gridId]) !== null && _a !== void 0 ? _a : {}) || [];
     }
-    /** INTERNAL */
+    
     static __isPackageBased() {
         return !ModuleRegistry.moduleBased;
     }
@@ -151,4 +143,3 @@ For more info see: https://www.zing-grid.com/javascript-grid/packages/`;
 ModuleRegistry.globalModulesMap = {};
 ModuleRegistry.gridModulesMap = {};
 ModuleRegistry.areGridScopedModules = false;
-//# sourceMappingURL=moduleRegistry.js.map

@@ -170,4 +170,3 @@ NumberFilter.DEFAULT_FILTER_OPTIONS = [
     ScalarFilter.BLANK,
     ScalarFilter.NOT_BLANK,
 ];
-//# sourceMappingURL=numberFilter.js.map

@@ -164,4 +164,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], StickyRowFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=stickyRowFeature.js.map

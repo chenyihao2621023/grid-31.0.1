@@ -6,4 +6,3 @@ export class RadarLineSeries extends RadarSeries {
 }
 RadarLineSeries.className = 'RadarLineSeries';
 RadarLineSeries.type = 'radar-line';
-//# sourceMappingURL=radarLineSeries.js.map

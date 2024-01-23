@@ -45,4 +45,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], SeriesTooltip.prototype, "position", void 0);
-//# sourceMappingURL=seriesTooltip.js.map

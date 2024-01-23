@@ -164,15 +164,15 @@ export class TooltipPosition extends BaseProperties {
 }
 __decorate([
     Validate(UNION(['pointer', 'node'], 'a position type'))
-    /** The type of positioning for the tooltip. By default, the tooltip follows the pointer. */
+    
 ], TooltipPosition.prototype, "type", void 0);
 __decorate([
     Validate(NUMBER)
-    /** The horizontal offset in pixels for the position of the tooltip. */
+    
 ], TooltipPosition.prototype, "xOffset", void 0);
 __decorate([
     Validate(NUMBER)
-    /** The vertical offset in pixels for the position of the tooltip. */
+    
 ], TooltipPosition.prototype, "yOffset", void 0);
 export class Tooltip {
     constructor(canvasElement, document, window, container) {
@@ -289,10 +289,7 @@ export class Tooltip {
             element.classList.toggle(`${DEFAULT_TOOLTIP_CLASS}-wrap-${name}`, force);
         });
     }
-    /**
-     * Shows tooltip at the given event's coordinates.
-     * If the `html` parameter is missing, moves the existing tooltip to the new position.
-     */
+    
     show(meta, html, instantly = false) {
         var _a, _b, _c, _d, _e, _f, _g;
         const { element, canvasElement } = this;
@@ -372,4 +369,3 @@ __decorate([
 __decorate([
     Validate(TEXT_WRAP)
 ], Tooltip.prototype, "wrapping", void 0);
-//# sourceMappingURL=tooltip.js.map

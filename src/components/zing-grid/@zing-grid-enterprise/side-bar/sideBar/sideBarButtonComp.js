@@ -22,7 +22,7 @@ export class SideBarButtonComp extends Component {
         this.eToggleButton.setAttribute('id', `zing-${this.getCompId()}-button`);
     }
     createTemplate() {
-        const res = /* html */ `<div class="zing-side-button" role="presentation">
+        const res =  `<div class="zing-side-button" role="presentation">
                 <button type="button" ref="eToggleButton" tabindex="-1" role="tab" aria-expanded="false" class="zing-button zing-side-button-button">
                     <div ref="eIconWrapper" class="zing-side-button-icon-wrapper" aria-hidden="true"></div>
                     <span ref ="eLabel" class="zing-side-button-label"></span>
@@ -63,4 +63,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], SideBarButtonComp.prototype, "postConstruct", null);
-//# sourceMappingURL=sideBarButtonComp.js.map

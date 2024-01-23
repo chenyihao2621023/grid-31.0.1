@@ -1,7 +1,7 @@
 import { ZingRichSelect, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class AddDropdownComp extends ZingRichSelect {
     constructor(params) {
-        super(Object.assign(Object.assign({}, params), { template: /* html */ `
+        super(Object.assign(Object.assign({}, params), { template:  `
                 <div class="zing-picker-field" role="presentation">
                     <div ref="eLabel"></div>
                     <div ref="eWrapper" class="zing-wrapper zing-picker-collapsed">
@@ -41,4 +41,3 @@ export class AddDropdownComp extends ZingRichSelect {
         }
     }
 }
-//# sourceMappingURL=addDropdownComp.js.map

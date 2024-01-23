@@ -32,4 +32,3 @@ export class Observable {
         (_a = this.eventListeners.get(event.type)) === null || _a === void 0 ? void 0 : _a.forEach((listener) => listener(event));
     }
 }
-//# sourceMappingURL=observable.js.map

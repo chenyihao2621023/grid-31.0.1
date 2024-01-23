@@ -73,4 +73,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], RadialBarSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=radialBarSeriesProperties.js.map

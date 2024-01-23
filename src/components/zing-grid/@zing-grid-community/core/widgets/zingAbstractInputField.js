@@ -10,7 +10,7 @@ import { setDisabled, setElementWidth, addOrRemoveAttribute } from '../utils/dom
 import { setAriaLabel } from '../utils/aria';
 export class ZingAbstractInputField extends ZingAbstractField {
     constructor(config, className, inputType = 'text', displayFieldTag = 'input') {
-        super(config, /* html */ `
+        super(config,  `
             <div role="presentation">
                 <div ref="eLabel" class="zing-input-field-label"></div>
                 <div ref="eWrapper" class="zing-wrapper zing-input-wrapper" role="presentation">
@@ -103,4 +103,3 @@ __decorate([
 __decorate([
     RefSelector('eInput')
 ], ZingAbstractInputField.prototype, "eInput", void 0);
-//# sourceMappingURL=zingAbstractInputField.js.map

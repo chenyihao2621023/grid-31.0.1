@@ -514,4 +514,3 @@ export class RadarSeries extends _ModuleSupport.PolarSeries {
     }
 }
 RadarSeries.className = 'RadarSeries';
-//# sourceMappingURL=radarSeries.js.map

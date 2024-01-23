@@ -49,15 +49,7 @@ export class TimeScale extends ContinuousScale {
         this.minute = timeMinute;
         this.second = timeSecond;
         this.millisecond = timeMillisecond;
-        /**
-         * Array of default tick intervals in the following format:
-         *
-         *     [
-         *         interval (unit of time),
-         *         number of units (step),
-         *         the length of that number of units in milliseconds
-         *     ]
-         */
+        
         this.tickIntervals = [
             [this.second, 1, durationSecond],
             [this.second, 5, 5 * durationSecond],
@@ -196,12 +188,7 @@ export class TimeScale extends ContinuousScale {
         const formatString = this.calculateDefaultTickFormat(ticks);
         return (date) => buildFormatter(formatString)(date);
     }
-    /**
-     * @param options Tick interval options.
-     * @param options.start The start time (timestamp).
-     * @param options.stop The end time (timestamp).
-     * @param options.count Number of intervals between ticks.
-     */
+    
     getTickInterval({ start, stop, count, minCount, maxCount, }) {
         const { tickIntervals } = this;
         let countableTimeInterval;
@@ -233,9 +220,7 @@ export class TimeScale extends ContinuousScale {
     invert(y) {
         return new Date(super.invert(y));
     }
-    /**
-     * Returns uniformly-spaced dates that represent the scale's domain.
-     */
+    
     ticks() {
         if (!this.domain || this.domain.length < 2) {
             return [];
@@ -301,12 +286,7 @@ export class TimeScale extends ContinuousScale {
         }
         return ticks;
     }
-    /**
-     * Returns a time format function suitable for displaying tick values.
-     * @param specifier If the specifier string is provided, this method is equivalent to
-     * the {@link TimeLocaleObject.format} method.
-     * If no specifier is provided, this method returns the default time format function.
-     */
+    
     tickFormat({ ticks, specifier }) {
         return specifier == undefined ? this.defaultTickFormat(ticks) : buildFormatter(specifier);
     }
@@ -318,10 +298,7 @@ export class TimeScale extends ContinuousScale {
             this.updateNiceDomain();
         }
     }
-    /**
-     * Extends the domain so that it starts and ends on nice round values.
-     * This method typically modifies the scale’s domain, and may only extend the bounds to the nearest round value.
-     */
+    
     updateNiceDomain() {
         const maxAttempts = 4;
         let [d0, d1] = this.domain;
@@ -363,4 +340,3 @@ export class TimeScale extends ContinuousScale {
         }
     }
 }
-//# sourceMappingURL=timeScale.js.map

@@ -116,4 +116,3 @@ export class BBox {
     }
 }
 BBox.zero = new BBox(0, 0, 0, 0);
-//# sourceMappingURL=bbox.js.map

@@ -11,7 +11,7 @@ let AdvancedFilterService = class AdvancedFilterService extends BeanStub {
     constructor() {
         super(...arguments);
         this.appliedExpression = null;
-        /** The value displayed in the input, which may be invalid */
+        
         this.expression = null;
         this.isValid = true;
     }
@@ -177,4 +177,3 @@ AdvancedFilterService = __decorate([
     Bean('advancedFilterService')
 ], AdvancedFilterService);
 export { AdvancedFilterService };
-//# sourceMappingURL=advancedFilterService.js.map

@@ -18,9 +18,9 @@ let ClientSideRowModel = class ClientSideRowModel extends BeanStub {
         super(...arguments);
         this.onRowHeightChanged_debounced = _.debounce(this.onRowHeightChanged.bind(this), 100);
         this.rowsToDisplay = []; // the rows mapped to rows to display
-        /** Has the start method been called */
+        
         this.hasStarted = false;
-        /** E.g. data has been set into the node manager already */
+        
         this.shouldSkipSettingDataOnStart = false;
     }
     init() {
@@ -952,12 +952,7 @@ let ClientSideRowModel = class ClientSideRowModel extends BeanStub {
     onRowHeightChanged() {
         this.refreshModel({ step: ClientSideRowModelSteps.MAP, keepRenderedRows: true, keepEditingRows: true, keepUndoRedoStack: true });
     }
-    /** This method is debounced. It is used for row auto-height. If we don't debounce,
-     * then the Row Models will end up recalculating each row position
-     * for each row height change and result in the Row Renderer laying out rows.
-     * This is particularly bad if using print layout, and showing eg 1,000 rows,
-     * each row will change it's height, causing Row Model to update 1,000 times.
-     */
+    
     onRowHeightChangedDebounced() {
         this.onRowHeightChanged_debounced();
     }
@@ -1052,4 +1047,3 @@ ClientSideRowModel = __decorate([
     Bean('rowModel')
 ], ClientSideRowModel);
 export { ClientSideRowModel };
-//# sourceMappingURL=clientSideRowModel.js.map

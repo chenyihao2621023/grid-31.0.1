@@ -22,4 +22,3 @@ export function checkDatum(value, isContinuousScale) {
     return undefined;
 }
 export const isNumber = (v) => typeof v === 'number' && Number.isFinite(v);
-//# sourceMappingURL=value.js.map

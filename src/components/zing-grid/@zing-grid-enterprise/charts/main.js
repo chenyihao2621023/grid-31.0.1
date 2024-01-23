@@ -7,4 +7,3 @@ export const zingCharts = {
     ZingChart
     // ZingChart: ZingEnterpriseCharts
 };
-//# sourceMappingURL=main.js.map

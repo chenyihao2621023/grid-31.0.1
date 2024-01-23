@@ -315,4 +315,3 @@ export class BubbleSeries extends CartesianSeries {
 }
 BubbleSeries.className = 'BubbleSeries';
 BubbleSeries.type = 'bubble';
-//# sourceMappingURL=bubbleSeries.js.map

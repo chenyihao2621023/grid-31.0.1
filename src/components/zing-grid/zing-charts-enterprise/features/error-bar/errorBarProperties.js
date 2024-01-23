@@ -93,4 +93,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], ErrorBarProperties.prototype, "cap", void 0);
-//# sourceMappingURL=errorBarProperties.js.map

@@ -52,4 +52,3 @@ export const LineSeriesModule = {
         };
     },
 };
-//# sourceMappingURL=lineSeriesModule.js.map

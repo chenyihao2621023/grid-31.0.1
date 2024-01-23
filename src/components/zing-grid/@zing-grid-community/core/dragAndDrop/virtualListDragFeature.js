@@ -122,4 +122,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], VirtualListDragFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=virtualListDragFeature.js.map

@@ -8,7 +8,7 @@ import { Autowired, Component, Events, KeyCode, PostConstruct, _ } from "@/compo
 import { AdvancedFilterComp } from "./advancedFilterComp";
 export class AdvancedFilterHeaderComp extends Component {
     constructor(enabled) {
-        super(/* html */ `
+        super( `
             <div class="zing-advanced-filter-header" role="row">
             </div>`);
         this.enabled = enabled;
@@ -153,4 +153,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], AdvancedFilterHeaderComp.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterHeaderComp.js.map

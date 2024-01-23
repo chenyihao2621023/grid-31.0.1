@@ -23,10 +23,7 @@ import { Debug } from '../../util/debug';
 import { Logger } from '../../util/logger';
 import { BaseManager } from './baseManager';
 const DEBUG_SELECTORS = [true, 'animation'];
-/**
- * Manage animations across a chart, running all animations through only one `requestAnimationFrame` callback,
- * preventing duplicate animations and handling their lifecycle.
- */
+
 export class AnimationManager extends BaseManager {
     constructor(interactionManager, chartUpdateMutex) {
         super();
@@ -39,10 +36,7 @@ export class AnimationManager extends BaseManager {
         this.requestId = null;
         this.skipAnimations = false;
     }
-    /**
-     * Create an animation to tween a value between the `from` and `to` properties. If an animation already exists
-     * with the same `id`, immediately stop it.
-     */
+    
     animate(_a) {
         var _b, _c;
         var { disableInteractions = true, immutable = true } = _a, opts = __rest(_a, ["disableInteractions", "immutable"]);
@@ -172,11 +166,11 @@ export class AnimationManager extends BaseManager {
         }
         this.batch.skip();
     }
-    /** Mocking point for tests to guarantee that animation updates happen. */
+    
     isSkippingFrames() {
         return true;
     }
-    /** Mocking point for tests to capture requestAnimationFrame callbacks. */
+    
     scheduleAnimationFrame(cb) {
         this.requestId = requestAnimationFrame(cb);
     }
@@ -247,10 +241,7 @@ export class AnimationManager extends BaseManager {
         }
     }
 }
-/**
- * A batch of animations that are synchronised together. Can be skipped independently of other batches and the main
- * animation skipping status.
- */
+
 class AnimationBatch {
     constructor() {
         this.controllers = new Map();
@@ -274,4 +265,3 @@ class AnimationBatch {
     }
     destroy() { }
 }
-//# sourceMappingURL=animationManager.js.map

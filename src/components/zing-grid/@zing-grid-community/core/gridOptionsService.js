@@ -57,33 +57,20 @@ let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
         this.destroyed = true;
         this.columnApi = undefined;
     }
-    /**
-     * Get the raw value of the GridOptions property provided.
-     * @param property
-     */
+    
     get(property) {
         var _a;
         return (_a = this.gridOptions[property]) !== null && _a !== void 0 ? _a : GRID_OPTION_DEFAULTS[property];
     }
-    /**
-     * Get the GridOption callback but wrapped so that the common params of api,columnApi and context are automatically applied to the params.
-     * @param property GridOption callback properties based on the fact that this property has a callback with params extending ZingGridCommon
-     */
+    
     getCallback(property) {
         return this.mergeGridCommonParams(this.gridOptions[property]);
     }
-    /**
-     * Returns `true` if a value has been specified for this GridOption.
-     * @param property GridOption property
-     */
+    
     exists(property) {
         return exists(this.gridOptions[property]);
     }
-    /**
-    * Wrap the user callback and attach the api, columnApi and context to the params object on the way through.
-    * @param callback User provided callback
-    * @returns Wrapped callback where the params object not require api, columnApi and context
-    */
+    
     mergeGridCommonParams(callback) {
         if (callback) {
             const wrapped = (callbackParams) => {
@@ -380,9 +367,7 @@ let GridOptionsService = GridOptionsService_1 = class GridOptionsService {
     }
 };
 GridOptionsService.alwaysSyncGlobalEvents = new Set([Events.EVENT_GRID_PRE_DESTROYED]);
-/**
- * Handles value coercion including validation of ranges etc. If value is invalid, undefined is set, allowing default to be used.
- */
+
 GridOptionsService.PROPERTY_COERCIONS = new Map([
     ...PropertyKeys.BOOLEAN_PROPERTIES.map(key => [key, GridOptionsService_1.toBoolean]),
     ...PropertyKeys.NUMBER_PROPERTIES.map(key => [key, GridOptionsService_1.toNumber]),
@@ -427,4 +412,3 @@ GridOptionsService = GridOptionsService_1 = __decorate([
     Bean('gridOptionsService')
 ], GridOptionsService);
 export { GridOptionsService };
-//# sourceMappingURL=gridOptionsService.js.map

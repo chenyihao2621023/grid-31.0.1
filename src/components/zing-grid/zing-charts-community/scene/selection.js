@@ -46,11 +46,7 @@ export class Selection {
         this.parentNode.appendChild(node);
         return node;
     }
-    /**
-     * Update the data in a selection. If an `getDatumId()` function is provided, maintain a list of ids related to
-     * the nodes. Otherwise, take the more efficient route of simply creating and destroying nodes at the end
-     * of the array.
-     */
+    
     update(data, initializer, getDatumId) {
         if (this.garbageBin.size > 0) {
             this.debug(`Selection - update() called with pending garbage: ${data}`);
@@ -142,4 +138,3 @@ export class Selection {
         return this._nodes;
     }
 }
-//# sourceMappingURL=selection.js.map

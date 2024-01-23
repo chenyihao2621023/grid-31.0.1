@@ -12,7 +12,7 @@ import { KeyCode } from "../constants/keyCode";
 import { makeNull } from "../utils/generic";
 export class ZingAutocomplete extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-autocomplete" role="presentation">
                 <zing-input-text-field ref="eAutocompleteInput"></zing-input-text-field>
             </div>`);
@@ -292,4 +292,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingAutocomplete.prototype, "postConstruct", null);
-//# sourceMappingURL=zingAutocomplete.js.map

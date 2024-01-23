@@ -70,4 +70,3 @@ ScrollVisibleService = __decorate([
     Bean('scrollVisibleService')
 ], ScrollVisibleService);
 export { ScrollVisibleService };
-//# sourceMappingURL=scrollVisibleService.js.map

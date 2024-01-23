@@ -140,4 +140,3 @@ export function buildFormatter(formatString) {
         return formatParts.map((c) => (typeof c === 'string' ? c : c[0](dateTimeAsDate, c[1]))).join('');
     };
 }
-//# sourceMappingURL=timeFormat.js.map

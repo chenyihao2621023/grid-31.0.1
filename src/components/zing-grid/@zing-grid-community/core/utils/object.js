@@ -61,17 +61,11 @@ export function getProperty(object, key) {
 export function setProperty(object, key, value) {
     object[key] = value;
 }
-/**
- * Will copy the specified properties from `source` into the equivalent properties on `target`, ignoring properties with
- * a value of `undefined`.
- */
+
 export function copyPropertiesIfPresent(source, target, ...properties) {
     properties.forEach(p => copyPropertyIfPresent(source, target, p));
 }
-/**
- * Will copy the specified property from `source` into the equivalent property on `target`, unless the property has a
- * value of `undefined`. If a transformation is provided, it will be applied to the value before being set on `target`.
- */
+
 export function copyPropertyIfPresent(source, target, property, transform) {
     const value = getProperty(source, property);
     if (value !== undefined) {
@@ -220,4 +214,3 @@ export function removeAllReferences(obj, preserveKeys = [], preDestroyLink) {
 export function isNonNullObject(value) {
     return typeof value === 'object' && value !== null;
 }
-//# sourceMappingURL=object.js.map

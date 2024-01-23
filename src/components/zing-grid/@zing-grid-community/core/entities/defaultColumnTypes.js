@@ -8,4 +8,3 @@ export const DefaultColumnTypes = {
         cellClass: 'zing-right-aligned-cell'
     }
 };
-//# sourceMappingURL=defaultColumnTypes.js.map

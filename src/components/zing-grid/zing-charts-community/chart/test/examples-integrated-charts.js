@@ -1607,4 +1607,3 @@ export const EXAMPLES = {
     CROSSFILTER_BAR_FILTERED: { options: CROSSFILTER_BAR_FILTERED },
     CROSSFILTER_COLUMN_FILTERED: { options: CROSSFILTER_COLUMN_FILTERED },
 };
-//# sourceMappingURL=examples-integrated-charts.js.map

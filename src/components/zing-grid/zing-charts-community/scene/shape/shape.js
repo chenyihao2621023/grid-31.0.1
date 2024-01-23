@@ -13,16 +13,7 @@ export class Shape extends Node {
         this.fillOpacity = 1;
         this.strokeOpacity = 1;
         this.fill = Shape.defaultStyles.fill;
-        /**
-         * Note that `strokeStyle = null` means invisible stroke,
-         * while `lineWidth = 0` means no stroke, and sometimes this can mean different things.
-         * For example, a rect shape with an invisible stroke may not align to the pixel grid
-         * properly because the stroke affects the rules of alignment, and arc shapes forming
-         * a pie chart will have a gap between them if they have an invisible stroke, whereas
-         * there would be not gap if there was no stroke at all.
-         * The preferred way of making the stroke invisible is setting the `lineWidth` to zero,
-         * unless specific looks that is achieved by having an invisible stroke is desired.
-         */
+        
         this.stroke = Shape.defaultStyles.stroke;
         this.strokeWidth = Shape.defaultStyles.strokeWidth;
         this.lineDash = Shape.defaultStyles.lineDash;
@@ -32,9 +23,7 @@ export class Shape extends Node {
         this.opacity = Shape.defaultStyles.opacity;
         this.fillShadow = Shape.defaultStyles.fillShadow;
     }
-    /**
-     * Restores the default styles introduced by this subclass.
-     */
+    
     restoreOwnStyles() {
         const styles = this.constructor.defaultStyles;
         const keys = Object.getOwnPropertyNames(styles);
@@ -70,12 +59,7 @@ export class Shape extends Node {
             this.gradient = undefined;
         }
     }
-    /**
-     * Returns a device-pixel aligned coordinate (or length if length is supplied).
-     *
-     * NOTE: Not suitable for strokes, since the stroke needs to be offset to the middle
-     * of a device pixel.
-     */
+    
     align(start, length) {
         var _a, _b, _c;
         const pixelRatio = (_c = (_b = (_a = this.layerManager) === null || _a === void 0 ? void 0 : _a.canvas) === null || _b === void 0 ? void 0 : _b.pixelRatio) !== null && _c !== void 0 ? _c : 1;
@@ -161,14 +145,7 @@ export class Shape extends Node {
         return this.isPointInPath(x, y);
     }
 }
-/**
- * Defaults for style properties. Note that properties that affect the position
- * and shape of the node are not considered style properties, for example:
- * `x`, `y`, `width`, `height`, `radius`, `rotation`, etc.
- * Can be used to reset to the original styling after some custom styling
- * has been applied (using the `restoreOwnStyles` method).
- * These static defaults are meant to be inherited by subclasses.
- */
+
 Shape.defaultStyles = Object.assign({}, {
     fill: 'black',
     stroke: undefined,
@@ -216,4 +193,3 @@ __decorate([
 __decorate([
     SceneChangeDetection({ redraw: RedrawType.MINOR, checkDirtyOnAssignment: true })
 ], Shape.prototype, "fillShadow", void 0);
-//# sourceMappingURL=shape.js.map

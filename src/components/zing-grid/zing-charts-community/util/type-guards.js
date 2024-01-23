@@ -37,4 +37,3 @@ export function isFiniteNumber(value) {
 export function isHtmlElement(value) {
     return typeof window !== 'undefined' && value instanceof HTMLElement;
 }
-//# sourceMappingURL=type-guards.js.map

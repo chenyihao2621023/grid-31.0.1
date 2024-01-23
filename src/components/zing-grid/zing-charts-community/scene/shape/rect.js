@@ -186,19 +186,11 @@ export class Rect extends Path {
         this.bottomRightCornerRadius = 0;
         this.bottomLeftCornerRadius = 0;
         this.cornerRadiusBbox = undefined;
-        /**
-         * If `true`, the rect is aligned to the pixel grid for crisp looking lines.
-         * Animated rects may not look nice with this option enabled, for example
-         * when a rect is translated by a sub-pixel value on each frame.
-         */
+        
         this.crisp = false;
         this.lastUpdatePathStrokeWidth = Shape.defaultStyles.strokeWidth;
         this.effectiveStrokeWidth = Shape.defaultStyles.strokeWidth;
-        /**
-         * When the rectangle's width or height is less than a pixel
-         * and crisp mode is on, the rectangle will still fit into the pixel,
-         * but will be less opaque to make an effect of holding less space.
-         */
+        
         this.microPixelEffectOpacity = 1;
     }
     set cornerRadius(cornerRadius) {
@@ -377,4 +369,3 @@ __decorate([
 __decorate([
     ScenePathChangeDetection()
 ], Rect.prototype, "crisp", void 0);
-//# sourceMappingURL=rect.js.map

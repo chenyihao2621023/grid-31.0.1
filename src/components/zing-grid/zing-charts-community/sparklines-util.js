@@ -12,4 +12,3 @@ export * from './util/sanitize';
 export { default as ticks, tickStep, range } from './util/ticks';
 export { Color } from './util/color';
 export * from './util/logger';
-//# sourceMappingURL=sparklines-util.js.map

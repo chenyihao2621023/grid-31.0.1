@@ -11,4 +11,3 @@ export function resetBoxPlotSelectionsScalingCenterFn(isVertical) {
         return { scalingCenterX: datum.scaledValues.medianValue };
     };
 }
-//# sourceMappingURL=blotPlotUtil.js.map

@@ -44,4 +44,3 @@ export const ScatterSeriesModule = {
     },
     paletteFactory: markerPaletteFactory,
 };
-//# sourceMappingURL=scatterSeriesModule.js.map

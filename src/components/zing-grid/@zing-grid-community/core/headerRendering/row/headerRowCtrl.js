@@ -32,11 +32,7 @@ export class HeaderRowCtrl extends BeanStub {
     getInstanceId() {
         return this.instanceId;
     }
-    /**
-     *
-     * @param comp Proxy to the actual component
-     * @param initCompState Should the component be initialised with the current state of the controller. Default: true
-     */
+    
     setComp(comp, initCompState = true) {
         this.comp = comp;
         if (initCompState) {
@@ -281,4 +277,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], HeaderRowCtrl.prototype, "postConstruct", null);
-//# sourceMappingURL=headerRowCtrl.js.map

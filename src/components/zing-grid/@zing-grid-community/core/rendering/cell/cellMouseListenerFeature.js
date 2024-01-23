@@ -189,4 +189,3 @@ export class CellMouseListenerFeature extends Beans {
     destroy() {
     }
 }
-//# sourceMappingURL=cellMouseListenerFeature.js.map

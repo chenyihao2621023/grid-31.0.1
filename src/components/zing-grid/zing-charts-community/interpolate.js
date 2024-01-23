@@ -25,4 +25,3 @@ export function interpolateColor(a, b) {
     const alpha = interpolateNumber(a.a, b.a);
     return (d) => Color.fromArray([red(d), green(d), blue(d), alpha(d)]).toRgbaString();
 }
-//# sourceMappingURL=interpolate.js.map

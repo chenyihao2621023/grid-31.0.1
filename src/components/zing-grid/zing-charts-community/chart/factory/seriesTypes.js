@@ -127,4 +127,3 @@ export function executeCustomDefaultsFunctions(opts, initialDefaults) {
     }
     return result;
 }
-//# sourceMappingURL=seriesTypes.js.map

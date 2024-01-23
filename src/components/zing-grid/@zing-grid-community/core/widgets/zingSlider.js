@@ -85,4 +85,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingSlider.prototype, "init", null);
-//# sourceMappingURL=zingSlider.js.map

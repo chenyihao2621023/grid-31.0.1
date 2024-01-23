@@ -1,11 +1,5 @@
 import { padStartWidthZeros } from './number';
-/**
- * Serialises a Date to a string of format `yyyy-MM-dd HH:mm:ss`.
- * An alternative separator can be provided to be used instead of hyphens.
- * @param date The date to serialise
- * @param includeTime Whether to include the time in the serialised string
- * @param separator The separator to use between date parts
- */
+
 export function serialiseDate(date, includeTime = true, separator = '-') {
     if (!date) {
         return null;
@@ -28,11 +22,7 @@ const calculateOrdinal = (value) => {
     }
     return 'th';
 };
-/**
- * Serialises a Date to a string of format the defined format, does not include time.
- * @param date The date to serialise
- * @param format The string to format the date to, defaults to YYYY-MM-DD
- */
+
 export function dateToFormattedString(date, format = 'YYYY-MM-DD') {
     const fullYear = padStartWidthZeros(date.getFullYear(), 4);
     const months = [
@@ -68,9 +58,7 @@ export function dateToFormattedString(date, format = 'YYYY-MM-DD') {
         return match;
     });
 }
-/**
- * Parses a date and time from a string in the format `yyyy-MM-dd HH:mm:ss`
- */
+
 export function parseDateTimeFromString(value) {
     if (!value) {
         return null;
@@ -106,4 +94,3 @@ export function parseDateTimeFromString(value) {
     }
     return date;
 }
-//# sourceMappingURL=date.js.map

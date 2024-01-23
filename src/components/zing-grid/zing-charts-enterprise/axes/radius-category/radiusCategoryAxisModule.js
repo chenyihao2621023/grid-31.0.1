@@ -9,4 +9,3 @@ export const RadiusCategoryAxisModule = {
     instanceConstructor: RadiusCategoryAxis,
     themeTemplate: RADIUS_AXIS_THEME,
 };
-//# sourceMappingURL=radiusCategoryAxisModule.js.map

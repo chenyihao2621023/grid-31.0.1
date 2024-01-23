@@ -10,4 +10,3 @@ export class BaseManager {
         this.listeners.removeListener(listenerSymbol);
     }
 }
-//# sourceMappingURL=baseManager.js.map

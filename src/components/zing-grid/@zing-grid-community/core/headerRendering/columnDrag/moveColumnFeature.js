@@ -221,4 +221,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], MoveColumnFeature.prototype, "init", null);
-//# sourceMappingURL=moveColumnFeature.js.map

@@ -188,4 +188,3 @@ export function getRadialColumnWidth(startAngle, endAngle, axisOuterRadius, colu
     const maxWidth = 2 * axisOuterRadius * maxColumnWidthRatio;
     return Math.max(1, Math.min(maxWidth, colWidth));
 }
-//# sourceMappingURL=radialColumnShape.js.map

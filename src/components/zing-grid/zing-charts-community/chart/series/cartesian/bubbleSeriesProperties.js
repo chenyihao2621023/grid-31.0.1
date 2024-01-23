@@ -13,12 +13,7 @@ import { CartesianSeriesProperties } from './cartesianSeries';
 class BubbleSeriesMarker extends SeriesMarker {
     constructor() {
         super(...arguments);
-        /**
-         * The series `sizeKey` values along with the `size` and `maxSize` configs will be used to
-         * determine the size of the marker. All values will be mapped to a marker size within the
-         * `[size, maxSize]` range, where the largest values will correspond to the `maxSize` and the
-         * lowest to the `size`.
-         */
+        
         this.maxSize = 30;
     }
 }
@@ -87,4 +82,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], BubbleSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=bubbleSeriesProperties.js.map

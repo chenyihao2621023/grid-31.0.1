@@ -64,4 +64,3 @@ export class VividLight extends ChartTheme {
         return palette;
     }
 }
-//# sourceMappingURL=vividLight.js.map

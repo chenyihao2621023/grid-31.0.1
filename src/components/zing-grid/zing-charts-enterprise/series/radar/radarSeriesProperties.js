@@ -67,4 +67,3 @@ __decorate([
 __decorate([
     Validate(BOOLEAN)
 ], RadarSeriesProperties.prototype, "connectMissingData", void 0);
-//# sourceMappingURL=radarSeriesProperties.js.map

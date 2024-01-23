@@ -38,4 +38,3 @@ __decorate([
     Validate(POSITIVE_NUMBER),
     SceneChangeDetection({ redraw: RedrawType.MAJOR })
 ], DropShadow.prototype, "blur", void 0);
-//# sourceMappingURL=dropShadow.js.map

@@ -117,4 +117,3 @@ StandardMenuFactory = __decorate([
     Bean('menuFactory')
 ], StandardMenuFactory);
 export { StandardMenuFactory };
-//# sourceMappingURL=standardMenu.js.map

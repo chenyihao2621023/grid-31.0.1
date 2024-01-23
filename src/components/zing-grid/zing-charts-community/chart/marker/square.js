@@ -12,4 +12,3 @@ export class Square extends Marker {
     }
 }
 Square.className = 'Square';
-//# sourceMappingURL=square.js.map

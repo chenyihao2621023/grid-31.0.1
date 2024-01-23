@@ -1,5 +1,5 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable no-console */
+
+
 import { MD5 } from './md5';
 // move to general utils
 function missingOrEmpty(value) {
@@ -306,4 +306,3 @@ export class LicenseManager {
     }
 }
 LicenseManager.RELEASE_INFORMATION = 'MTcwMDc2MzcxODkzNg==';
-//# sourceMappingURL=licenseManager.js.map

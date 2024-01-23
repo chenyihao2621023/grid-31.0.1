@@ -23,7 +23,7 @@ export class HeaderRowComp extends Component {
         super();
         this.headerComps = {};
         this.ctrl = ctrl;
-        this.setTemplate(/* html */ `<div class="${this.ctrl.getHeaderRowClass()}" role="row"></div>`);
+        this.setTemplate( `<div class="${this.ctrl.getHeaderRowClass()}" role="row"></div>`);
     }
     //noinspection JSUnusedLocalSymbols
     init() {
@@ -96,4 +96,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], HeaderRowComp.prototype, "destroyHeaderCtrls", null);
-//# sourceMappingURL=headerRowComp.js.map

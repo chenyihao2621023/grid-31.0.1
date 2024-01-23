@@ -48,9 +48,7 @@ let ChartMenuItemMapper = ChartMenuItemMapper_1 = class ChartMenuItemMapper exte
         addItem(menuItem);
         return itemLookup;
     }
-    /**
-     * Make the MenuItem match the charts provided and their ordering on the ChartGroupsDef config object as provided by the user.
-     */
+    
     static filterAndOrderChartMenu(topLevelMenuItem, chartGroupsDef, configLookup) {
         var _a;
         const menuItemLookup = this.buildLookup(topLevelMenuItem);
@@ -343,4 +341,3 @@ class RangeMenuItemMapper {
         };
     }
 }
-//# sourceMappingURL=chartMenuItemMapper.js.map

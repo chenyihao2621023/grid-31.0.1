@@ -55,4 +55,3 @@ FakeVScrollComp.TEMPLATE = `<div class="zing-body-vertical-scroll" aria-hidden="
 __decorate([
     PostConstruct
 ], FakeVScrollComp.prototype, "postConstruct", null);
-//# sourceMappingURL=fakeVScrollComp.js.map

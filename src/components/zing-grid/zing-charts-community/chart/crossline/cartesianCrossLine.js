@@ -46,13 +46,9 @@ class CartesianCrossLineLabel {
         this.fontWeight = undefined;
         this.fontSize = 14;
         this.fontFamily = 'Verdana, sans-serif';
-        /**
-         * The padding between the label and the line.
-         */
+        
         this.padding = 5;
-        /**
-         * The color of the labels.
-         */
+        
         this.color = 'rgba(87, 87, 87, 1)';
         this.position = undefined;
         this.rotation = undefined;
@@ -402,4 +398,3 @@ __decorate([
 __decorate([
     Validate(LINE_DASH, { optional: true })
 ], CartesianCrossLine.prototype, "lineDash", void 0);
-//# sourceMappingURL=cartesianCrossLine.js.map

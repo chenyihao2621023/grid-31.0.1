@@ -20,4 +20,3 @@ export const RadialBarModule = {
     stackable: true,
     groupable: true,
 };
-//# sourceMappingURL=radialBarModule.js.map

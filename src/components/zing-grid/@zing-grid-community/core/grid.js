@@ -101,13 +101,7 @@ import { ExpansionService } from "./misc/expansionService";
 import { ValidationService } from "./validation/validationService";
 import { ApiEventService } from "./misc/apiEventService";
 import { PageSizeSelectorComp } from "./pagination/pageSizeSelector/pageSizeSelectorComp";
-/**
- * Creates a grid inside the provided HTML element.
- * @param eGridDiv Parent element to contain the grid.
- * @param gridOptions Configuration for the grid.
- * @param params Individually register ZING Grid Modules to this grid.
- * @returns api to be used to interact with the grid.
- */
+
 export function createGrid(eGridDiv, gridOptions, params) {
     if (!gridOptions) {
         errorOnce('No gridOptions provided to createGrid');
@@ -141,9 +135,7 @@ export function createGrid(eGridDiv, gridOptions, params) {
     }
     return api;
 }
-/**
- * @deprecated v31 use createGrid() instead
- */
+
 export class Grid {
     constructor(eGridDiv, gridOptions, params) {
         warnOnce('Since v31 new Grid(...) is deprecated. Use createGrid instead: `const gridApi = createGrid(...)`. The grid api is returned from createGrid and will not be available on gridOptions.');
@@ -357,4 +349,3 @@ export class GridCoreCreator {
         return [].concat(...moduleEntities.map(extractor));
     }
 }
-//# sourceMappingURL=grid.js.map

@@ -7,4 +7,3 @@ function decode(encoded) {
 }
 export const millisecond = new CountableTimeInterval(encode, decode);
 export default millisecond;
-//# sourceMappingURL=millisecond.js.map

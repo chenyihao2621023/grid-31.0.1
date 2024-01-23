@@ -315,4 +315,3 @@ export function prepareLinePathAnimation(newData, oldData, diff) {
     const marker = prepareMarkerAnimation(pairMap, status);
     return Object.assign(Object.assign({}, pathFns), { marker, hasMotion });
 }
-//# sourceMappingURL=lineUtil.js.map

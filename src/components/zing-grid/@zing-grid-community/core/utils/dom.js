@@ -2,13 +2,7 @@ import { browserSupportsPreventScroll, isBrowserChrome, isBrowserSafari } from '
 import { setAriaHidden } from './aria';
 import { camelCaseToHyphenated } from './string';
 let rtlNegativeScroll;
-/**
- * This method adds a class to an element and remove that class from all siblings.
- * Useful for toggling state.
- * @param {HTMLElement} element The element to receive the class
- * @param {string} elementClass The class to be assigned to the element
- * @param {boolean} otherElementClass The class to be assigned to siblings of the element, but not the element itself
- */
+
 export function radioCssClass(element, elementClass, otherElementClass) {
     const parent = element.parentElement;
     let sibling = parent && parent.firstChild;
@@ -143,7 +137,7 @@ export function isRtlNegativeScroll() {
     template.style.top = '0px';
     template.style.overflow = 'hidden';
     template.dir = 'rtl';
-    template.innerHTML = /* html */
+    template.innerHTML = 
         `<div style="width: 2px">
             <span style="display: inline-block; width: 1px"></span>
             <span style="display: inline-block; width: 1px"></span>
@@ -195,12 +189,7 @@ export function isVisible(element) {
     const isHidden = !element.offsetParent || window.getComputedStyle(element).visibility !== 'visible';
     return !isHidden;
 }
-/**
- * Loads the template and returns it as an element. makes up for no simple way in
- * the dom api to load html directly, eg we cannot do this: document.createElement(template)
- * @param {string} template
- * @returns {HTMLElement}
- */
+
 export function loadTemplate(template) {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = (template || '').trim();
@@ -342,11 +331,7 @@ export function formatSize(size) {
 export function isNodeOrElement(o) {
     return o instanceof Node || o instanceof HTMLElement;
 }
-/**
- * Makes a copy of a node list into a list
- * @param {NodeList} nodeList
- * @returns {Node[]}
- */
+
 export function copyNodeList(nodeList) {
     if (nodeList == null) {
         return [];
@@ -380,12 +365,7 @@ export function nodeListForEach(nodeList, action) {
         action(nodeList[i]);
     }
 }
-/**
- * cell renderers are used in a few places. they bind to dom slightly differently to other cell renders as they
- * can return back strings (instead of html element) in the getGui() method. common code placed here to handle that.
- * @param {ZingPromise<ICellRendererComp>} cellRendererPromise
- * @param {HTMLElement} eTarget
- */
+
 export function bindCellRendererToHtmlElement(cellRendererPromise, eTarget) {
     cellRendererPromise.then(cellRenderer => {
         const gui = cellRenderer.getGui();
@@ -399,4 +379,3 @@ export function bindCellRendererToHtmlElement(cellRendererPromise, eTarget) {
         }
     });
 }
-//# sourceMappingURL=dom.js.map

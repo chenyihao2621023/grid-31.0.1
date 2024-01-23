@@ -19,4 +19,3 @@ export function registerInbuiltModules() {
     registerModule(PieSeriesModule);
     registerModule(HistogramSeriesModule);
 }
-//# sourceMappingURL=registerInbuiltModules.js.map

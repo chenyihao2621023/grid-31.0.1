@@ -45,4 +45,3 @@ export function resolveModuleConflicts(opts) {
     }
     return conflictOverrides;
 }
-//# sourceMappingURL=defaults.js.map

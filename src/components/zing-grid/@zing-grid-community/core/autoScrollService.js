@@ -77,4 +77,3 @@ export class AutoScrollService {
         }
     }
 }
-//# sourceMappingURL=autoScrollService.js.map

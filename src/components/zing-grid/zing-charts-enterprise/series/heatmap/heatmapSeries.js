@@ -351,4 +351,3 @@ export class HeatmapSeries extends _ModuleSupport.CartesianSeries {
 }
 HeatmapSeries.className = 'HeatmapSeries';
 HeatmapSeries.type = 'heatmap';
-//# sourceMappingURL=heatmapSeries.js.map

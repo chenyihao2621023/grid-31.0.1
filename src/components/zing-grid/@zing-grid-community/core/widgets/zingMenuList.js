@@ -13,7 +13,7 @@ import { last } from "../utils/array";
 import { setAriaLevel } from "../utils/aria";
 export class ZingMenuList extends TabGuardComp {
     constructor(level = 1) {
-        super(/* html */ `<div class="zing-menu-list" role="tree"></div>`);
+        super( `<div class="zing-menu-list" role="tree"></div>`);
         this.level = level;
         this.menuItems = [];
     }
@@ -97,7 +97,7 @@ export class ZingMenuList extends TabGuardComp {
         item.activate();
     }
     addSeparator() {
-        const separatorHtml = /* html */ `
+        const separatorHtml =  `
             <div class="zing-menu-separator" aria-hidden="true">
                 <div class="zing-menu-separator-part"></div>
                 <div class="zing-menu-separator-part"></div>
@@ -190,4 +190,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingMenuList.prototype, "postConstruct", null);
-//# sourceMappingURL=zingMenuList.js.map

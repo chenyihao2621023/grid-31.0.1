@@ -19,4 +19,3 @@ export class TextFloatingFilter extends TextInputFloatingFilter {
         return this.createManagedBean(new FloatingFilterTextInputService());
     }
 }
-//# sourceMappingURL=textFloatingFilter.js.map

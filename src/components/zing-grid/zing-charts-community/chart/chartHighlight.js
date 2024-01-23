@@ -13,4 +13,3 @@ export class ChartHighlight {
 __decorate([
     Validate(UNION(['tooltip', 'node'], 'a range'))
 ], ChartHighlight.prototype, "range", void 0);
-//# sourceMappingURL=chartHighlight.js.map

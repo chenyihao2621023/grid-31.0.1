@@ -780,4 +780,3 @@ export const HISTOGRAM_SCATTER_COMBO_SERIES_LABELS = {
         position: 'bottom',
     },
 };
-//# sourceMappingURL=examples.js.map

@@ -137,4 +137,3 @@ export class SeriesLayerManager {
         this.series = {};
     }
 }
-//# sourceMappingURL=seriesLayerManager.js.map

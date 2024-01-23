@@ -797,4 +797,3 @@ export const DATA_TOTAL_GAME_WINNINGS_GROUPED_BY_COUNTRY_EXTENDED = DATA_TOTAL_G
         totalWinnings: 677324,
     },
 ]);
-//# sourceMappingURL=data.js.map

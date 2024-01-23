@@ -3205,10 +3205,7 @@ let ColumnModel = class ColumnModel extends BeanStub {
     getGroupAutoColumns() {
         return this.groupAutoColumns;
     }
-    /**
-     * Creates new auto group columns if required
-     * @returns whether auto cols have changed
-     */
+    
     createGroupAutoColumnsIfNeeded() {
         const forceRecreateAutoGroups = this.forceRecreateAutoGroups;
         this.forceRecreateAutoGroups = false;
@@ -3529,4 +3526,3 @@ ColumnModel = __decorate([
     Bean('columnModel')
 ], ColumnModel);
 export { ColumnModel };
-//# sourceMappingURL=columnModel.js.map

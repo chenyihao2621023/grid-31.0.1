@@ -173,4 +173,3 @@ export class Animation {
         throw new Error(`Unable to interpolate values: ${a}, ${b}`);
     }
 }
-//# sourceMappingURL=animation.js.map

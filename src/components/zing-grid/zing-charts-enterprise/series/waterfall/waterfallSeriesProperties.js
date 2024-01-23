@@ -170,4 +170,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], WaterfallSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=waterfallSeriesProperties.js.map

@@ -10,7 +10,7 @@ import { SetFilterModelFormatter } from './setFilterModelFormatter';
 import { SetValueModel } from './setValueModel';
 export class SetFloatingFilterComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div class="zing-floating-filter-input zing-set-floating-filter-input" role="presentation">
                 <zing-input-text-field ref="eFloatingFilterText"></zing-input-text-field>
             </div>`);
@@ -79,4 +79,3 @@ __decorate([
 __decorate([
     Autowired('columnModel')
 ], SetFloatingFilterComp.prototype, "columnModel", void 0);
-//# sourceMappingURL=setFloatingFilter.js.map

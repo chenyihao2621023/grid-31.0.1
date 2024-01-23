@@ -35,4 +35,3 @@ GridHeaderComp.TEMPLATE = `<div class="zing-header" role="presentation"/>`;
 __decorate([
     PostConstruct
 ], GridHeaderComp.prototype, "postConstruct", null);
-//# sourceMappingURL=gridHeaderComp.js.map

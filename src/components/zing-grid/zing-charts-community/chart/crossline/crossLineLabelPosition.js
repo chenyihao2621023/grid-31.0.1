@@ -154,4 +154,3 @@ export const labelDirectionHandling = {
     insideTopRight: { c: POSITION_TOP_RIGHT_COORDINATES },
     insideBottomRight: { c: POSITION_BOTTOM_RIGHT_COORDINATES },
 };
-//# sourceMappingURL=crossLineLabelPosition.js.map

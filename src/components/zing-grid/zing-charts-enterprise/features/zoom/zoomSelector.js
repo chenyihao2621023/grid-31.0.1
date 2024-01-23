@@ -122,4 +122,3 @@ export class ZoomSelector {
         return { x, y, width, height };
     }
 }
-//# sourceMappingURL=zoomSelector.js.map

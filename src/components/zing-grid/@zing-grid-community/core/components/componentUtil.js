@@ -16,7 +16,7 @@ export class ComponentUtil {
         // gridOptions checking for presence of a gridOption key.
         return this.ALL_PROPERTIES_AND_CALLBACKS;
     }
-    /** Combines component props / attributes with the provided gridOptions returning a new combined gridOptions object */
+    
     static combineAttributesAndGridOptions(gridOptions, component) {
         // create empty grid options if none were passed
         if (typeof gridOptions !== 'object') {
@@ -66,7 +66,7 @@ _a = ComponentUtil;
 ComponentUtil.EVENTS = values(Events);
 ComponentUtil.VUE_OMITTED_PROPERTY = 'AG-VUE-OMITTED-PROPERTY';
 // events that are internal to ZING Grid and should not be exposed to users via documentation or generated framework components
-/** Exclude the following internal events from code generation to prevent exposing these events via framework components */
+
 ComponentUtil.EXCLUDED_INTERNAL_EVENTS = [
     Events.EVENT_SCROLLBAR_WIDTH_CHANGED,
     Events.EVENT_CHECKBOX_CHANGED,
@@ -107,7 +107,7 @@ ComponentUtil.EXCLUDED_INTERNAL_EVENTS = [
     Events.EVENT_SIDE_BAR_UPDATED,
 ];
 // events that are available for use by users of ZING Grid and so should be documented
-/** EVENTS that should be exposed via code generation for the framework components.  */
+
 ComponentUtil.PUBLIC_EVENTS = _a.EVENTS.filter(e => !includes(_a.EXCLUDED_INTERNAL_EVENTS, e));
 // onXXX methods, based on the above events
 ComponentUtil.EVENT_CALLBACKS = _a.EVENTS.map(event => _a.getCallbackForEvent(event));
@@ -120,4 +120,3 @@ ComponentUtil.FUNCTION_PROPERTIES = PropertyKeys.FUNCTION_PROPERTIES;
 ComponentUtil.ALL_PROPERTIES = PropertyKeys.ALL_PROPERTIES;
 ComponentUtil.ALL_PROPERTIES_AND_CALLBACKS = [..._a.ALL_PROPERTIES, ..._a.EVENT_CALLBACKS];
 ComponentUtil.ALL_PROPERTIES_AND_CALLBACKS_SET = new Set(_a.ALL_PROPERTIES_AND_CALLBACKS);
-//# sourceMappingURL=componentUtil.js.map

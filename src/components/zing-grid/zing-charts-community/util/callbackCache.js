@@ -40,4 +40,3 @@ export class CallbackCache {
         this.cache = new WeakMap();
     }
 }
-//# sourceMappingURL=callbackCache.js.map

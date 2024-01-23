@@ -28,4 +28,3 @@ __decorate([
 __decorate([
     Validate(POSITIVE_NUMBER)
 ], Padding.prototype, "left", void 0);
-//# sourceMappingURL=padding.js.map

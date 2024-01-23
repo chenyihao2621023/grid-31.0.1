@@ -21,4 +21,3 @@ export const RadarAreaModule = {
         };
     },
 };
-//# sourceMappingURL=radarAreaModule.js.map

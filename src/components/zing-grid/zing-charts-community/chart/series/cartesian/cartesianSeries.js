@@ -540,11 +540,7 @@ export class CartesianSeries extends DataModelSeries {
     shouldFlipXY() {
         return false;
     }
-    /**
-     * Get the minimum bounding box that contains any adjacent two nodes. The axes are treated independently, so this
-     * may not represent the same two points for both directions. The dimensions represent the greatest distance
-     * between any two adjacent nodes.
-     */
+    
     getMinRect() {
         const [context] = this._contextNodeData;
         if (!(context === null || context === void 0 ? void 0 : context.nodeData.length)) {
@@ -733,4 +729,3 @@ export class CartesianSeries extends DataModelSeries {
         return result;
     }
 }
-//# sourceMappingURL=cartesianSeries.js.map

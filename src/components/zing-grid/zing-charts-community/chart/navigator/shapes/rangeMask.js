@@ -105,4 +105,3 @@ __decorate([
 __decorate([
     Validate(NUMBER)
 ], RangeMask.prototype, "_max", void 0);
-//# sourceMappingURL=rangeMask.js.map

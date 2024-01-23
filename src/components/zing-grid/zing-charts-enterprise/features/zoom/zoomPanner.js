@@ -54,4 +54,3 @@ export class ZoomPanner {
         return newZooms;
     }
 }
-//# sourceMappingURL=zoomPanner.js.map

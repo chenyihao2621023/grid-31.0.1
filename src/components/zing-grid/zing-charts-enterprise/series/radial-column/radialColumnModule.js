@@ -20,4 +20,3 @@ export const RadialColumnModule = {
     stackable: true,
     groupable: true,
 };
-//# sourceMappingURL=radialColumnModule.js.map

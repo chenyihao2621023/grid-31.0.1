@@ -61,15 +61,7 @@ var TickGenerationType;
     TickGenerationType[TickGenerationType["FILTER"] = 2] = "FILTER";
     TickGenerationType[TickGenerationType["VALUES"] = 3] = "VALUES";
 })(TickGenerationType || (TickGenerationType = {}));
-/**
- * A general purpose linear axis with no notion of orientation.
- * The axis is always rendered vertically, with horizontal labels positioned to the left
- * of the axis line by default. The axis can be {@link rotation | rotated} by an arbitrary angle,
- * so that it can be used as a top, right, bottom, left, radial or any other kind
- * of linear axis.
- * The generic `D` parameter is the type of the domain of the axis' scale.
- * The output range of the axis' scale is always numeric (screen coordinates).
- */
+
 export class Axis {
     get type() {
         var _a;
@@ -95,7 +87,7 @@ export class Axis {
         this.scale = scale;
         this.id = createId(this);
         this.nice = true;
-        /** Reverse the axis scale domain if `true`. */
+        
         this.reverse = undefined;
         this.dataDomain = { domain: [], clipped: false };
         this.keys = [];
@@ -133,20 +125,12 @@ export class Axis {
         this.visibleRange = [0, 1];
         this.title = undefined;
         this._titleCaption = new Caption();
-        /**
-         * The length of the grid. The grid is only visible in case of a non-zero value.
-         * In case {@link radialGrid} is `true`, the value is interpreted as an angle
-         * (in degrees).
-         */
+        
         this._gridLength = 0;
         this.fractionDigits = 0;
-        /**
-         * The distance between the grid ticks and the axis ticks.
-         */
+        
         this.gridPadding = 0;
-        /**
-         * Is used to avoid collisions between axis labels and series.
-         */
+        
         this.seriesAreaPadding = 0;
         this.tickGenerationResult = undefined;
         this.maxThickness = Infinity;
@@ -226,12 +210,7 @@ export class Axis {
         axisNode.removeChild(this.axisGroup);
         axisNode.removeChild(this.crossLineGroup);
     }
-    /**
-     * Checks if a point or an object is in range.
-     * @param x A point (or object's starting point).
-     * @param width Object's width.
-     * @param tolerance Expands the range on both ends by this amount.
-     */
+    
     inRange(x, width = 0, tolerance = 0) {
         const min = Math.min(...this.range);
         const max = Math.max(...this.range);
@@ -306,9 +285,7 @@ export class Axis {
             return;
         this.moduleCtx.chartEventManager.axisHover(this.id, this.direction);
     }
-    /**
-     * Creates/removes/updates the scene graph nodes that constitute the axis.
-     */
+    
     update(primaryTickCount) {
         if (!this.tickGenerationResult) {
             return;
@@ -865,10 +842,7 @@ export class Axis {
         const max = Math.max(...range);
         return max - min;
     }
-    /**
-     * Calculates the available range with an additional "bleed" beyond the canvas that encompasses the full axis when
-     * the visible range is only a portion of the axis.
-     */
+    
     calculateRangeWithBleed() {
         const { visibleRange } = this;
         const visibleScale = 1 / (visibleRange[1] - visibleRange[0]);
@@ -1140,4 +1114,3 @@ __decorate([
 __decorate([
     Validate(predicateWithMessage((title) => typeof title == 'object', 'Title object'), { optional: true })
 ], Axis.prototype, "title", void 0);
-//# sourceMappingURL=axis.js.map

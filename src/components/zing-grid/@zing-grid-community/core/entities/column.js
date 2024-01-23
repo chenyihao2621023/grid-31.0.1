@@ -108,29 +108,21 @@ export class Column {
         this.initTooltip();
         this.eventService.dispatchEvent(this.createColumnEvent('colDefChanged', source));
     }
-    /**
-     * Returns the column definition provided by the application.
-     * This may not be correct, as items can be superseded by default column options.
-     * However it's useful for comparison, eg to know which application column definition matches that column.
-     */
+    
     getUserProvidedColDef() {
         return this.userProvidedColDef;
     }
     setParent(parent) {
         this.parent = parent;
     }
-    /** Returns the parent column group, if column grouping is active. */
+    
     getParent() {
         return this.parent;
     }
     setOriginalParent(originalParent) {
         this.originalParent = originalParent;
     }
-    /**
-     * Used for marryChildren, helps with comparing when duplicate groups have been created to manage split groups.
-     *
-     * Parent may contain a duplicate but not identical group when the group is split.
-     */
+    
     getOriginalParent() {
         return this.originalParent;
     }
@@ -171,11 +163,11 @@ export class Column {
         const showingThisGroup = this.colDef.showRowGroup === colId;
         return showingAllGroups || showingThisGroup;
     }
-    /** Returns `true` if column is a primary column, `false` if secondary. Secondary columns are used for pivoting. */
+    
     isPrimary() {
         return this.primary;
     }
-    /** Returns `true` if column filtering is allowed. */
+    
     isFilterAllowed() {
         // filter defined means it's a string, class or true.
         // if its false, null or undefined then it's false.
@@ -191,11 +183,11 @@ export class Column {
     isTooltipFieldContainsDots() {
         return this.tooltipFieldContainsDots;
     }
-    /** Add an event listener to the column. */
+    
     addEventListener(eventType, listener) {
         this.eventService.addEventListener(eventType, listener);
     }
-    /** Remove event listener from the column. */
+    
     removeEventListener(eventType, listener) {
         this.eventService.removeEventListener(eventType, listener);
     }
@@ -223,9 +215,7 @@ export class Column {
         }
         return false;
     }
-    /**
-     * Returns `true` if the cell for this column is editable for the given `rowNode`, otherwise `false`.
-     */
+    
     isCellEditable(rowNode) {
         // only allow editing of groups if the user has this option enabled
         if (rowNode.group && !this.gridOptionsService.get('enableGroupEdit')) {
@@ -257,7 +247,7 @@ export class Column {
     isResizable() {
         return !!this.getColDefValue('resizable');
     }
-    /** Get value from ColDef or default if it exists. */
+    
     getColDefValue(key) {
         var _a;
         return (_a = this.colDef[key]) !== null && _a !== void 0 ? _a : COL_DEF_DEFAULTS[key];
@@ -293,7 +283,7 @@ export class Column {
     isMoving() {
         return this.moving;
     }
-    /** If sorting is active, returns the sort direction e.g. `'asc'` or `'desc'`. */
+    
     getSort() {
         return this.sort;
     }
@@ -339,7 +329,7 @@ export class Column {
         this.aggFunc = aggFunc;
         this.dispatchStateUpdatedEvent('aggFunc');
     }
-    /** If aggregation is set for the column, returns the aggregation function. */
+    
     getAggFunc() {
         return this.aggFunc;
     }
@@ -359,7 +349,7 @@ export class Column {
             this.eventService.dispatchEvent(this.createColumnEvent('leftChanged', source));
         }
     }
-    /** Returns `true` if filter is active on the column. */
+    
     isFilterActive() {
         return this.filterActive;
     }
@@ -375,7 +365,7 @@ export class Column {
         }
         this.eventService.dispatchEvent(filterChangedEvent);
     }
-    /** Returns `true` when this `Column` is hovered, otherwise `false` */
+    
     isHovered() {
         return this.columnHoverService.isHovered(this);
     }
@@ -436,49 +426,36 @@ export class Column {
         const colDef = this.getColDef();
         return !colDef.suppressSpanHeaderHeight && !colDef.autoHeaderHeight;
     }
-    /** Returns the column definition for this column.
-     * The column definition will be the result of merging the application provided column definition with any provided defaults
-     * (e.g. `defaultColDef` grid option, or column types.
-     *
-     * Equivalent: `getDefinition` */
+    
     getColDef() {
         return this.colDef;
     }
     getColumnGroupShow() {
         return this.colDef.columnGroupShow;
     }
-    /**
-     * Returns the unique ID for the column.
-     *
-     * Equivalent: `getId`, `getUniqueId` */
+    
     getColId() {
         return this.colId;
     }
-    /**
-     * Returns the unique ID for the column.
-     *
-     * Equivalent: `getColId`, `getUniqueId` */
+    
     getId() {
         return this.colId;
     }
-    /**
-     * Returns the unique ID for the column.
-     *
-     * Equivalent: `getColId`, `getId` */
+    
     getUniqueId() {
         return this.colId;
     }
     getDefinition() {
         return this.colDef;
     }
-    /** Returns the current width of the column. If the column is resized, the actual width is the new size. */
+    
     getActualWidth() {
         return this.actualWidth;
     }
     getAutoHeaderHeight() {
         return this.autoHeaderHeight;
     }
-    /** Returns true if the header height has changed */
+    
     setAutoHeaderHeight(height) {
         const changed = height !== this.autoHeaderHeight;
         this.autoHeaderHeight = height;
@@ -571,7 +548,7 @@ export class Column {
         }
         this.dispatchStateUpdatedEvent('rowGroup');
     }
-    /** Returns `true` if row group is currently active for this column. */
+    
     isRowGroupActive() {
         return this.rowGroupActive;
     }
@@ -582,7 +559,7 @@ export class Column {
         }
         this.dispatchStateUpdatedEvent('pivot');
     }
-    /** Returns `true` if pivot is currently active for this column. */
+    
     isPivotActive() {
         return this.pivotActive;
     }
@@ -598,7 +575,7 @@ export class Column {
             this.eventService.dispatchEvent(this.createColumnEvent('columnValueChanged', source));
         }
     }
-    /** Returns `true` if value (aggregation) is currently active for this column. */
+    
     isValueActive() {
         return this.aggregationActive;
     }
@@ -665,4 +642,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], Column.prototype, "initialise", null);
-//# sourceMappingURL=column.js.map

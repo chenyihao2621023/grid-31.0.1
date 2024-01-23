@@ -36,10 +36,7 @@ export class GroupedCategoryAxis extends CartesianAxis {
         this.tickScale = new BandScale();
         this.line = new AxisLine();
         this.label = new GroupedCategoryAxisLabel();
-        /**
-         * The color of the labels.
-         * Use `undefined` rather than `rgba(0, 0, 0, 0)` to make labels invisible.
-         */
+        
         this.labelColor = 'rgba(87, 87, 87, 1)';
         this.includeInvisibleDomains = true;
         const { tickLineGroup, tickLabelGroup, gridLineGroup, tickScale, scale } = this;
@@ -75,9 +72,7 @@ export class GroupedCategoryAxis extends CartesianAxis {
     get lineHeight() {
         return this.label.fontSize * 1.5;
     }
-    /**
-     * The length of the grid. The grid is only visible in case of a non-zero value.
-     */
+    
     set gridLength(value) {
         // Was visible and now invisible, or was invisible and now visible.
         if ((this._gridLength && !value) || (!this._gridLength && value)) {
@@ -134,19 +129,7 @@ export class GroupedCategoryAxis extends CartesianAxis {
         this.resizeTickTree();
         return { domain: values, clipped: false };
     }
-    /**
-     * Creates/removes/updates the scene graph nodes that constitute the axis.
-     * Supposed to be called _manually_ after changing _any_ of the axis properties.
-     * This allows to bulk set axis properties before updating the nodes.
-     * The node changes made by this method are rendered on the next animation frame.
-     * We could schedule this method call automatically on the next animation frame
-     * when any of the axis properties change (the way we do when properties of scene graph's
-     * nodes change), but this will mean that we first wait for the next animation
-     * frame to make changes to the nodes of the axis, then wait for another animation
-     * frame to render those changes. It's nice to have everything update automatically,
-     * but this extra level of async indirection will not just introduce an unwanted delay,
-     * it will also make it harder to reason about the program.
-     */
+    
     update() {
         if (!this.computedLayout) {
             return;
@@ -486,4 +469,3 @@ GroupedCategoryAxis.type = 'grouped-category';
 __decorate([
     Validate(COLOR_STRING, { optional: true })
 ], GroupedCategoryAxis.prototype, "labelColor", void 0);
-//# sourceMappingURL=groupedCategoryAxis.js.map

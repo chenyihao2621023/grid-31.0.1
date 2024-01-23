@@ -162,4 +162,3 @@ __decorate([
 __decorate([
     Invalidating
 ], ContinuousScale.prototype, "maxTickCount", void 0);
-//# sourceMappingURL=continuousScale.js.map

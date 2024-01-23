@@ -130,9 +130,7 @@ export class GradientLegend {
         this.reverseOrder = undefined;
         // Placeholder
         this.pagination = undefined;
-        /**
-         * Spacing between the legend and the edge of the chart's element.
-         */
+        
         this.spacing = 20;
         this.data = [];
         this.listeners = {};
@@ -349,4 +347,3 @@ __decorate([
 __decorate([
     DeprecatedAndRenamedTo('scale')
 ], GradientLegend.prototype, "stop", void 0);
-//# sourceMappingURL=gradientLegend.js.map

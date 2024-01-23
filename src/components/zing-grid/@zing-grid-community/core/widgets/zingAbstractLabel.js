@@ -109,4 +109,3 @@ export class ZingAbstractLabel extends Component {
 __decorate([
     PostConstruct
 ], ZingAbstractLabel.prototype, "postConstruct", null);
-//# sourceMappingURL=zingAbstractLabel.js.map

@@ -160,4 +160,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ZingAutocompleteList.prototype, "init", null);
-//# sourceMappingURL=zingAutocompleteList.js.map

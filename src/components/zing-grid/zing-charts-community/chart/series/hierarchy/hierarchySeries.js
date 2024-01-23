@@ -257,4 +257,3 @@ export class HierarchySeries extends Series {
         return this.getDatumIdFromData(node);
     }
 }
-//# sourceMappingURL=hierarchySeries.js.map

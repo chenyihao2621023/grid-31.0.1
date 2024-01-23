@@ -126,4 +126,3 @@ export class ZingInputNumberField extends ZingInputTextField {
         return typeof value === 'string' && value.includes('e');
     }
 }
-//# sourceMappingURL=zingInputNumberField.js.map

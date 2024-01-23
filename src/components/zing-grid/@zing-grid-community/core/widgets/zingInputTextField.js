@@ -18,7 +18,7 @@ export class ZingInputTextField extends ZingAbstractInputField {
         }
         return super.setValue(value, silent);
     }
-    /** Used to set an initial value into the input without necessarily setting `this.value` or triggering events (e.g. to set an invalid value) */
+    
     setStartValue(value) {
         this.setValue(value, true);
     }
@@ -42,4 +42,3 @@ export class ZingInputTextField extends ZingAbstractInputField {
         });
     }
 }
-//# sourceMappingURL=zingInputTextField.js.map

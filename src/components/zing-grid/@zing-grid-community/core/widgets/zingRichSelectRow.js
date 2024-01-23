@@ -13,7 +13,7 @@ import { exists } from "../utils/generic";
 import { setAriaActiveDescendant, setAriaSelected } from "../utils/aria";
 export class RichSelectRow extends Component {
     constructor(params, wrapperEl) {
-        super(/* html */ `<div class="zing-rich-select-row" role="presentation"></div>`);
+        super( `<div class="zing-rich-select-row" role="presentation"></div>`);
         this.params = params;
         this.wrapperEl = wrapperEl;
     }
@@ -128,4 +128,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], RichSelectRow.prototype, "postConstruct", null);
-//# sourceMappingURL=zingRichSelectRow.js.map

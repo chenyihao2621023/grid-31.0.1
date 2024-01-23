@@ -27,4 +27,3 @@ export function nearestSquaredInContainer(point, container, maxDistanceSquared =
     }
     return result;
 }
-//# sourceMappingURL=nearest.js.map

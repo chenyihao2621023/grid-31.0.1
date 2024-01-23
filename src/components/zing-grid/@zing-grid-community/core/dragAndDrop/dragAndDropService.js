@@ -408,4 +408,3 @@ DragAndDropService = DragAndDropService_1 = __decorate([
     Bean('dragAndDropService')
 ], DragAndDropService);
 export { DragAndDropService };
-//# sourceMappingURL=dragAndDropService.js.map

@@ -195,4 +195,3 @@ export { ModuleNames } from "./modules/moduleNames";
 export { ModuleRegistry } from "./modules/moduleRegistry";
 //  events
 export * from "./events";
-//# sourceMappingURL=main.js.map

@@ -138,4 +138,3 @@ __decorate([
 __decorate([
     Validate(POSITIVE_NUMBER)
 ], RangeHandle.prototype, "_height", void 0);
-//# sourceMappingURL=rangeHandle.js.map

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-var VueComponentFactory = /** @class */ (function () {
+var VueComponentFactory =  (function () {
     function VueComponentFactory() {
     }
     VueComponentFactory.getComponentType = function (parent, component) {

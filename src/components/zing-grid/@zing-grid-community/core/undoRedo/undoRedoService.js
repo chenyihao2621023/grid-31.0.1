@@ -302,4 +302,3 @@ UndoRedoService = __decorate([
     Bean('undoRedoService')
 ], UndoRedoService);
 export { UndoRedoService };
-//# sourceMappingURL=undoRedoService.js.map

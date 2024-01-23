@@ -9,4 +9,3 @@ function decode(encoded) {
 }
 export const second = new CountableTimeInterval(encode, decode);
 export default second;
-//# sourceMappingURL=second.js.map

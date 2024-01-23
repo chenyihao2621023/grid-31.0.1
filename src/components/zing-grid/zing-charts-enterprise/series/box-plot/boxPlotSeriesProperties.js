@@ -119,4 +119,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], BoxPlotSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=boxPlotSeriesProperties.js.map

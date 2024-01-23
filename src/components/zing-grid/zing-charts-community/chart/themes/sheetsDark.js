@@ -64,4 +64,3 @@ export class SheetsDark extends DarkTheme {
         return palette;
     }
 }
-//# sourceMappingURL=sheetsDark.js.map

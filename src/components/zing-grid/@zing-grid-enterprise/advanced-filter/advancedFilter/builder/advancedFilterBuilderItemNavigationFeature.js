@@ -67,4 +67,3 @@ export class AdvancedFilterBuilderItemNavigationFeature extends BeanStub {
 __decorate([
     PostConstruct
 ], AdvancedFilterBuilderItemNavigationFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterBuilderItemNavigationFeature.js.map

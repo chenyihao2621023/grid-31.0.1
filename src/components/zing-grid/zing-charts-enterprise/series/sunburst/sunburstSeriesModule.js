@@ -51,4 +51,3 @@ export const SunburstSeriesModule = {
         return { fills, strokes, colorRange: defaultColorRange };
     },
 };
-//# sourceMappingURL=sunburstSeriesModule.js.map

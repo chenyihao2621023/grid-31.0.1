@@ -12,8 +12,7 @@ import { removeFromArray } from "../utils/array";
 import { areEventsNear } from "../utils/mouse";
 import { isBrowserSafari } from "../utils/browser";
 import { isFocusableFormField } from "../utils/dom";
-/** Adds drag listening onto an element. In ZING Grid this is used twice, first is resizing columns,
- * second is moving the columns and column groups around (ie the 'drag' part of Drag and Drop. */
+
 let DragService = class DragService extends BeanStub {
     constructor() {
         super(...arguments);
@@ -288,4 +287,3 @@ DragService = __decorate([
     Bean('dragService')
 ], DragService);
 export { DragService };
-//# sourceMappingURL=dragService.js.map

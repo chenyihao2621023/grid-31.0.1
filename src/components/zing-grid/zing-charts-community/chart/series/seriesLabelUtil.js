@@ -9,4 +9,3 @@ export function seriesLabelFadeOutAnimation({ id }, subId, animationManager, lab
 export function resetLabelFn(_node) {
     return { opacity: 1 };
 }
-//# sourceMappingURL=seriesLabelUtil.js.map

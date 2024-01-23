@@ -38,4 +38,3 @@ __decorate([
     Validate(COLOR_STRING, { optional: true }),
     ProxyPropertyOnWrite('rectNode', 'fill')
 ], Background.prototype, "fill", void 0);
-//# sourceMappingURL=background.js.map

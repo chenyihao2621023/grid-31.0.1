@@ -9,41 +9,25 @@ import { Invalidating } from './invalidating';
 function clamp(x, min, max) {
     return Math.max(min, Math.min(max, x));
 }
-/**
- * Maps a discrete domain to a continuous numeric range.
- */
+
 export class BandScale {
     constructor() {
         this.type = 'band';
         this.invalid = true;
         this.interval = 1;
-        /**
-         * Maps datum to its index in the {@link domain} array.
-         * Used to check for duplicate datums (not allowed).
-         */
+        
         this.index = new Map();
-        /**
-         * The output range values for datum at each index.
-         */
+        
         this.ordinalRange = [];
-        /**
-         * Contains unique datums only. Since `{}` is used in place of `Map`
-         * for IE11 compatibility, the datums are converted `toString` before
-         * the uniqueness check.
-         */
+        
         this._domain = [];
         this.range = [0, 1];
         this._bandwidth = 1;
         this._step = 1;
         this._rawBandwidth = 1;
-        /**
-         * The ratio of the range that is reserved for space between bands.
-         */
+        
         this._paddingInner = 0;
-        /**
-         * The ratio of the range that is reserved for space before the first
-         * and after the last band.
-         */
+        
         this._paddingOuter = 0;
         this.round = false;
     }
@@ -167,4 +151,3 @@ __decorate([
 __decorate([
     Invalidating
 ], BandScale.prototype, "round", void 0);
-//# sourceMappingURL=bandScale.js.map

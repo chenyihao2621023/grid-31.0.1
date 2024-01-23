@@ -6,9 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Bean, BeanStub, PostConstruct, PreDestroy } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 import { SparklineTooltip } from '../sparkline/tooltip/sparklineTooltip';
-/**
- * This 'bean' creates a single sparkline tooltip that is bound to the grid lifecycle.
- */
+
 let SparklineTooltipSingleton = class SparklineTooltipSingleton extends BeanStub {
     postConstruct() {
         this.tooltip = new SparklineTooltip();
@@ -32,4 +30,3 @@ SparklineTooltipSingleton = __decorate([
     Bean('sparklineTooltipSingleton')
 ], SparklineTooltipSingleton);
 export { SparklineTooltipSingleton };
-//# sourceMappingURL=sparklineTooltipSingleton.js.map

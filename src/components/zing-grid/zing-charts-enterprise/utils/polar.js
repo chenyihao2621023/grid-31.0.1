@@ -1,12 +1,4 @@
-/**
- * Loops through an array of items right (starting from 0 till the middle item)
- * and left (starting from 0, continuing with the last item till the middle item).
- * Breaks if the iterator returns a truthy value.
- * @param items Array of items.
- * @param step Step to increment.
- * @param iterator Iterator function that accepts an item and the next item.
- * @returns `true` if the `iterator` returned `true`, or `false` if it never happened.
- */
+
 export function loopSymmetrically(items, step, iterator) {
     const loop = (start, end, step, iterator) => {
         let prev = items[0];
@@ -23,4 +15,3 @@ export function loopSymmetrically(items, step, iterator) {
         return true;
     return loop(items.length - step, midIndex, -step, iterator);
 }
-//# sourceMappingURL=polar.js.map

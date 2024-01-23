@@ -10,4 +10,3 @@ export const SparklinesModule = {
     userComponents: [{ componentName: 'zingSparklineCellRenderer', componentClass: SparklineCellRenderer }],
     dependantModules: [EnterpriseCoreModule],
 };
-//# sourceMappingURL=sparklinesModule.js.map

@@ -91,4 +91,3 @@ export class SimpleFloatingFilter extends Component {
             uneditableTypes.indexOf(type) < 0;
     }
 }
-//# sourceMappingURL=simpleFloatingFilter.js.map

@@ -179,4 +179,3 @@ __decorate([
 __decorate([
     Validate(POSITIVE_NUMBER)
 ], Navigator.prototype, "margin", void 0);
-//# sourceMappingURL=navigator.js.map

@@ -9,4 +9,3 @@ function decode(encoded) {
 }
 export const minute = new CountableTimeInterval(encode, decode);
 export default minute;
-//# sourceMappingURL=minute.js.map

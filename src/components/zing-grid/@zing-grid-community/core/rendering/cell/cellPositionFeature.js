@@ -2,12 +2,7 @@ import { areEqual, last } from "../../utils/array";
 import { Events } from "../../eventKeys";
 import { missing } from "../../utils/generic";
 import { BeanStub } from "../../context/beanStub";
-/**
- * Takes care of:
- *  #) Cell Width (including when doing cell spanning, which makes width cover many columns)
- *  #) Cell Height (when doing row span, otherwise we don't touch the height as it's just row height)
- *  #) Cell Left (the horizontal positioning of the cell, the vertical positioning is on the row)
- */
+
 export class CellPositionFeature extends BeanStub {
     constructor(ctrl, beans) {
         super();
@@ -138,4 +133,3 @@ export class CellPositionFeature extends BeanStub {
         super.destroy();
     }
 }
-//# sourceMappingURL=cellPositionFeature.js.map

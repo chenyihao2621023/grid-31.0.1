@@ -9,7 +9,7 @@ import { isUserSuppressingKeyboardEvent } from "../../utils/keyboard";
 import { PostConstruct } from "../../context/context";
 export class PopupEditorWrapper extends PopupComponent {
     constructor(params) {
-        super(/* html */ `<div class="zing-popup-editor" tabindex="-1"/>`);
+        super( `<div class="zing-popup-editor" tabindex="-1"/>`);
         this.params = params;
     }
     postConstruct() {
@@ -31,4 +31,3 @@ PopupEditorWrapper.DOM_KEY_POPUP_EDITOR_WRAPPER = 'popupEditorWrapper';
 __decorate([
     PostConstruct
 ], PopupEditorWrapper.prototype, "postConstruct", null);
-//# sourceMappingURL=popupEditorWrapper.js.map

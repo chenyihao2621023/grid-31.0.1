@@ -1,5 +1,5 @@
 import { ZingPromise, Events, _ } from '@/components/zing-grid/@zing-grid-community/core/main.js';
-/** @param V type of value in the Set Filter */
+
 export class ClientSideValuesExtractor {
     constructor(rowModel, filterParams, createKey, caseFormat, columnModel, valueService, treeDataOrGrouping, treeData, getDataPath, groupAllowUnbalanced, addManagedListener) {
         this.rowModel = rowModel;
@@ -128,4 +128,3 @@ export class ClientSideValuesExtractor {
         return existingFormattedKeys;
     }
 }
-//# sourceMappingURL=clientSideValueExtractor.js.map

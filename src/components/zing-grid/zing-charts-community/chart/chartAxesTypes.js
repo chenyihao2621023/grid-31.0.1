@@ -21,4 +21,3 @@ export function getAxisThemeTemplate(axisType) {
     var _a;
     return (_a = AXES_THEME_TEMPLATES[axisType]) !== null && _a !== void 0 ? _a : {};
 }
-//# sourceMappingURL=chartAxesTypes.js.map

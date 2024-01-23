@@ -35,4 +35,3 @@ export function compoundAscending(a, b, comparator) {
     }
     return 0;
 }
-//# sourceMappingURL=compare.js.map

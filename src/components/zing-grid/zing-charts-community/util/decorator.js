@@ -92,4 +92,3 @@ export function extractDecoratedPropertyMetadata(target, propertyKeyOrSymbol) {
         target = Object.getPrototypeOf(target);
     }
 }
-//# sourceMappingURL=decorator.js.map

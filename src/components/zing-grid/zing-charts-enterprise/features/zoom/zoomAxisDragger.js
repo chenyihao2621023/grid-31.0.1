@@ -57,4 +57,3 @@ export class ZoomAxisDragger {
         return newZoom.y;
     }
 }
-//# sourceMappingURL=zoomAxisDragger.js.map

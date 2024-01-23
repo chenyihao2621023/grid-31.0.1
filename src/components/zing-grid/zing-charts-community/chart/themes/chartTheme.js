@@ -427,4 +427,3 @@ ChartTheme.cartesianAxisDefault = {
     'grouped-category': Object.assign({}, ChartTheme.getAxisDefaults()),
     time: Object.assign(Object.assign({}, ChartTheme.getAxisDefaults()), { gridLine: Object.assign(Object.assign({}, ChartTheme.getAxisDefaults().gridLine), { enabled: false }) }),
 };
-//# sourceMappingURL=chartTheme.js.map

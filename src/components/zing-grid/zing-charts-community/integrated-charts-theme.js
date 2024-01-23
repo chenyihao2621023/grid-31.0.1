@@ -7,4 +7,3 @@ export const themes = Object.entries(themeFactories).reduce((obj, [name, factory
     obj[name] = factory();
     return obj;
 }, {});
-//# sourceMappingURL=integrated-charts-theme.js.map

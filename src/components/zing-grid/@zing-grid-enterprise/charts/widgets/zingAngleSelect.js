@@ -202,4 +202,3 @@ __decorate([
 __decorate([
     Autowired('dragService')
 ], ZingAngleSelect.prototype, "dragService", void 0);
-//# sourceMappingURL=zingAngleSelect.js.map

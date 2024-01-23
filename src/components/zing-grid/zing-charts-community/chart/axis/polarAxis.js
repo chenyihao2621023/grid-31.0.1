@@ -24,4 +24,3 @@ __decorate([
 __decorate([
     Validate(RATIO)
 ], PolarAxis.prototype, "innerRadiusRatio", void 0);
-//# sourceMappingURL=polarAxis.js.map

@@ -3,7 +3,7 @@ import { exists } from "../utils/generic";
 import { Component } from "./component";
 export class ZingAutocompleteRow extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
         <div class="zing-autocomplete-row" role="presentation">
             <div class="zing-autocomplete-row-label"></div>
         </div>`);
@@ -43,4 +43,3 @@ export class ZingAutocompleteRow extends Component {
         this.getGui().lastElementChild.innerHTML = (_a = escapeString(this.value)) !== null && _a !== void 0 ? _a : '&nbsp;';
     }
 }
-//# sourceMappingURL=zingAutocompleteRow.js.map

@@ -13,4 +13,3 @@ function decode(encoded) {
 }
 export const year = new CountableTimeInterval(encode, decode);
 export default year;
-//# sourceMappingURL=year.js.map

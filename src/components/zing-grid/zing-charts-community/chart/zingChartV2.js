@@ -53,11 +53,7 @@ function chartType(options) {
     }
     throw new Error(`ZING Chart - unknown type of chart for options with type: ${options.type}`);
 }
-/**
- * Factory for creating and updating instances of ZingChartInstance.
- *
- * @docsInterface
- */
+
 export class ZingCharts {
     static licenseCheck(options) {
         var _a, _b, _c;
@@ -71,15 +67,11 @@ export class ZingCharts {
     static setLicenseKey(licenseKey) {
         this.licenseKey = licenseKey;
     }
-    /**
-     * Returns the `ZingChartInstance` for a DOM node, if there is one.
-     */
+    
     static getInstance(element) {
         return ZingChartsInternal.getInstance(element);
     }
-    /**
-     * Create a new `ZingChartInstance` based upon the given configuration options.
-     */
+    
     static create(options) {
         var _a, _b, _c;
         this.licenseCheck(options);
@@ -89,46 +81,28 @@ export class ZingCharts {
         }
         return chart;
     }
-    /**
-     * Update an existing `ZingChartInstance`. Options provided should be complete and not
-     * partial.
-     *
-     * __NOTE__: As each call could trigger a chart redraw, multiple calls to update options in
-     * quick succession could result in undesirable flickering, so callers should batch up and/or
-     * debounce changes to avoid unintended partial update renderings.
-     */
+    
     static update(chart, options) {
         if (!ZingChartInstanceProxy.isInstance(chart)) {
             throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
         ZingChartsInternal.createOrUpdate(options, chart);
     }
-    /**
-     * Update an existing `ZingChartInstance` by applying a partial set of option changes.
-     *
-     * __NOTE__: As each call could trigger a chart redraw, each individual delta options update
-     * should leave the chart in a valid options state. Also, multiple calls to update options in
-     * quick succession could result in undesirable flickering, so callers should batch up and/or
-     * debounce changes to avoid unintended partial update renderings.
-     */
+    
     static updateDelta(chart, deltaOptions) {
         if (!ZingChartInstanceProxy.isInstance(chart)) {
             throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
         ZingChartsInternal.updateUserDelta(chart, deltaOptions);
     }
-    /**
-     * Starts a browser-based image download for the given `ZingChartInstance`.
-     */
+    
     static download(chart, options) {
         if (!(chart instanceof ZingChartInstanceProxy)) {
             throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
         }
         ZingChartsInternal.download(chart, options);
     }
-    /**
-     * Returns a base64-encoded image data URL for the given `ZingChartInstance`.
-     */
+    
     static getImageDataURL(chart, options) {
         if (!(chart instanceof ZingChartInstanceProxy)) {
             throw new Error(ZingCharts.INVALID_CHART_REF_MESSAGE);
@@ -138,7 +112,7 @@ export class ZingCharts {
 }
 ZingCharts.INVALID_CHART_REF_MESSAGE = 'ZING Charts - invalid chart reference passed';
 ZingCharts.licenseChecked = false;
-/** @deprecated use ZingCharts instead */
+
 export class ZingChart {
     static warnDeprecated(memberName) {
         const warnDeprecated = createDeprecationWarning();
@@ -235,10 +209,7 @@ class ZingChartsInternal {
         debug('ZingChartV2.updateUserDelta() - base options', lastUpdateOptions);
         ZingChartsInternal.createOrUpdate(userOptions, proxy);
     }
-    /**
-     * Returns the content of the current canvas as an image.
-     * @param opts The download options including `width` and `height` of the image as well as `fileName` and `fileFormat`.
-     */
+    
     static download(proxy, opts) {
         const asyncDownload = () => __awaiter(this, void 0, void 0, function* () {
             const maybeClone = yield ZingChartsInternal.prepareResizedChart(proxy, opts);
@@ -550,4 +521,3 @@ function applySeriesValues(target, options) {
             : undefined;
     }
 }
-//# sourceMappingURL=zingChartV2.js.map

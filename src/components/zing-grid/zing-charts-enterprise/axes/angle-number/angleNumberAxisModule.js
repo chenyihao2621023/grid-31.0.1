@@ -9,4 +9,3 @@ export const AngleNumberAxisModule = {
     instanceConstructor: AngleNumberAxis,
     themeTemplate: ANGLE_AXIS_THEME,
 };
-//# sourceMappingURL=angleNumberAxisModule.js.map

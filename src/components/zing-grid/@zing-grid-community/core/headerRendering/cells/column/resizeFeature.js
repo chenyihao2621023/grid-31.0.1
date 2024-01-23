@@ -131,4 +131,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ResizeFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=resizeFeature.js.map

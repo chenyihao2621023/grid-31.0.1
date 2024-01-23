@@ -168,7 +168,7 @@ ContextMenuFactory = __decorate([
 export { ContextMenuFactory };
 class ContextMenu extends Component {
     constructor(menuItems) {
-        super(/* html */ `<div class="${CSS_MENU}" role="presentation"></div>`);
+        super( `<div class="${CSS_MENU}" role="presentation"></div>`);
         this.menuList = null;
         this.focusedCell = null;
         this.menuItems = menuItems;
@@ -217,4 +217,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ContextMenu.prototype, "addMenuItems", null);
-//# sourceMappingURL=contextMenu.js.map

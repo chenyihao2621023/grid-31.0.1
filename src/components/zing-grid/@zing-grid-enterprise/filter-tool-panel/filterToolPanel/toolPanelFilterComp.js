@@ -90,7 +90,7 @@ export class ToolPanelFilterComp extends Component {
         this.expandedCallback();
     }
     addFilterElement() {
-        const filterPanelWrapper = _.loadTemplate(/* html */ `<div class="zing-filter-toolpanel-instance-filter"></div>`);
+        const filterPanelWrapper = _.loadTemplate( `<div class="zing-filter-toolpanel-instance-filter"></div>`);
         const filterWrapper = this.filterManager.getOrCreateFilterWrapper(this.column, 'TOOLBAR');
         if (!filterWrapper) {
             return;
@@ -198,4 +198,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ToolPanelFilterComp.prototype, "postConstruct", null);
-//# sourceMappingURL=toolPanelFilterComp.js.map

@@ -12,4 +12,3 @@ export const RADIAL_COLUMN_SERIES_THEME = {
         __overrides__: _Theme.OVERRIDE_SERIES_LABEL_DEFAULTS,
     },
 };
-//# sourceMappingURL=radialColumnThemes.js.map

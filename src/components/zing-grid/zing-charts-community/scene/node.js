@@ -19,14 +19,9 @@ const zIndexChangedCallback = (o) => {
     }
     o.zIndexChanged();
 };
-/**
- * Abstract scene graph node.
- * Each node can have zero or one parent and belong to zero or one scene.
- */
+
 export class Node extends ChangeDetectable {
-    /**
-     * Some arbitrary data bound to the node.
-     */
+    
     get datum() {
         var _a, _b;
         return (_a = this._datum) !== null && _a !== void 0 ? _a : (_b = this._parent) === null || _b === void 0 ? void 0 : _b.datum;
@@ -77,14 +72,7 @@ export class Node extends ChangeDetectable {
         }
         return this;
     }
-    /**
-     * Appends one or more new node instances to this parent.
-     * If one needs to:
-     * - move a child to the end of the list of children
-     * - move a child from one parent to another (including parents in other scenes)
-     * one should use the {@link insertBefore} method instead.
-     * @param nodes A node or nodes to append.
-     */
+    
     append(nodes) {
         // Passing a single parameter to an open-ended version of `append`
         // would be 30-35% slower than this.
@@ -178,17 +166,11 @@ export class Node extends ChangeDetectable {
     }
     constructor({ isVirtual, tag } = {}) {
         super();
-        /** Unique number to allow creation order to be easily determined. */
+        
         this.serialNumber = Node._nextSerialNumber++;
-        /**
-         * Unique node ID in the form `ClassName-NaturalNumber`.
-         */
+        
         this.id = createId(this);
-        /**
-         * To simplify the type system (especially in Selections) we don't have the `Parent` node
-         * (one that has children). Instead, we mimic HTML DOM, where any node can have children.
-         * But we still need to distinguish regular leaf nodes from container leafs somehow.
-         */
+        
         this.isContainerNode = false;
         this._virtualChildren = [];
         this._children = [];
@@ -201,21 +183,12 @@ export class Node extends ChangeDetectable {
         this.dirtyTransform = false;
         this.scalingX = 1;
         this.scalingY = 1;
-        /**
-         * The center of scaling.
-         * The default value of `null` means the scaling center will be
-         * determined automatically, as the center of the bounding box
-         * of a node.
-         */
+        
         this.scalingCenterX = null;
         this.scalingCenterY = null;
         this.rotationCenterX = null;
         this.rotationCenterY = null;
-        /**
-         * Rotation angle in radians.
-         * The value is set as is. No normalization to the [-180, 180) or [0, 360)
-         * interval is performed.
-         */
+        
         this.rotation = 0;
         this.translationX = 0;
         this.translationY = 0;
@@ -230,12 +203,7 @@ export class Node extends ChangeDetectable {
     containsPoint(_x, _y) {
         return false;
     }
-    /**
-     * Hit testing method.
-     * Recursively checks if the given point is inside this node or any of its children.
-     * Returns the first matching node or `undefined`.
-     * Nodes that render later (show on top) are hit tested first.
-     */
+    
     pickNode(x, y) {
         var _a;
         if (!this.visible || this.pointerEvents === PointerEvents.None || !this.containsPoint(x, y)) {
@@ -431,6 +399,5 @@ __decorate([
         redraw: RedrawType.TRIVIAL,
         changeCb: zIndexChangedCallback,
     })
-    /** Discriminators for render order within a zIndex. */
+    
 ], Node.prototype, "zIndexSubOrder", void 0);
-//# sourceMappingURL=node.js.map

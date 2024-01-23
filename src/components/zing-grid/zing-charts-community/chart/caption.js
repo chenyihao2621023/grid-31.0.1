@@ -111,4 +111,3 @@ __decorate([
 __decorate([
     Validate(TEXT_WRAP)
 ], Caption.prototype, "wrapping", void 0);
-//# sourceMappingURL=caption.js.map

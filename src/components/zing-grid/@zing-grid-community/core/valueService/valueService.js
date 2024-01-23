@@ -110,14 +110,7 @@ let ValueService = class ValueService extends BeanStub {
         }
         return undefined;
     }
-    /**
-     * Sets the value of a GridCell
-     * @param rowNode The `RowNode` to be updated
-     * @param colKey The `Column` to be updated
-     * @param newValue The new value to be set
-     * @param eventSource The event source
-     * @returns `True` if the value has been updated, otherwise`False`.
-     */
+    
     setValue(rowNode, colKey, newValue, eventSource) {
         const column = this.columnModel.getPrimaryColumn(colKey);
         if (!rowNode || !column) {
@@ -342,4 +335,3 @@ ValueService = __decorate([
     Bean('valueService')
 ], ValueService);
 export { ValueService };
-//# sourceMappingURL=valueService.js.map

@@ -12,4 +12,3 @@ export function invertShapeDirection(...supportedShapes) {
         }
     }
 }
-//# sourceMappingURL=shapes.js.map

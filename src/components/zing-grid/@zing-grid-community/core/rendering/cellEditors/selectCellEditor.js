@@ -12,7 +12,7 @@ import { missing } from "../../utils/generic";
 import { KeyCode } from '../../constants/keyCode';
 export class SelectCellEditor extends PopupComponent {
     constructor() {
-        super(/* html */ `<div class="zing-cell-edit-wrapper">
+        super( `<div class="zing-cell-edit-wrapper">
                 <zing-select class="zing-cell-editor" ref="eSelect"></zing-select>
             </div>`);
         this.startedByEnter = false;
@@ -85,4 +85,3 @@ __decorate([
 __decorate([
     RefSelector('eSelect')
 ], SelectCellEditor.prototype, "eSelect", void 0);
-//# sourceMappingURL=selectCellEditor.js.map

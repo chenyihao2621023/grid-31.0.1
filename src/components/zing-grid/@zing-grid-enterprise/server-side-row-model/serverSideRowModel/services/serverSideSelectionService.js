@@ -76,10 +76,7 @@ let ServerSideSelectionService = class ServerSideSelectionService extends BeanSt
         this.eventService.dispatchEvent(event);
         return changedNodes;
     }
-    /**
-     * Deletes the selection state for a set of nodes, for use after deleting nodes via
-     * transaction. As this is designed for transactions, all nodes should belong to the same group.
-     */
+    
     deleteSelectionStateFromParent(storeRoute, removedNodeIds) {
         const stateChanged = this.selectionStrategy.deleteSelectionStateFromParent(storeRoute, removedNodeIds);
         if (!stateChanged) {
@@ -203,4 +200,3 @@ ServerSideSelectionService = __decorate([
     Bean('selectionService')
 ], ServerSideSelectionService);
 export { ServerSideSelectionService };
-//# sourceMappingURL=serverSideSelectionService.js.map

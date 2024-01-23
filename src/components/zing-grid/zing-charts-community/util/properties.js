@@ -67,4 +67,3 @@ export class PropertiesArray extends Array {
 export function isProperties(value) {
     return value instanceof BaseProperties || value instanceof PropertiesArray;
 }
-//# sourceMappingURL=properties.js.map

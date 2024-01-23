@@ -149,4 +149,3 @@ function getStartingValues(isVertical, axes) {
 export function resetBarSelectionsFn(_node, { x, y, width, height }) {
     return { x, y, width, height };
 }
-//# sourceMappingURL=barUtil.js.map

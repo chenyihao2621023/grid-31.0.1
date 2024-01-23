@@ -20,4 +20,3 @@ __decorate([
 __decorate([
     Validate(RATIO)
 ], RadarAreaSeriesProperties.prototype, "fillOpacity", void 0);
-//# sourceMappingURL=radarAreaSeriesProperties.js.map

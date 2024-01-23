@@ -1,7 +1,4 @@
-/**
- * Manages the cursor styling for an element. Tracks the requested styling from distinct
- * dependents and handles conflicting styling requests.
- */
+
 export class CursorManager {
     constructor(element) {
         this.states = {};
@@ -27,4 +24,3 @@ export class CursorManager {
         return this.element.style.cursor;
     }
 }
-//# sourceMappingURL=cursorManager.js.map

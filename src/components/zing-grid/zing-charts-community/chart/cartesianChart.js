@@ -18,7 +18,7 @@ const directions = ['top', 'right', 'bottom', 'left'];
 export class CartesianChart extends Chart {
     constructor(specialOverrides, resources) {
         super(specialOverrides, resources);
-        /** Integrated Charts feature state - not used in Standalone Charts. */
+        
         this.paired = true;
         this._lastCrossLineIds = undefined;
         this._lastAxisWidths = {
@@ -378,4 +378,3 @@ export class CartesianChart extends Chart {
 }
 CartesianChart.className = 'CartesianChart';
 CartesianChart.type = 'cartesian';
-//# sourceMappingURL=cartesianChart.js.map

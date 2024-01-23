@@ -11,4 +11,3 @@ export const AnimationModule = {
         },
     },
 };
-//# sourceMappingURL=animationModule.js.map

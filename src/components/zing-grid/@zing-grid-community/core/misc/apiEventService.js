@@ -68,4 +68,3 @@ ApiEventService = __decorate([
     Bean('apiEventService')
 ], ApiEventService);
 export { ApiEventService };
-//# sourceMappingURL=apiEventService.js.map

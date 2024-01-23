@@ -11,7 +11,7 @@ import { AdvancedFilterBuilderItemAddComp } from "./advancedFilterBuilderItemAdd
 import { AdvancedFilterBuilderEvents } from "./iAdvancedFilterBuilder";
 export class AdvancedFilterBuilderComp extends Component {
     constructor() {
-        super(/* html */ `
+        super( `
             <div role="presentation" class="zing-advanced-filter-builder" tabindex="-1">
                 <div role="presentation" class="zing-advanced-filter-builder-list" ref="eList"></div>
                 <div role="presentation" class="zing-advanced-filter-builder-button-panel">
@@ -434,4 +434,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], AdvancedFilterBuilderComp.prototype, "postConstruct", null);
-//# sourceMappingURL=advancedFilterBuilderComp.js.map

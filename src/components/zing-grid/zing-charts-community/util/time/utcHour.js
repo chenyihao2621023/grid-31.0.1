@@ -7,4 +7,3 @@ function decode(encoded) {
     return new Date(encoded * durationHour);
 }
 export const utcHour = new CountableTimeInterval(encode, decode);
-//# sourceMappingURL=utcHour.js.map

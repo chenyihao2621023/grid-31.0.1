@@ -20,14 +20,7 @@ let DisplayedGroupCreator = class DisplayedGroupCreator extends BeanStub {
     // we try to reuse old groups if we can, to allow gui to do animation
     oldDisplayedGroups) {
         const oldColumnsMapped = this.mapOldGroupsById(oldDisplayedGroups);
-        /**
-         * The following logic starts at the leaf level of columns, iterating through them to build their parent
-         * groups when the parents match.
-         *
-         * The created groups are then added to an array, and similarly iterated on until we reach the top level.
-         *
-         * When row groups have no original parent, it's added to the result.
-         */
+        
         const topLevelResultCols = [];
         // this is an array of cols or col groups at one level of depth, starting from leaf and ending at root
         let groupsOrColsAtCurrentLevel = sortedVisibleColumns;
@@ -131,4 +124,3 @@ DisplayedGroupCreator = __decorate([
     Bean('displayedGroupCreator')
 ], DisplayedGroupCreator);
 export { DisplayedGroupCreator };
-//# sourceMappingURL=displayedGroupCreator.js.map

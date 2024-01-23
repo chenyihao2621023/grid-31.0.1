@@ -117,4 +117,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], FakeHScrollComp.prototype, "postConstruct", null);
-//# sourceMappingURL=fakeHScrollComp.js.map

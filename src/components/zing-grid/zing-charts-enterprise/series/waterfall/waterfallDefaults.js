@@ -18,4 +18,3 @@ export const WATERFALL_DEFAULTS = {
         },
     },
 };
-//# sourceMappingURL=waterfallDefaults.js.map

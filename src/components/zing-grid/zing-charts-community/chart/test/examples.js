@@ -1634,4 +1634,3 @@ export const ADV_CHART_CUSTOMISATION = DOCS_EXAMPLES['chart-customisation'];
 export const ADV_CUSTOM_MARKER_SHAPES_EXAMPLE = DOCS_EXAMPLES['custom-marker-shapes'];
 export const ADV_CUSTOM_TOOLTIPS_EXAMPLE = DOCS_EXAMPLES['custom-tooltips'];
 export const ADV_PER_MARKER_CUSTOMISATION = DOCS_EXAMPLES['per-marker-customisation'];
-//# sourceMappingURL=examples.js.map

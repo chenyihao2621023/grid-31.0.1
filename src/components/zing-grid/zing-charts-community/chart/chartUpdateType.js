@@ -1,4 +1,4 @@
-/** Types of chart-update, in pipeline execution order. */
+
 export var ChartUpdateType;
 (function (ChartUpdateType) {
     ChartUpdateType[ChartUpdateType["FULL"] = 0] = "FULL";
@@ -9,4 +9,3 @@ export var ChartUpdateType;
     ChartUpdateType[ChartUpdateType["SCENE_RENDER"] = 5] = "SCENE_RENDER";
     ChartUpdateType[ChartUpdateType["NONE"] = 6] = "NONE";
 })(ChartUpdateType || (ChartUpdateType = {}));
-//# sourceMappingURL=chartUpdateType.js.map

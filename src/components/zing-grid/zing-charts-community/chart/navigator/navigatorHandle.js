@@ -45,4 +45,3 @@ export class NavigatorHandle {
         this.rh = rangeHandle;
     }
 }
-//# sourceMappingURL=navigatorHandle.js.map

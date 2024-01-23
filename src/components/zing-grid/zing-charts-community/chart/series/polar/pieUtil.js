@@ -80,4 +80,3 @@ export function resetPieSelectionsFn(_node, datum) {
         stroke: datum.sectorFormat.stroke,
     };
 }
-//# sourceMappingURL=pieUtil.js.map

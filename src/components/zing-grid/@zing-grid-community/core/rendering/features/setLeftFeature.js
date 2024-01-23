@@ -119,4 +119,3 @@ export class SetLeftFeature extends BeanStub {
 __decorate([
     PostConstruct
 ], SetLeftFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=setLeftFeature.js.map

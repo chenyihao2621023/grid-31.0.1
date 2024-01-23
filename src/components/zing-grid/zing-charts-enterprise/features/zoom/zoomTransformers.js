@@ -10,11 +10,7 @@ export function definedZoomState(zoom) {
         y: { min: (_f = (_e = zoom === null || zoom === void 0 ? void 0 : zoom.y) === null || _e === void 0 ? void 0 : _e.min) !== null && _f !== void 0 ? _f : UNIT.min, max: (_h = (_g = zoom === null || zoom === void 0 ? void 0 : zoom.y) === null || _g === void 0 ? void 0 : _g.max) !== null && _h !== void 0 ? _h : UNIT.max },
     };
 }
-/**
- * Calculate the position on the series rect as a ratio from the top left corner. Invert the ratio on the y-axis to
- * cater for conflicting direction between screen and chart axis systems. Constrains the point to the series
- * rect so the zoom is pinned to the edges if the point is over the legends, axes, etc.
- */
+
 export function pointToRatio(bbox, x, y) {
     if (!bbox)
         return { x: 0, y: 0 };
@@ -24,18 +20,14 @@ export function pointToRatio(bbox, x, y) {
     const ry = 1 - (1 / bbox.height) * constrainedY;
     return { x: constrain(rx), y: constrain(ry) };
 }
-/**
- * Translate a zoom bounding box by shifting all points by the given x & y amounts.
- */
+
 export function translateZoom(zoom, x, y) {
     return {
         x: { min: zoom.x.min + x, max: zoom.x.max + x },
         y: { min: zoom.y.min + y, max: zoom.y.max + y },
     };
 }
-/**
- * Scale a zoom bounding box from the top left corner.
- */
+
 export function scaleZoom(zoom, sx, sy) {
     const dx = zoom.x.max - zoom.x.min;
     const dy = zoom.y.max - zoom.y.min;
@@ -44,9 +36,7 @@ export function scaleZoom(zoom, sx, sy) {
         y: { min: zoom.y.min, max: zoom.y.min + dy * sy },
     };
 }
-/**
- * Scale a zoom bounding box from the center.
- */
+
 export function scaleZoomCenter(zoom, sx, sy) {
     const dx = zoom.x.max - zoom.x.min;
     const dy = zoom.y.max - zoom.y.min;
@@ -57,9 +47,7 @@ export function scaleZoomCenter(zoom, sx, sy) {
         y: { min: cy - (dy * sy) / 2, max: cy + (dy * sy) / 2 },
     };
 }
-/**
- * Scale a single zoom axis about its anchor.
- */
+
 export function scaleZoomAxisWithAnchor(newState, oldState, anchor, origin) {
     let { min, max } = oldState;
     const center = min + (max - min) / 2;
@@ -88,9 +76,7 @@ export function scaleZoomAxisWithPoint(newState, oldState, origin) {
     const max = newState.max + translation;
     return { min, max };
 }
-/**
- * Constrain a zoom bounding box such that no corner exceeds an edge while maintaining the same width and height.
- */
+
 export function constrainZoom(zoom) {
     const after = unitZoomState();
     after.x = constrainAxis(zoom.x);
@@ -105,4 +91,3 @@ function constrainAxis(axis) {
     max = Math.min(UNIT.max, max);
     return { min, max };
 }
-//# sourceMappingURL=zoomTransformers.js.map

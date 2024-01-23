@@ -265,4 +265,3 @@ __decorate([
 __decorate([
     Validate(BOOLEAN)
 ], Crosshair.prototype, "snap", void 0);
-//# sourceMappingURL=crosshair.js.map

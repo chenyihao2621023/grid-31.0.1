@@ -1,7 +1,7 @@
 import { ZingRichSelect, Events, PopupComponent, _ } from "@/components/zing-grid/@zing-grid-community/core/main.js";
 export class RichSelectCellEditor extends PopupComponent {
     constructor() {
-        super(/* html */ `<div class="zing-cell-edit-wrapper"></div>`);
+        super( `<div class="zing-cell-edit-wrapper"></div>`);
     }
     init(params) {
         this.params = params;
@@ -126,4 +126,3 @@ export class RichSelectCellEditor extends PopupComponent {
         return false;
     }
 }
-//# sourceMappingURL=richSelectCellEditor.js.map

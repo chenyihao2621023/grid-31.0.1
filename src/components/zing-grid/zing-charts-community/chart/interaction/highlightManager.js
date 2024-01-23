@@ -1,8 +1,5 @@
 import { BaseManager } from './baseManager';
-/**
- * Manages the actively highlighted series/datum for a chart. Tracks the requested highlights from
- * distinct dependents and handles conflicting highlight requests.
- */
+
 export class HighlightManager extends BaseManager {
     constructor() {
         super(...arguments);
@@ -48,4 +45,3 @@ export class HighlightManager extends BaseManager {
         return a === b || ((a === null || a === void 0 ? void 0 : a.series) === (b === null || b === void 0 ? void 0 : b.series) && (a === null || a === void 0 ? void 0 : a.itemId) === (b === null || b === void 0 ? void 0 : b.itemId) && (a === null || a === void 0 ? void 0 : a.datum) === (b === null || b === void 0 ? void 0 : b.datum));
     }
 }
-//# sourceMappingURL=highlightManager.js.map

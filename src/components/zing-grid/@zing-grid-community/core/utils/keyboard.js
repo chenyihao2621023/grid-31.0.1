@@ -17,15 +17,7 @@ export function isEventFromPrintableCharacter(event) {
     const printableCharacter = event.key.length === 1;
     return printableCharacter;
 }
-/**
- * Allows user to tell the grid to skip specific keyboard events
- * @param {GridOptionsService} gridOptionsService
- * @param {KeyboardEvent} keyboardEvent
- * @param {IRowNode} rowNode
- * @param {Column} column
- * @param {boolean} editing
- * @returns {boolean}
- */
+
 export function isUserSuppressingKeyboardEvent(gridOptionsService, keyboardEvent, rowNode, column, editing) {
     const colDefFunc = column ? column.getColDef().suppressKeyboardEvent : undefined;
     // if no callbacks provided by user, then do nothing
@@ -107,4 +99,3 @@ export function isDeleteKey(key, alwaysReturnFalseOnBackspace = false) {
     }
     return false;
 }
-//# sourceMappingURL=keyboard.js.map

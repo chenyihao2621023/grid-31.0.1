@@ -58,4 +58,3 @@ export class ZingAbstractField extends ZingAbstractLabel {
         return this;
     }
 }
-//# sourceMappingURL=zingAbstractField.js.map

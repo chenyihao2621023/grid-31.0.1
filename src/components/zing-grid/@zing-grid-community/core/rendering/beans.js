@@ -5,11 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Autowired, Bean, Optional, PostConstruct } from "../context/context";
-/** Using the IoC has a slight performance consideration, which is no problem most of the
- * time, unless we are trashing objects - which is the case when scrolling and rowComp
- * and cellComp. So for performance reasons, RowComp and CellComp do not get autowired
- * with the IoC. Instead they get passed this object which is all the beans the RowComp
- * and CellComp need. Not autowiring all the cells gives performance improvement. */
+
 let Beans = class Beans {
     postConstruct() {
         if (this.gridOptionsService.isRowModelType('clientSide')) {
@@ -165,4 +161,3 @@ Beans = __decorate([
     Bean('beans')
 ], Beans);
 export { Beans };
-//# sourceMappingURL=beans.js.map

@@ -31,4 +31,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], SetHeightFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=setHeightFeature.js.map

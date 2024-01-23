@@ -3,7 +3,7 @@ import { SimpleCellEditor } from "./simpleCellEditor";
 import { exists } from "../../utils/generic";
 class DateCellEditorInput {
     getTemplate() {
-        return /* html */ `<zing-input-date-field class="zing-cell-editor" ref="eInput"></zing-input-date-field>`;
+        return  `<zing-input-date-field class="zing-cell-editor" ref="eInput"></zing-input-date-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;
@@ -38,4 +38,3 @@ export class DateCellEditor extends SimpleCellEditor {
         super(new DateCellEditorInput());
     }
 }
-//# sourceMappingURL=dateCellEditor.js.map

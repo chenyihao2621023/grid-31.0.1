@@ -1,15 +1,9 @@
-/**
- * Finds the roots of a parametric linear equation in `t`,
- * where `t` lies in the interval of `[0,1]`.
- */
+
 function linearRoot(a, b) {
     const t = -b / a;
     return a !== 0 && t >= 0 && t <= 1 ? [t] : [];
 }
-/**
- * Finds the roots of a parametric quadratic equation in `t`,
- * where `t` lies in the interval of `[0,1]`.
- */
+
 function quadraticRoots(a, b, c) {
     if (a === 0) {
         return linearRoot(b, c);
@@ -38,14 +32,7 @@ function quadraticRoots(a, b, c) {
     // else -> Complex roots.
     return roots;
 }
-/**
- * Finds the roots of a parametric cubic equation in `t`,
- * where `t` lies in the interval of `[0,1]`.
- * Returns an array of parametric intersection locations along the cubic,
- * excluding out-of-bounds intersections (before or after the end point
- * or in the imaginary plane).
- * An adaptation of http://www.particleincell.com/blog/2013/cubic-line-intersection/
- */
+
 export function cubicRoots(a, b, c, d) {
     if (a === 0) {
         return quadraticRoots(b, c, d);
@@ -95,4 +82,3 @@ export function cubicRoots(a, b, c, d) {
     }
     return roots;
 }
-//# sourceMappingURL=polyRoots.js.map

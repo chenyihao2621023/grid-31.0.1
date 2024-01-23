@@ -13,7 +13,7 @@ import { Events } from "../eventKeys";
 import { isVisible } from "../utils/dom";
 export class ZingList extends Component {
     constructor(cssIdentifier = 'default') {
-        super(/* html */ `<div class="zing-list zing-${cssIdentifier}-list" role="listbox"></div>`);
+        super( `<div class="zing-list zing-${cssIdentifier}-list" role="listbox"></div>`);
         this.cssIdentifier = cssIdentifier;
         this.options = [];
         this.itemEls = [];
@@ -156,4 +156,3 @@ ZingList.ACTIVE_CLASS = 'zing-active-item';
 __decorate([
     PostConstruct
 ], ZingList.prototype, "init", null);
-//# sourceMappingURL=zingList.js.map

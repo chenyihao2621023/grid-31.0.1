@@ -40,4 +40,3 @@ __decorate([
     ProxyPropertyOnWrite('scale', 'paddingOuter'),
     Validate(RATIO)
 ], RadiusCategoryAxis.prototype, "paddingOuter", void 0);
-//# sourceMappingURL=radiusCategoryAxis.js.map

@@ -24,4 +24,3 @@ export const GRADIENT_LEGEND_THEME = {
     },
     reverseOrder: false,
 };
-//# sourceMappingURL=gradientLegendThemes.js.map

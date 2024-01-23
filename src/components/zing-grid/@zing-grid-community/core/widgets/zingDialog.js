@@ -131,7 +131,7 @@ export class ZingDialog extends ZingPanel {
     }
     buildMaximizeAndMinimizeElements() {
         const maximizeButtonComp = this.maximizeButtonComp =
-            this.createBean(new Component(/* html */ `<div class="zing-dialog-button"></span>`));
+            this.createBean(new Component( `<div class="zing-dialog-button"></span>`));
         const eGui = maximizeButtonComp.getGui();
         this.maximizeIcon = createIconNoSpan('maximize', this.gridOptionsService);
         eGui.appendChild(this.maximizeIcon);
@@ -145,4 +145,3 @@ export class ZingDialog extends ZingPanel {
 __decorate([
     Autowired('popupService')
 ], ZingDialog.prototype, "popupService", void 0);
-//# sourceMappingURL=zingDialog.js.map

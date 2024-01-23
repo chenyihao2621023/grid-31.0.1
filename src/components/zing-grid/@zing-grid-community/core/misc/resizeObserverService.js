@@ -74,4 +74,3 @@ ResizeObserverService = __decorate([
     Bean('resizeObserverService')
 ], ResizeObserverService);
 export { ResizeObserverService };
-//# sourceMappingURL=resizeObserverService.js.map

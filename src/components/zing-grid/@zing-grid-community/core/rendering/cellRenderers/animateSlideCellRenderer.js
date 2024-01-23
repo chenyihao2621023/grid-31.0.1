@@ -80,4 +80,3 @@ AnimateSlideCellRenderer.TEMPLATE = `<span>
 __decorate([
     Autowired('filterManager')
 ], AnimateSlideCellRenderer.prototype, "filterManager", void 0);
-//# sourceMappingURL=animateSlideCellRenderer.js.map

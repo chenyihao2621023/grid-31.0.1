@@ -133,4 +133,3 @@ __decorate([
 __decorate([
     ProxyPropertyOnWrite('line', 'visible')
 ], MarkerLabel.prototype, "lineVisible", void 0);
-//# sourceMappingURL=markerLabel.js.map

@@ -57,4 +57,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], CenterWidthFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=centerWidthFeature.js.map

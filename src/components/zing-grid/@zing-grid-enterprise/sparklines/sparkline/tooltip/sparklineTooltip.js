@@ -95,4 +95,3 @@ export class SparklineTooltip {
     }
 }
 SparklineTooltip.class = 'zing-sparkline-tooltip';
-//# sourceMappingURL=sparklineTooltip.js.map

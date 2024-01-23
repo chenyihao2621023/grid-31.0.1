@@ -381,4 +381,3 @@ ColumnFactory = __decorate([
     Bean('columnFactory')
 ], ColumnFactory);
 export { ColumnFactory };
-//# sourceMappingURL=columnFactory.js.map

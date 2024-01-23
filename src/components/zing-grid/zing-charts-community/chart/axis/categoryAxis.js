@@ -57,4 +57,3 @@ CategoryAxis.type = 'category';
 __decorate([
     Validate(RATIO)
 ], CategoryAxis.prototype, "groupPaddingInner", void 0);
-//# sourceMappingURL=categoryAxis.js.map

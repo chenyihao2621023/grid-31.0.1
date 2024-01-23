@@ -38,4 +38,3 @@ export function boxCollidesSector(box, sector) {
     return (lineCollidesSector({ start: topLeft, end: topRight }, sector) ||
         lineCollidesSector({ start: bottomLeft, end: bottomRight }, sector));
 }
-//# sourceMappingURL=sector.js.map

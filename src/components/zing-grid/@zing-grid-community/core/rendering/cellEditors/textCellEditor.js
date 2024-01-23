@@ -2,7 +2,7 @@ import { SimpleCellEditor } from "./simpleCellEditor";
 import { exists } from "../../utils/generic";
 class TextCellEditorInput {
     getTemplate() {
-        return /* html */ `<zing-input-text-field class="zing-cell-editor" ref="eInput"></zing-input-text-field>`;
+        return  `<zing-input-text-field class="zing-cell-editor" ref="eInput"></zing-input-text-field>`;
     }
     init(eInput, params) {
         this.eInput = eInput;
@@ -39,4 +39,3 @@ export class TextCellEditor extends SimpleCellEditor {
         super(new TextCellEditorInput());
     }
 }
-//# sourceMappingURL=textCellEditor.js.map

@@ -15,4 +15,3 @@ export class NumberSequence {
         this.nextValue += count;
     }
 }
-//# sourceMappingURL=numberSequence.js.map

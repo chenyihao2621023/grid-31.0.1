@@ -143,4 +143,3 @@ __decorate([
 __decorate([
     Autowired('filterManager')
 ], GridHeaderCtrl.prototype, "filterManager", void 0);
-//# sourceMappingURL=gridHeaderCtrl.js.map

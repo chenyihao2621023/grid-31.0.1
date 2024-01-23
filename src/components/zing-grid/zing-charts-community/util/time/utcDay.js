@@ -11,4 +11,3 @@ function decode(encoded) {
 }
 export const utcDay = new CountableTimeInterval(encode, decode);
 export default utcDay;
-//# sourceMappingURL=utcDay.js.map

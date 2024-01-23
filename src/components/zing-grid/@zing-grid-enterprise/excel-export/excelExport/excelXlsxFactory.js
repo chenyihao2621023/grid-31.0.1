@@ -9,9 +9,7 @@ import workbookFactory from './files/ooxml/workbook';
 import worksheetFactory from './files/ooxml/worksheet';
 import relationshipsFactory from './files/ooxml/relationships';
 import { setExcelImageTotalHeight, setExcelImageTotalWidth, createXmlPart } from './assets/excelUtils';
-/**
- * See https://www.ecma-international.org/news/TC45_current_work/OpenXML%20White%20Paper.pdf
- */
+
 export class ExcelXlsxFactory {
     static createExcel(styles, worksheet, config) {
         this.addSheetName(worksheet);
@@ -187,13 +185,12 @@ export class ExcelXlsxFactory {
 }
 ExcelXlsxFactory.sharedStrings = new Map();
 ExcelXlsxFactory.sheetNames = [];
-/** Maps images to sheet */
+
 ExcelXlsxFactory.images = new Map();
-/** Maps sheets to images */
+
 ExcelXlsxFactory.worksheetImages = new Map();
-/** Maps all workbook images to a global Id */
+
 ExcelXlsxFactory.workbookImageIds = new Map();
-/** Maps all sheet images to unique Ids */
+
 ExcelXlsxFactory.worksheetImageIds = new Map();
 ExcelXlsxFactory.factoryMode = ExcelFactoryMode.SINGLE_SHEET;
-//# sourceMappingURL=excelXlsxFactory.js.map

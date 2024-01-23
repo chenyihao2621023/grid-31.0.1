@@ -88,4 +88,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], BarSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=barSeriesProperties.js.map

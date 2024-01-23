@@ -68,4 +68,3 @@ __decorate([
 __decorate([
     Validate(OBJECT)
 ], HeatmapSeriesProperties.prototype, "tooltip", void 0);
-//# sourceMappingURL=heatmapSeriesProperties.js.map

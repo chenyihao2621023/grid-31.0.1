@@ -25,7 +25,7 @@ import { VueFrameworkComponentWrapper } from './VueFrameworkComponentWrapper';
 import { getZingGridProperties } from './Utils';
 import { VueFrameworkOverrides } from './VueFrameworkOverrides';
 var _a = getZingGridProperties(), props = _a[0], computed = _a[1], watch = _a[2], model = _a[3];
-var ZingGridVue = /** @class */ (function (_super) {
+var ZingGridVue =  (function (_super) {
     __extends(ZingGridVue, _super);
     function ZingGridVue() {
         var _this = _super !== null && _super.apply(this, arguments) || this;

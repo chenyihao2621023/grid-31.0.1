@@ -21,4 +21,3 @@ export const DATA_MANY_LONG_LABELS = Array.from({ length: count }).map((_, i) =>
         label: `Very very long label ${i + 1}`,
     };
 });
-//# sourceMappingURL=data.js.map

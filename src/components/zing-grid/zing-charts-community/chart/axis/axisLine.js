@@ -21,4 +21,3 @@ __decorate([
 __decorate([
     Validate(COLOR_STRING, { optional: true })
 ], AxisLine.prototype, "color", void 0);
-//# sourceMappingURL=axisLine.js.map

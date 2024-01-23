@@ -97,25 +97,14 @@ export class BeanStub {
         };
         this.destroyFunctions.push(destroyFunc);
     }
-    /**
-     * Setup a managed property listener for the given GridOption property.
-     * @param event GridOption property to listen to changes for.
-     * @param listener Listener to run when property value changes
-     */
+    
     addManagedPropertyListener(event, listener) {
         if (this.destroyed) {
             return;
         }
         this.setupGridOptionListener(event, listener);
     }
-    /**
-     * Setup managed property listeners for the given set of GridOption properties.
-     * The listener will be run if any of the property changes but will only run once if
-     * multiple of the properties change within the same framework lifecycle event.
-     * Works on the basis that GridOptionsService updates all properties *before* any property change events are fired.
-     * @param events Array of GridOption properties to listen for changes too.
-     * @param listener Shared listener to run if any of the properties change
-     */
+    
     addManagedPropertyListeners(events, listener) {
         if (this.destroyed) {
             return;
@@ -190,4 +179,3 @@ __decorate([
 __decorate([
     PreDestroy
 ], BeanStub.prototype, "destroy", null);
-//# sourceMappingURL=beanStub.js.map

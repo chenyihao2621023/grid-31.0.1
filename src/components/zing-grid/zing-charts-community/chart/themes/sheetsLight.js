@@ -64,4 +64,3 @@ export class SheetsLight extends ChartTheme {
         return palette;
     }
 }
-//# sourceMappingURL=sheetsLight.js.map

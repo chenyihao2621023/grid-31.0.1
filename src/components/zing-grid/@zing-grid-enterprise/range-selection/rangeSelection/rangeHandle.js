@@ -47,4 +47,3 @@ export class RangeHandle extends AbstractSelectionHandle {
     }
 }
 RangeHandle.TEMPLATE = `<div class="zing-range-handle"></div>`;
-//# sourceMappingURL=rangeHandle.js.map

@@ -168,4 +168,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], ViewportSizeFeature.prototype, "postConstruct", null);
-//# sourceMappingURL=viewportSizeFeature.js.map

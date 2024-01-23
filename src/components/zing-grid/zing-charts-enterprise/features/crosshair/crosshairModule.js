@@ -9,4 +9,3 @@ export const CrosshairModule = {
     instanceConstructor: Crosshair,
     themeTemplate: AXIS_CROSSHAIR_THEME,
 };
-//# sourceMappingURL=crosshairModule.js.map

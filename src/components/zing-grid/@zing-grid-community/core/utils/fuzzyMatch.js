@@ -6,11 +6,7 @@ export function fuzzyCheckStrings(inputValues, validValues, allSuggestions) {
     }
     return fuzzyMatches;
 }
-/**
- *
- * @param {String} inputValue The value to be compared against a list of strings
- * @param allSuggestions The list of strings to be compared against
- */
+
 export function fuzzySuggestions(inputValue, allSuggestions, hideIrrelevant, filterByPercentageOfBestMatch) {
     let thisSuggestions = allSuggestions.map((text, idx) => ({
         value: text,
@@ -49,4 +45,3 @@ function stringWeightedDistances(str1, str2) {
     }
     return weight;
 }
-//# sourceMappingURL=fuzzyMatch.js.map

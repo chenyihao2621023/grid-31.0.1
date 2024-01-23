@@ -11,4 +11,3 @@ export function areArrayItemsStrictlyEqual(arrA, arrB) {
 export function areArrayNumbersEqual(arrA, arrB) {
     return arrA.length === arrB.length && arrA.every((item, i) => Number(item) === Number(arrB[i]));
 }
-//# sourceMappingURL=equal.js.map

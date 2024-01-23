@@ -267,4 +267,3 @@ export function tickFormat(ticks, formatter) {
     const f = format(options);
     return (n) => f(Number(n));
 }
-//# sourceMappingURL=numberFormat.js.map

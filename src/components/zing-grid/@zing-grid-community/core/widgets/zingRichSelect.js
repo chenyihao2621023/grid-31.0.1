@@ -19,7 +19,7 @@ import { ZingPickerField } from "./zingPickerField";
 import { RichSelectRow } from "./zingRichSelectRow";
 import { RefSelector } from "./componentAnnotations";
 import { VirtualList } from "./virtualList";
-const TEMPLATE = /* html */ `
+const TEMPLATE =  `
     <div class="zing-picker-field" role="presentation">
         <div ref="eLabel"></div>
             <div ref="eWrapper" class="zing-wrapper zing-picker-field-wrapper zing-rich-select-value zing-picker-collapsed">
@@ -551,4 +551,3 @@ __decorate([
 __decorate([
     RefSelector('eInput')
 ], ZingRichSelect.prototype, "eInput", void 0);
-//# sourceMappingURL=zingRichSelect.js.map

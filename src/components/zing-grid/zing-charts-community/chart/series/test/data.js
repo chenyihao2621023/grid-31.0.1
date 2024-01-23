@@ -3221,4 +3221,3 @@ export const DATA_FEMALE_HEIGHT_WEIGHT = [
         name: 'Louisa',
     },
 ];
-//# sourceMappingURL=data.js.map

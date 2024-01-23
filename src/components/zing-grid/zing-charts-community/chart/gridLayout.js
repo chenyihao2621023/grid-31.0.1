@@ -172,4 +172,3 @@ function estimateStartingGuess(bboxes, primary) {
     }
     return n;
 }
-//# sourceMappingURL=gridLayout.js.map

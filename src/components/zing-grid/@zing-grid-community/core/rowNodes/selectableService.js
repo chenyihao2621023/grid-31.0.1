@@ -12,9 +12,7 @@ let SelectableService = class SelectableService extends BeanStub {
     init() {
         this.addManagedPropertyListener('isRowSelectable', () => this.updateSelectable());
     }
-    /**
-     * Used by CSRM only, to update selectable state after group state changes.
-     */
+    
     updateSelectableAfterGrouping() {
         this.updateSelectable(true);
     }
@@ -75,4 +73,3 @@ SelectableService = __decorate([
     Bean('selectableService')
 ], SelectableService);
 export { SelectableService };
-//# sourceMappingURL=selectableService.js.map

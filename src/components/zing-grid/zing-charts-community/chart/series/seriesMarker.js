@@ -15,7 +15,7 @@ export class SeriesMarker extends BaseProperties {
     constructor() {
         super(...arguments);
         this.enabled = true;
-        /** One of the predefined marker names, or a marker constructor function (for user-defined markers). */
+        
         this.shape = Circle;
         this.size = 6;
         this.fillOpacity = 1;
@@ -66,4 +66,3 @@ __decorate([
     Validate(FUNCTION, { optional: true }),
     SceneChangeDetection({ redraw: RedrawType.MAJOR })
 ], SeriesMarker.prototype, "formatter", void 0);
-//# sourceMappingURL=seriesMarker.js.map

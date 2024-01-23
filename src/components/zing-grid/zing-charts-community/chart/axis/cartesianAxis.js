@@ -71,4 +71,3 @@ __decorate([
 __decorate([
     Validate(POSITION)
 ], CartesianAxis.prototype, "position", void 0);
-//# sourceMappingURL=cartesianAxis.js.map

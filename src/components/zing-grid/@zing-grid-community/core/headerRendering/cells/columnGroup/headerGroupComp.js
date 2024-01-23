@@ -121,4 +121,3 @@ __decorate([
 __decorate([
     RefSelector("zingClosed")
 ], HeaderGroupComp.prototype, "eCloseIcon", void 0);
-//# sourceMappingURL=headerGroupComp.js.map

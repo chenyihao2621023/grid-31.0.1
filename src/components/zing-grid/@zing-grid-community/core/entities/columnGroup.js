@@ -272,4 +272,3 @@ ColumnGroup.EVENT_DISPLAYED_CHILDREN_CHANGED = 'displayedChildrenChanged';
 __decorate([
     Autowired('gridOptionsService')
 ], ColumnGroup.prototype, "gridOptionsService", void 0);
-//# sourceMappingURL=columnGroup.js.map

@@ -5,7 +5,7 @@ export class FlatSetDisplayValueModel {
         this.valueFormatter = valueFormatter;
         this.formatter = formatter;
         this.column = column;
-        /** All keys that are currently displayed, after the mini-filter has been applied. */
+        
         this.displayedKeys = [];
     }
     updateDisplayedValuesToAllAvailable(_getValue, _allKeys, availableKeys) {
@@ -57,4 +57,3 @@ export class FlatSetDisplayValueModel {
         // not used
     }
 }
-//# sourceMappingURL=flatSetDisplayValueModel.js.map

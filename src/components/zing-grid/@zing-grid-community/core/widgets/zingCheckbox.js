@@ -97,4 +97,3 @@ export class ZingCheckbox extends ZingAbstractInputField {
         this.eWrapper.classList.toggle('zing-indeterminate', value == null);
     }
 }
-//# sourceMappingURL=zingCheckbox.js.map

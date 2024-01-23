@@ -16,4 +16,3 @@ export const Invalidating = (target, propertyKey) => {
         configurable: false,
     });
 };
-//# sourceMappingURL=invalidating.js.map

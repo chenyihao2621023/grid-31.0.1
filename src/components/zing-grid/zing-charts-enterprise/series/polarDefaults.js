@@ -13,4 +13,3 @@ export const POLAR_DEFAULTS = {
         },
     ],
 };
-//# sourceMappingURL=polarDefaults.js.map

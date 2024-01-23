@@ -101,4 +101,3 @@ export const TreemapSeriesModule = {
         };
     },
 };
-//# sourceMappingURL=treemapSeriesModule.js.map

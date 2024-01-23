@@ -122,16 +122,14 @@ export class VirtualList extends TabGuardComp {
         this.renderedRows.forEach((value, key) => func(value.rowComponent, key));
     }
     static getTemplate(cssIdentifier) {
-        return ( /* html */`<div class="zing-virtual-list-viewport zing-${cssIdentifier}-virtual-list-viewport" role="presentation">
+        return ( `<div class="zing-virtual-list-viewport zing-${cssIdentifier}-virtual-list-viewport" role="presentation">
                 <div class="zing-virtual-list-container zing-${cssIdentifier}-virtual-list-container" ref="eContainer"></div>
             </div>`);
     }
     getItemHeight() {
         return this.environment.getListItemHeight();
     }
-    /**
-     * Returns true if the view had to be scrolled, otherwise, false.
-     */
+    
     ensureIndexVisible(index, scrollPartialIntoView = true) {
         const lastRow = this.model.getRowCount();
         if (typeof index !== 'number' || index < 0 || index >= lastRow) {
@@ -314,4 +312,3 @@ __decorate([
 __decorate([
     PostConstruct
 ], VirtualList.prototype, "postConstruct", null);
-//# sourceMappingURL=virtualList.js.map
