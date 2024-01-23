@@ -4,14 +4,15 @@ import { MultiFilter } from './multiFilter/multiFilter';
 import { MultiFloatingFilterComp } from './multiFilter/multiFloatingFilter';
 import { VERSION } from './version';
 export const MultiFilterModule = {
-    version: VERSION,
-    moduleName: ModuleNames.MultiFilterModule,
-    beans: [],
-    userComponents: [
-        { componentName: 'zingMultiColumnFilter', componentClass: MultiFilter },
-        { componentName: 'zingMultiColumnFloatingFilter', componentClass: MultiFloatingFilterComp },
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.MultiFilterModule,
+  beans: [],
+  userComponents: [{
+    componentName: 'zingMultiColumnFilter',
+    componentClass: MultiFilter
+  }, {
+    componentName: 'zingMultiColumnFloatingFilter',
+    componentClass: MultiFloatingFilterComp
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

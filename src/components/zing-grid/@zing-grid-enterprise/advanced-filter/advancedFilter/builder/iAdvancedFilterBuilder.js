@@ -1,5 +1,4 @@
-export class AdvancedFilterBuilderEvents {
-}
+export class AdvancedFilterBuilderEvents {}
 AdvancedFilterBuilderEvents.EVENT_ADDED = 'advancedFilterBuilderAdded';
 AdvancedFilterBuilderEvents.EVENT_MOVED = 'advancedFilterBuilderMoved';
 AdvancedFilterBuilderEvents.EVENT_REMOVED = 'advancedFilterBuilderRemoved';

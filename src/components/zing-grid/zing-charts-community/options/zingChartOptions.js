@@ -42,5 +42,4 @@ export * from './series/polar/radarLineOptions';
 export * from './series/polar/radarAreaOptions';
 export * from './series/polar/radialColumnOptions';
 export * from './series/polar/radialOptions';
-
 export const __FORCE_MODULE_DETECTION = 0;

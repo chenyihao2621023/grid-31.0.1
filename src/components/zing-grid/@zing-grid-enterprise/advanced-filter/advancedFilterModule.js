@@ -5,13 +5,12 @@ import { AdvancedFilterExpressionService } from "./advancedFilter/advancedFilter
 import { AdvancedFilterService } from "./advancedFilter/advancedFilterService";
 import { VERSION } from "./version";
 export const AdvancedFilterModule = {
-    version: VERSION,
-    moduleName: ModuleNames.AdvancedFilterModule,
-    beans: [AdvancedFilterService, AdvancedFilterExpressionService],
-    zingStackComponents: [
-        { componentName: 'zingAdvancedFilter', componentClass: AdvancedFilterComp }
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.AdvancedFilterModule,
+  beans: [AdvancedFilterService, AdvancedFilterExpressionService],
+  zingStackComponents: [{
+    componentName: 'zingAdvancedFilter',
+    componentClass: AdvancedFilterComp
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

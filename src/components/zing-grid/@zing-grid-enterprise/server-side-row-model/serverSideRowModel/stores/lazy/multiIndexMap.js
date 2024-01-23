@@ -1,77 +1,74 @@
 export class MultiIndexMap {
-    constructor(...indexes) {
-        if (indexes.length < 1) {
-            throw new Error('ZING Grid: At least one index must be provided.');
-        }
-        this.indexes = indexes;
-        this.maps = new Map(this.indexes.map(index => [index, new Map()]));
+  constructor(...indexes) {
+    if (indexes.length < 1) {
+      throw new Error('ZING Grid: At least one index must be provided.');
     }
-    getBy(index, key) {
-        const map = this.maps.get(index);
-        if (!map) {
-            throw new Error(`ZING Grid: ${String(index)} not found`);
-        }
-        return map.get(key);
+    this.indexes = indexes;
+    this.maps = new Map(this.indexes.map(index => [index, new Map()]));
+  }
+  getBy(index, key) {
+    const map = this.maps.get(index);
+    if (!map) {
+      throw new Error(`ZING Grid: ${String(index)} not found`);
     }
-    set(item) {
-        this.indexes.forEach(index => {
-            const map = this.maps.get(index);
-            if (!map) {
-                throw new Error(`ZING Grid: ${String(index)} not found`);
-            }
-            map.set(item[index], item);
-        });
+    return map.get(key);
+  }
+  set(item) {
+    this.indexes.forEach(index => {
+      const map = this.maps.get(index);
+      if (!map) {
+        throw new Error(`ZING Grid: ${String(index)} not found`);
+      }
+      map.set(item[index], item);
+    });
+  }
+  delete(item) {
+    this.indexes.forEach(index => {
+      const map = this.maps.get(index);
+      if (!map) {
+        throw new Error(`ZING Grid: ${String(index)} not found`);
+      }
+      map.delete(item[index]);
+    });
+  }
+  clear() {
+    this.maps.forEach(map => map.clear());
+  }
+  getIterator(index) {
+    const map = this.maps.get(index);
+    if (!map) {
+      throw new Error(`ZING Grid: ${String(index)} not found`);
     }
-    delete(item) {
-        this.indexes.forEach(index => {
-            const map = this.maps.get(index);
-            if (!map) {
-                throw new Error(`ZING Grid: ${String(index)} not found`);
-            }
-            map.delete(item[index]);
-        });
+    return map.values();
+  }
+  forEach(callback) {
+    const iterator = this.getIterator(this.indexes[0]);
+    let pointer;
+    while (pointer = iterator.next()) {
+      if (pointer.done) break;
+      callback(pointer.value);
     }
-    clear() {
-        this.maps.forEach(map => map.clear());
+  }
+  find(callback) {
+    const iterator = this.getIterator(this.indexes[0]);
+    let pointer;
+    while (pointer = iterator.next()) {
+      if (pointer.done) break;
+      if (callback(pointer.value)) {
+        return pointer.value;
+      }
     }
-    getIterator(index) {
-        const map = this.maps.get(index);
-        if (!map) {
-            throw new Error(`ZING Grid: ${String(index)} not found`);
-        }
-        return map.values();
+  }
+  filter(predicate) {
+    const iterator = this.getIterator(this.indexes[0]);
+    let pointer;
+    const result = [];
+    while (pointer = iterator.next()) {
+      if (pointer.done) break;
+      if (predicate(pointer.value)) {
+        result.push(pointer.value);
+      }
     }
-    forEach(callback) {
-        const iterator = this.getIterator(this.indexes[0]);
-        let pointer;
-        while (pointer = iterator.next()) {
-            if (pointer.done)
-                break;
-            callback(pointer.value);
-        }
-    }
-    find(callback) {
-        const iterator = this.getIterator(this.indexes[0]);
-        let pointer;
-        while (pointer = iterator.next()) {
-            if (pointer.done)
-                break;
-            if (callback(pointer.value)) {
-                return pointer.value;
-            }
-        }
-    }
-    filter(predicate) {
-        const iterator = this.getIterator(this.indexes[0]);
-        let pointer;
-        const result = [];
-        while (pointer = iterator.next()) {
-            if (pointer.done)
-                break;
-            if (predicate(pointer.value)) {
-                result.push(pointer.value);
-            }
-        }
-        return result;
-    }
+    return result;
+  }
 }

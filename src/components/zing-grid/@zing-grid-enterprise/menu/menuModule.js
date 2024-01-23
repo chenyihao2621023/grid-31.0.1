@@ -6,10 +6,8 @@ import { MenuItemMapper } from "./menu/menuItemMapper";
 import { VERSION } from "./version";
 import { ChartMenuItemMapper } from "./menu/chartMenuItemMapper";
 export const MenuModule = {
-    version: VERSION,
-    moduleName: ModuleNames.MenuModule,
-    beans: [EnterpriseMenuFactory, ContextMenuFactory, MenuItemMapper, ChartMenuItemMapper],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.MenuModule,
+  beans: [EnterpriseMenuFactory, ContextMenuFactory, MenuItemMapper, ChartMenuItemMapper],
+  dependantModules: [EnterpriseCoreModule]
 };

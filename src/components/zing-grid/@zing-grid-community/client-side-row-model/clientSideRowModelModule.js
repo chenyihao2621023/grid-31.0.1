@@ -8,8 +8,8 @@ import { FilterService } from "./clientSideRowModel/filterService";
 import { ImmutableService } from "./clientSideRowModel/immutableService";
 import { VERSION } from "./version";
 export const ClientSideRowModelModule = {
-    version: VERSION,
-    moduleName: ModuleNames.ClientSideRowModelModule,
-    rowModel: 'clientSide',
-    beans: [ClientSideRowModel, FilterStage, SortStage, FlattenStage, SortService, FilterService, ImmutableService],
+  version: VERSION,
+  moduleName: ModuleNames.ClientSideRowModelModule,
+  rowModel: 'clientSide',
+  beans: [ClientSideRowModel, FilterStage, SortStage, FlattenStage, SortService, FilterService, ImmutableService]
 };

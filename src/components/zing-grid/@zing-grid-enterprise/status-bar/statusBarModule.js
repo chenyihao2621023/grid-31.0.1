@@ -10,21 +10,31 @@ import { SelectedRowsComp } from "./statusBar/providedPanels/selectedRowsComp";
 import { AggregationComp } from "./statusBar/providedPanels/aggregationComp";
 import { VERSION } from "./version";
 export const StatusBarModule = {
-    version: VERSION,
-    moduleName: ModuleNames.StatusBarModule,
-    beans: [StatusBarService],
-    zingStackComponents: [
-        { componentName: 'ZingStatusBar', componentClass: StatusBar },
-        { componentName: 'ZingNameValue', componentClass: NameValueComp },
-    ],
-    userComponents: [
-        { componentName: 'zingAggregationComponent', componentClass: AggregationComp },
-        { componentName: 'zingSelectedRowCountComponent', componentClass: SelectedRowsComp },
-        { componentName: 'zingTotalRowCountComponent', componentClass: TotalRowsComp },
-        { componentName: 'zingFilteredRowCountComponent', componentClass: FilteredRowsComp },
-        { componentName: 'zingTotalAndFilteredRowCountComponent', componentClass: TotalAndFilteredRowsComp }
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.StatusBarModule,
+  beans: [StatusBarService],
+  zingStackComponents: [{
+    componentName: 'ZingStatusBar',
+    componentClass: StatusBar
+  }, {
+    componentName: 'ZingNameValue',
+    componentClass: NameValueComp
+  }],
+  userComponents: [{
+    componentName: 'zingAggregationComponent',
+    componentClass: AggregationComp
+  }, {
+    componentName: 'zingSelectedRowCountComponent',
+    componentClass: SelectedRowsComp
+  }, {
+    componentName: 'zingTotalRowCountComponent',
+    componentClass: TotalRowsComp
+  }, {
+    componentName: 'zingFilteredRowCountComponent',
+    componentClass: FilteredRowsComp
+  }, {
+    componentName: 'zingTotalAndFilteredRowCountComponent',
+    componentClass: TotalAndFilteredRowsComp
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

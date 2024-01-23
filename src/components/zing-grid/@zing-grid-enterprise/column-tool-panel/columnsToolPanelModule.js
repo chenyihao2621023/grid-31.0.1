@@ -9,20 +9,22 @@ import { SideBarModule } from "@/components/zing-grid/@zing-grid-enterprise/side
 import { ModelItemUtils } from "./columnToolPanel/modelItemUtils";
 import { VERSION } from "./version";
 export const ColumnsToolPanelModule = {
-    version: VERSION,
-    moduleName: ModuleNames.ColumnsToolPanelModule,
-    beans: [ModelItemUtils],
-    zingStackComponents: [
-        { componentName: 'ZingPrimaryColsHeader', componentClass: PrimaryColsHeaderPanel },
-        { componentName: 'ZingPrimaryColsList', componentClass: PrimaryColsListPanel },
-        { componentName: 'ZingPrimaryCols', componentClass: PrimaryColsPanel }
-    ],
-    userComponents: [
-        { componentName: 'zingColumnsToolPanel', componentClass: ColumnToolPanel },
-    ],
-    dependantModules: [
-        EnterpriseCoreModule,
-        RowGroupingModule,
-        SideBarModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.ColumnsToolPanelModule,
+  beans: [ModelItemUtils],
+  zingStackComponents: [{
+    componentName: 'ZingPrimaryColsHeader',
+    componentClass: PrimaryColsHeaderPanel
+  }, {
+    componentName: 'ZingPrimaryColsList',
+    componentClass: PrimaryColsListPanel
+  }, {
+    componentName: 'ZingPrimaryCols',
+    componentClass: PrimaryColsPanel
+  }],
+  userComponents: [{
+    componentName: 'zingColumnsToolPanel',
+    componentClass: ColumnToolPanel
+  }],
+  dependantModules: [EnterpriseCoreModule, RowGroupingModule, SideBarModule]
 };

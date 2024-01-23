@@ -5,7 +5,6 @@ globalObj.HTMLSelectElement = typeof HTMLSelectElement === 'undefined' ? {} : HT
 globalObj.HTMLInputElement = typeof HTMLInputElement === 'undefined' ? {} : HTMLInputElement;
 globalObj.Node = typeof Node === 'undefined' ? {} : Node;
 globalObj.MouseEvent = typeof MouseEvent === 'undefined' ? {} : MouseEvent;
-// columns
 export { ColumnFactory } from "./columns/columnFactory";
 export { ColumnModel } from "./columns/columnModel";
 export { ColumnKeyCreator } from "./columns/columnKeyCreator";
@@ -13,23 +12,18 @@ export { ColumnUtils } from "./columns/columnUtils";
 export { DisplayedGroupCreator } from "./columns/displayedGroupCreator";
 export { GroupInstanceIdCreator } from "./columns/groupInstanceIdCreator";
 export { GROUP_AUTO_COLUMN_ID } from "./columns/autoGroupColService";
-// components
 export { ComponentUtil } from "./components/componentUtil";
 export { ZingStackComponentsRegistry } from "./components/zingStackComponentsRegistry";
 export { UserComponentRegistry } from "./components/framework/userComponentRegistry";
 export { UserComponentFactory } from "./components/framework/userComponentFactory";
 export { ColDefUtil } from "./components/colDefUtil";
-// context
 export { BeanStub } from "./context/beanStub";
 export { Context, Autowired, PostConstruct, PreConstruct, Optional, Bean, Qualifier, PreDestroy } from "./context/context";
 export { QuerySelector, RefSelector } from "./widgets/componentAnnotations";
-// excel
 export { ExcelFactoryMode } from "./interfaces/iExcelCreator";
-// dragAndDrop
 export { DragAndDropService, DragSourceType } from "./dragAndDrop/dragAndDropService";
 export { DragService } from "./dragAndDrop/dragService";
 export { VirtualListDragFeature } from "./dragAndDrop/virtualListDragFeature";
-// entities
 export { Column } from "./entities/column";
 export { ColumnGroup } from "./entities/columnGroup";
 export { ProvidedColumnGroup } from "./entities/providedColumnGroup";
@@ -45,16 +39,13 @@ export { DateFilter } from "./filter/provided/date/dateFilter";
 export { TextFloatingFilter } from './filter/provided/text/textFloatingFilter';
 export { HeaderFilterCellComp } from './headerRendering/cells/floatingFilter/headerFilterCellComp';
 export { FloatingFilterMapper } from './filter/floating/floatingFilterMapper';
-// gridPanel
 export { GridBodyComp } from "./gridBodyComp/gridBodyComp";
 export { GridBodyCtrl, RowAnimationCssClasses } from "./gridBodyComp/gridBodyCtrl";
 export { ScrollVisibleService } from "./gridBodyComp/scrollVisibleService";
 export { MouseEventService } from "./gridBodyComp/mouseEventService";
 export { NavigationService } from "./gridBodyComp/navigationService";
-// rowContainer
 export { RowContainerComp } from "./gridBodyComp/rowContainer/rowContainerComp";
 export { RowContainerName, RowContainerCtrl, RowContainerType, getRowContainerTypeForName } from "./gridBodyComp/rowContainer/rowContainerCtrl";
-// headerRendering
 export { BodyDropPivotTarget } from "./headerRendering/columnDrag/bodyDropPivotTarget";
 export { BodyDropTarget } from "./headerRendering/columnDrag/bodyDropTarget";
 export { CssClassApplier } from "./headerRendering/cells/cssClassApplier";
@@ -72,9 +63,7 @@ export { HeaderRowContainerCtrl } from "./headerRendering/rowContainer/headerRow
 export { HorizontalResizeService } from "./headerRendering/common/horizontalResizeService";
 export { MoveColumnFeature } from "./headerRendering/columnDrag/moveColumnFeature";
 export { StandardMenuFactory } from "./headerRendering/cells/column/standardMenu";
-// layout
 export { TabbedLayout } from "./layout/tabbedLayout";
-// misc
 export { ResizeObserverService } from "./misc/resizeObserverService";
 export { AnimationFrameService } from "./misc/animationFrameService";
 export { ExpansionService } from "./misc/expansionService";
@@ -86,16 +75,13 @@ export { NumberCellEditor } from "./rendering/cellEditors/numberCellEditor";
 export { DateCellEditor } from "./rendering/cellEditors/dateCellEditor";
 export { DateStringCellEditor } from "./rendering/cellEditors/dateStringCellEditor";
 export { CheckboxCellEditor } from "./rendering/cellEditors/checkboxCellEditor";
-// rendering / cellRenderers
 export { Beans } from "./rendering/beans";
 export { AnimateShowChangeCellRenderer } from "./rendering/cellRenderers/animateShowChangeCellRenderer";
 export { AnimateSlideCellRenderer } from "./rendering/cellRenderers/animateSlideCellRenderer";
-export { GroupCellRenderer, } from "./rendering/cellRenderers/groupCellRenderer";
+export { GroupCellRenderer } from "./rendering/cellRenderers/groupCellRenderer";
 export { GroupCellRendererCtrl } from "./rendering/cellRenderers/groupCellRendererCtrl";
-// features
 export { SetLeftFeature } from "./rendering/features/setLeftFeature";
 export { PositionableFeature } from "./rendering/features/positionableFeature";
-// rendering
 export { AutoWidthCalculator } from "./rendering/autoWidthCalculator";
 export { CheckboxSelectionComponent } from "./rendering/checkboxSelectionComponent";
 export { CellComp } from "./rendering/cell/cellComp";
@@ -105,7 +91,6 @@ export { RowRenderer } from "./rendering/rowRenderer";
 export { ValueFormatterService } from "./rendering/valueFormatterService";
 export { CssClassManager } from "./rendering/cssClassManager";
 export { CheckboxCellRenderer } from "./rendering/cellRenderers/checkboxCellRenderer";
-// row models
 export { PinnedRowModel } from "./pinnedRowModel/pinnedRowModel";
 export { ServerSideTransactionResultStatus } from "./interfaces/serverSideTransaction";
 export { ChangedPath } from "./utils/changedPath";
@@ -113,10 +98,8 @@ export { RowNodeBlock } from "./rowNodeCache/rowNodeBlock";
 export { RowNodeBlockLoader } from "./rowNodeCache/rowNodeBlockLoader";
 export { PaginationProxy } from "./pagination/paginationProxy";
 export { ClientSideRowModelSteps } from "./interfaces/iClientSideRowModel";
-//styling
 export { StylingService } from "./styling/stylingService";
 export { LayoutCssClasses } from "./styling/layoutFeature";
-// widgets
 export { ZingAbstractField } from "./widgets/zingAbstractField";
 export { ZingCheckbox } from "./widgets/zingCheckbox";
 export { ZingRadioButton } from "./widgets/zingRadioButton";
@@ -146,9 +129,7 @@ export { VirtualList } from "./widgets/virtualList";
 export { ZingAbstractLabel } from "./widgets/zingAbstractLabel";
 export { ZingPickerField } from "./widgets/zingPickerField";
 export { ZingAutocomplete } from "./widgets/zingAutocomplete";
-// range
 export { CellRangeType, SelectionHandleType } from "./interfaces/IRangeService";
-// root
 export { AutoScrollService } from './autoScrollService';
 export { VanillaFrameworkOverrides } from "./vanillaFrameworkOverrides";
 export { CellNavigationService } from "./cellNavigationService";
@@ -170,7 +151,7 @@ export { Logger, LoggerFactory } from "./logger";
 export { SortController } from "./sortController";
 export { TemplateService } from "./templateService";
 export { LocaleService } from './localeService';
-export * from "./utils/index"; // please leave this as is - we want it to be explicit for build reasons
+export * from "./utils/index";
 export { ValueService } from "./valueService/valueService";
 export { ValueCache } from "./valueService/valueCache";
 export { ExpressionService } from "./valueService/expressionService";
@@ -186,12 +167,9 @@ export { BaseComponentWrapper } from "./components/framework/frameworkComponentW
 export { Environment } from "./environment";
 export { TooltipFeature } from "./widgets/tooltipFeature";
 export { CustomTooltipFeature } from "./widgets/customTooltipFeature";
-// charts
 export * from "./interfaces/iChartOptions";
 export * from "./interfaces/iZingChartOptions";
-// sparklines
 export * from "./interfaces/iSparklineCellRendererParams";
 export { ModuleNames } from "./modules/moduleNames";
 export { ModuleRegistry } from "./modules/moduleRegistry";
-//  events
 export * from "./events";

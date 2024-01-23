@@ -1,3 +1,3 @@
 export const enterpriseModule = {
-    isEnterprise: false,
+  isEnterprise: false
 };

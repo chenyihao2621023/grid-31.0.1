@@ -4,9 +4,12 @@ import { SparklineCellRenderer } from './sparklineCellRenderer';
 import { SparklineTooltipSingleton } from './tooltip/sparklineTooltipSingleton';
 import { VERSION } from './version';
 export const SparklinesModule = {
-    version: VERSION,
-    moduleName: ModuleNames.SparklinesModule,
-    beans: [SparklineTooltipSingleton],
-    userComponents: [{ componentName: 'zingSparklineCellRenderer', componentClass: SparklineCellRenderer }],
-    dependantModules: [EnterpriseCoreModule],
+  version: VERSION,
+  moduleName: ModuleNames.SparklinesModule,
+  beans: [SparklineTooltipSingleton],
+  userComponents: [{
+    componentName: 'zingSparklineCellRenderer',
+    componentClass: SparklineCellRenderer
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

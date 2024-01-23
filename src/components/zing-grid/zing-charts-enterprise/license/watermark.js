@@ -1,5 +1,7 @@
 import { _ModuleSupport } from '@/components/zing-grid/zing-charts-community/main.js';
-const { injectStyle } = _ModuleSupport;
+const {
+  injectStyle
+} = _ModuleSupport;
 const watermarkStyles = `
 .zing-watermark {
     position: absolute;
@@ -33,12 +35,12 @@ const watermarkStyles = `
 }
 `;
 export function injectWatermark(document, parentElement, text) {
-    injectStyle(document, watermarkStyles);
-    const element = document.createElement('div');
-    const textElement = document.createElement('span');
-    textElement.innerText = text;
-    element.addEventListener('animationend', () => parentElement.removeChild(element));
-    element.classList.add('zing-watermark');
-    element.appendChild(textElement);
-    parentElement.appendChild(element);
+  injectStyle(document, watermarkStyles);
+  const element = document.createElement('div');
+  const textElement = document.createElement('span');
+  textElement.innerText = text;
+  element.addEventListener('animationend', () => parentElement.removeChild(element));
+  element.classList.add('zing-watermark');
+  element.appendChild(textElement);
+  parentElement.appendChild(element);
 }

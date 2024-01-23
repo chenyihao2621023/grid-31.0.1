@@ -1,99 +1,103 @@
 import { Events } from "../events";
 import { ZingAbstractInputField } from './zingAbstractInputField';
 export class ZingCheckbox extends ZingAbstractInputField {
-    constructor(config, className = 'zing-checkbox', inputType = 'checkbox') {
-        super(config, className, inputType);
-        this.labelAlignment = 'right';
-        this.selected = false;
-        this.readOnly = false;
-        this.passive = false;
+  constructor(config, className = 'zing-checkbox', inputType = 'checkbox') {
+    super(config, className, inputType);
+    this.labelAlignment = 'right';
+    this.selected = false;
+    this.readOnly = false;
+    this.passive = false;
+  }
+  addInputListeners() {
+    this.addManagedListener(this.eInput, 'click', this.onCheckboxClick.bind(this));
+    this.addManagedListener(this.eLabel, 'click', this.toggle.bind(this));
+  }
+  getNextValue() {
+    return this.selected === undefined ? true : !this.selected;
+  }
+  setPassive(passive) {
+    this.passive = passive;
+  }
+  isReadOnly() {
+    return this.readOnly;
+  }
+  setReadOnly(readOnly) {
+    this.eWrapper.classList.toggle('zing-disabled', readOnly);
+    this.eInput.disabled = readOnly;
+    this.readOnly = readOnly;
+  }
+  setDisabled(disabled) {
+    this.eWrapper.classList.toggle('zing-disabled', disabled);
+    return super.setDisabled(disabled);
+  }
+  toggle() {
+    if (this.eInput.disabled) {
+      return;
     }
-    addInputListeners() {
-        this.addManagedListener(this.eInput, 'click', this.onCheckboxClick.bind(this));
-        this.addManagedListener(this.eLabel, 'click', this.toggle.bind(this));
+    const previousValue = this.isSelected();
+    const nextValue = this.getNextValue();
+    if (this.passive) {
+      this.dispatchChange(nextValue, previousValue);
+    } else {
+      this.setValue(nextValue);
     }
-    getNextValue() {
-        return this.selected === undefined ? true : !this.selected;
+  }
+  getValue() {
+    return this.isSelected();
+  }
+  setValue(value, silent) {
+    this.refreshSelectedClass(value);
+    this.setSelected(value, silent);
+    return this;
+  }
+  setName(name) {
+    const input = this.getInputElement();
+    input.name = name;
+    return this;
+  }
+  isSelected() {
+    return this.selected;
+  }
+  setSelected(selected, silent) {
+    if (this.isSelected() === selected) {
+      return;
     }
-    setPassive(passive) {
-        this.passive = passive;
+    this.previousValue = this.isSelected();
+    selected = this.selected = typeof selected === 'boolean' ? selected : undefined;
+    this.eInput.checked = selected;
+    this.eInput.indeterminate = selected === undefined;
+    if (!silent) {
+      this.dispatchChange(this.selected, this.previousValue);
     }
-    isReadOnly() {
-        return this.readOnly;
+  }
+  dispatchChange(selected, previousValue, event) {
+    this.dispatchEvent({
+      type: Events.EVENT_FIELD_VALUE_CHANGED,
+      selected,
+      previousValue,
+      event
+    });
+    const input = this.getInputElement();
+    const checkboxChangedEvent = {
+      type: Events.EVENT_CHECKBOX_CHANGED,
+      id: input.id,
+      name: input.name,
+      selected,
+      previousValue
+    };
+    this.eventService.dispatchEvent(checkboxChangedEvent);
+  }
+  onCheckboxClick(e) {
+    if (this.passive || this.eInput.disabled) {
+      return;
     }
-    setReadOnly(readOnly) {
-        this.eWrapper.classList.toggle('zing-disabled', readOnly);
-        this.eInput.disabled = readOnly;
-        this.readOnly = readOnly;
-    }
-    setDisabled(disabled) {
-        this.eWrapper.classList.toggle('zing-disabled', disabled);
-        return super.setDisabled(disabled);
-    }
-    toggle() {
-        if (this.eInput.disabled) {
-            return;
-        }
-        const previousValue = this.isSelected();
-        const nextValue = this.getNextValue();
-        if (this.passive) {
-            this.dispatchChange(nextValue, previousValue);
-        }
-        else {
-            this.setValue(nextValue);
-        }
-    }
-    getValue() {
-        return this.isSelected();
-    }
-    setValue(value, silent) {
-        this.refreshSelectedClass(value);
-        this.setSelected(value, silent);
-        return this;
-    }
-    setName(name) {
-        const input = this.getInputElement();
-        input.name = name;
-        return this;
-    }
-    isSelected() {
-        return this.selected;
-    }
-    setSelected(selected, silent) {
-        if (this.isSelected() === selected) {
-            return;
-        }
-        this.previousValue = this.isSelected();
-        selected = this.selected = typeof selected === 'boolean' ? selected : undefined;
-        this.eInput.checked = selected;
-        this.eInput.indeterminate = selected === undefined;
-        if (!silent) {
-            this.dispatchChange(this.selected, this.previousValue);
-        }
-    }
-    dispatchChange(selected, previousValue, event) {
-        this.dispatchEvent({ type: Events.EVENT_FIELD_VALUE_CHANGED, selected, previousValue, event });
-        const input = this.getInputElement();
-        const checkboxChangedEvent = {
-            type: Events.EVENT_CHECKBOX_CHANGED,
-            id: input.id,
-            name: input.name,
-            selected,
-            previousValue
-        };
-        this.eventService.dispatchEvent(checkboxChangedEvent);
-    }
-    onCheckboxClick(e) {
-        if (this.passive || this.eInput.disabled) {
-            return;
-        }
-        const previousValue = this.isSelected();
-        const selected = this.selected = e.target.checked;
-        this.refreshSelectedClass(selected);
-        this.dispatchChange(selected, previousValue, e);
-    }
-    refreshSelectedClass(value) {
-        this.eWrapper.classList.toggle('zing-checked', value === true);
-        this.eWrapper.classList.toggle('zing-indeterminate', value == null);
-    }
+    const previousValue = this.isSelected();
+    const selected = this.selected = e.target.checked;
+    this.refreshSelectedClass(selected);
+    this.dispatchChange(selected, previousValue, e);
+  }
+  refreshSelectedClass(value) {
+    this.eWrapper.classList.toggle('zing-checked', value === true);
+    this.eWrapper.classList.toggle('zing-indeterminate', value == null);
+  }
 }

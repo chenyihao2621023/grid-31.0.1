@@ -3,14 +3,15 @@ import { EnterpriseCoreModule } from "@/components/zing-grid/@zing-grid-enterpri
 import { RichSelectCellEditor } from "./richSelect/richSelectCellEditor";
 import { VERSION } from "./version";
 export const RichSelectModule = {
-    version: VERSION,
-    moduleName: ModuleNames.RichSelectModule,
-    beans: [],
-    userComponents: [
-        { componentName: 'zingRichSelect', componentClass: RichSelectCellEditor },
-        { componentName: 'zingRichSelectCellEditor', componentClass: RichSelectCellEditor }
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.RichSelectModule,
+  beans: [],
+  userComponents: [{
+    componentName: 'zingRichSelect',
+    componentClass: RichSelectCellEditor
+  }, {
+    componentName: 'zingRichSelectCellEditor',
+    componentClass: RichSelectCellEditor
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

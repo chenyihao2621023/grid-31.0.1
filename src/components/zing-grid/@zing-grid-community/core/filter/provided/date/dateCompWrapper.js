@@ -1,88 +1,84 @@
 import { setDisplayed } from '../../../utils/dom';
-
 export class DateCompWrapper {
-    constructor(context, userComponentFactory, dateComponentParams, eParent) {
-        this.alive = true;
-        this.context = context;
-        this.eParent = eParent;
-        const compDetails = userComponentFactory.getDateCompDetails(dateComponentParams);
-        const promise = compDetails.newZingStackInstance();
-        promise.then(dateComp => {
-            // because async, check the filter still exists after component comes back
-            if (!this.alive) {
-                context.destroyBean(dateComp);
-                return;
-            }
-            this.dateComp = dateComp;
-            if (!dateComp) {
-                return;
-            }
-            eParent.appendChild(dateComp.getGui());
-            if (dateComp.afterGuiAttached) {
-                dateComp.afterGuiAttached();
-            }
-            if (this.tempValue) {
-                dateComp.setDate(this.tempValue);
-            }
-            if (this.disabled != null) {
-                this.setDateCompDisabled(this.disabled);
-            }
-        });
+  constructor(context, userComponentFactory, dateComponentParams, eParent) {
+    this.alive = true;
+    this.context = context;
+    this.eParent = eParent;
+    const compDetails = userComponentFactory.getDateCompDetails(dateComponentParams);
+    const promise = compDetails.newZingStackInstance();
+    promise.then(dateComp => {
+      if (!this.alive) {
+        context.destroyBean(dateComp);
+        return;
+      }
+      this.dateComp = dateComp;
+      if (!dateComp) {
+        return;
+      }
+      eParent.appendChild(dateComp.getGui());
+      if (dateComp.afterGuiAttached) {
+        dateComp.afterGuiAttached();
+      }
+      if (this.tempValue) {
+        dateComp.setDate(this.tempValue);
+      }
+      if (this.disabled != null) {
+        this.setDateCompDisabled(this.disabled);
+      }
+    });
+  }
+  destroy() {
+    this.alive = false;
+    this.dateComp = this.context.destroyBean(this.dateComp);
+  }
+  getDate() {
+    return this.dateComp ? this.dateComp.getDate() : this.tempValue;
+  }
+  setDate(value) {
+    if (this.dateComp) {
+      this.dateComp.setDate(value);
+    } else {
+      this.tempValue = value;
     }
-    destroy() {
-        this.alive = false;
-        this.dateComp = this.context.destroyBean(this.dateComp);
+  }
+  setDisabled(disabled) {
+    if (this.dateComp) {
+      this.setDateCompDisabled(disabled);
+    } else {
+      this.disabled = disabled;
     }
-    getDate() {
-        return this.dateComp ? this.dateComp.getDate() : this.tempValue;
+  }
+  setDisplayed(displayed) {
+    setDisplayed(this.eParent, displayed);
+  }
+  setInputPlaceholder(placeholder) {
+    if (this.dateComp && this.dateComp.setInputPlaceholder) {
+      this.dateComp.setInputPlaceholder(placeholder);
     }
-    setDate(value) {
-        if (this.dateComp) {
-            this.dateComp.setDate(value);
-        }
-        else {
-            this.tempValue = value;
-        }
+  }
+  setInputAriaLabel(label) {
+    if (this.dateComp && this.dateComp.setInputAriaLabel) {
+      this.dateComp.setInputAriaLabel(label);
     }
-    setDisabled(disabled) {
-        if (this.dateComp) {
-            this.setDateCompDisabled(disabled);
-        }
-        else {
-            this.disabled = disabled;
-        }
+  }
+  afterGuiAttached(params) {
+    if (this.dateComp && typeof this.dateComp.afterGuiAttached === 'function') {
+      this.dateComp.afterGuiAttached(params);
     }
-    setDisplayed(displayed) {
-        setDisplayed(this.eParent, displayed);
+  }
+  updateParams(params) {
+    var _a;
+    if (((_a = this.dateComp) === null || _a === void 0 ? void 0 : _a.onParamsUpdated) && typeof this.dateComp.onParamsUpdated === 'function') {
+      this.dateComp.onParamsUpdated(params);
     }
-    setInputPlaceholder(placeholder) {
-        if (this.dateComp && this.dateComp.setInputPlaceholder) {
-            this.dateComp.setInputPlaceholder(placeholder);
-        }
+  }
+  setDateCompDisabled(disabled) {
+    if (this.dateComp == null) {
+      return;
     }
-    setInputAriaLabel(label) {
-        if (this.dateComp && this.dateComp.setInputAriaLabel) {
-            this.dateComp.setInputAriaLabel(label);
-        }
+    if (this.dateComp.setDisabled == null) {
+      return;
     }
-    afterGuiAttached(params) {
-        if (this.dateComp && typeof this.dateComp.afterGuiAttached === 'function') {
-            this.dateComp.afterGuiAttached(params);
-        }
-    }
-    updateParams(params) {
-        var _a;
-        if (((_a = this.dateComp) === null || _a === void 0 ? void 0 : _a.onParamsUpdated) && typeof this.dateComp.onParamsUpdated === 'function') {
-            this.dateComp.onParamsUpdated(params);
-        }
-    }
-    setDateCompDisabled(disabled) {
-        if (this.dateComp == null) {
-            return;
-        }
-        if (this.dateComp.setDisabled == null) {
-            return;
-        }
-        this.dateComp.setDisabled(disabled);
-    }
+    this.dateComp.setDisabled(disabled);
+  }
 }

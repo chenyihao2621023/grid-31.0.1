@@ -37,24 +37,5 @@ export * from "@/components/zing-grid/@zing-grid-enterprise/status-bar/main.js";
 export * from "@/components/zing-grid/@zing-grid-enterprise/viewport-row-model/main.js";
 export * from "@/components/zing-grid/@zing-grid-enterprise/core/main.js";
 export * from "@/components/zing-grid/@zing-grid-enterprise/sparklines/main.js";
-export const AllEnterpriseModules = [
-    AdvancedFilterModule,
-    ClipboardModule,
-    ColumnsToolPanelModule,
-    ExcelExportModule,
-    FiltersToolPanelModule,
-    GridChartsModule,
-    MasterDetailModule,
-    MenuModule,
-    MultiFilterModule,
-    RangeSelectionModule,
-    RichSelectModule,
-    RowGroupingModule,
-    ServerSideRowModelModule,
-    SetFilterModule,
-    SideBarModule,
-    StatusBarModule,
-    ViewportRowModelModule,
-    SparklinesModule
-];
+export const AllEnterpriseModules = [AdvancedFilterModule, ClipboardModule, ColumnsToolPanelModule, ExcelExportModule, FiltersToolPanelModule, GridChartsModule, MasterDetailModule, MenuModule, MultiFilterModule, RangeSelectionModule, RichSelectModule, RowGroupingModule, ServerSideRowModelModule, SetFilterModule, SideBarModule, StatusBarModule, ViewportRowModelModule, SparklinesModule];
 export const AllModules = AllCommunityModules.concat(AllEnterpriseModules);

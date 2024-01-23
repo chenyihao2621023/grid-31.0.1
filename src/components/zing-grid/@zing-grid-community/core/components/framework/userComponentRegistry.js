@@ -1,8 +1,9 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { BeanStub } from "../../context/beanStub";
 import { Autowired, Bean, PostConstruct } from "../../context/context";
@@ -38,124 +39,106 @@ import { DateStringCellEditor } from "../../rendering/cellEditors/dateStringCell
 import { CheckboxCellRenderer } from "../../rendering/cellRenderers/checkboxCellRenderer";
 import { CheckboxCellEditor } from "../../rendering/cellEditors/checkboxCellEditor";
 let UserComponentRegistry = class UserComponentRegistry extends BeanStub {
-    constructor() {
-        super(...arguments);
-        this.zingGridDefaults = {
-            //date
-            zingDateInput: DefaultDateComponent,
-            //header
-            zingColumnHeader: HeaderComp,
-            zingColumnGroupHeader: HeaderGroupComp,
-            zingSortIndicator: SortIndicatorComp,
-            //floating filters
-            zingTextColumnFloatingFilter: TextFloatingFilter,
-            zingNumberColumnFloatingFilter: NumberFloatingFilter,
-            zingDateColumnFloatingFilter: DateFloatingFilter,
-            zingReadOnlyFloatingFilter: ReadOnlyFloatingFilter,
-            // renderers
-            zingAnimateShowChangeCellRenderer: AnimateShowChangeCellRenderer,
-            zingAnimateSlideCellRenderer: AnimateSlideCellRenderer,
-            zingGroupCellRenderer: GroupCellRenderer,
-            zingGroupRowRenderer: GroupCellRenderer,
-            zingLoadingCellRenderer: LoadingCellRenderer,
-            zingCheckboxCellRenderer: CheckboxCellRenderer,
-            //editors
-            zingCellEditor: TextCellEditor,
-            zingTextCellEditor: TextCellEditor,
-            zingNumberCellEditor: NumberCellEditor,
-            zingDateCellEditor: DateCellEditor,
-            zingDateStringCellEditor: DateStringCellEditor,
-            zingSelectCellEditor: SelectCellEditor,
-            zingLargeTextCellEditor: LargeTextCellEditor,
-            zingCheckboxCellEditor: CheckboxCellEditor,
-            //filter
-            zingTextColumnFilter: TextFilter,
-            zingNumberColumnFilter: NumberFilter,
-            zingDateColumnFilter: DateFilter,
-            //overlays
-            zingLoadingOverlay: LoadingOverlayComponent,
-            zingNoRowsOverlay: NoRowsOverlayComponent,
-            // tooltips
-            zingTooltipComponent: TooltipComponent
-        };
-        
-        this.enterpriseZingDefaultCompsModule = {
-            zingSetColumnFilter: ModuleNames.SetFilterModule,
-            zingSetColumnFloatingFilter: ModuleNames.SetFilterModule,
-            zingMultiColumnFilter: ModuleNames.MultiFilterModule,
-            zingMultiColumnFloatingFilter: ModuleNames.MultiFilterModule,
-            zingGroupColumnFilter: ModuleNames.RowGroupingModule,
-            zingGroupColumnFloatingFilter: ModuleNames.RowGroupingModule,
-            zingRichSelect: ModuleNames.RichSelectModule,
-            zingRichSelectCellEditor: ModuleNames.RichSelectModule,
-            zingDetailCellRenderer: ModuleNames.MasterDetailModule,
-            zingSparklineCellRenderer: ModuleNames.SparklinesModule
-        };
-        this.jsComps = {};
+  constructor() {
+    super(...arguments);
+    this.zingGridDefaults = {
+      zingDateInput: DefaultDateComponent,
+      zingColumnHeader: HeaderComp,
+      zingColumnGroupHeader: HeaderGroupComp,
+      zingSortIndicator: SortIndicatorComp,
+      zingTextColumnFloatingFilter: TextFloatingFilter,
+      zingNumberColumnFloatingFilter: NumberFloatingFilter,
+      zingDateColumnFloatingFilter: DateFloatingFilter,
+      zingReadOnlyFloatingFilter: ReadOnlyFloatingFilter,
+      zingAnimateShowChangeCellRenderer: AnimateShowChangeCellRenderer,
+      zingAnimateSlideCellRenderer: AnimateSlideCellRenderer,
+      zingGroupCellRenderer: GroupCellRenderer,
+      zingGroupRowRenderer: GroupCellRenderer,
+      zingLoadingCellRenderer: LoadingCellRenderer,
+      zingCheckboxCellRenderer: CheckboxCellRenderer,
+      zingCellEditor: TextCellEditor,
+      zingTextCellEditor: TextCellEditor,
+      zingNumberCellEditor: NumberCellEditor,
+      zingDateCellEditor: DateCellEditor,
+      zingDateStringCellEditor: DateStringCellEditor,
+      zingSelectCellEditor: SelectCellEditor,
+      zingLargeTextCellEditor: LargeTextCellEditor,
+      zingCheckboxCellEditor: CheckboxCellEditor,
+      zingTextColumnFilter: TextFilter,
+      zingNumberColumnFilter: NumberFilter,
+      zingDateColumnFilter: DateFilter,
+      zingLoadingOverlay: LoadingOverlayComponent,
+      zingNoRowsOverlay: NoRowsOverlayComponent,
+      zingTooltipComponent: TooltipComponent
+    };
+    this.enterpriseZingDefaultCompsModule = {
+      zingSetColumnFilter: ModuleNames.SetFilterModule,
+      zingSetColumnFloatingFilter: ModuleNames.SetFilterModule,
+      zingMultiColumnFilter: ModuleNames.MultiFilterModule,
+      zingMultiColumnFloatingFilter: ModuleNames.MultiFilterModule,
+      zingGroupColumnFilter: ModuleNames.RowGroupingModule,
+      zingGroupColumnFloatingFilter: ModuleNames.RowGroupingModule,
+      zingRichSelect: ModuleNames.RichSelectModule,
+      zingRichSelectCellEditor: ModuleNames.RichSelectModule,
+      zingDetailCellRenderer: ModuleNames.MasterDetailModule,
+      zingSparklineCellRenderer: ModuleNames.SparklinesModule
+    };
+    this.jsComps = {};
+  }
+  init() {
+    if (this.gridOptions.components != null) {
+      iterateObject(this.gridOptions.components, (key, component) => this.registerJsComponent(key, component));
     }
-    init() {
-        if (this.gridOptions.components != null) {
-            iterateObject(this.gridOptions.components, (key, component) => this.registerJsComponent(key, component));
-        }
+  }
+  registerDefaultComponent(name, component) {
+    if (this.zingGridDefaults[name]) {
+      console.error(`Trying to overwrite a default component. You should call registerComponent`);
+      return;
     }
-    registerDefaultComponent(name, component) {
-        if (this.zingGridDefaults[name]) {
-            console.error(`Trying to overwrite a default component. You should call registerComponent`);
-            return;
-        }
-        this.zingGridDefaults[name] = component;
+    this.zingGridDefaults[name] = component;
+  }
+  registerJsComponent(name, component) {
+    this.jsComps[name] = component;
+  }
+  retrieve(propertyName, name) {
+    const createResult = (component, componentFromFramework) => ({
+      componentFromFramework,
+      component
+    });
+    const registeredViaFrameworkComp = this.getFrameworkOverrides().frameworkComponent(name, this.gridOptions.components);
+    if (registeredViaFrameworkComp != null) {
+      return createResult(registeredViaFrameworkComp, true);
     }
-    registerJsComponent(name, component) {
-        this.jsComps[name] = component;
+    const jsComponent = this.jsComps[name];
+    if (jsComponent) {
+      const isFwkComp = this.getFrameworkOverrides().isFrameworkComponent(jsComponent);
+      return createResult(jsComponent, isFwkComp);
     }
-    retrieve(propertyName, name) {
-        const createResult = (component, componentFromFramework) => ({ componentFromFramework, component });
-        // FrameworkOverrides.frameworkComponent() is used in two locations:
-        // 1) for Vue, user provided components get registered via a framework specific way.
-        // 2) for React, it's how the React UI provides alternative default components (eg GroupCellRenderer and DetailCellRenderer)
-        const registeredViaFrameworkComp = this.getFrameworkOverrides().frameworkComponent(name, this.gridOptions.components);
-        if (registeredViaFrameworkComp != null) {
-            return createResult(registeredViaFrameworkComp, true);
-        }
-        const jsComponent = this.jsComps[name];
-        if (jsComponent) {
-            const isFwkComp = this.getFrameworkOverrides().isFrameworkComponent(jsComponent);
-            return createResult(jsComponent, isFwkComp);
-        }
-        const defaultComponent = this.zingGridDefaults[name];
-        if (defaultComponent) {
-            return createResult(defaultComponent, false);
-        }
-        const moduleForComponent = this.enterpriseZingDefaultCompsModule[name];
-        if (moduleForComponent) {
-            ModuleRegistry.__assertRegistered(moduleForComponent, `ZING Grid '${propertyName}' component: ${name}`, this.context.getGridId());
-        }
-        else {
-            doOnce(() => { this.warnAboutMissingComponent(propertyName, name); }, "MissingComp" + name);
-        }
-        return null;
+    const defaultComponent = this.zingGridDefaults[name];
+    if (defaultComponent) {
+      return createResult(defaultComponent, false);
     }
-    warnAboutMissingComponent(propertyName, componentName) {
-        const validComponents = [
-            // Don't include the old names / internals in potential suggestions
-            ...Object.keys(this.zingGridDefaults).filter(k => !['zingCellEditor', 'zingGroupRowRenderer', 'zingSortIndicator'].includes(k)),
-            ...Object.keys(this.jsComps)
-        ];
-        const suggestions = fuzzySuggestions(componentName, validComponents, true, 0.8).values;
-        console.warn(`ZING Grid: Could not find '${componentName}' component. It was configured as "${propertyName}: '${componentName}'" but it wasn't found in the list of registered components.`);
-        if (suggestions.length > 0) {
-            console.warn(`         Did you mean: [${suggestions.slice(0, 3)}]?`);
-        }
-        console.warn(`If using a custom component check it has been registered as described in: ${this.getFrameworkOverrides().getDocLink('components/')}`);
+    const moduleForComponent = this.enterpriseZingDefaultCompsModule[name];
+    if (moduleForComponent) {
+      ModuleRegistry.__assertRegistered(moduleForComponent, `ZING Grid '${propertyName}' component: ${name}`, this.context.getGridId());
+    } else {
+      doOnce(() => {
+        this.warnAboutMissingComponent(propertyName, name);
+      }, "MissingComp" + name);
     }
+    return null;
+  }
+  warnAboutMissingComponent(propertyName, componentName) {
+    const validComponents = [...Object.keys(this.zingGridDefaults).filter(k => !['zingCellEditor', 'zingGroupRowRenderer', 'zingSortIndicator'].includes(k)), ...Object.keys(this.jsComps)];
+    const suggestions = fuzzySuggestions(componentName, validComponents, true, 0.8).values;
+    console.warn(`ZING Grid: Could not find '${componentName}' component. It was configured as "${propertyName}: '${componentName}'" but it wasn't found in the list of registered components.`);
+    if (suggestions.length > 0) {
+      console.warn(`         Did you mean: [${suggestions.slice(0, 3)}]?`);
+    }
+    console.warn(`If using a custom component check it has been registered as described in: ${this.getFrameworkOverrides().getDocLink('components/')}`);
+  }
 };
-__decorate([
-    Autowired('gridOptions')
-], UserComponentRegistry.prototype, "gridOptions", void 0);
-__decorate([
-    PostConstruct
-], UserComponentRegistry.prototype, "init", null);
-UserComponentRegistry = __decorate([
-    Bean('userComponentRegistry')
-], UserComponentRegistry);
+__decorate([Autowired('gridOptions')], UserComponentRegistry.prototype, "gridOptions", void 0);
+__decorate([PostConstruct], UserComponentRegistry.prototype, "init", null);
+UserComponentRegistry = __decorate([Bean('userComponentRegistry')], UserComponentRegistry);
 export { UserComponentRegistry };

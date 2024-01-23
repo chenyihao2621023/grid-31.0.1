@@ -1,14 +1,15 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { BeanStub } from "../../context/beanStub";
 import { Autowired } from "../../context/context";
 import { getAbsoluteHeight, getAbsoluteWidth, isVisible, setFixedHeight, setFixedWidth } from "../../utils/dom";
 const RESIZE_CONTAINER_STYLE = 'zing-resizer-wrapper';
-const RESIZE_TEMPLATE =  `<div class="${RESIZE_CONTAINER_STYLE}">
+const RESIZE_TEMPLATE = `<div class="${RESIZE_CONTAINER_STYLE}">
         <div ref="eTopLeftResizer" class="zing-resizer zing-resizer-topLeft"></div>
         <div ref="eTopResizer" class="zing-resizer zing-resizer-top"></div>
         <div ref="eTopRightResizer" class="zing-resizer zing-resizer-topRight"></div>
@@ -19,694 +20,717 @@ const RESIZE_TEMPLATE =  `<div class="${RESIZE_CONTAINER_STYLE}">
         <div ref="eLeftResizer" class="zing-resizer zing-resizer-left"></div>
     </div>`;
 export class PositionableFeature extends BeanStub {
-    constructor(element, config) {
-        super();
-        this.element = element;
-        this.dragStartPosition = {
-            x: 0,
-            y: 0
-        };
-        this.position = {
-            x: 0,
-            y: 0
-        };
-        this.lastSize = {
-            width: -1,
-            height: -1
-        };
-        this.positioned = false;
-        this.resizersAdded = false;
-        this.resizeListeners = [];
-        this.boundaryEl = null;
-        this.isResizing = false;
-        this.isMoving = false;
-        this.resizable = {};
-        this.movable = false;
-        this.currentResizer = null;
-        this.config = Object.assign({}, { popup: false }, config);
+  constructor(element, config) {
+    super();
+    this.element = element;
+    this.dragStartPosition = {
+      x: 0,
+      y: 0
+    };
+    this.position = {
+      x: 0,
+      y: 0
+    };
+    this.lastSize = {
+      width: -1,
+      height: -1
+    };
+    this.positioned = false;
+    this.resizersAdded = false;
+    this.resizeListeners = [];
+    this.boundaryEl = null;
+    this.isResizing = false;
+    this.isMoving = false;
+    this.resizable = {};
+    this.movable = false;
+    this.currentResizer = null;
+    this.config = Object.assign({}, {
+      popup: false
+    }, config);
+  }
+  center() {
+    const {
+      clientHeight,
+      clientWidth
+    } = this.offsetParent;
+    const x = clientWidth / 2 - this.getWidth() / 2;
+    const y = clientHeight / 2 - this.getHeight() / 2;
+    this.offsetElement(x, y);
+  }
+  initialisePosition() {
+    if (this.positioned) {
+      return;
     }
-    center() {
-        const { clientHeight, clientWidth } = this.offsetParent;
-        const x = (clientWidth / 2) - (this.getWidth() / 2);
-        const y = (clientHeight / 2) - (this.getHeight() / 2);
-        this.offsetElement(x, y);
+    const {
+      centered,
+      forcePopupParentAsOffsetParent,
+      minWidth,
+      width,
+      minHeight,
+      height,
+      x,
+      y
+    } = this.config;
+    if (!this.offsetParent) {
+      this.setOffsetParent();
     }
-    initialisePosition() {
-        if (this.positioned) {
-            return;
-        }
-        const { centered, forcePopupParentAsOffsetParent, minWidth, width, minHeight, height, x, y } = this.config;
-        if (!this.offsetParent) {
-            this.setOffsetParent();
-        }
-        let computedMinHeight = 0;
-        let computedMinWidth = 0;
-        // here we don't use the main offset parent but the element's offsetParent
-        // in order to calculated the minWidth and minHeight correctly
-        const isElementVisible = isVisible(this.element);
-        if (isElementVisible) {
-            const boundaryEl = this.findBoundaryElement();
-            const offsetParentComputedStyles = window.getComputedStyle(boundaryEl);
-            if (offsetParentComputedStyles.minWidth != null) {
-                const paddingWidth = boundaryEl.offsetWidth - this.element.offsetWidth;
-                computedMinWidth = parseInt(offsetParentComputedStyles.minWidth, 10) - paddingWidth;
-            }
-            if (offsetParentComputedStyles.minHeight != null) {
-                const paddingHeight = boundaryEl.offsetHeight - this.element.offsetHeight;
-                computedMinHeight = parseInt(offsetParentComputedStyles.minHeight, 10) - paddingHeight;
-            }
-        }
-        this.minHeight = minHeight || computedMinHeight;
-        this.minWidth = minWidth || computedMinWidth;
-        if (width) {
-            this.setWidth(width);
-        }
-        if (height) {
-            this.setHeight(height);
-        }
-        if (!width || !height) {
-            this.refreshSize();
-        }
-        if (centered) {
-            this.center();
-        }
-        else if (x || y) {
-            this.offsetElement(x, y);
-        }
-        else if (isElementVisible && forcePopupParentAsOffsetParent) {
-            let boundaryEl = this.boundaryEl;
-            let initialisedDuringPositioning = true;
-            if (!boundaryEl) {
-                boundaryEl = this.findBoundaryElement();
-                initialisedDuringPositioning = false;
-            }
-            if (boundaryEl) {
-                const top = parseFloat(boundaryEl.style.top);
-                const left = parseFloat(boundaryEl.style.left);
-                if (initialisedDuringPositioning) {
-                    this.offsetElement(isNaN(left) ? 0 : left, isNaN(top) ? 0 : top);
-                }
-                else {
-                    this.setPosition(left, top);
-                }
-            }
-        }
-        this.positioned = !!this.offsetParent;
+    let computedMinHeight = 0;
+    let computedMinWidth = 0;
+    const isElementVisible = isVisible(this.element);
+    if (isElementVisible) {
+      const boundaryEl = this.findBoundaryElement();
+      const offsetParentComputedStyles = window.getComputedStyle(boundaryEl);
+      if (offsetParentComputedStyles.minWidth != null) {
+        const paddingWidth = boundaryEl.offsetWidth - this.element.offsetWidth;
+        computedMinWidth = parseInt(offsetParentComputedStyles.minWidth, 10) - paddingWidth;
+      }
+      if (offsetParentComputedStyles.minHeight != null) {
+        const paddingHeight = boundaryEl.offsetHeight - this.element.offsetHeight;
+        computedMinHeight = parseInt(offsetParentComputedStyles.minHeight, 10) - paddingHeight;
+      }
     }
-    isPositioned() {
-        return this.positioned;
+    this.minHeight = minHeight || computedMinHeight;
+    this.minWidth = minWidth || computedMinWidth;
+    if (width) {
+      this.setWidth(width);
     }
-    getPosition() {
-        return this.position;
+    if (height) {
+      this.setHeight(height);
     }
-    setMovable(movable, moveElement) {
-        if (!this.config.popup || movable === this.movable) {
-            return;
-        }
-        this.movable = movable;
-        const params = this.moveElementDragListener || {
-            eElement: moveElement,
-            onDragStart: this.onMoveStart.bind(this),
-            onDragging: this.onMove.bind(this),
-            onDragStop: this.onMoveEnd.bind(this)
-        };
-        if (movable) {
-            this.dragService.addDragSource(params);
-            this.moveElementDragListener = params;
-        }
-        else {
-            this.dragService.removeDragSource(params);
-            this.moveElementDragListener = undefined;
-        }
+    if (!width || !height) {
+      this.refreshSize();
     }
-    setResizable(resizable) {
-        this.clearResizeListeners();
-        if (resizable) {
-            this.addResizers();
+    if (centered) {
+      this.center();
+    } else if (x || y) {
+      this.offsetElement(x, y);
+    } else if (isElementVisible && forcePopupParentAsOffsetParent) {
+      let boundaryEl = this.boundaryEl;
+      let initialisedDuringPositioning = true;
+      if (!boundaryEl) {
+        boundaryEl = this.findBoundaryElement();
+        initialisedDuringPositioning = false;
+      }
+      if (boundaryEl) {
+        const top = parseFloat(boundaryEl.style.top);
+        const left = parseFloat(boundaryEl.style.left);
+        if (initialisedDuringPositioning) {
+          this.offsetElement(isNaN(left) ? 0 : left, isNaN(top) ? 0 : top);
+        } else {
+          this.setPosition(left, top);
         }
-        else {
-            this.removeResizers();
-        }
-        if (typeof resizable === 'boolean') {
-            if (resizable === false) {
-                return;
-            }
-            resizable = {
-                topLeft: resizable,
-                top: resizable,
-                topRight: resizable,
-                right: resizable,
-                bottomRight: resizable,
-                bottom: resizable,
-                bottomLeft: resizable,
-                left: resizable
-            };
-        }
-        Object.keys(resizable).forEach((side) => {
-            const resizableStructure = resizable;
-            const isSideResizable = !!resizableStructure[side];
-            const resizerEl = this.getResizerElement(side);
-            const params = {
-                dragStartPixels: 0,
-                eElement: resizerEl,
-                onDragStart: (e) => this.onResizeStart(e, side),
-                onDragging: this.onResize.bind(this),
-                onDragStop: (e) => this.onResizeEnd(e, side),
-            };
-            if (isSideResizable || (!this.isAlive() && !isSideResizable)) {
-                if (isSideResizable) {
-                    this.dragService.addDragSource(params);
-                    this.resizeListeners.push(params);
-                    resizerEl.style.pointerEvents = 'all';
-                }
-                else {
-                    resizerEl.style.pointerEvents = 'none';
-                }
-                this.resizable[side] = isSideResizable;
-            }
-        });
+      }
     }
-    removeSizeFromEl() {
-        this.element.style.removeProperty('height');
-        this.element.style.removeProperty('width');
-        this.element.style.removeProperty('flex');
+    this.positioned = !!this.offsetParent;
+  }
+  isPositioned() {
+    return this.positioned;
+  }
+  getPosition() {
+    return this.position;
+  }
+  setMovable(movable, moveElement) {
+    if (!this.config.popup || movable === this.movable) {
+      return;
     }
-    restoreLastSize() {
-        this.element.style.flex = '0 0 auto';
-        const { height, width } = this.lastSize;
-        if (width !== -1) {
-            this.element.style.width = `${width}px`;
-        }
-        if (height !== -1) {
-            this.element.style.height = `${height}px`;
-        }
+    this.movable = movable;
+    const params = this.moveElementDragListener || {
+      eElement: moveElement,
+      onDragStart: this.onMoveStart.bind(this),
+      onDragging: this.onMove.bind(this),
+      onDragStop: this.onMoveEnd.bind(this)
+    };
+    if (movable) {
+      this.dragService.addDragSource(params);
+      this.moveElementDragListener = params;
+    } else {
+      this.dragService.removeDragSource(params);
+      this.moveElementDragListener = undefined;
     }
-    getHeight() {
-        return this.element.offsetHeight;
+  }
+  setResizable(resizable) {
+    this.clearResizeListeners();
+    if (resizable) {
+      this.addResizers();
+    } else {
+      this.removeResizers();
     }
-    setHeight(height) {
-        const { popup } = this.config;
-        const eGui = this.element;
-        let isPercent = false;
-        if (typeof height === 'string' && height.indexOf('%') !== -1) {
-            setFixedHeight(eGui, height);
-            height = getAbsoluteHeight(eGui);
-            isPercent = true;
-        }
-        else {
-            height = Math.max(this.minHeight, height);
-            if (this.positioned) {
-                const availableHeight = this.getAvailableHeight();
-                if (availableHeight && height > availableHeight) {
-                    height = availableHeight;
-                }
-            }
-        }
-        if (this.getHeight() === height) {
-            return;
-        }
-        if (!isPercent) {
-            if (popup) {
-                setFixedHeight(eGui, height);
-            }
-            else {
-                eGui.style.height = `${height}px`;
-                eGui.style.flex = '0 0 auto';
-                this.lastSize.height = typeof height === 'number' ? height : parseFloat(height);
-            }
-        }
-        else {
-            eGui.style.maxHeight = 'unset';
-            eGui.style.minHeight = 'unset';
-        }
+    if (typeof resizable === 'boolean') {
+      if (resizable === false) {
+        return;
+      }
+      resizable = {
+        topLeft: resizable,
+        top: resizable,
+        topRight: resizable,
+        right: resizable,
+        bottomRight: resizable,
+        bottom: resizable,
+        bottomLeft: resizable,
+        left: resizable
+      };
     }
-    getAvailableHeight() {
-        const { popup, forcePopupParentAsOffsetParent } = this.config;
-        if (!this.positioned) {
-            this.initialisePosition();
+    Object.keys(resizable).forEach(side => {
+      const resizableStructure = resizable;
+      const isSideResizable = !!resizableStructure[side];
+      const resizerEl = this.getResizerElement(side);
+      const params = {
+        dragStartPixels: 0,
+        eElement: resizerEl,
+        onDragStart: e => this.onResizeStart(e, side),
+        onDragging: this.onResize.bind(this),
+        onDragStop: e => this.onResizeEnd(e, side)
+      };
+      if (isSideResizable || !this.isAlive() && !isSideResizable) {
+        if (isSideResizable) {
+          this.dragService.addDragSource(params);
+          this.resizeListeners.push(params);
+          resizerEl.style.pointerEvents = 'all';
+        } else {
+          resizerEl.style.pointerEvents = 'none';
         }
-        const { clientHeight } = this.offsetParent;
-        if (!clientHeight) {
-            return null;
-        }
-        const elRect = this.element.getBoundingClientRect();
-        const offsetParentRect = this.offsetParent.getBoundingClientRect();
-        const yPosition = popup ? this.position.y : elRect.top;
-        const parentTop = popup ? 0 : offsetParentRect.top;
-        // When `forcePopupParentAsOffsetParent`, there may be elements that appear after the resizable element, but aren't included in the height.
-        // Take these into account here
-        let additionalHeight = 0;
-        if (forcePopupParentAsOffsetParent) {
-            const parentEl = this.element.parentElement;
-            if (parentEl) {
-                const { bottom } = parentEl.getBoundingClientRect();
-                additionalHeight = bottom - elRect.bottom;
-            }
-        }
-        const availableHeight = clientHeight + parentTop - yPosition - additionalHeight;
-        return availableHeight;
+        this.resizable[side] = isSideResizable;
+      }
+    });
+  }
+  removeSizeFromEl() {
+    this.element.style.removeProperty('height');
+    this.element.style.removeProperty('width');
+    this.element.style.removeProperty('flex');
+  }
+  restoreLastSize() {
+    this.element.style.flex = '0 0 auto';
+    const {
+      height,
+      width
+    } = this.lastSize;
+    if (width !== -1) {
+      this.element.style.width = `${width}px`;
     }
-    getWidth() {
-        return this.element.offsetWidth;
+    if (height !== -1) {
+      this.element.style.height = `${height}px`;
     }
-    setWidth(width) {
-        const eGui = this.element;
-        const { popup } = this.config;
-        let isPercent = false;
-        if (typeof width === 'string' && width.indexOf('%') !== -1) {
-            setFixedWidth(eGui, width);
-            width = getAbsoluteWidth(eGui);
-            isPercent = true;
+  }
+  getHeight() {
+    return this.element.offsetHeight;
+  }
+  setHeight(height) {
+    const {
+      popup
+    } = this.config;
+    const eGui = this.element;
+    let isPercent = false;
+    if (typeof height === 'string' && height.indexOf('%') !== -1) {
+      setFixedHeight(eGui, height);
+      height = getAbsoluteHeight(eGui);
+      isPercent = true;
+    } else {
+      height = Math.max(this.minHeight, height);
+      if (this.positioned) {
+        const availableHeight = this.getAvailableHeight();
+        if (availableHeight && height > availableHeight) {
+          height = availableHeight;
         }
-        else if (this.positioned) {
-            width = Math.max(this.minWidth, width);
-            const { clientWidth } = this.offsetParent;
-            const xPosition = popup ? this.position.x : this.element.getBoundingClientRect().left;
-            if (clientWidth && (width + xPosition > clientWidth)) {
-                width = clientWidth - xPosition;
-            }
-        }
-        if (this.getWidth() === width) {
-            return;
-        }
-        if (!isPercent) {
-            if (this.config.popup) {
-                setFixedWidth(eGui, width);
-            }
-            else {
-                eGui.style.width = `${width}px`;
-                eGui.style.flex = ' unset';
-                this.lastSize.width = typeof width === 'number' ? width : parseFloat(width);
-            }
-        }
-        else {
-            eGui.style.maxWidth = 'unset';
-            eGui.style.minWidth = 'unset';
-        }
+      }
     }
-    offsetElement(x = 0, y = 0) {
-        const { forcePopupParentAsOffsetParent } = this.config;
-        const ePopup = forcePopupParentAsOffsetParent ? this.boundaryEl : this.element;
-        if (!ePopup) {
-            return;
-        }
-        this.popupService.positionPopup({
-            ePopup,
-            keepWithinBounds: true,
-            skipObserver: this.movable || this.isResizable(),
-            updatePosition: () => ({ x, y })
-        });
-        this.setPosition(parseFloat(ePopup.style.left), parseFloat(ePopup.style.top));
+    if (this.getHeight() === height) {
+      return;
     }
-    constrainSizeToAvailableHeight(constrain) {
-        if (!this.config.forcePopupParentAsOffsetParent) {
-            return;
-        }
-        const applyMaxHeightToElement = () => {
-            const availableHeight = this.getAvailableHeight();
-            this.element.style.setProperty('max-height', `${availableHeight}px`);
-        };
-        if (constrain) {
-            this.resizeObserverSubscriber = this.resizeObserverService.observeResize(this.popupService.getPopupParent(), applyMaxHeightToElement);
-        }
-        else {
-            this.element.style.removeProperty('max-height');
-            if (this.resizeObserverSubscriber) {
-                this.resizeObserverSubscriber();
-                this.resizeObserverSubscriber = undefined;
-            }
-        }
+    if (!isPercent) {
+      if (popup) {
+        setFixedHeight(eGui, height);
+      } else {
+        eGui.style.height = `${height}px`;
+        eGui.style.flex = '0 0 auto';
+        this.lastSize.height = typeof height === 'number' ? height : parseFloat(height);
+      }
+    } else {
+      eGui.style.maxHeight = 'unset';
+      eGui.style.minHeight = 'unset';
     }
-    setPosition(x, y) {
-        this.position.x = x;
-        this.position.y = y;
+  }
+  getAvailableHeight() {
+    const {
+      popup,
+      forcePopupParentAsOffsetParent
+    } = this.config;
+    if (!this.positioned) {
+      this.initialisePosition();
     }
-    updateDragStartPosition(x, y) {
-        this.dragStartPosition = { x, y };
+    const {
+      clientHeight
+    } = this.offsetParent;
+    if (!clientHeight) {
+      return null;
     }
-    calculateMouseMovement(params) {
-        const { e, isLeft, isTop, anywhereWithin, topBuffer } = params;
-        const xDiff = e.clientX - this.dragStartPosition.x;
-        const yDiff = e.clientY - this.dragStartPosition.y;
-        const movementX = this.shouldSkipX(e, !!isLeft, !!anywhereWithin, xDiff) ? 0 : xDiff;
-        const movementY = this.shouldSkipY(e, !!isTop, topBuffer, yDiff) ? 0 : yDiff;
-        return { movementX, movementY };
+    const elRect = this.element.getBoundingClientRect();
+    const offsetParentRect = this.offsetParent.getBoundingClientRect();
+    const yPosition = popup ? this.position.y : elRect.top;
+    const parentTop = popup ? 0 : offsetParentRect.top;
+    let additionalHeight = 0;
+    if (forcePopupParentAsOffsetParent) {
+      const parentEl = this.element.parentElement;
+      if (parentEl) {
+        const {
+          bottom
+        } = parentEl.getBoundingClientRect();
+        additionalHeight = bottom - elRect.bottom;
+      }
     }
-    shouldSkipX(e, isLeft, anywhereWithin, diff) {
-        const elRect = this.element.getBoundingClientRect();
-        const parentRect = this.offsetParent.getBoundingClientRect();
-        const boundaryElRect = this.boundaryEl.getBoundingClientRect();
-        const xPosition = this.config.popup ? this.position.x : elRect.left;
-        // skip if cursor is outside of popupParent horizontally
-        let skipX = ((xPosition <= 0 && parentRect.left >= e.clientX) ||
-            (parentRect.right <= e.clientX && parentRect.right <= boundaryElRect.right));
-        if (skipX) {
-            return true;
-        }
-        if (isLeft) {
-            skipX = (
-            // skip if we are moving to the left and the cursor
-            // is positioned to the right of the left side anchor
-            (diff < 0 && e.clientX > xPosition + parentRect.left) ||
-                // skip if we are moving to the right and the cursor
-                // is positioned to the left of the dialog
-                (diff > 0 && e.clientX < xPosition + parentRect.left));
-        }
-        else {
-            if (anywhereWithin) {
-                // if anywhereWithin is true, we allow to move
-                // as long as the cursor is within the dialog
-                skipX = ((diff < 0 && e.clientX > boundaryElRect.right) ||
-                    (diff > 0 && e.clientX < xPosition + parentRect.left));
-            }
-            else {
-                skipX = (
-                // if the movement is bound to the right side of the dialog
-                // we skip if we are moving to the left and the cursor
-                // is to the right of the dialog
-                (diff < 0 && e.clientX > boundaryElRect.right) ||
-                    // or skip if we are moving to the right and the cursor
-                    // is to the left of the right side anchor
-                    (diff > 0 && e.clientX < boundaryElRect.right));
-            }
-        }
-        return skipX;
+    const availableHeight = clientHeight + parentTop - yPosition - additionalHeight;
+    return availableHeight;
+  }
+  getWidth() {
+    return this.element.offsetWidth;
+  }
+  setWidth(width) {
+    const eGui = this.element;
+    const {
+      popup
+    } = this.config;
+    let isPercent = false;
+    if (typeof width === 'string' && width.indexOf('%') !== -1) {
+      setFixedWidth(eGui, width);
+      width = getAbsoluteWidth(eGui);
+      isPercent = true;
+    } else if (this.positioned) {
+      width = Math.max(this.minWidth, width);
+      const {
+        clientWidth
+      } = this.offsetParent;
+      const xPosition = popup ? this.position.x : this.element.getBoundingClientRect().left;
+      if (clientWidth && width + xPosition > clientWidth) {
+        width = clientWidth - xPosition;
+      }
     }
-    shouldSkipY(e, isTop, topBuffer = 0, diff) {
-        const elRect = this.element.getBoundingClientRect();
-        const parentRect = this.offsetParent.getBoundingClientRect();
-        const boundaryElRect = this.boundaryEl.getBoundingClientRect();
-        const yPosition = this.config.popup ? this.position.y : elRect.top;
-        // skip if cursor is outside of popupParent vertically
-        let skipY = ((yPosition <= 0 && parentRect.top >= e.clientY) ||
-            (parentRect.bottom <= e.clientY && parentRect.bottom <= boundaryElRect.bottom));
-        if (skipY) {
-            return true;
-        }
-        if (isTop) {
-            skipY = (
-            // skip if we are moving to towards top and the cursor is
-            // below the top anchor + topBuffer
-            // note: topBuffer is used when moving the dialog using the title bar
-            (diff < 0 && e.clientY > yPosition + parentRect.top + topBuffer) ||
-                // skip if we are moving to the bottom and the cursor is
-                // above the top anchor
-                (diff > 0 && e.clientY < yPosition + parentRect.top));
-        }
-        else {
-            skipY = (
-            // skip if we are moving towards the top and the cursor
-            // is below the bottom anchor
-            (diff < 0 && e.clientY > boundaryElRect.bottom) ||
-                // skip if we are moving towards the bottom and the cursor
-                // is above the bottom anchor
-                (diff > 0 && e.clientY < boundaryElRect.bottom));
-        }
-        return skipY;
+    if (this.getWidth() === width) {
+      return;
     }
-    createResizeMap() {
-        const eGui = this.element;
-        this.resizerMap = {
-            topLeft: { element: eGui.querySelector('[ref=eTopLeftResizer]') },
-            top: { element: eGui.querySelector('[ref=eTopResizer]') },
-            topRight: { element: eGui.querySelector('[ref=eTopRightResizer]') },
-            right: { element: eGui.querySelector('[ref=eRightResizer]') },
-            bottomRight: { element: eGui.querySelector('[ref=eBottomRightResizer]') },
-            bottom: { element: eGui.querySelector('[ref=eBottomResizer]') },
-            bottomLeft: { element: eGui.querySelector('[ref=eBottomLeftResizer]') },
-            left: { element: eGui.querySelector('[ref=eLeftResizer]') }
-        };
+    if (!isPercent) {
+      if (this.config.popup) {
+        setFixedWidth(eGui, width);
+      } else {
+        eGui.style.width = `${width}px`;
+        eGui.style.flex = ' unset';
+        this.lastSize.width = typeof width === 'number' ? width : parseFloat(width);
+      }
+    } else {
+      eGui.style.maxWidth = 'unset';
+      eGui.style.minWidth = 'unset';
     }
-    addResizers() {
-        if (this.resizersAdded) {
-            return;
-        }
-        const eGui = this.element;
-        if (!eGui) {
-            return;
-        }
-        const parser = new DOMParser();
-        const resizers = parser.parseFromString(RESIZE_TEMPLATE, 'text/html').body;
-        eGui.appendChild(resizers.firstChild);
-        this.createResizeMap();
-        this.resizersAdded = true;
+  }
+  offsetElement(x = 0, y = 0) {
+    const {
+      forcePopupParentAsOffsetParent
+    } = this.config;
+    const ePopup = forcePopupParentAsOffsetParent ? this.boundaryEl : this.element;
+    if (!ePopup) {
+      return;
     }
-    removeResizers() {
-        this.resizerMap = undefined;
-        const resizerEl = this.element.querySelector(`.${RESIZE_CONTAINER_STYLE}`);
-        if (resizerEl) {
-            this.element.removeChild(resizerEl);
-        }
-        this.resizersAdded = false;
+    this.popupService.positionPopup({
+      ePopup,
+      keepWithinBounds: true,
+      skipObserver: this.movable || this.isResizable(),
+      updatePosition: () => ({
+        x,
+        y
+      })
+    });
+    this.setPosition(parseFloat(ePopup.style.left), parseFloat(ePopup.style.top));
+  }
+  constrainSizeToAvailableHeight(constrain) {
+    if (!this.config.forcePopupParentAsOffsetParent) {
+      return;
     }
-    getResizerElement(side) {
-        return this.resizerMap[side].element;
+    const applyMaxHeightToElement = () => {
+      const availableHeight = this.getAvailableHeight();
+      this.element.style.setProperty('max-height', `${availableHeight}px`);
+    };
+    if (constrain) {
+      this.resizeObserverSubscriber = this.resizeObserverService.observeResize(this.popupService.getPopupParent(), applyMaxHeightToElement);
+    } else {
+      this.element.style.removeProperty('max-height');
+      if (this.resizeObserverSubscriber) {
+        this.resizeObserverSubscriber();
+        this.resizeObserverSubscriber = undefined;
+      }
     }
-    onResizeStart(e, side) {
-        this.boundaryEl = this.findBoundaryElement();
-        if (!this.positioned) {
-            this.initialisePosition();
-        }
-        this.currentResizer = {
-            isTop: !!side.match(/top/i),
-            isRight: !!side.match(/right/i),
-            isBottom: !!side.match(/bottom/i),
-            isLeft: !!side.match(/left/i),
-        };
-        this.element.classList.add('zing-resizing');
-        this.resizerMap[side].element.classList.add('zing-active');
-        const { popup, forcePopupParentAsOffsetParent } = this.config;
-        if (!popup && !forcePopupParentAsOffsetParent) {
-            this.applySizeToSiblings(this.currentResizer.isBottom || this.currentResizer.isTop);
-        }
-        this.isResizing = true;
-        this.updateDragStartPosition(e.clientX, e.clientY);
+  }
+  setPosition(x, y) {
+    this.position.x = x;
+    this.position.y = y;
+  }
+  updateDragStartPosition(x, y) {
+    this.dragStartPosition = {
+      x,
+      y
+    };
+  }
+  calculateMouseMovement(params) {
+    const {
+      e,
+      isLeft,
+      isTop,
+      anywhereWithin,
+      topBuffer
+    } = params;
+    const xDiff = e.clientX - this.dragStartPosition.x;
+    const yDiff = e.clientY - this.dragStartPosition.y;
+    const movementX = this.shouldSkipX(e, !!isLeft, !!anywhereWithin, xDiff) ? 0 : xDiff;
+    const movementY = this.shouldSkipY(e, !!isTop, topBuffer, yDiff) ? 0 : yDiff;
+    return {
+      movementX,
+      movementY
+    };
+  }
+  shouldSkipX(e, isLeft, anywhereWithin, diff) {
+    const elRect = this.element.getBoundingClientRect();
+    const parentRect = this.offsetParent.getBoundingClientRect();
+    const boundaryElRect = this.boundaryEl.getBoundingClientRect();
+    const xPosition = this.config.popup ? this.position.x : elRect.left;
+    let skipX = xPosition <= 0 && parentRect.left >= e.clientX || parentRect.right <= e.clientX && parentRect.right <= boundaryElRect.right;
+    if (skipX) {
+      return true;
     }
-    getSiblings() {
-        const element = this.element;
-        const parent = element.parentElement;
-        if (!parent) {
-            return null;
-        }
-        return Array.prototype.slice.call(parent.children).filter((el) => !el.classList.contains('zing-hidden'));
+    if (isLeft) {
+      skipX = diff < 0 && e.clientX > xPosition + parentRect.left || diff > 0 && e.clientX < xPosition + parentRect.left;
+    } else {
+      if (anywhereWithin) {
+        skipX = diff < 0 && e.clientX > boundaryElRect.right || diff > 0 && e.clientX < xPosition + parentRect.left;
+      } else {
+        skipX = diff < 0 && e.clientX > boundaryElRect.right || diff > 0 && e.clientX < boundaryElRect.right;
+      }
     }
-    getMinSizeOfSiblings() {
-        const siblings = this.getSiblings() || [];
-        let height = 0;
-        let width = 0;
-        for (let i = 0; i < siblings.length; i++) {
-            const currentEl = siblings[i];
-            const isFlex = !!currentEl.style.flex && currentEl.style.flex !== '0 0 auto';
-            if (currentEl === this.element) {
-                continue;
-            }
-            let nextHeight = this.minHeight || 0;
-            let nextWidth = this.minWidth || 0;
-            if (isFlex) {
-                const computedStyle = window.getComputedStyle(currentEl);
-                if (computedStyle.minHeight) {
-                    nextHeight = parseInt(computedStyle.minHeight, 10);
-                }
-                if (computedStyle.minWidth) {
-                    nextWidth = parseInt(computedStyle.minWidth, 10);
-                }
-            }
-            else {
-                nextHeight = currentEl.offsetHeight;
-                nextWidth = currentEl.offsetWidth;
-            }
-            height += nextHeight;
-            width += nextWidth;
-        }
-        return { height, width };
+    return skipX;
+  }
+  shouldSkipY(e, isTop, topBuffer = 0, diff) {
+    const elRect = this.element.getBoundingClientRect();
+    const parentRect = this.offsetParent.getBoundingClientRect();
+    const boundaryElRect = this.boundaryEl.getBoundingClientRect();
+    const yPosition = this.config.popup ? this.position.y : elRect.top;
+    let skipY = yPosition <= 0 && parentRect.top >= e.clientY || parentRect.bottom <= e.clientY && parentRect.bottom <= boundaryElRect.bottom;
+    if (skipY) {
+      return true;
     }
-    applySizeToSiblings(vertical) {
-        let containerToFlex = null;
-        const siblings = this.getSiblings();
-        if (!siblings) {
-            return;
-        }
-        for (let i = 0; i < siblings.length; i++) {
-            const el = siblings[i];
-            if (el === containerToFlex) {
-                continue;
-            }
-            if (vertical) {
-                el.style.height = `${el.offsetHeight}px`;
-            }
-            else {
-                el.style.width = `${el.offsetWidth}px`;
-            }
-            el.style.flex = '0 0 auto';
-            if (el === this.element) {
-                containerToFlex = siblings[i + 1];
-            }
-        }
-        if (containerToFlex) {
-            containerToFlex.style.removeProperty('height');
-            containerToFlex.style.removeProperty('min-height');
-            containerToFlex.style.removeProperty('max-height');
-            containerToFlex.style.flex = '1 1 auto';
-        }
+    if (isTop) {
+      skipY = diff < 0 && e.clientY > yPosition + parentRect.top + topBuffer || diff > 0 && e.clientY < yPosition + parentRect.top;
+    } else {
+      skipY = diff < 0 && e.clientY > boundaryElRect.bottom || diff > 0 && e.clientY < boundaryElRect.bottom;
     }
-    isResizable() {
-        return Object.values(this.resizable).some(value => value);
+    return skipY;
+  }
+  createResizeMap() {
+    const eGui = this.element;
+    this.resizerMap = {
+      topLeft: {
+        element: eGui.querySelector('[ref=eTopLeftResizer]')
+      },
+      top: {
+        element: eGui.querySelector('[ref=eTopResizer]')
+      },
+      topRight: {
+        element: eGui.querySelector('[ref=eTopRightResizer]')
+      },
+      right: {
+        element: eGui.querySelector('[ref=eRightResizer]')
+      },
+      bottomRight: {
+        element: eGui.querySelector('[ref=eBottomRightResizer]')
+      },
+      bottom: {
+        element: eGui.querySelector('[ref=eBottomResizer]')
+      },
+      bottomLeft: {
+        element: eGui.querySelector('[ref=eBottomLeftResizer]')
+      },
+      left: {
+        element: eGui.querySelector('[ref=eLeftResizer]')
+      }
+    };
+  }
+  addResizers() {
+    if (this.resizersAdded) {
+      return;
     }
-    onResize(e) {
-        if (!this.isResizing || !this.currentResizer) {
-            return;
-        }
-        const { popup, forcePopupParentAsOffsetParent } = this.config;
-        const { isTop, isRight, isBottom, isLeft } = this.currentResizer;
-        const isHorizontal = isRight || isLeft;
-        const isVertical = isBottom || isTop;
-        const { movementX, movementY } = this.calculateMouseMovement({ e, isLeft, isTop });
-        const xPosition = this.position.x;
-        const yPosition = this.position.y;
-        let offsetLeft = 0;
-        let offsetTop = 0;
-        if (isHorizontal && movementX) {
-            const direction = isLeft ? -1 : 1;
-            const oldWidth = this.getWidth();
-            const newWidth = oldWidth + (movementX * direction);
-            let skipWidth = false;
-            if (isLeft) {
-                offsetLeft = oldWidth - newWidth;
-                if (xPosition + offsetLeft <= 0 || newWidth <= this.minWidth) {
-                    skipWidth = true;
-                    offsetLeft = 0;
-                }
-            }
-            if (!skipWidth) {
-                this.setWidth(newWidth);
-            }
-        }
-        if (isVertical && movementY) {
-            const direction = isTop ? -1 : 1;
-            const oldHeight = this.getHeight();
-            const newHeight = oldHeight + (movementY * direction);
-            let skipHeight = false;
-            if (isTop) {
-                offsetTop = oldHeight - newHeight;
-                if (yPosition + offsetTop <= 0 || newHeight <= this.minHeight) {
-                    skipHeight = true;
-                    offsetTop = 0;
-                }
-            }
-            else {
-                // do not let the size of all siblings be higher than the parent container
-                if (!this.config.popup &&
-                    !this.config.forcePopupParentAsOffsetParent &&
-                    oldHeight < newHeight &&
-                    (this.getMinSizeOfSiblings().height + newHeight) > this.element.parentElement.offsetHeight) {
-                    skipHeight = true;
-                }
-            }
-            if (!skipHeight) {
-                this.setHeight(newHeight);
-            }
-        }
-        this.updateDragStartPosition(e.clientX, e.clientY);
-        if ((popup || forcePopupParentAsOffsetParent) && offsetLeft || offsetTop) {
-            this.offsetElement(xPosition + offsetLeft, yPosition + offsetTop);
-        }
+    const eGui = this.element;
+    if (!eGui) {
+      return;
     }
-    onResizeEnd(e, side) {
-        this.isResizing = false;
-        this.currentResizer = null;
-        this.boundaryEl = null;
-        const params = {
-            type: 'resize',
-            api: this.gridOptionsService.api,
-            columnApi: this.gridOptionsService.columnApi
-        };
-        this.element.classList.remove('zing-resizing');
-        this.resizerMap[side].element.classList.remove('zing-active');
-        this.dispatchEvent(params);
+    const parser = new DOMParser();
+    const resizers = parser.parseFromString(RESIZE_TEMPLATE, 'text/html').body;
+    eGui.appendChild(resizers.firstChild);
+    this.createResizeMap();
+    this.resizersAdded = true;
+  }
+  removeResizers() {
+    this.resizerMap = undefined;
+    const resizerEl = this.element.querySelector(`.${RESIZE_CONTAINER_STYLE}`);
+    if (resizerEl) {
+      this.element.removeChild(resizerEl);
     }
-    refreshSize() {
-        const eGui = this.element;
-        if (this.config.popup) {
-            if (!this.config.width) {
-                this.setWidth(eGui.offsetWidth);
-            }
-            if (!this.config.height) {
-                this.setHeight(eGui.offsetHeight);
-            }
-        }
+    this.resizersAdded = false;
+  }
+  getResizerElement(side) {
+    return this.resizerMap[side].element;
+  }
+  onResizeStart(e, side) {
+    this.boundaryEl = this.findBoundaryElement();
+    if (!this.positioned) {
+      this.initialisePosition();
     }
-    onMoveStart(e) {
-        this.boundaryEl = this.findBoundaryElement();
-        if (!this.positioned) {
-            this.initialisePosition();
-        }
-        this.isMoving = true;
-        this.element.classList.add('zing-moving');
-        this.updateDragStartPosition(e.clientX, e.clientY);
+    this.currentResizer = {
+      isTop: !!side.match(/top/i),
+      isRight: !!side.match(/right/i),
+      isBottom: !!side.match(/bottom/i),
+      isLeft: !!side.match(/left/i)
+    };
+    this.element.classList.add('zing-resizing');
+    this.resizerMap[side].element.classList.add('zing-active');
+    const {
+      popup,
+      forcePopupParentAsOffsetParent
+    } = this.config;
+    if (!popup && !forcePopupParentAsOffsetParent) {
+      this.applySizeToSiblings(this.currentResizer.isBottom || this.currentResizer.isTop);
     }
-    onMove(e) {
-        if (!this.isMoving) {
-            return;
-        }
-        const { x, y } = this.position;
-        let topBuffer;
-        if (this.config.calculateTopBuffer) {
-            topBuffer = this.config.calculateTopBuffer();
-        }
-        const { movementX, movementY } = this.calculateMouseMovement({
-            e,
-            isTop: true,
-            anywhereWithin: true,
-            topBuffer
-        });
-        this.offsetElement(x + movementX, y + movementY);
-        this.updateDragStartPosition(e.clientX, e.clientY);
+    this.isResizing = true;
+    this.updateDragStartPosition(e.clientX, e.clientY);
+  }
+  getSiblings() {
+    const element = this.element;
+    const parent = element.parentElement;
+    if (!parent) {
+      return null;
     }
-    onMoveEnd() {
-        this.isMoving = false;
-        this.boundaryEl = null;
-        this.element.classList.remove('zing-moving');
-    }
-    setOffsetParent() {
-        if (this.config.forcePopupParentAsOffsetParent) {
-            this.offsetParent = this.popupService.getPopupParent();
+    return Array.prototype.slice.call(parent.children).filter(el => !el.classList.contains('zing-hidden'));
+  }
+  getMinSizeOfSiblings() {
+    const siblings = this.getSiblings() || [];
+    let height = 0;
+    let width = 0;
+    for (let i = 0; i < siblings.length; i++) {
+      const currentEl = siblings[i];
+      const isFlex = !!currentEl.style.flex && currentEl.style.flex !== '0 0 auto';
+      if (currentEl === this.element) {
+        continue;
+      }
+      let nextHeight = this.minHeight || 0;
+      let nextWidth = this.minWidth || 0;
+      if (isFlex) {
+        const computedStyle = window.getComputedStyle(currentEl);
+        if (computedStyle.minHeight) {
+          nextHeight = parseInt(computedStyle.minHeight, 10);
         }
-        else {
-            this.offsetParent = this.element.offsetParent;
+        if (computedStyle.minWidth) {
+          nextWidth = parseInt(computedStyle.minWidth, 10);
         }
+      } else {
+        nextHeight = currentEl.offsetHeight;
+        nextWidth = currentEl.offsetWidth;
+      }
+      height += nextHeight;
+      width += nextWidth;
     }
-    findBoundaryElement() {
-        let el = this.element;
-        while (el) {
-            if (window.getComputedStyle(el).position !== 'static') {
-                return el;
-            }
-            el = el.parentElement;
+    return {
+      height,
+      width
+    };
+  }
+  applySizeToSiblings(vertical) {
+    let containerToFlex = null;
+    const siblings = this.getSiblings();
+    if (!siblings) {
+      return;
+    }
+    for (let i = 0; i < siblings.length; i++) {
+      const el = siblings[i];
+      if (el === containerToFlex) {
+        continue;
+      }
+      if (vertical) {
+        el.style.height = `${el.offsetHeight}px`;
+      } else {
+        el.style.width = `${el.offsetWidth}px`;
+      }
+      el.style.flex = '0 0 auto';
+      if (el === this.element) {
+        containerToFlex = siblings[i + 1];
+      }
+    }
+    if (containerToFlex) {
+      containerToFlex.style.removeProperty('height');
+      containerToFlex.style.removeProperty('min-height');
+      containerToFlex.style.removeProperty('max-height');
+      containerToFlex.style.flex = '1 1 auto';
+    }
+  }
+  isResizable() {
+    return Object.values(this.resizable).some(value => value);
+  }
+  onResize(e) {
+    if (!this.isResizing || !this.currentResizer) {
+      return;
+    }
+    const {
+      popup,
+      forcePopupParentAsOffsetParent
+    } = this.config;
+    const {
+      isTop,
+      isRight,
+      isBottom,
+      isLeft
+    } = this.currentResizer;
+    const isHorizontal = isRight || isLeft;
+    const isVertical = isBottom || isTop;
+    const {
+      movementX,
+      movementY
+    } = this.calculateMouseMovement({
+      e,
+      isLeft,
+      isTop
+    });
+    const xPosition = this.position.x;
+    const yPosition = this.position.y;
+    let offsetLeft = 0;
+    let offsetTop = 0;
+    if (isHorizontal && movementX) {
+      const direction = isLeft ? -1 : 1;
+      const oldWidth = this.getWidth();
+      const newWidth = oldWidth + movementX * direction;
+      let skipWidth = false;
+      if (isLeft) {
+        offsetLeft = oldWidth - newWidth;
+        if (xPosition + offsetLeft <= 0 || newWidth <= this.minWidth) {
+          skipWidth = true;
+          offsetLeft = 0;
         }
-        return this.element;
+      }
+      if (!skipWidth) {
+        this.setWidth(newWidth);
+      }
     }
-    clearResizeListeners() {
-        while (this.resizeListeners.length) {
-            const params = this.resizeListeners.pop();
-            this.dragService.removeDragSource(params);
+    if (isVertical && movementY) {
+      const direction = isTop ? -1 : 1;
+      const oldHeight = this.getHeight();
+      const newHeight = oldHeight + movementY * direction;
+      let skipHeight = false;
+      if (isTop) {
+        offsetTop = oldHeight - newHeight;
+        if (yPosition + offsetTop <= 0 || newHeight <= this.minHeight) {
+          skipHeight = true;
+          offsetTop = 0;
         }
-    }
-    destroy() {
-        super.destroy();
-        if (this.moveElementDragListener) {
-            this.dragService.removeDragSource(this.moveElementDragListener);
+      } else {
+        if (!this.config.popup && !this.config.forcePopupParentAsOffsetParent && oldHeight < newHeight && this.getMinSizeOfSiblings().height + newHeight > this.element.parentElement.offsetHeight) {
+          skipHeight = true;
         }
-        this.constrainSizeToAvailableHeight(false);
-        this.clearResizeListeners();
-        this.removeResizers();
+      }
+      if (!skipHeight) {
+        this.setHeight(newHeight);
+      }
     }
+    this.updateDragStartPosition(e.clientX, e.clientY);
+    if ((popup || forcePopupParentAsOffsetParent) && offsetLeft || offsetTop) {
+      this.offsetElement(xPosition + offsetLeft, yPosition + offsetTop);
+    }
+  }
+  onResizeEnd(e, side) {
+    this.isResizing = false;
+    this.currentResizer = null;
+    this.boundaryEl = null;
+    const params = {
+      type: 'resize',
+      api: this.gridOptionsService.api,
+      columnApi: this.gridOptionsService.columnApi
+    };
+    this.element.classList.remove('zing-resizing');
+    this.resizerMap[side].element.classList.remove('zing-active');
+    this.dispatchEvent(params);
+  }
+  refreshSize() {
+    const eGui = this.element;
+    if (this.config.popup) {
+      if (!this.config.width) {
+        this.setWidth(eGui.offsetWidth);
+      }
+      if (!this.config.height) {
+        this.setHeight(eGui.offsetHeight);
+      }
+    }
+  }
+  onMoveStart(e) {
+    this.boundaryEl = this.findBoundaryElement();
+    if (!this.positioned) {
+      this.initialisePosition();
+    }
+    this.isMoving = true;
+    this.element.classList.add('zing-moving');
+    this.updateDragStartPosition(e.clientX, e.clientY);
+  }
+  onMove(e) {
+    if (!this.isMoving) {
+      return;
+    }
+    const {
+      x,
+      y
+    } = this.position;
+    let topBuffer;
+    if (this.config.calculateTopBuffer) {
+      topBuffer = this.config.calculateTopBuffer();
+    }
+    const {
+      movementX,
+      movementY
+    } = this.calculateMouseMovement({
+      e,
+      isTop: true,
+      anywhereWithin: true,
+      topBuffer
+    });
+    this.offsetElement(x + movementX, y + movementY);
+    this.updateDragStartPosition(e.clientX, e.clientY);
+  }
+  onMoveEnd() {
+    this.isMoving = false;
+    this.boundaryEl = null;
+    this.element.classList.remove('zing-moving');
+  }
+  setOffsetParent() {
+    if (this.config.forcePopupParentAsOffsetParent) {
+      this.offsetParent = this.popupService.getPopupParent();
+    } else {
+      this.offsetParent = this.element.offsetParent;
+    }
+  }
+  findBoundaryElement() {
+    let el = this.element;
+    while (el) {
+      if (window.getComputedStyle(el).position !== 'static') {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return this.element;
+  }
+  clearResizeListeners() {
+    while (this.resizeListeners.length) {
+      const params = this.resizeListeners.pop();
+      this.dragService.removeDragSource(params);
+    }
+  }
+  destroy() {
+    super.destroy();
+    if (this.moveElementDragListener) {
+      this.dragService.removeDragSource(this.moveElementDragListener);
+    }
+    this.constrainSizeToAvailableHeight(false);
+    this.clearResizeListeners();
+    this.removeResizers();
+  }
 }
-__decorate([
-    Autowired('popupService')
-], PositionableFeature.prototype, "popupService", void 0);
-__decorate([
-    Autowired('resizeObserverService')
-], PositionableFeature.prototype, "resizeObserverService", void 0);
-__decorate([
-    Autowired('dragService')
-], PositionableFeature.prototype, "dragService", void 0);
+__decorate([Autowired('popupService')], PositionableFeature.prototype, "popupService", void 0);
+__decorate([Autowired('resizeObserverService')], PositionableFeature.prototype, "resizeObserverService", void 0);
+__decorate([Autowired('dragService')], PositionableFeature.prototype, "dragService", void 0);

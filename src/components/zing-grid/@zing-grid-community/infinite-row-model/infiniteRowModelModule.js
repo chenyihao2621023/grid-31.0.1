@@ -2,8 +2,8 @@ import { ModuleNames } from "@/components/zing-grid/@zing-grid-community/core/ma
 import { InfiniteRowModel } from "./infiniteRowModel/infiniteRowModel";
 import { VERSION } from "./version";
 export const InfiniteRowModelModule = {
-    version: VERSION,
-    moduleName: ModuleNames.InfiniteRowModelModule,
-    rowModel: 'infinite',
-    beans: [InfiniteRowModel],
+  version: VERSION,
+  moduleName: ModuleNames.InfiniteRowModelModule,
+  rowModel: 'infinite',
+  beans: [InfiniteRowModel]
 };

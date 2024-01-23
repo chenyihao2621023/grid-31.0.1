@@ -1,44 +1,51 @@
 const fillFactory = {
-    getTemplate(fill) {
-        const { patternType, fgTheme, fgTint, fgRgb, bgRgb, bgIndexed } = fill;
-        const pf = {
-            name: 'patternFill',
-            properties: {
-                rawMap: {
-                    patternType
-                }
-            }
-        };
-        if (fgTheme || fgTint || fgRgb) {
-            pf.children = [{
-                    name: 'fgColor',
-                    properties: {
-                        rawMap: {
-                            theme: fgTheme,
-                            tint: fgTint,
-                            rgb: fgRgb
-                        }
-                    }
-                }];
+  getTemplate(fill) {
+    const {
+      patternType,
+      fgTheme,
+      fgTint,
+      fgRgb,
+      bgRgb,
+      bgIndexed
+    } = fill;
+    const pf = {
+      name: 'patternFill',
+      properties: {
+        rawMap: {
+          patternType
         }
-        if (bgIndexed || bgRgb) {
-            if (!pf.children) {
-                pf.children = [];
-            }
-            pf.children.push({
-                name: 'bgColor',
-                properties: {
-                    rawMap: {
-                        indexed: bgIndexed,
-                        rgb: bgRgb
-                    }
-                }
-            });
+      }
+    };
+    if (fgTheme || fgTint || fgRgb) {
+      pf.children = [{
+        name: 'fgColor',
+        properties: {
+          rawMap: {
+            theme: fgTheme,
+            tint: fgTint,
+            rgb: fgRgb
+          }
         }
-        return {
-            name: "fill",
-            children: [pf]
-        };
+      }];
     }
+    if (bgIndexed || bgRgb) {
+      if (!pf.children) {
+        pf.children = [];
+      }
+      pf.children.push({
+        name: 'bgColor',
+        properties: {
+          rawMap: {
+            indexed: bgIndexed,
+            rgb: bgRgb
+          }
+        }
+      });
+    }
+    return {
+      name: "fill",
+      children: [pf]
+    };
+  }
 };
 export default fillFactory;

@@ -14,12 +14,9 @@ import { ServerSideSelectionService } from "./serverSideRowModel/services/server
 import { VERSION } from "./version";
 import { ServerSideExpansionService } from "./serverSideRowModel/services/serverSideExpansionService";
 export const ServerSideRowModelModule = {
-    version: VERSION,
-    moduleName: ModuleNames.ServerSideRowModelModule,
-    rowModel: 'serverSide',
-    beans: [ServerSideRowModel, ExpandListener, SortListener, StoreUtils, BlockUtils, NodeManager, TransactionManager,
-        FilterListener, StoreFactory, ListenerUtils, ServerSideSelectionService, ServerSideExpansionService],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.ServerSideRowModelModule,
+  rowModel: 'serverSide',
+  beans: [ServerSideRowModel, ExpandListener, SortListener, StoreUtils, BlockUtils, NodeManager, TransactionManager, FilterListener, StoreFactory, ListenerUtils, ServerSideSelectionService, ServerSideExpansionService],
+  dependantModules: [EnterpriseCoreModule]
 };

@@ -1,35 +1,30 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Autowired, Component, PostConstruct, RefSelector } from '@/components/zing-grid/@zing-grid-community/core/main.js';
 export class WatermarkComp extends Component {
-    constructor() {
-        super( `<div class="zing-watermark">
+  constructor() {
+    super(`<div class="zing-watermark">
                 <div ref="eLicenseTextRef" class="zing-watermark-text"></div>
             </div>`);
+  }
+  postConstruct() {
+    const show = this.shouldDisplayWatermark();
+    this.setDisplayed(show);
+    if (show) {
+      this.eLicenseTextRef.innerText = this.licenseManager.getWatermarkMessage();
+      window.setTimeout(() => this.addCssClass('zing-opacity-zero'), 0);
+      window.setTimeout(() => this.setDisplayed(false), 5000);
     }
-    postConstruct() {
-        const show = this.shouldDisplayWatermark();
-        this.setDisplayed(show);
-        if (show) {
-            this.eLicenseTextRef.innerText = this.licenseManager.getWatermarkMessage();
-            window.setTimeout(() => this.addCssClass('zing-opacity-zero'), 0);
-            window.setTimeout(() => this.setDisplayed(false), 5000);
-        }
-    }
-    shouldDisplayWatermark() {
-        return this.licenseManager.isDisplayWatermark();
-    }
+  }
+  shouldDisplayWatermark() {
+    return this.licenseManager.isDisplayWatermark();
+  }
 }
-__decorate([
-    Autowired('licenseManager')
-], WatermarkComp.prototype, "licenseManager", void 0);
-__decorate([
-    RefSelector('eLicenseTextRef')
-], WatermarkComp.prototype, "eLicenseTextRef", void 0);
-__decorate([
-    PostConstruct
-], WatermarkComp.prototype, "postConstruct", null);
+__decorate([Autowired('licenseManager')], WatermarkComp.prototype, "licenseManager", void 0);
+__decorate([RefSelector('eLicenseTextRef')], WatermarkComp.prototype, "eLicenseTextRef", void 0);
+__decorate([PostConstruct], WatermarkComp.prototype, "postConstruct", null);

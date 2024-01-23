@@ -9,13 +9,13 @@ import { LineSeriesModule } from '../series/cartesian/lineSeriesModule';
 import { ScatterSeriesModule } from '../series/cartesian/scatterSeriesModule';
 import { PieSeriesModule } from '../series/polar/pieSeriesModule';
 export function registerInbuiltModules() {
-    registerModule(BackgroundModule);
-    registerModule(NavigatorModule);
-    registerModule(AreaSeriesModule);
-    registerModule(BarSeriesModule);
-    registerModule(BubbleSeriesModule);
-    registerModule(LineSeriesModule);
-    registerModule(ScatterSeriesModule);
-    registerModule(PieSeriesModule);
-    registerModule(HistogramSeriesModule);
+  registerModule(BackgroundModule);
+  registerModule(NavigatorModule);
+  registerModule(AreaSeriesModule);
+  registerModule(BarSeriesModule);
+  registerModule(BubbleSeriesModule);
+  registerModule(LineSeriesModule);
+  registerModule(ScatterSeriesModule);
+  registerModule(PieSeriesModule);
+  registerModule(HistogramSeriesModule);
 }

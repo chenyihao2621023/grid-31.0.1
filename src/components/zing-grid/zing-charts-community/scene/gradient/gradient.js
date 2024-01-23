@@ -1,5 +1,5 @@
 export class Gradient {
-    constructor() {
-        this.stops = [];
-    }
+  constructor() {
+    this.stops = [];
+  }
 }

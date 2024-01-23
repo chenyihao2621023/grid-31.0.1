@@ -6,14 +6,15 @@ import { RangeHandle } from "./rangeSelection/rangeHandle";
 import { SelectionHandleFactory } from "./rangeSelection/selectionHandleFactory";
 import { VERSION } from "./version";
 export const RangeSelectionModule = {
-    version: VERSION,
-    moduleName: ModuleNames.RangeSelectionModule,
-    beans: [RangeService, SelectionHandleFactory],
-    zingStackComponents: [
-        { componentName: 'ZingFillHandle', componentClass: FillHandle },
-        { componentName: 'ZingRangeHandle', componentClass: RangeHandle }
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.RangeSelectionModule,
+  beans: [RangeService, SelectionHandleFactory],
+  zingStackComponents: [{
+    componentName: 'ZingFillHandle',
+    componentClass: FillHandle
+  }, {
+    componentName: 'ZingRangeHandle',
+    componentClass: RangeHandle
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

@@ -1,108 +1,103 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+var __decorate = this && this.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Autowired, Bean, PostConstruct } from "../../context/context";
 import { BeanStub } from "../../context/beanStub";
 let ComponentMetadataProvider = class ComponentMetadataProvider extends BeanStub {
-    postConstruct() {
-        this.componentMetaData = {
-            dateComponent: {
-                mandatoryMethodList: ['getDate', 'setDate'],
-                optionalMethodList: ['afterGuiAttached', 'setInputPlaceholder', 'setInputAriaLabel']
-            },
-            detailCellRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['refresh'],
-                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
-            },
-            headerComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['refresh']
-            },
-            headerGroupComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            },
-            loadingCellRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            },
-            loadingOverlayComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            },
-            noRowsOverlayComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            },
-            floatingFilterComponent: {
-                mandatoryMethodList: ['onParentModelChanged'],
-                optionalMethodList: ['afterGuiAttached']
-            },
-            floatingFilterWrapperComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            },
-            cellRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['refresh', 'afterGuiAttached'],
-                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
-            },
-            cellEditor: {
-                mandatoryMethodList: ['getValue'],
-                optionalMethodList: ['isPopup', 'isCancelBeforeStart', 'isCancelAfterEnd', 'getPopupPosition', 'focusIn', 'focusOut', 'afterGuiAttached']
-            },
-            innerRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['afterGuiAttached'],
-                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
-            },
-            fullWidthCellRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['refresh', 'afterGuiAttached'],
-                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
-            },
-            groupRowRenderer: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['afterGuiAttached'],
-                functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
-            },
-            filter: {
-                mandatoryMethodList: ['isFilterActive', 'doesFilterPass', 'getModel', 'setModel'],
-                optionalMethodList: ['afterGuiAttached', 'afterGuiDetached', 'onNewRowsLoaded', 'getModelAsString', 'onFloatingFilterChanged', 'onAnyFilterChanged']
-            },
-            filterComponent: {
-                mandatoryMethodList: ['isFilterActive', 'doesFilterPass', 'getModel', 'setModel'],
-                optionalMethodList: ['afterGuiAttached', 'afterGuiDetached', 'onNewRowsLoaded', 'getModelAsString', 'onFloatingFilterChanged', 'onAnyFilterChanged']
-            },
-            statusPanel: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['afterGuiAttached'],
-            },
-            toolPanel: {
-                mandatoryMethodList: [],
-                optionalMethodList: ['refresh', 'afterGuiAttached']
-            },
-            tooltipComponent: {
-                mandatoryMethodList: [],
-                optionalMethodList: []
-            }
-        };
-    }
-    retrieve(name) {
-        return this.componentMetaData[name];
-    }
+  postConstruct() {
+    this.componentMetaData = {
+      dateComponent: {
+        mandatoryMethodList: ['getDate', 'setDate'],
+        optionalMethodList: ['afterGuiAttached', 'setInputPlaceholder', 'setInputAriaLabel']
+      },
+      detailCellRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['refresh'],
+        functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
+      },
+      headerComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['refresh']
+      },
+      headerGroupComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      },
+      loadingCellRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      },
+      loadingOverlayComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      },
+      noRowsOverlayComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      },
+      floatingFilterComponent: {
+        mandatoryMethodList: ['onParentModelChanged'],
+        optionalMethodList: ['afterGuiAttached']
+      },
+      floatingFilterWrapperComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      },
+      cellRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['refresh', 'afterGuiAttached'],
+        functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
+      },
+      cellEditor: {
+        mandatoryMethodList: ['getValue'],
+        optionalMethodList: ['isPopup', 'isCancelBeforeStart', 'isCancelAfterEnd', 'getPopupPosition', 'focusIn', 'focusOut', 'afterGuiAttached']
+      },
+      innerRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['afterGuiAttached'],
+        functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
+      },
+      fullWidthCellRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['refresh', 'afterGuiAttached'],
+        functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
+      },
+      groupRowRenderer: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['afterGuiAttached'],
+        functionAdapter: this.zingComponentUtils.adaptCellRendererFunction.bind(this.zingComponentUtils)
+      },
+      filter: {
+        mandatoryMethodList: ['isFilterActive', 'doesFilterPass', 'getModel', 'setModel'],
+        optionalMethodList: ['afterGuiAttached', 'afterGuiDetached', 'onNewRowsLoaded', 'getModelAsString', 'onFloatingFilterChanged', 'onAnyFilterChanged']
+      },
+      filterComponent: {
+        mandatoryMethodList: ['isFilterActive', 'doesFilterPass', 'getModel', 'setModel'],
+        optionalMethodList: ['afterGuiAttached', 'afterGuiDetached', 'onNewRowsLoaded', 'getModelAsString', 'onFloatingFilterChanged', 'onAnyFilterChanged']
+      },
+      statusPanel: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['afterGuiAttached']
+      },
+      toolPanel: {
+        mandatoryMethodList: [],
+        optionalMethodList: ['refresh', 'afterGuiAttached']
+      },
+      tooltipComponent: {
+        mandatoryMethodList: [],
+        optionalMethodList: []
+      }
+    };
+  }
+  retrieve(name) {
+    return this.componentMetaData[name];
+  }
 };
-__decorate([
-    Autowired("zingComponentUtils")
-], ComponentMetadataProvider.prototype, "zingComponentUtils", void 0);
-__decorate([
-    PostConstruct
-], ComponentMetadataProvider.prototype, "postConstruct", null);
-ComponentMetadataProvider = __decorate([
-    Bean("componentMetadataProvider")
-], ComponentMetadataProvider);
+__decorate([Autowired("zingComponentUtils")], ComponentMetadataProvider.prototype, "zingComponentUtils", void 0);
+__decorate([PostConstruct], ComponentMetadataProvider.prototype, "postConstruct", null);
+ComponentMetadataProvider = __decorate([Bean("componentMetadataProvider")], ComponentMetadataProvider);
 export { ComponentMetadataProvider };

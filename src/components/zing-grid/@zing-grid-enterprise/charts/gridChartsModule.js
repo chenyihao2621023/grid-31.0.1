@@ -9,23 +9,21 @@ import { ZingAngleSelect } from "./widgets/zingAngleSelect";
 import { VERSION as GRID_VERSION } from "./version";
 import { validGridChartsVersion } from "./utils/validGridChartsVersion";
 export const GridChartsModule = {
-    version: GRID_VERSION,
-    validate: () => {
-        return validGridChartsVersion({
-            gridVersion: GRID_VERSION,
-            chartsVersion: ChartService.CHARTS_VERSION
-        });
-    },
-    moduleName: ModuleNames.GridChartsModule,
-    beans: [
-        ChartService, ChartTranslationService, ChartCrossFilterService
-    ],
-    zingStackComponents: [
-        { componentName: 'ZingColorPicker', componentClass: ZingColorPicker },
-        { componentName: 'ZingAngleSelect', componentClass: ZingAngleSelect },
-    ],
-    dependantModules: [
-        RangeSelectionModule,
-        EnterpriseCoreModule
-    ]
+  version: GRID_VERSION,
+  validate: () => {
+    return validGridChartsVersion({
+      gridVersion: GRID_VERSION,
+      chartsVersion: ChartService.CHARTS_VERSION
+    });
+  },
+  moduleName: ModuleNames.GridChartsModule,
+  beans: [ChartService, ChartTranslationService, ChartCrossFilterService],
+  zingStackComponents: [{
+    componentName: 'ZingColorPicker',
+    componentClass: ZingColorPicker
+  }, {
+    componentName: 'ZingAngleSelect',
+    componentClass: ZingAngleSelect
+  }],
+  dependantModules: [RangeSelectionModule, EnterpriseCoreModule]
 };

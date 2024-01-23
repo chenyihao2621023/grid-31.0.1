@@ -1,5 +1,4 @@
-export class KeyCode {
-}
+export class KeyCode {}
 KeyCode.BACKSPACE = 'Backspace';
 KeyCode.TAB = 'Tab';
 KeyCode.ENTER = 'Enter';
@@ -15,8 +14,6 @@ KeyCode.PAGE_UP = 'PageUp';
 KeyCode.PAGE_DOWN = 'PageDown';
 KeyCode.PAGE_HOME = 'Home';
 KeyCode.PAGE_END = 'End';
-// these should be used with `event.code` instead of `event.key`
-// as `event.key` changes when non-latin keyboards are used
 KeyCode.A = 'KeyA';
 KeyCode.C = 'KeyC';
 KeyCode.D = 'KeyD';

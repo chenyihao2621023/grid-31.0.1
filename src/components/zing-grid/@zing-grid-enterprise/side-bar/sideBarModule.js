@@ -7,15 +7,18 @@ import { ToolPanelColDefService } from "./sideBar/common/toolPanelColDefService"
 import { VERSION } from "./version";
 import { SideBarService } from "./sideBar/sideBarService";
 export const SideBarModule = {
-    version: VERSION,
-    moduleName: ModuleNames.SideBarModule,
-    beans: [ToolPanelColDefService, SideBarService],
-    zingStackComponents: [
-        { componentName: 'ZingHorizontalResize', componentClass: HorizontalResizeComp },
-        { componentName: 'ZingSideBar', componentClass: SideBarComp },
-        { componentName: 'ZingSideBarButtons', componentClass: SideBarButtonsComp },
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.SideBarModule,
+  beans: [ToolPanelColDefService, SideBarService],
+  zingStackComponents: [{
+    componentName: 'ZingHorizontalResize',
+    componentClass: HorizontalResizeComp
+  }, {
+    componentName: 'ZingSideBar',
+    componentClass: SideBarComp
+  }, {
+    componentName: 'ZingSideBarButtons',
+    componentClass: SideBarButtonsComp
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

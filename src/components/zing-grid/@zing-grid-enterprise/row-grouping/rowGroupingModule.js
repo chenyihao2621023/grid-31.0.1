@@ -11,17 +11,19 @@ import { VERSION } from "./version";
 import { GroupFilter } from "./rowGrouping/groupFilter/groupFilter";
 import { GroupFloatingFilterComp } from "./rowGrouping/groupFilter/groupFloatingFilter";
 export const RowGroupingModule = {
-    version: VERSION,
-    moduleName: ModuleNames.RowGroupingModule,
-    beans: [AggregationStage, FilterAggregatesStage, GroupStage, PivotColDefService, PivotStage, AggFuncService],
-    zingStackComponents: [
-        { componentName: 'ZingGridHeaderDropZones', componentClass: GridHeaderDropZones }
-    ],
-    userComponents: [
-        { componentName: 'zingGroupColumnFilter', componentClass: GroupFilter },
-        { componentName: 'zingGroupColumnFloatingFilter', componentClass: GroupFloatingFilterComp },
-    ],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.RowGroupingModule,
+  beans: [AggregationStage, FilterAggregatesStage, GroupStage, PivotColDefService, PivotStage, AggFuncService],
+  zingStackComponents: [{
+    componentName: 'ZingGridHeaderDropZones',
+    componentClass: GridHeaderDropZones
+  }],
+  userComponents: [{
+    componentName: 'zingGroupColumnFilter',
+    componentClass: GroupFilter
+  }, {
+    componentName: 'zingGroupColumnFloatingFilter',
+    componentClass: GroupFloatingFilterComp
+  }],
+  dependantModules: [EnterpriseCoreModule]
 };

@@ -26,9 +26,7 @@ import { RangeBarModule } from './series/range-bar/main';
 import { SunburstSeriesModule } from './series/sunburst/sunburstSeriesModule';
 import { TreemapSeriesModule } from './series/treemap/treemapSeriesModule';
 import { WaterfallModule } from './series/waterfall/main';
-// Export types.
 export * from '@/components/zing-grid/zing-charts-community/main.js';
-// Needed for UMD global exports to work correctly.
 export { time, ZingCharts };
 _ModuleSupport.registerModule(AngleCategoryAxisModule);
 _ModuleSupport.registerModule(AngleNumberAxisModule);
@@ -55,5 +53,8 @@ _ModuleSupport.registerModule(TreemapSeriesModule);
 _ModuleSupport.registerModule(WaterfallModule);
 _ModuleSupport.registerModule(ZoomModule);
 _ModuleSupport.enterpriseModule.isEnterprise = true;
-_ModuleSupport.enterpriseModule.licenseManager = (options) => { var _a, _b; return new LicenseManager((_b = (_a = options.container) === null || _a === void 0 ? void 0 : _a.ownerDocument) !== null && _b !== void 0 ? _b : (typeof document !== 'undefined' ? document : undefined)); };
+_ModuleSupport.enterpriseModule.licenseManager = options => {
+  var _a, _b;
+  return new LicenseManager((_b = (_a = options.container) === null || _a === void 0 ? void 0 : _a.ownerDocument) !== null && _b !== void 0 ? _b : typeof document !== 'undefined' ? document : undefined);
+};
 _ModuleSupport.enterpriseModule.injectWatermark = injectWatermark;

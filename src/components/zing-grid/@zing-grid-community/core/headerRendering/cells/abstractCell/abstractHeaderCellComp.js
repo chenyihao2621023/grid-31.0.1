@@ -1,10 +1,10 @@
 import { Component } from "../../../widgets/component";
 export class AbstractHeaderCellComp extends Component {
-    constructor(template, ctrl) {
-        super(template);
-        this.ctrl = ctrl;
-    }
-    getCtrl() {
-        return this.ctrl;
-    }
+  constructor(template, ctrl) {
+    super(template);
+    this.ctrl = ctrl;
+  }
+  getCtrl() {
+    return this.ctrl;
+  }
 }

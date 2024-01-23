@@ -3,11 +3,9 @@ import { EnterpriseCoreModule } from "@/components/zing-grid/@zing-grid-enterpri
 import { VERSION } from "./version";
 import { ViewportRowModel } from "./viewportRowModel/viewportRowModel";
 export const ViewportRowModelModule = {
-    version: VERSION,
-    moduleName: ModuleNames.ViewportRowModelModule,
-    rowModel: 'viewport',
-    beans: [ViewportRowModel],
-    dependantModules: [
-        EnterpriseCoreModule
-    ]
+  version: VERSION,
+  moduleName: ModuleNames.ViewportRowModelModule,
+  rowModel: 'viewport',
+  beans: [ViewportRowModel],
+  dependantModules: [EnterpriseCoreModule]
 };
