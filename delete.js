@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function deleteTsFiles(dir) {
+function deleteMinCssFiles(dir) {
     const files = fs.readdirSync(dir);
 
     for (const file of files) {
@@ -9,8 +9,8 @@ function deleteTsFiles(dir) {
         const stat = fs.statSync(filePath);
 
         if (stat.isDirectory()) {
-            deleteTsFiles(filePath);
-        } else if (path.extname(file) === '.map') {
+            deleteMinCssFiles(filePath); // 递归处理子目录
+        } else if (file.endsWith('.min.css')) {
             fs.unlinkSync(filePath);
             console.log(`Deleted: ${filePath}`);
         }
@@ -18,4 +18,4 @@ function deleteTsFiles(dir) {
 }
 
 const directory = './src'; // 替换为您要处理的目录路径
-deleteTsFiles(directory);
+deleteMinCssFiles(directory);
