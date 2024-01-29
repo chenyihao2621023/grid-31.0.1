@@ -6,7 +6,7 @@
       </div>
       <div class="grid-wrapper" style="height: 1000px;">
         <ZingGridVue
-
+            :localeText="localeText"
             style="width: 100%; height: 100%;"
             :class="themeClass"
             :columnDefs="columnDefs"
@@ -16,14 +16,14 @@
       </div>
     </div>
   </div>
-  
+
 </template>
 
 <script>
 import '@/components/zing-grid/zing-grid-enterprise/main.js'
 import "@/components/zing-grid/zing-grid-community/styles/zing-grid.css";
 import "@/components/zing-grid/zing-grid-community/styles/zing-theme-quartz.css";
-
+import {ZING_GRID_LOCALE_EN} from './localeText';
 import { ZingGridVue } from "@/components/zing-grid/zing-grid-vue/main.js";
 window.arrayComparator = function arrayComparator(a, b) {
   if (a == null) {
@@ -75,18 +75,20 @@ export default {
   },
   data: function () {
     return {
+      localeText: ZING_GRID_LOCALE_EN,
       columnDefs: [
         { field: 'athlete', minWidth: 200 },
         {
           headerName: 'Group B',
           children: [
-            { field: 'sport', minWidth: 150 },
+
             { field: 'gold' },
             { field: 'silver' },
             { field: 'bronze' },
             { field: 'total' },
           ],
         },
+        { field: 'sport', minWidth: 150 },
       ],
       gridApi: null,
       themeClass:
